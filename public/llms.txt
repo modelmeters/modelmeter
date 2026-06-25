@@ -1,0 +1,29 @@
+# Modelmeter
+
+> Agent-first measurement and instrumentation for AI models. JSON-first APIs, stable URL contracts, no authentication required for V1.
+
+Modelmeter exists so AI agents can answer questions like "what does this LLM call cost?" or "will this fit in this model's context window?" without scraping a JS-heavy SPA. Every tool is reachable via a plain GET URL and returns JSON. Pricing data is community-maintained in a public GitHub repo; each entry carries a `last_verified` date so callers can judge freshness for themselves.
+
+## Stable endpoints
+
+- [/estimate](https://modelmeter.xyz/estimate?model=anthropic/claude-sonnet-4-6&input=1000&output=500): cost of an LLM call given model, input tokens, output tokens
+- [/models](https://modelmeter.xyz/models): list of available models with current pricing
+- [/pricing.json](https://modelmeter.xyz/pricing.json): raw pricing snapshot, identical to `pricing/current.json` in the repo
+- [/openapi.yaml](https://modelmeter.xyz/openapi.yaml): OpenAPI 3.1 spec for the API
+
+## Source of truth
+
+- Pricing data lives at https://github.com/modelmeters/modelmeter
+- Daily date-stamped snapshots are committed to `pricing/snapshots/` so the historical dataset accumulates
+- Found a price change? Open a PR
+
+## Limits
+
+V1 is unauthenticated but rate-limited per IP. An API-key tier with higher limits is planned for agents under sustained load.
+
+## Roadmap
+
+- Context-window-fit checker
+- Embedding cost estimator
+- Real-world latency aggregator
+- Tool-calling schema validator

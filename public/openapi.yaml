@@ -1,0 +1,101 @@
+openapi: 3.1.0
+info:
+  title: Modelmeter API
+  version: 0.1.0
+  description: |
+    Agent-first measurement and instrumentation for AI models.
+
+    All responses are JSON. URLs are stable. Endpoints do not require authentication for V1,
+    but rate limits apply per IP. An API-key tier with higher limits is planned.
+
+    The pricing data backing this API lives at https://github.com/modelmeters/modelmeter and is
+    updated by community PRs. Every model entry includes a `last_verified` field; do not
+    treat values as authoritative without checking that date.
+  contact:
+    name: Modelmeter
+    url: https://modelmeter.xyz
+  license:
+    name: MIT
+servers:
+  - url: https://modelmeter.xyz
+paths:
+  /estimate:
+    get:
+      summary: Estimate the cost of an LLM call.
+      description: |
+        Returns the cost of a hypothetical call with the given input and output token counts
+        against the named model. Math is shown in the response so agents can verify.
+      parameters:
+        - name: model
+          in: query
+          required: true
+          description: Model id in `provider/model` form, e.g. `anthropic/claude-sonnet-4-6`.
+          schema: { type: string }
+        - name: input
+          in: query
+          required: true
+          description: Input token count.
+          schema: { type: integer, minimum: 0 }
+        - name: output
+          in: query
+          required: true
+          description: Output token count.
+          schema: { type: integer, minimum: 0 }
+        - name: format
+          in: query
+          required: false
+          description: Response format. Default is `json`.
+          schema: { type: string, enum: [json], default: json }
+      responses:
+        "200":
+          description: Successful estimate.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Estimate" }
+        "400":
+          description: Invalid query parameters.
+        "404":
+          description: Model not found or unverified.
+  /models:
+    get:
+      summary: List available models with their current pricing.
+      responses:
+        "200":
+          description: Array of models.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Model" }
+  /pricing.json:
+    get:
+      summary: Raw current pricing snapshot, identical to the repo's `pricing/current.json`.
+      responses:
+        "200":
+          description: Pricing snapshot.
+          content:
+            application/json:
+              schema: { type: object }
+components:
+  schemas:
+    Model:
+      type: object
+      properties:
+        id: { type: string }
+        provider: { type: string }
+        display_name: { type: string }
+        input_cost_per_mtok: { type: number, nullable: true }
+        output_cost_per_mtok: { type: number, nullable: true }
+        context_window: { type: integer, nullable: true }
+        last_verified: { type: string, format: date }
+    Estimate:
+      type: object
+      properties:
+        model: { type: string }
+        input_tokens: { type: integer }
+        output_tokens: { type: integer }
+        input_cost_usd: { type: number }
+        output_cost_usd: { type: number }
+        total_cost_usd: { type: number }
+        pricing_date: { type: string, format: date, description: "`last_verified` of the model entry used." }
+        source_url: { type: string, format: uri }

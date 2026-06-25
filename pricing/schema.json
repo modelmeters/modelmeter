@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modelmeter.xyz/schema/pricing/1.0.0",
+  "title": "Modelmeter Pricing Snapshot",
+  "description": "Versioned pricing data for AI models. All monetary values are USD per million tokens (per Mtok).",
+  "type": "object",
+  "required": ["schema_version", "snapshot_date", "models"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "snapshot_date": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO date the snapshot represents (not the date a price was last verified)."
+    },
+    "models": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/Model" }
+    }
+  },
+  "$defs": {
+    "Model": {
+      "type": "object",
+      "required": [
+        "id",
+        "provider",
+        "model",
+        "display_name",
+        "input_cost_per_mtok",
+        "output_cost_per_mtok",
+        "source_url",
+        "last_verified",
+        "verification_required"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable identifier: provider/model. Used as the API param.",
+          "pattern": "^[a-z0-9-]+/[a-z0-9.-]+$"
+        },
+        "provider": {
+          "type": "string",
+          "enum": ["anthropic", "openai", "venice"]
+        },
+        "model": {
+          "type": "string",
+          "description": "Provider-side model identifier."
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "input_cost_per_mtok": {
+          "type": ["number", "null"],
+          "description": "USD per 1M input tokens. null = not yet verified."
+        },
+        "output_cost_per_mtok": {
+          "type": ["number", "null"],
+          "description": "USD per 1M output tokens. null = not yet verified."
+        },
+        "cache_write_cost_per_mtok": {
+          "type": ["number", "null"],
+          "description": "USD per 1M tokens written to prompt cache. null if not applicable or unverified."
+        },
+        "cache_read_cost_per_mtok": {
+          "type": ["number", "null"],
+          "description": "USD per 1M tokens read from prompt cache. null if not applicable or unverified."
+        },
+        "context_window": {
+          "type": ["integer", "null"],
+          "description": "Maximum input context in tokens."
+        },
+        "max_output_tokens": {
+          "type": ["integer", "null"]
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "last_verified": {
+          "type": "string",
+          "format": "date",
+          "description": "ISO date a human last confirmed these values match the source page."
+        },
+        "verification_required": {
+          "type": "boolean",
+          "description": "true means a human has NOT confirmed any values in this entry yet. Calculators should refuse to return results for entries marked true."
+        },
+        "notes": {
+          "type": "string"
+        },
+        "deprecated_on": {
+          "type": ["string", "null"],
+          "format": "date",
+          "description": "ISO date the provider deprecated this model, or null if still available."
+        }
+      }
+    }
+  }
+}
