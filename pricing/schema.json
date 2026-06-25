@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://modelmeter.xyz/schema/pricing/1.1.0",
+  "$id": "https://modelmeter.xyz/schema/pricing/1.2.0",
   "title": "Modelmeter Pricing Snapshot",
   "description": "Versioned pricing data for AI models. All monetary values are USD per million tokens (per Mtok).",
   "type": "object",
@@ -8,7 +8,7 @@
   "properties": {
     "schema_version": {
       "type": "string",
-      "const": "1.1.0"
+      "const": "1.2.0"
     },
     "snapshot_date": {
       "type": "string",
@@ -42,7 +42,7 @@
         },
         "provider": {
           "type": "string",
-          "enum": ["anthropic", "openai", "venice"]
+          "enum": ["anthropic", "openai", "venice", "google", "xai"]
         },
         "model": {
           "type": "string",
@@ -100,6 +100,33 @@
           "enum": ["available", "restricted", "unavailable", "deprecated"],
           "default": "available",
           "description": "Current usability of the model. 'available' = freely usable via the provider's standard API; 'restricted' = limited access (enterprise-only, waitlist, region-gated); 'unavailable' = cannot currently be used (regulatory action, suspended, etc.); 'deprecated' = provider has sunset the model. Reason should be explained in `notes`."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional flags describing the model. Common values: 'beta', 'experimental', 'e2ee' (end-to-end encrypted), 'private', 'vision', 'thinking' (reasoning model), 'coder', 'uncensored', 'fast', 'pro', 'turbo', 'flash', 'mini'. Use lowercase. Not enum-constrained to allow future tags without schema bumps."
+        },
+        "upstream_model_id": {
+          "type": ["string", "null"],
+          "description": "For reseller entries (e.g., Venice reselling Claude), the `id` of the direct provider's entry. Lets consumers compute markup. Example: a Venice entry for Claude Opus 4.8 sets this to 'anthropic/claude-opus-4-8'. Null for direct entries and for entries with no direct equivalent (open-source models hosted via Venice, Venice-exclusive models)."
+        },
+        "tier_pricing": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["above_input_tokens"],
+            "properties": {
+              "above_input_tokens": {
+                "type": "integer",
+                "description": "When input tokens exceed this threshold, the rates below apply."
+              },
+              "input_cost_per_mtok": { "type": ["number", "null"] },
+              "output_cost_per_mtok": { "type": ["number", "null"] },
+              "cache_read_cost_per_mtok": { "type": ["number", "null"] },
+              "cache_write_cost_per_mtok": { "type": ["number", "null"] }
+            }
+          },
+          "description": "Tiered overage pricing. Some providers charge a higher rate when input context exceeds a threshold (e.g., Venice's GPT-5.5 doubles above 272K input tokens). Each tier overrides the top-level rates when its threshold is met."
         }
       }
     }
