@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://modelmeter.xyz/schema/pricing/1.0.0",
+  "$id": "https://modelmeter.xyz/schema/pricing/1.1.0",
   "title": "Modelmeter Pricing Snapshot",
   "description": "Versioned pricing data for AI models. All monetary values are USD per million tokens (per Mtok).",
   "type": "object",
@@ -8,7 +8,7 @@
   "properties": {
     "schema_version": {
       "type": "string",
-      "const": "1.0.0"
+      "const": "1.1.0"
     },
     "snapshot_date": {
       "type": "string",
@@ -94,6 +94,12 @@
           "type": ["string", "null"],
           "format": "date",
           "description": "ISO date the provider deprecated this model, or null if still available."
+        },
+        "availability": {
+          "type": "string",
+          "enum": ["available", "restricted", "unavailable", "deprecated"],
+          "default": "available",
+          "description": "Current usability of the model. 'available' = freely usable via the provider's standard API; 'restricted' = limited access (enterprise-only, waitlist, region-gated); 'unavailable' = cannot currently be used (regulatory action, suspended, etc.); 'deprecated' = provider has sunset the model. Reason should be explained in `notes`."
         }
       }
     }
