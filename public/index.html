@@ -4,27 +4,223 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Modelmeter — LLM cost calculator, built for agents</title>
-  <meta name="description" content="Agent-first cost calculator and measurement tools for AI models. Clean JSON APIs, stable URLs, OpenAPI spec." />
+  <meta name="description" content="Agent-first cost calculator for AI models. Clean JSON API, stable URLs, OpenAPI spec, llms.txt." />
   <link rel="alternate" type="application/json" href="/pricing.json" title="Current pricing data" />
+  <style>
+    :root {
+      --bg: #0e0f12;
+      --panel: #16181d;
+      --border: #2a2d35;
+      --text: #e8eaf0;
+      --muted: #8a8f9b;
+      --accent: #5eead4;
+      --accent-dim: #2dd4bf;
+      --error: #f87171;
+      --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif; line-height: 1.5; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-dim); text-decoration: underline; }
+    code, .mono { font-family: var(--mono); }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 24px 96px; }
+    header { margin-bottom: 32px; }
+    h1 { font-size: 1.75rem; margin: 0 0 8px; font-weight: 600; letter-spacing: -0.01em; }
+    h1 .meter { color: var(--accent); }
+    .tagline { color: var(--muted); margin: 0; }
+    .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+    label { display: block; font-size: 0.875rem; color: var(--muted); margin-bottom: 6px; }
+    select, input[type="number"] { width: 100%; padding: 10px 12px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font: inherit; font-family: var(--mono); }
+    select:focus, input[type="number"]:focus { outline: 2px solid var(--accent-dim); outline-offset: -1px; border-color: var(--accent-dim); }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    .field { margin-bottom: 16px; }
+    button { background: var(--accent); color: #0e0f12; border: none; padding: 12px 20px; border-radius: 8px; font: inherit; font-weight: 600; cursor: pointer; }
+    button:hover { background: var(--accent-dim); }
+    button:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; }
+    #result { display: none; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); }
+    #result.show { display: block; }
+    #result.error { color: var(--error); }
+    .total { font-size: 2rem; font-family: var(--mono); margin: 8px 0 16px; }
+    .breakdown { display: grid; grid-template-columns: 1fr auto; gap: 8px; font-family: var(--mono); font-size: 0.875rem; }
+    .breakdown .label { color: var(--muted); }
+    .upstream { margin-top: 16px; padding-top: 16px; border-top: 1px dashed var(--border); }
+    .markup { color: var(--accent); }
+    .try-json { margin-top: 16px; padding: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-family: var(--mono); font-size: 0.8rem; word-break: break-all; }
+    .try-json a { display: inline-block; }
+    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.875rem; }
+    footer a { margin-right: 16px; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+    .about { color: var(--muted); font-size: 0.9rem; }
+    .about p { margin: 0 0 12px; }
+    .stats { display: flex; gap: 24px; margin: 16px 0; font-family: var(--mono); font-size: 0.875rem; }
+    .stat .num { color: var(--accent); font-size: 1.25rem; display: block; }
+    .stat .lbl { color: var(--muted); }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Modelmeter</h1>
-    <p>Agent-first measurement and instrumentation for AI models.</p>
-  </header>
   <main>
-    <section>
-      <h2>V1 in progress</h2>
-      <p>The LLM cost calculator is being built. Until then, browse the API surface:</p>
-      <ul>
-        <li><a href="/openapi.yaml">OpenAPI spec</a></li>
-        <li><a href="/llms.txt">llms.txt (for agents)</a></li>
-        <li><a href="/pricing.json">/pricing.json (when published)</a></li>
-      </ul>
-    </section>
+    <header>
+      <h1>model<span class="meter">meter</span></h1>
+      <p class="tagline">Agent-first cost calculator for AI models. <a href="/llms.txt">Built for machines</a>, friendly to humans.</p>
+    </header>
+
+    <div class="panel">
+      <div class="field">
+        <label for="model">Model</label>
+        <select id="model" disabled>
+          <option>Loading models…</option>
+        </select>
+      </div>
+      <div class="row">
+        <div>
+          <label for="input">Input tokens</label>
+          <input id="input" type="number" min="0" step="1" value="1000" />
+        </div>
+        <div>
+          <label for="output">Output tokens</label>
+          <input id="output" type="number" min="0" step="1" value="500" />
+        </div>
+      </div>
+      <button id="calc" disabled>Calculate</button>
+
+      <div id="result"></div>
+    </div>
+
+    <div class="panel about">
+      <p><strong>What this is:</strong> a stable, machine-callable API for LLM cost estimation, plus this human-friendly calculator. Every endpoint returns JSON. Every URL is documented in the <a href="/openapi.yaml">OpenAPI spec</a>.</p>
+      <div class="stats" id="stats"></div>
+      <p>Pricing data is in a public GitHub repo with daily snapshots. Found a price change? <a href="https://github.com/modelmeters/modelmeter/blob/main/pricing/current.json">Open a PR</a>.</p>
+    </div>
+
+    <footer>
+      <div class="links">
+        <a href="/openapi.yaml">OpenAPI</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/pricing.json">pricing.json</a>
+        <a href="/models">/models</a>
+        <a href="https://github.com/modelmeters/modelmeter">GitHub</a>
+      </div>
+    </footer>
   </main>
-  <footer>
-    <p>Source: <a href="https://github.com/modelmeters/modelmeter">github.com/modelmeters/modelmeter</a></p>
-  </footer>
+
+  <script>
+    const select = document.getElementById("model");
+    const inputEl = document.getElementById("input");
+    const outputEl = document.getElementById("output");
+    const calcBtn = document.getElementById("calc");
+    const resultEl = document.getElementById("result");
+    const statsEl = document.getElementById("stats");
+
+    let modelsByProvider = {};
+
+    fetch("/models")
+      .then((r) => r.json())
+      .then((data) => {
+        for (const m of data.models) {
+          (modelsByProvider[m.provider] ||= []).push(m);
+        }
+        renderModels();
+        renderStats(data);
+        select.disabled = false;
+        calcBtn.disabled = false;
+      })
+      .catch((err) => {
+        select.innerHTML = '<option>Failed to load models</option>';
+        console.error(err);
+      });
+
+    function renderModels() {
+      select.innerHTML = "";
+      const providerOrder = ["anthropic", "openai", "google", "xai", "venice"];
+      for (const provider of providerOrder) {
+        if (!modelsByProvider[provider]) continue;
+        const group = document.createElement("optgroup");
+        group.label = providerLabel(provider);
+        for (const m of modelsByProvider[provider].sort((a, b) => a.display_name.localeCompare(b.display_name))) {
+          const opt = document.createElement("option");
+          opt.value = m.id;
+          opt.textContent = `${m.display_name} — $${m.input_cost_per_mtok}/$${m.output_cost_per_mtok}`;
+          group.appendChild(opt);
+        }
+        select.appendChild(group);
+      }
+    }
+
+    function providerLabel(p) {
+      return ({
+        anthropic: "Anthropic",
+        openai: "OpenAI",
+        google: "Google",
+        xai: "xAI",
+        venice: "Venice (privacy / multi-host)",
+      })[p] ?? p;
+    }
+
+    function renderStats(data) {
+      const providers = Object.keys(modelsByProvider).length;
+      statsEl.innerHTML = `
+        <div class="stat"><span class="num">${data.count}</span><span class="lbl">models</span></div>
+        <div class="stat"><span class="num">${providers}</span><span class="lbl">providers</span></div>
+        <div class="stat"><span class="num">${data.snapshot_date}</span><span class="lbl">snapshot</span></div>
+      `;
+    }
+
+    calcBtn.addEventListener("click", calculate);
+    inputEl.addEventListener("keydown", (e) => { if (e.key === "Enter") calculate(); });
+    outputEl.addEventListener("keydown", (e) => { if (e.key === "Enter") calculate(); });
+
+    function calculate() {
+      const model = select.value;
+      const input = inputEl.value;
+      const output = outputEl.value;
+      if (!model) return;
+
+      resultEl.className = "show";
+      resultEl.textContent = "Calculating…";
+
+      const url = `/estimate?model=${encodeURIComponent(model)}&input=${input}&output=${output}`;
+      fetch(url)
+        .then((r) => r.json().then((body) => ({ status: r.status, body })))
+        .then(({ status, body }) => {
+          if (status !== 200) {
+            resultEl.className = "show error";
+            resultEl.innerHTML = `<strong>Error:</strong> ${escapeHtml(body.error?.message ?? "request failed")}`;
+            return;
+          }
+          renderResult(body, url);
+        })
+        .catch((err) => {
+          resultEl.className = "show error";
+          resultEl.textContent = "Request failed.";
+        });
+    }
+
+    function renderResult(r, callUrl) {
+      let html = `<div class="total">$${r.total_cost_usd.toFixed(6)}</div>`;
+      html += `<div class="breakdown">`;
+      html += `<div class="label">${r.input_tokens.toLocaleString()} input × $${r.rates_per_mtok.input}/Mtok</div><div>$${r.input_cost_usd.toFixed(6)}</div>`;
+      html += `<div class="label">${r.output_tokens.toLocaleString()} output × $${r.rates_per_mtok.output}/Mtok</div><div>$${r.output_cost_usd.toFixed(6)}</div>`;
+      html += `</div>`;
+      if (r.tier_applied) {
+        html += `<div class="breakdown" style="margin-top: 8px; color: var(--muted); font-size: 0.8rem;"><div>(overage tier rates applied)</div><div></div></div>`;
+      }
+      if (r.upstream && r.upstream.total_cost_usd != null) {
+        const direction = r.upstream.markup_percent > 0 ? "more than" : "less than";
+        const abs = Math.abs(r.upstream.markup_percent);
+        html += `<div class="upstream">`;
+        html += `<div class="label">Same call via <strong>${escapeHtml(r.upstream.display_name)}</strong> (direct):</div>`;
+        html += `<div class="breakdown"><div>$${r.upstream.total_cost_usd.toFixed(6)} — <span class="markup">${abs.toFixed(2)}% ${direction} direct</span></div><div></div></div>`;
+        html += `</div>`;
+      }
+      html += `<div class="try-json">Try this as JSON: <a href="${callUrl}" target="_blank">${escapeHtml(callUrl)}</a></div>`;
+      resultEl.className = "show";
+      resultEl.innerHTML = html;
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+    }
+  </script>
 </body>
 </html>
