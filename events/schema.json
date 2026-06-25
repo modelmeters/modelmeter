@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modelmeter.xyz/schema/events/1.0.0",
+  "title": "Modelmeter Events Snapshot",
+  "description": "AI market events that may impact pricing, capacity, or availability of AI models. Used to annotate the pricing timeline.",
+  "type": "object",
+  "required": ["schema_version", "snapshot_date", "events"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "snapshot_date": { "type": "string", "format": "date" },
+    "events": { "type": "array", "items": { "$ref": "#/$defs/Event" } }
+  },
+  "$defs": {
+    "Event": {
+      "type": "object",
+      "required": ["id", "date", "type", "headline", "summary", "source_urls", "verified"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable slug. Convention: YYYY-MM-{primary-provider}-{short-description}",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "ISO date the event occurred (or was announced). For ongoing situations, the date the situation began."
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "pricing_change",
+            "model_launch",
+            "model_deprecation",
+            "model_unavailable",
+            "compute_partnership",
+            "regulatory_action",
+            "acquisition",
+            "funding",
+            "open_source_release",
+            "legal_outcome",
+            "infrastructure",
+            "leadership_change"
+          ]
+        },
+        "providers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "anthropic", "openai", "venice", "google", "xai",
+              "meta", "deepseek", "alibaba", "zhipu", "moonshot",
+              "mistral", "cohere", "nvidia", "amazon", "microsoft",
+              "spacex", "groq", "together", "fireworks", "openrouter",
+              "other"
+            ]
+          },
+          "description": "Provider IDs affected. Includes providers we do not track pricing for (Meta, Microsoft, etc.) — events can involve more entities than the pricing dataset."
+        },
+        "models": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Affected model IDs in `provider/model` form, matching pricing/current.json where possible. Empty if event is provider-wide or industry-wide."
+        },
+        "headline": {
+          "type": "string",
+          "description": "One-line summary, neutral tone, factual."
+        },
+        "summary": {
+          "type": "string",
+          "description": "Short paragraph (1-4 sentences) giving the relevant context. Avoid speculation; cite the source."
+        },
+        "source_urls": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "format": "uri" },
+          "description": "Primary sources. At least one required. Provider announcements, regulatory filings, and reputable journalism only — no aggregator links."
+        },
+        "verified": {
+          "type": "boolean",
+          "description": "true means a human has confirmed the headline, date, and sources match. false means the entry is a stub (e.g., from the digest pipeline) awaiting review."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional flags. Common values: 'major', 'us-only', 'eu-only', 'china-only', 'rumor', 'leaked', 'preview', 'beta'."
+        },
+        "impact": {
+          "type": "object",
+          "description": "Optional structured impact estimate. Free-form notes go in `summary`.",
+          "properties": {
+            "magnitude": {
+              "type": "string",
+              "enum": ["minor", "moderate", "major", "structural"]
+            },
+            "duration": {
+              "type": "string",
+              "enum": ["one-time", "temporary", "ongoing", "structural"]
+            },
+            "price_direction": {
+              "type": "string",
+              "enum": ["up", "down", "mixed", "none"]
+            }
+          }
+        },
+        "created_at": { "type": "string", "format": "date" },
+        "updated_at": { "type": "string", "format": "date" }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+name: Daily news digest
+
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Run aggregator
+        run: node scripts/digest.mjs
+
+      - name: Commit digest
+        run: |
+          if [ -n "$(git status --porcelain digest/)" ]; then
+            git config user.name "modelmeter-bot"
+            git config user.email "bot@modelmeter.xyz"
+            git add digest/
+            git commit -m "digest: candidates for $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No new digest entries."
+          fi

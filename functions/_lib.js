@@ -1,6 +1,8 @@
 import pricing from "../pricing/current.json";
+import events from "../events/current.json";
 
 export const PRICING = pricing;
+export const EVENTS = events;
 
 export function json(body, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(body, null, 2) + "\n", {

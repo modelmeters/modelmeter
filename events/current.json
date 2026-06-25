@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_date": "2026-06-25",
+  "events": [
+    {
+      "id": "2026-06-anthropic-fable-5-unavailable",
+      "date": "2026-06-25",
+      "type": "model_unavailable",
+      "providers": ["anthropic"],
+      "models": ["anthropic/claude-fable-5"],
+      "headline": "Claude Fable 5 marked unavailable on Anthropic's pricing page",
+      "summary": "Anthropic's public pricing page lists Claude Fable 5 with full pricing but marks it 'unavailable' with a 'Learn more' link. The underlying reason (regulatory action, suspension, or other restriction) is not yet captured. Pricing remains $10/$50 per Mtok with $12.50/$1.00 cache write/read.",
+      "source_urls": ["https://www.anthropic.com/pricing"],
+      "verified": true,
+      "tags": [],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-anthropic-opus-4-8-launch",
+      "date": "2026-06-25",
+      "type": "model_launch",
+      "providers": ["anthropic"],
+      "models": ["anthropic/claude-opus-4-8"],
+      "headline": "Anthropic releases Claude Opus 4.8 as flagship model",
+      "summary": "Anthropic's pricing page now lists Claude Opus 4.8 as the flagship Opus model (positioned for 'complex agentic coding and enterprise work'), replacing 4.7 as the current Opus offering. Pricing matches the prior Opus 4.x tier at $5/$25 per Mtok. Exact release date and changelog not yet captured.",
+      "source_urls": ["https://www.anthropic.com/pricing"],
+      "verified": false,
+      "tags": [],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-openai-gpt-5-5-launch",
+      "date": "2026-06-25",
+      "type": "model_launch",
+      "providers": ["openai"],
+      "models": ["openai/gpt-5-5"],
+      "headline": "OpenAI ships GPT-5.5 as new flagship",
+      "summary": "OpenAI's API pricing page lists GPT-5.5 as the new top-tier flagship at $5/$30 per Mtok, alongside the existing GPT-5.4 and GPT-5.4 mini. Cached input is $0.50/Mtok. Exact release date not yet captured.",
+      "source_urls": ["https://openai.com/business/pricing/#api"],
+      "verified": false,
+      "tags": [],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    }
+  ]
+}

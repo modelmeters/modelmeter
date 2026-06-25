@@ -1,0 +1,38 @@
+{
+  "rss_feeds": [
+    { "name": "Anthropic News", "url": "https://www.anthropic.com/news/rss.xml" },
+    { "name": "OpenAI Blog", "url": "https://openai.com/blog/rss.xml" },
+    { "name": "Google DeepMind Blog", "url": "https://deepmind.google/discover/blog/rss.xml" },
+    { "name": "AWS Machine Learning Blog", "url": "https://aws.amazon.com/blogs/machine-learning/feed/" },
+    { "name": "Microsoft AI Blog", "url": "https://blogs.microsoft.com/ai/feed/" },
+    { "name": "Meta AI Blog", "url": "https://ai.meta.com/blog/rss/" },
+    { "name": "Mistral AI News", "url": "https://mistral.ai/news/feed.xml" },
+    { "name": "Hugging Face Blog", "url": "https://huggingface.co/blog/feed.xml" },
+    { "name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/" },
+    { "name": "The Verge AI", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml" },
+    { "name": "Ars Technica AI", "url": "https://arstechnica.com/tag/ai/feed/" },
+    { "name": "Semafor Technology", "url": "https://www.semafor.com/feed/technology" }
+  ],
+  "hn_searches": [
+    "anthropic", "openai", "claude", "gpt-5", "gpt-6", "gemini",
+    "llama", "qwen", "deepseek", "mistral", "venice", "grok",
+    "ai pricing", "compute deal", "ai chip"
+  ],
+  "reddit_subs": [
+    "LocalLLaMA", "MachineLearning", "singularity",
+    "OpenAI", "ClaudeAI", "ChatGPTPro"
+  ],
+  "keywords": [
+    "pricing", "price cut", "price reduction", "price increase",
+    "free tier", "rate limit", "context window",
+    "launch", "release", "available", "rollout",
+    "deprecat", "sunset", "retire", "unavailable", "ban",
+    "compute deal", "partnership", "datacenter", "capacity",
+    "funding", "valuation", "round", "investment",
+    "acquisition", "merger", "acquire",
+    "regulation", "export control", "executive order", "FTC", "DOJ", "EU AI Act",
+    "lawsuit", "copyright", "settlement",
+    "open source", "open-weight", "open weights",
+    "chip", "GPU", "TPU", "fab"
+  ]
+}
