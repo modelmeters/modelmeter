@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>modelmeter — terminal for AI model economics</title>
   <meta name="description" content="Agent-first dashboard for AI model pricing, events, and history. JSON-first API, OpenAPI, llms.txt." />
-  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate" type="application/json" href="/pricing.json" title="Current pricing" />
   <link rel="alternate" type="application/json" href="/events.json" title="Events" />
   <link rel="alternate" type="application/json" href="/history.json" title="Historical pricing" />
@@ -689,7 +689,7 @@
 
       const padX = 18;
       const barY = 18;
-      const barH = 14;
+      const barH = 2;
       const max = 50;
       const inner = width - 2 * padX;
       const xFor = v => padX + (Math.min(Math.max(v, 0), max) / max) * inner;
