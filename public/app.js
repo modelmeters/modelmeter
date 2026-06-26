@@ -1,4 +1,41 @@
 // ---------- constants ----------
+
+// Venice referral code. Set after signing up for Venice's referral program.
+// Leave as empty string for an unmonetized link (still a useful CTA).
+// The URL param key may need adjustment once we confirm Venice's format
+// (currently assumes `?ref=<code>` — update VENICE_REF_PARAM if different).
+const VENICE_REFERRAL = "";
+const VENICE_REF_PARAM = "ref";
+
+// Compute the best Venice deep-link for a model in our catalog.
+// - If the model is itself a venice/* entry: try to deep-link to it.
+// - Otherwise: if any venice/* entry resells this model (upstream_model_id match):
+//   link to that one.
+// - Otherwise: fall back to venice.ai homepage.
+// In all cases append ?ref=<code> when a referral is configured.
+function veniceUrlFor(modelId) {
+  const base = "https://venice.ai";
+  const refQ = VENICE_REFERRAL
+    ? `?${encodeURIComponent(VENICE_REF_PARAM)}=${encodeURIComponent(VENICE_REFERRAL)}`
+    : "";
+  const model = currentModels.find((m) => m.id === modelId);
+  if (!model) return `${base}/${refQ}`;
+  // If it's a venice/* entry, link to the chat URL with the model id as a query param
+  if (model.provider === "venice") {
+    const sep = refQ ? "&" : "?";
+    return `${base}/chat${refQ}${sep}model=${encodeURIComponent(model.model)}`;
+  }
+  // If a venice/* entry resells this model, link to that one
+  const reseller = currentModels.find(
+    (m) => m.provider === "venice" && m.upstream_model_id === modelId
+  );
+  if (reseller) {
+    const sep = refQ ? "&" : "?";
+    return `${base}/chat${refQ}${sep}model=${encodeURIComponent(reseller.model)}`;
+  }
+  return `${base}/${refQ}`;
+}
+
 const PROVIDER_LABELS = {
   openai: "OpenAI", anthropic: "Anthropic", google: "Google", xai: "xAI", venice: "Venice",
   microsoft: "Microsoft", amazon: "Amazon", meta: "Meta", nvidia: "NVIDIA", deepseek: "DeepSeek",
@@ -370,6 +407,10 @@ function renderCalcResult(r, callUrl) {
     const abs = Math.abs(r.upstream.markup_percent);
     html += `<div class="calc-up-block">vs <strong>${escapeHtml(r.upstream.display_name)}</strong> direct: $${r.upstream.total_cost_usd.toFixed(6)} · <span class="pct">${abs.toFixed(1)}% ${direction}</span></div>`;
   }
+  const veniceUrl = veniceUrlFor(r.model);
+  html += `<div class="calc-cta">
+    <a href="${veniceUrl}" target="_blank" rel="noopener" class="cta-link">run via Venice →</a>
+  </div>`;
   html += `<div class="try-json">json: <a href="${callUrl}" target="_blank">${escapeHtml(callUrl)}</a></div>`;
   document.getElementById("calc-result").innerHTML = html;
 }
