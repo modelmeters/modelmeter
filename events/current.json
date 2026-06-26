@@ -3,6 +3,200 @@
   "snapshot_date": "2026-06-25",
   "events": [
     {
+      "id": "2026-03-openai-acquires-promptfoo",
+      "date": "2026-03-09",
+      "type": "acquisition",
+      "providers": ["openai"],
+      "models": [],
+      "headline": "OpenAI announces acquisition of Promptfoo",
+      "summary": "OpenAI is acquiring Promptfoo, an AI security platform that helps enterprises identify and remediate vulnerabilities in AI systems during development. Expands OpenAI's enterprise security tooling.",
+      "source_urls": ["https://openai.com/index/openai-to-acquire-promptfoo"],
+      "verified": true,
+      "tags": [],
+      "impact": {
+        "magnitude": "minor",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-03-openai-acquires-astral",
+      "date": "2026-03-19",
+      "type": "acquisition",
+      "providers": ["openai"],
+      "models": [],
+      "headline": "OpenAI announces acquisition of Astral",
+      "summary": "Astral, the Python tooling company behind uv and Ruff, joins OpenAI to accelerate Codex growth and power the next generation of Python developer tools.",
+      "source_urls": ["https://openai.com/index/openai-to-acquire-astral"],
+      "verified": true,
+      "tags": [],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-03-openai-122b-funding-round",
+      "date": "2026-03-31",
+      "type": "funding",
+      "providers": ["openai"],
+      "models": [],
+      "headline": "OpenAI raises $122 billion in new funding",
+      "summary": "OpenAI announces a $122 billion funding round to expand frontier AI globally, invest in next-generation compute, and meet growing demand for ChatGPT, Codex, and enterprise AI. One of the largest private funding rounds in history.",
+      "source_urls": ["https://openai.com/index/accelerating-the-next-phase-ai"],
+      "verified": true,
+      "tags": ["major"],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "structural",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-04-openai-codex-pay-as-you-go",
+      "date": "2026-04-02",
+      "type": "pricing_change",
+      "providers": ["openai"],
+      "models": [],
+      "headline": "OpenAI Codex introduces pay-as-you-go pricing for Business and Enterprise teams",
+      "summary": "Codex now includes pay-as-you-go pricing for ChatGPT Business and Enterprise customers, giving teams a more flexible option to start and scale adoption alongside the existing seat-based plans.",
+      "source_urls": ["https://openai.com/index/codex-flexible-pricing-for-teams"],
+      "verified": true,
+      "tags": [],
+      "impact": {
+        "magnitude": "minor",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-04-microsoft-openai-partnership-amended",
+      "date": "2026-04-27",
+      "type": "compute_partnership",
+      "providers": ["openai", "microsoft"],
+      "models": [],
+      "headline": "OpenAI and Microsoft announce amended partnership agreement",
+      "summary": "OpenAI and Microsoft announce a restructured agreement that simplifies the partnership, adds long-term clarity, and supports continued AI innovation at scale. Specific terms (equity, exclusivity, revenue share) are not enumerated in the public announcement.",
+      "source_urls": ["https://openai.com/index/next-phase-of-microsoft-partnership"],
+      "verified": true,
+      "tags": ["major", "structural"],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "structural",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-04-openai-stargate-scaling",
+      "date": "2026-04-29",
+      "type": "infrastructure",
+      "providers": ["openai"],
+      "models": [],
+      "headline": "OpenAI scales Stargate compute infrastructure",
+      "summary": "OpenAI announces additional Stargate data center capacity to meet growing AI demand, framed as part of building the compute infrastructure for the 'Intelligence Age.' Capacity expansion plays into long-term inference economics.",
+      "source_urls": ["https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age"],
+      "verified": true,
+      "tags": ["major"],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-06-openai-models-on-aws",
+      "date": "2026-06-01",
+      "type": "infrastructure",
+      "providers": ["openai", "amazon"],
+      "models": [],
+      "headline": "OpenAI frontier models and Codex now generally available on AWS",
+      "summary": "OpenAI frontier models and Codex are generally available on AWS, giving enterprises a path to build with OpenAI through the AWS environments, controls, and procurement workflows they already use. Distribution change affecting availability for AWS-bound customers.",
+      "source_urls": ["https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws"],
+      "verified": true,
+      "tags": ["major"],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-06-openai-acquires-ona",
+      "date": "2026-06-11",
+      "type": "acquisition",
+      "providers": ["openai"],
+      "models": [],
+      "headline": "OpenAI announces acquisition of Ona",
+      "summary": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
+      "source_urls": ["https://openai.com/index/openai-to-acquire-ona"],
+      "verified": true,
+      "tags": [],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-06-openai-broadcom-jalapeno-chip",
+      "date": "2026-06-24",
+      "type": "infrastructure",
+      "providers": ["openai", "other"],
+      "models": [],
+      "headline": "OpenAI unveils Jalapeño inference chip built with Broadcom",
+      "summary": "OpenAI announces Jalapeño, its first custom inference chip, designed as an ASIC for the specific needs of OpenAI's inference systems and built in partnership with Broadcom. First-party silicon shifts long-term inference economics and capacity planning.",
+      "source_urls": [
+        "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+        "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/",
+        "https://www.theverge.com/ai-artificial-intelligence/955939/openai-reveals-its-first-ai-processor-jalapeno"
+      ],
+      "verified": true,
+      "tags": ["major", "structural"],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-06-amazon-india-13b-investment",
+      "date": "2026-06-25",
+      "type": "infrastructure",
+      "providers": ["amazon"],
+      "models": [],
+      "headline": "Amazon commits $13B to India AI infrastructure expansion",
+      "summary": "Amazon announces a $13 billion investment in India focused on AI infrastructure, part of a broader race among global tech companies to expand AI capacity in the region.",
+      "source_urls": ["https://techcrunch.com/2026/06/25/amazon-ups-india-bet-with-fresh-13b-ai-infrastructure-investment/"],
+      "verified": true,
+      "tags": ["major"],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-25",
+      "updated_at": "2026-06-25"
+    },
+    {
       "id": "2026-06-anthropic-fable-5-unavailable",
       "date": "2026-06-25",
       "type": "model_unavailable",
