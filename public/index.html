@@ -439,8 +439,8 @@
                 <button class="chip active" data-range="all">all</button>
               </div>
               <div class="chip-group" id="chart-scale">
-                <button class="chip active" data-scale="linear">lin</button>
-                <button class="chip" data-scale="log">log</button>
+                <button class="chip" data-scale="linear">lin</button>
+                <button class="chip active" data-scale="log">log</button>
               </div>
               <div class="chip-group" id="chart-cache" style="display: none;">
                 <button class="chip active" data-cache="off">no cache</button>
@@ -563,7 +563,7 @@
     let chartState = {
       model: null,
       range: "all",
-      scale: "linear",
+      scale: "log",
       cache: false,
       viewMode: "across",          // "across" or "single"
       tier: "flagship",            // "flagship" | "mid" | "cheap"
