@@ -490,18 +490,9 @@
       </div>
     </div>
 
-    <!-- Full-width events timeline -->
-    <div style="padding: 0 12px 12px;">
-      <div class="panel">
-        <h3 class="panel-title">Events timeline <span class="right">by provider · click any dot for source</span></h3>
-        <div class="timeline-controls" id="timeline-controls"></div>
-        <div style="position: relative;">
-          <svg class="timeline" id="timeline" preserveAspectRatio="none" aria-label="Timeline of AI market events"></svg>
-          <div class="tooltip" id="tl-tooltip" role="tooltip"></div>
-        </div>
-        <div class="timeline-legend" id="timeline-legend"></div>
-      </div>
-    </div>
+    <!-- Events timeline removed; events still surface in the price chart, ticker, and right-column feed. -->
+    <!-- Re-add later as an overlay on the price chart if desired. -->
+
 
     <!-- Footer -->
     <div class="footer-bar">
@@ -606,7 +597,7 @@
       renderEventsFeed();
       renderChartControls();
       renderChart();
-      window.addEventListener("resize", () => { renderTimeline(); renderChart(); renderPrivacyGauge(); });
+      window.addEventListener("resize", () => { renderChart(); renderPrivacyGauge(); });
     }
 
     async function loadEvents() {
