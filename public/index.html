@@ -442,7 +442,7 @@
         </div>
 
         <div class="panel gauge-panel">
-          <h3 class="panel-title">Privacy Premium Index <span class="right" id="gauge-meta-top">reseller ↔ direct</span></h3>
+          <h3 class="panel-title">Privacy Premium Index <span class="right" id="gauge-meta-top">reseller ↔ direct · hover dots for details</span></h3>
           <div class="gauge-row">
             <div class="gauge-value-block">
               <span class="gauge-value" id="gauge-value">—</span>
@@ -450,7 +450,10 @@
             </div>
             <div class="gauge-meta" id="gauge-meta">computing…</div>
           </div>
-          <svg class="gauge-svg" id="gauge-svg" aria-label="Privacy Premium Index gauge"></svg>
+          <div style="position: relative;">
+            <svg class="gauge-svg" id="gauge-svg" aria-label="Privacy Premium Index gauge"></svg>
+            <div class="tooltip" id="gauge-tooltip" role="tooltip"></div>
+          </div>
           <div class="gauge-zones">
             <span>parity</span>
             <span>moderate</span>
@@ -589,7 +592,7 @@
       renderTicker();
       renderStats();
       renderPrivacyGauge();
-      renderMarkupSpread();
+      // renderMarkupSpread(); // folded into the gauge as dots
       renderCalculator();
 //       renderTimelineControls();
 //       renderTimelineLegend();
@@ -692,16 +695,24 @@
         const uSum = u.input_cost_per_mtok + u.output_cost_per_mtok;
         if (uSum <= 0) continue;
         const rSum = m.input_cost_per_mtok + m.output_cost_per_mtok;
-        pairs.push({ id: m.id, name: m.display_name, markup: (rSum / uSum) - 1 });
+        pairs.push({
+          reseller_id: m.id,
+          reseller_name: m.display_name,
+          upstream_id: u.id,
+          upstream_name: u.display_name,
+          provider: m.provider,
+          markup_pct: ((rSum / uSum) - 1) * 100,
+        });
       }
-      if (pairs.length === 0) return { pct: null, count: 0, min: null, max: null };
-      const markups = pairs.map(p => p.markup);
+      if (pairs.length === 0) return { pct: null, count: 0, min: null, max: null, pairs: [] };
+      const markups = pairs.map(p => p.markup_pct);
       const avg = markups.reduce((a, b) => a + b, 0) / markups.length;
       return {
-        pct: avg * 100,
+        pct: avg,
         count: pairs.length,
-        min: Math.min(...markups) * 100,
-        max: Math.max(...markups) * 100,
+        min: Math.min(...markups),
+        max: Math.max(...markups),
+        pairs,
       };
     }
 
