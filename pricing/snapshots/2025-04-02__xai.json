@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2025-04-02",
+  "source": {
+    "provider": "xai",
+    "source_url": "https://x.ai/api",
+    "wayback_url": "https://web.archive.org/web/20250402012120/https://x.ai/api",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "xai/grok-2-1212",
+      "provider": "xai",
+      "model": "grok-2-1212",
+      "display_name": "Grok 2",
+      "input_cost_per_mtok": 2,
+      "output_cost_per_mtok": 10,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 131072,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2025-04-02",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "xai/grok-2-vision-1212",
+      "provider": "xai",
+      "model": "grok-2-vision-1212",
+      "display_name": "Grok 2 Vision",
+      "input_cost_per_mtok": 2,
+      "output_cost_per_mtok": 10,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 32768,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2025-04-02",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    }
+  ]
+}

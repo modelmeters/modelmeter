@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2026-05-02",
+  "source": {
+    "provider": "venice",
+    "source_url": "https://venice.ai/pricing",
+    "wayback_url": "https://web.archive.org/web/20260502235343/https://venice.ai/pricing",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "venice/base-ai",
+      "provider": "venice",
+      "model": "base-ai",
+      "display_name": "Base AI models",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://venice.ai/pricing",
+      "last_verified": "2026-05-02",
+      "verification_required": true,
+      "notes": "pricing not specified, only available in Free tier with limited access"
+    },
+    {
+      "id": "venice/pro-models",
+      "provider": "venice",
+      "model": "pro-models",
+      "display_name": "Pro models",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://venice.ai/pricing",
+      "last_verified": "2026-05-02",
+      "verification_required": true,
+      "notes": "available in Pro tier and above, pricing not specified"
+    },
+    {
+      "id": "venice/advanced-models",
+      "provider": "venice",
+      "model": "advanced-models",
+      "display_name": "Advanced models",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://venice.ai/pricing",
+      "last_verified": "2026-05-02",
+      "verification_required": true,
+      "notes": "available in Plus and Max tiers, pricing not specified"
+    }
+  ]
+}

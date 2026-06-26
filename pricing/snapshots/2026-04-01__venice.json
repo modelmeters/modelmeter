@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2026-04-01",
+  "source": {
+    "provider": "venice",
+    "source_url": "https://venice.ai/pricing",
+    "wayback_url": "https://web.archive.org/web/20260401191630/https://venice.ai/pricing",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "venice/qwen-3-235b-a22b-instruct-2507",
+      "provider": "venice",
+      "model": "qwen-3-235b-a22b-instruct-2507",
+      "display_name": "Qwen 3 235B A22B Instruct 2507",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://venice.ai/pricing",
+      "last_verified": "2026-04-01",
+      "verification_required": true,
+      "notes": "extracted from wayback capture"
+    }
+  ]
+}

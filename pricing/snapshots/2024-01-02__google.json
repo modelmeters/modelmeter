@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2024-01-02",
+  "source": {
+    "provider": "google",
+    "source_url": "https://ai.google.dev/pricing",
+    "wayback_url": "https://web.archive.org/web/20240102155253/https://ai.google.dev/pricing",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "google/gemini-pro",
+      "provider": "google",
+      "model": "gemini-pro",
+      "display_name": "Gemini Pro",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://ai.google.dev/pricing",
+      "last_verified": "2024-01-02",
+      "verification_required": true,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "google/gemini-ultra",
+      "provider": "google",
+      "model": "gemini-ultra",
+      "display_name": "Gemini Ultra",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://ai.google.dev/pricing",
+      "last_verified": "2024-01-02",
+      "verification_required": true,
+      "notes": "extracted from wayback capture"
+    }
+  ]
+}

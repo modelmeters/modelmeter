@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2025-09-01",
+  "source": {
+    "provider": "anthropic",
+    "source_url": "https://www.anthropic.com/api",
+    "wayback_url": "https://web.archive.org/web/20250901014427/https://www.anthropic.com/api",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "anthropic/haiku",
+      "provider": "anthropic",
+      "model": "haiku",
+      "display_name": "Haiku",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/api",
+      "last_verified": "2025-09-01",
+      "verification_required": true,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "anthropic/sonnet",
+      "provider": "anthropic",
+      "model": "sonnet",
+      "display_name": "Sonnet",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/api",
+      "last_verified": "2025-09-01",
+      "verification_required": true,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "anthropic/opus",
+      "provider": "anthropic",
+      "model": "opus",
+      "display_name": "Opus",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/api",
+      "last_verified": "2025-09-01",
+      "verification_required": true,
+      "notes": "extracted from wayback capture"
+    }
+  ]
+}

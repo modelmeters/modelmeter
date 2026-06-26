@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2025-03-07",
+  "source": {
+    "provider": "xai",
+    "source_url": "https://x.ai/api",
+    "wayback_url": "https://web.archive.org/web/20250307213313/https://x.ai/api",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "xai/grok-beta",
+      "provider": "xai",
+      "model": "grok-beta",
+      "display_name": "Grok Beta",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 128000,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2025-03-07",
+      "verification_required": true,
+      "notes": "extracted from wayback capture"
+    }
+  ]
+}

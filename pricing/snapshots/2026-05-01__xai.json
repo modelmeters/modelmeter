@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2026-05-01",
+  "source": {
+    "provider": "xai",
+    "source_url": "https://x.ai/api",
+    "wayback_url": "https://web.archive.org/web/20260501070356/https://x.ai/api",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "xai/grok-4.20-reasoning",
+      "provider": "xai",
+      "model": "grok-4.20-reasoning",
+      "display_name": "Grok 4.20 Reasoning",
+      "input_cost_per_mtok": 2,
+      "output_cost_per_mtok": 6,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2026-05-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "xai/grok-4.20-non-reasoning",
+      "provider": "xai",
+      "model": "grok-4.20-non-reasoning",
+      "display_name": "Grok 4.20 Non-Reasoning",
+      "input_cost_per_mtok": 2,
+      "output_cost_per_mtok": 6,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2026-05-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "xai/grok-4-1-fast-reasoning",
+      "provider": "xai",
+      "model": "grok-4-1-fast-reasoning",
+      "display_name": "Grok 4.1 Fast Reasoning",
+      "input_cost_per_mtok": 0.2,
+      "output_cost_per_mtok": 0.5,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2026-05-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "xai/grok-4-1-fast-non-reasoning",
+      "provider": "xai",
+      "model": "grok-4-1-fast-non-reasoning",
+      "display_name": "Grok 4.1 Fast Non-Reasoning",
+      "input_cost_per_mtok": 0.2,
+      "output_cost_per_mtok": 0.5,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2026-05-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    }
+  ]
+}

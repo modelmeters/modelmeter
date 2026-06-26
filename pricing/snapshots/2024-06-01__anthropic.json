@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2024-06-01",
+  "source": {
+    "provider": "anthropic",
+    "source_url": "https://www.anthropic.com/api",
+    "wayback_url": "https://web.archive.org/web/20240601154721/https://www.anthropic.com/api",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "anthropic/claude-3-haiku",
+      "provider": "anthropic",
+      "model": "claude-3-haiku",
+      "display_name": "Claude 3 Haiku",
+      "input_cost_per_mtok": 0.25,
+      "output_cost_per_mtok": 1.25,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 200000,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/api",
+      "last_verified": "2024-06-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "anthropic/claude-3-sonnet",
+      "provider": "anthropic",
+      "model": "claude-3-sonnet",
+      "display_name": "Claude 3 Sonnet",
+      "input_cost_per_mtok": 3,
+      "output_cost_per_mtok": 15,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 200000,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/api",
+      "last_verified": "2024-06-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "anthropic/claude-3-opus",
+      "provider": "anthropic",
+      "model": "claude-3-opus",
+      "display_name": "Claude 3 Opus",
+      "input_cost_per_mtok": 15,
+      "output_cost_per_mtok": 75,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 200000,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/api",
+      "last_verified": "2024-06-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "anthropic/claude-2-1",
+      "provider": "anthropic",
+      "model": "claude-2-1",
+      "display_name": "Claude 2.1",
+      "input_cost_per_mtok": 8,
+      "output_cost_per_mtok": 24,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 200000,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/api",
+      "last_verified": "2024-06-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "anthropic/claude-2-0",
+      "provider": "anthropic",
+      "model": "claude-2-0",
+      "display_name": "Claude 2.0",
+      "input_cost_per_mtok": 8,
+      "output_cost_per_mtok": 24,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 100000,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/api",
+      "last_verified": "2024-06-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "anthropic/claude-instant",
+      "provider": "anthropic",
+      "model": "claude-instant",
+      "display_name": "Claude Instant",
+      "input_cost_per_mtok": 0.8,
+      "output_cost_per_mtok": 2.4,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 100000,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/api",
+      "last_verified": "2024-06-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    }
+  ]
+}

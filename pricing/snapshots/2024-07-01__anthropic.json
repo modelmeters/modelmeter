@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2024-07-01",
+  "source": {
+    "provider": "anthropic",
+    "source_url": "https://www.anthropic.com/pricing",
+    "wayback_url": "https://web.archive.org/web/20240701041020/https://www.anthropic.com/pricing",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "anthropic/claude-3-opus",
+      "provider": "anthropic",
+      "model": "claude-3-opus",
+      "display_name": "Claude 3 Opus",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/pricing",
+      "last_verified": "2024-07-01",
+      "verification_required": true,
+      "notes": "pricing page loaded but no model details visible in snapshot"
+    },
+    {
+      "id": "anthropic/claude-3-sonnet",
+      "provider": "anthropic",
+      "model": "claude-3-sonnet",
+      "display_name": "Claude 3 Sonnet",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/pricing",
+      "last_verified": "2024-07-01",
+      "verification_required": true,
+      "notes": "pricing page loaded but no model details visible in snapshot"
+    },
+    {
+      "id": "anthropic/claude-3-haiku",
+      "provider": "anthropic",
+      "model": "claude-3-haiku",
+      "display_name": "Claude 3 Haiku",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/pricing",
+      "last_verified": "2024-07-01",
+      "verification_required": true,
+      "notes": "pricing page loaded but no model details visible in snapshot"
+    },
+    {
+      "id": "anthropic/claude-2-1",
+      "provider": "anthropic",
+      "model": "claude-2-1",
+      "display_name": "Claude 2.1",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/pricing",
+      "last_verified": "2024-07-01",
+      "verification_required": true,
+      "notes": "pricing page loaded but no model details visible in snapshot"
+    },
+    {
+      "id": "anthropic/claude-instant-1-2",
+      "provider": "anthropic",
+      "model": "claude-instant-1-2",
+      "display_name": "Claude Instant 1.2",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/pricing",
+      "last_verified": "2024-07-01",
+      "verification_required": true,
+      "notes": "pricing page loaded but no model details visible in snapshot"
+    }
+  ]
+}

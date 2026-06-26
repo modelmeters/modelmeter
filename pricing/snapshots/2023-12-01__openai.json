@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2023-12-01",
+  "source": {
+    "provider": "openai",
+    "source_url": "https://openai.com/pricing",
+    "wayback_url": "https://web.archive.org/web/20231201003736/https://openai.com/pricing",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "openai/gpt-4-1106-preview",
+      "provider": "openai",
+      "model": "gpt-4-1106-preview",
+      "display_name": "GPT-4 Turbo",
+      "input_cost_per_mtok": 10,
+      "output_cost_per_mtok": 30,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 128000,
+      "max_output_tokens": null,
+      "source_url": "https://openai.com/pricing",
+      "last_verified": "2023-12-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "openai/gpt-4-1106-vision-preview",
+      "provider": "openai",
+      "model": "gpt-4-1106-vision-preview",
+      "display_name": "GPT-4 Turbo with Vision",
+      "input_cost_per_mtok": 10,
+      "output_cost_per_mtok": 30,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://openai.com/pricing",
+      "last_verified": "2023-12-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "openai/gpt-4",
+      "provider": "openai",
+      "model": "gpt-4",
+      "display_name": "GPT-4",
+      "input_cost_per_mtok": 30,
+      "output_cost_per_mtok": 60,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://openai.com/pricing",
+      "last_verified": "2023-12-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "openai/gpt-4-32k",
+      "provider": "openai",
+      "model": "gpt-4-32k",
+      "display_name": "GPT-4 32K",
+      "input_cost_per_mtok": 60,
+      "output_cost_per_mtok": 120,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 32768,
+      "max_output_tokens": null,
+      "source_url": "https://openai.com/pricing",
+      "last_verified": "2023-12-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "openai/gpt-3-5-turbo-1106",
+      "provider": "openai",
+      "model": "gpt-3-5-turbo-1106",
+      "display_name": "GPT-3.5 Turbo",
+      "input_cost_per_mtok": 1,
+      "output_cost_per_mtok": 2,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 16384,
+      "max_output_tokens": null,
+      "source_url": "https://openai.com/pricing",
+      "last_verified": "2023-12-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "openai/gpt-3-5-turbo-instruct",
+      "provider": "openai",
+      "model": "gpt-3-5-turbo-instruct",
+      "display_name": "GPT-3.5 Turbo Instruct",
+      "input_cost_per_mtok": 1.5,
+      "output_cost_per_mtok": 2,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 4096,
+      "max_output_tokens": null,
+      "source_url": "https://openai.com/pricing",
+      "last_verified": "2023-12-01",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    }
+  ]
+}

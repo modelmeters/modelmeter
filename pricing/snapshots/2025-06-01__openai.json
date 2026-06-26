@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2025-06-01",
+  "source": {
+    "provider": "openai",
+    "source_url": "https://platform.openai.com/docs/pricing",
+    "wayback_url": "https://web.archive.org/web/20250601200731/https://platform.openai.com/docs/pricing",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "openai/gpt-4-turbo",
+      "provider": "openai",
+      "model": "gpt-4-turbo",
+      "display_name": "GPT-4 Turbo",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://platform.openai.com/docs/pricing",
+      "last_verified": "2025-06-01",
+      "verification_required": true,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "openai/gpt-4o",
+      "provider": "openai",
+      "model": "gpt-4o",
+      "display_name": "GPT-4o",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://platform.openai.com/docs/pricing",
+      "last_verified": "2025-06-01",
+      "verification_required": true,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "openai/gpt-4o-mini",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "display_name": "GPT-4o Mini",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://platform.openai.com/docs/pricing",
+      "last_verified": "2025-06-01",
+      "verification_required": true,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "openai/gpt-3-5-turbo",
+      "provider": "openai",
+      "model": "gpt-3-5-turbo",
+      "display_name": "GPT-3.5 Turbo",
+      "input_cost_per_mtok": null,
+      "output_cost_per_mtok": null,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": null,
+      "max_output_tokens": null,
+      "source_url": "https://platform.openai.com/docs/pricing",
+      "last_verified": "2025-06-01",
+      "verification_required": true,
+      "notes": "extracted from wayback capture"
+    }
+  ]
+}

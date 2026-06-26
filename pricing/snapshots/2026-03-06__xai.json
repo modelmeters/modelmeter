@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2026-03-06",
+  "source": {
+    "provider": "xai",
+    "source_url": "https://x.ai/api",
+    "wayback_url": "https://web.archive.org/web/20260306031949/https://x.ai/api",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "xai/grok-4-1-fast-reasoning",
+      "provider": "xai",
+      "model": "grok-4-1-fast-reasoning",
+      "display_name": "Grok 4.1 Fast Reasoning",
+      "input_cost_per_mtok": 0.2,
+      "output_cost_per_mtok": 0.5,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2026-03-06",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "xai/grok-4-1-fast-non-reasoning",
+      "provider": "xai",
+      "model": "grok-4-1-fast-non-reasoning",
+      "display_name": "Grok 4.1 Fast Non-Reasoning",
+      "input_cost_per_mtok": 0.2,
+      "output_cost_per_mtok": 0.5,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2026-03-06",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "xai/grok-4-fast-reasoning",
+      "provider": "xai",
+      "model": "grok-4-fast-reasoning",
+      "display_name": "Grok 4 Fast Reasoning",
+      "input_cost_per_mtok": 0.2,
+      "output_cost_per_mtok": 0.5,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2026-03-06",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "xai/grok-4-fast-non-reasoning",
+      "provider": "xai",
+      "model": "grok-4-fast-non-reasoning",
+      "display_name": "Grok 4 Fast Non-Reasoning",
+      "input_cost_per_mtok": 0.2,
+      "output_cost_per_mtok": 0.5,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2026-03-06",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "xai/grok-code-fast-1",
+      "provider": "xai",
+      "model": "grok-code-fast-1",
+      "display_name": "Grok Code Fast 1",
+      "input_cost_per_mtok": 0.2,
+      "output_cost_per_mtok": 1.5,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 256000,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2026-03-06",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "xai/grok-4",
+      "provider": "xai",
+      "model": "grok-4",
+      "display_name": "Grok 4",
+      "input_cost_per_mtok": 3,
+      "output_cost_per_mtok": 15,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": null,
+      "context_window": 256000,
+      "max_output_tokens": null,
+      "source_url": "https://x.ai/api",
+      "last_verified": "2026-03-06",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    }
+  ]
+}
