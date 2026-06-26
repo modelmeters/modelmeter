@@ -1,7 +1,64 @@
 {
   "schema_version": "1.0.0",
-  "snapshot_date": "2026-06-25",
+  "snapshot_date": "2026-06-26",
   "events": [
+    {
+      "id": "2025-08-openai-gpt-oss-120b-release",
+      "date": "2025-08-05",
+      "type": "open_source_release",
+      "providers": ["openai"],
+      "models": ["venice/openai-gpt-oss-120b"],
+      "headline": "OpenAI releases gpt-oss-120B as Apache-2.0 open-weight model",
+      "summary": "OpenAI publishes gpt-oss-120B under an Apache-2.0 license as its first major open-weight model release. Together AI hosts at $0.50/$1.50 per Mtok with 99.9% SLA. Marks OpenAI's entry into the open-weight tier alongside Llama, Qwen, DeepSeek.",
+      "source_urls": ["https://www.together.ai/blog/announcing-the-availability-of-openais-open-models-on-together-ai"],
+      "verified": true,
+      "tags": ["major"],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-26",
+      "updated_at": "2026-06-26"
+    },
+    {
+      "id": "2025-10-google-gemini-2-5-flash-lite-ga",
+      "date": "2025-10-25",
+      "type": "model_launch",
+      "providers": ["google"],
+      "models": [],
+      "headline": "Gemini 2.5 Flash-Lite reaches general availability",
+      "summary": "Gemini 2.5 Flash-Lite, previously in preview, becomes stable and generally available. Cost-efficient small model with 1M-token context window and multimodal support.",
+      "source_urls": ["https://deepmind.google/blog/gemini-25-flash-lite-is-now-ready-for-scaled-production-use/"],
+      "verified": true,
+      "tags": ["flash"],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-26",
+      "updated_at": "2026-06-26"
+    },
+    {
+      "id": "2026-03-flashattention-4-release",
+      "date": "2026-03-05",
+      "type": "open_source_release",
+      "providers": ["other"],
+      "models": [],
+      "headline": "FlashAttention-4 released with hardware-software co-designed kernel optimizations",
+      "summary": "FlashAttention-4 introduces new pipelining for maximum overlap, 2-CTA MMA modes to reduce shared-memory traffic, and a hybrid hardware-software approach to softmax exponentials. Targets the gap between GPU throughput and memory bandwidth in modern hardware. Affects long-term inference economics across transformer-based models.",
+      "source_urls": ["https://www.together.ai/blog/flashattention-4"],
+      "verified": true,
+      "tags": [],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-26",
+      "updated_at": "2026-06-26"
+    },
     {
       "id": "2026-03-openai-acquires-promptfoo",
       "date": "2026-03-09",
@@ -20,6 +77,25 @@
       },
       "created_at": "2026-06-25",
       "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-03-nvidia-nemotron-3-launch",
+      "date": "2026-03-11",
+      "type": "model_launch",
+      "providers": ["nvidia"],
+      "models": ["venice/nemotron-3-ultra-550b-a55b"],
+      "headline": "NVIDIA Nemotron 3 launches with day-0 availability on Together AI",
+      "summary": "NVIDIA releases the Nemotron 3 family with day-0 availability on Together AI Dedicated Inference. Features multi-agent reasoning and a 1M-token context window. Nemotron 3 Super positioned for production-grade managed inference.",
+      "source_urls": ["https://www.together.ai/blog/nvidia-nemotron-3-super"],
+      "verified": true,
+      "tags": [],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-26",
+      "updated_at": "2026-06-26"
     },
     {
       "id": "2026-03-openai-acquires-astral",
@@ -98,6 +174,25 @@
       "updated_at": "2026-06-25"
     },
     {
+      "id": "2026-04-deepseek-v4-pro-launch",
+      "date": "2026-04-29",
+      "type": "model_launch",
+      "providers": ["deepseek"],
+      "models": ["venice/deepseek-v4-pro"],
+      "headline": "DeepSeek-V4 Pro launches with 512K context and cached-input pricing",
+      "summary": "DeepSeek-V4 Pro becomes available on Together AI with 512K context, controllable reasoning modes, and cached-input pricing aimed at long-context reasoning workloads (code agents, document intelligence, research synthesis).",
+      "source_urls": ["https://www.together.ai/blog/deepseek-v4-pro-now-available-on-together-ai"],
+      "verified": true,
+      "tags": ["pro"],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-26",
+      "updated_at": "2026-06-26"
+    },
+    {
       "id": "2026-04-openai-stargate-scaling",
       "date": "2026-04-29",
       "type": "infrastructure",
@@ -155,6 +250,25 @@
       "updated_at": "2026-06-25"
     },
     {
+      "id": "2026-06-google-alabama-datacenter-expansion",
+      "date": "2026-06-15",
+      "type": "infrastructure",
+      "providers": ["google"],
+      "models": [],
+      "headline": "Google commits $1.5B to Alabama datacenter expansion through 2027",
+      "summary": "Google announces a $1.5 billion investment for 2026 and 2027 to expand its data center campus in Jackson County, Alabama. Part of broader US AI infrastructure capacity buildout.",
+      "source_urls": ["https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/"],
+      "verified": true,
+      "tags": ["major"],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-26",
+      "updated_at": "2026-06-26"
+    },
+    {
       "id": "2026-06-openai-broadcom-jalapeno-chip",
       "date": "2026-06-24",
       "type": "infrastructure",
@@ -195,6 +309,28 @@
       },
       "created_at": "2026-06-25",
       "updated_at": "2026-06-25"
+    },
+    {
+      "id": "2026-06-openai-gpt-5-6-delay-regulatory",
+      "date": "2026-06-25",
+      "type": "regulatory_action",
+      "providers": ["openai"],
+      "models": [],
+      "headline": "OpenAI delays GPT-5.6 broad release after Trump administration request",
+      "summary": "OpenAI plans to share GPT-5.6 with a select group of partners instead of with the broader public. The Trump administration, citing potential security concerns, asked OpenAI to stagger the release. Sam Altman announced the staggered rollout internally in a company Q&A on 2026-06-25 according to The Information. GPT-5.6 pricing and general availability timeline not yet announced.",
+      "source_urls": [
+        "https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/",
+        "https://www.theverge.com/ai-artificial-intelligence/957372/openai-will-delay-gpt-5-6-after-trump-administration-request"
+      ],
+      "verified": true,
+      "tags": ["major", "us-only"],
+      "impact": {
+        "magnitude": "major",
+        "duration": "temporary",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-26",
+      "updated_at": "2026-06-26"
     },
     {
       "id": "2026-06-anthropic-fable-5-unavailable",
