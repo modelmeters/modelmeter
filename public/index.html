@@ -783,6 +783,39 @@
       cap.setAttribute("points", `${nx},${barY - 8} ${nx + 5},${barY - 14} ${nx - 5},${barY - 14}`);
       cap.setAttribute("class", "needle-cap");
       svg.appendChild(cap);
+
+      // Individual reseller pair dots along the bar, color-coded by provider
+      const barCenterY = barY + barH / 2;
+      for (const pair of data.pairs) {
+        const dotX = xFor(pair.markup_pct);
+        const dot = document.createElementNS(ns, "circle");
+        dot.setAttribute("cx", dotX);
+        dot.setAttribute("cy", barCenterY);
+        dot.setAttribute("r", "4");
+        dot.setAttribute("fill", PROVIDER_COLORS[pair.provider] || "#ffffff");
+        dot.setAttribute("fill-opacity", "0.7");
+        dot.setAttribute("stroke", "var(--bg)");
+        dot.setAttribute("stroke-width", "1");
+        dot.setAttribute("style", "cursor: pointer");
+        attachGaugePairTooltip(dot, pair);
+        svg.appendChild(dot);
+      }
+    }
+
+    function attachGaugePairTooltip(el, pair) {
+      const tooltip = document.getElementById("gauge-tooltip");
+      if (!tooltip) return;
+      el.addEventListener("mouseenter", e => {
+        tooltip.innerHTML = `
+          <div class="tdate">${PROVIDER_LABELS[pair.provider] || pair.provider} · markup</div>
+          <div class="thead">${escapeHtml(pair.reseller_name)}</div>
+          <div class="tbody">+${pair.markup_pct.toFixed(1)}% over ${escapeHtml(pair.upstream_name)}</div>
+        `;
+        positionTooltip(tooltip, e);
+        tooltip.classList.add("show");
+      });
+      el.addEventListener("mousemove", e => positionTooltip(tooltip, e));
+      el.addEventListener("mouseleave", () => tooltip.classList.remove("show"));
     }
 
     // ---------- calculator ----------
