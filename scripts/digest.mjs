@@ -114,7 +114,7 @@ async function fetchFeed(url) {
 
 async function fetchHN(query) {
   const url = `https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(query)}&tags=story&numericFilters=points%3E30`;
-  const res = await fetch(url, { headers: { "user-agent": "modelmeter-digest/0.1" } });
+  const res = await fetch(url, { headers: { "user-agent": "Mozilla/5.0 (compatible; modelmeter-digest/0.1; +https://modelmeter.xyz)", "accept": "application/json" } });
   if (!res.ok) throw new Error(`HN HTTP ${res.status}`);
   const body = await res.json();
   return body.hits ?? [];
@@ -122,7 +122,7 @@ async function fetchHN(query) {
 
 async function fetchReddit(sub) {
   const url = `https://www.reddit.com/r/${sub}/.json?limit=25`;
-  const res = await fetch(url, { headers: { "user-agent": "modelmeter-digest/0.1" } });
+  const res = await fetch(url, { headers: { "user-agent": "Mozilla/5.0 (compatible; modelmeter-digest/0.1; +https://modelmeter.xyz)", "accept": "application/json" } });
   if (!res.ok) throw new Error(`Reddit HTTP ${res.status}`);
   const body = await res.json();
   return (body.data?.children ?? []).map((c) => c.data);
