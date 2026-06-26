@@ -11,7 +11,7 @@ An event belongs in this dataset if it **plausibly impacts AI pricing, capacity,
 
 - A provider publishes new prices, releases a new model, or deprecates an old one
 - A provider's model becomes unavailable in a region or globally
-- A multi-billion-dollar compute partnership announced (e.g., Anthropic–SpaceXAI hypothetical)
+- A multi-billion-dollar compute partnership announced
 - A regulator bans, restricts, or restricts export of a specific model or capability
 - A major M&A involving labs or compute infrastructure
 - A material funding round ($500M+ rounds for AI labs or chip makers)
@@ -40,20 +40,18 @@ Every event must cite **at least one primary source** in `source_urls`:
 
 The `/events` API filters to `verified: true` by default. Stubs accumulate in the dataset but don't appear in default outputs.
 
-## Workflow for adding events
+## Contributing an event
 
-1. Get notified by the daily digest (or notice an event manually)
-2. Verify against primary sources
-3. Add an entry to [`current.json`](current.json) with `verified: true`
-4. Commit with message like `events: add 2026-06-anthropic-fable-5-unavailable`
+1. Verify the headline, date, and sources against primary references
+2. Add an entry to [`current.json`](current.json) with `verified: true`
+3. Open a PR with message like `events: add 2026-06-anthropic-fable-5-unavailable`
 
 ## Event IDs
 
 Stable slug convention: `YYYY-MM-{primary-provider}-{short-description}`. Lowercase, hyphenated, no special characters. The schema enforces `^[a-z0-9-]+$`.
 
 Examples:
-- `2026-05-anthropic-spacexai-partnership`
-- `2026-04-openai-fundraise-series-h`
 - `2026-06-anthropic-fable-5-unavailable`
+- `2026-anthropic-opus-4-8-launch`
 
-IDs should never be reused or renumbered. If you need to correct an event, edit the existing entry and bump `updated_at`.
+IDs should never be reused or renumbered. To correct an event, edit the existing entry and bump `updated_at`.

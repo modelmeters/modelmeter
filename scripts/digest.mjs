@@ -1,13 +1,9 @@
 #!/usr/bin/env node
-// Modelmeter daily news digest aggregator (Phase 1).
+// Modelmeter daily news digest aggregator.
 //
 // Pulls candidate AI-market news from RSS feeds, Hacker News, and Reddit.
 // Filters by keyword. Dedupes against state. Writes a date-stamped markdown
 // digest to digest/YYYY-MM-DD.md and updates digest/.seen.json.
-//
-// No LLM filtering yet (Phase 2 will add Hermes). No email yet (Phase 1.5
-// will add Resend). Output is committed to the repo; Kirk reads it and
-// promotes confirmed events into events/current.json.
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { createHash } from "node:crypto";
