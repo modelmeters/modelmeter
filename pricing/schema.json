@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://modelmeter.xyz/schema/pricing/1.2.0",
+  "$id": "https://modelmeter.xyz/schema/pricing/1.3.0",
   "title": "Modelmeter Pricing Snapshot",
   "description": "Versioned pricing data for AI models. All monetary values are USD per million tokens (per Mtok).",
   "type": "object",
@@ -8,7 +8,7 @@
   "properties": {
     "schema_version": {
       "type": "string",
-      "const": "1.2.0"
+      "const": "1.3.0"
     },
     "snapshot_date": {
       "type": "string",
@@ -42,7 +42,8 @@
         },
         "provider": {
           "type": "string",
-          "enum": ["anthropic", "openai", "venice", "google", "xai"]
+          "pattern": "^[a-z0-9-]+$",
+          "description": "Provider identifier in lowercase-hyphenated form. Common: anthropic, openai, google, xai, venice, openrouter, deepseek, mistral, cohere, alibaba, zhipu, together, fireworks, groq, deepinfra. Not enum-constrained so new providers can be added without a schema bump."
         },
         "model": {
           "type": "string",
