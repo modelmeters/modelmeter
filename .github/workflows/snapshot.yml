@@ -26,6 +26,8 @@ jobs:
             git config user.email "bot@modelmeter.xyz"
             git add pricing/snapshots/
             git commit -m "pricing: daily snapshot $(date -u +%Y-%m-%d)"
+            # Rebase onto any concurrent pushes before our push
+            git pull --rebase origin main
             git push
           else
             echo "No pricing change since last snapshot."

@@ -33,6 +33,8 @@ jobs:
             git config user.email "bot@modelmeter.xyz"
             git add digest/
             git commit -m "digest: candidates for $(date -u +%Y-%m-%d)"
+            # Rebase onto any concurrent pushes before our push
+            git pull --rebase origin main
             git push
           else
             echo "No new digest entries."
