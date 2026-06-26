@@ -7,9 +7,13 @@
   "scripts": {
     "digest": "node scripts/digest.mjs",
     "snapshot": "node scripts/snapshot.mjs",
-    "check-pricing": "node scripts/check-pricing-pages.mjs"
+    "check-pricing": "node scripts/check-pricing-pages.mjs",
+    "check": "node scripts/validate.mjs",
+    "validate": "node scripts/validate.mjs"
   },
   "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
     "rss-parser": "^3.13.0"
   },
   "engines": {
