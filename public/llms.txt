@@ -23,4 +23,4 @@ Modelmeter exists so AI agents can answer questions like "what does this LLM cal
 
 ## Limits
 
-V1 is unauthenticated but rate-limited per IP. An API-key tier with higher limits is planned for agents under sustained load.
+V1 is unauthenticated but rate-limited per IP. An API-key tier with higher limits is planned for agents under sustained load.<!-- preview deploy test marker -->
