@@ -1,39 +1,32 @@
 // ---------- constants ----------
 
-// Venice referral code. Set after signing up for Venice's referral program.
-// Leave as empty string for an unmonetized link (still a useful CTA).
-// The URL param key may need adjustment once we confirm Venice's format
-// (currently assumes `?ref=<code>` — update VENICE_REF_PARAM if different).
-const VENICE_REFERRAL = "";
+// Venice referral code — appended as ?ref=<code> on every "run via Venice" link.
+const VENICE_REFERRAL = "9conaa";
 const VENICE_REF_PARAM = "ref";
 
 // Compute the best Venice deep-link for a model in our catalog.
-// - If the model is itself a venice/* entry: try to deep-link to it.
+// - If the model is itself a venice/* entry: deep-link with model param.
 // - Otherwise: if any venice/* entry resells this model (upstream_model_id match):
-//   link to that one.
-// - Otherwise: fall back to venice.ai homepage.
-// In all cases append ?ref=<code> when a referral is configured.
+//   deep-link to that one.
+// - Otherwise: fall back to venice.ai/chat with just the ref code.
 function veniceUrlFor(modelId) {
-  const base = "https://venice.ai";
+  const base = "https://venice.ai/chat";
   const refQ = VENICE_REFERRAL
     ? `?${encodeURIComponent(VENICE_REF_PARAM)}=${encodeURIComponent(VENICE_REFERRAL)}`
     : "";
+  const sep = refQ ? "&" : "?";
   const model = currentModels.find((m) => m.id === modelId);
-  if (!model) return `${base}/${refQ}`;
-  // If it's a venice/* entry, link to the chat URL with the model id as a query param
+  if (!model) return `${base}${refQ}`;
   if (model.provider === "venice") {
-    const sep = refQ ? "&" : "?";
-    return `${base}/chat${refQ}${sep}model=${encodeURIComponent(model.model)}`;
+    return `${base}${refQ}${sep}model=${encodeURIComponent(model.model)}`;
   }
-  // If a venice/* entry resells this model, link to that one
   const reseller = currentModels.find(
     (m) => m.provider === "venice" && m.upstream_model_id === modelId
   );
   if (reseller) {
-    const sep = refQ ? "&" : "?";
-    return `${base}/chat${refQ}${sep}model=${encodeURIComponent(reseller.model)}`;
+    return `${base}${refQ}${sep}model=${encodeURIComponent(reseller.model)}`;
   }
-  return `${base}/${refQ}`;
+  return `${base}${refQ}`;
 }
 
 const PROVIDER_LABELS = {
