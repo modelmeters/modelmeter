@@ -20,7 +20,7 @@ const DIGEST_PATH = join(DIGEST_DIR, `${TODAY}.md`);
 
 const sources = JSON.parse(readFileSync(SOURCES_PATH, "utf8"));
 const seen = loadSeen();
-const parser = new Parser({ timeout: 15000, headers: { "user-agent": "modelmeter-digest/0.1 (+https://modelmeter.xyz)" } });
+const parser = new Parser({ timeout: 15000, headers: { "user-agent": "Mozilla/5.0 (compatible; modelmeter-digest/0.1; +https://modelmeter.xyz)" } });
 
 const keywordRegex = new RegExp(`\\b(${sources.keywords.map(escapeRegex).join("|")})\\b`, "i");
 
@@ -102,6 +102,8 @@ for (const c of candidates) seen.add(hashUrl(c.url));
 saveSeen(seen);
 
 console.log(`Wrote ${candidates.length} candidates to ${DIGEST_PATH}.`);
+// rss-parser leaves open sockets; force exit so the workflow doesn't hang.
+process.exit(0);
 
 // helpers
 
