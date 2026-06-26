@@ -1007,6 +1007,7 @@
         lbl.setAttribute("text-anchor", "end");
         lbl.setAttribute("class", "grid-label");
         lbl.setAttribute("fill", "#ece9e0");
+        lbl.setAttribute("fill", "#ece9e0");
         lbl.textContent = `$${v < 1 ? v.toFixed(3) : v.toFixed(v < 10 ? 2 : 0)}`;
         svg.appendChild(lbl);
       }
@@ -1031,6 +1032,7 @@
         lbl.setAttribute("x", x); lbl.setAttribute("y", height - padBottom + 14);
         lbl.setAttribute("text-anchor", "middle");
         lbl.setAttribute("class", "grid-label");
+        lbl.setAttribute("fill", "#ece9e0");
         const monthName = m.toLocaleString("en", { month: "short" });
         lbl.textContent = `${monthName} '${String(m.getFullYear()).slice(-2)}`;
         svg.appendChild(lbl);
@@ -1251,6 +1253,7 @@
           const lbl = document.createElementNS(ns, "text");
           lbl.setAttribute("x", x); lbl.setAttribute("y", height - padBottom + 14);
           lbl.setAttribute("text-anchor", "middle"); lbl.setAttribute("class", "grid-label");
+        lbl.setAttribute("fill", "#ece9e0");
           const monthName = m.toLocaleString("en", { month: "short" });
           lbl.textContent = `${monthName} '${String(m.getFullYear()).slice(-2)}`;
           svg.appendChild(lbl);
