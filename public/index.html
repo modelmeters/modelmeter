@@ -381,8 +381,25 @@
         </div>
       </div>
 
-      <!-- CENTER column: price chart -->
+      <!-- CENTER column: privacy premium gauge + price chart -->
       <div class="col-center">
+        <div class="panel gauge-panel">
+          <h3 class="panel-title">Privacy Premium Index <span class="right" id="gauge-meta-top">reseller ↔ direct</span></h3>
+          <div class="gauge-row">
+            <div class="gauge-value-block">
+              <span class="gauge-value" id="gauge-value">—</span>
+              <span class="gauge-delta" id="gauge-delta">average markup</span>
+            </div>
+            <div class="gauge-meta" id="gauge-meta">computing…</div>
+          </div>
+          <svg class="gauge-svg" id="gauge-svg" aria-label="Privacy Premium Index gauge"></svg>
+          <div class="gauge-zones">
+            <span>parity</span>
+            <span>moderate</span>
+            <span>steep</span>
+          </div>
+        </div>
+
         <div class="panel chart-panel">
           <div class="chart-header">
             <span class="chart-title">Price · per Mtok · over time</span>
