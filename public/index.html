@@ -3,20 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Modelmeter — LLM cost calculator, built for agents</title>
-  <meta name="description" content="Agent-first cost calculator for AI models. Clean JSON API, stable URLs, OpenAPI spec, llms.txt." />
+  <title>Modelmeter — Agent-first cost calculator and AI market timeline</title>
+  <meta name="description" content="Agent-first cost calculator for AI models, plus an annotated timeline of the events that move pricing, capacity, and availability. JSON-first API, OpenAPI, llms.txt." />
   <link rel="alternate" type="application/json" href="/pricing.json" title="Current pricing data" />
+  <link rel="alternate" type="application/json" href="/events.json" title="Events data" />
   <style>
     :root {
       --bg: #0e0f12;
       --panel: #16181d;
+      --panel-2: #1c1f26;
       --border: #2a2d35;
+      --border-soft: #232630;
       --text: #e8eaf0;
       --muted: #8a8f9b;
+      --muted-2: #5d6271;
       --accent: #5eead4;
       --accent-dim: #2dd4bf;
       --error: #f87171;
       --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      --c-model: #5eead4;
+      --c-money: #86efac;
+      --c-infra: #93c5fd;
+      --c-regulatory: #fca5a5;
+      --c-oss: #fde047;
+      --c-other: #a3a3a3;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
@@ -24,11 +34,44 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { color: var(--accent-dim); text-decoration: underline; }
     code, .mono { font-family: var(--mono); }
-    main { max-width: 760px; margin: 0 auto; padding: 48px 24px 96px; }
-    header { margin-bottom: 32px; }
-    h1 { font-size: 1.75rem; margin: 0 0 8px; font-weight: 600; letter-spacing: -0.01em; }
+    main { max-width: 1080px; margin: 0 auto; padding: 48px 24px 96px; }
+    header { margin-bottom: 40px; }
+    h1 { font-size: 1.85rem; margin: 0 0 8px; font-weight: 600; letter-spacing: -0.01em; }
     h1 .meter { color: var(--accent); }
+    h2 { font-size: 1.15rem; margin: 0 0 4px; font-weight: 600; letter-spacing: -0.005em; }
     .tagline { color: var(--muted); margin: 0; }
+    .section-intro { color: var(--muted); margin: 0 0 20px; font-size: 0.92rem; }
+
+    /* timeline */
+    .timeline-wrap { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 24px; overflow: hidden; }
+    .timeline-controls { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; align-items: center; }
+    .filter { background: var(--bg); color: var(--muted); border: 1px solid var(--border); padding: 4px 10px; border-radius: 999px; font: inherit; font-size: 0.8rem; cursor: pointer; user-select: none; }
+    .filter:hover { color: var(--text); border-color: var(--muted-2); }
+    .filter.active { color: var(--bg); background: var(--accent); border-color: var(--accent); font-weight: 600; }
+    .filter .swatch { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+    .timeline { width: 100%; height: 340px; display: block; }
+    .timeline .lane-bg { fill: var(--panel-2); }
+    .timeline .lane-bg:nth-child(even) { fill: var(--panel); }
+    .timeline .lane-label { fill: var(--muted); font-family: var(--mono); font-size: 11px; }
+    .timeline .grid-line { stroke: var(--border-soft); stroke-width: 1; }
+    .timeline .grid-label { fill: var(--muted-2); font-family: var(--mono); font-size: 10px; }
+    .timeline .axis { stroke: var(--border); stroke-width: 1; }
+    .timeline .event { cursor: pointer; transition: r 0.15s ease, stroke-width 0.15s ease; stroke: var(--bg); stroke-width: 2; }
+    .timeline .event:hover { stroke: var(--text); stroke-width: 2; }
+    .timeline .event.dimmed { opacity: 0.18; }
+    .tooltip { position: absolute; pointer-events: none; background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; max-width: 360px; font-size: 0.85rem; line-height: 1.4; z-index: 10; opacity: 0; transition: opacity 0.1s ease; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+    .tooltip.show { opacity: 1; }
+    .tooltip .date { color: var(--muted); font-family: var(--mono); font-size: 0.75rem; margin-bottom: 4px; }
+    .tooltip .headline { font-weight: 600; margin-bottom: 6px; }
+    .tooltip .summary { color: var(--muted); font-size: 0.8rem; }
+    .tooltip .footer-row { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 12px; color: var(--muted); font-size: 0.75rem; }
+    .timeline-legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-soft); color: var(--muted); font-size: 0.78rem; }
+    .timeline-legend .legend-item { display: inline-flex; align-items: center; gap: 6px; }
+    .timeline-legend .swatch { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .timeline-legend .size-demo { display: inline-flex; align-items: end; gap: 4px; }
+    .timeline-legend .size-demo .dot { background: var(--muted); border-radius: 50%; display: inline-block; }
+
+    /* calculator */
     .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
     label { display: block; font-size: 0.875rem; color: var(--muted); margin-bottom: 6px; }
     select, input[type="number"] { width: 100%; padding: 10px 12px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font: inherit; font-family: var(--mono); }
@@ -48,24 +91,38 @@
     .markup { color: var(--accent); }
     .try-json { margin-top: 16px; padding: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-family: var(--mono); font-size: 0.8rem; word-break: break-all; }
     .try-json a { display: inline-block; }
-    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.875rem; }
-    footer a { margin-right: 16px; }
-    .links { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+
+    /* about */
     .about { color: var(--muted); font-size: 0.9rem; }
     .about p { margin: 0 0 12px; }
-    .stats { display: flex; gap: 24px; margin: 16px 0; font-family: var(--mono); font-size: 0.875rem; }
+    .stats { display: flex; gap: 24px; margin: 16px 0; font-family: var(--mono); font-size: 0.875rem; flex-wrap: wrap; }
     .stat .num { color: var(--accent); font-size: 1.25rem; display: block; }
     .stat .lbl { color: var(--muted); }
+
+    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.875rem; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px 16px; }
   </style>
 </head>
 <body>
   <main>
     <header>
       <h1>model<span class="meter">meter</span></h1>
-      <p class="tagline">Agent-first cost calculator for AI models. <a href="/llms.txt">Built for machines</a>, friendly to humans.</p>
+      <p class="tagline">Agent-first cost calculator and AI market timeline. <a href="/llms.txt">Built for machines</a>, friendly to humans.</p>
     </header>
 
-    <div class="panel">
+    <section class="timeline-wrap">
+      <h2>The AI market in motion</h2>
+      <p class="section-intro">Events that may impact pricing, capacity, or availability — annotated and cited.</p>
+      <div class="timeline-controls" id="timeline-controls"></div>
+      <div style="position: relative;">
+        <svg class="timeline" id="timeline" preserveAspectRatio="none" aria-label="Timeline of AI market events"></svg>
+        <div class="tooltip" id="tooltip" role="tooltip"></div>
+      </div>
+      <div class="timeline-legend" id="timeline-legend"></div>
+    </section>
+
+    <section class="panel">
+      <h2 style="margin-bottom: 16px;">Estimate a model call</h2>
       <div class="field">
         <label for="model">Model</label>
         <select id="model" disabled>
@@ -83,28 +140,312 @@
         </div>
       </div>
       <button id="calc" disabled>Calculate</button>
-
       <div id="result"></div>
-    </div>
+    </section>
 
-    <div class="panel about">
-      <p><strong>What this is:</strong> a stable, machine-callable API for LLM cost estimation, plus this human-friendly calculator. Every endpoint returns JSON. Every URL is documented in the <a href="/openapi.yaml">OpenAPI spec</a>.</p>
+    <section class="panel about">
+      <p><strong>What this is:</strong> a stable, machine-callable API for LLM cost estimation, plus this human-friendly dashboard. Every endpoint returns JSON. Every URL is documented in the <a href="/openapi.yaml">OpenAPI spec</a>.</p>
       <div class="stats" id="stats"></div>
-      <p>Pricing data is in a public GitHub repo with daily snapshots. Found a price change? <a href="https://github.com/modelmeters/modelmeter/blob/main/pricing/current.json">Open a PR</a>.</p>
-    </div>
+      <p>Pricing data and events live in a public GitHub repo with daily snapshots. Found a price change or want to add an event? <a href="https://github.com/modelmeters/modelmeter/blob/main/pricing/current.json">Open a PR</a>.</p>
+    </section>
 
     <footer>
       <div class="links">
         <a href="/openapi.yaml">OpenAPI</a>
         <a href="/llms.txt">llms.txt</a>
         <a href="/pricing.json">pricing.json</a>
+        <a href="/events.json">events.json</a>
         <a href="/models">/models</a>
+        <a href="/events">/events</a>
         <a href="https://github.com/modelmeters/modelmeter">GitHub</a>
       </div>
     </footer>
   </main>
 
   <script>
+    // ---------- shared ----------
+    const PROVIDER_LABELS = {
+      openai: "OpenAI",
+      anthropic: "Anthropic",
+      google: "Google",
+      xai: "xAI",
+      venice: "Venice",
+      microsoft: "Microsoft",
+      amazon: "Amazon",
+      meta: "Meta",
+      nvidia: "NVIDIA",
+      deepseek: "DeepSeek",
+      mistral: "Mistral",
+      cohere: "Cohere",
+      alibaba: "Alibaba",
+      zhipu: "Zhipu",
+      moonshot: "Moonshot",
+      spacex: "SpaceX",
+      groq: "Groq",
+      together: "Together",
+      fireworks: "Fireworks",
+      openrouter: "OpenRouter",
+      other: "Other",
+    };
+
+    const TYPE_CATEGORY = {
+      model_launch: "model",
+      model_deprecation: "model",
+      model_unavailable: "model",
+      funding: "money",
+      acquisition: "money",
+      compute_partnership: "money",
+      pricing_change: "money",
+      infrastructure: "infra",
+      regulatory_action: "regulatory",
+      legal_outcome: "regulatory",
+      open_source_release: "oss",
+      leadership_change: "other",
+    };
+
+    const CATEGORY_META = {
+      model:      { color: "var(--c-model)",      label: "Models",         desc: "launches, deprecations, availability" },
+      money:      { color: "var(--c-money)",      label: "Money",          desc: "funding, acquisitions, partnerships, pricing" },
+      infra:      { color: "var(--c-infra)",      label: "Infrastructure", desc: "compute, datacenters, chips" },
+      regulatory: { color: "var(--c-regulatory)", label: "Regulatory",     desc: "bans, restrictions, legal" },
+      oss:        { color: "var(--c-oss)",        label: "Open source",    desc: "open-weight releases" },
+      other:      { color: "var(--c-other)",      label: "Other",          desc: "" },
+    };
+
+    const MAGNITUDE_RADIUS = { minor: 4, moderate: 6, major: 9, structural: 12 };
+
+    let events = [];
+    const activeCategories = new Set(Object.keys(CATEGORY_META));
+
+    // ---------- timeline ----------
+    async function loadTimeline() {
+      try {
+        const res = await fetch("/events.json");
+        const body = await res.json();
+        events = (body.events || []).filter(e => e.date);
+        renderControls();
+        renderLegend();
+        renderTimeline();
+        window.addEventListener("resize", renderTimeline);
+      } catch (err) {
+        document.getElementById("timeline").innerHTML = '<text x="20" y="40" fill="#8a8f9b">Failed to load events.</text>';
+        console.error(err);
+      }
+    }
+
+    function renderControls() {
+      const wrap = document.getElementById("timeline-controls");
+      wrap.innerHTML = "";
+      const all = document.createElement("button");
+      all.className = "filter active";
+      all.textContent = "All events";
+      all.addEventListener("click", () => {
+        for (const k of Object.keys(CATEGORY_META)) activeCategories.add(k);
+        updateActiveStates();
+        renderTimeline();
+      });
+      wrap.appendChild(all);
+      for (const [key, meta] of Object.entries(CATEGORY_META)) {
+        const btn = document.createElement("button");
+        btn.className = "filter active";
+        btn.dataset.cat = key;
+        btn.innerHTML = `<span class="swatch" style="background:${meta.color}"></span>${meta.label}`;
+        btn.addEventListener("click", () => {
+          if (activeCategories.has(key) && activeCategories.size === Object.keys(CATEGORY_META).length) {
+            activeCategories.clear();
+            activeCategories.add(key);
+          } else if (activeCategories.has(key)) {
+            activeCategories.delete(key);
+            if (activeCategories.size === 0) {
+              for (const k of Object.keys(CATEGORY_META)) activeCategories.add(k);
+            }
+          } else {
+            activeCategories.add(key);
+          }
+          updateActiveStates();
+          renderTimeline();
+        });
+        wrap.appendChild(btn);
+      }
+      updateActiveStates();
+    }
+
+    function updateActiveStates() {
+      const allEqual = activeCategories.size === Object.keys(CATEGORY_META).length;
+      document.querySelectorAll(".timeline-controls .filter").forEach((el, idx) => {
+        if (idx === 0) {
+          el.classList.toggle("active", allEqual);
+        } else {
+          el.classList.toggle("active", activeCategories.has(el.dataset.cat));
+        }
+      });
+    }
+
+    function renderLegend() {
+      const wrap = document.getElementById("timeline-legend");
+      let html = "";
+      for (const [_, meta] of Object.entries(CATEGORY_META)) {
+        html += `<span class="legend-item"><span class="swatch" style="background:${meta.color}"></span>${meta.label}<span style="color:var(--muted-2)">${meta.desc ? " — " + meta.desc : ""}</span></span>`;
+      }
+      html += `<span class="legend-item">Size: <span class="size-demo"><span class="dot" style="width:6px;height:6px"></span><span class="dot" style="width:9px;height:9px"></span><span class="dot" style="width:14px;height:14px"></span><span class="dot" style="width:19px;height:19px"></span></span> minor → structural</span>`;
+      wrap.innerHTML = html;
+    }
+
+    function renderTimeline() {
+      const svg = document.getElementById("timeline");
+      svg.innerHTML = "";
+      if (events.length === 0) return;
+
+      const width = svg.clientWidth || 800;
+      const height = 340;
+      const padLeft = 90;
+      const padRight = 20;
+      const padTop = 20;
+      const padBottom = 40;
+      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      svg.setAttribute("width", width);
+      svg.setAttribute("height", height);
+
+      // Date range
+      const dates = events.map(e => new Date(e.date));
+      let minDate = new Date(Math.min(...dates));
+      let maxDate = new Date(Math.max(...dates, Date.now()));
+      // Pad range
+      const dayMs = 86400000;
+      minDate = new Date(minDate.getTime() - 14 * dayMs);
+      maxDate = new Date(maxDate.getTime() + 14 * dayMs);
+
+      const xScale = d => padLeft + ((new Date(d) - minDate) / (maxDate - minDate)) * (width - padLeft - padRight);
+
+      // Provider lanes: order by event count desc
+      const providerCounts = {};
+      for (const ev of events) {
+        for (const p of ev.providers || []) providerCounts[p] = (providerCounts[p] || 0) + 1;
+      }
+      const providers = Object.keys(providerCounts).sort((a, b) => providerCounts[b] - providerCounts[a]);
+      const laneHeight = (height - padTop - padBottom) / providers.length;
+
+      const ns = "http://www.w3.org/2000/svg";
+
+      // Lane backgrounds
+      providers.forEach((p, i) => {
+        const rect = document.createElementNS(ns, "rect");
+        rect.setAttribute("x", padLeft);
+        rect.setAttribute("y", padTop + i * laneHeight);
+        rect.setAttribute("width", width - padLeft - padRight);
+        rect.setAttribute("height", laneHeight);
+        rect.setAttribute("class", "lane-bg");
+        svg.appendChild(rect);
+
+        const label = document.createElementNS(ns, "text");
+        label.setAttribute("x", padLeft - 10);
+        label.setAttribute("y", padTop + i * laneHeight + laneHeight / 2 + 4);
+        label.setAttribute("text-anchor", "end");
+        label.setAttribute("class", "lane-label");
+        label.textContent = PROVIDER_LABELS[p] || p;
+        svg.appendChild(label);
+      });
+
+      // Date gridlines (monthly)
+      const months = [];
+      const cursor = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
+      while (cursor <= maxDate) {
+        months.push(new Date(cursor));
+        cursor.setMonth(cursor.getMonth() + 1);
+      }
+      months.forEach(m => {
+        const x = xScale(m);
+        const line = document.createElementNS(ns, "line");
+        line.setAttribute("x1", x);
+        line.setAttribute("y1", padTop);
+        line.setAttribute("x2", x);
+        line.setAttribute("y2", height - padBottom);
+        line.setAttribute("class", "grid-line");
+        svg.appendChild(line);
+
+        // Only label every other or third month to avoid crowding
+        if (m.getMonth() % 2 === 0) {
+          const label = document.createElementNS(ns, "text");
+          label.setAttribute("x", x);
+          label.setAttribute("y", height - padBottom + 16);
+          label.setAttribute("text-anchor", "middle");
+          label.setAttribute("class", "grid-label");
+          const monthName = m.toLocaleString("en", { month: "short" });
+          label.textContent = `${monthName} '${String(m.getFullYear()).slice(-2)}`;
+          svg.appendChild(label);
+        }
+      });
+
+      // Axis line
+      const axis = document.createElementNS(ns, "line");
+      axis.setAttribute("x1", padLeft);
+      axis.setAttribute("y1", height - padBottom);
+      axis.setAttribute("x2", width - padRight);
+      axis.setAttribute("y2", height - padBottom);
+      axis.setAttribute("class", "axis");
+      svg.appendChild(axis);
+
+      // Events (one circle per provider per event)
+      for (const ev of events) {
+        const category = TYPE_CATEGORY[ev.type] || "other";
+        const radius = MAGNITUDE_RADIUS[ev.impact?.magnitude] ?? 5;
+        const color = CATEGORY_META[category].color;
+        const x = xScale(ev.date);
+        for (const p of ev.providers || ["other"]) {
+          const laneIdx = providers.indexOf(p);
+          if (laneIdx < 0) continue;
+          const y = padTop + laneIdx * laneHeight + laneHeight / 2;
+          const circle = document.createElementNS(ns, "circle");
+          circle.setAttribute("cx", x);
+          circle.setAttribute("cy", y);
+          circle.setAttribute("r", radius);
+          circle.setAttribute("fill", color);
+          circle.setAttribute("class", "event");
+          circle.dataset.id = ev.id;
+          circle.dataset.cat = category;
+          if (!activeCategories.has(category)) circle.classList.add("dimmed");
+          attachEventHandlers(circle, ev);
+          svg.appendChild(circle);
+        }
+      }
+    }
+
+    function attachEventHandlers(circle, ev) {
+      const tooltip = document.getElementById("tooltip");
+      circle.addEventListener("mouseenter", (e) => {
+        const date = new Date(ev.date).toLocaleDateString("en", { year: "numeric", month: "short", day: "numeric" });
+        const providers = (ev.providers || []).map(p => PROVIDER_LABELS[p] || p).join(", ");
+        const magnitude = ev.impact?.magnitude || "—";
+        const verified = ev.verified ? "" : ' · <span style="color:var(--error)">unverified</span>';
+        tooltip.innerHTML = `
+          <div class="date">${date} · ${providers}</div>
+          <div class="headline">${escapeHtml(ev.headline)}</div>
+          <div class="summary">${escapeHtml(ev.summary || "")}</div>
+          <div class="footer-row">
+            <span>${ev.type.replace(/_/g, " ")} · ${magnitude}${verified}</span>
+            <span>click to open source ↗</span>
+          </div>
+        `;
+        positionTooltip(e);
+        tooltip.classList.add("show");
+      });
+      circle.addEventListener("mousemove", positionTooltip);
+      circle.addEventListener("mouseleave", () => tooltip.classList.remove("show"));
+      circle.addEventListener("click", () => {
+        if (ev.source_urls?.[0]) window.open(ev.source_urls[0], "_blank", "noopener");
+      });
+    }
+
+    function positionTooltip(e) {
+      const tooltip = document.getElementById("tooltip");
+      const wrapRect = tooltip.parentElement.getBoundingClientRect();
+      const x = e.clientX - wrapRect.left + 14;
+      const y = e.clientY - wrapRect.top + 14;
+      tooltip.style.left = `${Math.min(x, wrapRect.width - tooltip.offsetWidth - 10)}px`;
+      tooltip.style.top = `${y}px`;
+    }
+
+    // ---------- calculator ----------
     const select = document.getElementById("model");
     const inputEl = document.getElementById("input");
     const outputEl = document.getElementById("output");
@@ -114,21 +455,20 @@
 
     let modelsByProvider = {};
 
-    fetch("/models")
-      .then((r) => r.json())
-      .then((data) => {
-        for (const m of data.models) {
-          (modelsByProvider[m.provider] ||= []).push(m);
-        }
+    async function loadModels() {
+      try {
+        const res = await fetch("/models");
+        const data = await res.json();
+        for (const m of data.models) (modelsByProvider[m.provider] ||= []).push(m);
         renderModels();
         renderStats(data);
         select.disabled = false;
         calcBtn.disabled = false;
-      })
-      .catch((err) => {
+      } catch (err) {
         select.innerHTML = '<option>Failed to load models</option>';
         console.error(err);
-      });
+      }
+    }
 
     function renderModels() {
       select.innerHTML = "";
@@ -136,7 +476,7 @@
       for (const provider of providerOrder) {
         if (!modelsByProvider[provider]) continue;
         const group = document.createElement("optgroup");
-        group.label = providerLabel(provider);
+        group.label = PROVIDER_LABELS[provider] || provider;
         for (const m of modelsByProvider[provider].sort((a, b) => a.display_name.localeCompare(b.display_name))) {
           const opt = document.createElement("option");
           opt.value = m.id;
@@ -147,21 +487,12 @@
       }
     }
 
-    function providerLabel(p) {
-      return ({
-        anthropic: "Anthropic",
-        openai: "OpenAI",
-        google: "Google",
-        xai: "xAI",
-        venice: "Venice (privacy / multi-host)",
-      })[p] ?? p;
-    }
-
     function renderStats(data) {
       const providers = Object.keys(modelsByProvider).length;
       statsEl.innerHTML = `
         <div class="stat"><span class="num">${data.count}</span><span class="lbl">models</span></div>
         <div class="stat"><span class="num">${providers}</span><span class="lbl">providers</span></div>
+        <div class="stat"><span class="num">${events.length}</span><span class="lbl">events tracked</span></div>
         <div class="stat"><span class="num">${data.snapshot_date}</span><span class="lbl">snapshot</span></div>
       `;
     }
@@ -190,7 +521,7 @@
           }
           renderResult(body, url);
         })
-        .catch((err) => {
+        .catch(() => {
           resultEl.className = "show error";
           resultEl.textContent = "Request failed.";
         });
@@ -221,6 +552,9 @@
     function escapeHtml(s) {
       return String(s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
     }
+
+    // boot
+    loadTimeline().then(() => loadModels());
   </script>
 </body>
 </html>
