@@ -59,17 +59,65 @@ export function effectiveRates(model, inputTokens) {
   return { input, output, cacheRead, cacheWrite };
 }
 
-export function logRequest(event) {
-  const line = {
-    ts: new Date().toISOString(),
-    ...event,
-  };
+// Writes a request log line two ways:
+//  1. console.log — captured by Cloudflare Workers logs (24-48h retention)
+//  2. Analytics Engine — long-term queryable behavioral dataset (binding name: ANALYTICS)
+//
+// The Analytics Engine schema is consistent across all tools:
+//   indexes[0]   = tool name (estimate | models | events | history | pricing_json | events_json | history_json)
+//   blobs[0]     = primary target (model id for /estimate, provider filter for list endpoints)
+//   blobs[1]     = secondary target (provider for /estimate, event type for /events, etc.)
+//   blobs[2]     = cf_country
+//   blobs[3]     = cf_colo
+//   blobs[4]     = ua_class (agent | bot | desktop | mobile | unknown)
+//   doubles[0]   = HTTP status
+//   doubles[1]   = input tokens (/estimate) or result count (list endpoints)
+//   doubles[2]   = output tokens (/estimate) or 0
+//   doubles[3]   = total_cost_usd (/estimate) or 0
+//   doubles[4]   = always 1 (for summing → request counts)
+export function logRequest(event, env) {
+  const line = { ts: new Date().toISOString(), ...event };
   console.log(JSON.stringify(line));
+
+  // Write to Analytics Engine when the binding is configured.
+  // The binding is added in the Cloudflare Pages dashboard:
+  //   Pages → modelmeter → Settings → Functions → Analytics Engine bindings
+  //   variable: ANALYTICS    dataset: modelmeter_requests
+  if (env && env.ANALYTICS && typeof env.ANALYTICS.writeDataPoint === "function") {
+    try {
+      env.ANALYTICS.writeDataPoint({
+        indexes: [String(event.tool || "unknown")],
+        blobs: [
+          String(event.model || event.filters?.provider || ""),
+          String(event.provider || event.filters?.type || ""),
+          String(event.cf_country || ""),
+          String(event.cf_colo || ""),
+          String(event.ua_class || ""),
+        ],
+        doubles: [
+          Number(event.status || 0),
+          Number(event.input_tokens ?? event.count ?? 0),
+          Number(event.output_tokens || 0),
+          Number(event.total_cost_usd || 0),
+          1,
+        ],
+      });
+    } catch (err) {
+      console.error("AE writeDataPoint failed:", err.message);
+    }
+  }
 }
 
 export function clientHashes(request) {
+  const ua = request.headers.get("user-agent") || "";
+  let ua_class = "unknown";
+  if (/\b(bot|crawler|spider|curl|wget|httpie|python-requests)\b/i.test(ua)) ua_class = "bot";
+  else if (/(claude|gpt|openai|anthropic|agent|llm|inference)/i.test(ua)) ua_class = "agent";
+  else if (/(mobile|android|iphone|ipad)/i.test(ua)) ua_class = "mobile";
+  else if (/(mozilla|chrome|safari|firefox|edge)/i.test(ua)) ua_class = "desktop";
   return {
-    ua_present: Boolean(request.headers.get("user-agent")),
+    ua_present: Boolean(ua),
+    ua_class,
     cf_country: request.headers.get("cf-ipcountry") ?? null,
     cf_colo: request.cf?.colo ?? null,
   };

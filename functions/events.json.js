@@ -1,13 +1,13 @@
 import { EVENTS, logRequest, clientHashes } from "./_lib.js";
 
-export const onRequestGet = async ({ request }) => {
+export const onRequestGet = async ({ request, env }) => {
   logRequest({
     tool: "events_json",
     status: 200,
     schema_version: EVENTS.schema_version,
     count: EVENTS.events.length,
     ...clientHashes(request),
-  });
+  }, env);
 
   return new Response(JSON.stringify(EVENTS, null, 2) + "\n", {
     status: 200,

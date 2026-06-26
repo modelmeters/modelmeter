@@ -1,7 +1,7 @@
 import history from "../pricing/history.json";
 import { logRequest, clientHashes } from "./_lib.js";
 
-export const onRequestGet = async ({ request }) => {
+export const onRequestGet = async ({ request, env }) => {
   logRequest({
     tool: "history_json",
     status: 200,
@@ -9,7 +9,7 @@ export const onRequestGet = async ({ request }) => {
     model_count: history.model_count,
     snapshot_count: history.snapshot_count,
     ...clientHashes(request),
-  });
+  }, env);
 
   return new Response(JSON.stringify(history, null, 2) + "\n", {
     status: 200,

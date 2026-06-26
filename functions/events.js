@@ -1,6 +1,6 @@
 import { json, EVENTS, logRequest, clientHashes } from "./_lib.js";
 
-export const onRequestGet = async ({ request }) => {
+export const onRequestGet = async ({ request, env }) => {
   const url = new URL(request.url);
   const providerFilter = url.searchParams.get("provider");
   const typeFilter = url.searchParams.get("type");
@@ -39,7 +39,7 @@ export const onRequestGet = async ({ request }) => {
     count: evs.length,
     filters: { provider: providerFilter, type: typeFilter, model: modelFilter, since, until, include_unverified: includeUnverified },
     ...clientHashes(request),
-  });
+  }, env);
 
   return json({
     schema_version: EVENTS.schema_version,

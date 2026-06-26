@@ -1,6 +1,6 @@
 import { json, error, findModel, round, effectiveRates, logRequest, clientHashes } from "./_lib.js";
 
-export const onRequestGet = async ({ request }) => {
+export const onRequestGet = async ({ request, env }) => {
   const url = new URL(request.url);
   const modelId = url.searchParams.get("model");
   const inputStr = url.searchParams.get("input");
@@ -22,17 +22,17 @@ export const onRequestGet = async ({ request }) => {
 
   const model = findModel(modelId);
   if (!model) {
-    logRequest({ tool: "estimate", status: 404, model: modelId, ...clientHashes(request) });
+    logRequest({ tool: "estimate", status: 404, model: modelId, ...clientHashes(request) }, env);
     return error(`Model not found: ${modelId}. See /models for available models.`, 404, "model_not_found");
   }
 
   if (model.verification_required) {
-    logRequest({ tool: "estimate", status: 404, model: modelId, reason: "unverified", ...clientHashes(request) });
+    logRequest({ tool: "estimate", status: 404, model: modelId, reason: "unverified", ...clientHashes(request) }, env);
     return error(`Model ${modelId} has unverified pricing and is not served by /estimate. See pricing/current.json on GitHub for the raw entry.`, 404, "model_unverified");
   }
 
   if (model.input_cost_per_mtok == null || model.output_cost_per_mtok == null) {
-    logRequest({ tool: "estimate", status: 404, model: modelId, reason: "incomplete_pricing", ...clientHashes(request) });
+    logRequest({ tool: "estimate", status: 404, model: modelId, reason: "incomplete_pricing", ...clientHashes(request) }, env);
     return error(`Model ${modelId} has incomplete pricing in the dataset.`, 404, "model_incomplete");
   }
 
@@ -94,7 +94,7 @@ export const onRequestGet = async ({ request }) => {
     total_cost_usd: result.total_cost_usd,
     has_upstream: Boolean(model.upstream_model_id),
     ...clientHashes(request),
-  });
+  }, env);
 
   return json(result);
 };

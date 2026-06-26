@@ -1,7 +1,7 @@
 import { json, logRequest, clientHashes } from "./_lib.js";
 import history from "../pricing/history.json";
 
-export const onRequestGet = async ({ request }) => {
+export const onRequestGet = async ({ request, env }) => {
   const url = new URL(request.url);
   const modelFilter = url.searchParams.get("model");
   const providerFilter = url.searchParams.get("provider");
@@ -25,7 +25,7 @@ export const onRequestGet = async ({ request }) => {
     count: models.length,
     filters: { model: modelFilter, provider: providerFilter, since, until },
     ...clientHashes(request),
-  });
+  }, env);
 
   return json({
     schema_version: history.schema_version,

@@ -1,13 +1,13 @@
 import { PRICING, logRequest, clientHashes } from "./_lib.js";
 
-export const onRequestGet = async ({ request }) => {
+export const onRequestGet = async ({ request, env }) => {
   logRequest({
     tool: "pricing_json",
     status: 200,
     schema_version: PRICING.schema_version,
     count: PRICING.models.length,
     ...clientHashes(request),
-  });
+  }, env);
 
   return new Response(JSON.stringify(PRICING, null, 2) + "\n", {
     status: 200,

@@ -1,6 +1,6 @@
 import { json, PRICING, logRequest, clientHashes } from "./_lib.js";
 
-export const onRequestGet = async ({ request }) => {
+export const onRequestGet = async ({ request, env }) => {
   const url = new URL(request.url);
   const providerFilter = url.searchParams.get("provider");
   const includeUnverified = url.searchParams.get("include_unverified") === "true";
@@ -52,7 +52,7 @@ export const onRequestGet = async ({ request }) => {
       exclude_tags: excludeTags,
     },
     ...clientHashes(request),
-  });
+  }, env);
 
   return json({
     schema_version: PRICING.schema_version,
