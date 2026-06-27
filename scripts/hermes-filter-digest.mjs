@@ -28,6 +28,13 @@ const DRY_RUN = process.env.FILTER_DRY_RUN === "1";
 const VENICE_MODEL = process.env.VENICE_MODEL ?? "qwen3-235b-a22b-instruct-2507";
 const VENICE_KEY = process.env.VENICE_API_KEY;
 
+const PROVIDER_ENUM = new Set([
+  "anthropic", "openai", "venice", "google", "xai",
+  "meta", "deepseek", "alibaba", "zhipu", "moonshot",
+  "mistral", "cohere", "nvidia", "amazon", "microsoft",
+  "spacex", "groq", "together", "fireworks", "openrouter", "other",
+]);
+
 if (!VENICE_KEY) {
   console.error("VENICE_API_KEY missing. Set it in ~/.hermes/.env or shell.");
   process.exit(2);
@@ -199,13 +206,6 @@ Snippet: ${cand.snippet}`;
   const content = data.choices?.[0]?.message?.content ?? "{}";
   return JSON.parse(content);
 }
-
-const PROVIDER_ENUM = new Set([
-  "anthropic", "openai", "venice", "google", "xai",
-  "meta", "deepseek", "alibaba", "zhipu", "moonshot",
-  "mistral", "cohere", "nvidia", "amazon", "microsoft",
-  "spacex", "groq", "together", "fireworks", "openrouter", "other",
-]);
 
 function normalizeProviders(arr) {
   if (!Array.isArray(arr)) return ["other"];
