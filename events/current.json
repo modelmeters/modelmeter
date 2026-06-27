@@ -358,8 +358,8 @@
         "other"
       ],
       "models": [],
-      "headline": "OpenAI unveils Jalapeño inference chip built with Broadcom",
-      "summary": "OpenAI announces Jalapeño, its first custom inference chip, designed as an ASIC for the specific needs of OpenAI's inference systems and built in partnership with Broadcom. First-party silicon shifts long-term inference economics and capacity planning.",
+      "headline": "OpenAI unveils Jalape\u00f1o inference chip built with Broadcom",
+      "summary": "OpenAI announces Jalape\u00f1o, its first custom inference chip, designed as an ASIC for the specific needs of OpenAI's inference systems and built in partnership with Broadcom. First-party silicon shifts long-term inference economics and capacity planning.",
       "source_urls": [
         "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
         "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/",
@@ -506,35 +506,6 @@
       "updated_at": "2026-06-25"
     },
     {
-      "id": "2026-06-openai-announces-custom-inference-chip-jalapeno-developed-wi",
-      "date": "2026-06-26",
-      "type": "infrastructure",
-      "providers": [
-        "openai",
-        "nvidia"
-      ],
-      "models": [],
-      "headline": "OpenAI announces custom inference chip 'Jalapeño' developed with Broadcom",
-      "summary": "OpenAI has revealed plans to develop 'Jalapeño', a custom inference chip built in collaboration with Broadcom. This move signals a strategic shift toward in-house hardware development to reduce reliance on third-party GPU suppliers like Nvidia and improve efficiency for large-scale AI inference workloads.",
-      "source_urls": [
-        "https://techcrunch.com/video/why-everyone-from-openai-to-spacex-is-building-their-own-chips-and-turning-up-the-heat-on-nvidia/"
-      ],
-      "verified": false,
-      "tags": [
-        "chip-design",
-        "inference-optimization",
-        "vertical-integration",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-06-27",
-      "updated_at": "2026-06-27"
-    },
-    {
       "id": "2026-06-openai-launches-gpt-5-6-model-suite-sol-and-terra",
       "date": "2026-06-26",
       "type": "model_launch",
@@ -545,47 +516,22 @@
         "openai/gpt-5.6-sol",
         "openai/gpt-5.6-terra"
       ],
-      "headline": "OpenAI launches GPT-5.6 model suite: Sol and Terra",
-      "summary": "OpenAI has released a limited preview of its GPT-5.6 model suite, featuring Sol as the flagship model and Terra as a mid-tier offering. This launch follows reported coordination with the Trump administration regarding release timing, indicating both technological advancement and regulatory entanglement.",
+      "headline": "OpenAI launches GPT-5.6 Sol and Terra in limited preview",
+      "summary": "OpenAI releases a limited preview of the GPT-5.6 suite \u2014 Sol (flagship) and Terra (mid-tier) \u2014 following a request from the Trump administration to stagger rollout. OpenAI argues that government-driven access controls 'should not become the norm.' Broad GA timing and pricing not yet announced.",
       "source_urls": [
-        "https://www.theverge.com/ai-artificial-intelligence/957845/openai-gpt-5-6-trump-administration-ai-preview"
+        "https://www.theverge.com/ai-artificial-intelligence/957845/openai-gpt-5-6-trump-administration-ai-preview",
+        "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
-        "regulatory-coordination"
+        "us-only",
+        "preview"
       ],
       "impact": {
         "magnitude": "major",
         "duration": "ongoing",
         "price_direction": "mixed"
-      },
-      "created_at": "2026-06-27",
-      "updated_at": "2026-06-27"
-    },
-    {
-      "id": "2026-06-openai-announces-jalapeno-custom-inference-chip-developed-wi",
-      "date": "2026-06-26",
-      "type": "infrastructure",
-      "providers": [
-        "openai"
-      ],
-      "models": [],
-      "headline": "OpenAI announces 'Jalapeño' custom inference chip developed with Broadcom",
-      "summary": "OpenAI has unveiled plans for 'Jalapeño,' a custom inference chip designed in collaboration with Broadcom. This move marks OpenAI's entry into proprietary AI hardware, aiming to reduce dependency on third-party GPU suppliers like Nvidia and optimize performance for its models.",
-      "source_urls": [
-        "https://techcrunch.com/podcast/openais-jalapeno-chip-is-big-techs-spiciest-move-away-from-nvidia/"
-      ],
-      "verified": false,
-      "tags": [
-        "hardware",
-        "inference",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
       },
       "created_at": "2026-06-27",
       "updated_at": "2026-06-27"
