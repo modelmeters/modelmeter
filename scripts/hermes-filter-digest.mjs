@@ -52,6 +52,17 @@ if (!existsSync(digestPath)) {
   process.exit(1);
 }
 
+const FORCE = process.env.FILTER_FORCE === "1";
+
+if (!DRY_RUN && !FORCE) {
+  const branchGuess = `hermes/digest-${digestDate}`;
+  const openPr = tryShOut(`gh pr list --head ${branchGuess} --state open --json number --jq ".[0].number"`).trim();
+  if (openPr) {
+    console.log(`PR #${openPr} already open for digest ${digestDate}. Skipping. Set FILTER_FORCE=1 to overwrite.`);
+    process.exit(0);
+  }
+}
+
 console.log(`Filtering digest ${digestDate} (score min ${SCORE_MIN})…`);
 const md = readFileSync(digestPath, "utf8");
 const candidates = parseCandidates(md);
