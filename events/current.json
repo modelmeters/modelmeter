@@ -358,8 +358,8 @@
         "other"
       ],
       "models": [],
-      "headline": "OpenAI unveils Jalapeño inference chip built with Broadcom",
-      "summary": "OpenAI announces Jalapeño, its first custom inference chip, designed as an ASIC for the specific needs of OpenAI's inference systems and built in partnership with Broadcom. First-party silicon shifts long-term inference economics and capacity planning.",
+      "headline": "OpenAI unveils Jalape\u00f1o inference chip built with Broadcom",
+      "summary": "OpenAI announces Jalape\u00f1o, its first custom inference chip, designed as an ASIC for the specific needs of OpenAI's inference systems and built in partnership with Broadcom. First-party silicon shifts long-term inference economics and capacity planning.",
       "source_urls": [
         "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
         "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/",
@@ -470,7 +470,7 @@
       "source_urls": [
         "https://www.anthropic.com/pricing"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [],
       "impact": {
         "magnitude": "moderate",
@@ -495,7 +495,7 @@
       "source_urls": [
         "https://openai.com/business/pricing/#api"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [],
       "impact": {
         "magnitude": "moderate",
@@ -517,7 +517,7 @@
         "openai/gpt-5.6-terra"
       ],
       "headline": "OpenAI launches GPT-5.6 Sol and Terra in limited preview",
-      "summary": "OpenAI releases a limited preview of the GPT-5.6 suite — Sol (flagship) and Terra (mid-tier) — following a request from the Trump administration to stagger rollout. OpenAI argues that government-driven access controls 'should not become the norm.' Broad GA timing and pricing not yet announced.",
+      "summary": "OpenAI releases a limited preview of the GPT-5.6 suite \u2014 Sol (flagship) and Terra (mid-tier) \u2014 following a request from the Trump administration to stagger rollout. OpenAI argues that government-driven access controls 'should not become the norm.' Broad GA timing and pricing not yet announced.",
       "source_urls": [
         "https://www.theverge.com/ai-artificial-intelligence/957845/openai-gpt-5-6-trump-administration-ai-preview",
         "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/"
@@ -596,35 +596,6 @@
       "updated_at": "2026-06-27"
     },
     {
-      "id": "2026-06-openai-previews-next-generation-model-gpt-5-6-sol",
-      "date": "2026-06-26",
-      "type": "model_launch",
-      "providers": [
-        "openai"
-      ],
-      "models": [
-        "openai/gpt-5.6-sol"
-      ],
-      "headline": "OpenAI previews next-generation model GPT-5.6 Sol",
-      "summary": "OpenAI has released a preview of GPT-5.6 Sol, a new iteration in its flagship GPT series. The model is positioned as a next-generation offering, suggesting advancements in capability, efficiency, or both, following the GPT-5 lineage.",
-      "source_urls": [
-        "https://openai.com/index/previewing-gpt-5-6-sol/"
-      ],
-      "verified": false,
-      "tags": [
-        "major",
-        "preview",
-        "next-generation"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-06-27",
-      "updated_at": "2026-06-27"
-    },
-    {
       "id": "2026-06-openai-launches-gpt-5-5-cyber-model-as-part-of-daybreak-init",
       "date": "2026-06-23",
       "type": "model_launch",
@@ -639,7 +610,7 @@
       "source_urls": [
         "https://openai.com/index/daybreak-securing-the-world/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "cybersecurity",
         "gpt-5",
@@ -662,11 +633,11 @@
       ],
       "models": [],
       "headline": "OpenAI submits confidential draft S-1 to the SEC in preparation for IPO",
-      "summary": "OpenAI has confidentially filed a draft S-1 registration statement with the U.S. Securities and Exchange Commission, marking a formal step toward an initial public offering. This move signals the company's intent to become a publicly traded entity, likely within the next 12–18 months.",
+      "summary": "OpenAI has confidentially filed a draft S-1 registration statement with the U.S. Securities and Exchange Commission, marking a formal step toward an initial public offering. This move signals the company's intent to become a publicly traded entity, likely within the next 12\u201318 months.",
       "source_urls": [
         "https://openai.com/index/openai-submits-confidential-s-1/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "ipo",
         "funding",
@@ -696,7 +667,7 @@
       "source_urls": [
         "https://openai.com/index/malta-chatgpt-plus-partnership/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "government-partnership",
         "national-ai-access",
@@ -726,7 +697,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-gpt-5-5/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "reasoning",
@@ -756,7 +727,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-chatgpt-images-2-0/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "multimodal",
         "image-generation",
@@ -785,7 +756,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-gpt-rosalind/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "life-sciences",
         "specialized-model",
@@ -812,7 +783,7 @@
       "source_urls": [
         "https://openai.com/index/openai-acquires-tbpn/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "acquisition",
         "infrastructure",
@@ -843,7 +814,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-gpt-5-4-mini-and-nano"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "efficiency",
@@ -873,41 +844,12 @@
       "source_urls": [
         "https://openai.com/index/introducing-gpt-5-4/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "reasoning",
         "efficiency",
         "gpt-5"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-06-27",
-      "updated_at": "2026-06-27"
-    },
-    {
-      "id": "2026-03-openai-launches-gpt-5-4",
-      "date": "2026-03-05",
-      "type": "model_launch",
-      "providers": [
-        "openai"
-      ],
-      "models": [
-        "openai/gpt-5.4"
-      ],
-      "headline": "OpenAI launches GPT-5.4",
-      "summary": "OpenAI has released GPT-5.4, an updated version of its flagship large language model. This release advances the state-of-the-art in AI capabilities and expands OpenAI's model offerings.",
-      "source_urls": [
-        "https://openai.com/index/introducing-gpt-5-4/"
-      ],
-      "verified": false,
-      "tags": [
-        "major",
-        "gpt-series",
-        "language-model"
       ],
       "impact": {
         "magnitude": "major",
@@ -932,7 +874,7 @@
       "source_urls": [
         "https://openai.com/index/gpt-5-3-instant/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "efficiency",
@@ -943,35 +885,6 @@
         "magnitude": "major",
         "duration": "ongoing",
         "price_direction": "down"
-      },
-      "created_at": "2026-06-27",
-      "updated_at": "2026-06-27"
-    },
-    {
-      "id": "2026-02-openai-launches-gpt-5-2-demonstrating-novel-theoretical-phys",
-      "date": "2026-02-13",
-      "type": "model_launch",
-      "providers": [
-        "openai"
-      ],
-      "models": [
-        "openai/gpt-5.2"
-      ],
-      "headline": "OpenAI launches GPT-5.2, demonstrating novel theoretical physics discovery",
-      "summary": "OpenAI released GPT-5.2, a new version of its flagship model, which independently derived a previously unknown result in theoretical physics. This marks a significant milestone in AI-driven scientific discovery and demonstrates enhanced reasoning capabilities beyond prior versions.",
-      "source_urls": [
-        "https://openai.com/index/new-result-theoretical-physics/"
-      ],
-      "verified": false,
-      "tags": [
-        "scientific-discovery",
-        "advanced-reasoning",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "structural",
-        "duration": "ongoing",
-        "price_direction": "up"
       },
       "created_at": "2026-06-27",
       "updated_at": "2026-06-27"
@@ -991,7 +904,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-gpt-5-3-codex-spark/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "code-generation",
@@ -1020,7 +933,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-gpt-5-3-codex/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "code-generation",
         "major",
@@ -1047,7 +960,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-openai-frontier/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "infrastructure",
         "strategic-expansion",
@@ -1079,7 +992,7 @@
       "source_urls": [
         "https://openai.com/index/retiring-gpt-4o-and-older-models/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "deprecation",
         "end-of-life",
@@ -1106,11 +1019,11 @@
         "openai/prism-1-mini"
       ],
       "headline": "OpenAI launches Prism, a new family of multimodal models with advanced vision, audio, and video capabilities",
-      "summary": "OpenAI has introduced Prism, a new family of multimodal models designed to process and understand visual, auditory, and temporal data with improved accuracy and efficiency. The launch includes three variants—Prism-1, Prism-1 Medium, and Prism-1 Mini—catering to different performance and cost requirements. This positions OpenAI to better compete in the rapidly evolving multimodal AI market.",
+      "summary": "OpenAI has introduced Prism, a new family of multimodal models designed to process and understand visual, auditory, and temporal data with improved accuracy and efficiency. The launch includes three variants\u2014Prism-1, Prism-1 Medium, and Prism-1 Mini\u2014catering to different performance and cost requirements. This positions OpenAI to better compete in the rapidly evolving multimodal AI market.",
       "source_urls": [
         "https://openai.com/index/introducing-prism"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "multimodal",
         "vision",
@@ -1141,7 +1054,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-chatgpt-health/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "healthcare",
         "fda-clearance",
@@ -1171,7 +1084,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-gpt-5-2-codex/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "code-generation",
         "developer-tools",
@@ -1200,41 +1113,11 @@
       "source_urls": [
         "https://openai.com/index/new-chatgpt-images-is-here/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "image-generation",
         "major",
         "api-release"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-06-27",
-      "updated_at": "2026-06-27"
-    },
-    {
-      "id": "2025-12-openai-launches-gpt-5-2-with-improved-reasoning-and-multimod",
-      "date": "2025-12-11",
-      "type": "model_launch",
-      "providers": [
-        "openai"
-      ],
-      "models": [
-        "openai/gpt-5.2"
-      ],
-      "headline": "OpenAI launches GPT-5.2 with improved reasoning and multimodal capabilities",
-      "summary": "OpenAI has released GPT-5.2, an enhanced version of its flagship GPT-5 model, featuring improved reasoning, reduced hallucination rates, and expanded multimodal functionality. The release includes a detailed system card outlining performance benchmarks, safety mitigations, and intended use cases.",
-      "source_urls": [
-        "https://openai.com/index/introducing-gpt-5-2/"
-      ],
-      "verified": false,
-      "tags": [
-        "major",
-        "reasoning",
-        "multimodal",
-        "system-card"
       ],
       "impact": {
         "magnitude": "major",
@@ -1259,7 +1142,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-gpt-5-2/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "reasoning-improvement",
@@ -1289,7 +1172,7 @@
       "source_urls": [
         "https://openai.com/index/disney-sora-agreement/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "entertainment",
         "content-creation",
@@ -1319,7 +1202,7 @@
       "source_urls": [
         "https://openai.com/index/gpt-5-1-codex-max/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "code-generation",
         "major",
@@ -1349,7 +1232,7 @@
       "source_urls": [
         "https://openai.com/index/gpt-5-1-for-developers/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "gpt-5",
         "developer-tools",
@@ -1378,7 +1261,7 @@
       "source_urls": [
         "https://openai.com/index/gpt-5-1/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "reasoning",
@@ -1397,7 +1280,7 @@
     {
       "id": "2025-10-openai-microsoft-acquires-49-stake-in-openai-s-for-profit-entity-an",
       "date": "2025-10-28",
-      "type": "partnership",
+      "type": "compute_partnership",
       "providers": [
         "openai",
         "microsoft"
@@ -1408,7 +1291,7 @@
       "source_urls": [
         "https://openai.com/index/next-chapter-of-microsoft-openai-partnership/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "partnership",
@@ -1436,7 +1319,7 @@
       "source_urls": [
         "https://openai.com/index/openai-acquires-software-applications-incorporated"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "developer-tools",
         "strategic-expansion",
@@ -1446,35 +1329,6 @@
         "magnitude": "major",
         "duration": "ongoing",
         "price_direction": "none"
-      },
-      "created_at": "2026-06-27",
-      "updated_at": "2026-06-27"
-    },
-    {
-      "id": "2025-09-openai-launches-sora-2-with-enhanced-realism-physical-accura",
-      "date": "2025-09-30",
-      "type": "model_launch",
-      "providers": [
-        "openai"
-      ],
-      "models": [
-        "openai/sora-2"
-      ],
-      "headline": "OpenAI launches Sora 2 with enhanced realism, physical accuracy, and synchronized audio.",
-      "summary": "OpenAI has released Sora 2, its latest video generation model, offering improved physical fidelity, realism, and controllability over its predecessor. The model now supports synchronized dialogue and sound effects, and is accessible via a new dedicated app. This launch marks a significant step forward in high-quality synthetic media generation.",
-      "source_urls": [
-        "https://openai.com/index/sora-2/"
-      ],
-      "verified": false,
-      "tags": [
-        "video-generation",
-        "multimodal",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
       },
       "created_at": "2026-06-27",
       "updated_at": "2026-06-27"
@@ -1494,7 +1348,7 @@
       "source_urls": [
         "https://openai.com/index/sora-2/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "text-to-video",
         "video-generation",
@@ -1523,7 +1377,7 @@
       "source_urls": [
         "https://openai.com/index/buy-it-in-chatgpt/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "agentic-commerce",
         "payments",
@@ -1552,7 +1406,7 @@
       "source_urls": [
         "https://openai.com/index/openai-nvidia-systems-partnership/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "infrastructure",
         "compute-scale",
@@ -1582,41 +1436,11 @@
       "source_urls": [
         "https://openai.com/index/gpt-5-system-card-addendum-gpt-5-codex/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "code-generation",
         "developer-tools",
         "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-06-27",
-      "updated_at": "2026-06-27"
-    },
-    {
-      "id": "2025-08-openai-launches-gpt-5-for-developers",
-      "date": "2025-08-07",
-      "type": "model_launch",
-      "providers": [
-        "openai"
-      ],
-      "models": [
-        "openai/gpt-5"
-      ],
-      "headline": "OpenAI launches GPT-5 for developers",
-      "summary": "OpenAI has released GPT-5, a next-generation language model offering improved reasoning, multimodal capabilities, and enhanced developer tools. The model is now available through OpenAI's API platform with tiered access for different developer needs.",
-      "source_urls": [
-        "https://openai.com/index/introducing-gpt-5-for-developers"
-      ],
-      "verified": false,
-      "tags": [
-        "major",
-        "gpt",
-        "developer-tools",
-        "multimodal"
       ],
       "impact": {
         "magnitude": "major",
@@ -1641,7 +1465,7 @@
       "source_urls": [
         "https://openai.com/gpt-5/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "reasoning",
@@ -1670,7 +1494,7 @@
       "source_urls": [
         "https://openai.com/index/providing-chatgpt-to-the-entire-us-federal-workforce/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "government",
         "enterprise",
@@ -1681,64 +1505,6 @@
         "magnitude": "major",
         "duration": "ongoing",
         "price_direction": "mixed"
-      },
-      "created_at": "2026-06-27",
-      "updated_at": "2026-06-27"
-    },
-    {
-      "id": "2025-08-openai-launches-gpt-oss-an-open-source-initiative-for-public",
-      "date": "2025-08-05",
-      "type": "open_source_release",
-      "providers": [
-        "openai"
-      ],
-      "models": [
-        "openai/gpt-oss"
-      ],
-      "headline": "OpenAI launches GPT-OSS, an open-source initiative for public model access.",
-      "summary": "OpenAI introduced GPT-OSS, a new open-source program releasing versions of its models to the public. This marks a strategic pivot toward transparency and community-driven development, potentially increasing competition and accessibility in the AI landscape.",
-      "source_urls": [
-        "https://openai.com/open-models/"
-      ],
-      "verified": false,
-      "tags": [
-        "open-source",
-        "major",
-        "gpt-oss"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-06-27",
-      "updated_at": "2026-06-27"
-    },
-    {
-      "id": "2025-08-openai-releases-gpt-os-as-open-source-model",
-      "date": "2025-08-05",
-      "type": "open_source_release",
-      "providers": [
-        "openai"
-      ],
-      "models": [
-        "openai/gpt-oss"
-      ],
-      "headline": "OpenAI releases GPT-OS as open-source model",
-      "summary": "OpenAI has launched GPT-OS, an open-source version of its flagship GPT model, marking a strategic departure from its traditionally closed approach. This move enables unrestricted access to model weights and inference code, allowing developers to freely use, modify, and deploy the model.",
-      "source_urls": [
-        "https://openai.com/index/introducing-gpt-oss/"
-      ],
-      "verified": false,
-      "tags": [
-        "open-source",
-        "major",
-        "accessibility"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
       },
       "created_at": "2026-06-27",
       "updated_at": "2026-06-27"
@@ -1756,7 +1522,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-stargate-norway/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "data-center",
         "infrastructure-expansion",
@@ -1784,7 +1550,7 @@
       "source_urls": [
         "https://openai.com/index/evolving-our-structure/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "governance",
         "corporate-restructuring",
@@ -1813,7 +1579,7 @@
       "source_urls": [
         "https://openai.com/index/image-generation-api/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "image-generation",
         "api-access",
@@ -1843,7 +1609,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-o3-and-o4-mini/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "reasoning",
         "efficiency",
@@ -1874,7 +1640,7 @@
       "source_urls": [
         "https://openai.com/index/gpt-4-1/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "coding",
@@ -1904,7 +1670,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-4o-image-generation/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "multimodal",
         "image-generation",
@@ -1933,7 +1699,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-gpt-4-5/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "reasoning",
@@ -1964,7 +1730,7 @@
       "source_urls": [
         "https://openai.com/index/openai-o3-mini/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "reasoning-model",
         "efficiency",
@@ -1993,7 +1759,7 @@
       "source_urls": [
         "https://openai.com/index/sora-is-here/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "text-to-video",
         "generative-video",
@@ -2023,7 +1789,7 @@
       "source_urls": [
         "https://openai.com/index/introducing-chatgpt-pro/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "subscription-tier",
         "priority-access",
@@ -2034,35 +1800,6 @@
         "magnitude": "moderate",
         "duration": "ongoing",
         "price_direction": "up"
-      },
-      "created_at": "2026-06-27",
-      "updated_at": "2026-06-27"
-    },
-    {
-      "id": "2024-12-openai-releases-system-card-for-o1-model",
-      "date": "2024-12-05",
-      "type": "model_launch",
-      "providers": [
-        "openai"
-      ],
-      "models": [
-        "openai/o1"
-      ],
-      "headline": "OpenAI releases system card for o1 model",
-      "summary": "OpenAI published a comprehensive system card detailing the o1 model's architecture, training process, safety evaluations, and intended use cases. This document enhances transparency and informs enterprise and developer adoption decisions.",
-      "source_urls": [
-        "https://openai.com/index/openai-o1-system-card/"
-      ],
-      "verified": false,
-      "tags": [
-        "transparency",
-        "safety-evaluation",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
       },
       "created_at": "2026-06-27",
       "updated_at": "2026-06-27"
@@ -2082,7 +1819,7 @@
       "source_urls": [
         "https://openai.com/index/gpt-4o-fine-tuning/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "fine-tuning",
         "enterprise",
@@ -2111,7 +1848,7 @@
       "source_urls": [
         "https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "cost-efficiency",
         "performance",
@@ -2139,7 +1876,7 @@
       "source_urls": [
         "https://openai.com/index/openai-acquires-rockset/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "data-infrastructure",
         "real-time-analytics",
@@ -2171,7 +1908,7 @@
       "source_urls": [
         "https://openai.com/index/openai-and-apple-announce-partnership/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "integration",
@@ -2199,7 +1936,7 @@
       "source_urls": [
         "https://openai.com/index/openai-welcomes-cfo-cpo/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "executive-hire",
         "finance",
@@ -2228,7 +1965,7 @@
       "source_urls": [
         "https://openai.com/index/hello-gpt-4o/"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "multimodal",
         "real-time",
@@ -2258,7 +1995,7 @@
       "source_urls": [
         "https://openai.com/sora"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "text-to-video",
         "generative-video",
@@ -2288,7 +2025,7 @@
       "source_urls": [
         "https://openai.com/blog/new-embedding-models-and-api-updates"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "embeddings",
         "pricing-down",
@@ -2315,7 +2052,7 @@
       "source_urls": [
         "https://openai.com/blog/sam-altman-returns-as-ceo-openai-has-a-new-initial-board"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "governance",
         "executive-turnover",
@@ -2342,7 +2079,7 @@
       "source_urls": [
         "https://openai.com/blog/openai-announces-leadership-transition"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "leadership",
         "governance",
@@ -2371,7 +2108,7 @@
       "source_urls": [
         "https://openai.com/blog/new-models-and-developer-products-announced-at-devday"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "context-length",
@@ -2396,12 +2133,12 @@
       "models": [
         "openai/dall-e-3"
       ],
-      "headline": "DALL·E 3 integrated into ChatGPT Plus and Enterprise tiers",
-      "summary": "OpenAI has made DALL·E 3 available to ChatGPT Plus subscribers and Enterprise customers, enhancing the multimodal capabilities of these offerings. This integration allows users to generate images directly within ChatGPT conversations.",
+      "headline": "DALL\u00b7E 3 integrated into ChatGPT Plus and Enterprise tiers",
+      "summary": "OpenAI has made DALL\u00b7E 3 available to ChatGPT Plus subscribers and Enterprise customers, enhancing the multimodal capabilities of these offerings. This integration allows users to generate images directly within ChatGPT conversations.",
       "source_urls": [
         "https://openai.com/blog/dall-e-3-is-now-available-in-chatgpt-plus-and-enterprise"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "image-generation",
         "multimodal",
@@ -2430,7 +2167,7 @@
       "source_urls": [
         "https://openai.com/blog/gpt-3-5-turbo-fine-tuning-and-api-updates"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "fine-tuning",
         "api-update",
@@ -2457,7 +2194,7 @@
       "source_urls": [
         "https://openai.com/blog/openai-acquires-global-illumination"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "simulation",
         "graphics",
@@ -2487,7 +2224,7 @@
       "source_urls": [
         "https://openai.com/blog/gpt-4-api-general-availability"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "api-launch",
