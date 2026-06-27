@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { execSync } from "node:child_process";
+import { spawnSync } from "node:child_process";
 
 const { models } = JSON.parse(readFileSync("pricing/current.json", "utf8"));
 
@@ -10,9 +10,15 @@ for (const m of verified) {
   byUrl.get(m.source_url).push(m);
 }
 
+ensureLabel();
+
 const issues = [];
 
 for (const [url, entries] of byUrl) {
+  if (looksLikeApiEndpoint(url)) {
+    continue;
+  }
+
   let html;
   try {
     const res = await fetch(url, { headers: { "user-agent": "modelmeter-change-detect/1.0 (+https://modelmeter.xyz)" } });
@@ -34,8 +40,10 @@ for (const [url, entries] of byUrl) {
     }
   }
 
-  if (missing.length > 0) {
+  if (missing.length > 0 && missing.length / entries.length < 0.7) {
     issues.push({ url, reason: "One or more verified price markers no longer appear on the source page.", models: missing });
+  } else if (missing.length > 0) {
+    console.log(`Skipping ${url} — ${missing.length}/${entries.length} markers missing (likely JS-rendered page, not a real pricing change).`);
   }
 }
 
@@ -44,7 +52,7 @@ if (issues.length === 0) {
   process.exit(0);
 }
 
-console.log(`Detected ${issues.length} potential pricing changes.`);
+console.log(`Detected ${issues.length} potential pricing change(s).`);
 for (const issue of issues) {
   const title = `Pricing-page change detected: ${issue.url}`;
   const body = renderIssueBody(issue);
@@ -53,6 +61,10 @@ for (const issue of issues) {
 
 function formatMarker(value) {
   return `$${Number(value).toFixed(2)}`;
+}
+
+function looksLikeApiEndpoint(url) {
+  return /\/api\/|\/v\d+\/|\.json($|\?)/i.test(url);
 }
 
 function renderIssueBody(issue) {
@@ -73,6 +85,22 @@ function renderIssueBody(issue) {
   return lines.join("\n");
 }
 
+function ensureLabel() {
+  const repo = process.env.GH_REPO;
+  if (!repo) return;
+  spawnSync(
+    "gh",
+    [
+      "label", "create", "pricing-change",
+      "--repo", repo,
+      "--color", "cc6600",
+      "--description", "Detected potential pricing-page change",
+      "--force",
+    ],
+    { stdio: ["ignore", "ignore", "ignore"] }
+  );
+}
+
 function openIssueIfNew(title, body) {
   const repo = process.env.GH_REPO;
   if (!repo) {
@@ -81,22 +109,30 @@ function openIssueIfNew(title, body) {
     console.log(body);
     return;
   }
-  try {
-    const existing = execSync(
-      `gh issue list --repo ${repo} --state open --search ${JSON.stringify(title)} --json number,title`,
-      { stdio: ["ignore", "pipe", "pipe"] }
-    ).toString();
-    const existingArr = JSON.parse(existing);
-    if (existingArr.some((i) => i.title === title)) {
-      console.log(`Open issue already exists for: ${title}`);
-      return;
-    }
-    execSync(
-      `gh issue create --repo ${repo} --title ${JSON.stringify(title)} --body ${JSON.stringify(body)} --label pricing-change`,
-      { stdio: "inherit" }
-    );
-  } catch (err) {
-    console.error(`Failed to open issue for ${title}: ${err.message}`);
+
+  const search = spawnSync(
+    "gh",
+    ["issue", "list", "--repo", repo, "--state", "open", "--search", title, "--json", "number,title"],
+    { encoding: "utf8" }
+  );
+  if (search.status !== 0) {
+    console.error(`Failed to search issues for ${title}: ${search.stderr?.trim()}`);
+    process.exitCode = 1;
+    return;
+  }
+  const existing = JSON.parse(search.stdout || "[]");
+  if (existing.some((i) => i.title === title)) {
+    console.log(`Open issue already exists for: ${title}`);
+    return;
+  }
+
+  const create = spawnSync(
+    "gh",
+    ["issue", "create", "--repo", repo, "--title", title, "--body-file", "-", "--label", "pricing-change"],
+    { input: body, encoding: "utf8", stdio: ["pipe", "inherit", "inherit"] }
+  );
+  if (create.status !== 0) {
+    console.error(`Failed to open issue for ${title}`);
     process.exitCode = 1;
   }
 }
