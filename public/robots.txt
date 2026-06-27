@@ -1,0 +1,15 @@
+# Modelmeter — agent-first JSON API for AI model pricing
+# Public data, full crawl welcome.
+
+User-agent: *
+Allow: /
+
+# Explicit allow for the data endpoints so crawlers index them
+# (helps with structured-data and dataset discovery).
+Allow: /pricing.json
+Allow: /events.json
+Allow: /history.json
+Allow: /openapi.yaml
+Allow: /llms.txt
+
+Sitemap: https://modelmeter.xyz/sitemap.xml
