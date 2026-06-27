@@ -535,6 +535,65 @@
       },
       "created_at": "2026-06-27",
       "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-06-zhipu-asian-ai-startups-launch-mythos-competitive-models-amid-u-s-",
+      "date": "2026-06-27",
+      "type": "model_launch",
+      "providers": [
+        "zhipu",
+        "deepseek",
+        "moonshot",
+        "alibaba"
+      ],
+      "models": [],
+      "headline": "Asian AI startups launch Mythos-competitive models as Anthropic export ban drags on",
+      "summary": "Multiple Asian AI firms unveil high-capability models positioned as Mythos-tier alternatives, responding to prolonged U.S. export restrictions on Anthropic's Mythos line. Signals a deepening regional bifurcation in frontier model availability.",
+      "source_urls": [
+        "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "geopolitical",
+        "china-only"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-06-anthropic-s-mythos-5-restored-with-restricted-access-followi",
+      "date": "2026-06-27",
+      "type": "model_unavailable",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/mythos-5"
+      ],
+      "headline": "Anthropic restores Mythos 5 access with restrictions after U.S. government negotiations",
+      "summary": "Anthropic restores access to Mythos 5 following a two-week negotiation with the Trump administration, but only for a limited set of approved organizations. Continues the trend of U.S. regulatory involvement in frontier model availability decisions.",
+      "source_urls": [
+        "https://www.theverge.com/ai-artificial-intelligence/958458/anthropic-mythos-5-is-back-trump-negotiations"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "us-only",
+        "regulatory"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
     }
   ]
 }
