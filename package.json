@@ -7,6 +7,7 @@
   "scripts": {
     "digest": "node scripts/digest.mjs",
     "filter-digest": "node scripts/hermes-filter-digest.mjs",
+    "backfill-openai": "node scripts/backfill-openai.mjs",
     "snapshot": "node scripts/snapshot.mjs",
     "check-pricing": "node scripts/check-pricing-pages.mjs",
     "check": "node scripts/validate.mjs",
