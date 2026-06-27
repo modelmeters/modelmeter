@@ -92,7 +92,6 @@ existing.snapshot_date = new Date().toISOString().slice(0, 10);
 writeFileSync(EVENTS_PATH, JSON.stringify(existing, null, 2) + "\n");
 
 const branch = `hermes/digest-${digestDate}`;
-const remoteRef = `origin/${branch}`;
 
 sh(`git checkout -B ${branch}`);
 sh(`git add events/current.json`);
@@ -201,24 +200,47 @@ Snippet: ${cand.snippet}`;
   return JSON.parse(content);
 }
 
+const PROVIDER_ENUM = new Set([
+  "anthropic", "openai", "venice", "google", "xai",
+  "meta", "deepseek", "alibaba", "zhipu", "moonshot",
+  "mistral", "cohere", "nvidia", "amazon", "microsoft",
+  "spacex", "groq", "together", "fireworks", "openrouter", "other",
+]);
+
+function normalizeProviders(arr) {
+  if (!Array.isArray(arr)) return ["other"];
+  const filtered = arr
+    .map((s) => String(s).toLowerCase().trim())
+    .filter((s) => PROVIDER_ENUM.has(s));
+  const unique = Array.from(new Set(filtered));
+  return unique.length ? unique : ["other"];
+}
+
+function normalizeTags(arr) {
+  if (!Array.isArray(arr)) return [];
+  return Array.from(new Set(arr.map((s) => slugify(String(s))).filter(Boolean)));
+}
+
 function materializeEvent(draft, cand) {
   const today = new Date().toISOString().slice(0, 10);
   const dateOnly = (cand.published ?? today).slice(0, 10);
   const yyyymm = dateOnly.slice(0, 7);
-  const primary = draft.providers?.[0] ?? "other";
-  const slugBase = slugify(draft.headline ?? cand.title).slice(0, 60);
+  const providers = normalizeProviders(draft.providers);
+  const primary = providers[0];
+  let slugBase = slugify(draft.headline ?? cand.title).slice(0, 60);
+  if (slugBase.startsWith(`${primary}-`)) slugBase = slugBase.slice(primary.length + 1);
   const id = `${yyyymm}-${primary}-${slugBase}`;
   return {
     id,
     date: dateOnly,
     type: draft.type ?? "model_launch",
-    providers: draft.providers ?? [],
-    models: draft.models ?? [],
+    providers,
+    models: Array.isArray(draft.models) ? draft.models : [],
     headline: draft.headline ?? cand.title,
     summary: draft.summary ?? cand.snippet,
     source_urls: [cand.url],
     verified: false,
-    tags: draft.tags ?? [],
+    tags: normalizeTags(draft.tags),
     impact: draft.impact ?? undefined,
     created_at: today,
     updated_at: today,
@@ -251,6 +273,8 @@ function buildPrBody(events, digestDate) {
 
 function slugify(s) {
   return s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
