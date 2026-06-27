@@ -6,6 +6,7 @@
   "description": "Agent-first measurement and instrumentation for AI models.",
   "scripts": {
     "digest": "node scripts/digest.mjs",
+    "filter-digest": "node scripts/hermes-filter-digest.mjs",
     "snapshot": "node scripts/snapshot.mjs",
     "check-pricing": "node scripts/check-pricing-pages.mjs",
     "check": "node scripts/validate.mjs",
