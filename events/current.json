@@ -470,7 +470,7 @@
       "source_urls": [
         "https://www.anthropic.com/pricing"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [],
       "impact": {
         "magnitude": "moderate",
@@ -495,7 +495,7 @@
       "source_urls": [
         "https://openai.com/business/pricing/#api"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [],
       "impact": {
         "magnitude": "moderate",
@@ -589,6 +589,1649 @@
       ],
       "impact": {
         "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-06-openai-launches-gpt-5-5-cyber-model-as-part-of-daybreak-init",
+      "date": "2026-06-23",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.5-cyber"
+      ],
+      "headline": "OpenAI launches GPT-5.5-Cyber model as part of DayBreak initiative",
+      "summary": "OpenAI has released GPT-5.5-Cyber, a new iteration in its GPT series, under the DayBreak initiative focused on securing AI systems. This model likely represents an advancement in reasoning, safety, and cybersecurity applications.",
+      "source_urls": [
+        "https://openai.com/index/daybreak-securing-the-world/"
+      ],
+      "verified": true,
+      "tags": [
+        "cybersecurity",
+        "gpt-5",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-06-openai-submits-confidential-draft-s-1-to-the-sec-in-preparat",
+      "date": "2026-06-08",
+      "type": "funding",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI submits confidential draft S-1 to the SEC in preparation for IPO",
+      "summary": "OpenAI has confidentially filed a draft S-1 registration statement with the U.S. Securities and Exchange Commission, marking a formal step toward an initial public offering. This move signals the company's intent to become a publicly traded entity, likely within the next 12\u201318 months.",
+      "source_urls": [
+        "https://openai.com/index/openai-submits-confidential-s-1/"
+      ],
+      "verified": true,
+      "tags": [
+        "ipo",
+        "funding",
+        "major",
+        "corporate-milestone"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-05-openai-partners-with-malta-to-provide-free-chatgpt-plus-acce",
+      "date": "2026-05-16",
+      "type": "compute_partnership",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4"
+      ],
+      "headline": "OpenAI partners with Malta to provide free ChatGPT Plus access to all citizens",
+      "summary": "OpenAI has entered a partnership with the Government of Malta to offer free access to ChatGPT Plus, powered by GPT-4, for all Maltese citizens. This initiative aims to enhance national digital literacy and AI adoption across education, public services, and workforce development.",
+      "source_urls": [
+        "https://openai.com/index/malta-chatgpt-plus-partnership/"
+      ],
+      "verified": true,
+      "tags": [
+        "government-partnership",
+        "national-ai-access",
+        "malta",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-04-openai-launches-gpt-5-5-with-enhanced-reasoning-and-multimod",
+      "date": "2026-04-23",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.5"
+      ],
+      "headline": "OpenAI launches GPT-5.5 with enhanced reasoning and multimodal capabilities",
+      "summary": "OpenAI has released GPT-5.5, an iterative improvement over GPT-5 featuring refined reasoning, expanded context length, and improved multimodal understanding. The model is now available via API and integrated into select enterprise products.",
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-5-5/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "reasoning",
+        "multimodal",
+        "api"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-04-openai-launches-chatgpt-images-2-0-with-enhanced-multimodal-",
+      "date": "2026-04-21",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/chatgpt-images-2.0"
+      ],
+      "headline": "OpenAI launches ChatGPT Images 2.0 with enhanced multimodal capabilities",
+      "summary": "OpenAI has released ChatGPT Images 2.0, a significant upgrade to its multimodal AI system that improves image understanding and generation capabilities within the ChatGPT interface. This update allows for more sophisticated image-based interactions and content creation.",
+      "source_urls": [
+        "https://openai.com/index/introducing-chatgpt-images-2-0/"
+      ],
+      "verified": true,
+      "tags": [
+        "multimodal",
+        "image-generation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-04-openai-launches-gpt-rosalind-a-specialized-model-for-life-sc",
+      "date": "2026-04-16",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-rosalind"
+      ],
+      "headline": "OpenAI launches GPT-Rosalind, a specialized model for life sciences research",
+      "summary": "OpenAI has introduced GPT-Rosalind, a new AI model specifically designed to support life sciences research. This model is optimized for tasks such as biomedical text analysis, scientific literature review, and hypothesis generation in life sciences domains.",
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-rosalind/"
+      ],
+      "verified": true,
+      "tags": [
+        "life-sciences",
+        "specialized-model",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-04-openai-acquires-tbpn-to-expand-infrastructure-and-research-c",
+      "date": "2026-04-02",
+      "type": "acquisition",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI acquires TBPN to expand infrastructure and research capabilities",
+      "summary": "OpenAI has acquired TBPN, a company focused on advanced AI networking and compute optimization. This acquisition is expected to enhance OpenAI's internal infrastructure, potentially accelerating model training efficiency and scalability. Financial terms were not disclosed.",
+      "source_urls": [
+        "https://openai.com/index/openai-acquires-tbpn/"
+      ],
+      "verified": true,
+      "tags": [
+        "acquisition",
+        "infrastructure",
+        "scaling",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-03-openai-launches-gpt-5-4-mini-and-nano-for-efficient-low-cost",
+      "date": "2026-03-17",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.4-mini",
+        "openai/gpt-5.4-nano"
+      ],
+      "headline": "OpenAI launches GPT-5.4 Mini and Nano for efficient, low-cost inference",
+      "summary": "OpenAI introduced two new variants of its GPT-5.4 series: Mini and Nano. These models are optimized for lower computational cost and faster inference, making them suitable for edge deployment and high-volume applications. The launch expands OpenAI's tiered model strategy, increasing accessibility while maintaining performance gradients.",
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-5-4-mini-and-nano"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "efficiency",
+        "edge-ai",
+        "tiered-pricing"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-03-openai-launches-gpt-5-4-with-enhanced-reasoning-and-efficien",
+      "date": "2026-03-05",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.4"
+      ],
+      "headline": "OpenAI launches GPT-5.4 with enhanced reasoning and efficiency",
+      "summary": "OpenAI has released GPT-5.4, an updated version of its flagship large language model. The release emphasizes improvements in reasoning, efficiency, and alignment, building upon the GPT-5 architecture. It is now available to paying customers and through API tiers.",
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-5-4/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "reasoning",
+        "efficiency",
+        "gpt-5"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-03-openai-launches-gpt-5-3-instant-a-faster-and-more-cost-effic",
+      "date": "2026-03-03",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.3-instant"
+      ],
+      "headline": "OpenAI launches GPT-5.3 Instant, a faster and more cost-efficient variant of GPT-5",
+      "summary": "OpenAI has introduced GPT-5.3 Instant, a new model variant designed for low-latency applications and reduced inference costs. This launch expands OpenAI's model lineup, offering developers a faster, lightweight option while maintaining strong performance on common benchmarks.",
+      "source_urls": [
+        "https://openai.com/index/gpt-5-3-instant/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "efficiency",
+        "low-latency",
+        "cost-optimized"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-02-openai-launches-gpt-5-3-codex-spark-a-new-advanced-language-",
+      "date": "2026-02-12",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.3-codex-spark"
+      ],
+      "headline": "OpenAI launches GPT-5.3-Codex-Spark, a new advanced language model.",
+      "summary": "OpenAI has introduced GPT-5.3-Codex-Spark, the latest iteration in its GPT series, designed to enhance performance in code generation and natural language understanding tasks. This launch expands OpenAI's model portfolio and sets a new benchmark for language model capabilities.",
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-5-3-codex-spark/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "code-generation",
+        "language-model"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-02-openai-launches-gpt-5-3-codex-a-new-code-generation-model",
+      "date": "2026-02-05",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.3-codex"
+      ],
+      "headline": "OpenAI launches GPT-5.3-Codex, a new code generation model",
+      "summary": "OpenAI has introduced GPT-5.3-Codex, an advanced model specialized in code generation and programming tasks. This release represents a significant update to their GPT series, enhancing capabilities for developers and integrating with various development environments.",
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-5-3-codex/"
+      ],
+      "verified": true,
+      "tags": [
+        "code-generation",
+        "major",
+        "version-upgrade"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-02-openai-launches-frontier-a-new-subsidiary-for-next-generatio",
+      "date": "2026-02-05",
+      "type": "infrastructure",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI launches Frontier, a new subsidiary for next-generation AI development",
+      "summary": "OpenAI has established OpenAI Frontier as a separate entity to pursue advanced AI research beyond current technological limits. This move signals a structural expansion of OpenAI's capabilities and ambitions, focusing on long-term, frontier-level AI development.",
+      "source_urls": [
+        "https://openai.com/index/introducing-openai-frontier/"
+      ],
+      "verified": true,
+      "tags": [
+        "infrastructure",
+        "strategic-expansion",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-01-openai-retires-gpt-4o-gpt-4-1-gpt-4-1-mini-and-o4-mini-model",
+      "date": "2026-01-29",
+      "type": "model_deprecation",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4o",
+        "openai/gpt-4.1",
+        "openai/gpt-4.1-mini",
+        "openai/o4-mini"
+      ],
+      "headline": "OpenAI retires GPT-4o, GPT-4.1, GPT-4.1 mini, and o4-mini models",
+      "summary": "OpenAI announced the retirement of GPT-4o, GPT-4.1, GPT-4.1 mini, and o4-mini, effective January 2027, urging users to transition to newer models. These models were key offerings in ChatGPT and the API ecosystem, and their deprecation signals a strategic shift toward more efficient or advanced successors.",
+      "source_urls": [
+        "https://openai.com/index/retiring-gpt-4o-and-older-models/"
+      ],
+      "verified": true,
+      "tags": [
+        "deprecation",
+        "end-of-life",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-01-openai-launches-prism-a-new-family-of-multimodal-models-with",
+      "date": "2026-01-27",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/prism-1",
+        "openai/prism-1-medium",
+        "openai/prism-1-mini"
+      ],
+      "headline": "OpenAI launches Prism, a new family of multimodal models with advanced vision, audio, and video capabilities",
+      "summary": "OpenAI has introduced Prism, a new family of multimodal models designed to process and understand visual, auditory, and temporal data with improved accuracy and efficiency. The launch includes three variants\u2014Prism-1, Prism-1 Medium, and Prism-1 Mini\u2014catering to different performance and cost requirements. This positions OpenAI to better compete in the rapidly evolving multimodal AI market.",
+      "source_urls": [
+        "https://openai.com/index/introducing-prism"
+      ],
+      "verified": true,
+      "tags": [
+        "multimodal",
+        "vision",
+        "audio",
+        "video",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-01-openai-launches-chatgpt-health-for-clinical-and-patient-faci",
+      "date": "2026-01-07",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/chatgpt-health"
+      ],
+      "headline": "OpenAI launches ChatGPT Health for clinical and patient-facing healthcare applications",
+      "summary": "OpenAI introduced ChatGPT Health, a new offering designed for healthcare providers and health systems, in partnership with organizations including UC San Diego Health, MD Anderson, and HCA Healthcare. The product has received FDA clearance as a clinical decision support tool, marking a significant regulatory milestone for AI in healthcare. It aims to assist with clinical documentation, patient engagement, and care coordination.",
+      "source_urls": [
+        "https://openai.com/index/introducing-chatgpt-health/"
+      ],
+      "verified": true,
+      "tags": [
+        "healthcare",
+        "fda-clearance",
+        "major",
+        "clinical-decision-support"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-12-openai-launches-gpt-5-2-codex-a-code-specialized-version-of-",
+      "date": "2025-12-18",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.2-codex"
+      ],
+      "headline": "OpenAI launches GPT-5.2-Codex, a code-specialized version of GPT-5",
+      "summary": "OpenAI has released GPT-5.2-Codex, an advanced model optimized for code generation, comprehension, and software development workflows. This release extends the GPT-5 series with enhanced programming language support and integration capabilities for developer tools.",
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-5-2-codex/"
+      ],
+      "verified": true,
+      "tags": [
+        "code-generation",
+        "developer-tools",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-12-openai-launches-gpt-image-1-5-with-enhanced-image-generation",
+      "date": "2025-12-16",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-image-1.5"
+      ],
+      "headline": "OpenAI launches GPT Image 1.5 with enhanced image generation capabilities",
+      "summary": "OpenAI has released GPT Image 1.5, a new version of its image generation model, offering improved quality, faster inference, and broader stylistic control. The model is now available via API and integrated into ChatGPT.",
+      "source_urls": [
+        "https://openai.com/index/new-chatgpt-images-is-here/"
+      ],
+      "verified": true,
+      "tags": [
+        "image-generation",
+        "major",
+        "api-release"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-12-openai-launches-gpt-5-2-with-enhanced-reasoning-and-multimod",
+      "date": "2025-12-11",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.2"
+      ],
+      "headline": "OpenAI launches GPT-5.2 with enhanced reasoning and multimodal capabilities",
+      "summary": "OpenAI has released GPT-5.2, an iterative improvement over GPT-5 featuring refined reasoning, reduced hallucination rates, and faster inference speeds. The model is now available via API and will gradually roll out to enterprise and consumer tiers.",
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-5-2/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "reasoning-improvement",
+        "multimodal",
+        "enterprise-tier"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-12-openai-the-walt-disney-company-partners-with-openai-to-explore-use-",
+      "date": "2025-12-11",
+      "type": "compute_partnership",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/sora"
+      ],
+      "headline": "The Walt Disney Company partners with OpenAI to explore use of Sora for content creation.",
+      "summary": "Disney and OpenAI have entered a multi-year collaboration to investigate how Sora, OpenAI's text-to-video model, can be used in creative workflows for storytelling, character development, and visual effects. The partnership includes governance and safety frameworks to align with Disney's brand standards.",
+      "source_urls": [
+        "https://openai.com/index/disney-sora-agreement/"
+      ],
+      "verified": true,
+      "tags": [
+        "entertainment",
+        "content-creation",
+        "governance",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-11-openai-launches-gpt-5-1-codex-max-a-new-flagship-model-optim",
+      "date": "2025-11-19",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.1-codex-max"
+      ],
+      "headline": "OpenAI launches GPT-5.1-Codex-Max, a new flagship model optimized for advanced code generation and software engineering tasks.",
+      "summary": "OpenAI has released GPT-5.1-Codex-Max, a state-of-the-art model designed to significantly improve automated code generation, code completion, and software development workflows. The model achieves new benchmarks in code correctness and multi-file reasoning, positioning it as a major upgrade over previous Codex variants.",
+      "source_urls": [
+        "https://openai.com/index/gpt-5-1-codex-max/"
+      ],
+      "verified": true,
+      "tags": [
+        "code-generation",
+        "major",
+        "software-engineering",
+        "performance-leader"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-11-openai-launches-gpt-5-1-for-developers",
+      "date": "2025-11-13",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.1"
+      ],
+      "headline": "OpenAI launches GPT-5.1 for developers",
+      "summary": "OpenAI has released GPT-5.1, an updated version of its GPT-5 model, now available to developers. This launch follows the initial GPT-5 release and suggests iterative improvements in performance, efficiency, or capabilities for the developer ecosystem.",
+      "source_urls": [
+        "https://openai.com/index/gpt-5-1-for-developers/"
+      ],
+      "verified": true,
+      "tags": [
+        "gpt-5",
+        "developer-tools",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-11-openai-launches-gpt-5-1-with-enhanced-reasoning-vision-and-v",
+      "date": "2025-11-12",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.1"
+      ],
+      "headline": "OpenAI launches GPT-5.1 with enhanced reasoning, vision, and voice capabilities",
+      "summary": "OpenAI has released GPT-5.1, an upgraded version of its flagship model featuring improved reasoning, vision understanding, and voice interaction. The model is now available to Pro and Team subscribers and will roll out to Enterprise and Edu customers. This release represents a significant advancement in conversational AI capabilities.",
+      "source_urls": [
+        "https://openai.com/index/gpt-5-1/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "reasoning",
+        "vision",
+        "voice",
+        "pro-tier"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-10-openai-microsoft-acquires-49-stake-in-openai-s-for-profit-entity-an",
+      "date": "2025-10-28",
+      "type": "compute_partnership",
+      "providers": [
+        "openai",
+        "microsoft"
+      ],
+      "models": [],
+      "headline": "Microsoft acquires 49% stake in OpenAI's for-profit entity and 97.9% of its cash flows",
+      "summary": "Microsoft has restructured its partnership with OpenAI, taking a 49% ownership stake in OpenAI's for-profit subsidiary and securing 97.9% of its cash flows. This move solidifies Microsoft's financial interest in OpenAI's success while maintaining OpenAI's independent governance. The deal follows OpenAI's shift to a capped-profit model and Microsoft's prior investments in OpenAI infrastructure.",
+      "source_urls": [
+        "https://openai.com/index/next-chapter-of-microsoft-openai-partnership/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "partnership",
+        "corporate-structure",
+        "investment"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-10-openai-acquires-sky-app-an-ai-software-applications-company",
+      "date": "2025-10-23",
+      "type": "acquisition",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI acquires Sky.app, an AI software applications company",
+      "summary": "OpenAI has acquired Software Applications Incorporated, the company behind Sky.app, a platform leveraging AI for software development workflows. This acquisition strengthens OpenAI's position in the developer tools and AI-assisted programming space, signaling a strategic expansion beyond core model development into end-user applications.",
+      "source_urls": [
+        "https://openai.com/index/openai-acquires-software-applications-incorporated"
+      ],
+      "verified": true,
+      "tags": [
+        "developer-tools",
+        "strategic-expansion",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-09-openai-launches-sora-2-a-next-generation-text-to-video-model",
+      "date": "2025-09-30",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/sora-2"
+      ],
+      "headline": "OpenAI launches Sora 2, a next-generation text-to-video model",
+      "summary": "OpenAI has released Sora 2, an advanced text-to-video model with improved visual quality, motion accuracy, and support for longer video sequences. The system card details technical improvements in spatiotemporal consistency and prompt adherence.",
+      "source_urls": [
+        "https://openai.com/index/sora-2/"
+      ],
+      "verified": true,
+      "tags": [
+        "text-to-video",
+        "video-generation",
+        "major",
+        "foundation-model"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-09-openai-launches-agentic-commerce-protocol-and-instant-checko",
+      "date": "2025-09-29",
+      "type": "infrastructure",
+      "providers": [
+        "openai",
+        "other"
+      ],
+      "models": [],
+      "headline": "OpenAI launches Agentic Commerce Protocol and Instant Checkout for ChatGPT",
+      "summary": "OpenAI introduced the Agentic Commerce Protocol and Instant Checkout feature, enabling users to make purchases directly within ChatGPT. The initiative is supported by Stripe and aims to establish an open standard for AI-mediated transactions, allowing merchants to integrate seamless checkout experiences into conversational AI interfaces.",
+      "source_urls": [
+        "https://openai.com/index/buy-it-in-chatgpt/"
+      ],
+      "verified": true,
+      "tags": [
+        "agentic-commerce",
+        "payments",
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-09-openai-and-nvidia-partner-to-deploy-10-gigawatts-of-ai-datac",
+      "date": "2025-09-22",
+      "type": "infrastructure",
+      "providers": [
+        "openai",
+        "nvidia"
+      ],
+      "models": [],
+      "headline": "OpenAI and NVIDIA partner to deploy 10 gigawatts of AI datacenters powered by NVIDIA systems",
+      "summary": "OpenAI and NVIDIA have formed a strategic partnership to build and deploy 10 gigawatts of AI-optimized datacenter capacity using NVIDIA systems. The first phase is set to launch in 2026, significantly expanding AI training and inference infrastructure.",
+      "source_urls": [
+        "https://openai.com/index/openai-nvidia-systems-partnership/"
+      ],
+      "verified": true,
+      "tags": [
+        "infrastructure",
+        "compute-scale",
+        "major",
+        "partnership"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-09-openai-launches-gpt-5-codex-a-specialized-version-of-gpt-5-o",
+      "date": "2025-09-15",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5-codex"
+      ],
+      "headline": "OpenAI launches GPT-5-Codex, a specialized version of GPT-5 optimized for code generation and software development.",
+      "summary": "OpenAI has released GPT-5-Codex, a new model variant derived from GPT-5 and specifically fine-tuned for programming tasks. This model is designed to enhance code generation, comprehension, and developer productivity, potentially offering improved performance over previous code-focused models.",
+      "source_urls": [
+        "https://openai.com/index/gpt-5-system-card-addendum-gpt-5-codex/"
+      ],
+      "verified": true,
+      "tags": [
+        "code-generation",
+        "developer-tools",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-08-openai-launches-gpt-5-a-more-capable-and-faster-model-with-i",
+      "date": "2025-08-07",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5"
+      ],
+      "headline": "OpenAI launches GPT-5, a more capable and faster model with integrated reasoning.",
+      "summary": "OpenAI has released GPT-5, described as its most advanced model to date, featuring improved speed, intelligence, and built-in thinking capabilities. The model is now available to all users, marking a significant leap in mainstream access to cutting-edge AI.",
+      "source_urls": [
+        "https://openai.com/gpt-5/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "reasoning",
+        "general-availability"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-08-openai-partners-with-u-s-government-to-provide-chatgpt-acces",
+      "date": "2025-08-06",
+      "type": "compute_partnership",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/chatgpt"
+      ],
+      "headline": "OpenAI partners with U.S. government to provide ChatGPT access to entire federal workforce",
+      "summary": "OpenAI has entered into a partnership to make ChatGPT available to all U.S. federal employees, marking a major institutional deployment. This agreement expands AI integration across government agencies and signals strong public sector validation of OpenAI's platform.",
+      "source_urls": [
+        "https://openai.com/index/providing-chatgpt-to-the-entire-us-federal-workforce/"
+      ],
+      "verified": true,
+      "tags": [
+        "government",
+        "enterprise",
+        "major",
+        "adoption"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-07-openai-announces-stargate-norway-data-center-project",
+      "date": "2025-07-31",
+      "type": "infrastructure",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI announces 'Stargate Norway' data center project",
+      "summary": "OpenAI has unveiled plans for a major AI data center infrastructure project named 'Stargate Norway', aimed at expanding its computational capacity in Scandinavia. This investment signals a strategic push to scale up training and deployment capabilities for future large-scale models.",
+      "source_urls": [
+        "https://openai.com/index/introducing-stargate-norway/"
+      ],
+      "verified": true,
+      "tags": [
+        "data-center",
+        "infrastructure-expansion",
+        "norway",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-05-openai-transitions-to-capped-profit-structure-with-new-board",
+      "date": "2025-05-05",
+      "type": "leadership_change",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI transitions to capped-profit structure with new board and leadership appointments",
+      "summary": "OpenAI announced a fundamental shift in its corporate structure, moving from a nonprofit-led model to a 'capped-profit' entity. This includes dissolving its old board, appointing a new for-profit board with representatives from major investors, and restructuring governance to accelerate product development and deployment. The change follows earlier governance turmoil and aims to streamline decision-making amid intense competition.",
+      "source_urls": [
+        "https://openai.com/index/evolving-our-structure/"
+      ],
+      "verified": true,
+      "tags": [
+        "governance",
+        "corporate-restructuring",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "structural",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-04-openai-launches-new-image-generation-model-gpt-image-1-via-a",
+      "date": "2025-04-24",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-image-1"
+      ],
+      "headline": "OpenAI launches new image generation model 'gpt-image-1' via API",
+      "summary": "OpenAI has released a new image generation model, accessible through the API as 'gpt-image-1', enabling developers and businesses to integrate professional-grade, customizable visual generation into their applications. This marks a formal expansion of OpenAI's multimodal capabilities beyond text.",
+      "source_urls": [
+        "https://openai.com/index/image-generation-api/"
+      ],
+      "verified": true,
+      "tags": [
+        "image-generation",
+        "api-access",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-04-openai-launches-o3-and-o4-mini-models-with-enhanced-reasonin",
+      "date": "2025-04-16",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/o3",
+        "openai/o4-mini"
+      ],
+      "headline": "OpenAI launches o3 and o4-mini models with enhanced reasoning and efficiency",
+      "summary": "OpenAI introduced two new models: o3, a high-performance reasoning model, and o4-mini, a cost-efficient variant optimized for speed and lower latency. These models improve on previous versions in both reasoning tasks and operational efficiency, expanding OpenAI's tiered model offerings.",
+      "source_urls": [
+        "https://openai.com/index/introducing-o3-and-o4-mini/"
+      ],
+      "verified": true,
+      "tags": [
+        "reasoning",
+        "efficiency",
+        "major",
+        "reasoning-benchmark-improvement"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-04-openai-launches-gpt-4-1-and-gpt-4-1-nano-models-via-api",
+      "date": "2025-04-14",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4.1",
+        "openai/gpt-4.1-nano"
+      ],
+      "headline": "OpenAI launches GPT-4.1 and GPT-4.1-nano models via API",
+      "summary": "OpenAI has released GPT-4.1, a new family of models featuring across-the-board improvements in coding, instruction following, and long-context understanding. The release includes a 'nano' variant, making advanced capabilities accessible to a broader range of developers and use cases.",
+      "source_urls": [
+        "https://openai.com/index/gpt-4-1/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "coding",
+        "long-context",
+        "instruction-following"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-03-openai-launches-native-image-generation-for-gpt-4o",
+      "date": "2025-03-25",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4o"
+      ],
+      "headline": "OpenAI launches native image generation for GPT-4o",
+      "summary": "OpenAI has introduced native image generation capabilities to GPT-4o, allowing users to create images directly within the model's interface without relying on external tools. This enhancement expands the multimodal functionality of GPT-4o, increasing its utility for creative and development workflows.",
+      "source_urls": [
+        "https://openai.com/index/introducing-4o-image-generation/"
+      ],
+      "verified": true,
+      "tags": [
+        "multimodal",
+        "image-generation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-02-openai-launches-gpt-4-5-with-improved-reasoning-and-multimod",
+      "date": "2025-02-27",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4.5"
+      ],
+      "headline": "OpenAI launches GPT-4.5 with improved reasoning and multimodal capabilities",
+      "summary": "OpenAI has released GPT-4.5, an incremental advancement over GPT-4 Turbo, featuring enhanced reasoning, expanded context length, and improved multimodal understanding. The model is positioned as a stepping stone toward more advanced AI systems, available via API and integrated into ChatGPT for subscribers.",
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-4-5/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "reasoning",
+        "multimodal",
+        "api",
+        "chatgpt"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2025-01-openai-launches-o3-mini-a-new-reasoning-model-between-o1-and",
+      "date": "2025-01-31",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/o3-mini"
+      ],
+      "headline": "OpenAI launches o3-mini, a new reasoning model between o1 and o1-mini in performance and cost",
+      "summary": "OpenAI has released o3-mini, a new addition to its reasoning model lineup that offers balanced performance and efficiency. The model is designed to provide improved reasoning capabilities over previous iterations while maintaining lower costs than flagship models.",
+      "source_urls": [
+        "https://openai.com/index/openai-o3-mini/"
+      ],
+      "verified": true,
+      "tags": [
+        "reasoning-model",
+        "efficiency",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2024-12-openai-launches-sora-a-text-to-video-model-available-via-sor",
+      "date": "2024-12-09",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/sora"
+      ],
+      "headline": "OpenAI launches Sora, a text-to-video model available via sora.com",
+      "summary": "OpenAI has released Sora, its text-to-video generation model, making it accessible to users through sora.com. The model supports video generation up to 1080p resolution and 20 seconds in length, with support for widescreen, vertical, and square aspect ratios. Users can generate videos from text or use their own assets to extend, remix, and blend content.",
+      "source_urls": [
+        "https://openai.com/index/sora-is-here/"
+      ],
+      "verified": true,
+      "tags": [
+        "text-to-video",
+        "generative-video",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2024-12-openai-launches-chatgpt-pro-subscription-tier-with-enhanced-",
+      "date": "2024-12-05",
+      "type": "pricing_change",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4",
+        "openai/gpt-3.5-turbo"
+      ],
+      "headline": "OpenAI launches ChatGPT Pro subscription tier with enhanced access and priority features",
+      "summary": "OpenAI introduced ChatGPT Pro, a paid subscription plan offering users priority access to GPT-4, faster response times, and increased usage limits. The plan replaces previous free-tier access to advanced models and reflects a strategic shift toward monetizing high-demand AI services.",
+      "source_urls": [
+        "https://openai.com/index/introducing-chatgpt-pro/"
+      ],
+      "verified": true,
+      "tags": [
+        "subscription-tier",
+        "priority-access",
+        "usage-limits",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2024-08-openai-launches-fine-tuning-support-for-gpt-4o",
+      "date": "2024-08-20",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4o"
+      ],
+      "headline": "OpenAI launches fine-tuning support for GPT-4o",
+      "summary": "OpenAI has introduced fine-tuning capabilities for GPT-4o, allowing developers and organizations to customize the model for specific tasks and domains. This enhances the model's applicability in enterprise and specialized use cases.",
+      "source_urls": [
+        "https://openai.com/index/gpt-4o-fine-tuning/"
+      ],
+      "verified": true,
+      "tags": [
+        "fine-tuning",
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2024-07-openai-launches-gpt-4o-mini-a-more-cost-efficient-model-outp",
+      "date": "2024-07-18",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4o-mini"
+      ],
+      "headline": "OpenAI launches GPT-4o mini, a more cost-efficient model outperforming GPT-3.5-turbo",
+      "summary": "OpenAI introduced GPT-4o mini, a new model designed for high performance at lower cost. It outperforms GPT-3.5-turbo across multiple benchmarks while offering 60% lower pricing for input tokens and 75% for output tokens. The model supports a 128k context window and is immediately available via API and in products like ChatGPT.",
+      "source_urls": [
+        "https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/"
+      ],
+      "verified": true,
+      "tags": [
+        "cost-efficiency",
+        "performance",
+        "major",
+        "api-availability"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2024-06-openai-acquires-rockset-to-enhance-real-time-data-analytics-",
+      "date": "2024-06-21",
+      "type": "acquisition",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI acquires Rockset to enhance real-time data analytics and indexing capabilities",
+      "summary": "OpenAI has acquired Rockset, a real-time indexing and analytics platform, to strengthen its internal data infrastructure. This acquisition will enable OpenAI to process and analyze large-scale operational data more efficiently, supporting improvements in model monitoring, performance optimization, and service scalability.",
+      "source_urls": [
+        "https://openai.com/index/openai-acquires-rockset/"
+      ],
+      "verified": true,
+      "tags": [
+        "data-infrastructure",
+        "real-time-analytics",
+        "acquisition",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2024-06-openai-and-apple-announce-technical-partnership-to-integrate",
+      "date": "2024-06-10",
+      "type": "compute_partnership",
+      "providers": [
+        "openai",
+        "other"
+      ],
+      "models": [
+        "openai/gpt-4",
+        "openai/gpt-3.5-turbo"
+      ],
+      "headline": "OpenAI and Apple announce technical partnership to integrate OpenAI models into Apple devices and services.",
+      "summary": "OpenAI and Apple have formed a strategic partnership to bring OpenAI's large language models, including GPT-4 and GPT-3.5-Turbo, into Apple's ecosystem. This integration will enable Apple to enhance its AI capabilities across devices and services, potentially including Siri, iOS apps, and new AI-driven features. The move positions Apple to compete more effectively in the generative AI space while expanding OpenAI's reach to hundreds of millions of users.",
+      "source_urls": [
+        "https://openai.com/index/openai-and-apple-announce-partnership/"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "integration",
+        "on-device-ai",
+        "consumer-ai"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2024-06-openai-appoints-sarah-friar-as-cfo-and-kevin-weil-as-cpo",
+      "date": "2024-06-10",
+      "type": "leadership_change",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI appoints Sarah Friar as CFO and Kevin Weil as CPO",
+      "summary": "OpenAI has announced the appointments of Sarah Friar as Chief Financial Officer and Kevin Weil as Chief Product Officer. Friar brings extensive financial leadership experience from roles at Nextdoor and Salesforce, while Weil has a strong background in product strategy from positions at Twitter and Snap. These hires signal a move toward greater financial discipline and structured product development at OpenAI.",
+      "source_urls": [
+        "https://openai.com/index/openai-welcomes-cfo-cpo/"
+      ],
+      "verified": true,
+      "tags": [
+        "executive-hire",
+        "finance",
+        "product"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2024-05-openai-launches-gpt-4o-a-new-flagship-multimodal-model-with-",
+      "date": "2024-05-13",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4o"
+      ],
+      "headline": "OpenAI launches GPT-4o, a new flagship multimodal model with real-time capabilities",
+      "summary": "OpenAI introduced GPT-4o, a significant advancement over GPT-4, featuring enhanced multimodal processing, real-time interaction, and improved performance across text, vision, and audio. The model is designed to be more responsive and efficient, with broader availability across OpenAI's platforms.",
+      "source_urls": [
+        "https://openai.com/index/hello-gpt-4o/"
+      ],
+      "verified": true,
+      "tags": [
+        "multimodal",
+        "real-time",
+        "flagship",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2024-02-openai-launches-sora-a-text-to-video-model-capable-of-genera",
+      "date": "2024-02-15",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/sora"
+      ],
+      "headline": "OpenAI launches Sora, a text-to-video model capable of generating minute-long videos from text prompts",
+      "summary": "OpenAI introduced Sora, a generative AI model that creates realistic and complex video scenes from textual descriptions. The model can generate up to one minute of video at a time, maintaining visual quality and temporal consistency. While not yet publicly available, Sora marks a significant leap in video generation capabilities, positioning OpenAI at the forefront of multimodal AI development.",
+      "source_urls": [
+        "https://openai.com/sora"
+      ],
+      "verified": true,
+      "tags": [
+        "text-to-video",
+        "generative-video",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2024-01-openai-launches-new-embedding-models-with-improved-performan",
+      "date": "2024-01-25",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/text-embedding-3-small",
+        "openai/text-embedding-3-large"
+      ],
+      "headline": "OpenAI launches new embedding models with improved performance and lower prices",
+      "summary": "OpenAI introduced two new embedding models, text-embedding-3-small and text-embedding-3-large, offering better accuracy and lower latency than previous versions. The update includes a new 'dimensions' parameter allowing users to reduce embedding size and cost. Pricing was reduced, with text-embedding-3-small priced at $0.02 per 1M tokens.",
+      "source_urls": [
+        "https://openai.com/blog/new-embedding-models-and-api-updates"
+      ],
+      "verified": true,
+      "tags": [
+        "embeddings",
+        "pricing-down",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2023-11-openai-sam-altman-returns-as-ceo-of-openai-new-initial-board-formed",
+      "date": "2023-11-30",
+      "type": "leadership_change",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "Sam Altman returns as CEO of OpenAI; new initial board formed",
+      "summary": "After a brief removal in November 2023, Sam Altman was reinstated as CEO of OpenAI following employee and investor pressure. A new interim board was established to replace the previous one that had initiated his dismissal. This event stabilized OpenAI's leadership and reinforced its trajectory in AI development and commercialization.",
+      "source_urls": [
+        "https://openai.com/blog/sam-altman-returns-as-ceo-openai-has-a-new-initial-board"
+      ],
+      "verified": true,
+      "tags": [
+        "governance",
+        "executive-turnover",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2023-11-openai-board-removes-ceo-sam-altman",
+      "date": "2023-11-17",
+      "type": "leadership_change",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI board removes CEO Sam Altman",
+      "summary": "On November 17, 2023, OpenAI's board of directors announced the removal of Sam Altman as Chief Executive Officer, citing lack of candor in his communications with the board. The move triggered immediate internal and external backlash, with significant implications for the company's future leadership and strategic trajectory.",
+      "source_urls": [
+        "https://openai.com/blog/openai-announces-leadership-transition"
+      ],
+      "verified": true,
+      "tags": [
+        "leadership",
+        "governance",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2023-11-openai-launches-gpt-4-turbo-with-larger-context-window-and-u",
+      "date": "2023-11-06",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4-turbo"
+      ],
+      "headline": "OpenAI launches GPT-4 Turbo with larger context window and updated pricing",
+      "summary": "At its inaugural DevDay, Openai announced GPT-4 Turbo, a more efficient and capable version of GPT-4 with a 128k context window. The model is designed to be more cost-effective for developers, with reduced prices for both input and output tokens compared to GPT-4.",
+      "source_urls": [
+        "https://openai.com/blog/new-models-and-developer-products-announced-at-devday"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "context-length",
+        "api",
+        "developer-tools"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2023-10-openai-dall-e-3-integrated-into-chatgpt-plus-and-enterprise-tiers",
+      "date": "2023-10-19",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/dall-e-3"
+      ],
+      "headline": "DALL\u00b7E 3 integrated into ChatGPT Plus and Enterprise tiers",
+      "summary": "OpenAI has made DALL\u00b7E 3 available to ChatGPT Plus subscribers and Enterprise customers, enhancing the multimodal capabilities of these offerings. This integration allows users to generate images directly within ChatGPT conversations.",
+      "source_urls": [
+        "https://openai.com/blog/dall-e-3-is-now-available-in-chatgpt-plus-and-enterprise"
+      ],
+      "verified": true,
+      "tags": [
+        "image-generation",
+        "multimodal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2023-08-openai-launches-fine-tuning-for-gpt-3-5-turbo",
+      "date": "2023-08-22",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-3.5-turbo"
+      ],
+      "headline": "OpenAI launches fine-tuning for GPT-3.5 Turbo",
+      "summary": "OpenAI introduced fine-tuning support for GPT-3.5 Turbo, allowing developers to customize the model on their own data for improved performance on specific tasks. This expands the usability of the model beyond prompt engineering into domain-specific optimization.",
+      "source_urls": [
+        "https://openai.com/blog/gpt-3-5-turbo-fine-tuning-and-api-updates"
+      ],
+      "verified": true,
+      "tags": [
+        "fine-tuning",
+        "api-update",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2023-08-openai-acquires-graphics-and-simulation-startup-global-illum",
+      "date": "2023-08-16",
+      "type": "acquisition",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI acquires graphics and simulation startup Global Illumination",
+      "summary": "OpenAI has acquired Global Illumination, a startup founded by veterans from Pixar and Industrial Light & Magic specializing in advanced graphics and simulation technologies. The acquisition signals OpenAI's intent to deepen its expertise in 3D modeling, photorealistic rendering, and simulated environments, potentially enhancing training data generation and AI interaction with virtual worlds.",
+      "source_urls": [
+        "https://openai.com/blog/openai-acquires-global-illumination"
+      ],
+      "verified": true,
+      "tags": [
+        "simulation",
+        "graphics",
+        "acquisition",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-27",
+      "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2023-07-openai-launches-gpt-4-api-for-general-availability",
+      "date": "2023-07-06",
+      "type": "model_launch",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4"
+      ],
+      "headline": "OpenAI launches GPT-4 API for general availability",
+      "summary": "OpenAI made the GPT-4 API generally available to all developers, removing previous waitlist requirements. This allowed broad commercial access to its most advanced model at the time, significantly expanding the capacity for AI-powered applications.",
+      "source_urls": [
+        "https://openai.com/blog/gpt-4-api-general-availability"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "api-launch",
+        "commercial-access"
+      ],
+      "impact": {
+        "magnitude": "major",
         "duration": "ongoing",
         "price_direction": "mixed"
       },
