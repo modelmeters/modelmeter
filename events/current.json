@@ -4132,6 +4132,122 @@
       },
       "created_at": "2026-06-28",
       "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-11-xai-x-ai-launches-grok-4-1-now-available-to-all-users-across-pla",
+      "date": "2025-11-17",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.1"
+      ],
+      "headline": "x.ai launches Grok 4.1, now available to all users across platforms",
+      "summary": "x.ai has released Grok 4.1, making it immediately available to all users on grok.com, 𝕏, and iOS and Android apps. The model is accessible via Auto mode and can be manually selected in the model picker.",
+      "source_urls": [
+        "https://x.ai/news/grok-4-1"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "model-update"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-08-xai-x-ai-launches-grok-code-fast-1-a-new-ai-model-optimized-for-",
+      "date": "2025-08-29",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-code-fast-1"
+      ],
+      "headline": "X.ai launches Grok Code Fast 1, a new AI model optimized for coding tasks.",
+      "summary": "X.ai has released Grok Code Fast 1, a model designed to enhance code generation and understanding. It is positioned as a strong competitor in the coding model landscape, with performance claims rivaling existing leaders. The model is now available via API and integrated into X's ecosystem.",
+      "source_urls": [
+        "https://x.ai/news/grok-code-fast-1"
+      ],
+      "verified": true,
+      "tags": [
+        "coding",
+        "code-generation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-08-xai-launches-grok-2-and-grok-2-mini-models",
+      "date": "2024-08-14",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-2",
+        "xai/grok-2-mini"
+      ],
+      "headline": "xAI launches Grok-2 and Grok-2 mini models",
+      "summary": "xAI has released Grok-2 and Grok-2 mini, new large language models designed to provide advanced reasoning and conversational capabilities. These models are now available to beta testers, marking a significant expansion in xAI's portfolio and increasing competition in the generative AI space.",
+      "source_urls": [
+        "https://x.ai/blog/grok-2"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "beta-release",
+        "reasoning",
+        "conversational-ai"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-05-xai-raises-6-billion-in-series-b-funding-round",
+      "date": "2024-05-27",
+      "type": "funding",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "xAI raises $6 billion in Series B funding round",
+      "summary": "In May 2024, xAI announced a $6 billion Series B funding round, marking one of the largest financings in the AI sector. This substantial capital injection will support the company's rapid growth, model development, and infrastructure scaling.",
+      "source_urls": [
+        "https://x.ai/blog/series-b"
+      ],
+      "verified": true,
+      "tags": [
+        "funding",
+        "major",
+        "investment",
+        "scaling"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
     }
   ]
 }
