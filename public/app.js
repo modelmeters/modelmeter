@@ -717,7 +717,7 @@ function renderAcrossProvidersChart() {
     svg.appendChild(lbl);
   }
 
-  // Event markers — filtered by chartState.events ("major" | "all" | "off")
+  // Compute relevant events (filter only — drawing happens after lines)
   const MAJOR_MAGNITUDES = new Set(["major", "structural"]);
   const relevantEvents = chartState.events === "off" ? [] : events.filter(e => {
     const evProviders = e.providers || [];
@@ -725,30 +725,6 @@ function renderAcrossProvidersChart() {
     if (chartState.events === "major") return MAJOR_MAGNITUDES.has(e.impact?.magnitude);
     return true;
   });
-  for (const ev of relevantEvents) {
-    const evDate = new Date(ev.date);
-    if (evDate < minDate || evDate > maxDate) continue;
-    const x = xScale(evDate);
-    const cat = TYPE_CATEGORY[ev.type] || "other";
-    const color = CATEGORY_META[cat].color;
-    const r = MAGNITUDE_RADIUS[ev.impact?.magnitude] ?? 5;
-    const line = document.createElementNS(ns, "line");
-    line.setAttribute("x1", x); line.setAttribute("x2", x);
-    line.setAttribute("y1", padTop); line.setAttribute("y2", height - padBottom);
-    line.setAttribute("stroke", color);
-    line.setAttribute("stroke-width", "1");
-    line.setAttribute("stroke-dasharray", "3,3");
-    line.setAttribute("opacity", "0.4");
-    svg.appendChild(line);
-    const diamond = document.createElementNS(ns, "polygon");
-    diamond.setAttribute("points", `${x},${padTop-r} ${x+r},${padTop} ${x},${padTop+r} ${x-r},${padTop}`);
-    diamond.setAttribute("fill", color);
-    diamond.setAttribute("stroke", "var(--panel)");
-    diamond.setAttribute("stroke-width", "1");
-    diamond.setAttribute("style", "cursor: pointer");
-    attachEventTooltip(diamond, ev);
-    svg.appendChild(diamond);
-  }
 
   // Per-provider step-function lines
   for (const p of visibleProviders) {
@@ -774,7 +750,7 @@ function renderAcrossProvidersChart() {
     path.setAttribute("stroke", color);
     path.setAttribute("stroke-width", "2");
     svg.appendChild(path);
-    // Dots at each transition
+    // Dots at each price transition
     for (const pt of points) {
       const c = document.createElementNS(ns, "circle");
       c.setAttribute("cx", xScale(pt.date));
@@ -785,6 +761,36 @@ function renderAcrossProvidersChart() {
       c.setAttribute("stroke-width", "1");
       c.setAttribute("style", "cursor: pointer");
       attachProviderPointTooltip(c, p, pt);
+      svg.appendChild(c);
+    }
+  }
+
+  // Event circles — drawn on top of lines, anchored to each provider's price at event date
+  for (const ev of relevantEvents) {
+    const evDate = new Date(ev.date);
+    if (evDate < minDate || evDate > maxDate) continue;
+    const x = xScale(evDate);
+    const cat = TYPE_CATEGORY[ev.type] || "other";
+    const catColor = CATEGORY_META[cat].color;
+    const r = Math.max(3, (MAGNITUDE_RADIUS[ev.impact?.magnitude] ?? 5) - 1);
+    const affectedProviders = visibleProviders.filter(p => (ev.providers || []).includes(p));
+    for (const p of affectedProviders) {
+      const pts = filtered[p];
+      if (!pts || pts.length === 0) continue;
+      // Price at event date: last snapshot at or before event
+      const snapshot = [...pts].reverse().find(pt => pt.date <= ev.date);
+      if (!snapshot) continue;
+      const y = yScale(snapshot.price);
+      const provColor = PROVIDER_COLORS[p] || "#ffffff";
+      const c = document.createElementNS(ns, "circle");
+      c.setAttribute("cx", x);
+      c.setAttribute("cy", y);
+      c.setAttribute("r", r);
+      c.setAttribute("fill", provColor);
+      c.setAttribute("stroke", catColor);
+      c.setAttribute("stroke-width", "2");
+      c.setAttribute("style", "cursor: pointer");
+      attachEventTooltip(c, ev);
       svg.appendChild(c);
     }
   }
