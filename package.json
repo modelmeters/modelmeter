@@ -8,6 +8,7 @@
     "digest": "node scripts/digest.mjs",
     "filter-digest": "node scripts/hermes-filter-digest.mjs",
     "backfill-openai": "node scripts/backfill-openai.mjs",
+    "backfill-provider": "node scripts/backfill-provider.mjs",
     "draft-pricing": "node scripts/draft-pricing-update.mjs",
     "snapshot": "node scripts/snapshot.mjs",
     "check-pricing": "node scripts/check-pricing-pages.mjs",
