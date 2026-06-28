@@ -445,7 +445,7 @@ function renderCalcResult(r, callUrl) {
   }
   const veniceUrl = veniceUrlFor(r.model);
   html += `<div class="calc-cta">
-    <a href="${veniceUrl}" target="_blank" rel="noopener" class="cta-link">run via Venice →</a>
+    <a href="${veniceUrl}" target="_blank" rel="noopener" class="cta-link">run privately w/ Venice →</a>
   </div>`;
   html += `<div class="try-json">json: <a href="${callUrl}" target="_blank">${escapeHtml(callUrl)}</a></div>`;
   document.getElementById("calc-result").innerHTML = html;
@@ -463,7 +463,7 @@ function renderEventsFeed() {
       (e.providers || []).includes(model.provider) ||
       (e.models || []).includes(model.id)
     );
-    ctxLabel.textContent = `${model.display_name}`;
+    ctxLabel.textContent = PROVIDER_LABELS[model.provider] || model.provider;
   } else {
     ctxLabel.textContent = "all providers";
   }
