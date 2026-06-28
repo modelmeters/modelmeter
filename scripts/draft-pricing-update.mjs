@@ -181,13 +181,14 @@ async function extractDiffs(url, text, models) {
   const system = `You compare a provider's live pricing page against a list of currently-tracked model prices.
 
 For each tracked model, look for its current input/output price on the page (per million tokens, USD).
-- If you find a price that matches what we have → DO NOT include in the response (skip "unchanged" to save tokens).
-- If you find a price that DIFFERS → include with status "changed", new_input_cost and new_output_cost as numbers per Mtok USD.
+- If the price on the page matches what we already track → DO NOT include it. Omit it entirely. Only report differences.
+- If the price on the page is NUMERICALLY DIFFERENT from what we track → status "changed". Set new_input_cost and new_output_cost to the numbers FROM THE PAGE (not our current values). In your reasoning, include both the old tracked value and the new page value so the diff is clear.
+- CRITICAL: Never return status "changed" if the price you found equals the price we already have. "Changed" means the number changed.
 - If the model is no longer mentioned anywhere on the page → status "deprecated".
 
-Then list up to 5 models on the page that are NOT in our tracked list (status "new"). For these, fill in model_id with a reasonable provider/model-id slug guess and include new_input_cost/new_output_cost.
+Then list up to 5 models on the page that are NOT in our tracked list AND have explicit per-Mtok USD prices in a pricing table (status "new"). Only include "new" entries with real prices from the page — do not guess or infer prices.
 
-Be CONSERVATIVE: only flag "changed" if you're confident the page genuinely shows a different price. Mentions in marketing copy don't count — look for actual pricing tables or per-Mtok numbers. If unsure, omit.
+Be CONSERVATIVE: only flag "changed" if the page explicitly shows a different number in a pricing table or per-Mtok pricing section. Marketing copy, FAQ examples, and bundled plan descriptions don't count. If unsure, omit.
 
 Return strict JSON: { "changes": [{ "model_id": string, "status": "changed"|"new"|"deprecated", "new_input_cost"?: number, "new_output_cost"?: number, "reasoning": string }], "notes": string }`;
 
