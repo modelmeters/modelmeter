@@ -70,13 +70,24 @@ console.log(`Found ${candidates.length} candidate(s) in digest.`);
 
 if (!candidates.length) process.exit(0);
 
+const existing = JSON.parse(readFileSync(EVENTS_PATH, "utf8"));
+const existingHeadlines = existing.events
+  .slice(-100)
+  .map((e) => `${e.date}: ${e.headline}`)
+  .join("\n");
+
 const proposals = [];
 for (const cand of candidates) {
   try {
-    const verdict = await scoreWithVenice(cand);
-    console.log(`  [${verdict.score}/10] ${cand.title.slice(0, 70)}`);
-    if (verdict.score >= SCORE_MIN && verdict.event) {
-      proposals.push(materializeEvent(verdict.event, cand));
+    const verdict = await scoreWithVenice(cand, existingHeadlines);
+    const dupScore = verdict.duplicate_score ?? 0;
+    console.log(`  [${verdict.score}/10 dup:${dupScore}] ${cand.title.slice(0, 70)}`);
+    if (verdict.score >= SCORE_MIN && verdict.event && dupScore <= 1) {
+      const event = materializeEvent(verdict.event, cand);
+      if (dupScore === 1) event._duplicate_note = verdict.duplicate_note ?? "possible overlap with existing entry";
+      proposals.push(event);
+    } else if (verdict.score >= SCORE_MIN && dupScore >= 2) {
+      console.log(`    → dropped: duplicate (${verdict.duplicate_note ?? ""})`);
     }
   } catch (err) {
     console.error(`  scoring failed: ${cand.title.slice(0, 60)} — ${err.message}`);
@@ -96,7 +107,6 @@ if (DRY_RUN) {
   process.exit(0);
 }
 
-const existing = JSON.parse(readFileSync(EVENTS_PATH, "utf8"));
 const existingIds = new Set(existing.events.map((e) => e.id));
 const fresh = proposals.filter((p) => !existingIds.has(p.id));
 
@@ -105,7 +115,7 @@ if (!fresh.length) {
   process.exit(0);
 }
 
-existing.events.push(...fresh);
+existing.events.push(...fresh.map(({ _duplicate_note, ...e }) => e));
 existing.snapshot_date = new Date().toISOString().slice(0, 10);
 writeFileSync(EVENTS_PATH, JSON.stringify(existing, null, 2) + "\n");
 
@@ -169,9 +179,18 @@ function parseCandidates(md) {
   return out;
 }
 
-async function scoreWithVenice(cand) {
+async function scoreWithVenice(cand, existingHeadlines) {
   const system = `You triage AI-industry news for a pricing/events dataset (modelmeter.xyz).
 Score 1-10 how worth-recording the item is. >= 7 means: clearly affects model pricing, availability, capacity, regulation, or major industry structure. < 7 means: marketing fluff, conference promos, generic explainers, unrelated tech news, or sub-significant blog posts.
+
+Also assign a duplicate_score 0-3 by comparing against the already-recorded events listed below:
+  0 = novel, not covered
+  1 = related but distinct angle (different development, same topic)
+  2 = likely duplicate (same story, different source)
+  3 = exact duplicate (same event already recorded)
+
+Already-recorded events (most recent 100):
+${existingHeadlines}
 
 If score >= 7, also draft an event entry matching this schema:
 {
@@ -184,7 +203,7 @@ If score >= 7, also draft an event entry matching this schema:
   "impact": { "magnitude": one of [minor, moderate, major, structural], "duration": one of [one-time, temporary, ongoing, structural], "price_direction": one of [up, down, mixed, none] }
 }
 
-Return strict JSON: { "score": int, "reasoning": string, "event": object_or_null }`;
+Return strict JSON: { "score": int, "reasoning": string, "duplicate_score": int, "duplicate_note": string_or_null, "event": object_or_null }`;
 
   const user = `Title: ${cand.title}
 Source: ${cand.source}
@@ -270,6 +289,7 @@ function buildPrBody(events, digestDate) {
   for (const e of events) {
     lines.push(`### ${e.headline}`);
     lines.push(``);
+    if (e._duplicate_note) lines.push(`> ⚠ **Possible overlap:** ${e._duplicate_note}`);
     lines.push(`- **id:** \`${e.id}\``);
     lines.push(`- **type:** ${e.type}`);
     lines.push(`- **date:** ${e.date}`);
