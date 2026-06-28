@@ -781,12 +781,11 @@ function renderAcrossProvidersChart() {
       const snapshot = [...pts].reverse().find(pt => pt.date <= ev.date);
       if (!snapshot) continue;
       const y = yScale(snapshot.price);
-      const provColor = PROVIDER_COLORS[p] || "#ffffff";
       const c = document.createElementNS(ns, "circle");
       c.setAttribute("cx", x);
       c.setAttribute("cy", y);
       c.setAttribute("r", r);
-      c.setAttribute("fill", provColor);
+      c.setAttribute("fill", "none");
       c.setAttribute("stroke", catColor);
       c.setAttribute("stroke-width", "2");
       c.setAttribute("style", "cursor: pointer");
