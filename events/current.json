@@ -2498,36 +2498,6 @@
       "updated_at": "2026-06-28"
     },
     {
-      "id": "2026-04-anthropic-google-and-broadcom-expand-partnership-for-multipl",
-      "date": "2026-04-06",
-      "type": "infrastructure",
-      "providers": [
-        "anthropic",
-        "google",
-        "other"
-      ],
-      "models": [],
-      "headline": "Anthropic, Google, and Broadcom expand partnership for multiple gigawatts of next-generation AI compute",
-      "summary": "Anthropic has deepened its strategic partnership with Google and Broadcom to secure multiple gigawatts of next-generation compute capacity. This expansion significantly scales Anthropic's infrastructure foundation, enabling the training and deployment of larger, more advanced AI models in the future.",
-      "source_urls": [
-        "https://www.anthropic.com/news/google-broadcom-partnership-compute"
-      ],
-      "verified": true,
-      "tags": [
-        "compute-expansion",
-        "infrastructure",
-        "partnership",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "structural",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-06-28",
-      "updated_at": "2026-06-28"
-    },
-    {
       "id": "2026-03-anthropic-commits-100m-to-launch-claude-partner-network-for-",
       "date": "2026-03-14",
       "type": "infrastructure",
@@ -3409,6 +3379,397 @@
         "magnitude": "major",
         "duration": "ongoing",
         "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-05-google-deepmind-launches-gemini-omni-a-new-flagship-multimod",
+      "date": "2026-05-19",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-omni"
+      ],
+      "headline": "Google DeepMind launches Gemini Omni, a new flagship multimodal AI model",
+      "summary": "Google DeepMind has released Gemini Omni, a next-generation multimodal model with advanced video understanding and real-time interaction capabilities. This model represents a significant upgrade over previous Gemini versions, enabling more fluid and context-aware AI interactions across text, image, and video modalities.",
+      "source_urls": [
+        "https://deepmind.google/models/gemini-omni/"
+      ],
+      "verified": true,
+      "tags": [
+        "multimodal",
+        "video-understanding",
+        "real-time",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-05-google-deepmind-launches-alphaevolve-a-gemini-powered-autono",
+      "date": "2026-05-07",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/alphaevolve"
+      ],
+      "headline": "Google DeepMind launches AlphaEvolve, a Gemini-powered autonomous coding agent",
+      "summary": "AlphaEvolve, built on Gemini, demonstrates strong performance in competitive programming (reaching top 22% on Codeforces), discovers improved algorithms like a novel FFT variant, and optimizes real-world chip designs at Google, reducing latency by 12% and power by 15%. The system iteratively generates and tests code improvements, marking a significant step in autonomous AI-driven software and hardware development.",
+      "source_urls": [
+        "https://deepmind.google/blog/alphaevolve-impact/"
+      ],
+      "verified": true,
+      "tags": [
+        "coding-agent",
+        "gemini",
+        "algorithm-discovery",
+        "chip-design",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-04-google-deepmind-launches-gemini-robotics-er-1-6-with-enhance",
+      "date": "2026-04-15",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-robotics-er-1.6"
+      ],
+      "headline": "Google DeepMind launches Gemini Robotics-ER 1.6 with enhanced real-world task capabilities.",
+      "summary": "Google DeepMind has released Gemini Robotics-ER 1.6, an advanced iteration of its embodied AI model designed for robotics. This version improves robotic agents' ability to understand and execute complex tasks in real-world environments, leveraging multimodal inputs and simulation-trained policies with better generalization.",
+      "source_urls": [
+        "https://deepmind.google/blog/gemini-robotics-er-1-6/"
+      ],
+      "verified": true,
+      "tags": [
+        "robotics",
+        "embodied-ai",
+        "multimodal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-04-google-releases-gemma-4-a-family-of-open-models",
+      "date": "2026-04-02",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemma-4"
+      ],
+      "headline": "Google releases Gemma 4, a family of open models.",
+      "summary": "Google has launched Gemma 4, a new generation of its open-weight models, enhancing accessibility and performance for developers and researchers. This release expands Google's presence in the open-model ecosystem and provides a competitive alternative to other leading open models.",
+      "source_urls": [
+        "https://deepmind.google/models/gemma/gemma-4/"
+      ],
+      "verified": true,
+      "tags": [
+        "open-models",
+        "major",
+        "foundation-models"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-02-google-launches-gemini-3-1-pro-an-updated-version-of-its-fla",
+      "date": "2026-02-19",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-3.1-pro"
+      ],
+      "headline": "Google launches Gemini 3.1 Pro, an updated version of its flagship multimodal model",
+      "summary": "Google released Gemini 3.1 Pro in February 2026, enhancing its multimodal AI capabilities in the Gemini model family. This update improves performance across text, image, and code understanding tasks, positioning it competitively against other leading models in the market.",
+      "source_urls": [
+        "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+      ],
+      "verified": true,
+      "tags": [
+        "gemini",
+        "multimodal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-07-google-s-gemini-with-deep-think-achieves-gold-medal-standard",
+      "date": "2025-07-21",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-deep-think"
+      ],
+      "headline": "Google's Gemini with Deep Think achieves gold-medal standard on IMO benchmark",
+      "summary": "An advanced version of Google's Gemini model, enhanced with 'Deep Think' reasoning capabilities, has reached performance levels equivalent to a gold medalist at the International Mathematical Olympiad. This demonstrates a significant leap in AI's ability to solve complex, multi-step mathematical problems requiring deep reasoning.",
+      "source_urls": [
+        "https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/"
+      ],
+      "verified": true,
+      "tags": [
+        "reasoning",
+        "math",
+        "benchmark",
+        "gold-standard",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-06-google-launches-gemini-2-5-pro-model",
+      "date": "2025-06-05",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.5-pro"
+      ],
+      "headline": "Google launches Gemini 2.5 Pro model",
+      "summary": "Google has released Gemini 2.5 Pro, a new iteration in its Gemini model line, offering enhanced performance and capabilities over previous versions. This launch strengthens Google's position in the competitive AI model market and expands available options for developers and enterprises.",
+      "source_urls": [
+        "https://deepmind.google/models/gemini/pro/"
+      ],
+      "verified": true,
+      "tags": [
+        "gemini",
+        "pro",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-12-google-launches-veo-2-a-next-generation-video-generation-mod",
+      "date": "2024-12-16",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/veo-2"
+      ],
+      "headline": "Google launches Veo 2, a next-generation video generation model with enhanced quality and longer duration",
+      "summary": "Google DeepMind has released Veo 2, an upgraded version of its video generation model capable of producing high-quality, 1080p resolution videos up to 80 seconds long from text or image prompts. The model demonstrates improved temporal coherence, scene understanding, and cinematic control compared to its predecessor and competing systems.",
+      "source_urls": [
+        "https://deepmind.google/technologies/veo/veo-2/"
+      ],
+      "verified": true,
+      "tags": [
+        "video-generation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-12-google-deepmind-launches-genie-2-a-large-scale-foundation-wo",
+      "date": "2024-12-04",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/genie-2"
+      ],
+      "headline": "Google DeepMind launches Genie 2, a large-scale foundation world model for generative simulation.",
+      "summary": "Genie 2 is a foundation world model capable of generating diverse, interactive 3D environments from a single prompt, enabling long-horizon planning and agent-based simulation. It advances the state of generative world modeling and may influence downstream applications in robotics, gaming, and virtual environments.",
+      "source_urls": [
+        "https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/"
+      ],
+      "verified": true,
+      "tags": [
+        "world-model",
+        "generative-ai",
+        "simulation",
+        "3d-generation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-09-google-deepmind-s-alphachip-ai-optimizes-chip-placement-and-",
+      "date": "2024-09-27",
+      "type": "infrastructure",
+      "providers": [
+        "google"
+      ],
+      "models": [],
+      "headline": "Google DeepMind's AlphaChip AI optimizes chip placement and design, reducing development time from months to hours.",
+      "summary": "DeepMind applied its AlphaChip system, building on prior Alpha series innovations, to automate and optimize the chip floorplanning process. By framing chip design as a reinforcement learning problem, AlphaChip generates high-quality layouts in hours rather than months, already used in production for Google's TPU chips and other ASICs.",
+      "source_urls": [
+        "https://deepmind.google/discover/blog/how-alphachip-transformed-computer-chip-design/"
+      ],
+      "verified": true,
+      "tags": [
+        "ai-for-design",
+        "semiconductor",
+        "automation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-05-google-launches-gemini-flash-a-fast-and-cost-efficient-multi",
+      "date": "2024-05-14",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-flash"
+      ],
+      "headline": "Google launches Gemini Flash, a fast and cost-efficient multimodal model.",
+      "summary": "Google introduced Gemini Flash as a lightweight variant of its Gemini model family, optimized for speed and low cost while maintaining strong performance across text, image, and video understanding. The model is designed for high-volume, low-latency applications and is available via API and in Google AI Studio and Vertex AI.",
+      "source_urls": [
+        "https://deepmind.google/technologies/gemini/flash/"
+      ],
+      "verified": true,
+      "tags": [
+        "multimodal",
+        "low-latency",
+        "cost-efficient",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-05-google-deepmind-launches-veo-a-high-definition-video-generat",
+      "date": "2024-05-14",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/veo"
+      ],
+      "headline": "Google DeepMind launches Veo, a high-definition video generation model",
+      "summary": "Google DeepMind introduced Veo, a generative model capable of creating high-definition 1080p video up to 80 seconds long based on text prompts and reference images. The model supports cinematic control through shot types, camera motion, and other filmic parameters, positioning it as a competitive entry in the AI-generated video space.",
+      "source_urls": [
+        "https://deepmind.google/technologies/veo/"
+      ],
+      "verified": true,
+      "tags": [
+        "video-generation",
+        "text-to-video",
+        "high-definition",
+        "cinematic-control",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2023-12-google-launches-gemini-a-new-generation-of-ai-models-with-mu",
+      "date": "2023-12-06",
+      "type": "model_launch",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-nano",
+        "google/gemini-pro",
+        "google/gemini-1.5-pro",
+        "google/gemini-flash"
+      ],
+      "headline": "Google launches Gemini, a new generation of AI models with multimodal capabilities and product integration",
+      "summary": "Google introduced Gemini, a family of AI models replacing Bard, featuring Nano, Pro, 1.5 Pro, and Flash variants. The models offer enhanced reasoning, coding, and multimodal understanding, with integration across Android, Workspace, and Google Cloud. Gemini Advanced, powered by Ultra 1.0, became available for subscription.",
+      "source_urls": [
+        "https://deepmind.google/technologies/gemini/"
+      ],
+      "verified": true,
+      "tags": [
+        "multimodal",
+        "reasoning",
+        "coding",
+        "product-integration",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
       },
       "created_at": "2026-06-28",
       "updated_at": "2026-06-28"
