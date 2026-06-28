@@ -4787,6 +4787,93 @@
       },
       "created_at": "2026-06-28",
       "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-06-anthropic-asian-startups-launch-mythos-competitive-models-amid-ongoing",
+      "date": "2026-06-27",
+      "type": "model_launch",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [
+        "anthropic/Mythos"
+      ],
+      "headline": "Asian startups launch Mythos-competitive models amid ongoing Anthropic export restrictions",
+      "summary": "As Anthropic continues to face export limitations on its Mythos model, AI startups across Asia are releasing new models designed to match or replicate its capabilities. These launches aim to capture regional demand previously unmet due to U.S. export controls.",
+      "source_urls": [
+        "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/"
+      ],
+      "verified": false,
+      "tags": [
+        "asia",
+        "export-restriction",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-06-anthropic-s-mythos-5-returns-with-restricted-availability-fo",
+      "date": "2026-06-27",
+      "type": "model_unavailable",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/mythos-5"
+      ],
+      "headline": "Anthropic's Mythos 5 returns with restricted availability following government negotiations",
+      "summary": "After a two-week negotiation with the Trump administration, Anthropic's Mythos 5 model has resumed operations but only for a limited set of approved organizations, according to a government letter obtained by The Verge AI. The restricted relaunch follows an unexplained period of unavailability linked to regulatory concerns.",
+      "source_urls": [
+        "https://www.theverge.com/ai-artificial-intelligence/958458/anthropic-mythos-5-is-back-trump-negotiations"
+      ],
+      "verified": false,
+      "tags": [
+        "regulatory",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-06-openai-restricts-gpt-5-6-rollout-following-government-reques",
+      "date": "2026-06-26",
+      "type": "regulatory_action",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.6"
+      ],
+      "headline": "OpenAI restricts GPT-5.6 rollout following government request",
+      "summary": "OpenAI has limited the release of GPT-5.6 after complying with a government request, raising concerns about restricted access to advanced AI tools. The company stated that such restrictions should not become the long-term default, emphasizing the negative impact on users, developers, enterprises, and cybersecurity efforts.",
+      "source_urls": [
+        "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/"
+      ],
+      "verified": false,
+      "tags": [
+        "regulation",
+        "availability",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
     }
   ]
 }
