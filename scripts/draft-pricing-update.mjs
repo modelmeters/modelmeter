@@ -55,6 +55,7 @@ for (const m of pricing.models) {
   if (!m.source_url) continue;
   if (looksLikeApi(m.source_url)) continue;
   if (m.input_cost_per_mtok == null) continue;
+  if (m.availability && m.availability !== "available") continue;
   if (!groups.has(m.source_url)) groups.set(m.source_url, []);
   groups.get(m.source_url).push(m);
 }
@@ -147,7 +148,11 @@ console.log("Done.");
 
 async function fetchPageText(url) {
   const res = await fetch(url, {
-    headers: { "user-agent": "modelmeter-pricing-draft/0.1 (+https://modelmeter.xyz)" },
+    headers: {
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "accept-language": "en-US,en;q=0.5",
+    },
     redirect: "follow",
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
