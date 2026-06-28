@@ -24,7 +24,7 @@
   --mono: "JetBrains Mono", "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 11px; line-height: 1.5; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 11px; line-height: 1.5; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-dim); text-decoration: underline; }
 button, input, select { font-family: inherit; font-size: inherit; }

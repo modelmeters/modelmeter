@@ -66,7 +66,7 @@ let chartState = {
   scale: "log",
   cache: false,
   viewMode: "across",          // "across" or "single"
-  tier: "flagship",            // "flagship" | "mid" | "cheap"
+  tier: "flagship",            // "flagship" | "mid" | "fast"
   priceField: "input_cost_per_mtok",
   events: "major",             // "major" | "all" | "off"
 };
@@ -607,7 +607,7 @@ function buildTierSeries(provider, tier, priceField) {
     active.sort((a, b) => b.price - a.price);
     let chosen;
     if (tier === "flagship") chosen = active[0];
-    else if (tier === "cheap") chosen = active[active.length - 1];
+    else if (tier === "fast") chosen = active[active.length - 1];
     else { // mid
       if (active.length < 3) continue;
       chosen = active[Math.floor(active.length / 2)];
@@ -837,7 +837,7 @@ function renderAcrossProvidersChart() {
   }
 
   // Legend with provider swatches + JSON link
-  const tierLabel = chartState.tier === "flagship" ? "flagship" : chartState.tier === "cheap" ? "cheap/fast" : "mid-tier";
+  const tierLabel = chartState.tier === "flagship" ? "flagship" : chartState.tier === "fast" ? "fast" : "mid-tier";
   const priceLabel = chartState.priceField === "input_cost_per_mtok" ? "input" : "output";
   let legendHtml = "";
   for (const p of visibleProviders) {
