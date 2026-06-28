@@ -68,6 +68,7 @@ let chartState = {
   viewMode: "across",          // "across" or "single"
   tier: "flagship",            // "flagship" | "mid" | "cheap"
   priceField: "input_cost_per_mtok",
+  events: "major",             // "major" | "all" | "off"
 };
 
 const ACROSS_PROVIDERS = ["anthropic", "openai", "google", "xai"];
@@ -490,6 +491,13 @@ function renderChartControls() {
       renderChart();
     });
   });
+  document.querySelectorAll("#chart-events .chip").forEach(c => {
+    c.addEventListener("click", () => {
+      chartState.events = c.dataset.events;
+      document.querySelectorAll("#chart-events .chip").forEach(x => x.classList.toggle("active", x === c));
+      renderChart();
+    });
+  });
   document.querySelectorAll("#chart-mode .chip").forEach(c => {
     c.addEventListener("click", () => {
       chartState.viewMode = c.dataset.mode;
@@ -709,10 +717,13 @@ function renderAcrossProvidersChart() {
     svg.appendChild(lbl);
   }
 
-  // Event markers — show events affecting any visible provider
-  const relevantEvents = events.filter(e => {
+  // Event markers — filtered by chartState.events ("major" | "all" | "off")
+  const MAJOR_MAGNITUDES = new Set(["major", "structural"]);
+  const relevantEvents = chartState.events === "off" ? [] : events.filter(e => {
     const evProviders = e.providers || [];
-    return visibleProviders.some(p => evProviders.includes(p));
+    if (!visibleProviders.some(p => evProviders.includes(p))) return false;
+    if (chartState.events === "major") return MAJOR_MAGNITUDES.has(e.impact?.magnitude);
+    return true;
   });
   for (const ev of relevantEvents) {
     const evDate = new Date(ev.date);
@@ -720,6 +731,7 @@ function renderAcrossProvidersChart() {
     const x = xScale(evDate);
     const cat = TYPE_CATEGORY[ev.type] || "other";
     const color = CATEGORY_META[cat].color;
+    const r = MAGNITUDE_RADIUS[ev.impact?.magnitude] ?? 5;
     const line = document.createElementNS(ns, "line");
     line.setAttribute("x1", x); line.setAttribute("x2", x);
     line.setAttribute("y1", padTop); line.setAttribute("y2", height - padBottom);
@@ -728,7 +740,6 @@ function renderAcrossProvidersChart() {
     line.setAttribute("stroke-dasharray", "3,3");
     line.setAttribute("opacity", "0.4");
     svg.appendChild(line);
-    const r = 5;
     const diamond = document.createElementNS(ns, "polygon");
     diamond.setAttribute("points", `${x},${padTop-r} ${x+r},${padTop} ${x},${padTop+r} ${x-r},${padTop}`);
     diamond.setAttribute("fill", color);
