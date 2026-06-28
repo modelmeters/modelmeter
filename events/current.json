@@ -2254,7 +2254,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/fable-mythos-access"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "export-control",
         "us-regulation",
@@ -2284,7 +2284,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-fable-5-mythos-5"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "mythos-class",
         "safe-deployment",
@@ -2311,7 +2311,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/confidential-draft-s1-sec"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "ipo",
         "funding",
@@ -2339,7 +2339,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/series-h"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "funding",
@@ -2369,7 +2369,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-opus-4-8"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "coding",
         "agentic-ai",
@@ -2396,7 +2396,7 @@
       "source_urls": [
         "https://www.anthropic.com/research/glasswing-initial-update"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "infrastructure-scaling",
         "deployment-efficiency",
@@ -2423,7 +2423,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/anthropic-acquires-stainless"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "acquisition",
         "developer-tools",
@@ -2452,7 +2452,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/higher-limits-spacex"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "capacity-expansion",
         "strategic-partnership",
@@ -2481,7 +2481,7 @@
       "source_urls": [
         "https://anthropic.com/claude-opus-4-7-system-card"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "claude",
         "reasoning",
@@ -2493,65 +2493,6 @@
         "magnitude": "major",
         "duration": "ongoing",
         "price_direction": "mixed"
-      },
-      "created_at": "2026-06-28",
-      "updated_at": "2026-06-28"
-    },
-    {
-      "id": "2026-04-anthropic-launches-claude-opus-a-hybrid-reasoning-model-with",
-      "date": "2026-04-16",
-      "type": "model_launch",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/opus"
-      ],
-      "headline": "Anthropic launches Claude Opus, a hybrid reasoning model with 1M context window",
-      "summary": "Anthropic introduces Claude Opus, designed for complex coding tasks and AI agent workflows, featuring a 1 million token context window. This model enhances performance on demanding reasoning workloads and expands the boundaries of practical context length.",
-      "source_urls": [
-        "https://www.anthropic.com/claude/opus"
-      ],
-      "verified": false,
-      "tags": [
-        "major",
-        "reasoning",
-        "coding",
-        "long-context"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-06-28",
-      "updated_at": "2026-06-28"
-    },
-    {
-      "id": "2026-04-anthropic-launches-claude-opus-4-7-with-improved-software-en",
-      "date": "2026-04-16",
-      "type": "model_launch",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/opus-4.7"
-      ],
-      "headline": "Anthropic launches Claude Opus 4.7 with improved software engineering capabilities",
-      "summary": "Anthropic has released Claude Opus 4.7, an upgraded version of its flagship model, now generally available. The model shows notable improvements over Opus 4.6, particularly in handling complex software engineering tasks.",
-      "source_urls": [
-        "https://www.anthropic.com/news/claude-opus-4-7"
-      ],
-      "verified": false,
-      "tags": [
-        "coding",
-        "general-availability",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "moderate",
-        "duration": "ongoing",
-        "price_direction": "none"
       },
       "created_at": "2026-06-28",
       "updated_at": "2026-06-28"
@@ -2571,7 +2512,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/google-broadcom-partnership-compute"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "compute-expansion",
         "infrastructure",
@@ -2589,7 +2530,7 @@
     {
       "id": "2026-03-anthropic-commits-100m-to-launch-claude-partner-network-for-",
       "date": "2026-03-14",
-      "type": "funding",
+      "type": "infrastructure",
       "providers": [
         "anthropic"
       ],
@@ -2599,7 +2540,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-partner-network"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "enterprise",
         "partner-network",
@@ -2627,7 +2568,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/statement-department-of-war"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "national-security",
         "ai-governance",
@@ -2657,7 +2598,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-sonnet-4-6"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "agentic",
         "coding",
@@ -2685,7 +2626,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "safety",
@@ -2715,7 +2656,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-opus-4-6"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "coding",
@@ -2743,7 +2684,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "protocol-donation",
         "foundation-launch",
@@ -2774,7 +2715,7 @@
       "source_urls": [
         "https://www.anthropic.com/engineering/advanced-tool-use"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "tool-use",
         "agents",
@@ -2804,7 +2745,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-opus-4-5"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "reasoning",
@@ -2832,7 +2773,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/anthropic-invests-50-billion-in-american-ai-infrastructure"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "infrastructure",
         "investment",
@@ -2863,7 +2804,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/memory"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "memory",
         "context-management",
@@ -2893,7 +2834,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-haiku-4-5"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "small-model",
         "general-availability",
@@ -2910,7 +2851,7 @@
     {
       "id": "2025-10-anthropic-research-shows-small-scale-data-poisoning-can-degr",
       "date": "2025-10-09",
-      "type": "research_release",
+      "type": "open_source_release",
       "providers": [
         "anthropic"
       ],
@@ -2920,7 +2861,7 @@
       "source_urls": [
         "https://www.anthropic.com/research/small-samples-poison"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "data-poisoning",
         "model-robustness",
@@ -2951,7 +2892,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-sonnet-4-5"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "coding",
         "agents",
@@ -2981,7 +2922,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/create-files"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "code-generation",
         "tool-use",
@@ -3009,7 +2950,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "enterprise-ai",
@@ -3038,7 +2979,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/1m-context"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "context-window",
         "major",
@@ -3067,7 +3008,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-opus-4-1"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "reliability",
@@ -3085,7 +3026,7 @@
     {
       "id": "2025-07-anthropic-launches-claude-for-financial-services-a-dedicated",
       "date": "2025-07-15",
-      "type": "compute_partnership",
+      "type": "model_launch",
       "providers": [
         "anthropic"
       ],
@@ -3095,40 +3036,10 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-for-financial-services"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "enterprise",
         "financial-services",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-06-28",
-      "updated_at": "2026-06-28"
-    },
-    {
-      "id": "2025-06-anthropic-demonstrates-claude-managing-autonomous-retail-ope",
-      "date": "2025-06-27",
-      "type": "research_breakthrough",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/claude-3"
-      ],
-      "headline": "Anthropic demonstrates Claude managing autonomous retail operations in office experiment",
-      "summary": "Anthropic's Project Vend research shows Claude successfully operating a small shop in their office, handling inventory, pricing, customer interaction, and financial reconciliation. This demonstrates advanced AI agent capabilities in real-world commercial environments.",
-      "source_urls": [
-        "https://www.anthropic.com/research/project-vend-1"
-      ],
-      "verified": false,
-      "tags": [
-        "autonomous-agents",
-        "real-world-deployment",
-        "retail-automation",
         "major"
       ],
       "impact": {
@@ -3154,7 +3065,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-4"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "flagship",
@@ -3184,7 +3095,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/web-search-api"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "search-integration",
         "real-time-information",
@@ -3215,7 +3126,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/max-plan"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "rate-limits",
         "priority-access",
@@ -3247,7 +3158,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/web-search"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "web-search",
         "real-time-information",
@@ -3276,7 +3187,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-3-7-sonnet"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "hybrid-reasoning"
@@ -3292,7 +3203,7 @@
     {
       "id": "2024-12-anthropic-publishes-research-on-alignment-faking-in-large-la",
       "date": "2024-12-19",
-      "type": "research_release",
+      "type": "open_source_release",
       "providers": [
         "anthropic"
       ],
@@ -3302,7 +3213,7 @@
       "source_urls": [
         "https://www.anthropic.com/research/alignment-faking"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "alignment",
         "safety",
@@ -3333,7 +3244,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/3-5-models-and-computer-use"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "computer-use",
@@ -3364,7 +3275,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/expanding-access-to-claude-for-government"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "government",
         "aws-partnership",
@@ -3394,7 +3305,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-3-5-sonnet"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "performance-improvement",
@@ -3425,7 +3336,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-europe"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "eu",
         "compliance",
@@ -3457,7 +3368,7 @@
       "source_urls": [
         "https://www.anthropic.com/news/claude-3-family"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "benchmark",
@@ -3488,7 +3399,7 @@
       "source_urls": [
         "https://www.anthropic.com/index/anthropic-amazon"
       ],
-      "verified": false,
+      "verified": true,
       "tags": [
         "major",
         "cloud-partnership",
