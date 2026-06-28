@@ -3773,6 +3773,365 @@
       },
       "created_at": "2026-06-28",
       "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-03-meta-launches-omnilingual-mt-supporting-translation-across-1",
+      "date": "2026-03-18",
+      "type": "model_launch",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/omnilingual-mt-1600"
+      ],
+      "headline": "Meta launches Omnilingual MT supporting translation across 1,600 languages",
+      "summary": "Meta AI has introduced Omnilingual MT, a machine translation system capable of translating between 1,600 languages, significantly expanding on the prior 200-language NLLB models. This advancement builds on Meta's No Language Left Behind initiative and leverages large-scale training to improve coverage and quality for low-resource and underrepresented languages.",
+      "source_urls": [
+        "https://ai.meta.com/research/publications/omnilingual-mt-machine-translation-for-1600-languages/?_fb_noscript=1"
+      ],
+      "verified": true,
+      "tags": [
+        "machine-translation",
+        "multilingual",
+        "low-resource-languages",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-12-meta-launches-sam-audio-for-text-prompted-sound-separation-f",
+      "date": "2025-12-16",
+      "type": "model_launch",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/sam-audio"
+      ],
+      "headline": "Meta launches SAM Audio for text-prompted sound separation from audio sources.",
+      "summary": "Meta introduced SAM Audio, a new model that allows users to isolate specific sounds from audio or audio-visual content using simple text prompts. This extends the capabilities of the existing Segment Anything family to the audio domain, enabling precise audio segmentation without manual annotation.",
+      "source_urls": [
+        "https://ai.meta.com/samaudio/"
+      ],
+      "verified": true,
+      "tags": [
+        "audio-processing",
+        "segmentation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-11-meta-launches-segment-anything-model-3-with-text-and-visual-",
+      "date": "2025-11-19",
+      "type": "model_launch",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/sam3"
+      ],
+      "headline": "Meta launches Segment Anything Model 3 with text and visual prompting for image and video segmentation",
+      "summary": "Meta introduced SAM 3, enhancing its foundational segmentation model with the ability to use both text and visual prompts to identify, segment, and track objects in images and videos. The model is slated for integration into Instagram Edits and the Meta AI app's Vibes feature, expanding its reach to millions of users.",
+      "source_urls": [
+        "https://ai.meta.com/sam3/"
+      ],
+      "verified": true,
+      "tags": [
+        "segmentation",
+        "computer-vision",
+        "multimodal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-11-meta-launches-segment-anything-model-3-1-with-enhanced-real-",
+      "date": "2025-11-19",
+      "type": "model_launch",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/sam-3.1"
+      ],
+      "headline": "Meta launches Segment Anything Model 3.1 with enhanced real-time video detection and tracking capabilities.",
+      "summary": "Meta has released SAM 3.1, an upgraded version of its foundational segmentation model, featuring faster inference, improved accuracy, and new capabilities for real-time video detection and tracking through multiplexing and global reasoning. This update expands the model's applicability to more dynamic and complex visual understanding tasks.",
+      "source_urls": [
+        "https://ai.meta.com/blog/segment-anything-model-3/?_fb_noscript=1"
+      ],
+      "verified": true,
+      "tags": [
+        "computer-vision",
+        "real-time",
+        "segmentation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-05-meta-launches-llama-startup-program-to-support-early-stage-c",
+      "date": "2025-05-21",
+      "type": "infrastructure",
+      "providers": [
+        "meta"
+      ],
+      "models": [],
+      "headline": "Meta launches Llama Startup Program to support early-stage companies building with Llama models.",
+      "summary": "Meta introduced the Llama Startup Program, providing startups with access to Llama models, technical support, and compute resources to accelerate development of generative AI applications. The program aims to foster innovation and increase adoption of Meta's open-weight models in the startup ecosystem.",
+      "source_urls": [
+        "https://ai.meta.com/blog/llama-startup-program/?_fb_noscript=1"
+      ],
+      "verified": true,
+      "tags": [
+        "startup-support",
+        "llama",
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-04-meta-launches-natively-multimodal-llama-4-scout-and-maverick",
+      "date": "2025-04-05",
+      "type": "model_launch",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/llama-4-scout",
+        "meta/llama-4-maverick"
+      ],
+      "headline": "Meta launches natively multimodal Llama 4 Scout and Maverick with up to 1M token context",
+      "summary": "Meta introduced Llama 4 Scout and Maverick, the first open-weight models in the Llama series with native multimodal capabilities. These models support up to 1 million tokens of context and are designed for both efficient and high-performance use cases, marking a significant leap in open model capability and accessibility.",
+      "source_urls": [
+        "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
+      ],
+      "verified": true,
+      "tags": [
+        "multimodal",
+        "open-weights",
+        "long-context",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-10-meta-launches-quantized-versions-of-llama-1b-and-3b-models",
+      "date": "2024-10-24",
+      "type": "model_launch",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/llama-1b-quantized",
+        "meta/llama-3b-quantized"
+      ],
+      "headline": "Meta launches quantized versions of Llama 1B and 3B models",
+      "summary": "Meta introduced quantized, instruction-tuned versions of its Llama 1B and 3B models, optimized for faster inference and lower memory usage while preserving the original models' quality and safety features. These models are designed for efficient on-device and edge deployment.",
+      "source_urls": [
+        "https://ai.meta.com/blog/meta-llama-quantized-lightweight-models/?_fb_noscript=1"
+      ],
+      "verified": true,
+      "tags": [
+        "quantization",
+        "on-device",
+        "efficiency",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-10-meta-launches-movie-gen-a-multimodal-model-for-text-to-video",
+      "date": "2024-10-04",
+      "type": "model_launch",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/movie-gen"
+      ],
+      "headline": "Meta launches Movie Gen, a multimodal model for text-to-video and video editing.",
+      "summary": "Meta introduced Movie Gen, a suite of AI models enabling text-to-video generation, video editing, and audio synthesis. The technology allows users to generate and modify videos using simple text inputs, marking a significant step in multimodal content creation. While initially a research release, it signals Meta's intent to compete in the generative video space.",
+      "source_urls": [
+        "https://ai.meta.com/research/movie-gen/?_fb_noscript=1"
+      ],
+      "verified": true,
+      "tags": [
+        "text-to-video",
+        "video-editing",
+        "audio-synthesis",
+        "research-release",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-09-meta-launches-llama-3-2-with-vision-and-edge-optimized-model",
+      "date": "2024-09-25",
+      "type": "model_launch",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/llama-3.2"
+      ],
+      "headline": "Meta launches Llama 3.2 with vision and edge-optimized models",
+      "summary": "Meta released Llama 3.2, introducing vision-capable and lightweight variants designed for edge and mobile deployment. These models enhance on-device AI capabilities and expand Meta's open, customizable model offerings.",
+      "source_urls": [
+        "https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/?_fb_noscript=1"
+      ],
+      "verified": true,
+      "tags": [
+        "vision",
+        "edge-ai",
+        "mobile",
+        "open-source",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-07-meta-launches-segment-anything-model-2-for-video-and-image-o",
+      "date": "2024-07-31",
+      "type": "model_launch",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/sam2"
+      ],
+      "headline": "Meta launches Segment Anything Model 2 for video and image object segmentation.",
+      "summary": "Meta introduced SAM 2, an advanced segmentation model capable of accurately identifying and selecting any object in both images and videos with minimal user input. Building on the original SAM, this version extends functionality to video sequences, enabling frame-level consistency and broader applicability in content editing, robotics, and AR/VR.",
+      "source_urls": [
+        "https://ai.meta.com/sam2/"
+      ],
+      "verified": true,
+      "tags": [
+        "segmentation",
+        "computer-vision",
+        "video-processing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-04-meta-announces-next-generation-in-house-ai-training-and-infe",
+      "date": "2024-04-10",
+      "type": "infrastructure",
+      "providers": [
+        "meta"
+      ],
+      "models": [],
+      "headline": "Meta announces next-generation in-house AI training and inference accelerator chip (MTIA)",
+      "summary": "Meta has unveiled details of its next-generation Meta Training and Inference Accelerator (MTIA) chip, designed to improve efficiency and performance for large-scale AI model training and inference. This custom silicon represents a strategic investment to scale AI infrastructure internally and reduce dependency on external hardware suppliers.",
+      "source_urls": [
+        "https://ai.meta.com/blog/next-generation-meta-training-inference-accelerator-AI-MTIA/"
+      ],
+      "verified": true,
+      "tags": [
+        "custom-chip",
+        "ai-hardware",
+        "inference-optimization",
+        "training-acceleration",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2023-08-meta-launches-code-llama-a-code-specialized-variant-of-llama",
+      "date": "2023-08-24",
+      "type": "model_launch",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/code-llama"
+      ],
+      "headline": "Meta launches Code Llama, a code-specialized variant of Llama 2 available for commercial and research use.",
+      "summary": "Building on the foundation of Llama 2, Meta introduced Code Llama, a family of large language models fine-tuned for code generation and understanding. The model is released under a permissive license allowing free use in both research and commercial applications, positioning it as a major open alternative in the AI coding space.",
+      "source_urls": [
+        "https://ai.meta.com/blog/code-llama-large-language-model-coding/"
+      ],
+      "verified": true,
+      "tags": [
+        "code-generation",
+        "open-weight",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
     }
   ]
 }
