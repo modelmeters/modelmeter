@@ -157,15 +157,23 @@ if (appliedCount === 0 && clearedCount > 0) {
   process.exit(0);
 }
 
+const allNew = allChanges.flatMap(p => p.changes.filter(c => c.status === "new").map(c => ({ ...c, url: p.url })));
+const allDeprecated = allChanges.flatMap(p => p.changes.filter(c => c.status === "deprecated").map(c => ({ ...c, url: p.url })));
+const hasReviewItems = allNew.length > 0 || allDeprecated.length > 0;
+
 sh(`git checkout -B ${branch}`);
 if (appliedCount > 0) {
   sh(`git add pricing/current.json`);
-  sh(`git commit -m "pricing: drafted updates for ${today} (${appliedCount} change(s))"`);
+  const summary = [
+    appliedCount > 0 ? `${appliedCount} change(s)` : null,
+    allNew.length > 0 ? `${allNew.length} new` : null,
+    allDeprecated.length > 0 ? `${allDeprecated.length} deprecated` : null,
+  ].filter(Boolean).join(", ");
+  sh(`git commit -m "pricing: drafted updates for ${today} (${summary})"`);
+} else if (hasReviewItems) {
+  // New/deprecated spotted but no price edits — still open a PR so they surface for review
+  sh(`git commit --allow-empty -m "pricing: new/deprecated models spotted ${today} (no price edits)"`);
 } else {
-  console.log("No 'changed' status edits to commit — opening a PR-less notes file instead.");
-  const notesPath = join(ROOT, `digest/.pricing-notes-${today}.md`);
-  writeFileSync(notesPath, buildPrBody(allChanges, today));
-  console.log(`Notes saved to ${notesPath}. (Not committing — no automated edits to send to review.)`);
   process.exit(0);
 }
 
@@ -176,10 +184,13 @@ if (remoteExists) {
   sh(`git push -u origin ${branch}`);
 }
 
-const body = buildPrBody(allChanges, today);
+const body = buildPrBody(allChanges, allNew, allDeprecated, today);
 const bodyPath = `/tmp/pricing-pr-${today}.md`;
 writeFileSync(bodyPath, body);
-sh(`gh pr create --title "pricing: drafted updates for ${today}" --body-file ${bodyPath} --base main --head ${branch}`);
+const prTitle = allNew.length > 0
+  ? `pricing: ${allNew.length} new model(s) spotted + updates for ${today}`
+  : `pricing: drafted updates for ${today}`;
+sh(`gh pr create --title "${prTitle}" --body-file ${bodyPath} --base main --head ${branch}`);
 sh(`git checkout main`);
 console.log("Done.");
 
@@ -260,37 +271,54 @@ ${text}`;
   return JSON.parse(data.choices?.[0]?.message?.content ?? "{}");
 }
 
-function buildPrBody(providers, today) {
-  const lines = [
-    `Auto-drafted pricing updates for **${today}**.`,
-    ``,
-    `Models with \`status: changed\` had their \`input_cost_per_mtok\`/\`output_cost_per_mtok\` and \`last_verified\` updated in-place, with \`verification_required\` set to \`true\` until you confirm against the source.`,
-    ``,
-    `Models with \`status: new\` were spotted on the page but aren't tracked yet — not auto-added (need full schema fields). Flag here for manual addition.`,
-    ``,
-    `Models with \`status: deprecated\` disappeared from the page — not auto-removed (per "always include where we can"). Consider setting \`availability: deprecated\` or adding a note.`,
-    ``,
-  ];
-  for (const p of providers) {
-    lines.push(`## ${p.url}`);
+function buildPrBody(providers, allNew, allDeprecated, today) {
+  const lines = [`Auto-drafted pricing updates for **${today}**.`, ``];
+
+  if (allNew.length > 0) {
+    lines.push(`## 🆕 New models spotted (${allNew.length})`);
+    lines.push(`> Not auto-added — each needs full schema fields. Add manually to \`pricing/current.json\`.`);
     lines.push(``);
-    for (const c of p.changes) {
-      const status = c.status.toUpperCase();
-      let line = `- **${status}** \`${c.model_id}\``;
-      if (c.status === "changed" || c.status === "new") {
-        const inC = c.new_input_cost != null ? `$${c.new_input_cost}` : "?";
-        const outC = c.new_output_cost != null ? `$${c.new_output_cost}` : "?";
-        line += ` — in ${inC} / out ${outC} per Mtok`;
-      }
-      if (c.reasoning) line += `  \n  _${c.reasoning}_`;
-      lines.push(line);
-    }
-    if (p.notes) {
-      lines.push(``);
-      lines.push(`> ${p.notes}`);
+    for (const c of allNew) {
+      const inC = c.new_input_cost != null ? `$${c.new_input_cost}` : "?";
+      const outC = c.new_output_cost != null ? `$${c.new_output_cost}` : "?";
+      lines.push(`- \`${c.model_id}\` — in ${inC} / out ${outC} per Mtok`);
+      lines.push(`  Source: ${c.url}`);
+      if (c.reasoning) lines.push(`  _${c.reasoning}_`);
     }
     lines.push(``);
   }
+
+  if (allDeprecated.length > 0) {
+    lines.push(`## ⚠️ Deprecated / disappeared from page (${allDeprecated.length})`);
+    lines.push(`> Not auto-removed. Consider setting \`availability: "deprecated"\` on each.`);
+    lines.push(``);
+    for (const c of allDeprecated) {
+      lines.push(`- \`${c.model_id}\` — no longer found on ${c.url}`);
+      if (c.reasoning) lines.push(`  _${c.reasoning}_`);
+    }
+    lines.push(``);
+  }
+
+  const changedProviders = providers.filter(p => p.changes.some(c => c.status === "changed"));
+  if (changedProviders.length > 0) {
+    lines.push(`## Price changes (auto-applied)`);
+    lines.push(`> \`verification_required: true\` set on each — confirm against source then merge.`);
+    lines.push(``);
+    for (const p of changedProviders) {
+      lines.push(`### ${p.url}`);
+      lines.push(``);
+      for (const c of p.changes.filter(c => c.status === "changed")) {
+        const inC = c.new_input_cost != null ? `$${c.new_input_cost}` : "?";
+        const outC = c.new_output_cost != null ? `$${c.new_output_cost}` : "?";
+        let line = `- \`${c.model_id}\` — in ${inC} / out ${outC} per Mtok`;
+        if (c.reasoning) line += `  \n  _${c.reasoning}_`;
+        lines.push(line);
+      }
+      if (p.notes) { lines.push(``); lines.push(`> ${p.notes}`); }
+      lines.push(``);
+    }
+  }
+
   return lines.join("\n");
 }
 
