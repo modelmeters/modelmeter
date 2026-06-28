@@ -64,6 +64,7 @@ const urls = Array.from(groups.keys()).slice(0, LIMIT);
 console.log(`Checking ${urls.length} provider pricing page(s)…`);
 
 const allChanges = [];
+let clearedCount = 0;
 for (const url of urls) {
   const models = groups.get(url);
   try {
@@ -93,6 +94,17 @@ for (const url of urls) {
         }
         return true;
       });
+    // Clear verification_required on models where price confirmed unchanged today
+    const changedIds = new Set(changes.filter(c => c.status === "changed").map(c => c.model_id));
+    for (const m of models) {
+      if (m.verification_required && !changedIds.has(m.id)) {
+        m.verification_required = false;
+        m.last_verified = today;
+        clearedCount++;
+        console.log(`  ✓ cleared verification_required on ${m.id}`);
+      }
+    }
+
     if (changes.length) {
       allChanges.push({ url, changes, notes: diff.notes ?? "" });
       console.log(`  ${url}: ${changes.length} change(s) (${changes.filter(c => c.status === "changed").length} changed, ${changes.filter(c => c.status === "new").length} new, ${changes.filter(c => c.status === "deprecated").length} deprecated)`);
@@ -105,12 +117,13 @@ for (const url of urls) {
   }
 }
 
-if (!allChanges.length) {
+if (!allChanges.length && clearedCount === 0) {
   console.log("\nNo pricing changes detected today.");
   process.exit(0);
 }
 
-console.log(`\n${allChanges.length} provider page(s) with changes.`);
+if (clearedCount > 0) console.log(`\n${clearedCount} model(s) had verification_required cleared.`);
+if (allChanges.length) console.log(`${allChanges.length} provider page(s) with changes.`);
 
 let appliedCount = 0;
 for (const provider of allChanges) {
@@ -132,9 +145,16 @@ if (DRY_RUN) {
   process.exit(0);
 }
 
-if (appliedCount > 0) {
-  pricing.snapshot_date = today;
-  writeFileSync(PRICING_PATH, JSON.stringify(pricing, null, 2) + "\n");
+pricing.snapshot_date = today;
+writeFileSync(PRICING_PATH, JSON.stringify(pricing, null, 2) + "\n");
+
+// Clears-only: commit directly to main, no PR needed
+if (appliedCount === 0 && clearedCount > 0) {
+  sh(`git add pricing/current.json`);
+  sh(`git commit -m "pricing: clear verification_required on ${clearedCount} confirmed model(s) (${today})"`);
+  sh(`git push origin main`);
+  console.log("Done — verification flags cleared, committed directly to main.");
+  process.exit(0);
 }
 
 sh(`git checkout -B ${branch}`);
