@@ -76,12 +76,22 @@ for (const url of urls) {
     const changes = (diff?.changes ?? [])
       .filter((c) => c.status === "changed" || c.status === "new" || c.status === "deprecated")
       .filter((c) => {
-        if (c.status !== "changed") return true;
-        const m = models.find((mm) => mm.id === c.model_id);
-        if (!m) return true;
-        const inputSame = c.new_input_cost == null || Math.abs(c.new_input_cost - (m.input_cost_per_mtok ?? 0)) < 0.001;
-        const outputSame = c.new_output_cost == null || Math.abs(c.new_output_cost - (m.output_cost_per_mtok ?? 0)) < 0.001;
-        return !(inputSame && outputSame);
+        if (c.status === "changed") {
+          const m = models.find((mm) => mm.id === c.model_id);
+          if (!m) return true;
+          const inputSame = c.new_input_cost == null || Math.abs(c.new_input_cost - (m.input_cost_per_mtok ?? 0)) < 0.001;
+          const outputSame = c.new_output_cost == null || Math.abs(c.new_output_cost - (m.output_cost_per_mtok ?? 0)) < 0.001;
+          return !(inputSame && outputSame);
+        }
+        if (c.status === "deprecated") {
+          const m = models.find((mm) => mm.id === c.model_id);
+          if (!m) return true;
+          return m.availability !== "deprecated"; // already deprecated, skip
+        }
+        if (c.status === "new") {
+          return !pricing.models.some((mm) => mm.id === c.model_id); // already tracked, skip
+        }
+        return true;
       });
     if (changes.length) {
       allChanges.push({ url, changes, notes: diff.notes ?? "" });
