@@ -64,7 +64,7 @@ function formatMarker(value) {
 }
 
 function looksLikeApiEndpoint(url) {
-  return /\/api\/|\/v\d+\/|\.json($|\?)/i.test(url);
+  return /\/v\d+\/|\.json($|\?)/i.test(url);
 }
 
 function renderIssueBody(issue) {

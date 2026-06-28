@@ -265,7 +265,7 @@ function buildPrBody(providers, today) {
 }
 
 function looksLikeApi(url) {
-  return /\/api\/|\/v\d+\/|\.json($|\?)/i.test(url);
+  return /\/v\d+\/|\.json($|\?)/i.test(url);
 }
 
 function sleep(ms) {
