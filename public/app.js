@@ -52,7 +52,7 @@ const CATEGORY_META = {
   oss:        { color: "var(--c-oss)",        label: "Open source",    desc: "open-weight releases" },
   other:      { color: "var(--c-other)",      label: "Other",          desc: "" },
 };
-const MAGNITUDE_RADIUS = { minor: 4, moderate: 6, major: 9, structural: 12 };
+const MAGNITUDE_RADIUS = { minor: 2, moderate: 3, major: 5, structural: 8 };
 
 // ---------- state ----------
 let events = [];
@@ -772,7 +772,7 @@ function renderAcrossProvidersChart() {
     const x = xScale(evDate);
     const cat = TYPE_CATEGORY[ev.type] || "other";
     const catColor = CATEGORY_META[cat].color;
-    const r = Math.max(3, (MAGNITUDE_RADIUS[ev.impact?.magnitude] ?? 5) - 1);
+    const r = MAGNITUDE_RADIUS[ev.impact?.magnitude] ?? 3;
     const affectedProviders = visibleProviders.filter(p => (ev.providers || []).includes(p));
     for (const p of affectedProviders) {
       const pts = filtered[p];
