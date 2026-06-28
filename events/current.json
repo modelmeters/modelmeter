@@ -4248,6 +4248,545 @@
       },
       "created_at": "2026-06-28",
       "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-06-mistral-launches-ocr-4-a-state-of-the-art-document-intellige",
+      "date": "2026-06-23",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/ocr-4"
+      ],
+      "headline": "Mistral launches OCR 4, a state-of-the-art document intelligence model with 170-language support and self-hosted deployment.",
+      "summary": "Mistral has introduced OCR 4, a specialized model targeting enterprise document processing with support for 170 languages, precise bounding box detection, and the ability to deploy on-premises. This expands Mistral's portfolio into vertical-specific AI solutions, offering enhanced privacy and control for document-intensive industries.",
+      "source_urls": [
+        "https://mistral.ai/news/ocr-4/"
+      ],
+      "verified": true,
+      "tags": [
+        "ocr",
+        "document-intelligence",
+        "enterprise",
+        "self-hosted",
+        "multilingual",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-03-mistral-ai-launches-forge-a-system-for-enterprises-to-build-",
+      "date": "2026-03-17",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [],
+      "headline": "Mistral AI launches Forge, a system for enterprises to build custom frontier AI models on proprietary data.",
+      "summary": "Mistral AI introduced Forge, a platform designed for enterprise customers to train and deploy advanced AI models grounded in their own private data. This enables organizations to develop high-performance, domain-specific models without relying solely on public model offerings.",
+      "source_urls": [
+        "https://mistral.ai/news/forge"
+      ],
+      "verified": true,
+      "tags": [
+        "enterprise",
+        "custom-models",
+        "proprietary-data",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-03-mistral-ai-launches-mistral-small-4",
+      "date": "2026-03-16",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/small-4"
+      ],
+      "headline": "Mistral AI launches Mistral Small 4",
+      "summary": "Mistral AI has released Mistral Small 4, a new version of their small model line, enhancing capabilities for enterprise AI applications including customization, fine-tuning, and deployment of AI assistants and multimodal systems.",
+      "source_urls": [
+        "https://mistral.ai/news/mistral-small-4"
+      ],
+      "verified": true,
+      "tags": [
+        "enterprise",
+        "multimodal",
+        "fine-tuning"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-02-mistral-launches-voxtral-transcribe-2-for-real-time-high-acc",
+      "date": "2026-02-04",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/voxtral-transcribe-2"
+      ],
+      "headline": "Mistral launches Voxtral-Transcribe-2 for real-time, high-accuracy speech transcription",
+      "summary": "Mistral AI introduced Voxtral-Transcribe-2, a state-of-the-art speech-to-text model designed for enterprise use with low latency and high accuracy. The model supports real-time transcription at scale, enabling integration into AI assistants and multimodal applications.",
+      "source_urls": [
+        "https://mistral.ai/news/voxtral-transcribe-2"
+      ],
+      "verified": true,
+      "tags": [
+        "speech-to-text",
+        "real-time",
+        "enterprise",
+        "multimodal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-12-mistral-ai-launches-ocr-3-a-multimodal-optical-character-rec",
+      "date": "2025-12-18",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/ocr-3"
+      ],
+      "headline": "Mistral AI launches OCR 3, a multimodal optical character recognition model for enterprises.",
+      "summary": "Mistral AI has introduced Mistral OCR 3, a new model designed for enterprise use cases requiring high-accuracy document understanding and multimodal processing. The model supports customization, fine-tuning, and deployment of AI assistants and agents, enhancing Mistral's enterprise AI platform offerings.",
+      "source_urls": [
+        "https://mistral.ai/news/mistral-ocr-3"
+      ],
+      "verified": true,
+      "tags": [
+        "ocr",
+        "enterprise",
+        "multimodal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-12-mistral-ai-launches-devstral-2-and-mistral-vibe-cli-for-ente",
+      "date": "2025-12-09",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/devstral-2"
+      ],
+      "headline": "Mistral AI launches Devstral 2 and Mistral Vibe CLI for enterprise AI customization and deployment",
+      "summary": "Mistral AI introduced Devstral 2 and the Mistral Vibe CLI, a platform enabling enterprises to customize, fine-tune, and deploy AI assistants, autonomous agents, and multimodal AI using open models. This expands Mistral's enterprise tooling for model deployment and management.",
+      "source_urls": [
+        "https://mistral.ai/news/devstral-2-vibe-cli"
+      ],
+      "verified": true,
+      "tags": [
+        "enterprise",
+        "deployment",
+        "cli",
+        "fine-tuning",
+        "multimodal"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-12-mistral-ai-launches-mistral-3-a-new-enterprise-focused-multi",
+      "date": "2025-12-02",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/mistral-3"
+      ],
+      "headline": "Mistral AI launches Mistral 3, a new enterprise-focused multimodal model",
+      "summary": "Mistral AI has released Mistral 3, positioning it as their most powerful AI platform for enterprises. The model supports customization, fine-tuning, and deployment of AI assistants, autonomous agents, and multimodal applications, indicating a significant advancement in their model capabilities and enterprise offerings.",
+      "source_urls": [
+        "https://mistral.ai/news/mistral-3"
+      ],
+      "verified": true,
+      "tags": [
+        "enterprise",
+        "multimodal",
+        "fine-tuning",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-09-mistral-ai-raises-1-7-billion-in-funding",
+      "date": "2025-09-09",
+      "type": "funding",
+      "providers": [
+        "mistral"
+      ],
+      "models": [],
+      "headline": "Mistral AI raises €1.7 billion in funding.",
+      "summary": "Mistral AI has secured €1.7 billion in funding to accelerate its AI development, focusing on enterprise AI platforms, customizable models, and multimodal systems. This positions Mistral as a major European contender in the global AI industry.",
+      "source_urls": [
+        "https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai"
+      ],
+      "verified": true,
+      "tags": [
+        "funding",
+        "enterprise-ai",
+        "europe",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-07-mistral-ai-launches-voxtral-a-multimodal-model-for-enterpris",
+      "date": "2025-07-15",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/voxtral"
+      ],
+      "headline": "Mistral AI launches Voxtral, a multimodal model for enterprise AI assistants and agents",
+      "summary": "Mistral AI introduced Voxtral, a powerful multimodal model designed for enterprises to customize, fine-tune, and deploy AI assistants and autonomous agents. The launch expands Mistral's portfolio with a focus on open models and enterprise-grade AI capabilities.",
+      "source_urls": [
+        "https://mistral.ai/news/voxtral"
+      ],
+      "verified": true,
+      "tags": [
+        "multimodal",
+        "enterprise",
+        "open-models",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-06-mistral-launches-mistral-code-a-new-ai-model-optimized-for-c",
+      "date": "2025-06-04",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/mistral-code"
+      ],
+      "headline": "Mistral launches Mistral Code, a new AI model optimized for code generation.",
+      "summary": "Mistral AI introduced Mistral Code, a product tailored for programming tasks, enhancing its portfolio with a specialized model aimed at developers. This launch expands Mistral's competitive reach in the code generation market.",
+      "source_urls": [
+        "https://mistral.ai/products/mistral-code"
+      ],
+      "verified": true,
+      "tags": [
+        "code-generation",
+        "developer-tools",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-01-mistral-ai-launches-mistral-small-3-a-new-version-of-its-sma",
+      "date": "2025-01-30",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/mistral-small-3"
+      ],
+      "headline": "Mistral AI launches Mistral Small 3, a new version of its small language model.",
+      "summary": "Mistral AI has released Mistral Small 3, an updated iteration of its compact language model designed for enterprise applications. This launch enhances the provider's portfolio of deployable models for customization and AI agent development.",
+      "source_urls": [
+        "https://mistral.ai/news/mistral-small-3/"
+      ],
+      "verified": true,
+      "tags": [
+        "model-release",
+        "enterprise",
+        "small-model"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-09-mistral-ai-deprecates-pixtral-12b-vision-model",
+      "date": "2024-09-17",
+      "type": "model_deprecation",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/pixtral-12b"
+      ],
+      "headline": "Mistral AI deprecates Pixtral 12B vision model",
+      "summary": "Mistral AI has officially deprecated Pixtral 12B, a vision-language model released in 2024. Users are directed to updated documentation for newer vision models and capabilities.",
+      "source_urls": [
+        "https://mistral.ai/news/pixtral-12b/"
+      ],
+      "verified": true,
+      "tags": [
+        "vision",
+        "deprecation",
+        "model-update"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-07-mistral-ai-launches-mistral-large-2407-a-high-performance-mo",
+      "date": "2024-07-24",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/mistral-large-2407"
+      ],
+      "headline": "Mistral AI launches Mistral Large 2407, a high-performance model for enterprise applications.",
+      "summary": "Mistral AI introduced Mistral Large 2407, a new flagship model designed for enterprise use, offering strong performance on reasoning and multimodal tasks. The model is available via API and through major cloud providers, priced at $8 per million input tokens and $24 per million output tokens, positioning it competitively against models like GPT-4 and Claude 3.",
+      "source_urls": [
+        "https://mistral.ai/news/mistral-large-2407/"
+      ],
+      "verified": true,
+      "tags": [
+        "enterprise",
+        "multimodal",
+        "api",
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-07-mistral-ai-launches-codestral-mamba-a-code-optimized-model-b",
+      "date": "2024-07-16",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/codestral-mamba"
+      ],
+      "headline": "Mistral AI launches Codestral Mamba, a code-optimized model based on Mamba2 architecture",
+      "summary": "Mistral AI introduced Codestral Mamba, a new model designed for code generation and reasoning tasks, leveraging the Mamba2 architecture for improved performance. The model is available via Mistral's platform and through partners including Together AI and Groq, expanding access for enterprise and developer use cases.",
+      "source_urls": [
+        "https://mistral.ai/news/codestral-mamba/"
+      ],
+      "verified": true,
+      "tags": [
+        "code-generation",
+        "mamba-architecture",
+        "enterprise-ai",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-04-mistral-ai-launches-mixtral-8x22b-a-high-performance-sparse-",
+      "date": "2024-04-17",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/mixtral-8x22b"
+      ],
+      "headline": "Mistral AI launches Mixtral 8x22B, a high-performance sparse mixture-of-experts model",
+      "summary": "Mistral AI introduced Mixtral 8x22B, a sparse mixture-of-experts model with 46.7B activated parameters out of 141B total, offering improved reasoning, multilingual performance, and a 64K context window. The model is available via Mistral's API and can be deployed on major cloud platforms, targeting enterprise use cases.",
+      "source_urls": [
+        "https://mistral.ai/news/mixtral-8x22b/"
+      ],
+      "verified": true,
+      "tags": [
+        "mixture-of-experts",
+        "enterprise-ai",
+        "multilingual",
+        "long-context",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-02-mistral-ai-launches-mistral-large-a-multimodal-flagship-mode",
+      "date": "2024-02-26",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/mistral-large"
+      ],
+      "headline": "Mistral AI launches Mistral Large, a multimodal flagship model for enterprise use.",
+      "summary": "Mistral AI introduced Mistral Large, a high-performance multimodal model designed for enterprise applications, offering customization, fine-tuning, and deployment capabilities. The model is available via API with pricing at $8 per million input tokens and $24 per million output tokens, positioning it competitively against models like GPT-4 and Claude 3.",
+      "source_urls": [
+        "https://mistral.ai/news/mistral-large/"
+      ],
+      "verified": true,
+      "tags": [
+        "enterprise",
+        "multimodal",
+        "api",
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2023-12-mistral-ai-launches-mixtral-8x7b-a-sparse-mixture-of-experts",
+      "date": "2023-12-11",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/mixtral-8x7b"
+      ],
+      "headline": "Mistral AI launches Mixtral 8x7B, a sparse mixture-of-experts model.",
+      "summary": "Mistral AI released Mixtral 8x7B, a sparse mixture-of-experts model with 47 billion total parameters, activating 13 billion per token. It outperforms Llama2-70B while being faster and more cost-efficient. The model is released under the Apache 2.0 license, enabling broad commercial use.",
+      "source_urls": [
+        "https://mistral.ai/news/mixtral-of-experts/"
+      ],
+      "verified": true,
+      "tags": [
+        "mixture-of-experts",
+        "open-weights",
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2023-09-mistral-launches-mistral-7b-under-apache-2-0-license",
+      "date": "2023-09-27",
+      "type": "model_launch",
+      "providers": [
+        "mistral"
+      ],
+      "models": [
+        "mistral/mistral-7b"
+      ],
+      "headline": "Mistral launches Mistral 7B under Apache 2.0 license",
+      "summary": "Mistral AI released Mistral 7B, a 7-billion-parameter open-weight language model, positioning it as the best-performing model of its size at the time. Released under the permissive Apache 2.0 license, it enabled broad commercial and research use.",
+      "source_urls": [
+        "https://mistral.ai/news/announcing-mistral-7b/"
+      ],
+      "verified": true,
+      "tags": [
+        "open-weights",
+        "major",
+        "7b",
+        "apache-2-0"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
     }
   ]
 }
