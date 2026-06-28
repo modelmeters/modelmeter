@@ -73,7 +73,16 @@ for (const url of urls) {
       continue;
     }
     const diff = await extractDiffs(url, text, models);
-    const changes = (diff?.changes ?? []).filter((c) => c.status === "changed" || c.status === "new" || c.status === "deprecated");
+    const changes = (diff?.changes ?? [])
+      .filter((c) => c.status === "changed" || c.status === "new" || c.status === "deprecated")
+      .filter((c) => {
+        if (c.status !== "changed") return true;
+        const m = models.find((mm) => mm.id === c.model_id);
+        if (!m) return true;
+        const inputSame = c.new_input_cost == null || Math.abs(c.new_input_cost - (m.input_cost_per_mtok ?? 0)) < 0.001;
+        const outputSame = c.new_output_cost == null || Math.abs(c.new_output_cost - (m.output_cost_per_mtok ?? 0)) < 0.001;
+        return !(inputSame && outputSame);
+      });
     if (changes.length) {
       allChanges.push({ url, changes, notes: diff.notes ?? "" });
       console.log(`  ${url}: ${changes.length} change(s) (${changes.filter(c => c.status === "changed").length} changed, ${changes.filter(c => c.status === "new").length} new, ${changes.filter(c => c.status === "deprecated").length} deprecated)`);
