@@ -90,7 +90,6 @@ button, input, select { font-family: inherit; font-size: inherit; }
   gap: 32px;
   white-space: nowrap;
   animation: scroll-ticker 180s linear infinite;
-  padding-left: 100vw;
 }
 .ticker:hover .ticker-track { animation-play-state: paused; }
 .ticker-item { display: inline-flex; gap: 10px; align-items: center; color: var(--text-dim); font-size: 11px; }
@@ -104,7 +103,7 @@ button, input, select { font-family: inherit; font-size: inherit; }
 }
 
 /* Price ticker (slower) */
-.ticker-slow .ticker-track { animation-duration: 240s; }
+.ticker-slow .ticker-track { animation-duration: 200s; }
 
 /* Three-column body */
 .body {
