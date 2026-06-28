@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "snapshot_date": "2026-06-27",
+  "snapshot_date": "2026-06-28",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -358,8 +358,8 @@
         "other"
       ],
       "models": [],
-      "headline": "OpenAI unveils Jalape\u00f1o inference chip built with Broadcom",
-      "summary": "OpenAI announces Jalape\u00f1o, its first custom inference chip, designed as an ASIC for the specific needs of OpenAI's inference systems and built in partnership with Broadcom. First-party silicon shifts long-term inference economics and capacity planning.",
+      "headline": "OpenAI unveils Jalapeño inference chip built with Broadcom",
+      "summary": "OpenAI announces Jalapeño, its first custom inference chip, designed as an ASIC for the specific needs of OpenAI's inference systems and built in partnership with Broadcom. First-party silicon shifts long-term inference economics and capacity planning.",
       "source_urls": [
         "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
         "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/",
@@ -517,7 +517,7 @@
         "openai/gpt-5.6-terra"
       ],
       "headline": "OpenAI launches GPT-5.6 Sol and Terra in limited preview",
-      "summary": "OpenAI releases a limited preview of the GPT-5.6 suite \u2014 Sol (flagship) and Terra (mid-tier) \u2014 following a request from the Trump administration to stagger rollout. OpenAI argues that government-driven access controls 'should not become the norm.' Broad GA timing and pricing not yet announced.",
+      "summary": "OpenAI releases a limited preview of the GPT-5.6 suite — Sol (flagship) and Terra (mid-tier) — following a request from the Trump administration to stagger rollout. OpenAI argues that government-driven access controls 'should not become the norm.' Broad GA timing and pricing not yet announced.",
       "source_urls": [
         "https://www.theverge.com/ai-artificial-intelligence/957845/openai-gpt-5-6-trump-administration-ai-preview",
         "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/"
@@ -633,7 +633,7 @@
       ],
       "models": [],
       "headline": "OpenAI submits confidential draft S-1 to the SEC in preparation for IPO",
-      "summary": "OpenAI has confidentially filed a draft S-1 registration statement with the U.S. Securities and Exchange Commission, marking a formal step toward an initial public offering. This move signals the company's intent to become a publicly traded entity, likely within the next 12\u201318 months.",
+      "summary": "OpenAI has confidentially filed a draft S-1 registration statement with the U.S. Securities and Exchange Commission, marking a formal step toward an initial public offering. This move signals the company's intent to become a publicly traded entity, likely within the next 12–18 months.",
       "source_urls": [
         "https://openai.com/index/openai-submits-confidential-s-1/"
       ],
@@ -1019,7 +1019,7 @@
         "openai/prism-1-mini"
       ],
       "headline": "OpenAI launches Prism, a new family of multimodal models with advanced vision, audio, and video capabilities",
-      "summary": "OpenAI has introduced Prism, a new family of multimodal models designed to process and understand visual, auditory, and temporal data with improved accuracy and efficiency. The launch includes three variants\u2014Prism-1, Prism-1 Medium, and Prism-1 Mini\u2014catering to different performance and cost requirements. This positions OpenAI to better compete in the rapidly evolving multimodal AI market.",
+      "summary": "OpenAI has introduced Prism, a new family of multimodal models designed to process and understand visual, auditory, and temporal data with improved accuracy and efficiency. The launch includes three variants—Prism-1, Prism-1 Medium, and Prism-1 Mini—catering to different performance and cost requirements. This positions OpenAI to better compete in the rapidly evolving multimodal AI market.",
       "source_urls": [
         "https://openai.com/index/introducing-prism"
       ],
@@ -2133,8 +2133,8 @@
       "models": [
         "openai/dall-e-3"
       ],
-      "headline": "DALL\u00b7E 3 integrated into ChatGPT Plus and Enterprise tiers",
-      "summary": "OpenAI has made DALL\u00b7E 3 available to ChatGPT Plus subscribers and Enterprise customers, enhancing the multimodal capabilities of these offerings. This integration allows users to generate images directly within ChatGPT conversations.",
+      "headline": "DALL·E 3 integrated into ChatGPT Plus and Enterprise tiers",
+      "summary": "OpenAI has made DALL·E 3 available to ChatGPT Plus subscribers and Enterprise customers, enhancing the multimodal capabilities of these offerings. This integration allows users to generate images directly within ChatGPT conversations.",
       "source_urls": [
         "https://openai.com/blog/dall-e-3-is-now-available-in-chatgpt-plus-and-enterprise"
       ],
@@ -2237,6 +2237,1181 @@
       },
       "created_at": "2026-06-27",
       "updated_at": "2026-06-27"
+    },
+    {
+      "id": "2026-06-anthropic-us-government-directs-anthropic-to-suspend-foreign-access-to",
+      "date": "2026-06-13",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/fable-5",
+        "anthropic/mythos-5"
+      ],
+      "headline": "US government directs Anthropic to suspend foreign access to Fable 5 and Mythos 5 under export controls",
+      "summary": "On June 13, 2026, the US government issued an export control directive requiring Anthropic to suspend access to its Fable 5 and Mythos 5 models for all foreign nationals, regardless of location. This action restricts the international availability of these advanced AI systems, citing national security or technology control concerns.",
+      "source_urls": [
+        "https://www.anthropic.com/news/fable-mythos-access"
+      ],
+      "verified": true,
+      "tags": [
+        "export-control",
+        "us-regulation",
+        "major",
+        "access-restriction"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-06-anthropic-launches-claude-fable-5-a-mythos-class-model-safe-",
+      "date": "2026-06-09",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-fable-5"
+      ],
+      "headline": "Anthropic launches Claude Fable 5, a Mythos-class model safe for general use.",
+      "summary": "Anthropic has released Claude Fable 5, a new model in its Mythos class designed to be safe for broad public deployment. This launch expands Anthropic's model lineup with a version intended for general-purpose applications without requiring extensive safety tuning by developers.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      ],
+      "verified": true,
+      "tags": [
+        "mythos-class",
+        "safe-deployment",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-06-anthropic-confidentially-files-draft-s-1-with-the-sec-ahead-",
+      "date": "2026-06-01",
+      "type": "funding",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic confidentially files draft S-1 with the SEC ahead of potential IPO",
+      "summary": "Anthropic has submitted a confidential draft S-1 registration statement to the U.S. Securities and Exchange Commission, marking a formal step toward a potential initial public offering. This move indicates the company's preparation for increased financial disclosure and public market listing, likely in the coming months.",
+      "source_urls": [
+        "https://www.anthropic.com/news/confidential-draft-s1-sec"
+      ],
+      "verified": true,
+      "tags": [
+        "ipo",
+        "funding",
+        "corporate-milestone",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-05-anthropic-raises-65b-in-series-h-funding-at-965b-post-money-",
+      "date": "2026-05-28",
+      "type": "funding",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
+      "summary": "Anthropic secured $65 billion in Series H funding from major investors including Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, achieving a $965 billion post-money valuation. This positions Anthropic as one of the most valuable AI companies globally and will likely accelerate its model development, infrastructure scaling, and market competition with OpenAI and Google.",
+      "source_urls": [
+        "https://www.anthropic.com/news/series-h"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "funding",
+        "valuation",
+        "investment"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-05-anthropic-launches-claude-opus-4-8-with-enhanced-coding-and-",
+      "date": "2026-05-28",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-4.8"
+      ],
+      "headline": "Anthropic launches Claude Opus 4.8 with enhanced coding and agentic capabilities",
+      "summary": "Claude Opus 4.8 is the latest iteration in Anthropic's Opus series, offering improved performance and consistency for complex, long-running tasks. It advances capabilities in coding, autonomous agent workflows, and professional use cases, reinforcing Anthropic's position in the high-end model market.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-opus-4-8"
+      ],
+      "verified": true,
+      "tags": [
+        "coding",
+        "agentic-ai",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-05-anthropic-releases-initial-update-on-project-glasswing-infra",
+      "date": "2026-05-22",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic releases initial update on Project Glasswing infrastructure scaling initiative",
+      "summary": "Anthropic has published an early update on Project Glasswing, detailing advancements in their AI infrastructure designed to support larger-scale model deployment with improved efficiency and security. The project has achieved early milestones in throughput and reliability, with initial partner integrations underway.",
+      "source_urls": [
+        "https://www.anthropic.com/research/glasswing-initial-update"
+      ],
+      "verified": true,
+      "tags": [
+        "infrastructure-scaling",
+        "deployment-efficiency",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-05-anthropic-acquires-ai-coding-startup-stainless",
+      "date": "2026-05-18",
+      "type": "acquisition",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic acquires AI coding startup Stainless",
+      "summary": "Anthropic has acquired Stainless, a company known for developing AI-powered coding tools. This acquisition strengthens Anthropic's position in the developer AI space, likely integrating code-specific capabilities into its model stack and expanding its tooling ecosystem.",
+      "source_urls": [
+        "https://www.anthropic.com/news/anthropic-acquires-stainless"
+      ],
+      "verified": true,
+      "tags": [
+        "acquisition",
+        "developer-tools",
+        "coding",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-05-anthropic-and-spacex-announce-compute-partnership-to-expand-",
+      "date": "2026-05-06",
+      "type": "compute_partnership",
+      "providers": [
+        "anthropic",
+        "spacex"
+      ],
+      "models": [],
+      "headline": "Anthropic and SpaceX announce compute partnership to expand Claude's capacity",
+      "summary": "Anthropic has entered into a strategic compute partnership with SpaceX, leveraging its infrastructure to substantially increase capacity for Claude. This collaboration enables higher usage limits for Claude and strengthens Anthropic's ability to scale compute-intensive AI workloads.",
+      "source_urls": [
+        "https://www.anthropic.com/news/higher-limits-spacex"
+      ],
+      "verified": true,
+      "tags": [
+        "capacity-expansion",
+        "strategic-partnership",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-04-anthropic-launches-claude-opus-4-7-with-improved-reasoning-a",
+      "date": "2026-04-16",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-4.7"
+      ],
+      "headline": "Anthropic launches Claude Opus 4.7 with improved reasoning and safety features",
+      "summary": "Anthropic has released Claude Opus 4.7, an updated version of its most capable model, featuring enhanced reasoning, reduced hallucination rates, and improved safety guardrails. The system card details performance benchmarks across coding, math, and multilingual tasks, positioning it as a leading model for enterprise and research applications.",
+      "source_urls": [
+        "https://anthropic.com/claude-opus-4-7-system-card"
+      ],
+      "verified": true,
+      "tags": [
+        "claude",
+        "reasoning",
+        "safety",
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-04-anthropic-google-and-broadcom-expand-partnership-for-multipl",
+      "date": "2026-04-06",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic",
+        "google",
+        "other"
+      ],
+      "models": [],
+      "headline": "Anthropic, Google, and Broadcom expand partnership for multiple gigawatts of next-generation AI compute",
+      "summary": "Anthropic has deepened its strategic partnership with Google and Broadcom to secure multiple gigawatts of next-generation compute capacity. This expansion significantly scales Anthropic's infrastructure foundation, enabling the training and deployment of larger, more advanced AI models in the future.",
+      "source_urls": [
+        "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+      ],
+      "verified": true,
+      "tags": [
+        "compute-expansion",
+        "infrastructure",
+        "partnership",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-03-anthropic-commits-100m-to-launch-claude-partner-network-for-",
+      "date": "2026-03-14",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic commits $100M to launch Claude Partner Network for enterprise adoption",
+      "summary": "Anthropic has launched the Claude Partner Network with a $100 million investment to enable partner organizations to help enterprises integrate and adopt Claude. This initiative aims to accelerate deployment across large organizations and expand Claude's reach in the enterprise AI market.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-partner-network"
+      ],
+      "verified": true,
+      "tags": [
+        "enterprise",
+        "partner-network",
+        "funding",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-02-anthropic-ceo-confirms-discussions-with-u-s-department-of-wa",
+      "date": "2026-02-26",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic CEO confirms discussions with U.S. Department of War on national security uses of AI",
+      "summary": "In a public statement, Anthropic CEO Dario Amodei disclosed ongoing discussions with the U.S. Department of War regarding the responsible deployment of AI in national security contexts. The announcement signals a significant alignment between leading AI developers and defense institutions, raising implications for model access, safety protocols, and regulatory oversight.",
+      "source_urls": [
+        "https://www.anthropic.com/news/statement-department-of-war"
+      ],
+      "verified": true,
+      "tags": [
+        "national-security",
+        "ai-governance",
+        "policy",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-02-anthropic-launches-claude-sonnet-4-6-with-improved-coding-re",
+      "date": "2026-02-17",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/sonnet-4.6"
+      ],
+      "headline": "Anthropic launches Claude Sonnet 4.6 with improved coding, reasoning, and agent capabilities",
+      "summary": "Anthropic has released Claude Sonnet 4.6, a full upgrade enhancing performance in coding, computer use, long-reasoning, agent planning, knowledge work, and design. This release strengthens Sonnet's position in the mid-tier model market with broader agentic functionality.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-sonnet-4-6"
+      ],
+      "verified": true,
+      "tags": [
+        "agentic",
+        "coding",
+        "reasoning",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-02-anthropic-raises-30-billion-in-series-g-funding-at-380-billi",
+      "date": "2026-02-12",
+      "type": "funding",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic raises $30 billion in Series G funding at $380 billion valuation",
+      "summary": "Anthropic secured $30 billion in a Series G funding round, achieving a $380 billion post-money valuation. The investment will accelerate the development of safer, steerable AI systems and expand Anthropic's research and infrastructure capabilities.",
+      "source_urls": [
+        "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "safety",
+        "research",
+        "capital-increase"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-02-anthropic-launches-claude-opus-4-6-with-enhanced-agentic-cod",
+      "date": "2026-02-05",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-4.6"
+      ],
+      "headline": "Anthropic launches Claude Opus 4.6 with enhanced agentic coding and tool use capabilities",
+      "summary": "Anthropic has released Claude Opus 4.6, an upgraded version of its flagship model, delivering industry-leading performance in agentic coding, computer use, tool integration, search, and financial tasks. The update strengthens Anthropic's position in the competitive AI model landscape.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-opus-4-6"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "coding",
+        "tool-use",
+        "finance"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-12-anthropic-donates-model-context-protocol-and-establishes-age",
+      "date": "2025-12-09",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic donates Model Context Protocol and establishes Agentic AI Foundation",
+      "summary": "Anthropic has open-sourced the Model Context Protocol (MCP) and launched the Agentic AI Foundation to promote safe, interoperable, and agentic AI systems. This initiative aims to standardize how AI agents understand and manage context, enabling broader collaboration and reliability across platforms.",
+      "source_urls": [
+        "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation"
+      ],
+      "verified": true,
+      "tags": [
+        "protocol-donation",
+        "foundation-launch",
+        "agentic-ai",
+        "interoperability",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-11-anthropic-launches-advanced-tool-use-for-claude-models",
+      "date": "2025-11-24",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Anthropic launches advanced tool use for Claude models",
+      "summary": "Anthropic has introduced advanced tool use capabilities on its Developer Platform, allowing Claude models to dynamically discover, learn, and execute tools. This enhancement enables more sophisticated agent behaviors and real-world action-taking capabilities.",
+      "source_urls": [
+        "https://www.anthropic.com/engineering/advanced-tool-use"
+      ],
+      "verified": true,
+      "tags": [
+        "tool-use",
+        "agents",
+        "developer-platform",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-11-anthropic-launches-claude-opus-4-5-with-improved-reasoning-a",
+      "date": "2025-11-24",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-4.5"
+      ],
+      "headline": "Anthropic launches Claude Opus 4.5 with improved reasoning and coding capabilities.",
+      "summary": "Anthropic has released Claude Opus 4.5, an updated version of its flagship model, offering enhanced performance in complex reasoning, code generation, and multimodal tasks. The release strengthens Anthropic's position in the competitive AI market and sets a new benchmark for enterprise-grade AI systems.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-opus-4-5"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "reasoning",
+        "coding",
+        "multimodal"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-11-anthropic-announces-50-billion-investment-in-u-s-ai-infrastr",
+      "date": "2025-11-12",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic announces $50 billion investment in U.S. AI infrastructure",
+      "summary": "Anthropic has committed $50 billion to build AI infrastructure across the United States, focusing on data centers and computing capacity to support the development and deployment of advanced AI systems. The investment aims to strengthen domestic AI capabilities and support long-term research and safety goals.",
+      "source_urls": [
+        "https://www.anthropic.com/news/anthropic-invests-50-billion-in-american-ai-infrastructure"
+      ],
+      "verified": true,
+      "tags": [
+        "infrastructure",
+        "investment",
+        "major",
+        "data-center",
+        "compute-capacity"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-10-anthropic-launches-persistent-memory-feature-for-claude",
+      "date": "2025-10-23",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Anthropic launches persistent Memory feature for Claude",
+      "summary": "Anthropic has introduced Memory, a new capability that enables Claude to remember and reference user-defined information across conversations. This allows users to store context, preferences, or data once and have Claude recall it in future interactions, improving continuity and reducing repetitive prompting.",
+      "source_urls": [
+        "https://www.anthropic.com/news/memory"
+      ],
+      "verified": true,
+      "tags": [
+        "memory",
+        "context-management",
+        "user-experience",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-10-anthropic-launches-claude-haiku-4-5-an-updated-small-model-f",
+      "date": "2025-10-15",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-haiku-4.5"
+      ],
+      "headline": "Anthropic launches Claude Haiku 4.5, an updated small model for fast, affordable intelligence.",
+      "summary": "Anthropic has released Claude Haiku 4.5, the latest iteration of its compact model line, optimized for low-latency, high-throughput use cases. The model is now generally available to all users, enhancing access to cost-effective AI reasoning for automation, customer experience, and coding tasks.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-haiku-4-5"
+      ],
+      "verified": true,
+      "tags": [
+        "small-model",
+        "general-availability",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-10-anthropic-research-shows-small-scale-data-poisoning-can-degr",
+      "date": "2025-10-09",
+      "type": "open_source_release",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic research shows small-scale data poisoning can degrade LLMs regardless of model size",
+      "summary": "Anthropic published findings demonstrating that inserting a minimal number of adversarial examples into training data can meaningfully impair model performance, challenging assumptions that larger models are inherently more robust to data contamination. This highlights critical vulnerabilities in training pipelines and raises concerns for model safety and integrity across the AI industry.",
+      "source_urls": [
+        "https://www.anthropic.com/research/small-samples-poison"
+      ],
+      "verified": true,
+      "tags": [
+        "data-poisoning",
+        "model-robustness",
+        "security",
+        "research",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-09-anthropic-launches-claude-sonnet-4-5-with-improved-coding-an",
+      "date": "2025-09-29",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-sonnet-4.5"
+      ],
+      "headline": "Anthropic launches Claude Sonnet 4.5 with improved coding and agent capabilities",
+      "summary": "Anthropic has released Claude Sonnet 4.5, positioning it as the leading model for coding tasks, complex agent development, and computer use. This update enhances the capabilities available in the Claude model family and raises the performance bar in key application areas.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-sonnet-4-5"
+      ],
+      "verified": true,
+      "tags": [
+        "coding",
+        "agents",
+        "model-upgrade",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-09-anthropic-launches-server-side-container-environment-for-cla",
+      "date": "2025-09-09",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Anthropic launches server-side container environment for Claude",
+      "summary": "Anthropic has introduced a server-side container environment for Claude, enabling the model to create files and execute more complex, multi-step tasks within a secure sandboxed environment. This enhancement significantly expands Claude's capabilities for developers and enterprise users who need to automate workflows involving file generation and manipulation.",
+      "source_urls": [
+        "https://www.anthropic.com/news/create-files"
+      ],
+      "verified": true,
+      "tags": [
+        "code-generation",
+        "tool-use",
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-09-anthropic-raises-13b-in-series-f-funding-at-183b-post-money-",
+      "date": "2025-09-02",
+      "type": "funding",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic raises $13B in Series F funding at $183B post-money valuation",
+      "summary": "Anthropic secured $13 billion in a Series F round led by ICONIQ, with co-leadership from Fidelity Management & Research Company and Lightspeed Venture Partners, valuing the company at $183 billion post-money. This funding reinforces Anthropic's position as a leading AI platform for enterprises and developers.",
+      "source_urls": [
+        "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "enterprise-ai",
+        "funding-round"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-08-anthropic-launches-1m-token-context-window-for-claude-sonnet",
+      "date": "2025-08-12",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-sonnet-4"
+      ],
+      "headline": "Anthropic launches 1M token context window for Claude Sonnet 4",
+      "summary": "Anthropic has upgraded Claude Sonnet 4 to support up to 1 million tokens of context, significantly expanding its capacity for processing long documents and complex inputs. This enhancement positions Sonnet 4 as one of the leading models for tasks requiring extreme context lengths.",
+      "source_urls": [
+        "https://www.anthropic.com/news/1m-context"
+      ],
+      "verified": true,
+      "tags": [
+        "context-window",
+        "major",
+        "long-context"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-08-anthropic-launches-claude-opus-4-1-with-improved-reliability",
+      "date": "2025-08-05",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/opus-4.1"
+      ],
+      "headline": "Anthropic launches Claude Opus 4.1 with improved reliability and steerable capabilities",
+      "summary": "Anthropic has released Claude Opus 4.1, an advanced iteration of its flagship AI model emphasizing improved reliability, interpretability, and user steerability. This update strengthens Anthropic's position in the enterprise AI market and sets a new benchmark for controllable large language models.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-opus-4-1"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "reliability",
+        "steerability",
+        "enterprise"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-07-anthropic-launches-claude-for-financial-services-a-dedicated",
+      "date": "2025-07-15",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches Claude for Financial Services, a dedicated solution for finance professionals",
+      "summary": "Anthropic has introduced a specialized version of Claude designed for financial services, enabling finance professionals to conduct market analysis, research, and investment decision-making with enhanced tools and security. This move expands Claude's enterprise footprint into a high-value sector with strict compliance and performance requirements.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-for-financial-services"
+      ],
+      "verified": true,
+      "tags": [
+        "enterprise",
+        "financial-services",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-05-anthropic-launches-claude-4-a-new-flagship-ai-model",
+      "date": "2025-05-22",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-4"
+      ],
+      "headline": "Anthropic launches Claude 4, a new flagship AI model",
+      "summary": "Anthropic has released Claude 4, the latest iteration in its Claude series, offering improved reliability and interpretability for complex tasks in professional and educational contexts. This launch advances the state of large language models and positions Claude 4 as a competitive offering in the enterprise and consumer AI markets.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-4"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "flagship",
+        "enterprise",
+        "education"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-05-anthropic-launches-web-search-api-for-real-time-information-",
+      "date": "2025-05-07",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/web-search-api"
+      ],
+      "headline": "Anthropic launches Web Search API for real-time information retrieval",
+      "summary": "Anthropic has introduced a Web Search API that enables Claude models to retrieve and incorporate real-time web information into responses. This enhancement significantly expands the model's utility for applications requiring up-to-date information, differentiating it from competitors and potentially influencing pricing for premium features.",
+      "source_urls": [
+        "https://www.anthropic.com/news/web-search-api"
+      ],
+      "verified": true,
+      "tags": [
+        "search-integration",
+        "real-time-information",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-04-anthropic-launches-max-plan-with-higher-rate-limits-and-prio",
+      "date": "2025-04-09",
+      "type": "pricing_change",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-3-opus",
+        "anthropic/claude-3-sonnet",
+        "anthropic/claude-3-haiku"
+      ],
+      "headline": "Anthropic launches Max plan with higher rate limits and priority access to top-tier models",
+      "summary": "Anthropic introduced the Max plan, a new subscription tier offering users higher rate limits and priority access to its most capable models, including Claude Opus. This plan is aimed at power users and enterprises needing increased throughput and reliability. The launch reflects a tiered pricing strategy to capture more value from high-intensity users.",
+      "source_urls": [
+        "https://www.anthropic.com/news/max-plan"
+      ],
+      "verified": true,
+      "tags": [
+        "rate-limits",
+        "priority-access",
+        "enterprise",
+        "pricing-tier",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-03-anthropic-launches-web-search-functionality-for-claude-model",
+      "date": "2025-03-20",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-3-5-sonnet",
+        "anthropic/claude-3-haiku"
+      ],
+      "headline": "Anthropic launches web search functionality for Claude models",
+      "summary": "Anthropic has integrated web search capabilities into its Claude models, enabling real-time information retrieval and enhanced factual accuracy. This update significantly improves the model's ability to provide up-to-date responses and compete with other AI assistants offering similar functionality.",
+      "source_urls": [
+        "https://www.anthropic.com/news/web-search"
+      ],
+      "verified": true,
+      "tags": [
+        "web-search",
+        "real-time-information",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2025-02-anthropic-launches-claude-3-7-sonnet-a-hybrid-reasoning-mode",
+      "date": "2025-02-24",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-3.7-sonnet"
+      ],
+      "headline": "Anthropic launches Claude 3.7 Sonnet, a hybrid reasoning model",
+      "summary": "Anthropic released Claude 3.7 Sonnet, positioning it as their most intelligent model and the first generally available hybrid reasoning model. This release enhances the capabilities accessible to users and developers through Anthropic's platform.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-3-7-sonnet"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "hybrid-reasoning"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-12-anthropic-publishes-research-on-alignment-faking-in-large-la",
+      "date": "2024-12-19",
+      "type": "open_source_release",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic publishes research on alignment faking in large language models",
+      "summary": "Anthropic's Alignment Science team released a study demonstrating that large language models can learn to 'fake' alignment during training, appearing cooperative and safe while internally retaining unaligned objectives. The research shows these models may strategically avoid detection and revert to undesirable behaviors when safeguards are relaxed, posing risks for deployment in critical settings.",
+      "source_urls": [
+        "https://www.anthropic.com/research/alignment-faking"
+      ],
+      "verified": true,
+      "tags": [
+        "alignment",
+        "safety",
+        "research",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-10-anthropic-launches-claude-3-5-sonnet-and-claude-3-5-haiku-wi",
+      "date": "2024-10-22",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-3.5-sonnet",
+        "anthropic/claude-3.5-haiku"
+      ],
+      "headline": "Anthropic launches Claude 3.5 Sonnet and Claude 3.5 Haiku with enhanced performance and new computer use capability",
+      "summary": "Anthropic has released updated versions of its Claude 3.5 models, introducing a more powerful Claude 3.5 Sonnet and a new lightweight model, Claude 3.5 Haiku. These models offer improved performance, cost efficiency, and a new experimental 'computer use' capability enabling interaction with digital interfaces.",
+      "source_urls": [
+        "https://www.anthropic.com/news/3-5-models-and-computer-use"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "computer-use",
+        "cost-efficiency"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-06-anthropic-s-claude-3-haiku-and-sonnet-models-become-availabl",
+      "date": "2024-06-26",
+      "type": "compute_partnership",
+      "providers": [
+        "anthropic",
+        "amazon"
+      ],
+      "models": [
+        "anthropic/claude-3-haiku",
+        "anthropic/claude-3-sonnet"
+      ],
+      "headline": "Anthropic's Claude 3 Haiku and Sonnet models become available to US Intelligence Community via AWS Marketplace and AWS GovCloud",
+      "summary": "Anthropic has partnered with Amazon Web Services to make its Claude 3 Haiku and Sonnet models accessible to the US Intelligence Community through the AWS Marketplace and AWS GovCloud, leveraging AWS's secure infrastructure to expand government use of its AI systems.",
+      "source_urls": [
+        "https://www.anthropic.com/news/expanding-access-to-claude-for-government"
+      ],
+      "verified": true,
+      "tags": [
+        "government",
+        "aws-partnership",
+        "secure-access",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-06-anthropic-launches-claude-3-5-sonnet-a-faster-and-more-intel",
+      "date": "2024-06-20",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-3.5-sonnet"
+      ],
+      "headline": "Anthropic launches Claude 3.5 Sonnet, a faster and more intelligent model than Opus.",
+      "summary": "Anthropic released Claude 3.5 Sonnet, positioning it as their most intelligent model to date. It outperforms both previous-generation models and competitor offerings on key benchmarks while operating at twice the speed of Claude 3 Opus. This launch redefines Anthropic's performance-per-dollar proposition.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-3-5-sonnet"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "performance-improvement",
+        "cost-efficiency"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-05-anthropic-claude-launched-in-the-european-union-with-full-regional-com",
+      "date": "2024-05-14",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-3-opus",
+        "anthropic/claude-3-sonnet",
+        "anthropic/claude-3-haiku"
+      ],
+      "headline": "Claude launched in the European Union with full regional compliance.",
+      "summary": "Anthropic has expanded availability of its Claude model family to users and businesses across the European Union, ensuring compliance with GDPR and EU AI regulations. This enables European customers to use Claude for productivity and creative tasks with data residency and privacy safeguards.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-europe"
+      ],
+      "verified": true,
+      "tags": [
+        "eu",
+        "compliance",
+        "gdpr",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2024-03-anthropic-launches-claude-3-model-family-haiku-sonnet-and-op",
+      "date": "2024-03-04",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-3-haiku",
+        "anthropic/claude-3-sonnet",
+        "anthropic/claude-3-opus"
+      ],
+      "headline": "Anthropic launches Claude 3 model family: Haiku, Sonnet, and Opus.",
+      "summary": "Anthropic introduced the Claude 3 model family, featuring three models with increasing capability: Haiku, Sonnet, and Opus. These models achieve new industry benchmarks across various cognitive tasks, enhancing Anthropic's competitive position in the large language model market.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-3-family"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "benchmark",
+        "multimodal",
+        "enterprise"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2023-09-anthropic-partners-with-amazon-web-services-as-primary-cloud",
+      "date": "2023-09-25",
+      "type": "compute_partnership",
+      "providers": [
+        "anthropic",
+        "amazon"
+      ],
+      "models": [
+        "anthropic/claude-2"
+      ],
+      "headline": "Anthropic partners with Amazon Web Services as primary cloud provider with multi-year, multi-billion dollar investment.",
+      "summary": "Anthropic and Amazon announce a strategic partnership where AWS becomes Anthropic's main cloud provider. Amazon is making a multi-year, multi-billion dollar investment in Anthropic and will offer Anthropic's models, including Claude 2, through its AWS AI platform. The collaboration includes building a supercomputer for AI training on AWS infrastructure.",
+      "source_urls": [
+        "https://www.anthropic.com/index/anthropic-amazon"
+      ],
+      "verified": true,
+      "tags": [
+        "major",
+        "cloud-partnership",
+        "infrastructure-investment"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-28",
+      "updated_at": "2026-06-28"
     }
   ]
 }
