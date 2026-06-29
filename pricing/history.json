@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-06-29T20:45:18.148Z",
-  "snapshot_count": 113,
+  "generated_at": "2026-06-29T20:52:10.786Z",
+  "snapshot_count": 117,
   "model_count": 664,
   "models": [
     {
@@ -3292,6 +3292,15 @@
       "display_name": "Gemini 3.1 Pro Preview",
       "history": [
         {
+          "date": "2026-02-19",
+          "input_cost_per_mtok": 2,
+          "output_cost_per_mtok": 12,
+          "cache_read_cost_per_mtok": 0.2,
+          "cache_write_cost_per_mtok": 4.5,
+          "context_window": 1000000,
+          "source_url": "https://ai.google.dev/pricing"
+        },
+        {
           "date": "2026-03-01",
           "input_cost_per_mtok": 2,
           "output_cost_per_mtok": 12,
@@ -6075,6 +6084,15 @@
       "display_name": "GPT-5.4",
       "history": [
         {
+          "date": "2026-03-05",
+          "input_cost_per_mtok": 2.5,
+          "output_cost_per_mtok": 15,
+          "cache_read_cost_per_mtok": 0.25,
+          "cache_write_cost_per_mtok": null,
+          "context_window": 1000000,
+          "source_url": "https://openai.com/pricing"
+        },
+        {
           "date": "2026-04-01",
           "input_cost_per_mtok": 2.5,
           "output_cost_per_mtok": 15,
@@ -6135,6 +6153,15 @@
       "provider": "openai",
       "display_name": "GPT-5.4 mini",
       "history": [
+        {
+          "date": "2026-03-17",
+          "input_cost_per_mtok": 0.75,
+          "output_cost_per_mtok": 4.5,
+          "cache_read_cost_per_mtok": 0.075,
+          "cache_write_cost_per_mtok": null,
+          "context_window": 1000000,
+          "source_url": "https://openai.com/pricing"
+        },
         {
           "date": "2026-04-01",
           "input_cost_per_mtok": 0.75,
@@ -6246,6 +6273,15 @@
       "provider": "openai",
       "display_name": "GPT-5.5",
       "history": [
+        {
+          "date": "2026-04-23",
+          "input_cost_per_mtok": 5,
+          "output_cost_per_mtok": 30,
+          "cache_read_cost_per_mtok": 0.5,
+          "cache_write_cost_per_mtok": null,
+          "context_window": 1000000,
+          "source_url": "https://openai.com/pricing"
+        },
         {
           "date": "2026-05-09",
           "input_cost_per_mtok": 5,
