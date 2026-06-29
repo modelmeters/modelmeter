@@ -53,6 +53,16 @@ const CATEGORY_META = {
   other:      { color: "var(--c-other)",      label: "Other",          desc: "" },
 };
 const MAGNITUDE_RADIUS = { minor: 2, moderate: 3, major: 5, structural: 8 };
+const TYPE_META = {
+  model_unavailable: { color: "#ff296d", label: "model restricted" },
+  model_launch:      { color: "#ff19ff", label: "model launch" },
+};
+function typeColor(type) {
+  return TYPE_META[type]?.color ?? CATEGORY_META[TYPE_CATEGORY[type] ?? "other"].color;
+}
+function typeLabel(type) {
+  return TYPE_META[type]?.label ?? type.replace(/_/g, " ");
+}
 
 // ---------- state ----------
 let events = [];
@@ -138,13 +148,11 @@ function renderTicker() {
   if (events.length === 0) { track.innerHTML = '<span class="ticker-item">no events yet</span>'; return; }
   const recent = [...events].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 20);
   const items = recent.map(ev => {
-    const cat = TYPE_CATEGORY[ev.type] || "other";
-    const color = CATEGORY_META[cat].color;
     const url = ev.source_urls?.[0] || "#";
     const date = ev.date;
     return `<span class="ticker-item">
       <span class="tick-date">${date}</span>
-      <span class="tick-cat" style="color:${color}">${ev.type.replace(/_/g," ").toUpperCase()}</span>
+      <span class="tick-cat" style="color:${typeColor(ev.type)}">${typeLabel(ev.type).toUpperCase()}</span>
       <a href="${url}" target="_blank" rel="noopener">${escapeHtml(ev.headline)}</a>
     </span>`;
   });
@@ -470,11 +478,9 @@ function renderEventsFeed() {
   filtered = [...filtered].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 30);
   if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no events for this model</div>'; return; }
   wrap.innerHTML = filtered.map(ev => {
-    const cat = TYPE_CATEGORY[ev.type] || "other";
-    const color = CATEGORY_META[cat].color;
     const url = ev.source_urls?.[0] || "#";
     return `<div class="ev-item" onclick="window.open('${url}', '_blank', 'noopener')">
-      <div class="ev-date">${ev.date} · <span style="color: ${color}">${ev.type.replace(/_/g, " ")}</span></div>
+      <div class="ev-date">${ev.date} · <span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span></div>
       <div class="ev-headline">${escapeHtml(ev.headline)}</div>
     </div>`;
   }).join("");
@@ -812,8 +818,7 @@ function renderAcrossProvidersChart() {
     const evDate = new Date(ev.date);
     if (evDate < minDate || evDate > maxDate) continue;
     const x = xScale(evDate);
-    const cat = TYPE_CATEGORY[ev.type] || "other";
-    const catColor = CATEGORY_META[cat].color;
+    const catColor = typeColor(ev.type);
     const r = MAGNITUDE_RADIUS[ev.impact?.magnitude] ?? 3;
     const affectedProviders = visibleProviders.filter(p => (ev.providers || []).includes(p));
     for (const p of affectedProviders) {
@@ -1082,12 +1087,11 @@ function renderSingleModelChart() {
 function attachEventTooltip(el, ev) {
   const tooltip = document.getElementById("chart-tooltip");
   el.addEventListener("mouseenter", e => {
-    const cat = TYPE_CATEGORY[ev.type] || "other";
     tooltip.innerHTML = `
       <div class="tdate">${ev.date} · ${(ev.providers || []).map(p => PROVIDER_LABELS[p] || p).join(", ")}</div>
       <div class="thead">${escapeHtml(ev.headline)}</div>
       <div class="tbody">${escapeHtml(ev.summary || "")}</div>
-      <div class="tfoot"><span style="color: ${CATEGORY_META[cat].color}">${ev.type.replace(/_/g, " ")}</span><span>click to open source ↗</span></div>
+      <div class="tfoot"><span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span><span>click to open source ↗</span></div>
     `;
     positionTooltip(tooltip, e);
     tooltip.classList.add("show");
