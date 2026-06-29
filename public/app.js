@@ -86,15 +86,6 @@ let chartState = {
 
 const ACROSS_PROVIDERS = ["anthropic", "openai", "google", "xai"];
 
-// Curated flagship model IDs — one per provider, updated as the market moves.
-// Used by buildTierSeries when tier === "flagship" to avoid picking legacy/specialized
-// models (e.g. GPT-4 32k, O1-Pro) that are technically expensive but not the flagship.
-const FLAGSHIP_MODEL_IDS = {
-  anthropic: "anthropic/claude-3-5-sonnet",
-  openai:    "openai/gpt-4o",
-  google:    "google/gemini-1-5-pro",
-  xai:       "xai/grok-3",
-};
 
 // Ordered generational chains — used to draw dashed connectors between model segments
 const MODEL_FAMILIES = {
@@ -527,53 +518,6 @@ function renderChart() {
 }
 
 // ---------- across-providers chart ----------
-function buildTierSeries(provider, tier, priceField) {
-  const providerModels = history.models.filter(m => m.provider === provider);
-  if (providerModels.length === 0) return [];
-
-  // Flagship: use curated model ID to avoid legacy/specialized models skewing the line
-  if (tier === "flagship" && FLAGSHIP_MODEL_IDS[provider]) {
-    const model = providerModels.find(m => m.id === FLAGSHIP_MODEL_IDS[provider]);
-    if (model) {
-      return model.history
-        .filter(h => h[priceField] != null && h[priceField] > 0)
-        .map(h => ({ date: h.date, price: h[priceField], model_id: model.id, display_name: model.display_name }));
-    }
-  }
-
-  // Mid / fast: price-based selection across all models
-  const allDates = new Set();
-  for (const m of providerModels) for (const h of m.history) allDates.add(h.date);
-  const sortedDates = [...allDates].sort();
-
-  const raw = [];
-  for (const date of sortedDates) {
-    const active = [];
-    for (const m of providerModels) {
-      const entries = m.history.filter(h => h.date <= date && h[priceField] != null && h[priceField] > 0);
-      if (entries.length === 0) continue;
-      const latest = entries[entries.length - 1];
-      active.push({ price: latest[priceField], model_id: m.id, display_name: m.display_name });
-    }
-    if (active.length === 0) continue;
-    active.sort((a, b) => b.price - a.price);
-    let chosen;
-    if (tier === "fast") chosen = active[active.length - 1];
-    else { // mid
-      if (active.length < 3) continue;
-      chosen = active[Math.floor(active.length / 2)];
-    }
-    raw.push({ date, price: chosen.price, model_id: chosen.model_id, display_name: chosen.display_name });
-  }
-  // Dedupe consecutive points where chosen model + price unchanged
-  const compressed = [];
-  for (const p of raw) {
-    const prev = compressed[compressed.length - 1];
-    if (!prev || prev.model_id !== p.model_id || prev.price !== p.price) compressed.push(p);
-  }
-  return compressed;
-}
-
 function renderAcrossProvidersChart() {
   const empty = document.getElementById("chart-empty");
   const svg = document.getElementById("chart-svg");
@@ -601,9 +545,7 @@ function renderAcrossProvidersChart() {
       if (series.length === 0) continue;
       const cur = currentById[m.id];
       const isDeprecated = !cur || cur.availability === "deprecated";
-      const isFlagship = FLAGSHIP_MODEL_IDS[provider] === m.id;
-      const lastDate = series[series.length - 1].date;
-      allModelLines.push({ m, provider, series, isDeprecated, isFlagship, lastDate });
+      allModelLines.push({ m, provider, series, isDeprecated });
     }
   }
   if (allModelLines.length === 0) {
@@ -711,11 +653,8 @@ function renderAcrossProvidersChart() {
     cur.setMonth(cur.getMonth() + 1);
   }
 
-  // Draw non-flagship lines first (back), flagships last (front)
-  const sorted = [...displayLines].sort((a, b) => (a.isFlagship ? 1 : 0) - (b.isFlagship ? 1 : 0));
-
-  for (const ml of sorted) {
-    const { provider, visible, isDeprecated, isFlagship } = ml;
+  for (const ml of displayLines) {
+    const { provider, visible, isDeprecated } = ml;
     const color = PROVIDER_COLORS[provider] || "#ffffff";
     const strokeWidth = 1;
 
@@ -751,7 +690,7 @@ function renderAcrossProvidersChart() {
       c.setAttribute("fill", color);
       c.setAttribute("opacity", String(opacity));
       c.setAttribute("stroke", "var(--panel)");
-      c.setAttribute("stroke-width", isFlagship ? "1" : "0.5");
+      c.setAttribute("stroke-width", "0.5");
       c.setAttribute("style", "cursor: pointer");
       attachProviderPointTooltip(c, provider, { date: pt.date, price: pt[priceField], display_name: ml.m.display_name });
       svg.appendChild(c);
