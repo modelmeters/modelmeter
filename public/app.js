@@ -84,6 +84,16 @@ let chartState = {
 };
 
 const ACROSS_PROVIDERS = ["anthropic", "openai", "google", "xai"];
+
+// Curated flagship model IDs — one per provider, updated as the market moves.
+// Used by buildTierSeries when tier === "flagship" to avoid picking legacy/specialized
+// models (e.g. GPT-4 32k, O1-Pro) that are technically expensive but not the flagship.
+const FLAGSHIP_MODEL_IDS = {
+  anthropic: "anthropic/claude-3-5-sonnet",
+  openai:    "openai/gpt-4o",
+  google:    "google/gemini-1-5-pro",
+  xai:       "xai/grok-3",
+};
 const PROVIDER_COLORS = {
   anthropic: "#ff8a65",
   openai:    "#74aa9c",
@@ -502,7 +512,17 @@ function buildTierSeries(provider, tier, priceField) {
   const providerModels = history.models.filter(m => m.provider === provider);
   if (providerModels.length === 0) return [];
 
-  // Collect all unique dates from this provider's history
+  // Flagship: use curated model ID to avoid legacy/specialized models skewing the line
+  if (tier === "flagship" && FLAGSHIP_MODEL_IDS[provider]) {
+    const model = providerModels.find(m => m.id === FLAGSHIP_MODEL_IDS[provider]);
+    if (model) {
+      return model.history
+        .filter(h => h[priceField] != null && h[priceField] > 0)
+        .map(h => ({ date: h.date, price: h[priceField], model_id: model.id, display_name: model.display_name }));
+    }
+  }
+
+  // Mid / fast: price-based selection across all models
   const allDates = new Set();
   for (const m of providerModels) for (const h of m.history) allDates.add(h.date);
   const sortedDates = [...allDates].sort();
@@ -511,17 +531,15 @@ function buildTierSeries(provider, tier, priceField) {
   for (const date of sortedDates) {
     const active = [];
     for (const m of providerModels) {
-      const entries = m.history.filter(h => h.date <= date && h[priceField] != null);
+      const entries = m.history.filter(h => h.date <= date && h[priceField] != null && h[priceField] > 0);
       if (entries.length === 0) continue;
       const latest = entries[entries.length - 1];
       active.push({ price: latest[priceField], model_id: m.id, display_name: m.display_name });
     }
     if (active.length === 0) continue;
-    // Sort by output cost is more discriminating; if priceField is input, sort by it
     active.sort((a, b) => b.price - a.price);
     let chosen;
-    if (tier === "flagship") chosen = active[0];
-    else if (tier === "fast") chosen = active[active.length - 1];
+    if (tier === "fast") chosen = active[active.length - 1];
     else { // mid
       if (active.length < 3) continue;
       chosen = active[Math.floor(active.length / 2)];
