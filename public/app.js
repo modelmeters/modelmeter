@@ -470,6 +470,11 @@ function renderChartControls() {
     c.addEventListener("click", () => {
       chartState.showDeprecated = c.dataset.deprecated === "all";
       document.querySelectorAll("#chart-deprecated .chip").forEach(x => x.classList.toggle("active", x === c));
+      // Auto-zoom to 12mo when switching to active-only so recent models are visible
+      if (!chartState.showDeprecated && chartState.range === "all") {
+        chartState.range = "12";
+        document.querySelectorAll("#chart-range .chip").forEach(x => x.classList.toggle("active", x.dataset.range === "12"));
+      }
       renderChart();
     });
   });

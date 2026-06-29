@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "snapshot_date": "2026-05-28",
+  "source": "https://www.anthropic.com/pricing",
+  "models": [
+    {
+      "id": "anthropic/claude-opus-4-8",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "display_name": "Claude Opus 4.8",
+      "input_cost_per_mtok": 5,
+      "output_cost_per_mtok": 25,
+      "cache_write_cost_per_mtok": 6.25,
+      "cache_read_cost_per_mtok": 0.5,
+      "context_window": 200000,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/pricing",
+      "last_verified": "2026-05-28",
+      "verification_required": false,
+      "notes": "Launch pricing. Flagship model for complex agentic coding and enterprise work."
+    }
+  ]
+}

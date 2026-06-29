@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "snapshot_date": "2026-06-09",
+  "source": "https://www.anthropic.com/pricing",
+  "models": [
+    {
+      "id": "anthropic/claude-fable-5",
+      "provider": "anthropic",
+      "model": "claude-fable-5",
+      "display_name": "Claude Fable 5",
+      "input_cost_per_mtok": 10,
+      "output_cost_per_mtok": 50,
+      "cache_write_cost_per_mtok": 12.5,
+      "cache_read_cost_per_mtok": 1.0,
+      "context_window": 200000,
+      "max_output_tokens": null,
+      "source_url": "https://www.anthropic.com/pricing",
+      "last_verified": "2026-06-09",
+      "verification_required": false,
+      "notes": "Launch pricing. Mythos-class model; availability restricted at launch.",
+      "availability": "unavailable"
+    }
+  ]
+}
