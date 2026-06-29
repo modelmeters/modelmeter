@@ -769,15 +769,6 @@ function renderAcrossProvidersChart() {
     svg.appendChild(lbl);
   }
 
-  // Compute relevant events (filter only — drawing happens after lines)
-  const MAJOR_MAGNITUDES = new Set(["major", "structural"]);
-  const relevantEvents = chartState.events === "off" ? [] : events.filter(e => {
-    const evProviders = e.providers || [];
-    if (!visibleProviders.some(p => evProviders.includes(p))) return false;
-    if (chartState.events === "major") return MAJOR_MAGNITUDES.has(e.impact?.magnitude);
-    return true;
-  });
-
   // Per-provider step-function lines
   for (const p of visibleProviders) {
     const points = filtered[p];
@@ -813,34 +804,6 @@ function renderAcrossProvidersChart() {
       c.setAttribute("stroke-width", "1");
       c.setAttribute("style", "cursor: pointer");
       attachProviderPointTooltip(c, p, pt);
-      svg.appendChild(c);
-    }
-  }
-
-  // Event circles — drawn on top of lines, anchored to each provider's price at event date
-  for (const ev of relevantEvents) {
-    const evDate = new Date(ev.date);
-    if (evDate < minDate || evDate > maxDate) continue;
-    const x = xScale(evDate);
-    const catColor = typeColor(ev.type);
-    const r = MAGNITUDE_RADIUS[ev.impact?.magnitude] ?? 3;
-    const affectedProviders = visibleProviders.filter(p => (ev.providers || []).includes(p));
-    for (const p of affectedProviders) {
-      const pts = filtered[p];
-      if (!pts || pts.length === 0) continue;
-      // Price at event date: last snapshot at or before event
-      const snapshot = [...pts].reverse().find(pt => pt.date <= ev.date);
-      if (!snapshot) continue;
-      const y = yScale(snapshot.price);
-      const c = document.createElementNS(ns, "circle");
-      c.setAttribute("cx", x);
-      c.setAttribute("cy", y);
-      c.setAttribute("r", r);
-      c.setAttribute("fill", "none");
-      c.setAttribute("stroke", catColor);
-      c.setAttribute("stroke-width", "2");
-      c.setAttribute("style", "cursor: pointer");
-      attachEventTooltip(c, ev);
       svg.appendChild(c);
     }
   }
@@ -1140,11 +1103,14 @@ function attachEventTooltip(el, ev) {
   });
 }
 
-function positionTooltip(tooltip, e) {
+function positionTooltip(tooltip, e, above = false) {
   const wrap = tooltip.parentElement.getBoundingClientRect();
   const x = e.clientX - wrap.left + 14;
-  const y = e.clientY - wrap.top + 14;
-  tooltip.style.left = `${Math.min(x, wrap.width - tooltip.offsetWidth - 10)}px`;
+  const tipH = tooltip.offsetHeight || 120;
+  const y = above
+    ? e.clientY - wrap.top - tipH - 14
+    : e.clientY - wrap.top + 14;
+  tooltip.style.left = `${Math.min(Math.max(0, x), wrap.width - (tooltip.offsetWidth || 280) - 10)}px`;
   tooltip.style.top = `${y}px`;
 }
 
@@ -1386,10 +1352,10 @@ function renderEventSwimlane() {
           <div class="tbody">${escapeHtml(ev.summary || "")}</div>
           <div class="tfoot"><span style="color: ${color}">${typeLabel(ev.type)}</span><span>click to open ↗</span></div>
         `;
-        positionTooltip(swimTooltip, e);
+        positionTooltip(swimTooltip, e, true);
         swimTooltip.classList.add("show");
       });
-      c.addEventListener("mousemove", e => positionTooltip(swimTooltip, e));
+      c.addEventListener("mousemove", e => positionTooltip(swimTooltip, e, true));
       c.addEventListener("mouseleave", () => {
         hideChartCrosshair();
         const sl = document.getElementById("swimlane-crosshair");

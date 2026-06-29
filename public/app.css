@@ -239,7 +239,7 @@ button, input, select { font-family: inherit; font-size: inherit; }
 .chart-legend .swatch.line { height: 2px; vertical-align: middle; }
 
 /* Event swimlane */
-.swimlane-panel { padding: 0; overflow: hidden; }
+.swimlane-panel { padding: 0; overflow: visible; }
 .swimlane-header {
   display: flex;
   align-items: center;
