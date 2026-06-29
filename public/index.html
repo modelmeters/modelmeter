@@ -146,7 +146,6 @@
               <div class="chip-group" id="chart-mode">
                 <button class="chip active" data-mode="across">across</button>
                 <button class="chip" data-mode="single">single</button>
-                <button class="chip" data-mode="index">index</button>
               </div>
               <div class="chip-group" id="chart-tier">
                 <button class="chip active" data-tier="flagship">flagship</button>
@@ -187,6 +186,17 @@
             <div class="tooltip" id="chart-tooltip" role="tooltip"></div>
           </div>
           <div class="chart-legend" id="chart-legend"></div>
+        </div>
+
+        <div class="panel swimlane-panel" id="swimlane-panel">
+          <div class="swimlane-header">
+            <span class="swimlane-title">Events · by provider · hover to link chart</span>
+            <div id="swimlane-cat-legend" class="swimlane-cat-legend"></div>
+          </div>
+          <div class="swimlane-canvas-wrap" style="position: relative;">
+            <svg class="swimlane-svg" id="swimlane-svg" aria-label="Event timeline swimlane"></svg>
+            <div class="tooltip" id="swimlane-tooltip" role="tooltip"></div>
+          </div>
         </div>
 
         <div class="panel gauge-panel">

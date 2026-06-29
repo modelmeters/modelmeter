@@ -70,6 +70,8 @@ let modelsByProvider = {};
 let currentModels = [];
 let history = null;
 const activeCategories = new Set(Object.keys(CATEGORY_META));
+let sharedXParams = null; // set by renderAcrossProvidersChart/renderSingleModelChart, read by renderEventSwimlane
+const activeSwimlaneCategories = new Set(Object.keys(CATEGORY_META));
 let chartState = {
   model: null,
   range: "all",
@@ -575,20 +577,19 @@ function renderChartControls() {
 function applyChartControlVisibility() {
   const mode = chartState.viewMode;
   const isAcross = mode === "across";
-  const isIndex = mode === "index";
   const isSingle = mode === "single";
   const set = (id, vis) => { const el = document.getElementById(id); if (el) el.style.display = vis; };
-  set("chart-tier", (isAcross || isIndex) ? "" : "none");
-  set("chart-price", (isAcross || isIndex) ? "" : "none");
+  set("chart-tier", isAcross ? "" : "none");
+  set("chart-price", isAcross ? "" : "none");
   set("chart-model", isSingle ? "" : "none");
   set("chart-cache", isSingle ? "" : "none");
-  set("chart-scale", isIndex ? "none" : "");
+  set("chart-scale", "");
 }
 
 function renderChart() {
   if (chartState.viewMode === "across") renderAcrossProvidersChart();
-  else if (chartState.viewMode === "index") renderIndexChart();
   else renderSingleModelChart();
+  renderEventSwimlane();
 }
 
 // ---------- across-providers chart ----------
@@ -696,6 +697,7 @@ function renderAcrossProvidersChart() {
   const minDate = new Date(Math.min(...allDates));
   const maxDate = new Date(Math.max(...allDates, Date.now()));
   const xScale = d => padLeft + ((new Date(d) - minDate) / Math.max(1, maxDate - minDate)) * (width - padLeft - padRight);
+  sharedXParams = { minDate, maxDate, xScale, width, padLeft, padRight, padTop, padBottom };
 
   let yMin = 0, yMax = Math.max(...allPrices);
   if (chartState.scale === "log") {
@@ -843,6 +845,15 @@ function renderAcrossProvidersChart() {
     }
   }
 
+  // Crosshair line (shown on swimlane hover)
+  const crosshair = document.createElementNS(ns, "line");
+  crosshair.setAttribute("id", "chart-crosshair");
+  crosshair.setAttribute("x1", "-1"); crosshair.setAttribute("x2", "-1");
+  crosshair.setAttribute("y1", String(padTop)); crosshair.setAttribute("y2", String(height - padBottom));
+  crosshair.setAttribute("class", "chart-crosshair");
+  crosshair.style.display = "none";
+  svg.appendChild(crosshair);
+
   // Legend with provider swatches + JSON link
   const tierLabel = chartState.tier === "flagship" ? "flagship" : chartState.tier === "fast" ? "fast" : "mid-tier";
   const priceLabel = chartState.priceField === "input_cost_per_mtok" ? "input" : "output";
@@ -851,198 +862,12 @@ function renderAcrossProvidersChart() {
     const color = PROVIDER_COLORS[p] || "#ffffff";
     legendHtml += `<span><span class="swatch line" style="background:${color}"></span>${PROVIDER_LABELS[p] || p}</span>`;
   }
-  legendHtml += `<span style="color: var(--muted-2);">${tierLabel} · ${priceLabel} · ${relevantEvents.length} events</span>`;
+  legendHtml += `<span style="color: var(--muted-2);">${tierLabel} · ${priceLabel}</span>`;
   legendHtml += `<span style="margin-left: auto;"><a href="/history.json" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">try as json ↗</a></span>`;
   legend.innerHTML = legendHtml;
 }
 
-function renderIndexChart() {
-  const empty = document.getElementById("chart-empty");
-  const svg = document.getElementById("chart-svg");
-  const legend = document.getElementById("chart-legend");
-  legend.innerHTML = "";
-
-  if (!history) {
-    empty.style.display = "flex";
-    empty.innerHTML = '<span class="loader">⟳</span> waiting for historical pricing data…';
-    svg.style.display = "none";
-    return;
-  }
-
-  const allSeries = {};
-  for (const p of ACROSS_PROVIDERS) {
-    const s = buildTierSeries(p, chartState.tier, chartState.priceField);
-    if (s.length > 0) allSeries[p] = s;
-  }
-
-  // Normalize each series to 100 at first point
-  const normalized = {};
-  for (const [p, pts] of Object.entries(allSeries)) {
-    const base = pts[0].price;
-    if (!base) continue;
-    normalized[p] = pts.map(pt => ({ ...pt, index: (pt.price / base) * 100 }));
-  }
-
-  let cutoff = null;
-  if (chartState.range !== "all") {
-    const months = parseInt(chartState.range, 10);
-    cutoff = new Date(); cutoff.setMonth(cutoff.getMonth() - months);
-  }
-  const filtered = {};
-  for (const [p, pts] of Object.entries(normalized)) {
-    filtered[p] = cutoff ? pts.filter(pt => new Date(pt.date) >= cutoff) : pts;
-  }
-  const visibleProviders = Object.keys(filtered).filter(p => filtered[p].length > 0);
-
-  if (visibleProviders.length === 0) {
-    empty.style.display = "flex";
-    empty.innerHTML = "no data available";
-    svg.style.display = "none";
-    return;
-  }
-
-  empty.style.display = "none";
-  svg.style.display = "block";
-  svg.innerHTML = "";
-
-  const width = svg.clientWidth || 800;
-  const height = 380;
-  const padLeft = 60, padRight = 24, padTop = 24, padBottom = 40;
-  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-
-  const allDates = visibleProviders.flatMap(p => filtered[p].map(pt => new Date(pt.date)));
-  const minDate = new Date(Math.min(...allDates));
-  const maxDate = new Date(Math.max(...allDates, Date.now()));
-  const xScale = d => padLeft + ((new Date(d) - minDate) / Math.max(1, maxDate - minDate)) * (width - padLeft - padRight);
-
-  const allIndexValues = visibleProviders.flatMap(p => filtered[p].map(pt => pt.index));
-  const yMax = Math.max(105, Math.max(...allIndexValues) * 1.05);
-  const yScale = v => padTop + (1 - v / yMax) * (height - padTop - padBottom);
-
-  const ns = "http://www.w3.org/2000/svg";
-
-  // Y-axis grid + labels
-  const yTicks = [0, 20, 40, 60, 80, 100].filter(v => v <= yMax);
-  for (const v of yTicks) {
-    const y = yScale(v);
-    const line = document.createElementNS(ns, "line");
-    line.setAttribute("x1", padLeft); line.setAttribute("x2", width - padRight);
-    line.setAttribute("y1", y); line.setAttribute("y2", y);
-    line.setAttribute("class", "grid-line");
-    if (v === 100) { line.setAttribute("stroke-dasharray", "4,3"); line.setAttribute("opacity", "0.6"); }
-    svg.appendChild(line);
-    const lbl = document.createElementNS(ns, "text");
-    lbl.setAttribute("x", padLeft - 8); lbl.setAttribute("y", y + 3);
-    lbl.setAttribute("text-anchor", "end");
-    lbl.setAttribute("class", "grid-label");
-    lbl.setAttribute("fill", v === 100 ? "var(--muted)" : "#ece9e0");
-    lbl.textContent = `${v}%`;
-    svg.appendChild(lbl);
-  }
-
-  // X-axis labels
-  const cursor = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
-  while (cursor <= maxDate) {
-    if (cursor.getMonth() % 3 === 0) {
-      const x = xScale(cursor);
-      const line = document.createElementNS(ns, "line");
-      line.setAttribute("x1", x); line.setAttribute("x2", x);
-      line.setAttribute("y1", padTop); line.setAttribute("y2", height - padBottom);
-      line.setAttribute("class", "grid-line");
-      svg.appendChild(line);
-      const lbl = document.createElementNS(ns, "text");
-      lbl.setAttribute("x", x); lbl.setAttribute("y", height - padBottom + 14);
-      lbl.setAttribute("text-anchor", "middle");
-      lbl.setAttribute("class", "grid-label");
-      lbl.setAttribute("fill", "#ece9e0");
-      lbl.textContent = `${cursor.toLocaleString("en", { month: "short" })} '${String(cursor.getFullYear()).slice(-2)}`;
-      svg.appendChild(lbl);
-    }
-    cursor.setMonth(cursor.getMonth() + 1);
-  }
-
-  // Per-provider lines
-  for (const p of visibleProviders) {
-    const points = filtered[p];
-    const color = PROVIDER_COLORS[p] || "#ffffff";
-    let d = "";
-    for (let i = 0; i < points.length; i++) {
-      const x = xScale(points[i].date);
-      const y = yScale(points[i].index);
-      if (i === 0) d += `M ${x} ${y}`;
-      else {
-        const prevY = yScale(points[i - 1].index);
-        d += ` L ${x} ${prevY} L ${x} ${y}`;
-      }
-    }
-    const lastX = xScale(maxDate);
-    const lastY = yScale(points[points.length - 1].index);
-    d += ` L ${lastX} ${lastY}`;
-    const path = document.createElementNS(ns, "path");
-    path.setAttribute("d", d);
-    path.setAttribute("fill", "none");
-    path.setAttribute("stroke", color);
-    path.setAttribute("stroke-width", "2");
-    svg.appendChild(path);
-    for (const pt of points) {
-      const c = document.createElementNS(ns, "circle");
-      c.setAttribute("cx", xScale(pt.date));
-      c.setAttribute("cy", yScale(pt.index));
-      c.setAttribute("r", "3");
-      c.setAttribute("fill", color);
-      c.setAttribute("stroke", "var(--panel)");
-      c.setAttribute("stroke-width", "1");
-      attachProviderPointTooltip(c, p, { ...pt, price: pt.price, index: pt.index });
-      svg.appendChild(c);
-    }
-  }
-
-  // Event circles on lines
-  const MAJOR_MAGNITUDES = new Set(["major", "structural"]);
-  const relevantEvents = chartState.events === "off" ? [] : events.filter(e => {
-    const evProviders = e.providers || [];
-    if (!visibleProviders.some(p => evProviders.includes(p))) return false;
-    if (chartState.events === "major") return MAJOR_MAGNITUDES.has(e.impact?.magnitude);
-    return true;
-  });
-  for (const ev of relevantEvents) {
-    const evDate = new Date(ev.date);
-    if (evDate < minDate || evDate > maxDate) continue;
-    const x = xScale(evDate);
-    const catColor = typeColor(ev.type);
-    const r = MAGNITUDE_RADIUS[ev.impact?.magnitude] ?? 3;
-    const affectedProviders = visibleProviders.filter(p => (ev.providers || []).includes(p));
-    for (const p of affectedProviders) {
-      const pts = filtered[p];
-      const snapshot = [...pts].reverse().find(pt => pt.date <= ev.date);
-      if (!snapshot) continue;
-      const c = document.createElementNS(ns, "circle");
-      c.setAttribute("cx", x);
-      c.setAttribute("cy", yScale(snapshot.index));
-      c.setAttribute("r", r);
-      c.setAttribute("fill", "none");
-      c.setAttribute("stroke", catColor);
-      c.setAttribute("stroke-width", "2");
-      c.setAttribute("style", "cursor: pointer");
-      attachEventTooltip(c, ev);
-      svg.appendChild(c);
-    }
-  }
-
-  // Legend
-  const priceLabel = chartState.priceField === "input_cost_per_mtok" ? "input" : "output";
-  let legendHtml = "";
-  for (const p of visibleProviders) {
-    const color = PROVIDER_COLORS[p] || "#ffffff";
-    const pts = filtered[p];
-    const currentIndex = pts[pts.length - 1].index;
-    const drop = (100 - currentIndex).toFixed(0);
-    legendHtml += `<span><span class="swatch line" style="background:${color}"></span>${PROVIDER_LABELS[p] || p} <span style="color:var(--down)">↓${drop}%</span></span>`;
-  }
-  legendHtml += `<span style="color: var(--muted-2);">price index · ${priceLabel} · 100 = launch price</span>`;
-  legendHtml += `<span style="margin-left: auto;"><a href="/history.json" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">try as json ↗</a></span>`;
-  legend.innerHTML = legendHtml;
-}
+// renderIndexChart removed — replaced by Option D two-panel layout (price chart + event swimlane)
 
 function attachProviderPointTooltip(el, provider, pt) {
   const tooltip = document.getElementById("chart-tooltip");
@@ -1102,6 +927,7 @@ function renderSingleModelChart() {
   const minDate = new Date(Math.min(...dates));
   const maxDate = new Date(Math.max(...dates, Date.now()));
   const xScale = d => padLeft + ((new Date(d) - minDate) / Math.max(1, maxDate - minDate)) * (width - padLeft - padRight);
+  sharedXParams = { minDate, maxDate, xScale, width, padLeft, padRight, padTop, padBottom: 40 };
 
   // Collect y values for scale
   const yVals = [];
@@ -1263,15 +1089,36 @@ function renderSingleModelChart() {
     pathFor("cache_write_cost_per_mtok", "var(--warn)", "4,3");
   }
 
+  // Crosshair line
+  const crosshairNs = "http://www.w3.org/2000/svg";
+  const crosshairEl = document.createElementNS(crosshairNs, "line");
+  crosshairEl.setAttribute("id", "chart-crosshair");
+  crosshairEl.setAttribute("x1", "-1"); crosshairEl.setAttribute("x2", "-1");
+  crosshairEl.setAttribute("y1", String(padTop)); crosshairEl.setAttribute("y2", String(height - padBottom));
+  crosshairEl.setAttribute("class", "chart-crosshair");
+  crosshairEl.style.display = "none";
+  svg.appendChild(crosshairEl);
+
   // Legend
   legend.innerHTML = `
     <span><span class="swatch line" style="background: var(--c-infra)"></span>input</span>
     <span><span class="swatch line" style="background: var(--down)"></span>output</span>
     ${chartState.cache ? `<span><span class="swatch line" style="background: var(--c-money); border-top: 2px dashed var(--c-money); background: transparent;"></span>cache read</span>
     <span><span class="swatch line" style="background: var(--warn); border-top: 2px dashed var(--warn); background: transparent;"></span>cache write</span>` : ''}
-    <span><span class="swatch" style="background: var(--c-regulatory); transform: rotate(45deg); width: 8px; height: 8px;"></span>event marker · click for source</span>
     <span style="color: var(--muted-2);">${series.length} data points · ${relevantEvents.length} events</span>
   `;
+}
+
+function showChartCrosshair(x) {
+  const line = document.getElementById("chart-crosshair");
+  if (!line) return;
+  line.setAttribute("x1", String(x));
+  line.setAttribute("x2", String(x));
+  line.style.display = "";
+}
+function hideChartCrosshair() {
+  const line = document.getElementById("chart-crosshair");
+  if (line) line.style.display = "none";
 }
 
 function attachEventTooltip(el, ev) {
@@ -1437,6 +1284,144 @@ function renderTimeline() {
       circle.addEventListener("click", () => { if (ev.source_urls?.[0]) window.open(ev.source_urls[0], "_blank", "noopener"); });
       svg.appendChild(circle);
     }
+  }
+}
+
+// ---------- event swimlane ----------
+function renderEventSwimlane() {
+  const swimSvg = document.getElementById("swimlane-svg");
+  const swimTooltip = document.getElementById("swimlane-tooltip");
+  const catLegend = document.getElementById("swimlane-cat-legend");
+  if (!swimSvg) return;
+
+  if (!sharedXParams || events.length === 0) {
+    swimSvg.setAttribute("viewBox", "0 0 100 20");
+    swimSvg.setAttribute("height", "20");
+    if (catLegend) catLegend.innerHTML = "";
+    return;
+  }
+
+  const { minDate, maxDate, xScale, width, padLeft, padRight } = sharedXParams;
+
+  // Determine lane providers
+  let laneProviders;
+  if (chartState.viewMode === "single" && chartState.model) {
+    const m = history?.models?.find(m => m.id === chartState.model);
+    laneProviders = m ? [m.provider] : ACROSS_PROVIDERS.slice();
+  } else {
+    laneProviders = ACROSS_PROVIDERS.filter(p => events.some(e => (e.providers || []).includes(p)));
+  }
+
+  const slPadLeft = padLeft, slPadRight = padRight, slPadTop = 6, slPadBottom = 4;
+  const laneH = 22;
+  const height = slPadTop + laneProviders.length * laneH + slPadBottom;
+  swimSvg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  swimSvg.setAttribute("height", String(height));
+  swimSvg.innerHTML = "";
+
+  const ns = "http://www.w3.org/2000/svg";
+
+  // Lane backgrounds + labels
+  laneProviders.forEach((p, i) => {
+    const rect = document.createElementNS(ns, "rect");
+    rect.setAttribute("x", String(slPadLeft));
+    rect.setAttribute("y", String(slPadTop + i * laneH));
+    rect.setAttribute("width", String(width - slPadLeft - slPadRight));
+    rect.setAttribute("height", String(laneH));
+    rect.setAttribute("fill", i % 2 === 0 ? "var(--panel-2)" : "var(--panel-3)");
+    swimSvg.appendChild(rect);
+
+    const lbl = document.createElementNS(ns, "text");
+    lbl.setAttribute("x", String(slPadLeft - 6));
+    lbl.setAttribute("y", String(slPadTop + i * laneH + laneH / 2 + 4));
+    lbl.setAttribute("text-anchor", "end");
+    lbl.setAttribute("class", "sl-label");
+    lbl.textContent = PROVIDER_LABELS[p] || p;
+    swimSvg.appendChild(lbl);
+  });
+
+  // Swimlane crosshair line (shown on hover)
+  const slCrosshair = document.createElementNS(ns, "line");
+  slCrosshair.setAttribute("id", "swimlane-crosshair");
+  slCrosshair.setAttribute("x1", "-1"); slCrosshair.setAttribute("x2", "-1");
+  slCrosshair.setAttribute("y1", String(slPadTop)); slCrosshair.setAttribute("y2", String(height - slPadBottom));
+  slCrosshair.setAttribute("class", "sl-crosshair");
+  slCrosshair.style.display = "none";
+  swimSvg.appendChild(slCrosshair);
+
+  // Event dots
+  for (const ev of events) {
+    const evDate = new Date(ev.date);
+    if (evDate < minDate || evDate > maxDate) continue;
+
+    const x = xScale(evDate);
+    const r = Math.max(3, MAGNITUDE_RADIUS[ev.impact?.magnitude] ?? 3);
+    const color = typeColor(ev.type);
+    const cat = TYPE_CATEGORY[ev.type] || "other";
+    const isDimmed = !activeSwimlaneCategories.has(cat);
+
+    const affectedProviders = laneProviders.filter(p => (ev.providers || []).includes(p));
+    for (const p of affectedProviders) {
+      const laneIdx = laneProviders.indexOf(p);
+      const cy = slPadTop + laneIdx * laneH + laneH / 2;
+
+      const c = document.createElementNS(ns, "circle");
+      c.setAttribute("cx", String(x));
+      c.setAttribute("cy", String(cy));
+      c.setAttribute("r", String(r));
+      c.setAttribute("fill", color);
+      c.setAttribute("fill-opacity", "0.8");
+      c.setAttribute("stroke", "var(--panel)");
+      c.setAttribute("stroke-width", "1");
+      c.setAttribute("class", `sl-event${isDimmed ? " dimmed" : ""}`);
+
+      c.addEventListener("mouseenter", e => {
+        // Show crosshair in both panels
+        showChartCrosshair(x);
+        const sl = document.getElementById("swimlane-crosshair");
+        if (sl) { sl.setAttribute("x1", String(x)); sl.setAttribute("x2", String(x)); sl.style.display = ""; }
+        swimTooltip.innerHTML = `
+          <div class="tdate">${ev.date} · ${(ev.providers || []).map(q => PROVIDER_LABELS[q] || q).join(", ")}</div>
+          <div class="thead">${escapeHtml(ev.headline)}</div>
+          <div class="tbody">${escapeHtml(ev.summary || "")}</div>
+          <div class="tfoot"><span style="color: ${color}">${typeLabel(ev.type)}</span><span>click to open ↗</span></div>
+        `;
+        positionTooltip(swimTooltip, e);
+        swimTooltip.classList.add("show");
+      });
+      c.addEventListener("mousemove", e => positionTooltip(swimTooltip, e));
+      c.addEventListener("mouseleave", () => {
+        hideChartCrosshair();
+        const sl = document.getElementById("swimlane-crosshair");
+        if (sl) sl.style.display = "none";
+        swimTooltip.classList.remove("show");
+      });
+      c.addEventListener("click", () => {
+        if (ev.source_urls?.[0]) window.open(ev.source_urls[0], "_blank", "noopener");
+      });
+
+      swimSvg.appendChild(c);
+    }
+  }
+
+  // Category filter legend
+  if (catLegend) {
+    catLegend.innerHTML = Object.entries(CATEGORY_META).map(([key, meta]) =>
+      `<span class="sl-cat${activeSwimlaneCategories.has(key) ? "" : " dimmed"}" data-cat="${key}">
+        <span class="swatch" style="background:${meta.color}"></span>${meta.label}
+      </span>`
+    ).join("");
+    catLegend.querySelectorAll(".sl-cat").forEach(el => {
+      el.addEventListener("click", () => {
+        const key = el.dataset.cat;
+        if (activeSwimlaneCategories.has(key)) {
+          if (activeSwimlaneCategories.size > 1) activeSwimlaneCategories.delete(key);
+        } else {
+          activeSwimlaneCategories.add(key);
+        }
+        renderEventSwimlane();
+      });
+    });
   }
 }
 
