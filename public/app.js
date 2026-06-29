@@ -94,6 +94,17 @@ const FLAGSHIP_MODEL_IDS = {
   google:    "google/gemini-1-5-pro",
   xai:       "xai/grok-3",
 };
+
+// Ordered generational chains — used to draw dashed connectors between model segments
+const MODEL_FAMILIES = {
+  "anthropic/opus":    ["anthropic/claude-3-opus","anthropic/claude-opus-3","anthropic/claude-opus-4","anthropic/claude-opus-4-5","anthropic/claude-opus-4-6","anthropic/claude-opus-4-7","anthropic/claude-opus-4-8"],
+  "anthropic/sonnet":  ["anthropic/claude-3-sonnet","anthropic/claude-3-5-sonnet","anthropic/claude-3-7-sonnet","anthropic/claude-sonnet-3-7","anthropic/claude-sonnet-4","anthropic/claude-sonnet-4-5","anthropic/claude-sonnet-4-6"],
+  "anthropic/haiku":   ["anthropic/claude-3-haiku","anthropic/claude-haiku-3","anthropic/claude-3-5-haiku","anthropic/claude-haiku-3-5","anthropic/claude-haiku-4-5"],
+  "openai/gpt-5":      ["openai/gpt-5","openai/gpt-5-2","openai/gpt-5-4","openai/gpt-5-5"],
+  "google/gemini-pro": ["google/gemini-1-5-pro","google/gemini-2-5-pro"],
+  "google/gemini-flash":["google/gemini-1-5-flash","google/gemini-2-0-flash","google/gemini-2-5-flash","google/gemini-3-flash-preview","google/gemini-3-5-flash"],
+  "xai/grok":          ["xai/grok-beta","xai/grok-2","xai/grok-3","xai/grok-4","xai/grok-4-3"],
+};
 const PROVIDER_COLORS = {
   anthropic: "#ff8a65",
   openai:    "#74aa9c",
@@ -741,6 +752,30 @@ function renderAcrossProvidersChart() {
       c.setAttribute("style", "cursor: pointer");
       attachProviderPointTooltip(c, provider, { date: pt.date, price: pt[priceField], display_name: ml.m.display_name });
       svg.appendChild(c);
+    }
+  }
+
+  // Family connectors: dashed step between consecutive model generations
+  for (const [familyKey, memberIds] of Object.entries(MODEL_FAMILIES)) {
+    const provider = familyKey.split("/")[0];
+    const color = PROVIDER_COLORS[provider] || "#ffffff";
+    for (let i = 0; i < memberIds.length - 1; i++) {
+      const mlA = visibleLines.find(ml => ml.m.id === memberIds[i]);
+      const mlB = visibleLines.find(ml => ml.m.id === memberIds[i + 1]);
+      if (!mlA || !mlB) continue;
+      const lastPt = mlA.visible[mlA.visible.length - 1];
+      const firstPt = mlB.visible[0];
+      if (!lastPt || !firstPt) continue;
+      const x1 = xScale(lastPt.date), y1 = yScale(lastPt[priceField]);
+      const x2 = xScale(firstPt.date), y2 = yScale(firstPt[priceField]);
+      const conn = document.createElementNS(ns, "path");
+      conn.setAttribute("d", `M ${x1} ${y1} L ${x2} ${y1} L ${x2} ${y2}`);
+      conn.setAttribute("fill", "none");
+      conn.setAttribute("stroke", color);
+      conn.setAttribute("stroke-width", "0.75");
+      conn.setAttribute("stroke-dasharray", "4,4");
+      conn.setAttribute("opacity", "0.35");
+      svg.appendChild(conn);
     }
   }
 
