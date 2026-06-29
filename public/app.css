@@ -229,8 +229,8 @@ button, input, select { font-family: inherit; font-size: inherit; }
 
 .chart-svg .grid-line { stroke: var(--border-strong); stroke-width: 0.5; }
 
-.chart-canvas-wrap { position: relative; padding: 16px; min-height: 380px; }
-.chart-svg { width: 100%; height: 380px; display: block; }
+.chart-canvas-wrap { position: relative; padding: 16px; min-height: 420px; }
+.chart-svg { width: 100%; height: 420px; display: block; }
 .chart-empty { display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; text-align: center; padding: 60px 20px; }
 .chart-empty .loader { display: inline-block; margin-right: 8px; }
 
