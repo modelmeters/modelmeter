@@ -494,7 +494,7 @@ function applyChartControlVisibility() {
   const isAcross = mode === "across";
   const isSingle = mode === "single";
   const set = (id, vis) => { const el = document.getElementById(id); if (el) el.style.display = vis; };
-  set("chart-tier", isAcross ? "" : "none");
+  set("chart-tier", "none");
   set("chart-price", isAcross ? "" : "none");
   set("chart-model", isSingle ? "" : "none");
   set("chart-cache", isSingle ? "" : "none");
@@ -568,33 +568,50 @@ function renderAcrossProvidersChart() {
     return;
   }
 
-  const allSeries = {};
-  for (const p of ACROSS_PROVIDERS) {
-    const s = buildTierSeries(p, chartState.tier, chartState.priceField);
-    if (s.length > 0) allSeries[p] = s;
+  const priceField = chartState.priceField;
+  const currentById = Object.fromEntries(currentModels.map(m => [m.id, m]));
+
+  // Collect all models for the 4 providers, with metadata
+  const allModelLines = [];
+  for (const provider of ACROSS_PROVIDERS) {
+    const provModels = history.models.filter(m => m.provider === provider);
+    for (const m of provModels) {
+      const series = m.history
+        .filter(h => h[priceField] != null && h[priceField] > 0)
+        .sort((a, b) => a.date.localeCompare(b.date));
+      if (series.length === 0) continue;
+      const cur = currentById[m.id];
+      const isDeprecated = !cur || cur.availability === "deprecated";
+      const isFlagship = FLAGSHIP_MODEL_IDS[provider] === m.id;
+      const lastDate = series[series.length - 1].date;
+      allModelLines.push({ m, provider, series, isDeprecated, isFlagship, lastDate });
+    }
   }
-  const providers = Object.keys(allSeries);
-  if (providers.length === 0) {
+  if (allModelLines.length === 0) {
     empty.style.display = "flex";
-    empty.innerHTML = "no historical data for direct providers in this tier";
+    empty.innerHTML = "no historical data";
     svg.style.display = "none";
     return;
   }
 
-  // Apply range filter
+  // Range filter: keep models with any data in range; include last-before-cutoff as anchor
   let cutoff = null;
   if (chartState.range !== "all") {
     const months = parseInt(chartState.range, 10);
     cutoff = new Date(); cutoff.setMonth(cutoff.getMonth() - months);
   }
-  const filtered = {};
-  for (const p of providers) {
-    filtered[p] = cutoff ? allSeries[p].filter(pt => new Date(pt.date) >= cutoff) : allSeries[p];
+  const visibleLines = [];
+  for (const ml of allModelLines) {
+    if (!cutoff) { visibleLines.push({ ...ml, visible: ml.series }); continue; }
+    const after = ml.series.filter(h => new Date(h.date) >= cutoff);
+    const before = ml.series.filter(h => new Date(h.date) < cutoff);
+    const anchor = before.length > 0 ? [before[before.length - 1]] : [];
+    const visible = [...anchor, ...after];
+    if (visible.length > 0) visibleLines.push({ ...ml, visible });
   }
-  const visibleProviders = providers.filter(p => filtered[p].length > 0);
-  if (visibleProviders.length === 0) {
+  if (visibleLines.length === 0) {
     empty.style.display = "flex";
-    empty.innerHTML = `no data in last ${chartState.range} months`;
+    empty.innerHTML = "no data in range";
     svg.style.display = "none";
     return;
   }
@@ -608,35 +625,23 @@ function renderAcrossProvidersChart() {
   const padLeft = 60, padRight = 24, padTop = 24, padBottom = 40;
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
 
-  // Compute global date and price range
-  const allDates = [];
-  const allPrices = [];
-  for (const p of visibleProviders) {
-    for (const pt of filtered[p]) {
-      allDates.push(new Date(pt.date));
-      allPrices.push(pt.price);
-    }
-  }
+  // Global date + price range across all visible series
+  const allDates = visibleLines.flatMap(ml => ml.visible.map(h => new Date(h.date)));
+  const allPrices = visibleLines.flatMap(ml => ml.visible.map(h => h[priceField]));
   const minDate = new Date(Math.min(...allDates));
   const maxDate = new Date(Math.max(...allDates, Date.now()));
   const xScale = d => padLeft + ((new Date(d) - minDate) / Math.max(1, maxDate - minDate)) * (width - padLeft - padRight);
   sharedXParams = { minDate, maxDate, xScale, width, padLeft, padRight, padTop, padBottom };
 
-  let yMin = 0, yMax = Math.max(...allPrices);
-  if (chartState.scale === "log") {
-    const positive = allPrices.filter(v => v > 0);
-    yMin = Math.min(...positive) * 0.6;
-    yMax = Math.max(...positive) * 1.4;
-  } else {
-    yMax = yMax * 1.15;
-  }
+  const positive = allPrices.filter(v => v > 0);
+  let yMin = Math.min(...positive) * 0.6;
+  let yMax = Math.max(...positive) * 1.4;
+  if (chartState.scale !== "log") { yMin = 0; yMax = Math.max(...positive) * 1.15; }
   const yScale = v => {
     if (chartState.scale === "log") {
       if (v <= 0) return height - padBottom;
-      const logMin = Math.log10(yMin || 0.001);
-      const logMax = Math.log10(yMax);
-      const logV = Math.log10(v);
-      return padTop + (1 - (logV - logMin) / (logMax - logMin)) * (height - padTop - padBottom);
+      const logMin = Math.log10(yMin || 0.001), logMax = Math.log10(yMax);
+      return padTop + (1 - (Math.log10(v) - logMin) / (logMax - logMin)) * (height - padTop - padBottom);
     }
     return padTop + (1 - v / yMax) * (height - padTop - padBottom);
   };
@@ -644,94 +649,102 @@ function renderAcrossProvidersChart() {
   const ns = "http://www.w3.org/2000/svg";
 
   // Y-axis grid + labels
-  const yTickCount = 5;
-  for (let i = 0; i <= yTickCount; i++) {
+  for (let i = 0; i <= 5; i++) {
     let v;
     if (chartState.scale === "log") {
       const lm = Math.log10(yMin || 0.001), lM = Math.log10(yMax);
-      v = Math.pow(10, lm + (i / yTickCount) * (lM - lm));
-    } else {
-      v = (yMax / yTickCount) * i;
-    }
+      v = Math.pow(10, lm + (i / 5) * (lM - lm));
+    } else { v = (yMax / 5) * i; }
     const y = yScale(v);
-    const line = document.createElementNS(ns, "line");
-    line.setAttribute("x1", padLeft); line.setAttribute("x2", width - padRight);
-    line.setAttribute("y1", y); line.setAttribute("y2", y);
-    line.setAttribute("class", "grid-line");
-    svg.appendChild(line);
+    const gl = document.createElementNS(ns, "line");
+    gl.setAttribute("x1", padLeft); gl.setAttribute("x2", width - padRight);
+    gl.setAttribute("y1", y); gl.setAttribute("y2", y);
+    gl.setAttribute("class", "grid-line");
+    svg.appendChild(gl);
     const lbl = document.createElementNS(ns, "text");
     lbl.setAttribute("x", padLeft - 8); lbl.setAttribute("y", y + 3);
-    lbl.setAttribute("text-anchor", "end");
-    lbl.setAttribute("class", "grid-label");
+    lbl.setAttribute("text-anchor", "end"); lbl.setAttribute("class", "grid-label");
     lbl.setAttribute("fill", "#ece9e0");
     lbl.textContent = `$${v < 1 ? v.toFixed(3) : v.toFixed(v < 10 ? 2 : 0)}`;
     svg.appendChild(lbl);
   }
 
   // X-axis labels (quarterly)
-  const months = [];
-  const cursor = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
-  while (cursor <= maxDate) {
-    if (cursor.getMonth() % 3 === 0) months.push(new Date(cursor));
-    cursor.setMonth(cursor.getMonth() + 1);
-  }
-  for (const m of months) {
-    const x = xScale(m);
-    const line = document.createElementNS(ns, "line");
-    line.setAttribute("x1", x); line.setAttribute("x2", x);
-    line.setAttribute("y1", padTop); line.setAttribute("y2", height - padBottom);
-    line.setAttribute("class", "grid-line");
-    svg.appendChild(line);
-    const lbl = document.createElementNS(ns, "text");
-    lbl.setAttribute("x", x); lbl.setAttribute("y", height - padBottom + 14);
-    lbl.setAttribute("text-anchor", "middle");
-    lbl.setAttribute("class", "grid-label");
-    lbl.setAttribute("fill", "#ece9e0");
-    const monthName = m.toLocaleString("en", { month: "short" });
-    lbl.textContent = `${monthName} '${String(m.getFullYear()).slice(-2)}`;
-    svg.appendChild(lbl);
+  const cur = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
+  while (cur <= maxDate) {
+    if (cur.getMonth() % 3 === 0) {
+      const x = xScale(cur);
+      const gl = document.createElementNS(ns, "line");
+      gl.setAttribute("x1", x); gl.setAttribute("x2", x);
+      gl.setAttribute("y1", padTop); gl.setAttribute("y2", height - padBottom);
+      gl.setAttribute("class", "grid-line"); svg.appendChild(gl);
+      const lbl = document.createElementNS(ns, "text");
+      lbl.setAttribute("x", x); lbl.setAttribute("y", height - padBottom + 14);
+      lbl.setAttribute("text-anchor", "middle"); lbl.setAttribute("class", "grid-label");
+      lbl.setAttribute("fill", "#ece9e0");
+      lbl.textContent = `${cur.toLocaleString("en", { month: "short" })} '${String(cur.getFullYear()).slice(-2)}`;
+      svg.appendChild(lbl);
+    }
+    cur.setMonth(cur.getMonth() + 1);
   }
 
-  // Per-provider step-function lines
-  for (const p of visibleProviders) {
-    const points = filtered[p];
-    const color = PROVIDER_COLORS[p] || "#ffffff";
-    let d = "";
-    for (let i = 0; i < points.length; i++) {
-      const x = xScale(points[i].date);
-      const y = yScale(points[i].price);
-      if (i === 0) d += `M ${x} ${y}`;
-      else {
-        const prevY = yScale(points[i - 1].price);
-        d += ` L ${x} ${prevY} L ${x} ${y}`;
-      }
+  // Draw non-flagship lines first (back), flagships last (front)
+  const sorted = [...visibleLines].sort((a, b) => (a.isFlagship ? 1 : 0) - (b.isFlagship ? 1 : 0));
+
+  const nowMs = Date.now();
+  for (const ml of sorted) {
+    const { provider, visible, isDeprecated, isFlagship, lastDate } = ml;
+    const color = PROVIDER_COLORS[provider] || "#ffffff";
+    const strokeWidth = isFlagship ? 2.5 : 0.75;
+
+    // Opacity: flagship full, others graduated by recency + deprecated
+    let opacity;
+    if (isFlagship) {
+      opacity = 1;
+    } else if (isDeprecated) {
+      opacity = 0.15;
+    } else {
+      const ageMonths = (nowMs - new Date(lastDate)) / (1000 * 60 * 60 * 24 * 30);
+      opacity = ageMonths < 6 ? 0.5 : ageMonths < 18 ? 0.3 : 0.18;
     }
-    // Extend to today
-    const lastX = xScale(maxDate);
-    const lastY = yScale(points[points.length - 1].price);
-    d += ` L ${lastX} ${lastY}`;
+
+    // Step-function path
+    let d = "";
+    for (let i = 0; i < visible.length; i++) {
+      const x = xScale(visible[i].date);
+      const y = yScale(visible[i][priceField]);
+      if (i === 0) d += `M ${x} ${y}`;
+      else { const py = yScale(visible[i-1][priceField]); d += ` L ${x} ${py} L ${x} ${y}`; }
+    }
+    // Extend to today only for active models
+    if (!isDeprecated) d += ` L ${xScale(maxDate)} ${yScale(visible[visible.length-1][priceField])}`;
+
     const path = document.createElementNS(ns, "path");
     path.setAttribute("d", d);
     path.setAttribute("fill", "none");
     path.setAttribute("stroke", color);
-    path.setAttribute("stroke-width", "2");
+    path.setAttribute("stroke-width", String(strokeWidth));
+    path.setAttribute("opacity", String(opacity));
     svg.appendChild(path);
-    // Dots at each price transition
-    for (const pt of points) {
+
+    // Dots at price-change points — all models (small for non-flagship, larger for flagship)
+    const r = isFlagship ? 3 : 2;
+    for (const pt of visible) {
       const c = document.createElementNS(ns, "circle");
-      c.setAttribute("cx", xScale(pt.date));
-      c.setAttribute("cy", yScale(pt.price));
-      c.setAttribute("r", "3");
+      c.setAttribute("cx", String(xScale(pt.date)));
+      c.setAttribute("cy", String(yScale(pt[priceField])));
+      c.setAttribute("r", String(r));
       c.setAttribute("fill", color);
+      c.setAttribute("opacity", String(opacity));
       c.setAttribute("stroke", "var(--panel)");
-      c.setAttribute("stroke-width", "1");
+      c.setAttribute("stroke-width", isFlagship ? "1" : "0.5");
       c.setAttribute("style", "cursor: pointer");
-      attachProviderPointTooltip(c, p, pt);
+      attachProviderPointTooltip(c, provider, { date: pt.date, price: pt[priceField], display_name: ml.m.display_name });
       svg.appendChild(c);
     }
   }
 
-  // Crosshair line (shown on swimlane hover)
+  // Crosshair line
   const crosshair = document.createElementNS(ns, "line");
   crosshair.setAttribute("id", "chart-crosshair");
   crosshair.setAttribute("x1", "-1"); crosshair.setAttribute("x2", "-1");
@@ -740,18 +753,22 @@ function renderAcrossProvidersChart() {
   crosshair.style.display = "none";
   svg.appendChild(crosshair);
 
-  // Legend with provider swatches + JSON link
-  const tierLabel = chartState.tier === "flagship" ? "flagship" : chartState.tier === "fast" ? "fast" : "mid-tier";
-  const priceLabel = chartState.priceField === "input_cost_per_mtok" ? "input" : "output";
+  // Legend: provider color swatches + flagship model names
+  const priceLabel = priceField === "input_cost_per_mtok" ? "input" : "output";
+  const totalShown = visibleLines.length;
+  const activeCount = visibleLines.filter(ml => !ml.isDeprecated).length;
   let legendHtml = "";
-  for (const p of visibleProviders) {
+  for (const p of ACROSS_PROVIDERS) {
+    if (!visibleLines.some(ml => ml.provider === p)) continue;
     const color = PROVIDER_COLORS[p] || "#ffffff";
-    legendHtml += `<span><span class="swatch line" style="background:${color}"></span>${PROVIDER_LABELS[p] || p}</span>`;
+    const flagshipName = history.models.find(m => m.id === FLAGSHIP_MODEL_IDS[p])?.display_name || PROVIDER_LABELS[p];
+    legendHtml += `<span><span class="swatch line" style="background:${color}"></span>${PROVIDER_LABELS[p] || p} <span style="color:var(--muted-2);font-size:10px;">${escapeHtml(flagshipName)}</span></span>`;
   }
-  legendHtml += `<span style="color: var(--muted-2);">${tierLabel} · ${priceLabel}</span>`;
+  legendHtml += `<span style="color: var(--muted-2);">${activeCount} active · ${totalShown - activeCount} deprecated · ${priceLabel}</span>`;
   legendHtml += `<span style="margin-left: auto;"><a href="/history.json" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">try as json ↗</a></span>`;
   legend.innerHTML = legendHtml;
 }
+
 
 // renderIndexChart removed — replaced by Option D two-panel layout (price chart + event swimlane)
 
