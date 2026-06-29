@@ -272,20 +272,23 @@ function renderPrivacyPremium() {
   const listEl = document.getElementById("privacy-pairs");
   if (!avgEl || !listEl) return;
   const { avg, rows } = computePrivacyPremium();
-  avgEl.textContent = avg != null ? `+${Math.round(avg)}%` : "—";
+  avgEl.textContent = avg != null ? `+${Math.round(avg)}% AVG` : "—";
   listEl.innerHTML = rows.map(r => {
-    const provLabel = PROVIDER_LABELS[r.provider] || r.provider;
+    const color = PROVIDER_COLORS[r.provider] || "#ffffff";
+    const provName = PROVIDER_LABELS[r.provider] || r.provider;
     const modelShort = shorten(r.flagship.display_name, 20);
+    const dash = `<span class="pp-prov-dash" style="background:${color}" title="${escapeHtml(provName)}"></span>`;
     if (!r.veniceModel) {
       return `<div class="pp-row pp-na">
-        <span class="pp-provider">${provLabel}</span>
+        ${dash}
         <span class="pp-model" title="${escapeHtml(r.flagship.display_name)}">${escapeHtml(modelShort)}</span>
-        <span class="pp-pct" style="color:var(--muted)">—</span>
+        <span class="pp-pct" style="color:var(--muted-2)">—</span>
+        <span></span>
       </div>`;
     }
     const veniceUrl = veniceUrlFor(r.flagship.id);
     return `<div class="pp-row">
-      <span class="pp-provider">${provLabel}</span>
+      ${dash}
       <span class="pp-model" title="${escapeHtml(r.flagship.display_name)}">${escapeHtml(modelShort)}</span>
       <span class="pp-pct">+${Math.round(r.markup_pct)}%</span>
       <a href="${veniceUrl}" target="_blank" rel="noopener" class="pp-run" title="$${r.flagship.input_cost_per_mtok} direct → $${r.veniceModel.input_cost_per_mtok} via Venice">→</a>
