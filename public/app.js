@@ -708,16 +708,8 @@ function renderAcrossProvidersChart() {
     const color = PROVIDER_COLORS[provider] || "#ffffff";
     const strokeWidth = isFlagship ? 2.5 : 0.75;
 
-    // Opacity: flagship full, others graduated by recency + deprecated
-    let opacity;
-    if (isFlagship) {
-      opacity = 1;
-    } else if (isDeprecated) {
-      opacity = 0.15;
-    } else {
-      const ageMonths = (nowMs - new Date(lastDate)) / (1000 * 60 * 60 * 24 * 30);
-      opacity = ageMonths < 6 ? 0.5 : ageMonths < 18 ? 0.3 : 0.18;
-    }
+    // Opacity: full for all active models, dimmed for deprecated
+    const opacity = isDeprecated ? 0.2 : 1;
 
     // Step-function path
     let d = "";
@@ -738,8 +730,8 @@ function renderAcrossProvidersChart() {
     path.setAttribute("opacity", String(opacity));
     svg.appendChild(path);
 
-    // Dots at price-change points — all models (small for non-flagship, larger for flagship)
-    const r = isFlagship ? 3 : 2;
+    // Dots at price-change points
+    const r = isFlagship ? 5 : 3.5;
     for (const pt of visible) {
       const c = document.createElementNS(ns, "circle");
       c.setAttribute("cx", String(xScale(pt.date)));
