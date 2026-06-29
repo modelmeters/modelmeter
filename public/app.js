@@ -72,7 +72,7 @@ let currentModels = [];
 let history = null;
 const activeCategories = new Set(Object.keys(CATEGORY_META));
 let sharedXParams = null; // set by renderAcrossProvidersChart/renderSingleModelChart, read by renderEventSwimlane
-const activeSwimlaneCategories = new Set(Object.keys(CATEGORY_META));
+const activeSwimlaneCategories = new Set(Object.keys(CATEGORY_META).filter(k => k !== "oss"));
 let chartState = {
   model: null,
   range: "all",
@@ -1280,7 +1280,7 @@ function renderEventSwimlane() {
 
   // Category filter legend
   if (catLegend) {
-    catLegend.innerHTML = Object.entries(CATEGORY_META).map(([key, meta]) =>
+    catLegend.innerHTML = Object.entries(CATEGORY_META).filter(([key]) => key !== "oss").map(([key, meta]) =>
       `<span class="sl-cat${activeSwimlaneCategories.has(key) ? "" : " dimmed"}" data-cat="${key}">
         <span class="swatch" style="background:${meta.color}"></span>${meta.label}
       </span>`
