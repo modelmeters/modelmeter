@@ -535,17 +535,37 @@ function renderAcrossProvidersChart() {
   const currentById = Object.fromEntries(currentModels.map(m => [m.id, m]));
 
   // Collect all models for the 4 providers, with metadata
+  const today = new Date().toISOString().slice(0, 10);
   const allModelLines = [];
   for (const provider of ACROSS_PROVIDERS) {
     const provModels = history.models.filter(m => m.provider === provider);
+    const historyIds = new Set(provModels.map(m => m.id));
+
     for (const m of provModels) {
       const series = m.history
         .filter(h => h[priceField] != null && h[priceField] > 0)
         .sort((a, b) => a.date.localeCompare(b.date));
-      if (series.length === 0) continue;
       const cur = currentById[m.id];
       const isDeprecated = !cur || cur.availability === "deprecated";
+      // Inject current price as synthetic today-point for active models
+      if (!isDeprecated && cur[priceField] != null && cur[priceField] > 0) {
+        const last = series[series.length - 1];
+        if (!last || last.date < today) series.push({ date: today, [priceField]: cur[priceField] });
+        else if (last.date === today) series[series.length - 1] = { ...last, [priceField]: cur[priceField] };
+      }
+      if (series.length === 0) continue;
       allModelLines.push({ m, provider, series, isDeprecated });
+    }
+
+    // Also include active models from current.json that have no history entry yet
+    for (const cur of currentModels) {
+      if (cur.provider !== provider) continue;
+      if (historyIds.has(cur.id)) continue;
+      if (cur.availability === "deprecated") continue;
+      const price = cur[priceField];
+      if (price == null || price <= 0) continue;
+      const syntheticM = { id: cur.id, display_name: cur.display_name || cur.id, history: [] };
+      allModelLines.push({ m: syntheticM, provider, series: [{ date: today, [priceField]: price }], isDeprecated: false });
     }
   }
   if (allModelLines.length === 0) {
@@ -669,8 +689,7 @@ function renderAcrossProvidersChart() {
       if (i === 0) d += `M ${x} ${y}`;
       else { const py = yScale(visible[i-1][priceField]); d += ` L ${x} ${py} L ${x} ${y}`; }
     }
-    // Extend to today only for active models
-    if (!isDeprecated) d += ` L ${xScale(maxDate)} ${yScale(visible[visible.length-1][priceField])}`;
+    // Active lines terminate at today via synthetic current-price point
 
     const path = document.createElementNS(ns, "path");
     path.setAttribute("d", d);
