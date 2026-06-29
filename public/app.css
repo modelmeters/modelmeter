@@ -264,23 +264,13 @@ button, input, select { font-family: inherit; font-size: inherit; }
 .chart-svg .chart-crosshair { stroke: var(--accent); stroke-width: 1; stroke-dasharray: 4,3; opacity: 0.45; pointer-events: none; }
 .swimlane-svg .sl-crosshair { stroke: var(--accent); stroke-width: 1; stroke-dasharray: 4,3; opacity: 0.45; pointer-events: none; }
 
-/* Privacy Premium gauge */
-.gauge-panel { padding: 18px 20px; margin-bottom: 12px; }
-.gauge-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
-.gauge-value-block { display: flex; align-items: baseline; gap: 10px; }
-.gauge-value { font-size: 11px; color: var(--accent); font-weight: 600; letter-spacing: 0.01em; font-family: var(--mono); line-height: 1; }
-.gauge-delta { color: var(--muted); font-size: 11px; font-family: var(--mono); }
-.gauge-meta { color: var(--muted); font-size: 11px; text-align: right; max-width: 220px; line-height: 1.5; }
-.gauge-svg { width: 100%; height: 70px; display: block; }
-.gauge-svg .bar-bg { fill: var(--bg); stroke: var(--border-strong); stroke-width: 1; }
-.gauge-svg .bar-fill { fill: var(--accent); }
-.gauge-svg .bar-overflow { fill: var(--warn); }
-.gauge-svg .tick { stroke: var(--muted-2); stroke-width: 1; }
-.gauge-svg .tick-label { fill: var(--muted); font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; }
-.gauge-svg .needle { stroke: var(--accent); stroke-width: 2; }
-.gauge-svg .needle-cap { fill: var(--accent); stroke: var(--bg); stroke-width: 1; }
-.gauge-svg .zone-label { fill: var(--muted-2); font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
-.gauge-zones { display: flex; justify-content: space-between; margin-top: 4px; padding: 0 8px; color: var(--muted-2); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+/* Venice Premium panel */
+#venice-pairs { display: grid; gap: 3px; margin-top: 2px; }
+.vp-row { display: grid; grid-template-columns: 1fr auto auto; gap: 6px; align-items: baseline; padding: 5px 0; border-bottom: 1px dashed var(--border-soft); font-size: 11px; }
+.vp-row:last-child { border-bottom: none; }
+.vp-name { color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vp-prices { color: var(--muted); font-size: 10px; white-space: nowrap; }
+.vp-pct { color: var(--warn); font-weight: 600; white-space: nowrap; }
 
 /* Events timeline (bottom) */
 .timeline-wrap { padding: 14px; }

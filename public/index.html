@@ -122,6 +122,11 @@
         </div>
 
         <div class="panel">
+          <h3 class="panel-title">Venice Premium <span class="right" id="venice-avg">—</span></h3>
+          <div id="venice-pairs"></div>
+        </div>
+
+        <div class="panel">
           <h3 class="panel-title">About</h3>
           <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
             Agent-first measurement and instrumentation for AI models. Pricing, events, and history exposed as JSON-first APIs that agents can call directly. Humans get a dashboard built on the same endpoints.
@@ -160,17 +165,11 @@
               <div class="chip-group" id="chart-range">
                 <button class="chip" data-range="6">6mo</button>
                 <button class="chip" data-range="12">12mo</button>
-                <button class="chip" data-range="24">24mo</button>
                 <button class="chip active" data-range="all">all</button>
               </div>
               <div class="chip-group" id="chart-scale">
                 <button class="chip" data-scale="linear">lin</button>
                 <button class="chip active" data-scale="log">log</button>
-              </div>
-              <div class="chip-group" id="chart-events">
-                <button class="chip active" data-events="major">major</button>
-                <button class="chip" data-events="all">all</button>
-                <button class="chip" data-events="off">off</button>
               </div>
               <div class="chip-group" id="chart-cache" style="display: none;">
                 <button class="chip active" data-cache="off">no cache</button>
@@ -199,25 +198,6 @@
           </div>
         </div>
 
-        <div class="panel gauge-panel">
-          <h3 class="panel-title">Privacy Premium Index <span class="right" id="gauge-meta-top">reseller ↔ direct · hover dots for details</span></h3>
-          <div class="gauge-row">
-            <div class="gauge-value-block">
-              <span class="gauge-value" id="gauge-value">—</span>
-              <span class="gauge-delta" id="gauge-delta">average markup</span>
-            </div>
-            <div class="gauge-meta" id="gauge-meta">computing…</div>
-          </div>
-          <div style="position: relative;">
-            <svg class="gauge-svg" id="gauge-svg" aria-label="Privacy Premium Index gauge"></svg>
-            <div class="tooltip" id="gauge-tooltip" role="tooltip"></div>
-          </div>
-          <div class="gauge-zones">
-            <span>parity</span>
-            <span>moderate</span>
-            <span>steep</span>
-          </div>
-        </div>
       </div>
 
       <!-- RIGHT column: calculator + events feed -->

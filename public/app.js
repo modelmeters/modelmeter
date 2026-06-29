@@ -54,8 +54,9 @@ const CATEGORY_META = {
 };
 const MAGNITUDE_RADIUS = { minor: 2, moderate: 3, major: 5, structural: 8 };
 const TYPE_META = {
-  model_unavailable: { color: "#ff296d", label: "model restricted" },
-  model_launch:      { color: "#ffd166", label: "model launch" },
+  model_unavailable:    { color: "#ff296d", label: "model restricted" },
+  model_launch:         { color: "#ffd166", label: "model launch" },
+  compute_partnership:  { color: "#5534eb", label: "compute partnership" },
 };
 function typeColor(type) {
   return TYPE_META[type]?.color ?? CATEGORY_META[TYPE_CATEGORY[type] ?? "other"].color;
@@ -80,7 +81,6 @@ let chartState = {
   viewMode: "across",          // "across" or "single"
   tier: "flagship",            // "flagship" | "mid" | "fast"
   priceField: "input_cost_per_mtok",
-  events: "major",             // "major" | "all" | "off"
 };
 
 const ACROSS_PROVIDERS = ["anthropic", "openai", "google", "xai"];
@@ -111,16 +111,12 @@ async function boot() {
   renderTicker();
   renderPriceTicker();
   renderStats();
-  renderPrivacyGauge();
-  // renderMarkupSpread(); // folded into the gauge as dots
+  renderVenicePremium();
   renderCalculator();
-//       renderTimelineControls();
-//       renderTimelineLegend();
-//       renderTimeline();
   renderEventsFeed();
   renderChartControls();
   renderChart();
-  window.addEventListener("resize", () => { renderChart(); renderPrivacyGauge(); });
+  window.addEventListener("resize", () => { renderChart(); });
 }
 
 async function loadEvents() {
@@ -243,145 +239,49 @@ function renderMarkupSpread() {
 function shorten(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
 
 // ---------- Privacy Premium gauge ----------
-function computePrivacyPremium() {
+// ---------- Venice Privacy Premium ----------
+function computeVenicePremium() {
   const direct = Object.fromEntries(currentModels.map(m => [m.id, m]));
   const pairs = [];
   for (const m of currentModels) {
-    if (!m.upstream_model_id) continue;
+    if (m.provider !== "venice" || !m.upstream_model_id) continue;
     const u = direct[m.upstream_model_id];
-    if (!u || u.input_cost_per_mtok == null || u.output_cost_per_mtok == null) continue;
-    if (m.input_cost_per_mtok == null || m.output_cost_per_mtok == null) continue;
-    const uSum = u.input_cost_per_mtok + u.output_cost_per_mtok;
+    if (!u || u.input_cost_per_mtok == null || m.input_cost_per_mtok == null) continue;
+    const uSum = u.input_cost_per_mtok + (u.output_cost_per_mtok ?? 0);
+    const rSum = m.input_cost_per_mtok + (m.output_cost_per_mtok ?? 0);
     if (uSum <= 0) continue;
-    const rSum = m.input_cost_per_mtok + m.output_cost_per_mtok;
     pairs.push({
-      reseller_id: m.id,
-      reseller_name: m.display_name,
-      upstream_id: u.id,
+      venice_name: m.display_name,
       upstream_name: u.display_name,
-      provider: m.provider,
+      upstream_in: u.input_cost_per_mtok,
+      venice_in: m.input_cost_per_mtok,
       markup_pct: ((rSum / uSum) - 1) * 100,
     });
   }
-  if (pairs.length === 0) return { pct: null, count: 0, min: null, max: null, pairs: [] };
-  const markups = pairs.map(p => p.markup_pct);
-  const avg = markups.reduce((a, b) => a + b, 0) / markups.length;
-  return {
-    pct: avg,
-    count: pairs.length,
-    min: Math.min(...markups),
-    max: Math.max(...markups),
-    pairs,
-  };
+  pairs.sort((a, b) => b.markup_pct - a.markup_pct);
+  const avg = pairs.length > 0
+    ? pairs.reduce((s, p) => s + p.markup_pct, 0) / pairs.length
+    : null;
+  return { avg, pairs };
 }
 
-function renderPrivacyGauge() {
-  const data = computePrivacyPremium();
-  const valueEl = document.getElementById("gauge-value");
-  const deltaEl = document.getElementById("gauge-delta");
-  const metaEl = document.getElementById("gauge-meta");
-  const svg = document.getElementById("gauge-svg");
-  if (data.pct == null) {
-    valueEl.textContent = "—";
-    deltaEl.textContent = "no reseller pairs found";
-    metaEl.textContent = "verify upstream_model_id links";
-    svg.innerHTML = "";
+function renderVenicePremium() {
+  const avgEl = document.getElementById("venice-avg");
+  const listEl = document.getElementById("venice-pairs");
+  if (!avgEl || !listEl) return;
+  const { avg, pairs } = computeVenicePremium();
+  avgEl.textContent = avg != null ? `+${avg.toFixed(1)}% avg` : "—";
+  if (pairs.length === 0) {
+    listEl.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no venice pairs found</div>';
     return;
   }
-  valueEl.textContent = `+${data.pct.toFixed(1)}%`;
-  deltaEl.textContent = `avg over direct`;
-  metaEl.innerHTML = `${data.count} reseller↔direct pairs<br>range ${data.min.toFixed(1)}% to ${data.max.toFixed(1)}%`;
-
-  const width = svg.clientWidth || 600;
-  const height = 70;
-  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-  svg.innerHTML = "";
-  const ns = "http://www.w3.org/2000/svg";
-
-  const padX = 18;
-  const barY = 18;
-  const barH = 2;
-  const max = 50;
-  const inner = width - 2 * padX;
-  const xFor = v => padX + (Math.min(Math.max(v, 0), max) / max) * inner;
-
-  // Background bar
-  const bg = document.createElementNS(ns, "rect");
-  bg.setAttribute("x", padX); bg.setAttribute("y", barY);
-  bg.setAttribute("width", inner); bg.setAttribute("height", barH);
-  bg.setAttribute("class", "bar-bg");
-  svg.appendChild(bg);
-
-  // Filled portion up to current value
-  const fillWidth = xFor(data.pct) - padX;
-  const fill = document.createElementNS(ns, "rect");
-  fill.setAttribute("x", padX); fill.setAttribute("y", barY);
-  fill.setAttribute("width", fillWidth); fill.setAttribute("height", barH);
-  fill.setAttribute("class", data.pct > max ? "bar-overflow" : "bar-fill");
-  fill.setAttribute("opacity", "1");
-  svg.appendChild(fill);
-
-  // Tick marks every 10%
-  for (let v = 0; v <= max; v += 10) {
-    const x = xFor(v);
-    const t = document.createElementNS(ns, "line");
-    t.setAttribute("x1", x); t.setAttribute("x2", x);
-    t.setAttribute("y1", barY + barH + 1); t.setAttribute("y2", barY + barH + 5);
-    t.setAttribute("class", "tick");
-    svg.appendChild(t);
-    const lbl = document.createElementNS(ns, "text");
-    lbl.setAttribute("x", x); lbl.setAttribute("y", barY + barH + 17);
-    lbl.setAttribute("text-anchor", "middle"); lbl.setAttribute("class", "tick-label");
-    lbl.textContent = `${v}%`;
-    svg.appendChild(lbl);
-  }
-
-  // Needle (vertical line through bar)
-  const nx = xFor(data.pct);
-  const needle = document.createElementNS(ns, "line");
-  needle.setAttribute("x1", nx); needle.setAttribute("x2", nx);
-  needle.setAttribute("y1", barY - 6); needle.setAttribute("y2", barY + barH + 6);
-  needle.setAttribute("class", "needle");
-  svg.appendChild(needle);
-
-  // Needle cap (small triangle marker)
-  const cap = document.createElementNS(ns, "polygon");
-  cap.setAttribute("points", `${nx},${barY - 8} ${nx + 5},${barY - 14} ${nx - 5},${barY - 14}`);
-  cap.setAttribute("class", "needle-cap");
-  svg.appendChild(cap);
-
-  // Individual reseller pair dots along the bar, color-coded by provider
-  const barCenterY = barY + barH / 2;
-  for (const pair of data.pairs) {
-    const dotX = xFor(pair.markup_pct);
-    const dot = document.createElementNS(ns, "circle");
-    dot.setAttribute("cx", dotX);
-    dot.setAttribute("cy", barCenterY);
-    dot.setAttribute("r", "4");
-    dot.setAttribute("fill", PROVIDER_COLORS[pair.provider] || "#ffffff");
-    dot.setAttribute("fill-opacity", "0.7");
-    dot.setAttribute("stroke", "var(--bg)");
-    dot.setAttribute("stroke-width", "1");
-    dot.setAttribute("style", "cursor: pointer");
-    attachGaugePairTooltip(dot, pair);
-    svg.appendChild(dot);
-  }
-}
-
-function attachGaugePairTooltip(el, pair) {
-  const tooltip = document.getElementById("gauge-tooltip");
-  if (!tooltip) return;
-  el.addEventListener("mouseenter", e => {
-    tooltip.innerHTML = `
-      <div class="tdate">${PROVIDER_LABELS[pair.provider] || pair.provider} · markup</div>
-      <div class="thead">${escapeHtml(pair.reseller_name)}</div>
-      <div class="tbody">+${pair.markup_pct.toFixed(1)}% over ${escapeHtml(pair.upstream_name)}</div>
-    `;
-    positionTooltip(tooltip, e);
-    tooltip.classList.add("show");
-  });
-  el.addEventListener("mousemove", e => positionTooltip(tooltip, e));
-  el.addEventListener("mouseleave", () => tooltip.classList.remove("show"));
+  listEl.innerHTML = pairs.map(p => `
+    <div class="vp-row">
+      <span class="vp-name" title="${escapeHtml(p.upstream_name)}">${escapeHtml(shorten(p.upstream_name, 22))}</span>
+      <span class="vp-prices">$${p.upstream_in} → $${p.venice_in}</span>
+      <span class="vp-pct">${p.markup_pct > 0 ? "+" : ""}${p.markup_pct.toFixed(1)}%</span>
+    </div>
+  `).join("");
 }
 
 // ---------- calculator ----------
@@ -538,13 +438,6 @@ function renderChartControls() {
     c.addEventListener("click", () => {
       chartState.cache = c.dataset.cache === "on";
       document.querySelectorAll("#chart-cache .chip").forEach(x => x.classList.toggle("active", x === c));
-      renderChart();
-    });
-  });
-  document.querySelectorAll("#chart-events .chip").forEach(c => {
-    c.addEventListener("click", () => {
-      chartState.events = c.dataset.events;
-      document.querySelectorAll("#chart-events .chip").forEach(x => x.classList.toggle("active", x === c));
       renderChart();
     });
   });
@@ -976,37 +869,6 @@ function renderSingleModelChart() {
     svg.appendChild(lbl);
   }
 
-  // Event markers (vertical lines)
-  const relevantEvents = events.filter(e =>
-    (e.providers || []).includes(model.provider) ||
-    (e.models || []).includes(model.id)
-  );
-  for (const ev of relevantEvents) {
-    const evDate = new Date(ev.date);
-    if (evDate < minDate || evDate > maxDate) continue;
-    const x = xScale(evDate);
-    const cat = TYPE_CATEGORY[ev.type] || "other";
-    const color = CATEGORY_META[cat].color;
-    const line = document.createElementNS(ns, "line");
-    line.setAttribute("x1", x); line.setAttribute("x2", x);
-    line.setAttribute("y1", padTop); line.setAttribute("y2", height - padBottom);
-    line.setAttribute("stroke", color);
-    line.setAttribute("stroke-width", "1");
-    line.setAttribute("stroke-dasharray", "3,3");
-    line.setAttribute("opacity", "0.55");
-    svg.appendChild(line);
-    // Diamond marker at top
-    const r = 5;
-    const diamond = document.createElementNS(ns, "polygon");
-    diamond.setAttribute("points", `${x},${padTop-r} ${x+r},${padTop} ${x},${padTop+r} ${x-r},${padTop}`);
-    diamond.setAttribute("fill", color);
-    diamond.setAttribute("stroke", "var(--panel)");
-    diamond.setAttribute("stroke-width", "1");
-    diamond.setAttribute("style", "cursor: pointer");
-    attachEventTooltip(diamond, ev);
-    svg.appendChild(diamond);
-  }
-
   // Step-function lines for input/output (and cache if enabled)
   function pathFor(key, color, dash) {
     const points = series.filter(h => h[key] != null);
@@ -1068,7 +930,7 @@ function renderSingleModelChart() {
     <span><span class="swatch line" style="background: var(--down)"></span>output</span>
     ${chartState.cache ? `<span><span class="swatch line" style="background: var(--c-money); border-top: 2px dashed var(--c-money); background: transparent;"></span>cache read</span>
     <span><span class="swatch line" style="background: var(--warn); border-top: 2px dashed var(--warn); background: transparent;"></span>cache write</span>` : ''}
-    <span style="color: var(--muted-2);">${series.length} data points · ${relevantEvents.length} events</span>
+    <span style="color: var(--muted-2);">${series.length} data points</span>
   `;
 }
 
