@@ -632,7 +632,7 @@ function renderAcrossProvidersChart() {
   svg.innerHTML = "";
 
   const width = svg.clientWidth || 800;
-  const height = 380;
+  const height = 420;
   const padLeft = 60, padRight = 24, padTop = 24, padBottom = 40;
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
 
@@ -702,9 +702,8 @@ function renderAcrossProvidersChart() {
   // Draw non-flagship lines first (back), flagships last (front)
   const sorted = [...visibleLines].sort((a, b) => (a.isFlagship ? 1 : 0) - (b.isFlagship ? 1 : 0));
 
-  const nowMs = Date.now();
   for (const ml of sorted) {
-    const { provider, visible, isDeprecated, isFlagship, lastDate } = ml;
+    const { provider, visible, isDeprecated, isFlagship } = ml;
     const color = PROVIDER_COLORS[provider] || "#ffffff";
     const strokeWidth = isFlagship ? 2.5 : 0.75;
 
@@ -848,7 +847,7 @@ function renderSingleModelChart() {
   }
 
   const width = svg.clientWidth || 800;
-  const height = 380;
+  const height = 420;
   const padLeft = 60, padRight = 24, padTop = 24, padBottom = 40;
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
 
