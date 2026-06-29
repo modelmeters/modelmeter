@@ -264,13 +264,20 @@ button, input, select { font-family: inherit; font-size: inherit; }
 .chart-svg .chart-crosshair { stroke: var(--accent); stroke-width: 1; stroke-dasharray: 4,3; opacity: 0.45; pointer-events: none; }
 .swimlane-svg .sl-crosshair { stroke: var(--accent); stroke-width: 1; stroke-dasharray: 4,3; opacity: 0.45; pointer-events: none; }
 
-/* Venice Premium panel */
-#venice-pairs { display: grid; gap: 3px; margin-top: 2px; }
-.vp-row { display: grid; grid-template-columns: 1fr auto auto; gap: 6px; align-items: baseline; padding: 5px 0; border-bottom: 1px dashed var(--border-soft); font-size: 11px; }
-.vp-row:last-child { border-bottom: none; }
-.vp-name { color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.vp-prices { color: var(--muted); font-size: 10px; white-space: nowrap; }
-.vp-pct { color: var(--warn); font-weight: 600; white-space: nowrap; }
+/* Privacy Premium panel */
+.pp-subtitle { color: var(--muted); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; margin: -6px 0 10px; }
+#privacy-pairs { display: grid; gap: 0; }
+.pp-row { display: grid; grid-template-columns: 56px 1fr auto auto; gap: 5px; align-items: baseline; padding: 6px 0; border-bottom: 1px dashed var(--border-soft); font-size: 11px; }
+.pp-row:last-child { border-bottom: none; }
+.pp-provider { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+.pp-model { color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.pp-pct { color: var(--warn); font-weight: 600; white-space: nowrap; }
+.pp-run { color: var(--c-oss); font-size: 11px; text-decoration: none; padding-left: 4px; }
+.pp-run:hover { color: var(--accent); }
+.pp-na .pp-pct { color: var(--muted-2); }
+.pp-cta { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border-soft); }
+.pp-cta-link { display: block; text-align: center; padding: 7px 10px; background: var(--bg); color: var(--text-dim); border: 1px solid var(--border-strong); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600; text-decoration: none; }
+.pp-cta-link:hover { border-color: var(--c-oss); color: var(--c-oss); }
 
 /* Events timeline (bottom) */
 .timeline-wrap { padding: 14px; }

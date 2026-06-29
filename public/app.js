@@ -100,7 +100,7 @@ const PROVIDER_COLORS = {
 
 // ---------- boot ----------
 async function boot() {
-  const results = await Promise.allSettled([
+  await Promise.allSettled([
     loadEvents(),
     loadModels(),
     loadHistory(),
@@ -111,7 +111,7 @@ async function boot() {
   renderTicker();
   renderPriceTicker();
   renderStats();
-  renderVenicePremium();
+  renderPrivacyPremium();
   renderCalculator();
   renderEventsFeed();
   renderChartControls();
@@ -239,49 +239,58 @@ function renderMarkupSpread() {
 function shorten(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
 
 // ---------- Privacy Premium gauge ----------
-// ---------- Venice Privacy Premium ----------
-function computeVenicePremium() {
-  const direct = Object.fromEntries(currentModels.map(m => [m.id, m]));
-  const pairs = [];
-  for (const m of currentModels) {
-    if (m.provider !== "venice" || !m.upstream_model_id) continue;
-    const u = direct[m.upstream_model_id];
-    if (!u || u.input_cost_per_mtok == null || m.input_cost_per_mtok == null) continue;
-    const uSum = u.input_cost_per_mtok + (u.output_cost_per_mtok ?? 0);
-    const rSum = m.input_cost_per_mtok + (m.output_cost_per_mtok ?? 0);
-    if (uSum <= 0) continue;
-    pairs.push({
-      venice_name: m.display_name,
-      upstream_name: u.display_name,
-      upstream_in: u.input_cost_per_mtok,
-      venice_in: m.input_cost_per_mtok,
-      markup_pct: ((rSum / uSum) - 1) * 100,
-    });
+// ---------- Privacy Premium (Venice vs direct flagship) ----------
+function computePrivacyPremium() {
+  const rows = [];
+  for (const provider of ACROSS_PROVIDERS) {
+    const active = currentModels.filter(m =>
+      m.provider === provider &&
+      m.input_cost_per_mtok != null &&
+      m.availability !== "deprecated"
+    );
+    if (active.length === 0) continue;
+    active.sort((a, b) => b.input_cost_per_mtok - a.input_cost_per_mtok);
+    const flagship = active[0];
+    const veniceModel = currentModels.find(m =>
+      m.provider === "venice" &&
+      m.upstream_model_id === flagship.id &&
+      m.input_cost_per_mtok != null
+    );
+    const markup_pct = veniceModel
+      ? (((veniceModel.input_cost_per_mtok + (veniceModel.output_cost_per_mtok ?? 0)) /
+          (flagship.input_cost_per_mtok + (flagship.output_cost_per_mtok ?? 0))) - 1) * 100
+      : null;
+    rows.push({ provider, flagship, veniceModel, markup_pct });
   }
-  pairs.sort((a, b) => b.markup_pct - a.markup_pct);
-  const avg = pairs.length > 0
-    ? pairs.reduce((s, p) => s + p.markup_pct, 0) / pairs.length
-    : null;
-  return { avg, pairs };
+  const valid = rows.filter(r => r.markup_pct != null);
+  const avg = valid.length > 0 ? valid.reduce((s, r) => s + r.markup_pct, 0) / valid.length : null;
+  return { avg, rows };
 }
 
-function renderVenicePremium() {
-  const avgEl = document.getElementById("venice-avg");
-  const listEl = document.getElementById("venice-pairs");
+function renderPrivacyPremium() {
+  const avgEl = document.getElementById("privacy-avg");
+  const listEl = document.getElementById("privacy-pairs");
   if (!avgEl || !listEl) return;
-  const { avg, pairs } = computeVenicePremium();
-  avgEl.textContent = avg != null ? `+${avg.toFixed(1)}% avg` : "—";
-  if (pairs.length === 0) {
-    listEl.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no venice pairs found</div>';
-    return;
-  }
-  listEl.innerHTML = pairs.map(p => `
-    <div class="vp-row">
-      <span class="vp-name" title="${escapeHtml(p.upstream_name)}">${escapeHtml(shorten(p.upstream_name, 22))}</span>
-      <span class="vp-prices">$${p.upstream_in} → $${p.venice_in}</span>
-      <span class="vp-pct">${p.markup_pct > 0 ? "+" : ""}${p.markup_pct.toFixed(1)}%</span>
-    </div>
-  `).join("");
+  const { avg, rows } = computePrivacyPremium();
+  avgEl.textContent = avg != null ? `+${Math.round(avg)}%` : "—";
+  listEl.innerHTML = rows.map(r => {
+    const provLabel = PROVIDER_LABELS[r.provider] || r.provider;
+    const modelShort = shorten(r.flagship.display_name, 20);
+    if (!r.veniceModel) {
+      return `<div class="pp-row pp-na">
+        <span class="pp-provider">${provLabel}</span>
+        <span class="pp-model" title="${escapeHtml(r.flagship.display_name)}">${escapeHtml(modelShort)}</span>
+        <span class="pp-pct" style="color:var(--muted)">—</span>
+      </div>`;
+    }
+    const veniceUrl = veniceUrlFor(r.flagship.id);
+    return `<div class="pp-row">
+      <span class="pp-provider">${provLabel}</span>
+      <span class="pp-model" title="${escapeHtml(r.flagship.display_name)}">${escapeHtml(modelShort)}</span>
+      <span class="pp-pct">+${Math.round(r.markup_pct)}%</span>
+      <a href="${veniceUrl}" target="_blank" rel="noopener" class="pp-run" title="$${r.flagship.input_cost_per_mtok} direct → $${r.veniceModel.input_cost_per_mtok} via Venice">→</a>
+    </div>`;
+  }).join("");
 }
 
 // ---------- calculator ----------
@@ -742,7 +751,6 @@ function attachProviderPointTooltip(el, provider, pt) {
 }
 
 function renderSingleModelChart() {
-  const wrap = document.getElementById("chart-canvas-wrap");
   const empty = document.getElementById("chart-empty");
   const svg = document.getElementById("chart-svg");
   const legend = document.getElementById("chart-legend");
