@@ -55,7 +55,7 @@ const CATEGORY_META = {
 const MAGNITUDE_RADIUS = { minor: 2, moderate: 3, major: 5, structural: 8 };
 const TYPE_META = {
   model_unavailable: { color: "#ff296d", label: "model restricted" },
-  model_launch:      { color: "#ff19ff", label: "model launch" },
+  model_launch:      { color: "#ffd166", label: "model launch" },
 };
 function typeColor(type) {
   return TYPE_META[type]?.color ?? CATEGORY_META[TYPE_CATEGORY[type] ?? "other"].color;
