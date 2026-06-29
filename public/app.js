@@ -81,6 +81,7 @@ let chartState = {
   viewMode: "across",          // "across" or "single"
   tier: "flagship",            // "flagship" | "mid" | "fast"
   priceField: "input_cost_per_mtok",
+  showDeprecated: true,
 };
 
 const ACROSS_PROVIDERS = ["anthropic", "openai", "google", "xai"];
@@ -474,6 +475,13 @@ function renderChartControls() {
       renderChart();
     });
   });
+  document.querySelectorAll("#chart-deprecated .chip").forEach(c => {
+    c.addEventListener("click", () => {
+      chartState.showDeprecated = c.dataset.deprecated === "all";
+      document.querySelectorAll("#chart-deprecated .chip").forEach(x => x.classList.toggle("active", x === c));
+      renderChart();
+    });
+  });
   document.querySelectorAll("#chart-mode .chip").forEach(c => {
     c.addEventListener("click", () => {
       chartState.viewMode = c.dataset.mode;
@@ -627,6 +635,9 @@ function renderAcrossProvidersChart() {
     return;
   }
 
+  // Filter deprecated if toggle is set to active-only
+  const displayLines = chartState.showDeprecated ? visibleLines : visibleLines.filter(ml => !ml.isDeprecated);
+
   empty.style.display = "none";
   svg.style.display = "block";
   svg.innerHTML = "";
@@ -637,9 +648,9 @@ function renderAcrossProvidersChart() {
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
 
   // Global date + price range across all visible series
-  const allDates = visibleLines.flatMap(ml => ml.visible.map(h => new Date(h.date)));
-  const allPrices = visibleLines.flatMap(ml => ml.visible.map(h => h[priceField]));
-  const minDate = new Date(Math.min(...allDates));
+  const allDates = displayLines.flatMap(ml => ml.visible.map(h => new Date(h.date)));
+  const allPrices = displayLines.flatMap(ml => ml.visible.map(h => h[priceField]));
+  const minDate = cutoff ? new Date(cutoff) : new Date(Math.min(...allDates));
   const maxDate = new Date(Math.max(...allDates, Date.now()));
   const xScale = d => padLeft + ((new Date(d) - minDate) / Math.max(1, maxDate - minDate)) * (width - padLeft - padRight);
   sharedXParams = { minDate, maxDate, xScale, width, padLeft, padRight, padTop, padBottom };
@@ -680,7 +691,7 @@ function renderAcrossProvidersChart() {
     svg.appendChild(lbl);
   }
 
-  // X-axis labels (quarterly)
+  // X-axis labels (quarterly) — uppercase month, year only at January
   const cur = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
   while (cur <= maxDate) {
     if (cur.getMonth() % 3 === 0) {
@@ -693,19 +704,20 @@ function renderAcrossProvidersChart() {
       lbl.setAttribute("x", x); lbl.setAttribute("y", height - padBottom + 14);
       lbl.setAttribute("text-anchor", "middle"); lbl.setAttribute("class", "grid-label");
       lbl.setAttribute("fill", "#ece9e0");
-      lbl.textContent = `${cur.toLocaleString("en", { month: "short" })} '${String(cur.getFullYear()).slice(-2)}`;
+      const mo = cur.toLocaleString("en", { month: "short" }).toUpperCase();
+      lbl.textContent = cur.getMonth() === 0 ? `${mo} '${String(cur.getFullYear()).slice(-2)}` : mo;
       svg.appendChild(lbl);
     }
     cur.setMonth(cur.getMonth() + 1);
   }
 
   // Draw non-flagship lines first (back), flagships last (front)
-  const sorted = [...visibleLines].sort((a, b) => (a.isFlagship ? 1 : 0) - (b.isFlagship ? 1 : 0));
+  const sorted = [...displayLines].sort((a, b) => (a.isFlagship ? 1 : 0) - (b.isFlagship ? 1 : 0));
 
   for (const ml of sorted) {
     const { provider, visible, isDeprecated, isFlagship } = ml;
     const color = PROVIDER_COLORS[provider] || "#ffffff";
-    const strokeWidth = isFlagship ? 2.5 : 0.75;
+    const strokeWidth = 1;
 
     // Opacity: full for all active models, dimmed for deprecated
     const opacity = isDeprecated ? 0.2 : 1;
@@ -730,7 +742,7 @@ function renderAcrossProvidersChart() {
     svg.appendChild(path);
 
     // Dots at price-change points
-    const r = isFlagship ? 5 : 3.5;
+    const r = 3.5;
     for (const pt of visible) {
       const c = document.createElementNS(ns, "circle");
       c.setAttribute("cx", String(xScale(pt.date)));
@@ -751,8 +763,8 @@ function renderAcrossProvidersChart() {
     const provider = familyKey.split("/")[0];
     const color = PROVIDER_COLORS[provider] || "#ffffff";
     for (let i = 0; i < memberIds.length - 1; i++) {
-      const mlA = visibleLines.find(ml => ml.m.id === memberIds[i]);
-      const mlB = visibleLines.find(ml => ml.m.id === memberIds[i + 1]);
+      const mlA = displayLines.find(ml => ml.m.id === memberIds[i]);
+      const mlB = displayLines.find(ml => ml.m.id === memberIds[i + 1]);
       if (!mlA || !mlB) continue;
       const lastPt = mlA.visible[mlA.visible.length - 1];
       const firstPt = mlB.visible[0];
@@ -781,14 +793,13 @@ function renderAcrossProvidersChart() {
 
   // Legend: provider color swatches + flagship model names
   const priceLabel = priceField === "input_cost_per_mtok" ? "input" : "output";
-  const totalShown = visibleLines.length;
-  const activeCount = visibleLines.filter(ml => !ml.isDeprecated).length;
+  const totalShown = displayLines.length;
+  const activeCount = displayLines.filter(ml => !ml.isDeprecated).length;
   let legendHtml = "";
   for (const p of ACROSS_PROVIDERS) {
-    if (!visibleLines.some(ml => ml.provider === p)) continue;
+    if (!displayLines.some(ml => ml.provider === p)) continue;
     const color = PROVIDER_COLORS[p] || "#ffffff";
-    const flagshipName = history.models.find(m => m.id === FLAGSHIP_MODEL_IDS[p])?.display_name || PROVIDER_LABELS[p];
-    legendHtml += `<span><span class="swatch line" style="background:${color}"></span>${PROVIDER_LABELS[p] || p} <span style="color:var(--muted-2);font-size:10px;">${escapeHtml(flagshipName)}</span></span>`;
+    legendHtml += `<span><span class="swatch line" style="background:${color}"></span>${PROVIDER_LABELS[p] || p}</span>`;
   }
   legendHtml += `<span style="color: var(--muted-2);">${activeCount} active · ${totalShown - activeCount} deprecated · ${priceLabel}</span>`;
   legendHtml += `<span style="margin-left: auto;"><a href="/history.json" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">try as json ↗</a></span>`;
