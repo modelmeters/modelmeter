@@ -1,4 +1,4 @@
-import { json, error, findModel, round, logRequest, clientHashes, PRICING } from "./_lib.js";
+import { json, error, findModel, round, logRequest, clientHashes, PRICING, QUALITY, qualityFor } from "./_lib.js";
 
 // Capability flags derived from a model's tags + fields.
 function caps(model) {
@@ -65,6 +65,19 @@ export const onRequestGet = async ({ request, env }) => {
     ? (parseInt(minContextParam, 10) || null)
     : srcCaps.context_window;
 
+  // Quality gate: when the source has a quality score, restrict alternatives to those
+  // within tolerance of it, so we don't suggest an 8B model in place of a flagship.
+  // Inactive (degrades to pure capability+price) when the source has no quality data.
+  const includeUnrated = boolParam(url, "include_unrated", false);
+  const qualityToleranceParam = url.searchParams.get("quality_tolerance");
+  const qualityTolerance = qualityToleranceParam != null ? (parseFloat(qualityToleranceParam) || 0) : 0.05;
+  const minQualityParam = url.searchParams.get("min_quality");
+  const srcQuality = qualityFor(source.id)?.overall ?? null;
+  const qualityGateActive = srcQuality != null && typeof srcQuality.value === "number";
+  const qualityFloor = qualityGateActive
+    ? (minQualityParam != null ? (parseFloat(minQualityParam) || 0) : srcQuality.value * (1 - qualityTolerance))
+    : null;
+
   const alternatives = [];
   for (const m of PRICING.models) {
     if (m.id === source.id) continue;
@@ -81,6 +94,17 @@ export const onRequestGet = async ({ request, env }) => {
     if (cost == null || cost >= srcCost) continue; // must be strictly cheaper
     if (cost === 0 && !includeFree) continue; // skip free/rate-limited endpoints by default
 
+    // Quality gate (only when the source is rated).
+    let candQuality = qualityFor(m.id)?.overall ?? null;
+    if (qualityGateActive) {
+      if (candQuality && candQuality.metric === srcQuality.metric && typeof candQuality.value === "number") {
+        if (candQuality.value < qualityFloor) continue; // below the quality floor
+      } else {
+        if (!includeUnrated) continue; // unrated candidate excluded by default
+        candQuality = null;
+      }
+    }
+
     alternatives.push({
       id: m.id,
       provider: m.provider,
@@ -93,6 +117,7 @@ export const onRequestGet = async ({ request, env }) => {
       tags: c.tags,
       availability: m.availability ?? "available",
       upstream_model_id: m.upstream_model_id ?? null,
+      quality: candQuality,
       savings: {
         axis: optimize,
         candidate_cost_per_mtok: round(cost, 4),
@@ -112,13 +137,18 @@ export const onRequestGet = async ({ request, env }) => {
     model: fromId,
     provider: source.provider,
     count: top.length,
-    filters: { optimize, same_provider: sameProvider, require_vision: requireVision, require_reasoning: requireReasoning, min_context: minContext },
+    filters: { optimize, same_provider: sameProvider, require_vision: requireVision, require_reasoning: requireReasoning, min_context: minContext, quality_gate: qualityGateActive },
     ...clientHashes(request),
   }, env);
+
+  const qualityNote = qualityGateActive
+    ? `Quality gate ACTIVE: alternatives are within ${minQualityParam != null ? `min_quality ${qualityFloor}` : `${Math.round(qualityTolerance * 100)}% (${round(qualityFloor, 1)})`} of the source's ${srcQuality.metric} (${srcQuality.value}). Unrated candidates excluded unless include_unrated=true.`
+    : "Quality gate INACTIVE: source has no quality score, so this is a capability-and-price match only — quality is not guaranteed. Pass a rated source to enable the gate.";
 
   return json({
     schema_version: PRICING.schema_version,
     snapshot_date: PRICING.snapshot_date,
+    quality_data_provisional: Boolean(QUALITY.provisional),
     from: {
       id: source.id,
       display_name: source.display_name,
@@ -129,6 +159,7 @@ export const onRequestGet = async ({ request, env }) => {
       context_window: srcCaps.context_window,
       vision: srcCaps.vision,
       reasoning: srcCaps.reasoning,
+      quality: srcQuality,
     },
     criteria: {
       optimize,
@@ -137,7 +168,11 @@ export const onRequestGet = async ({ request, env }) => {
       min_context_window: minContext,
       same_provider: sameProvider,
       include_free: includeFree,
-      note: "Alternatives share the required capabilities and are strictly cheaper on the chosen axis. No quality ranking is implied — this is a capability-and-price match. Free ($0) endpoints are excluded unless include_free=true.",
+      quality_gate_active: qualityGateActive,
+      quality_floor: qualityFloor,
+      quality_tolerance: qualityGateActive ? qualityTolerance : null,
+      include_unrated: includeUnrated,
+      note: `Alternatives share the required capabilities and are strictly cheaper on the chosen axis. ${qualityNote} Free ($0) endpoints are excluded unless include_free=true.`,
     },
     count: top.length,
     candidates_considered: alternatives.length,

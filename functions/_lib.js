@@ -1,8 +1,17 @@
 import pricing from "../pricing/current.json";
 import events from "../events/current.json";
+import quality from "../pricing/quality.json";
 
 export const PRICING = pricing;
 export const EVENTS = events;
+export const QUALITY = quality;
+
+const QUALITY_INDEX = new Map((quality.models ?? []).map((m) => [m.id, m]));
+
+// Quality record for a model id, or null. Shape: { id, overall?, tasks?, mapping_confidence }.
+export function qualityFor(id) {
+  return QUALITY_INDEX.get(id) ?? null;
+}
 
 export function json(body, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(body, null, 2) + "\n", {

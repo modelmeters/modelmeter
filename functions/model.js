@@ -1,4 +1,4 @@
-import { json, error, findModel, round, logRequest, clientHashes, PRICING } from "./_lib.js";
+import { json, error, findModel, round, logRequest, clientHashes, PRICING, QUALITY, qualityFor } from "./_lib.js";
 import history from "../pricing/history.json";
 
 // Summarize one price field over a model's snapshot history.
@@ -50,6 +50,17 @@ export function buildModelCard(model, historyModels) {
     }
   }
 
+  const q = qualityFor(model.id);
+  const quality = q
+    ? {
+        overall: q.overall ?? null,
+        tasks: q.tasks ?? null,
+        mapping_confidence: q.mapping_confidence ?? null,
+        provisional: Boolean(QUALITY.provisional),
+        disclaimer: "Coarse sourced signal, not ground truth. See /history.json for the methodology source list.",
+      }
+    : null;
+
   let price_history = null;
   const hist = historyModels.find((h) => h.id === model.id);
   if (hist && Array.isArray(hist.history) && hist.history.length > 0) {
@@ -89,6 +100,7 @@ export function buildModelCard(model, historyModels) {
       deprecated_on: model.deprecated_on ?? null,
     },
     markup,
+    quality,
     price_history,
     provenance: {
       last_verified: model.last_verified,

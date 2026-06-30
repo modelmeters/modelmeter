@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modelmeter.xyz/schema/quality/1.0.0",
+  "title": "Modelmeter Quality Snapshot",
+  "description": "Per-model quality signals aggregated from public benchmarks (Layer 1) and, later, Modelmeter's own per-task evals (Layer 2). Keyed to Modelmeter model ids. Quality is a coarse, sourced signal — never presented as ground truth.",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "sources", "models"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "provisional": {
+      "type": "boolean",
+      "description": "true means the data is hand-seeded or otherwise not yet from a real ingestion run. Consumers should surface this to callers."
+    },
+    "_comment": { "type": "string" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "metric"],
+        "properties": {
+          "id": { "type": "string", "description": "Short source id, e.g. lmarena, swebench, gpqa, modelmeter-eval." },
+          "name": { "type": "string" },
+          "metric": { "type": "string", "description": "Metric this source reports, e.g. elo, resolved_pct, accuracy, win_rate." },
+          "url": { "type": "string", "format": "uri" },
+          "as_of": { "type": "string", "format": "date" }
+        }
+      }
+    },
+    "models": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ModelQuality" }
+    }
+  },
+  "$defs": {
+    "Score": {
+      "type": "object",
+      "required": ["metric", "value", "source"],
+      "properties": {
+        "metric": { "type": "string", "description": "elo | resolved_pct | accuracy | win_rate | ..." },
+        "value": { "type": "number" },
+        "source": { "type": "string", "description": "Matches a sources[].id." },
+        "as_of": { "type": "string", "format": "date" }
+      }
+    },
+    "ModelQuality": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Modelmeter canonical id (provider/model), matching pricing/current.json.",
+          "pattern": "^[a-z0-9-]+/[a-z0-9.-]+$"
+        },
+        "overall": {
+          "$ref": "#/$defs/Score",
+          "description": "Single headline quality score, typically LMArena Elo. Used by /swap's quality gate."
+        },
+        "tasks": {
+          "type": "object",
+          "description": "Per-task scores keyed by task id (coding, knowledge, writing, ...). Each value is a Score.",
+          "additionalProperties": { "$ref": "#/$defs/Score" }
+        },
+        "mapping_confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"],
+          "description": "Confidence that the source leaderboard name was matched to the correct Modelmeter id. Ingestion auto-applies 'high'; 'medium'/'low' are surfaced in the PR for human confirmation."
+        }
+      }
+    }
+  }
+}
