@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "snapshot_date": "2026-06-28",
+  "snapshot_date": "2026-06-30",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -358,8 +358,8 @@
         "other"
       ],
       "models": [],
-      "headline": "OpenAI unveils Jalape\u00f1o inference chip built with Broadcom",
-      "summary": "OpenAI announces Jalape\u00f1o, its first custom inference chip, designed as an ASIC for the specific needs of OpenAI's inference systems and built in partnership with Broadcom. First-party silicon shifts long-term inference economics and capacity planning.",
+      "headline": "OpenAI unveils Jalapeño inference chip built with Broadcom",
+      "summary": "OpenAI announces Jalapeño, its first custom inference chip, designed as an ASIC for the specific needs of OpenAI's inference systems and built in partnership with Broadcom. First-party silicon shifts long-term inference economics and capacity planning.",
       "source_urls": [
         "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
         "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/",
@@ -517,7 +517,7 @@
         "openai/gpt-5.6-terra"
       ],
       "headline": "OpenAI launches GPT-5.6 Sol and Terra in limited preview",
-      "summary": "OpenAI releases a limited preview of the GPT-5.6 suite \u2014 Sol (flagship) and Terra (mid-tier) \u2014 following a request from the Trump administration to stagger rollout. OpenAI argues that government-driven access controls 'should not become the norm.' Broad GA timing and pricing not yet announced.",
+      "summary": "OpenAI releases a limited preview of the GPT-5.6 suite — Sol (flagship) and Terra (mid-tier) — following a request from the Trump administration to stagger rollout. OpenAI argues that government-driven access controls 'should not become the norm.' Broad GA timing and pricing not yet announced.",
       "source_urls": [
         "https://www.theverge.com/ai-artificial-intelligence/957845/openai-gpt-5-6-trump-administration-ai-preview",
         "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/"
@@ -633,7 +633,7 @@
       ],
       "models": [],
       "headline": "OpenAI submits confidential draft S-1 to the SEC in preparation for IPO",
-      "summary": "OpenAI has confidentially filed a draft S-1 registration statement with the U.S. Securities and Exchange Commission, marking a formal step toward an initial public offering. This move signals the company's intent to become a publicly traded entity, likely within the next 12\u201318 months.",
+      "summary": "OpenAI has confidentially filed a draft S-1 registration statement with the U.S. Securities and Exchange Commission, marking a formal step toward an initial public offering. This move signals the company's intent to become a publicly traded entity, likely within the next 12–18 months.",
       "source_urls": [
         "https://openai.com/index/openai-submits-confidential-s-1/"
       ],
@@ -1019,7 +1019,7 @@
         "openai/prism-1-mini"
       ],
       "headline": "OpenAI launches Prism, a new family of multimodal models with advanced vision, audio, and video capabilities",
-      "summary": "OpenAI has introduced Prism, a new family of multimodal models designed to process and understand visual, auditory, and temporal data with improved accuracy and efficiency. The launch includes three variants\u2014Prism-1, Prism-1 Medium, and Prism-1 Mini\u2014catering to different performance and cost requirements. This positions OpenAI to better compete in the rapidly evolving multimodal AI market.",
+      "summary": "OpenAI has introduced Prism, a new family of multimodal models designed to process and understand visual, auditory, and temporal data with improved accuracy and efficiency. The launch includes three variants—Prism-1, Prism-1 Medium, and Prism-1 Mini—catering to different performance and cost requirements. This positions OpenAI to better compete in the rapidly evolving multimodal AI market.",
       "source_urls": [
         "https://openai.com/index/introducing-prism"
       ],
@@ -2133,8 +2133,8 @@
       "models": [
         "openai/dall-e-3"
       ],
-      "headline": "DALL\u00b7E 3 integrated into ChatGPT Plus and Enterprise tiers",
-      "summary": "OpenAI has made DALL\u00b7E 3 available to ChatGPT Plus subscribers and Enterprise customers, enhancing the multimodal capabilities of these offerings. This integration allows users to generate images directly within ChatGPT conversations.",
+      "headline": "DALL·E 3 integrated into ChatGPT Plus and Enterprise tiers",
+      "summary": "OpenAI has made DALL·E 3 available to ChatGPT Plus subscribers and Enterprise customers, enhancing the multimodal capabilities of these offerings. This integration allows users to generate images directly within ChatGPT conversations.",
       "source_urls": [
         "https://openai.com/blog/dall-e-3-is-now-available-in-chatgpt-plus-and-enterprise"
       ],
@@ -4087,7 +4087,7 @@
         "xai/grok-4.1"
       ],
       "headline": "x.ai launches Grok 4.1, now available to all users across platforms",
-      "summary": "x.ai has released Grok 4.1, making it immediately available to all users on grok.com, \ud835\udd4f, and iOS and Android apps. The model is accessible via Auto mode and can be manually selected in the model picker.",
+      "summary": "x.ai has released Grok 4.1, making it immediately available to all users on grok.com, 𝕏, and iOS and Android apps. The model is accessible via Auto mode and can be manually selected in the model picker.",
       "source_urls": [
         "https://x.ai/news/grok-4-1"
       ],
@@ -4411,8 +4411,8 @@
         "mistral"
       ],
       "models": [],
-      "headline": "Mistral AI raises \u20ac1.7 billion in funding.",
-      "summary": "Mistral AI has secured \u20ac1.7 billion in funding to accelerate its AI development, focusing on enterprise AI platforms, customizable models, and multimodal systems. This positions Mistral as a major European contender in the global AI industry.",
+      "headline": "Mistral AI raises €1.7 billion in funding.",
+      "summary": "Mistral AI has secured €1.7 billion in funding to accelerate its AI development, focusing on enterprise AI platforms, customizable models, and multimodal systems. This positions Mistral as a major European contender in the global AI industry.",
       "source_urls": [
         "https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai"
       ],
@@ -4730,6 +4730,65 @@
       },
       "created_at": "2026-06-28",
       "updated_at": "2026-06-28"
+    },
+    {
+      "id": "2026-06-deepseek-asian-ai-startups-launch-mythos-class-models-to-fill-gap-lef",
+      "date": "2026-06-27",
+      "type": "model_launch",
+      "providers": [
+        "deepseek",
+        "alibaba",
+        "zhipu",
+        "moonshot"
+      ],
+      "models": [],
+      "headline": "Asian AI startups launch Mythos-class models to fill gap left by U.S. export restrictions",
+      "summary": "In response to the ongoing U.S. export ban on advanced AI models like Anthropic's Mythos 5, several Asian AI companies have launched competitive models offering similar capabilities. These launches aim to capture regional market demand previously underserved due to regulatory restrictions.",
+      "source_urls": [
+        "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/"
+      ],
+      "verified": false,
+      "tags": [
+        "asia",
+        "export-control-response",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-06-30",
+      "updated_at": "2026-06-30"
+    },
+    {
+      "id": "2026-06-openai-limits-gpt-5-6-rollout-following-government-request",
+      "date": "2026-06-26",
+      "type": "regulatory_action",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.6"
+      ],
+      "headline": "OpenAI limits GPT-5.6 rollout following government request",
+      "summary": "OpenAI has restricted the release of GPT-5.6 in response to a government request, citing concerns over setting a precedent for ongoing government control over AI access. The company emphasized that such restrictions hinder the availability of advanced tools for users, developers, and security professionals worldwide.",
+      "source_urls": [
+        "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/"
+      ],
+      "verified": false,
+      "tags": [
+        "regulation",
+        "access-control",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-06-30",
+      "updated_at": "2026-06-30"
     }
   ]
 }
