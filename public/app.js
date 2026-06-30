@@ -70,7 +70,6 @@ let events = [];
 let modelsByProvider = {};
 let currentModels = [];
 let history = null;
-const activeCategories = new Set(Object.keys(CATEGORY_META));
 let sharedXParams = null; // set by renderAcrossProvidersChart/renderSingleModelChart, read by renderEventSwimlane
 const activeSwimlaneCategories = new Set(Object.keys(CATEGORY_META).filter(k => k !== "oss"));
 let chartState = {
@@ -194,8 +193,9 @@ function renderPriceTicker() {
     : null;
 
   const items = source
-    ? source.map(({ m, prev, curr, dir, color }) =>
+    ? source.map(({ m, prev, curr, dir, color, date }) =>
         `<span class="ticker-item">
+          <span class="tick-date">${date}</span>
           <span style="color:${color}">${dir}</span>
           <span>${escapeHtml(m.display_name)}</span>
           <span style="color:var(--muted)">$${prev.input_cost_per_mtok} → <span style="color:${color}">$${curr.input_cost_per_mtok}</span>/Mtok in</span>
@@ -220,33 +220,6 @@ function renderStats() {
   document.getElementById("s-providers").textContent = providers.size || "—";
   document.getElementById("s-snapshots").textContent = history?.snapshot_count ?? "—";
   document.getElementById("s-history").textContent = history?.model_count ?? "—";
-}
-
-// ---------- markup spread ----------
-function renderMarkupSpread() {
-  const wrap = document.getElementById("markup-list");
-  const reseller = currentModels.filter(m => m.upstream_model_id);
-  const direct = Object.fromEntries(currentModels.map(m => [m.id, m]));
-  const rows = [];
-  for (const r of reseller) {
-    const u = direct[r.upstream_model_id];
-    if (!u || u.input_cost_per_mtok == null) continue;
-    const rIn = r.input_cost_per_mtok, rOut = r.output_cost_per_mtok;
-    const uIn = u.input_cost_per_mtok, uOut = u.output_cost_per_mtok;
-    if (uIn === 0 || uOut === 0) continue;
-    // Average markup using a 1:1 input:output ratio for ranking
-    const markupPct = (((rIn + rOut) / (uIn + uOut)) - 1) * 100;
-    rows.push({ id: r.id, name: r.display_name, pct: markupPct });
-  }
-  rows.sort((a, b) => b.pct - a.pct);
-  const top = rows.slice(0, 6);
-  if (top.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no markups computed</div>'; return; }
-  wrap.innerHTML = top.map(r => `
-    <div class="markup-item">
-      <span class="m-name" title="${escapeHtml(r.name)}">${escapeHtml(shorten(r.name, 28))}</span>
-      <span class="m-pct ${r.pct >= 15 ? 'm-up' : ''}">+${r.pct.toFixed(1)}%</span>
-    </div>
-  `).join("");
 }
 
 function shorten(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
@@ -884,7 +857,6 @@ function renderSingleModelChart() {
     lbl.setAttribute("text-anchor", "end");
     lbl.setAttribute("class", "grid-label");
     lbl.setAttribute("fill", "#ece9e0");
-    lbl.setAttribute("fill", "#ece9e0");
     lbl.textContent = `$${v < 1 ? v.toFixed(3) : v.toFixed(v < 10 ? 2 : 0)}`;
     svg.appendChild(lbl);
   }
@@ -990,175 +962,6 @@ function showChartCrosshair(x) {
 function hideChartCrosshair() {
   const line = document.getElementById("chart-crosshair");
   if (line) line.style.display = "none";
-}
-
-function attachEventTooltip(el, ev) {
-  const tooltip = document.getElementById("chart-tooltip");
-  el.addEventListener("mouseenter", e => {
-    tooltip.innerHTML = `
-      <div class="tdate">${ev.date} · ${(ev.providers || []).map(p => PROVIDER_LABELS[p] || p).join(", ")}</div>
-      <div class="thead">${escapeHtml(ev.headline)}</div>
-      <div class="tbody">${escapeHtml(ev.summary || "")}</div>
-      <div class="tfoot"><span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span><span>click to open source ↗</span></div>
-    `;
-    positionTooltip(tooltip, e);
-    tooltip.classList.add("show");
-  });
-  el.addEventListener("mousemove", e => positionTooltip(tooltip, e));
-  el.addEventListener("mouseleave", () => tooltip.classList.remove("show"));
-  el.addEventListener("click", () => {
-    if (ev.source_urls?.[0]) window.open(ev.source_urls[0], "_blank", "noopener");
-  });
-}
-
-function positionTooltip(tooltip, e, above = false) {
-  const wrap = tooltip.parentElement.getBoundingClientRect();
-  const x = e.clientX - wrap.left + 14;
-  const tipH = tooltip.offsetHeight || 120;
-  const y = above
-    ? e.clientY - wrap.top - tipH - 14
-    : e.clientY - wrap.top + 14;
-  tooltip.style.left = `${Math.min(Math.max(0, x), wrap.width - (tooltip.offsetWidth || 280) - 10)}px`;
-  tooltip.style.top = `${y}px`;
-}
-
-// ---------- events timeline (bottom) ----------
-function renderTimelineControls() {
-  const wrap = document.getElementById("timeline-controls");
-  wrap.innerHTML = "";
-  const all = document.createElement("button");
-  all.className = "filter active";
-  all.textContent = "All";
-  all.addEventListener("click", () => {
-    for (const k of Object.keys(CATEGORY_META)) activeCategories.add(k);
-    updateActiveStates(); renderTimeline();
-  });
-  wrap.appendChild(all);
-  for (const [key, meta] of Object.entries(CATEGORY_META)) {
-    const btn = document.createElement("button");
-    btn.className = "filter active";
-    btn.dataset.cat = key;
-    btn.innerHTML = `<span class="swatch" style="background:${meta.color}"></span>${meta.label}`;
-    btn.addEventListener("click", () => {
-      if (activeCategories.has(key) && activeCategories.size === Object.keys(CATEGORY_META).length) {
-        activeCategories.clear(); activeCategories.add(key);
-      } else if (activeCategories.has(key)) {
-        activeCategories.delete(key);
-        if (activeCategories.size === 0) for (const k of Object.keys(CATEGORY_META)) activeCategories.add(k);
-      } else {
-        activeCategories.add(key);
-      }
-      updateActiveStates(); renderTimeline();
-    });
-    wrap.appendChild(btn);
-  }
-  updateActiveStates();
-}
-
-function updateActiveStates() {
-  const allEqual = activeCategories.size === Object.keys(CATEGORY_META).length;
-  document.querySelectorAll(".timeline-controls .filter").forEach((el, idx) => {
-    if (idx === 0) el.classList.toggle("active", allEqual);
-    else el.classList.toggle("active", activeCategories.has(el.dataset.cat));
-  });
-}
-
-function renderTimelineLegend() {
-  const wrap = document.getElementById("timeline-legend");
-  let html = "";
-  for (const [_, meta] of Object.entries(CATEGORY_META)) {
-    html += `<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${meta.color};margin-right:5px;vertical-align:middle"></span>${meta.label}${meta.desc ? `<span style="color:var(--muted-2)"> · ${meta.desc}</span>` : ''}</span>`;
-  }
-  wrap.innerHTML = html;
-}
-
-function renderTimeline() {
-  const svg = document.getElementById("timeline");
-  svg.innerHTML = "";
-  if (events.length === 0) return;
-  const width = svg.clientWidth || 800;
-  const height = 320;
-  const padLeft = 90, padRight = 20, padTop = 16, padBottom = 36;
-  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-
-  const dates = events.map(e => new Date(e.date));
-  let minDate = new Date(Math.min(...dates));
-  let maxDate = new Date(Math.max(...dates, Date.now()));
-  const dayMs = 86400000;
-  minDate = new Date(minDate.getTime() - 14 * dayMs);
-  maxDate = new Date(maxDate.getTime() + 14 * dayMs);
-  const xScale = d => padLeft + ((new Date(d) - minDate) / (maxDate - minDate)) * (width - padLeft - padRight);
-
-  const providerCounts = {};
-  for (const ev of events) for (const p of ev.providers || []) providerCounts[p] = (providerCounts[p] || 0) + 1;
-  const providers = Object.keys(providerCounts).sort((a, b) => providerCounts[b] - providerCounts[a]);
-  const laneHeight = (height - padTop - padBottom) / providers.length;
-  const ns = "http://www.w3.org/2000/svg";
-
-  providers.forEach((p, i) => {
-    const rect = document.createElementNS(ns, "rect");
-    rect.setAttribute("x", padLeft); rect.setAttribute("y", padTop + i * laneHeight);
-    rect.setAttribute("width", width - padLeft - padRight); rect.setAttribute("height", laneHeight);
-    rect.setAttribute("class", "lane-bg" + (i % 2 ? " alt" : ""));
-    svg.appendChild(rect);
-    const label = document.createElementNS(ns, "text");
-    label.setAttribute("x", padLeft - 10); label.setAttribute("y", padTop + i * laneHeight + laneHeight / 2 + 4);
-    label.setAttribute("text-anchor", "end"); label.setAttribute("class", "lane-label");
-    label.textContent = PROVIDER_LABELS[p] || p;
-    svg.appendChild(label);
-  });
-
-  const months = [];
-  const cursor = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
-  while (cursor <= maxDate) { months.push(new Date(cursor)); cursor.setMonth(cursor.getMonth() + 1); }
-  months.forEach(m => {
-    const x = xScale(m);
-    const line = document.createElementNS(ns, "line");
-    line.setAttribute("x1", x); line.setAttribute("y1", padTop);
-    line.setAttribute("x2", x); line.setAttribute("y2", height - padBottom);
-    line.setAttribute("class", "grid-line");
-    svg.appendChild(line);
-    if (m.getMonth() % 2 === 0) {
-      const lbl = document.createElementNS(ns, "text");
-      lbl.setAttribute("x", x); lbl.setAttribute("y", height - padBottom + 14);
-      lbl.setAttribute("text-anchor", "middle"); lbl.setAttribute("class", "grid-label");
-    lbl.setAttribute("fill", "#ece9e0");
-      const monthName = m.toLocaleString("en", { month: "short" });
-      lbl.textContent = `${monthName} '${String(m.getFullYear()).slice(-2)}`;
-      svg.appendChild(lbl);
-    }
-  });
-
-  const tlTooltip = document.getElementById("tl-tooltip");
-  for (const ev of events) {
-    const category = TYPE_CATEGORY[ev.type] || "other";
-    const radius = MAGNITUDE_RADIUS[ev.impact?.magnitude] ?? 5;
-    const color = CATEGORY_META[category].color;
-    const x = xScale(ev.date);
-    for (const p of ev.providers || ["other"]) {
-      const laneIdx = providers.indexOf(p);
-      if (laneIdx < 0) continue;
-      const y = padTop + laneIdx * laneHeight + laneHeight / 2;
-      const circle = document.createElementNS(ns, "circle");
-      circle.setAttribute("cx", x); circle.setAttribute("cy", y); circle.setAttribute("r", radius);
-      circle.setAttribute("fill", color); circle.setAttribute("class", "event");
-      if (!activeCategories.has(category)) circle.classList.add("dimmed");
-      circle.addEventListener("mouseenter", e => {
-        tlTooltip.innerHTML = `
-          <div class="tdate">${ev.date} · ${(ev.providers || []).map(p => PROVIDER_LABELS[p] || p).join(", ")}</div>
-          <div class="thead">${escapeHtml(ev.headline)}</div>
-          <div class="tbody">${escapeHtml(ev.summary || "")}</div>
-          <div class="tfoot"><span style="color: ${color}">${ev.type.replace(/_/g, " ")}</span><span>click to open source ↗</span></div>
-        `;
-        positionTooltip(tlTooltip, e);
-        tlTooltip.classList.add("show");
-      });
-      circle.addEventListener("mousemove", e => positionTooltip(tlTooltip, e));
-      circle.addEventListener("mouseleave", () => tlTooltip.classList.remove("show"));
-      circle.addEventListener("click", () => { if (ev.source_urls?.[0]) window.open(ev.source_urls[0], "_blank", "noopener"); });
-      svg.appendChild(circle);
-    }
-  }
 }
 
 // ---------- event swimlane ----------
