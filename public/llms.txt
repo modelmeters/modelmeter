@@ -16,6 +16,16 @@ Modelmeter exists so AI agents can answer questions like "what does this LLM cal
 - [/history.json](https://modelmeter.xyz/history.json): raw historical time-series
 - [/openapi.yaml](https://modelmeter.xyz/openapi.yaml): OpenAPI 3.1 spec for the API
 
+## MCP server (for tool-calling agents)
+
+Modelmeter is also a remote MCP server. Point any MCP client (Claude, Hermes, etc.) at:
+
+- Endpoint: `https://modelmeter.xyz/mcp` (Streamable HTTP transport, JSON-RPC 2.0, no auth)
+
+Tools exposed: `estimate_cost`, `get_model`, `list_models`, `get_price_history`, `list_events`.
+Start with `list_models` to discover ids, then `get_model` or `estimate_cost`. The MCP tools return
+the same data as the REST endpoints above — use whichever your runtime prefers.
+
 ## Source of truth
 
 - Pricing data lives at https://github.com/modelmeters/modelmeter
