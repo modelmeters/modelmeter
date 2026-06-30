@@ -42,7 +42,7 @@ const PROVIDER_ENUM = new Set([
 ]);
 
 if (!VENICE_KEY) {
-  console.error("VENICE_API_KEY missing. Set it in ~/.hermes/.env or shell.");
+  console.error("VENICE_API_KEY missing. Set it in your environment.");
   process.exit(2);
 }
 
