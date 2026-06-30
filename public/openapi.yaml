@@ -67,6 +67,31 @@ paths:
               schema:
                 type: array
                 items: { $ref: "#/components/schemas/Model" }
+  /model:
+    get:
+      summary: Unified card for a single model.
+      description: |
+        Returns one model normalized into a single object: pricing, capabilities
+        (context window, vision, reasoning, tags), availability, reseller markup vs.
+        the upstream entry, and a price-history summary (launch vs. current price,
+        percent change, last change date, all-time low/high). Saves an agent the
+        joins it would otherwise do across /models, /pricing.json, and /history.
+      parameters:
+        - name: id
+          in: query
+          required: true
+          description: Model id in `provider/model` form, e.g. `anthropic/claude-opus-4-8`. Alias `model` also accepted.
+          schema: { type: string }
+      responses:
+        "200":
+          description: Unified model card.
+          content:
+            application/json:
+              schema: { type: object }
+        "400":
+          description: Missing `id` parameter.
+        "404":
+          description: Model not found.
   /pricing.json:
     get:
       summary: Raw current pricing snapshot, identical to the repo's `pricing/current.json`.

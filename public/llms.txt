@@ -8,6 +8,7 @@ Modelmeter exists so AI agents can answer questions like "what does this LLM cal
 
 - [/estimate](https://modelmeter.xyz/estimate?model=anthropic/claude-sonnet-4-6&input=1000&output=500): cost of an LLM call given model, input tokens, output tokens. Includes upstream markup comparison for reseller entries.
 - [/models](https://modelmeter.xyz/models): list of available models with current pricing. Filters: `provider`, `include_unverified`, `include_unavailable`, `exclude_tags`.
+- [/model](https://modelmeter.xyz/model?id=anthropic/claude-opus-4-8): unified card for one model in a single call — normalized pricing, capabilities (context window, vision, reasoning, tags), availability, reseller markup vs. upstream, and a price-history summary (launch vs. current price, % change, last change date, all-time low/high). Param: `id`.
 - [/events](https://modelmeter.xyz/events): AI market events (model launches, deprecations, regulatory actions, compute partnerships, etc.) for annotating the pricing timeline. Filters: `provider`, `type`, `model`, `since`, `until`, `include_unverified`, `limit`.
 - [/history](https://modelmeter.xyz/history): historical pricing time-series per model. Filters: `model`, `provider`, `since`, `until`.
 - [/pricing.json](https://modelmeter.xyz/pricing.json): raw current pricing snapshot
