@@ -1,9 +1,8 @@
 name: Daily news digest
 
 on:
-  schedule:
-    - cron: "0 12 * * *"
   workflow_dispatch: {}
+  # Disabled: script moved to modelmeter-ops, now run via Hermes on Mac Mini
 
 permissions:
   contents: write

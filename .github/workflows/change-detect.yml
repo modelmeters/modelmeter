@@ -1,9 +1,8 @@
 name: Provider pricing-page change detection
 
 on:
-  schedule:
-    - cron: "23 7 * * *"
   workflow_dispatch: {}
+  # Disabled: script moved to modelmeter-ops, now run via Hermes on Mac Mini
 
 permissions:
   contents: read
