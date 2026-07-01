@@ -38,6 +38,8 @@ const PROVIDERS = [
   { id: "google",    url: "https://ai.google.dev/pricing",      aliases: ["https://ai.google.dev/gemini-api/docs/pricing"] },
   { id: "xai",       url: "https://x.ai/api",                   aliases: ["https://docs.x.ai/docs/models"] },
   { id: "venice",    url: "https://venice.ai/pricing",          aliases: ["https://docs.venice.ai/overview/pricing"] },
+  { id: "deepseek",  url: "https://api-docs.deepseek.com/quick_start/pricing", aliases: ["https://platform.deepseek.com/api-docs/pricing"] },
+  { id: "groq",      url: "https://groq.com/pricing",            aliases: ["https://console.groq.com/docs/pricing"] },
 ];
 
 // CLI args

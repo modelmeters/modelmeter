@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.2.0",
+  "snapshot_date": "2026-02-04",
+  "source": {
+    "provider": "deepseek",
+    "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "wayback_url": "https://web.archive.org/web/20260204135805/https://api-docs.deepseek.com/quick_start/pricing/",
+    "extracted_via": {
+      "method": "venice-llm",
+      "model": "qwen3-235b-a22b-instruct-2507"
+    }
+  },
+  "models": [
+    {
+      "id": "deepseek/deepseek-chat",
+      "provider": "deepseek",
+      "model": "deepseek-chat",
+      "display_name": "DeepSeek-V3.2 (Non-thinking Mode)",
+      "input_cost_per_mtok": 0.28,
+      "output_cost_per_mtok": 0.42,
+      "cache_write_cost_per_mtok": 0.28,
+      "cache_read_cost_per_mtok": 0.028,
+      "context_window": 128000,
+      "max_output_tokens": 8192,
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "last_verified": "2026-02-04",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    },
+    {
+      "id": "deepseek/deepseek-reasoner",
+      "provider": "deepseek",
+      "model": "deepseek-reasoner",
+      "display_name": "DeepSeek-V3.2 (Thinking Mode)",
+      "input_cost_per_mtok": 0.28,
+      "output_cost_per_mtok": 0.42,
+      "cache_write_cost_per_mtok": 0.28,
+      "cache_read_cost_per_mtok": 0.028,
+      "context_window": 128000,
+      "max_output_tokens": 65536,
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "last_verified": "2026-02-04",
+      "verification_required": false,
+      "notes": "extracted from wayback capture"
+    }
+  ]
+}
