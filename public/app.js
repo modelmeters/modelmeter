@@ -128,6 +128,8 @@ async function boot() {
   renderEventsFeed();
   renderChartControls();
   renderChart();
+  setupPriceTable();
+  renderPriceTable();
   window.addEventListener("resize", () => { renderChart(); });
 }
 
@@ -220,6 +222,103 @@ function renderStats() {
   document.getElementById("s-providers").textContent = providers.size || "—";
   document.getElementById("s-snapshots").textContent = history?.snapshot_count ?? "—";
   document.getElementById("s-history").textContent = history?.model_count ?? "—";
+}
+
+// ---------- price table ----------
+// First-party model makers. Everything else in currentModels (venice, openrouter,
+// together, groq) is a reseller/aggregator, shown only in "all providers" scope.
+const DIRECT_PROVIDERS = ["anthropic", "openai", "google", "xai", "deepseek", "mistral", "cohere"];
+let tableState = { scope: "direct", search: "", sortKey: "provider", sortDir: "asc" };
+
+function fmtPrice(n) { return n == null ? "—" : "$" + n; }
+function fmtCtx(n) {
+  if (n == null) return "—";
+  if (n >= 1e6) return (n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1) + "M";
+  if (n >= 1000) return Math.round(n / 1000) + "K";
+  return String(n);
+}
+
+function tableSortVal(m, key) {
+  if (key === "provider") return m.provider;
+  if (key === "model") return (m.display_name || m.id).toLowerCase();
+  return m[key]; // input_cost_per_mtok | output_cost_per_mtok | context_window
+}
+
+function renderPriceTable() {
+  const body = document.getElementById("price-table-body");
+  const countEl = document.getElementById("table-count");
+  if (!body) return;
+
+  let rows = currentModels.filter(m =>
+    tableState.scope === "all" || DIRECT_PROVIDERS.includes(m.provider)
+  );
+  const q = tableState.search.trim().toLowerCase();
+  if (q) rows = rows.filter(m =>
+    (m.id + " " + (m.display_name || "") + " " + (m.tags || []).join(" ") + " " + (m.aliases || []).join(" "))
+      .toLowerCase().includes(q)
+  );
+
+  const { sortKey, sortDir } = tableState;
+  const dir = sortDir === "asc" ? 1 : -1;
+  rows.sort((a, b) => {
+    const av = tableSortVal(a, sortKey), bv = tableSortVal(b, sortKey);
+    if (av == null && bv == null) return 0;
+    if (av == null) return 1;                 // nulls always last
+    if (bv == null) return -1;
+    if (typeof av === "string") return av.localeCompare(bv) * dir;
+    return (av - bv) * dir;
+  });
+
+  countEl.textContent = `${rows.length} model${rows.length === 1 ? "" : "s"}`;
+  body.innerHTML = rows.map(m => {
+    const prov = PROVIDER_LABELS[m.provider] || m.provider;
+    const color = PROVIDER_COLORS[m.provider] || "#888";
+    const tags = (m.tags || []).map(t => `<span class="ptag">${escapeHtml(t)}</span>`).join("");
+    return `<tr>
+      <td class="c-prov"><span class="prov-dot" style="background:${color}"></span>${escapeHtml(prov)}</td>
+      <td class="c-model"><a href="/model?id=${encodeURIComponent(m.id)}" title="${escapeHtml(m.id)}">${escapeHtml(m.display_name || m.id)}</a>${tags ? ` <span class="ptags">${tags}</span>` : ""}</td>
+      <td class="c-num">${fmtPrice(m.input_cost_per_mtok)}</td>
+      <td class="c-num">${fmtPrice(m.output_cost_per_mtok)}</td>
+      <td class="c-num">${fmtCtx(m.context_window)}</td>
+    </tr>`;
+  }).join("");
+}
+
+function updateTableSortHeaders() {
+  document.querySelectorAll("#price-table thead th[data-key]").forEach(th => {
+    const active = th.dataset.key === tableState.sortKey;
+    th.classList.toggle("sorted", active);
+    th.setAttribute("data-dir", active ? tableState.sortDir : "");
+  });
+}
+
+function setupPriceTable() {
+  document.querySelectorAll("#table-scope .chip").forEach(chip =>
+    chip.addEventListener("click", () => {
+      document.querySelectorAll("#table-scope .chip").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      tableState.scope = chip.dataset.scope;
+      renderPriceTable();
+    })
+  );
+  const search = document.getElementById("table-search");
+  if (search) search.addEventListener("input", () => { tableState.search = search.value; renderPriceTable(); });
+
+  document.querySelectorAll("#price-table thead th[data-key]").forEach(th =>
+    th.addEventListener("click", () => {
+      const key = th.dataset.key;
+      if (tableState.sortKey === key) {
+        tableState.sortDir = tableState.sortDir === "asc" ? "desc" : "asc";
+      } else {
+        tableState.sortKey = key;
+        // numeric columns default to ascending (cheapest/smallest first)
+        tableState.sortDir = "asc";
+      }
+      updateTableSortHeaders();
+      renderPriceTable();
+    })
+  );
+  updateTableSortHeaders();
 }
 
 function shorten(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }

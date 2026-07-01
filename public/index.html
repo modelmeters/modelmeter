@@ -239,6 +239,38 @@
       </div>
     </div>
 
+    <!-- Full-width current-price table -->
+    <div class="table-section">
+      <div class="panel table-panel">
+        <div class="table-header">
+          <span class="table-title">Prices · per Mtok · current</span>
+          <div class="table-controls">
+            <div class="chip-group" id="table-scope">
+              <button class="chip active" data-scope="direct">direct</button>
+              <button class="chip" data-scope="all">all providers</button>
+            </div>
+            <input type="search" id="table-search" placeholder="filter models…" autocomplete="off" spellcheck="false" />
+            <span class="table-count" id="table-count">—</span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="price-table" id="price-table">
+            <thead>
+              <tr>
+                <th data-key="provider" class="th-sort">Provider</th>
+                <th data-key="model" class="th-sort">Model</th>
+                <th data-key="input_cost_per_mtok" class="th-sort th-num">Input</th>
+                <th data-key="output_cost_per_mtok" class="th-sort th-num">Output</th>
+                <th data-key="context_window" class="th-sort th-num">Context</th>
+              </tr>
+            </thead>
+            <tbody id="price-table-body"></tbody>
+          </table>
+        </div>
+        <div class="table-foot">Each row links to <code>/model?id=…</code> · this view is <a href="/models">/models</a> rendered</div>
+      </div>
+    </div>
+
     <!-- Events timeline removed; events still surface in the price chart, ticker, and right-column feed. -->
     <!-- Re-add later as an overlay on the price chart if desired. -->
 
