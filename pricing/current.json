@@ -467,7 +467,7 @@
       "context_window": 1000000,
       "max_output_tokens": null,
       "source_url": "https://docs.x.ai/docs/models",
-      "last_verified": "2026-06-25",
+      "last_verified": "2026-06-30",
       "verification_required": false,
       "availability": "available",
       "tags": [],
@@ -527,7 +527,7 @@
       "context_window": 256000,
       "max_output_tokens": null,
       "source_url": "https://docs.x.ai/docs/models",
-      "last_verified": "2026-06-25",
+      "last_verified": "2026-06-30",
       "verification_required": false,
       "availability": "available",
       "tags": [
