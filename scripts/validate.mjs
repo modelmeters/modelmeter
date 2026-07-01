@@ -55,6 +55,23 @@ console.log("\n[1/3] schema validation");
 validateAgainstSchema("pricing/current.json", "pricing/schema.json", "pricing 1.x");
 validateAgainstSchema("events/current.json", "events/schema.json", "events 1.0.0");
 
+// Alias integrity: each alias must be globally unique and must not collide
+// with any model's canonical id (else lookups would be ambiguous).
+(function checkAliasUniqueness() {
+  const pricing = JSON.parse(readFileSync(join(ROOT, "pricing/current.json"), "utf8"));
+  const ids = new Set(pricing.models.map((m) => m.id));
+  const seen = new Map(); // alias -> owning model id
+  let ok = true;
+  for (const m of pricing.models) {
+    for (const a of m.aliases ?? []) {
+      if (ids.has(a)) { fail("alias uniqueness", "pricing/current.json", `alias "${a}" (on ${m.id}) collides with a model id`); ok = false; }
+      if (seen.has(a)) { fail("alias uniqueness", "pricing/current.json", `alias "${a}" used by both ${seen.get(a)} and ${m.id}`); ok = false; }
+      seen.set(a, m.id);
+    }
+  }
+  if (ok) pass("alias uniqueness", "pricing/current.json");
+})();
+
 // ---------- 3. JSON syntax across the repo ----------
 console.log("\n[2/3] JSON syntax sweep");
 function walkJsonFiles(dir, hits = []) {
