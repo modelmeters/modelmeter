@@ -10077,7 +10077,7 @@
       "context_window": 1000000,
       "max_output_tokens": 384000,
       "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
-      "last_verified": "2026-06-26",
+      "last_verified": "2026-06-30",
       "verification_required": false,
       "availability": "available",
       "tags": [
@@ -10099,7 +10099,7 @@
       "context_window": 1000000,
       "max_output_tokens": 384000,
       "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
-      "last_verified": "2026-06-26",
+      "last_verified": "2026-06-30",
       "verification_required": false,
       "availability": "available",
       "tags": [
@@ -10835,6 +10835,46 @@
       "upstream_model_id": null,
       "notes": "Lowest-latency, lowest-cost GPT-5.4 variant. Standard processing pricing.",
       "deprecated_on": null
+    },
+    {
+      "id": "deepseek/deepseek-chat",
+      "provider": "deepseek",
+      "model": "deepseek-chat",
+      "display_name": "DeepSeek Chat (legacy alias)",
+      "input_cost_per_mtok": 0.14,
+      "output_cost_per_mtok": 0.28,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": 0.0028,
+      "context_window": 1000000,
+      "max_output_tokens": 384000,
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "last_verified": "2026-06-30",
+      "verification_required": false,
+      "availability": "deprecated",
+      "tags": [],
+      "upstream_model_id": null,
+      "notes": "Legacy alias for deepseek-v4-flash non-thinking mode. Deprecates 2026-07-24 per DeepSeek docs.",
+      "deprecated_on": "2026-07-24"
+    },
+    {
+      "id": "deepseek/deepseek-reasoner",
+      "provider": "deepseek",
+      "model": "deepseek-reasoner",
+      "display_name": "DeepSeek Reasoner (legacy alias)",
+      "input_cost_per_mtok": 0.14,
+      "output_cost_per_mtok": 0.28,
+      "cache_write_cost_per_mtok": null,
+      "cache_read_cost_per_mtok": 0.0028,
+      "context_window": 1000000,
+      "max_output_tokens": 384000,
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "last_verified": "2026-06-30",
+      "verification_required": false,
+      "availability": "deprecated",
+      "tags": [],
+      "upstream_model_id": null,
+      "notes": "Legacy alias for deepseek-v4-flash thinking mode. Deprecates 2026-07-24 per DeepSeek docs.",
+      "deprecated_on": "2026-07-24"
     }
   ]
 }
