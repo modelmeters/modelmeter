@@ -38,8 +38,26 @@ function statusToCode(status) {
   return "error";
 }
 
+// Resolve a model by our canonical `id`, by a provider API id listed in
+// `aliases`, or by a case/punctuation-normalized form of either. Exact id
+// wins, then exact alias, then the normalized fallback. Aliases are stored
+// bare (no "provider/" prefix), so a bare query is matched against them too.
 export function findModel(id) {
-  return PRICING.models.find((m) => m.id === id) ?? null;
+  if (!id) return null;
+  const exact = PRICING.models.find((m) => m.id === id);
+  if (exact) return exact;
+  const aliased = PRICING.models.find((m) => (m.aliases ?? []).includes(id));
+  if (aliased) return aliased;
+  const q = normId(id);
+  const qBare = q.includes("/") ? q.slice(q.indexOf("/") + 1) : q;
+  return PRICING.models.find((m) =>
+    normId(m.id) === q ||
+    (m.aliases ?? []).some((a) => { const na = normId(a); return na === q || na === qBare; })
+  ) ?? null;
+}
+
+function normId(s) {
+  return String(s).toLowerCase().replace(/\./g, "-");
 }
 
 export function round(n, decimals = 6) {

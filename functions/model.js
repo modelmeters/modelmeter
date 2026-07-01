@@ -78,6 +78,7 @@ export function buildModelCard(model, historyModels) {
     id: model.id,
     provider: model.provider,
     provider_model_id: model.model,
+    aliases: model.aliases ?? [],
     display_name: model.display_name,
     pricing: {
       currency: "USD",

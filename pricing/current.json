@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.3.0",
+  "schema_version": "1.4.0",
   "snapshot_date": "2026-06-30",
   "models": [
     {
@@ -10207,7 +10207,10 @@
       "tags": [],
       "upstream_model_id": null,
       "notes": "API id: mistral-medium-latest",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "mistral-medium-latest"
+      ]
     },
     {
       "id": "mistral/mistral-large-3",
@@ -10227,7 +10230,10 @@
       "tags": [],
       "upstream_model_id": null,
       "notes": "API id: mistral-large-latest",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "mistral-large-latest"
+      ]
     },
     {
       "id": "mistral/mistral-small-4",
@@ -10247,7 +10253,10 @@
       "tags": [],
       "upstream_model_id": null,
       "notes": "API id: mistral-small-latest",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "mistral-small-latest"
+      ]
     },
     {
       "id": "mistral/devstral-2",
@@ -10269,7 +10278,10 @@
       ],
       "upstream_model_id": null,
       "notes": "Code-focused. API id: devstral-medium-latest",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "devstral-medium-latest"
+      ]
     },
     {
       "id": "mistral/magistral-medium",
@@ -10291,7 +10303,10 @@
       ],
       "upstream_model_id": null,
       "notes": "Reasoning model. API id: magistral-medium-latest",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "magistral-medium-latest"
+      ]
     },
     {
       "id": "mistral/ministral-3-14b",
@@ -10311,7 +10326,10 @@
       "tags": [],
       "upstream_model_id": null,
       "notes": "API id: ministral-14b-latest",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "ministral-14b-latest"
+      ]
     },
     {
       "id": "mistral/ministral-3-8b",
@@ -10331,7 +10349,10 @@
       "tags": [],
       "upstream_model_id": null,
       "notes": "API id: ministral-8b-latest",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "ministral-8b-latest"
+      ]
     },
     {
       "id": "mistral/ministral-3-3b",
@@ -10351,7 +10372,10 @@
       "tags": [],
       "upstream_model_id": null,
       "notes": "API id: ministral-3b-latest",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "ministral-3b-latest"
+      ]
     },
     {
       "id": "mistral/magistral-small",
@@ -10373,7 +10397,10 @@
       ],
       "upstream_model_id": null,
       "notes": "Reasoning model. API id: magistral-small-latest",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "magistral-small-latest"
+      ]
     },
     {
       "id": "mistral/codestral",
@@ -10395,7 +10422,10 @@
       ],
       "upstream_model_id": null,
       "notes": "Code-focused. API id: codestral-latest",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "codestral-latest"
+      ]
     },
     {
       "id": "mistral/devstral-small",
@@ -10417,7 +10447,10 @@
       ],
       "upstream_model_id": null,
       "notes": "Code-focused. API id: devstral-small-latest",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "devstral-small-latest"
+      ]
     },
     {
       "id": "cohere/command",
@@ -10537,7 +10570,10 @@
       "tags": [],
       "upstream_model_id": "c4ai-aya-expanse-32b",
       "notes": "Maps to c4ai-aya-expanse-32b. Context per docs.cohere.com/docs/models.",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "c4ai-aya-expanse-32b"
+      ]
     },
     {
       "id": "cohere/command-a-03-2025",
