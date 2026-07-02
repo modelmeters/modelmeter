@@ -199,7 +199,7 @@
     {
       "id": "2026-04-microsoft-openai-partnership-amended",
       "date": "2026-04-27",
-      "type": "compute_partnership",
+      "type": "partnership",
       "providers": [
         "openai",
         "microsoft"
@@ -655,7 +655,7 @@
     {
       "id": "2026-05-openai-partners-with-malta-to-provide-free-chatgpt-plus-acce",
       "date": "2026-05-16",
-      "type": "compute_partnership",
+      "type": "partnership",
       "providers": [
         "openai"
       ],
@@ -1160,7 +1160,7 @@
     {
       "id": "2025-12-openai-the-walt-disney-company-partners-with-openai-to-explore-use-",
       "date": "2025-12-11",
-      "type": "compute_partnership",
+      "type": "partnership",
       "providers": [
         "openai"
       ],
@@ -1280,7 +1280,7 @@
     {
       "id": "2025-10-openai-microsoft-acquires-49-stake-in-openai-s-for-profit-entity-an",
       "date": "2025-10-28",
-      "type": "compute_partnership",
+      "type": "partnership",
       "providers": [
         "openai",
         "microsoft"
@@ -1482,7 +1482,7 @@
     {
       "id": "2025-08-openai-partners-with-u-s-government-to-provide-chatgpt-acces",
       "date": "2025-08-06",
-      "type": "compute_partnership",
+      "type": "partnership",
       "providers": [
         "openai"
       ],
@@ -1894,7 +1894,7 @@
     {
       "id": "2024-06-openai-and-apple-announce-technical-partnership-to-integrate",
       "date": "2024-06-10",
-      "type": "compute_partnership",
+      "type": "partnership",
       "providers": [
         "openai",
         "other"
@@ -2441,7 +2441,7 @@
     {
       "id": "2026-05-anthropic-and-spacex-announce-compute-partnership-to-expand-",
       "date": "2026-05-06",
-      "type": "compute_partnership",
+      "type": "partnership",
       "providers": [
         "anthropic",
         "spacex"
@@ -3174,7 +3174,7 @@
     {
       "id": "2024-06-anthropic-s-claude-3-haiku-and-sonnet-models-become-availabl",
       "date": "2024-06-26",
-      "type": "compute_partnership",
+      "type": "partnership",
       "providers": [
         "anthropic",
         "amazon"
@@ -3299,7 +3299,7 @@
     {
       "id": "2023-09-anthropic-partners-with-amazon-web-services-as-primary-cloud",
       "date": "2023-09-25",
-      "type": "compute_partnership",
+      "type": "partnership",
       "providers": [
         "anthropic",
         "amazon"
