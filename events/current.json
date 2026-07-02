@@ -4820,7 +4820,7 @@
     {
       "id": "2023-07-anthropic-sap-invests-in-aleph-alpha-anthropic-and-cohere-as-part-of-1",
       "date": "2023-07-18",
-      "type": "partnership",
+      "type": "funding",
       "providers": [
         "anthropic",
         "cohere",
@@ -4850,7 +4850,7 @@
     {
       "id": "2023-08-other-generative-ai-services-removed-from-apple-app-store-in-china",
       "date": "2023-08-01",
-      "type": "regulatory-action",
+      "type": "regulatory_action",
       "providers": [
         "other"
       ],
@@ -6042,7 +6042,7 @@
     {
       "id": "2025-01-anthropic-confirms-claude-will-not-use-copyrighted-song-lyri",
       "date": "2025-01-03",
-      "type": "regulatory-action",
+      "type": "regulatory_action",
       "providers": [
         "anthropic"
       ],
@@ -7480,7 +7480,7 @@
     {
       "id": "2026-01-anthropic-and-teach-for-all-launch-global-ai-training-initia",
       "date": "2026-01-21",
-      "type": "partnership",
+      "type": "compute_partnership",
       "providers": [
         "anthropic"
       ],
@@ -7681,7 +7681,7 @@
     {
       "id": "2026-03-anthropic-u-s-government-bans-anthropic-from-pentagon-ai-programs-foll",
       "date": "2026-03-09",
-      "type": "regulatory-action",
+      "type": "regulatory_action",
       "providers": [
         "anthropic"
       ],
@@ -7710,7 +7710,7 @@
     {
       "id": "2026-03-anthropic-judge-remarks-government-s-anthropic-export-ban-appears-puni",
       "date": "2026-03-24",
-      "type": "regulatory-action",
+      "type": "regulatory_action",
       "providers": [
         "anthropic"
       ],
