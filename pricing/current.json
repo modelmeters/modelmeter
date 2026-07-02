@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "snapshot_date": "2026-06-30",
+  "snapshot_date": "2026-07-02",
   "models": [
     {
       "id": "anthropic/claude-fable-5",
@@ -1329,15 +1329,15 @@
       "provider": "venice",
       "model": "deepseek-v4-pro",
       "display_name": "Venice: DeepSeek V4 Pro",
-      "input_cost_per_mtok": 1.73,
-      "output_cost_per_mtok": 3.8,
+      "input_cost_per_mtok": 1.65,
+      "output_cost_per_mtok": 3.3,
       "cache_write_cost_per_mtok": null,
       "cache_read_cost_per_mtok": 0.33,
       "context_window": 1000000,
       "max_output_tokens": null,
       "source_url": "https://docs.venice.ai/overview/pricing",
-      "last_verified": "2026-06-25",
-      "verification_required": false,
+      "last_verified": "2026-07-02",
+      "verification_required": true,
       "availability": "available",
       "tags": [
         "pro"
@@ -11088,13 +11088,13 @@
       "tags": [],
       "upstream_model_id": null,
       "deprecated_on": null,
-      "input_cost_per_mtok": 2,
-      "output_cost_per_mtok": 10,
+      "input_cost_per_mtok": 3,
+      "output_cost_per_mtok": 15,
       "cache_write_cost_per_mtok": 2.5,
       "cache_read_cost_per_mtok": 0.2,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-      "last_verified": "2026-06-30",
-      "verification_required": false,
+      "last_verified": "2026-07-02",
+      "verification_required": true,
       "availability": "available",
       "notes": "Introductory pricing $2/$10 per Mtok (input/output) through 2026-08-31; standard $3/$15 thereafter (cache write $3.75, read $0.30)."
     },
