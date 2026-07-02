@@ -553,7 +553,10 @@
       "tags": [],
       "upstream_model_id": null,
       "notes": "xAI's docs do not specify cache pricing or tiered context pricing. 1M token context.",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "grok-4.3"
+      ]
     },
     {
       "id": "xai/grok-4-20",
@@ -573,7 +576,11 @@
       "tags": [],
       "upstream_model_id": null,
       "notes": "Current per docs.x.ai/developers/pricing. xAI ships reasoning and non-reasoning variants (API ids grok-4.20-0309-reasoning / grok-4.20-0309-non-reasoning) at the same price; both covered by this entry. 1M context.",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "grok-4.20-0309-reasoning",
+        "grok-4.20-0309-non-reasoning"
+      ]
     },
     {
       "id": "xai/grok-4-20-multi-agent",
@@ -593,7 +600,10 @@
       "tags": [],
       "upstream_model_id": null,
       "notes": "Current per docs.x.ai/developers/pricing. API id grok-4.20-multi-agent-0309. Same per-token pricing as grok-4.20. 1M context.",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "grok-4.20-multi-agent-0309"
+      ]
     },
     {
       "id": "xai/grok-build-0-1",
@@ -615,7 +625,10 @@
       ],
       "upstream_model_id": null,
       "notes": "Build-focused variant. 256K context.",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "grok-build-0.1"
+      ]
     },
     {
       "id": "venice/claude-fable-5",
@@ -11198,7 +11211,10 @@
       "tags": [],
       "upstream_model_id": null,
       "notes": "Latest non-reasoning GPT-5 chat model. API id: chat-latest. Standard tier.",
-      "deprecated_on": null
+      "deprecated_on": null,
+      "aliases": [
+        "chat-latest"
+      ]
     },
     {
       "id": "openai/o3-deep-research",
