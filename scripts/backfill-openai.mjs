@@ -200,7 +200,7 @@ Score 1-10 how worth-recording the item is. >= 7 means: clearly affects model pr
 
 If score >= 7, also draft an event entry:
 {
-  "type": one of [pricing_change, model_launch, model_deprecation, model_unavailable, compute_partnership, regulatory_action, acquisition, funding, open_source_release, legal_outcome, infrastructure, leadership_change],
+  "type": one of [pricing_change, model_launch, model_deprecation, model_unavailable, partnership, regulatory_action, acquisition, funding, open_source_release, legal_outcome, infrastructure, leadership_change],
   "providers": array of provider ids (lowercase) from: anthropic, openai, venice, google, xai, meta, deepseek, alibaba, zhipu, moonshot, mistral, cohere, nvidia, amazon, microsoft, spacex, groq, together, fireworks, openrouter, other,
   "models": array of "provider/model-id" strings (empty if unclear or none specific),
   "headline": one-line neutral factual summary,

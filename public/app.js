@@ -38,7 +38,7 @@ const PROVIDER_LABELS = {
 };
 const TYPE_CATEGORY = {
   model_launch: "model", model_deprecation: "model", model_unavailable: "model",
-  funding: "money", acquisition: "money", compute_partnership: "money", pricing_change: "money",
+  funding: "money", acquisition: "money", partnership: "money", pricing_change: "money",
   infrastructure: "infra",
   regulatory_action: "regulatory", legal_outcome: "regulatory",
   open_source_release: "oss",
@@ -56,7 +56,7 @@ const MAGNITUDE_RADIUS = { minor: 2, moderate: 3, major: 5, structural: 8 };
 const TYPE_META = {
   model_unavailable:    { color: "#ff296d", label: "model restricted" },
   model_launch:         { color: "#ffd166", label: "model launch" },
-  compute_partnership:  { color: "#5534eb", label: "compute partnership" },
+  partnership:  { color: "#5534eb", label: "partnership" },
 };
 function typeColor(type) {
   return TYPE_META[type]?.color ?? CATEGORY_META[TYPE_CATEGORY[type] ?? "other"].color;
