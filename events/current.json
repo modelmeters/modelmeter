@@ -5272,34 +5272,6 @@
       "updated_at": "2026-07-02"
     },
     {
-      "id": "2024-08-anthropic-class-action-lawsuit-filed-against-anthropic-by-authors-over",
-      "date": "2024-08-20",
-      "type": "legal_outcome",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [],
-      "headline": "Class-action lawsuit filed against Anthropic by authors over copyright infringement in AI training",
-      "summary": "A class-action lawsuit was filed against Anthropic by authors alleging copyright infringement related to the training of its AI models. The suit claims unauthorized use of copyrighted literary works to train large language models without compensation or permission.",
-      "source_urls": [
-        "https://www.cnbc.com/2024/08/20/amazon-backed-anthropic-hit-with-class-action-lawsuit-over-copyright-infringement.html"
-      ],
-      "verified": false,
-      "tags": [
-        "copyright",
-        "litigation",
-        "class-action",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
       "id": "2024-09-anthropic-launches-claude-enterprise-with-enhanced-security-",
       "date": "2024-09-04",
       "type": "model_launch",
@@ -5313,35 +5285,6 @@
       "summary": "Anthropic introduced Claude Enterprise, a new tier designed for large organizations, featuring improved security, administrative controls, and compliance capabilities. This launch marks a strategic push to capture enterprise customers with tailored AI solutions.",
       "source_urls": [
         "https://www.ciodive.com/news/anthropic-claude-enterprise-plan-pricing-features/726040/"
-      ],
-      "verified": false,
-      "tags": [
-        "enterprise",
-        "security",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
-      "id": "2024-09-anthropic-launches-claude-enterprise-plan-with-enhanced-secu",
-      "date": "2024-09-04",
-      "type": "model_launch",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/claude-enterprise"
-      ],
-      "headline": "Anthropic launches Claude Enterprise plan with enhanced security and admin controls",
-      "summary": "Anthropic introduced Claude Enterprise, a new plan tailored for business customers, featuring advanced security, compliance, and administrative capabilities. This launch expands Anthropic's enterprise offerings beyond existing tiers, targeting large organizations with strict data governance needs.",
-      "source_urls": [
-        "https://www.computerworld.com/article/3504810/anthropic-launches-the-claude-enterprise-plan.html"
       ],
       "verified": false,
       "tags": [
@@ -5820,32 +5763,6 @@
       "updated_at": "2026-07-02"
     },
     {
-      "id": "2025-03-anthropic-secures-3-3b-funding-at-58-3b-valuation-following-",
-      "date": "2025-03-04",
-      "type": "funding",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [],
-      "headline": "Anthropic secures €3.3B funding at €58.3B valuation following Claude 3.7 Sonnet launch",
-      "summary": "Shortly after launching Claude 3.7 Sonnet, Anthropic raised €3.3B in a new funding round, pushing its valuation to €58.3B. This significant capital infusion underscores strong investor confidence in Anthropic's trajectory and competitive positioning in the AI landscape.",
-      "source_urls": [
-        "https://siliconcanals.com/anthropic-secures-3-3b-funding/"
-      ],
-      "verified": false,
-      "tags": [
-        "major",
-        "funding-round"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
       "id": "2025-03-anthropic-databricks-and-anthropic-announce-five-year-strategic-ai-par",
       "date": "2025-03-28",
       "type": "partnership",
@@ -6238,33 +6155,6 @@
         "chrome-extension",
         "agent",
         "browser-integration"
-      ],
-      "impact": {
-        "magnitude": "moderate",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
-      "id": "2025-08-anthropic-tentative-agreement-reached-in-anthropic-copyright-lawsuit",
-      "date": "2025-08-27",
-      "type": "legal_outcome",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [],
-      "headline": "Tentative agreement reached in Anthropic copyright lawsuit",
-      "summary": "Anthropic has reached a tentative agreement to resolve a copyright lawsuit, likely one of the ongoing class actions related to its AI training practices. This follows years of litigation and signals a potential resolution to claims over unauthorized use of authors' works.",
-      "source_urls": [
-        "https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/98493-tentative-agreement-reached-in-anthropic-copyright-lawsuit.html"
-      ],
-      "verified": false,
-      "tags": [
-        "copyright",
-        "settlement",
-        "legal-milestone"
       ],
       "impact": {
         "magnitude": "moderate",
@@ -7692,33 +7582,6 @@
       "updated_at": "2026-07-02"
     },
     {
-      "id": "2026-07-venice-ai-raises-65m-led-by-dragonfly-achieving-unicorn-stat",
-      "date": "2026-07-02",
-      "type": "funding",
-      "providers": [
-        "venice"
-      ],
-      "models": [],
-      "headline": "Venice AI raises $65M led by Dragonfly, achieving unicorn status",
-      "summary": "Venice AI, founded by Erik Voorhees, has secured $65 million in a funding round led by Dragonfly, marking its ascent to unicorn status. This investment strengthens its position in the competitive AI landscape and supports further development of its AI models and infrastructure.",
-      "source_urls": [
-        "https://crypto-economy.com/dragonfly-backs-erik-voorhees-venice-ai-in-65m-round-as-startup-hits-unicorn-status/"
-      ],
-      "verified": false,
-      "tags": [
-        "major",
-        "funding",
-        "valuation"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
       "id": "2026-07-venice-raises-65-million-at-1-billion-valuation-to-scale-pri",
       "date": "2026-07-01",
       "type": "funding",
@@ -8098,34 +7961,6 @@
       "updated_at": "2026-07-02"
     },
     {
-      "id": "2026-06-deepseek-doubles-peak-hour-api-pricing-with-launch-of-deepse",
-      "date": "2026-06-30",
-      "type": "pricing_change",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [
-        "deepseek/deepseek-v4"
-      ],
-      "headline": "DeepSeek doubles peak-hour API pricing with launch of DeepSeek V4 in mid-July 2026",
-      "summary": "DeepSeek is launching the official version of its DeepSeek V4 model in mid-July 2026, accompanied by a significant increase in peak-hour API pricing. The price doubling reflects higher compute demands and positions the model for premium, high-performance use cases.",
-      "source_urls": [
-        "https://pandaily.com/deepseek-v4-official-july-peak-pricing-jun2026"
-      ],
-      "verified": false,
-      "tags": [
-        "pricing",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "up"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
       "id": "2026-06-xai-launches-grok-4-5-matching-claude-opus-performance-with-",
       "date": "2026-06-29",
       "type": "model_launch",
@@ -8213,34 +8048,6 @@
       "updated_at": "2026-07-02"
     },
     {
-      "id": "2026-06-deepseek-launches-v4-model-with-peak-hour-pricing-doubling-c",
-      "date": "2026-06-29",
-      "type": "pricing_change",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [
-        "deepseek/deepseek-v4"
-      ],
-      "headline": "DeepSeek launches V4 model with peak hour pricing doubling current rates",
-      "summary": "DeepSeek is launching its V4 model in mid-July, introducing a dynamic pricing model that doubles costs during peak usage hours. This marks a strategic shift in pricing strategy, potentially influencing how AI providers manage capacity and demand.",
-      "source_urls": [
-        "https://cryptobriefing.com/deepseek-v4-launch-peak-hour-pricing/"
-      ],
-      "verified": false,
-      "tags": [
-        "pricing",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "up"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
       "id": "2026-06-xai-grok-4-5-enters-private-beta-at-spacex-and-tesla",
       "date": "2026-06-29",
       "type": "model_launch",
@@ -8292,66 +8099,6 @@
         "magnitude": "structural",
         "duration": "ongoing",
         "price_direction": "none"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
-      "id": "2026-06-anthropic-us-allows-partial-release-of-anthropic-s-mythos-ai-model",
-      "date": "2026-06-27",
-      "type": "regulatory_action",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/mythos"
-      ],
-      "headline": "US allows partial release of Anthropic's Mythos AI model",
-      "summary": "U.S. authorities have permitted the limited release of Anthropic's Mythos AI model, indicating a conditional easing of prior restrictions. This follows a history of export controls and legal challenges involving Anthropic's access to government and military applications.",
-      "source_urls": [
-        "https://www.dw.com/en/us-allows-partial-release-of-anthropics-mythos-ai-model/a-77732252"
-      ],
-      "verified": false,
-      "tags": [
-        "export-control",
-        "regulation",
-        "mythos",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "moderate",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
-      "id": "2026-06-anthropic-trump-administration-permits-anthropic-to-release-mythos-mod",
-      "date": "2026-06-27",
-      "type": "regulatory_action",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/mythos"
-      ],
-      "headline": "Trump administration permits Anthropic to release Mythos model to select U.S. organizations",
-      "summary": "Following prior restrictions and legal challenges, the Trump administration has authorized Anthropic to release its Mythos model to a limited set of U.S. organizations, signaling a shift in federal AI access policy. This decision follows a June 2026 court ruling that temporarily blocked the government's ban on Anthropic and its designation as a supply-chain risk.",
-      "source_urls": [
-        "https://www.wired.com/story/anthropic-restores-access-to-mythos/"
-      ],
-      "verified": false,
-      "tags": [
-        "government",
-        "regulation",
-        "major",
-        "restricted-release"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
       },
       "created_at": "2026-07-02",
       "updated_at": "2026-07-02"
