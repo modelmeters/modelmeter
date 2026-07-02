@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "snapshot_date": "2026-06-30",
+  "snapshot_date": "2026-07-02",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -4758,6 +4758,1227 @@
       },
       "created_at": "2026-06-30",
       "updated_at": "2026-06-30"
+    },
+    {
+      "id": "2026-07-venice-ai-raises-65m-in-series-a-funding-led-by-dragonfly-ac",
+      "date": "2026-07-02",
+      "type": "funding",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice AI raises $65M in Series A funding led by Dragonfly, achieving unicorn status",
+      "summary": "Venice AI, founded by Erik Voorhees, has secured $65 million in a Series A round led by Dragonfly, propelling the company to unicorn status. The funding will accelerate development of its uncensored AI platform and expand inference capacity.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMisAFBVV95cUxOYV9NSEhXeDFhT19VV1QwMjgyWE5EeUZST2xzLUlQb0prRXB2UURyZE83OVEtOFpGSHVOSXNuaHkxY3BQUWlENDVyem9VSkR3aEp2UTRCSDI3TDNjclo3OHFEOXJFU3RIa1VyQTdKMzhIdDRSTmg4c2RQYXFkemViSTFWMGx5ZG9iV0kzbmRNSjlVNlljT3JpU25WOHFCQldFbmdyZi1MaW02VG50ejVyVw?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "uncensored",
+        "infrastructure"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-venice-raises-65m-at-1b-valuation-to-advance-private-uncenso",
+      "date": "2026-07-01",
+      "type": "funding",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice raises $65M at $1B valuation to advance private, uncensored AI platform",
+      "summary": "Venice.ai has secured $65 million in funding at a $1 billion valuation, reinforcing its position in the private and uncensored AI market. The investment will support scaling infrastructure, model development, and platform expansion.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMikwFBVV95cUxORTMzVlNyMVRpNEpFbVU0RFd2M1h0QUZVTVNfbHNudFNtcWdqa3VEVW1jbzhpbHNXQUNSWDRqY2lrTWpnS0FNUUIySDZRdkQ5VEhGcmFERi1HVXJ4RXhwcFg1YjBNdG1KN0w3ZkprdHRwemVUdVo2MTZtZXVyVm51N0h3Y2EwR2M4aVR3MHF0SXQ4d2c?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "funding",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-venice-ai-raises-65-million-in-series-a-funding-at-1-billion",
+      "date": "2026-07-01",
+      "type": "funding",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice AI raises $65 million in Series A funding at $1 billion valuation",
+      "summary": "Venice AI secured $65 million in a Series A round led by Dragonfly, achieving a $1 billion equity valuation. This investment underscores growing interest in private, uncensored AI platforms and may enable future scaling of inference services and model offerings.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMijAFBVV95cUxOdHRTNWlMZnE3ZGZyVmxFT285REtlZ29JZUhvcXVXb1pmUml2LXZUY3Z4bWE5d0UydUp5VmFpenY3NG9xX3RSWWZ4X04zX0U0RDdFVjFMRlliREtuU1c5MWN0cjNMVVplRW5YNlVXQmFzV1dMVDVyTUJiUk52NDdBaFl2eTM0azhpbkZkeg?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-openai-amazon-bedrock-adds-openai-gpt-oss-and-nvidia-nemotron-model",
+      "date": "2026-07-01",
+      "type": "compute_partnership",
+      "providers": [
+        "openai",
+        "nvidia",
+        "amazon"
+      ],
+      "models": [
+        "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b",
+        "nvidia/nemotron-nano-9b-v2",
+        "nvidia/nemotron-nano-12b-v2",
+        "nvidia/nemotron-nano-30b",
+        "nvidia/nemotron-super-120b"
+      ],
+      "headline": "Amazon Bedrock adds OpenAI GPT OSS and NVIDIA Nemotron models in AWS GovCloud (US)",
+      "summary": "Amazon Bedrock now supports OpenAI's open-weight GPT OSS models (120B and 20B) and NVIDIA's Nemotron series (Nano and Super variants) in AWS GovCloud (US), enabling US government agencies and regulated industries to access frontier open-weight models with compliance guarantees. This expands enterprise AI capabilities in secure, isolated environments.",
+      "source_urls": [
+        "https://aws.amazon.com/blogs/machine-learning/run-nvidia-nemotron-and-openai-gpt-oss-models-on-amazon-bedrock-in-aws-govcloud-us/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "government",
+        "open-weight",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-venice-ai-raises-65m-at-1b-valuation",
+      "date": "2026-07-01",
+      "type": "funding",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice AI raises $65M at $1B valuation",
+      "summary": "Venice AI has secured $65 million in funding at a $1 billion valuation, signaling strong investor confidence in its AI inference platform. This capital will likely be used to expand compute capacity, improve model hosting infrastructure, and accelerate development of proprietary AI technologies.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMic0FVX3lxTE1XMUxESVNTUFdYNzZqcE1nSnFQeWVlWHVUVklrUEpWcml2MmJtUEg2bFBsaHZ6RW92Um9JM3huUldaeWpZa0xBWVozWTU4cTUzblNLSTVtU2V5VjkyZmxGak1aWnM3NmlzOHZSelE4QnpYbXc?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-nvidia-software-optimizations-reduce-deepseek-v4-token-infer",
+      "date": "2026-07-01",
+      "type": "pricing_change",
+      "providers": [
+        "nvidia",
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "Nvidia software optimizations reduce DeepSeek V4 token inference costs by fivefold",
+      "summary": "Nvidia has introduced software improvements that significantly lower the computational cost of running DeepSeek V4, cutting token inference expenses by 80%. This advancement enhances the economic viability of deploying DeepSeek V4 at scale and increases competitive pressure on alternative models.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMikgFBVV95cUxOQzNFT1FQeEVNb3A4NlFlYTFlcEFCM3laa0hBM3RKbGFEZVBNdDhRTnNPalZCdnRvZ24xeXBTWlowSExHZ3d0dkJEaHJUNllGaGt3WFpaU0lGX3JHSmI0WWRpci1yOGR3d2c5ckxCZm1jbmZ0NU5EQTdGVm9hRXRpZ3NkWG9qMVNOM3NIWG9sQzhldw?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "efficiency"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-venice-ai-raises-65-million-in-first-funding-round-achieving",
+      "date": "2026-07-01",
+      "type": "funding",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice AI raises $65 million in first funding round, achieving $1 billion valuation",
+      "summary": "Venice AI secured $65 million in its initial funding round, marking a significant milestone as the company reaches a $1 billion valuation. This funding positions Venice AI to expand its AI model development and infrastructure, enhancing its role in the competitive AI landscape.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMirgFBVV95cUxOM3pZS2c2TmVvTEpRemJyR3g0R1V3eWMxdTZILTJqbEh1dmhaS3NCMTBHTVVoUVJfSEVQNThvdEsycGFpUllYQ1pDb1UtVWtiNW9NdnRTcmdvbzZFNlJLSzBmVFdDVl9EZjJHamRtYmhhSnhsSFVwdzN6Z0tSLU5MaGtfdmNIc0J3bGpBdUZ4bDVlUkM4bkk1SnBma01NdGpoMUEyejF2bzVEei1yenc?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-venice-ai-raises-65m-at-1b-valuation",
+      "date": "2026-07-01",
+      "type": "funding",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice AI raises $65M at $1B valuation",
+      "summary": "Venice AI secures $65 million in funding at a $1 billion valuation, marking a significant milestone in the growth of private, uncensored AI platforms. The investment underscores increasing market interest in alternative AI providers outside the major tech ecosystem.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMinwFBVV95cUxPYy0xakhLdWg3VEh2N0F0dmYyVk9BWUtfaDIwOFRJU19sRnJIV2xjMzA1UVh0dEF4NXNhdmJfS2lTdnJFQV9TQnNsUE5aR3czMWdmaE1yTUdobW1GRnljbGxYazJ3Y0Nia0ZxMWZDaW5rMGRrR0U0NlpheXBKNGthWjI2bTJjVE5kZm9KQmNjV0NGNHBkaE1KNi1raEhQcm8?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-venice-ai-raises-65-million-achieves-1-billion-valuation-wit",
+      "date": "2026-07-01",
+      "type": "funding",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice AI raises $65 million, achieves $1 billion valuation with enhanced privacy features",
+      "summary": "Venice AI secured $65 million in funding, reaching a $1 billion valuation. The company emphasized strengthened privacy protections as part of its offering, signaling a strategic focus on secure, private AI services.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5mdkM5TmtVOTNzSXVkbzNmeW13YkUybVJ4aEpCZThVaXE5Zy1Taml2MjJJQ1VzUE50Z1BtV053aVkxWWFQVlhRalRHMG52N1NPSW9Hdk1zM01TOTljNzd3d1o1Vmc?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-xai-announces-aggressive-rollout-of-grok-models-with-1-5t-pa",
+      "date": "2026-07-01",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-3",
+        "xai/grok-4"
+      ],
+      "headline": "xAI announces aggressive rollout of Grok models with 1.5T parameters in July and 2T in August",
+      "summary": "xAI plans to launch new, significantly larger Grok models with 1.5 trillion parameters in July and 2 trillion parameters in August, marking a major leap in model scale and performance. These launches indicate a rapid expansion of xAI's AI capabilities and could influence the competitive dynamics in the large language model space.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMia0FVX3lxTFBXbjVDZTVzVjFVSEszU1FoOENBTkFSbmc3bHRpUlNDVmJrQnprSGF0UzV6Umd4dmIzUWpzMEJnNHhNS0otUjF5RGhwdkhfblliNmx0RTdOSGVqb29NZ3dLUE40SWppLXJOTGk4?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "scaling"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-deepseek-raises-7-billion-in-record-breaking-funding-round-t",
+      "date": "2026-07-01",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises $7 billion in record-breaking funding round to scale domestic AI computing infrastructure",
+      "summary": "DeepSeek has secured $7 billion in a landmark funding round, the largest reported AI raise in China to date. The capital will be directed toward building out domestic AI computing infrastructure, enhancing model training capacity and reducing reliance on foreign hardware.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMifkFVX3lxTE9sUWNQblUya1IzeU5jVWlVZzVZRVZzbUZkV3ZuRXZHNHVxTlppN0JrdS15TDliVml5TFJScnl0M3BKLUhfX2VXTmxfY2lFbWhucUFzdkwzTjRpZzhvVGp4MG0zaWpRSk9GTXU0bDlFdVBsZUNiek1zLTdWN25Ldw?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "infrastructure"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-deepseek-launches-utility-style-pricing-for-v4-model",
+      "date": "2026-07-01",
+      "type": "pricing_change",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "DeepSeek launches utility-style pricing for V4 model",
+      "summary": "DeepSeek has introduced utility-style, usage-based pricing for its DeepSeek V4 model, marking a strategic shift from the prevailing flat-rate or subscription models in China's LLM market. This change allows customers to pay only for actual compute and inference usage, aligning costs more closely with demand and potentially increasing accessibility for variable workloads.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMigwFBVV95cUxNNUs2N0FDV1ZwVGdkWGxTZFpWaUZWTkk0dVpBNFNkUXVoazdLVEc2YVNtYk01cnBkVi1zYVVUMXBfTHJsQklhNnQ4cjNoRzlLMjBBN0ZiX2Y1U1p4YWVsTl9kanlnR2l5YUQ5NmlLRzB4b2t1M2kxNS00aGJVZ0lUTFI4MA?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-deepseek-raises-7-5-billion-in-first-funding-round-at-58-9-b",
+      "date": "2026-07-01",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises $7.5 billion in first funding round at $58.9 billion valuation",
+      "summary": "DeepSeek has secured $7.5 billion in its first external funding round, achieving a $58.9 billion post-money valuation. The investment will support CEO Liang Wenfeng's roadmap for scaling AI infrastructure, advancing model research, and expanding global operations.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMidkFVX3lxTE1FVnBQZUYwOGpCRWVyWEg1c2xjbnpkdWcyTWY3b00yMW5temJKYUl2VkIwSW5tZXdtZG1UMXh0d3JQbU1odHZGbjJJeWg2Y1J2YVRndEJXbS0zQ25UOGJKRlRJV3FqSV9WQ0xnLVV6U0JjOHJiQWc?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-cohere-bell-canada-partners-with-cohere-and-hypertec-to-advance-ai-",
+      "date": "2026-06-30",
+      "type": "compute_partnership",
+      "providers": [
+        "cohere",
+        "other"
+      ],
+      "models": [],
+      "headline": "Bell Canada partners with Cohere and Hypertec to advance AI infrastructure and services in Canada",
+      "summary": "Bell Canada has entered a strategic partnership with AI firm Cohere and systems integrator Hypertec to develop and deploy AI solutions across Canada. The collaboration aims to enhance domestic AI capabilities through integrated telecom and enterprise infrastructure.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNUEI4LTJqZUpMRExjSjV0TURUeHNwZDRoZTFhQ3lWeFUxemtrME55RG9HQzVGbmhURFloRmpqQ09ZWWt3MXFBYW5qSFFlRnpfZUpTdk80d3VMcFY1LXdlNkRBQUdlXzZ2NFpjWFYycjBsLWJZZkhTeGFoTk8zNlN4RWZEdWdpUHMzMXZxeWVlWFYtcGRmT3RSUUMyNWpFemxhWkV1RUFoUDFndHF4MHlpdXZpTFpiRkV2QWxVNXVrVklpZ9IBxwFBVV95cUxOb1VldzRPV2Q4M2dLWmpIdU5jQm9ick12QmhqTXpGeU5ucnZ4bnV4NGJXdTl5aVEyS3lTcDBzbG9lM3FZOVZDR01uaVMtUmFXTmd0V1J4OGtFdDhwelZES25jVXczZUNoM1BtSDk1dU5tZUpBVGkwUWFXNlhuRzV1em5zbkZPZ1BKUC1VLVMtYU9rUFVTR1pMM3hRay1EQlFyR2U2cF95VUJnV2RfWHR5cmNLYU1XbG5VZ0lOUWlXT2QxaE4yQXlr?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "canada",
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-nvidia-reduces-deepseek-v4-token-costs-by-up-to-5x-via-black",
+      "date": "2026-06-30",
+      "type": "pricing_change",
+      "providers": [
+        "nvidia",
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "NVIDIA reduces DeepSeek v4 token costs by up to 5x via Blackwell software optimization",
+      "summary": "NVIDIA has achieved a 5x reduction in token processing costs for DeepSeek v4 just one month after its launch, solely through software-level tuning on Blackwell architecture GPUs. This optimization significantly lowers inference expenses without hardware changes, improving cost-efficiency for large-scale model deployment.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMimwFBVV95cUxPNlg1TERfeFBUZzdJUTlwUWljQUNiY3hvUEhEUjI0Zi1BOTYtQWw3bTcyVVFHZ1FfY0NzSjZxX3lvNXg5eFh1NWdhaXZWbWxYZy1RS0ozak9YOXpxN1oxWDl6MWRwVTU5a1pUd1pNZWpJYkNENFZwMGVlUURCQTlWRElfOHJ0eGppS1U5X1pJNXNrT0hXaGxJUWdkZ9IBoAFBVV95cUxOckZXcVVQc0RwRFRtRHhLUUJzNDF2Y2pDbHo3THduWml0cmZkWmg0WXdmTkM4VU5qdEN1SnZtQ01BSmpGRzc1VkMzVGNyYlhrcG8wYUZKMUtJWmxiNmp0UlR2ZHh0V0h6a19fYllKYzlMWHM3WXNUQy1YUUxnVG1zMlF5a1RaSUlNNlFteWl4YnpDVC0zZDJreTEtTkZmcDU2?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "optimization",
+        "inference",
+        "blackwell"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-launches-claude-science-an-ai-workbench-tailored-f",
+      "date": "2026-06-30",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches Claude Science, an AI workbench tailored for scientific research.",
+      "summary": "Anthropic has launched Claude Science, a specialized AI workbench designed for scientists, offering tools and capabilities optimized for research workflows, data analysis, and hypothesis generation. This release targets academic and industrial science communities, expanding Claude's reach into domain-specific professional applications.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiakFVX3lxTE81R0J0dXluYzJGcmxVb3dDY0Z2UjVYT2I5ZkYwSVRrWTBSUm5HZXpWRkFsQ2k5bm1jbVU5cENOY0xkX0tybV9FbnhRcFVac1dncWtqTF85OTZyd3o1dlRXenJkd1h3T1pTSGc?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "science",
+        "enterprise"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-groq-secures-650-million-in-funding-round-led-by-powerlaw-co",
+      "date": "2026-06-30",
+      "type": "funding",
+      "providers": [
+        "groq"
+      ],
+      "models": [],
+      "headline": "Groq secures $650 million in funding round led by Powerlaw Corp.",
+      "summary": "Powerlaw Corp. (Nasdaq: PWRL) announced the closure of a $650 million investment round, emphasizing its strategic holding in Groq. This substantial funding will likely accelerate Groq's development and scaling of its AI inference platform, enhancing capacity and performance for real-time AI workloads.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOQVk4LThxQU5wYjViR2l5Um1GTDRNcTdSMlItTHJjd21vc3B5Q1h0NmFIYjdhSVdmY3hWb1lMank1d2RSV0Fad0NzVU4xUERVVTZ3OXRMbE93dVhSdlpKN1ZTME91aUIzMDZNaFVKVUFNejRLQVd6Uks5bUZoYnM3aUZOenBHQzUycm93dFhvWjdXNFJ3MnR4SmJOYmFNcXhEcVBCRnl0QXd0RzBVRFJNc19UblBrc1A3M2huX0dhQ1JTQUdjVUgtQmZLdTNGaFUtVlpoQ01vQXhKQ3BVaUduOHA5bmJ1bDdJTDlyRDdPbEFZV0N0OGx5VG9qWlg?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-groq-closes-650-million-funding-round-led-by-powerlaw-corp",
+      "date": "2026-06-30",
+      "type": "funding",
+      "providers": [
+        "groq"
+      ],
+      "models": [],
+      "headline": "Groq closes $650 million funding round led by Powerlaw Corp.",
+      "summary": "Groq has secured $650 million in a new financing round, highlighted by Powerlaw Corp., signaling strong investor confidence in its AI inference hardware and platform. This funding is expected to scale Groq's infrastructure and expand its capacity for hosting and serving AI models.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOWXZGblRnc1Z0NHR0ektQU2J5SW9rTEI5RllpRFQ3TEktX1B2SFNsYklkeWgza1dDdm9OOHdmeV9BZnF6UU5lMlR4b3luNUJ6ZWk2a2lZYjZCLVpCTVA2X0xHTHc5djB6R2RheEVCeDRuaE1zUnU0SlBtc05Bb2NELXNXUXBZcnV4dUgzNDlFa0tqb3RxWjc0NE9QbW1fRm9XVTExOW9fTlpVdmVUVGgxd2lUbVBKdERGQWFkSlNXOGFNd1BaSEVWTnFjem45VzM2QmNsaENNRDQ3akVwUWVv?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-groq-raises-approximately-647-million-to-scale-its-ai-infere",
+      "date": "2026-06-30",
+      "type": "funding",
+      "providers": [
+        "groq"
+      ],
+      "models": [],
+      "headline": "Groq raises approximately $647 million to scale its AI inference cloud infrastructure",
+      "summary": "Groq secured a substantial investment of approximately $647 million to accelerate development and deployment of its AI inference cloud platform. The funding emphasizes Groq's strategy to provide high-performance, Nvidia-independent inference solutions, enhancing competition in the AI hardware and cloud services market.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMidkFVX3lxTE9iSkU0SnhUb3BzeHJGM3ctQ29QNE9WVjVMeWhXT1JVMDJLdlBjdWl3YWJNS09ET2lueWxabjd0SHZKOXJMazVTRGNQTEx4MFM5R1JRTjVkdzNZeXRNZUJFVE13U1ZtMV8yRmg3N2MzUVBvTEl0SHc?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "inference",
+        "independent-hardware"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-launches-v4-in-mid-july-with-new-peak-time-api-pric",
+      "date": "2026-06-30",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "DeepSeek launches V4 in mid-July with new peak-time API pricing",
+      "summary": "DeepSeek announces the upcoming launch of its V4 model in mid-July 2026, introducing a new pricing tier for peak-time API usage. This reflects a strategic shift in how the company manages demand and monetizes high-performance access.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMingFBVV95cUxNNm9pZ2hSeXRXdVN2WmJOZll0MUpqRWQ3RGRZMnpTY2RHZnNqcmZ3dmRwNldCN3BjTVp2YVZpQk1lRXRteURtelFCZXB3bUlDb3libEl0Zi1GV2NHNGs1a1o1TXlZbi11XzN4OUxsNmh4SjBUWHNOQVNoTkxRR1J5SkVVdGxicmVqV3RCMGpJS21fUlBMQ0xwUEpOd3RXdw?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-announces-official-v4-release-for-mid-july-with-dou",
+      "date": "2026-06-30",
+      "type": "pricing_change",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/DeepSeek-V4"
+      ],
+      "headline": "DeepSeek announces official V4 release for mid-July with doubled peak-hour API pricing",
+      "summary": "DeepSeek is launching the official version of DeepSeek-V4 in mid-July and will implement a new pricing structure that doubles API costs during peak usage hours. This change reflects increased demand and operational costs, potentially influencing user behavior and adoption patterns for high-traffic applications.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMidkFVX3lxTE9DSklFbi1fY1FkdnlVWm9EN2RjS1Y3LXpsTVR1R1RiNklMVlk0Rk0xckpKeFhlTFA0LVBIWXNTLTBUOWdPN0Y0aHlYMENfMHRDTjE3Ti1iS2gtT1ljOFg1ZVVmZWM2SW9VbmFNcEdFMlBKTWtLMmc?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-partners-with-california-state-government-to-expan",
+      "date": "2026-06-29",
+      "type": "compute_partnership",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic partners with California state government to expand AI integration across agencies",
+      "summary": "Governor Newsom announced a new partnership with Anthropic to deploy AI capabilities across California state government operations. The collaboration aims to enhance public service efficiency, improve access to government resources, and establish responsible AI governance frameworks within state agencies.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOQjFnbWIyakoyUE1VY292NGNLLU0tMHk1Y2xKbWxVMXRnVmhtTkhreTBDenlpdVhiSThSVnVLNk5YdzhHRkozRF9Ua2VISENxSHhNeEdGb2xEQXVYbC10NEVWV3pxa2Q4cUdlZXEtUjRMZXhmS1ZwRVhTSWhoN2pMU0lpdVNIbVM4WGFZ0gGLAUFVX3lxTE5wR2VVZm91UmZxZnREWXlPcWVjZmMwLVU0dFpOUDNzM3JJTlkyLUpPckF6d3ZNV3huUUlubGlxeGJ4WVBOWDNBZkpBSVYtQ0NOVFhwdUE0TjZlazhUaEtFZmJtOHFsU3RSVWVDQU5VclZRRnlyc0FhdlFWUmNNS012RXU0YjN6c1ZSQVk?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "government",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-california-government-agencies-receive-50-discount-on-anthro",
+      "date": "2026-06-29",
+      "type": "pricing_change",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "California government agencies receive 50% discount on Anthropic's Claude AI through state partnership",
+      "summary": "Anthropic has entered a partnership with the State of California, offering a 50% discount on its Claude AI models to state agencies and local governments. This initiative, promoted by Governor Newsom's office, aims to accelerate AI adoption across public services while establishing a precedent for state-AI vendor collaborations.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMizAFBVV95cUxQclJUMGRpNm5IVHRnUmxqb0hGMmdMUmNEdXo2TDdHVndPSG9ZNnpQNFJSWnM2RmdmTXBYaEpSS1djVE5WcjhKbldXWGpTeER4RDlhY1loX2VwWHF1T1hucG9XVld3eWozTGVUVFpubHZPZVZWakRLclBQSWZ4MllDVnVKaU9lNUJsb1dqZUdBb2RQcTJpQnd5eklNRTJaM2R2TFF2Vlk1SjhiXzZ3ekRrSDVaR2JRazBVUUczeGRyWWNVWkluQmQ5MWpabFPSAdIBQVVfeXFMT25KMUMwSjhPdjNIaUxKdmtGZGI3ZHdwVy1PZVc1dEk5Y25WWkdhRUJ1UEJsQlo0ZW5IOE1NQTduMWRUdnpSMlktR09wMHU1ZzNLVmdXS3k0c1BydUY3VFRJSzJHVmJVMXJ0a0VydGNscVZBUjVNd09CVGN6dFo5V0NkS0pWUzFKcnhOWmxySl93eHY2SkFpR3hNYVBKY25EMEs1TXE5RkNZNVozQkY0TzgzR3dFWXZPdjVLZEplLXhqNVdSVEE0U3RRX3hXNDlKRDd3?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "government",
+        "enterprise",
+        "discount",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-openai-bipartisan-legislation-proposed-to-ban-ai-companies-from-sel",
+      "date": "2026-06-29",
+      "type": "regulatory_action",
+      "providers": [
+        "openai",
+        "anthropic",
+        "google",
+        "meta",
+        "xai",
+        "mistral",
+        "cohere",
+        "other"
+      ],
+      "models": [],
+      "headline": "Bipartisan legislation proposed to ban AI companies from selling health and location data",
+      "summary": "Senators Elizabeth Warren and Representative Mary Gay Scanlon introduced the Health and Location Data Protection Act, which would prohibit AI companies from selling Americans' health and location information to data brokers, including data shared with AI chatbots. The bill targets data practices of major AI providers and aims to strengthen consumer privacy protections in the AI era.",
+      "source_urls": [
+        "https://www.theverge.com/ai-artificial-intelligence/959033/health-location-data-protection-act-ai-warren-scanlon"
+      ],
+      "verified": false,
+      "tags": [
+        "privacy",
+        "regulation",
+        "data-protection",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-launches-v4-with-peak-hour-pricing-doubling-current",
+      "date": "2026-06-29",
+      "type": "pricing_change",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "DeepSeek launches V4 with peak hour pricing doubling current rates",
+      "summary": "DeepSeek is launching its V4 model in mid-July, introducing a dynamic pricing model where peak hour rates will be twice the current standard rates. This marks a shift toward usage-based pricing elasticity and reflects growing demand pressures on inference capacity.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMickFVX3lxTFBjdUhsQTVlVExiYnpqcXBFVUp2alU2MldVMjJCeXhZcXN5ZW4xa1JJakt4X2tpeWpSenpHQnU5emM4T1lZUmV3S21sOVNpQ3Fobi1yZ0VSZlNiLVp5RzgyMlpXbC1yaWM3VnVaa0Y0ekotdw?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-partners-with-california-state-government-to-provi",
+      "date": "2026-06-29",
+      "type": "compute_partnership",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic partners with California state government to provide AI tools to state agencies",
+      "summary": "Governor Newsom announced a first-of-its-kind partnership with Anthropic to integrate its AI tools across California state agencies, aiming to improve public services and operational efficiency. This marks a major expansion of Anthropic's footprint in the public sector.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMihwJBVV95cUxNNVdrb0JtdWt6OU1tU2FicENIa0R3SFBPaHVPYjJHQThPX1ZQR0dZNndHeEI1Nlo1eDVJMDJNQlJUOEcxZldnUUtGQVUyWEhrV29SMGhFMmpubEt6MWxUai0zdmluM1k4YTBNUVBkUmsyZUFwVXRpWVhpcDJKRnpBR1ppNjBMZXhoX0RNUTlOUERKenlyQkc4Tjd3aXh1ZHpzSV9wWGdvWlRDNHpsWUEwVE1BVS1ZVHYwVnNackQ0ejl4NElKVHpXS1NkX2VaMDA3TFRjX3kzVEloS3Q2S1Yzc1phekx0UjE1clFzQVN1NkZRb3VfMGZETWV3cXV6ZnNMQWUwSzNkOA?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "government",
+        "enterprise"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-raises-7-4-billion-to-accelerate-ai-agent-developme",
+      "date": "2026-06-29",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises $7.4 billion to accelerate AI agent development and more than double headcount",
+      "summary": "DeepSeek secures $7.4 billion in funding to scale its operations and accelerate development of AI agent technologies. The investment will support a massive hiring push, aiming to more than double the company's workforce.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMidkFVX3lxTE1tS2RJeWNhWTdtSzd4WkhJdmtZSzhwaW5XdzdyWldkSWQySFJuVTk5RDMxRERrLVhuWVBWNHZiRmNnSnhnbFV5MEV0SE11WmV4UUpZZmFaNDdvVFNKZ2pydVhMYS1Ec2VmZllJMUpoVGNMWW4tNXc?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "hiring",
+        "agent-development"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-launches-v4-model-with-peak-valley-api-pricing-in-m",
+      "date": "2026-06-29",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/DeepSeek-V4"
+      ],
+      "headline": "DeepSeek launches V4 model with Peak-Valley API pricing in mid-July",
+      "summary": "DeepSeek is launching its next-generation model, DeepSeek V4, in mid-July, coinciding with the implementation of a new Peak-Valley API pricing structure that differentiates costs based on usage demand periods.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMirgFBVV95cUxQNlZvTnY3S2VvcnQ1eWFMaThranJScExBbGVwSGRMWndPS01OaVVjd1FnYmctTXJXdWQtOEZMeExoNXlFRm82X3dhajhrRDN0SlpQSmhiVTdfTVdVbVZmTWJma1lKMTdONjFpUHRaNjk5ajlzYkFpMURiaFBuRG5uVGdaNlhIVU55cTYzdjBkYnRER1NYMU5mV1l0LUtoTzdfSThIMVloNUJqbGNmeVE?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-xai-launches-grok-4-5-claiming-performance-on-par-with-or-ex",
+      "date": "2026-06-29",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "xAI launches Grok 4.5, claiming performance on par with or exceeding Anthropic's Claude Opus",
+      "summary": "xAI, led by Elon Musk, has rolled out Grok 4.5, a new iteration of its flagship AI model. Musk asserts that Grok 4.5 matches or surpasses the performance of Anthropic's top-tier Claude Opus, signaling intensified competition in the high-end AI model market.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMihAFBVV95cUxOakhJZmdRTmhFUnRZc20tYnhCU29MYmk0Y1N2MUhEczdPcGZTTjRVcTVDbVVhWkJSUnRjY2VObUZ4RDViTnhkQWttVWpfNVZ4Wi1qTGhRc0VQOWcydVJfaVYteEc2LTU5S0N1MW5mZjZSbmR4Q3hKc3lxWlU0bWpIc2tKTFg?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "benchmark",
+        "competition"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-peking-university-and-deepseek-open-source-dspark-a-framewor",
+      "date": "2026-06-29",
+      "type": "open_source_release",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Peking University and DeepSeek open-source DSpark, a framework to improve LLM training and inference efficiency.",
+      "summary": "DeepSeek and Peking University jointly released DSpark, an open-source framework designed to enhance the efficiency of large language models during training and inference. This release aims to reduce computational overhead and improve scalability for LLM workloads.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxPTjl5TVJGMDVRNWktZUo4YTl3MERBZlU2Y21GTHMza3hCUzhLNnY1Q3RZVEhWeV93Zlo2OG5tSjFuT1lQcDEweVptM2dWbVNmTVNnSC11dzlfbkllbFh3d1JtVGQyRzF1SDhEcDd0VmxSS2FUTHJNS0dnVjNoYV91UWJqWkR2ZWN1bXRJTEtR?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "efficiency",
+        "research",
+        "collaboration"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-xai-launches-grok-4-5-an-upgraded-version-of-its-flagship-ai",
+      "date": "2026-06-29",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "xAI launches Grok 4.5, an upgraded version of its flagship AI model.",
+      "summary": "xAI has released Grok 4.5, enhancing its reasoning, multimodal, and agentic capabilities over previous versions. The model is now available across xAI's platforms, targeting broader enterprise and consumer applications.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMimgFBVV95cUxOczBSWGxSeVBRZ3k1Q1hOeWhsMVpPaVh5U3kzWjMzeWJXYVlEejNZTV9LMHh0bnhTRG5VN3RhR3BMNllnMDRTWDA5by1UQWNUdWZLMTl6UEwtZUh5b3c1NEd4aEUzemtOZnBHdEQ4N2JZNm1vaE94SXMtd2RwalFSb2p5WUVzV2lDZVJNSXEybVFnTGxSbHFxeEV3?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "update"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-announces-85-faster-ai-inference-without-flagship-c",
+      "date": "2026-06-29",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/*"
+      ],
+      "headline": "DeepSeek announces 85% faster AI inference without flagship chips",
+      "summary": "DeepSeek claims a breakthrough in model optimization enabling 85% faster inference speeds without reliance on high-end hardware, improving accessibility and efficiency for AI deployment.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOamdDN2VILWlTOFNjNUlnM3FuNHRxemstNTRSMXBoQUhtZUQ4eGlySUdLRW1uTGJ2eXJxTDh5SFhiY2JrT0YycG1BNzJ0SjFJTVBaSE9HM09kejBBLVMydWNBQ09nTFIzTHA4SllNZi1TSzA5SXNsdjRONGlOYldKUDBvSDYzdHBGSGV3eVF2cl9lRDEzbHp4djRrUWtJWFFucTNGME9ic2VLWVRlX0pSeThXamVfTFRSY2NSWDQzbmlRYWE4aVpVZktzS3JlQU1jWnd5QWFyV0JJTkFVWUxxT3BRaHJjb2NkLVpwetIB8gFBVV95cUxNVmtUVGJkcUVUUkVicXJtaGw1UDJLQlZhWF9ZU01tR1JESTVmRTRkX0tkZ1Eza2dJcGl0dTU2eUFDcUxYaXF2ajNDTHBKVmxIU0I4UGdLTGNDYlFGWnlEanBMbHNWS3NBU2ZoTmNkR181Y09KOG5LS01lemlBMXpZU1VpSFFSMWwtSWpmRDByRmtSakdIdG43N0hhQTNkNEZsZUFFWHBXRS1JbjlJd2J3YzZnRTdjZ2xOLU83dGxnWmR3SWUtY2Q5SlVvNWhsYnZOV3MyNktxWERDdTQwT0Y5ejBwaEZwaGdJcmF0ZDVGNkxQZw?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "optimization",
+        "efficiency",
+        "inference"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-xai-launches-grok-4-5-into-private-beta-at-spacex-and-tesla",
+      "date": "2026-06-29",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "xAI launches Grok 4.5 into private beta at SpaceX and Tesla",
+      "summary": "xAI has entered private beta testing of Grok 4.5, a next-generation model reportedly scaled to 1.5 trillion parameters, within SpaceX and Tesla. This signals an accelerated release cycle and deeper integration with Elon Musk’s ecosystem of companies.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMizwFBVV95cUxPV0s5dy1WNnNXVUNkb1NrQ3JucThXQ1lrMkYtWG9ZVnZ4cjFvdlFGUk5MYnZyd29FNVVMNXQtMXF4VmhldVRpazM1RWJFajZGMlZ3b0VmOXlfM2k0THlTSlM3UFhEUS1VeE9qUGV6LTNZVWVqZXp1TXM2RnRRLWltOGVJR2ZHRWd6TnFILTJBaFM4UUhQRnVvMm43R1VUNEZ3QnpMT0U4amluT3lZeTNXMUlSa19aQmhYTlVycmhSMWg4Mm92UTRhVjY4bWhTYnfSAdQBQVVfeXFMTmNfZjJZTFBlcVhLMEhtbE9KVkYwdnZ2amgxNThZWE1XV1pvZS1reF85UVliYU1vTXdScFNHbWFiUVFCQktFTzdUTC1EbjN5aFZnbXdZdTI5S3FJRG1yOVRhTnA4bHI5cGlBNmVOVDV6M2ctTlZ4a2paRkVtUS1KNXd2N3VsZDFuMk9TYzZqN0MydlRFeDJXTWpXYXBQYldEOU9FZlpJcHlfdHBjSi1vc1JFdWl4cTNvSE1yeVk5QXUwLUF5MC1ZNWwwckVBLTE2a3FSVlY?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "beta",
+        "enterprise-deployment"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-xai-announces-monthly-large-model-releases-with-grok-4-5-riv",
+      "date": "2026-06-29",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "xAI announces monthly large model releases with Grok 4.5 rivaling Anthropic's Opus in internal testing",
+      "summary": "Elon Musk announces that xAI's Grok 4.5 is already performing on par with Anthropic's Opus model during internal evaluations, and reveals a new strategy to release a new large model every month for the remainder of 2026. This aggressive cadence signals a major push to rapidly advance Grok's capabilities and competitiveness.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMimgFBVV95cUxPUXdla1JLbjRwRmplNy1acTZ3VzRrZnpUN1hFaGpsMmhDTEJZUUFhVEw3cEExNklvVlN0UXF3dVVxQ1V3Ql9UUktuM0NKT3lmLXhQaVZvbDNDVnJFc0dycktra05FZ3ZESGRHSkhoRWlTOEQwNXRnUTUwd3ZzaFp3RHU3WHE0RFpfY0tPR29oQlJFZU8yTXZTLWhB?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "roadmap"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-raises-50-billion-yuan-in-major-funding-round",
+      "date": "2026-06-29",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises 50 billion yuan in major funding round",
+      "summary": "DeepSeek secured a 50 billion yuan (approx. $7 billion) funding round, marking one of the largest single financings in the AI sector this year. This investment significantly boosts DeepSeek's resources for model development, infrastructure scaling, and market expansion.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMihgFBVV95cUxQY3NCUFFDLXI3a3VjVDFieTNpT0UzaUJWODYtV1FubHh1bVFMcmxxdmlrcVgzeTNMR003NkQtZTl3T2tKc0JObE1OTzNaZ3ZHVzJWRzBYLW1aXzJMdWQxSkVXcEs2MGNjWVE4U3ZESUxGaEdqYXlERWRzdU93eWVVbXZFV0lJQQ?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-openai-hp-inc-scales-strategic-partnership-with-openai-to-deploy-ai",
+      "date": "2026-06-28",
+      "type": "compute_partnership",
+      "providers": [
+        "openai",
+        "other"
+      ],
+      "models": [],
+      "headline": "HP Inc. scales strategic partnership with OpenAI to deploy AI across enterprise operations and customer experiences",
+      "summary": "HP Inc. expands its Frontier partnership with OpenAI to integrate AI capabilities into customer experiences, software development, and enterprise operations. This collaboration aims to accelerate AI adoption across HP's product and service offerings.",
+      "source_urls": [
+        "https://openai.com/index/hp-frontier-partnership"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-xai-elon-musk-leaks-internal-launch-of-grok-4-5-within-tesla-and",
+      "date": "2026-06-28",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "Elon Musk leaks internal launch of Grok 4.5 within Tesla and SpaceX",
+      "summary": "Elon Musk has revealed the internal deployment of Grok 4.5 across Tesla and SpaceX, indicating a new version of xAI's flagship model is entering operational use. This suggests imminent public availability and improvements over Grok 4.1, potentially enhancing reasoning, agentic capabilities, or multimodal functions.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMigAFBVV95cUxPLXlaNEVjZHRhUzdYZlkwelZvcE85cXljMUF0Q0RZQ1BGYlBiaFFWeHpzaXM4Z2tEMHFQWHhYckZ3cVhQRy00NV9GSEQzSjh0MEpHS1RoRVhJdzFUaVpiZXgwcXJOYXJ4VzgwZnM2SDFrOS1ueUZiM3E1SER0encyWA?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "enterprise-deployment"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-launches-dspark-boosting-generation-speed-by-85",
+      "date": "2026-06-28",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/DSpark"
+      ],
+      "headline": "DeepSeek launches DSpark, boosting generation speed by 85%",
+      "summary": "DeepSeek has introduced DSpark, a new model or optimization framework that improves generation speed by 85% according to its first post-funding research paper. This advancement enhances inference efficiency and could influence cost and scalability for downstream applications.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMif0FVX3lxTE9rZlpTU3NVYjdiRG9HYlh0UUNvckQ1WURlYmlfVEQ1TkRfX0hHQkNmUGNBMV8ycWVmUkZ6dVhCUTdWUGFvSFJ1bWptOG5uV1RPbkFWcHd0eml0cDZjU0RVbFFIdFIyYVI5UGlZZDVfQnRwSzJ2aXJYTzljaTRwSTg?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-raises-7-billion-in-funding-to-accelerate-expansion",
+      "date": "2026-06-27",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises $7 billion in funding to accelerate expansion and hiring",
+      "summary": "DeepSeek has secured $7 billion in funding, marking a strategic shift from idealism to aggressive growth. The capital will fuel large-scale hiring and expand its AI model development and infrastructure capabilities.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMib0FVX3lxTFAwazJLY2toUUFiMkY0X3BqTzM1Q1FDQVlYdGNicGNWc1o2ZVhMQlBBRDNHRkZoWmZxRENWNnl6MkJkU0lTYnVxNU51cHhZbkxIWktzNGVOMS1vc21GbHRrb2xYLXFkTzVCdG9Uc1NrYw?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-announces-major-funding-round-or-strategic-investme",
+      "date": "2026-06-27",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek announces major funding round or strategic investment",
+      "summary": "DeepSeek secures significant new funding or undergoes a strategic financial pivot that enhances its capacity to compete in the frontier AI model space. The investment reshapes the competitive landscape of the AI industry.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMie0FVX3lxTE9YemQ0bHBhejVONDRQODR1bUdvTDZwMUQ3cE1XY01xbjdSN0x1NEV1a0JKWXloYjIyUFFxTVBSS3VPZTFOLVBYNUtORHAwT29SeEVSMEt0azVyTk9oSlBaajNQVkNwV1RIV0l5dXhlVF9HeFJ6aktrM0tLTQ?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-nears-7-billion-funding-round-in-major-ai-investmen",
+      "date": "2026-06-27",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek nears $7 billion funding round in major AI investment deal",
+      "summary": "DeepSeek is close to finalizing a $7 billion funding round, marking one of the largest investments in an AI company to date. This historic deal underscores growing confidence in DeepSeek's technology and market potential, positioning it as a stronger competitor in the global AI landscape.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdnY3VEVEMVlPQUVJcFZ4dHpxU2NDQ21UQlFtMWZQLVpFOXBSRjItM19sSkFfdjVBMG9uUTIwUXVkd19EX280cFg1YW1jYk1RVHpqd3dyb0t1ZVczTlFiUzN1VlhvM3E4d3puVTAtWWtNVHRHOXJ5U1c0ekFQSFdsbklkOFlVUHVYaUxZUHNBRjZTWkVfLXB6eHRLUmlmRUFYWU02UUpvalFoSjRxci13eXNVWQ?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-raises-7-4-billion-in-funding-and-plans-major-hirin",
+      "date": "2026-06-26",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises $7.4 billion in funding and plans major hiring spree",
+      "summary": "DeepSeek has secured $7.4 billion in a new funding round, enabling a significant expansion of its team and resources. This positions the company for accelerated development and scaling of its AI models and infrastructure.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWVA1Zkw1X3R2N21oR1BRV28yeWFSV1RuN3ZlT21KZzh2RHFTTFpaaVBuSmduVHZUYl9ZR2EyRGlpMVJ1cWlmOFNCbDBqN2JRal93a2Y4MVcyaWlBSWxjeHJidVNCaVktNHVkUjFMVGJ0VXBrblBEcDRKak85cVRQQlhRU2NJaDBxR2hsX3lBSnRCLVFhWm4tcDRTYVBCcTBOcVItYW5MVWN6UlJoeGFlajdRNTFaOERobTB3?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-openai-and-broadcom-collaborate-on-jalapeno-ai-chip-developm",
+      "date": "2026-06-26",
+      "type": "infrastructure",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI and Broadcom collaborate on 'Jalapeño' AI chip development",
+      "summary": "OpenAI and Broadcom are jointly developing a custom AI chip named 'Jalapeño', aimed at improving inference efficiency and reducing dependency on third-party GPU suppliers. This strategic move signals a shift toward vertically integrated AI infrastructure, potentially lowering costs and increasing scalability for OpenAI's models.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiygFBVV95cUxQdlRzQm9vd0FkeDgzM2tJYXRzaXNfeDlOaWxHdXB0V2ZWUWt6S2JBSFQ3UHBsX3M4Z1hWa1FUNXVIaTh6ZTRoVDd5Mm5qZlNWbjFURFFFWnVadzhVS3h4c0pkX0l6Zk9tSWZ1VkNQMUZTWFJpX3B2VkduUVo1YTM5WTVjWTRCOUl3OEEyenUzS1JJR1ZyNlQ3MnplRGpZT3pOa1VUcGRoMlh6WkFkSVlfN3ZXQkw0c0M2QkJkR3E3VkgyOU16b1lsZVVB0gHQAUFVX3lxTE5MTVJxTk9XYWNxVzkzakNwdTMyQlF0bzJQRm5wc3hpN083eDFqRGlNYTlfMUU2eHJpbVpCQXFMaFA5RlhZd2JsRmlTVUtNdm1RUWduaEJ6b0laQ2Z3RGxXTEU1ZzlaNGpYOHdZbzBlYmVMMUNrME5BT21GM1I2QTZEY24yVWlVN3hnSUtwa2wydkk5WDA1WFBLQlRMeVlqWTdKYVY1aldtRTVvSzh2aTB3bXZBRHNkY3hiX0hKc0hhRWs0cG1MSW5uYjVVeWRVQVI?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "hardware",
+        "inference",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-announces-7-35-billion-funding-round-and-plans-to-d",
+      "date": "2026-06-25",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek announces $7.35 billion funding round and plans to double workforce",
+      "summary": "DeepSeek is preparing for significant expansion by doubling its workforce ahead of securing $7.35 billion in new funding. This substantial investment will likely accelerate the company's model development, infrastructure scaling, and market competitiveness.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNWV9ES3JUMDFqalB1a0oxSWNrRnk1d2FTZW5oWk1XV2xtcExJNzd6TUkyMDl1NjZlSHV4blFZWVZjY2ZzM2VuWUpVMlVXWkNSUnNwVW1ycnNPMEpNTERQRjJscjNCNk8xV0NuWGJtcFBvODNBUm51bUZNcnVhNWdSQUpzNVhpRkZpaFFz?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-raises-7-4-billion-in-first-external-funding-round-",
+      "date": "2026-06-25",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises $7.4 billion in first external funding round and plans to double staff",
+      "summary": "DeepSeek has secured $7.4 billion in its first external funding round, marking a major milestone in its growth. The company plans to use the capital to double its workforce, accelerating its AI development and scaling efforts.",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMicEFVX3lxTE9LQ2h1WTA3dXJFeFd2WGZQU1FpOFQtUGRRdHh6QkF6MjZpT0hlV0dsT2RMVk5kWnI5YThKdGk1c002RnJKTlIzYnpxZTRWRkhuaVluTUpIMWpfQ1hNdXNUdURlcnJfbzA5LTlZX2xYQXg?oc=5"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
     }
   ]
 }
