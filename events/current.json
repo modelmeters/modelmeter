@@ -7690,6 +7690,700 @@
       },
       "created_at": "2026-07-02",
       "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-venice-ai-raises-65m-led-by-dragonfly-achieving-unicorn-stat",
+      "date": "2026-07-02",
+      "type": "funding",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice AI raises $65M led by Dragonfly, achieving unicorn status",
+      "summary": "Venice AI, founded by Erik Voorhees, has secured $65 million in a funding round led by Dragonfly, marking its ascent to unicorn status. This investment strengthens its position in the competitive AI landscape and supports further development of its AI models and infrastructure.",
+      "source_urls": [
+        "https://crypto-economy.com/dragonfly-backs-erik-voorhees-venice-ai-in-65m-round-as-startup-hits-unicorn-status/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "funding",
+        "valuation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-venice-raises-65-million-at-1-billion-valuation-to-scale-pri",
+      "date": "2026-07-01",
+      "type": "funding",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice raises $65 million at $1 billion valuation to scale private, uncensored AI platform",
+      "summary": "Venice secured $65 million in funding at a $1 billion valuation to expand its private, uncensored AI infrastructure and services. The investment underscores growing demand for unrestricted AI platforms operating outside mainstream regulatory and content filters.",
+      "source_urls": [
+        "https://siliconangle.com/2026/07/01/venice-raises-65m-1b-valuation-private-uncensored-ai/"
+      ],
+      "verified": false,
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-amazon-nvidia-nemotron-and-openai-gpt-oss-models-become-available-o",
+      "date": "2026-07-01",
+      "type": "model_launch",
+      "providers": [
+        "amazon",
+        "nvidia",
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b",
+        "nvidia/nemotron-nano-9b-v2",
+        "nvidia/nemotron-nano-12b-v2",
+        "nvidia/nemotron-nano-30b",
+        "nvidia/nemotron-super-120b"
+      ],
+      "headline": "NVIDIA Nemotron and OpenAI GPT OSS models become available on Amazon Bedrock in AWS GovCloud (US)",
+      "summary": "Amazon Bedrock now supports NVIDIA's Nemotron and OpenAI's open-weight GPT OSS models in AWS GovCloud (US), enabling government and regulated customers to access frontier open-weight models in a compliant environment.",
+      "source_urls": [
+        "https://aws.amazon.com/blogs/machine-learning/run-nvidia-nemotron-and-openai-gpt-oss-models-on-amazon-bedrock-in-aws-govcloud-us/"
+      ],
+      "verified": false,
+      "tags": [
+        "government",
+        "open-weight",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-anthropic-u-s-government-lifts-ban-on-anthropic-restoring-access-to-fe",
+      "date": "2026-07-01",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-for-science"
+      ],
+      "headline": "U.S. government lifts ban on Anthropic, restoring access to federal AI programs; Anthropic launches Claude for Science",
+      "summary": "Following a federal court decision in June 2026 that blocked the Pentagon's ban, the U.S. government has lifted restrictions on Anthropic's participation in federal AI initiatives. Concurrently, Anthropic launched Claude for Science, a new AI model tailored for scientific research and discovery.",
+      "source_urls": [
+        "https://erp.today/anthropics-ban-lift-and-claude-science-launch-test-the-new-rules-of-ai-access/"
+      ],
+      "verified": false,
+      "tags": [
+        "regulatory",
+        "science",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-xai-launches-grok-1-5t-and-plans-grok-2t-launch-in-august-20",
+      "date": "2026-07-01",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-1.5t",
+        "xai/grok-2t"
+      ],
+      "headline": "xAI launches Grok-1.5T and plans Grok-2T launch in August 2026",
+      "summary": "xAI announces an aggressive model rollout, releasing a 1.5 trillion-parameter Grok version in July 2026 and planning a 2 trillion-parameter version in August. These launches signal rapid scaling of xAI's flagship model, enhancing its capabilities and competitive stance against other frontier AI models.",
+      "source_urls": [
+        "https://cryptobriefing.com/xai-grok-models-1-5t-2t-rollout/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "scaling"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-deepseek-raises-7-billion-in-record-breaking-china-ai-fundin",
+      "date": "2026-07-01",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises $7 billion in record-breaking China AI funding round",
+      "summary": "DeepSeek secured $7 billion in a historic domestic funding round, marking one of the largest AI investments in China to date. The capital will be directed toward scaling model development and building sovereign computing infrastructure to reduce reliance on foreign hardware.",
+      "source_urls": [
+        "https://pandaily.com/deepseek-record-funding-domestic-compute-agi-jul2026"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "infrastructure",
+        "china"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-anthropic-u-s-lifts-export-ban-on-anthropic-s-advanced-ai-models-fable",
+      "date": "2026-07-01",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/fable-5",
+        "anthropic/mythos"
+      ],
+      "headline": "U.S. lifts export ban on Anthropic's advanced AI models Fable and Mythos",
+      "summary": "The U.S. government has lifted export restrictions on Anthropic's advanced AI models, including Fable and Mythos, restoring full global access. This follows a court-ordered temporary block of the ban and resolves a legal standoff that had limited international availability of these models.",
+      "source_urls": [
+        "https://www.bbc.com/news/articles/cdr42623e1do"
+      ],
+      "verified": false,
+      "tags": [
+        "export-control",
+        "regulation",
+        "global-access",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-deepseek-introduces-utility-style-pricing-for-deepseek-v4",
+      "date": "2026-07-01",
+      "type": "pricing_change",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek introduces utility-style pricing for DeepSeek V4",
+      "summary": "DeepSeek has launched a utility-based pricing model for its DeepSeek V4 model, marking a departure from traditional subscription or tiered pricing and positioning itself competitively beyond China's current LLM price war.",
+      "source_urls": [
+        "https://www.digitimes.com/news/a20260701PD207/deepseek-llm-api-price-gpu.html"
+      ],
+      "verified": false,
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-launches-claude-3-5-sonnet-and-updated-opus-4-8-wi",
+      "date": "2026-06-30",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-3.5-sonnet",
+        "anthropic/claude-3.7-sonnet",
+        "anthropic/claude-4-opus"
+      ],
+      "headline": "Anthropic launches Claude 3.5 Sonnet and updated Opus 4.8 with improved agentic coding performance and refined pricing",
+      "summary": "Anthropic has released new iterations of its Claude models, including Claude 3.5 Sonnet and Opus 4.8, featuring enhanced agentic coding capabilities and updated API pricing. Benchmarks show significant improvements in code generation and execution tasks, with adjusted cost-performance ratios influencing enterprise adoption and deployment strategies.",
+      "source_urls": [
+        "https://www.marktechpost.com/2026/06/30/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/"
+      ],
+      "verified": false,
+      "tags": [
+        "coding",
+        "benchmark",
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-cohere-bell-canada-partners-with-cohere-and-hypertec-to-advance-ai-",
+      "date": "2026-06-30",
+      "type": "partnership",
+      "providers": [
+        "cohere",
+        "other"
+      ],
+      "models": [],
+      "headline": "Bell Canada partners with Cohere and Hypertec to advance AI infrastructure and services in Canada",
+      "summary": "Bell Canada has entered a strategic partnership with AI firm Cohere and technology integrator Hypertec to develop and deploy AI solutions across Canadian enterprises. This collaboration aims to enhance local AI capabilities, including language models tailored for Canadian industries and secure government-compliant infrastructure.",
+      "source_urls": [
+        "https://simplywall.st/stocks/ca/telecom/tsx-bce/bce-shares/news/bell-canada-tsxbce-enters-canadian-ai-partnership-with-coher"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "canada",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-launches-claude-sonnet-5-its-most-capable-son-mode",
+      "date": "2026-06-30",
+      "type": "model_launch",
+      "providers": [
+        "anthropic",
+        "amazon"
+      ],
+      "models": [
+        "anthropic/claude-sonnet-5"
+      ],
+      "headline": "Anthropic launches Claude Sonnet 5, its most capable Son游戏副本 model, on Amazon Bedrock",
+      "summary": "Claude Sonnet 5 is the first Sonnet-class model of Anthropic's latest generation, offering a significant capability improvement. It is now available on Amazon Bedrock and the Claude Platform on AWS, expanding access for enterprise and developer use cases.",
+      "source_urls": [
+        "https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-on-aws-anthropics-most-capable-sonnet-model/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "aws",
+        "enterprise"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-launches-claude-science-a-specialized-ai-workbench",
+      "date": "2026-06-30",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-science"
+      ],
+      "headline": "Anthropic launches Claude Science, a specialized AI workbench for scientific research.",
+      "summary": "Anthropic has launched Claude Science, an AI workbench designed specifically for scientists, offering tools and workflows tailored to research and experimentation. This expands Anthropic's vertical-specific AI offerings into the scientific domain.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-science-ai-workbench"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "science",
+        "enterprise"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-groq-secures-approximately-647-million-in-funding-to-scale-a",
+      "date": "2026-06-30",
+      "type": "funding",
+      "providers": [
+        "groq"
+      ],
+      "models": [],
+      "headline": "Groq secures approximately $647 million in funding to scale AI inference cloud independent of Nvidia",
+      "summary": "Groq has raised around $647 million to accelerate development of its AI inference infrastructure, positioning itself as a scalable alternative to GPU-dominated platforms. The investment underscores growing demand for high-performance, non-Nvidia AI computing solutions.",
+      "source_urls": [
+        "https://finance.biggo.com/news/04b9cc38-1ab5-45cc-93ba-a6eb986c1dd3"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "inference",
+        "funding"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-launches-v4-model-with-new-peak-time-api-pricing",
+      "date": "2026-06-30",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "DeepSeek launches V4 model with new peak-time API pricing",
+      "summary": "DeepSeek is launching its V4 model in mid-July 2026, introducing a new pricing structure that includes peak-time rates for API access. This marks a strategic shift in how the company monetizes high-demand usage periods.",
+      "source_urls": [
+        "https://technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "pricing"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-doubles-peak-hour-api-pricing-with-launch-of-deepse",
+      "date": "2026-06-30",
+      "type": "pricing_change",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek doubles peak-hour API pricing with launch of DeepSeek V4 in mid-July 2026",
+      "summary": "DeepSeek is launching the official version of its DeepSeek V4 model in mid-July 2026, accompanied by a significant increase in peak-hour API pricing. The price doubling reflects higher compute demands and positions the model for premium, high-performance use cases.",
+      "source_urls": [
+        "https://pandaily.com/deepseek-v4-official-july-peak-pricing-jun2026"
+      ],
+      "verified": false,
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-xai-launches-grok-4-5-matching-claude-opus-performance-with-",
+      "date": "2026-06-29",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "xAI launches Grok 4.5 matching Claude Opus performance with commitment to monthly releases",
+      "summary": "xAI has released Grok 4.5, a new AI model that achieves performance parity with Anthropic's Claude Opus. The company also announced plans to release new models monthly through the end of 2026, signaling an accelerated development cadence.",
+      "source_urls": [
+        "https://finance.biggo.com/news/0bf51581-7534-4d9a-b15d-9923325bb6d7"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "performance"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-offers-50-discount-on-claude-for-california-agenci",
+      "date": "2026-06-29",
+      "type": "pricing_change",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Anthropic offers 50% discount on Claude for California agencies and localities",
+      "summary": "As part of a partnership with the state of California, Anthropic is providing a 50% discount on access to its Claude AI models for state agencies and local governments, expanding AI adoption in the public sector.",
+      "source_urls": [
+        "https://www.foxbusiness.com/politics/newsoms-office-touts-anthropic-partnership-50-discount-claude-ai-california-agencies-localities"
+      ],
+      "verified": false,
+      "tags": [
+        "government",
+        "discount",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-senator-elizabeth-warren-and-representative-mary-gay-scanlon",
+      "date": "2026-06-29",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic",
+        "openai",
+        "other"
+      ],
+      "models": [],
+      "headline": "Senator Elizabeth Warren and Representative Mary Gay Scanlon introduce legislation to ban AI companies from selling health and location data.",
+      "summary": "A proposed bill, the Health and Location Data Protection Act, aims to prohibit data brokers and AI companies from selling Americans' health and location information, including data shared with AI chatbots like Claude or ChatGPT. This would impose new restrictions on how AI providers can use sensitive user inputs.",
+      "source_urls": [
+        "https://www.theverge.com/ai-artificial-intelligence/959033/health-location-data-protection-act-ai-warren-scanlon"
+      ],
+      "verified": false,
+      "tags": [
+        "regulation",
+        "data-privacy",
+        "healthcare",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-launches-v4-model-with-peak-hour-pricing-doubling-c",
+      "date": "2026-06-29",
+      "type": "pricing_change",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek launches V4 model with peak hour pricing doubling current rates",
+      "summary": "DeepSeek is launching its V4 model in mid-July, introducing a dynamic pricing model that doubles costs during peak usage hours. This marks a strategic shift in pricing strategy, potentially influencing how AI providers manage capacity and demand.",
+      "source_urls": [
+        "https://cryptobriefing.com/deepseek-v4-launch-peak-hour-pricing/"
+      ],
+      "verified": false,
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-xai-grok-4-5-enters-private-beta-at-spacex-and-tesla",
+      "date": "2026-06-29",
+      "type": "model_launch",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "Grok 4.5 enters private beta at SpaceX and Tesla",
+      "summary": "xAI has launched Grok 4.5 into private beta deployment at SpaceX and Tesla, signaling an accelerated model rollout cycle. The new version is based on a 1.5 trillion-parameter architecture, indicating significant scale and performance improvements.",
+      "source_urls": [
+        "https://www.freepressjournal.in/tech/grok-45-enters-private-beta-at-spacex-tesla-as-xai-signals-faster-ai-rollout-cycle-with-15t-model"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "beta",
+        "enterprise-deployment"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-openai-hp-inc-scales-openai-frontier-partnership-to-deploy-ai-acros",
+      "date": "2026-06-28",
+      "type": "partnership",
+      "providers": [
+        "openai",
+        "other"
+      ],
+      "models": [],
+      "headline": "HP Inc. scales OpenAI Frontier partnership to deploy AI across customer experiences, software development, and enterprise operations",
+      "summary": "HP Inc. is expanding its strategic partnership with OpenAI to integrate AI capabilities more deeply into its customer experiences, software development pipelines, and enterprise operations. This collaboration aims to enhance HP's product and service offerings through broader deployment of OpenAI's models.",
+      "source_urls": [
+        "https://openai.com/index/hp-frontier-partnership"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-us-allows-partial-release-of-anthropic-s-mythos-ai-model",
+      "date": "2026-06-27",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/mythos"
+      ],
+      "headline": "US allows partial release of Anthropic's Mythos AI model",
+      "summary": "U.S. authorities have permitted the limited release of Anthropic's Mythos AI model, indicating a conditional easing of prior restrictions. This follows a history of export controls and legal challenges involving Anthropic's access to government and military applications.",
+      "source_urls": [
+        "https://www.dw.com/en/us-allows-partial-release-of-anthropics-mythos-ai-model/a-77732252"
+      ],
+      "verified": false,
+      "tags": [
+        "export-control",
+        "regulation",
+        "mythos",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-trump-administration-permits-anthropic-to-release-mythos-mod",
+      "date": "2026-06-27",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/mythos"
+      ],
+      "headline": "Trump administration permits Anthropic to release Mythos model to select U.S. organizations",
+      "summary": "Following prior restrictions and legal challenges, the Trump administration has authorized Anthropic to release its Mythos model to a limited set of U.S. organizations, signaling a shift in federal AI access policy. This decision follows a June 2026 court ruling that temporarily blocked the government's ban on Anthropic and its designation as a supply-chain risk.",
+      "source_urls": [
+        "https://www.wired.com/story/anthropic-restores-access-to-mythos/"
+      ],
+      "verified": false,
+      "tags": [
+        "government",
+        "regulation",
+        "major",
+        "restricted-release"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-releases-mythos-ai-to-trusted-us-organizations-fol",
+      "date": "2026-06-26",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/mythos"
+      ],
+      "headline": "Anthropic releases Mythos AI to trusted US organizations following regulatory approval",
+      "summary": "Anthropic has been authorized by the US government to release its new AI model, Mythos, to a select group of trusted US organizations. This controlled release suggests the model may be subject to export controls or security review protocols, indicating its potential use in sensitive or strategic applications.",
+      "source_urls": [
+        "https://www.reuters.com/technology/us-releases-anthropic-model-mythos-some-us-companies-semafor-reports-2026-06-26/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "regulatory",
+        "controlled-release"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
     }
   ]
 }
