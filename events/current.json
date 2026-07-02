@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "snapshot_date": "2026-06-30",
+  "snapshot_date": "2026-07-02",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -4758,6 +4758,2938 @@
       },
       "created_at": "2026-06-30",
       "updated_at": "2026-06-30"
+    },
+    {
+      "id": "2023-02-anthropic-partners-with-google-cloud-to-deliver-reliable-and",
+      "date": "2023-02-03",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "google"
+      ],
+      "models": [],
+      "headline": "Anthropic partners with Google Cloud to deliver reliable and responsible AI",
+      "summary": "Anthropic announced a strategic partnership with Google Cloud to leverage its infrastructure for developing and deploying AI models. This collaboration aims to enhance the reliability and responsibility of AI systems through Google's scalable cloud resources and security framework.",
+      "source_urls": [
+        "https://www.prnewswire.com/news-releases/anthropic-forges-partnership-with-google-cloud-to-help-deliver-reliable-and-responsible-ai-301738512.html"
+      ],
+      "verified": false,
+      "tags": [
+        "strategic-partnership",
+        "infrastructure",
+        "responsible-ai",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-07-anthropic-sap-invests-in-aleph-alpha-anthropic-and-cohere-as-part-of-1",
+      "date": "2023-07-18",
+      "type": "funding",
+      "providers": [
+        "anthropic",
+        "cohere",
+        "other"
+      ],
+      "models": [],
+      "headline": "SAP invests in Aleph Alpha, Anthropic, and Cohere as part of $1+ billion AI initiative",
+      "summary": "SAP announced strategic investments in AI companies Aleph Alpha, Anthropic, and Cohere to advance its vision for Business AI, complementing a $1+ billion commitment from Sapphire Ventures. The move signals a major enterprise software player's push to integrate cutting-edge AI across business applications.",
+      "source_urls": [
+        "https://news.sap.com/2023/07/generative-ai-investments-aleph-alpha-anthropic-cohere/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise-ai",
+        "strategic-investment",
+        "partnership",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-08-anthropic-lg-cns-makes-strategic-investment-in-anthropic",
+      "date": "2023-08-07",
+      "type": "funding",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "LG CNS makes strategic investment in Anthropic",
+      "summary": "South Korean IT services subsidiary LG CNS announces a strategic investment in AI startup Anthropic, marking a significant international corporate commitment to the company.",
+      "source_urls": [
+        "https://pulse.mk.co.kr/news/english/10802234"
+      ],
+      "verified": false,
+      "tags": [
+        "strategic-investment",
+        "korea",
+        "anthropic-partner"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-08-anthropic-partners-with-skt-to-expand-ai-capabilities-and-re",
+      "date": "2023-08-15",
+      "type": "partnership",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic partners with SKT to expand AI capabilities and regional deployment",
+      "summary": "Anthropic announces a strategic partnership with SKT, leveraging SKT's infrastructure and regional presence to enhance the deployment and scalability of Anthropic's AI models in Asia. This collaboration aims to accelerate enterprise AI adoption and improve localized AI services.",
+      "source_urls": [
+        "https://www.anthropic.com/news/skt-partnership-announcement"
+      ],
+      "verified": false,
+      "tags": [
+        "asia",
+        "telecom",
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-09-anthropic-launches-claude-pro-a-paid-subscription-tier-with-",
+      "date": "2023-09-07",
+      "type": "pricing_change",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches Claude Pro, a paid subscription tier with higher message limits and early access to features.",
+      "summary": "Anthropic introduced Claude Pro as a paid version of its AI assistant, offering users higher message limits, priority access during peak times, and early availability of new features and model updates compared to the free tier.",
+      "source_urls": [
+        "https://mashable.com/article/anthropic-claude-pro-paid-version-chatgpt-rival"
+      ],
+      "verified": false,
+      "tags": [
+        "subscription",
+        "tier",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-10-anthropic-universal-music-group-sues-anthropic-for-alleged-copyright-i",
+      "date": "2023-10-23",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Universal Music Group sues Anthropic for alleged copyright infringement involving AI training on lyrics",
+      "summary": "Universal Music Group, along with other music industry rights holders, filed a lawsuit against Anthropic alleging that its AI models were trained on copyrighted music lyrics without authorization. The suit raises critical legal questions about fair use, data provenance, and intellectual property in generative AI development.",
+      "source_urls": [
+        "https://www.musicbusinessworldwide.com/blatant-plagiarism-5-key-takeaways-from-universals-lyrics-lawsuit-against-ai-unicorn-anthropic/"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "litigation",
+        "music",
+        "training-data",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-10-google-invests-2-billion-in-anthropic-to-support-development",
+      "date": "2023-10-27",
+      "type": "funding",
+      "providers": [
+        "google",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Google invests $2 billion in Anthropic to support development of Claude AI models",
+      "summary": "In October 2023, Google committed $2 billion in investment to Anthropic, the developer of the Claude AI model family. This strategic funding aimed to strengthen collaboration between the two companies in advancing large language model development and responsible AI deployment.",
+      "source_urls": [
+        "https://decrypt.co/203563/google-follows-400-million-dollar-investment-in-anthropic-with-2-billion"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "strategic-investment"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-11-google-expands-partnership-with-anthropic-to-accelerate-ai-d",
+      "date": "2023-11-08",
+      "type": "partnership",
+      "providers": [
+        "google",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Google expands partnership with Anthropic to accelerate AI development",
+      "summary": "Google has deepened its collaboration with Anthropic, building on its prior investment and cloud partnership. This expansion follows announcements of major AI alliances like Microsoft-Oracle, signaling intensified competition in the AI infrastructure and model development space.",
+      "source_urls": [
+        "https://siliconangle.com/2023/11/08/google-expands-anthropic-partnership-microsoft-oracle-detail-ai-collaboration/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "strategic-partnership",
+        "cloud-compute"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-01-anthropic-responds-to-universal-music-group-s-copyright-infr",
+      "date": "2024-01-22",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic responds to Universal Music Group's copyright infringement lawsuit",
+      "summary": "Anthropic has formally responded to the lawsuit filed by Universal Music Group and other music publishers over alleged copyright infringement in AI model training. The response outlines Anthropic's legal defenses and positions on fair use, training data, and copyright law as applied to generative AI.",
+      "source_urls": [
+        "https://www.musicbusinessworldwide.com/ai-firm-anthropic-hits-back-against-universals-ai-copyright-infringement-lawsuit/"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "legal",
+        "music",
+        "fair-use",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-02-anthropic-music-publishers-sue-anthropic-alleging-ai-trained-on-copyri",
+      "date": "2024-02-15",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Music publishers sue Anthropic alleging AI trained on copyrighted lyrics",
+      "summary": "Multiple music publishers filed a copyright infringement lawsuit against Anthropic, alleging that its AI models were trained on copyrighted song lyrics without authorization. This marks an escalation in the ongoing legal challenges facing AI companies over training data provenance.",
+      "source_urls": [
+        "https://www.musicbusinessworldwide.com/anthropic-trained-its-ai-to-rip-off-copyrighted-lyrics-music-publishers-allege-in-escalating-court-battle/"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "litigation",
+        "music",
+        "legal"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-03-anthropic-claude-3-haiku-becomes-available-on-amazon-bedrock",
+      "date": "2024-03-13",
+      "type": "model_launch",
+      "providers": [
+        "anthropic",
+        "amazon"
+      ],
+      "models": [
+        "anthropic/claude-3-haiku"
+      ],
+      "headline": "Claude 3 Haiku becomes available on Amazon Bedrock",
+      "summary": "Anthropic's lightweight Claude 3 Haiku model is now accessible to developers and enterprises through Amazon Bedrock, enabling AWS customers to integrate the model into their applications without managing infrastructure.",
+      "source_urls": [
+        "https://aws.amazon.com/blogs/aws/anthropics-claude-3-haiku-model-is-now-available-in-amazon-bedrock/"
+      ],
+      "verified": false,
+      "tags": [
+        "model-launch",
+        "aws",
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-03-amazon-invests-2-75-billion-in-anthropic-in-largest-venture-",
+      "date": "2024-03-27",
+      "type": "funding",
+      "providers": [
+        "amazon",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Amazon invests $2.75 billion in Anthropic in largest venture investment to date",
+      "summary": "Amazon has committed $2.75 billion to AI startup Anthropic as part of its strategic expansion in artificial intelligence. This marks Amazon's largest venture investment yet and strengthens its position in the AI race, complementing its existing cloud and infrastructure capabilities. The funding will support Anthropic's model development and scaling efforts.",
+      "source_urls": [
+        "https://www.cnbc.com/2024/03/27/amazon-spends-2point7b-on-startup-anthropic-in-largest-venture-investment.html"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "cloud-partnership",
+        "strategic-investment"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-04-anthropic-s-claude-3-opus-becomes-available-on-amazon-bedroc",
+      "date": "2024-04-16",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "amazon"
+      ],
+      "models": [
+        "anthropic/claude-3-opus"
+      ],
+      "headline": "Anthropic's Claude 3 Opus becomes available on Amazon Bedrock",
+      "summary": "The flagship Claude 3 Opus model is now accessible to AWS customers via Amazon Bedrock, enabling enterprises to integrate high-performance AI into their workflows using AWS's managed infrastructure.",
+      "source_urls": [
+        "https://aws.amazon.com/blogs/aws/anthropics-claude-3-opus-model-on-amazon-bedrock/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "major",
+        "cloud-integration"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-05-anthropic-launches-iphone-app-and-new-premium-plan-for-busin",
+      "date": "2024-05-01",
+      "type": "pricing_change",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches iPhone app and new premium plan for businesses",
+      "summary": "Anthropic has released a dedicated iPhone application, expanding mobile access to its AI services, alongside introducing a new premium subscription tier tailored for business customers. This move enhances enterprise accessibility and signals a strategic push into the mobile and business markets.",
+      "source_urls": [
+        "https://techcrunch.com/2024/05/01/anthropic-launches-a-new-premium-plan-aimed-at-businesses/"
+      ],
+      "verified": false,
+      "tags": [
+        "mobile-app",
+        "enterprise",
+        "subscription",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-07-anthropic-releases-official-claude-app-for-android",
+      "date": "2024-07-16",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic releases official Claude app for Android",
+      "summary": "Anthropic launched a dedicated mobile application for its AI assistant, Claude, on the Android platform, expanding mobile access beyond iOS and web interfaces.",
+      "source_urls": [
+        "https://techcrunch.com/2024/07/16/anthropic-releases-claude-app-for-android/"
+      ],
+      "verified": false,
+      "tags": [
+        "mobile",
+        "app-launch",
+        "android"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-07-anthropic-launches-vc-fund-leveraging-claude-to-recommend-in",
+      "date": "2024-07-17",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Anthropic launches VC fund leveraging Claude to recommend investment deals",
+      "summary": "Anthropic has launched a venture capital fund in collaboration with its investor, utilizing its Claude AI system to analyze and recommend potential investment opportunities. This marks a strategic expansion of Anthropic's role in the AI ecosystem, applying its technology not only to enterprise customers but also to venture investing.",
+      "source_urls": [
+        "https://observer.com/2024/07/anthropic-menlo-venture-ai-fund/"
+      ],
+      "verified": false,
+      "tags": [
+        "strategic-expansion",
+        "ai-vc",
+        "anthropic-ventures",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-08-anthropic-files-motion-to-limit-universal-copyright-lawsuit-",
+      "date": "2024-08-19",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic files motion to limit Universal copyright lawsuit to fair use question",
+      "summary": "Anthropic has asked the court to narrow the legal battle with Universal Music Group by pruning claims beyond the core issue of whether training AI models on copyrighted works constitutes fair use. This motion aims to focus the case on a foundational legal question for the AI industry.",
+      "source_urls": [
+        "https://www.musicbusinessworldwide.com/anthropic-asks-court-to-prune-universal-lawsuit-to-focus-court-battle-on-whether-it-is-fair-use-to-train-ai-using-copyrighted-works/"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "fair-use",
+        "litigation",
+        "music",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-08-anthropic-authors-sue-anthropic-for-copyright-infringement-over-ai-tra",
+      "date": "2024-08-20",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Authors sue Anthropic for copyright infringement over AI training practices",
+      "summary": "A group of authors has filed a lawsuit against Anthropic, alleging that the company used copyrighted literary works to train its AI models without permission. The suit raises significant questions about fair use and intellectual property in large-scale AI training.",
+      "source_urls": [
+        "https://www.theguardian.com/technology/article/2024/aug/20/anthropic-ai-lawsuit-author"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "litigation",
+        "legal-challenge"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-08-anthropic-class-action-lawsuit-filed-against-anthropic-by-authors-over",
+      "date": "2024-08-20",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Class-action lawsuit filed against Anthropic by authors over copyright infringement in AI training",
+      "summary": "A class-action lawsuit was filed against Anthropic by authors alleging copyright infringement related to the training of its AI models. The suit claims unauthorized use of copyrighted literary works to train large language models without compensation or permission.",
+      "source_urls": [
+        "https://www.cnbc.com/2024/08/20/amazon-backed-anthropic-hit-with-class-action-lawsuit-over-copyright-infringement.html"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "litigation",
+        "class-action",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-09-anthropic-launches-claude-enterprise-with-enhanced-security-",
+      "date": "2024-09-04",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-enterprise"
+      ],
+      "headline": "Anthropic launches Claude Enterprise with enhanced security and admin controls",
+      "summary": "Anthropic introduced Claude Enterprise, a new tier designed for large organizations, featuring improved security, administrative controls, and compliance capabilities. This launch marks a strategic push to capture enterprise customers with tailored AI solutions.",
+      "source_urls": [
+        "https://www.ciodive.com/news/anthropic-claude-enterprise-plan-pricing-features/726040/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "security",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-09-anthropic-launches-claude-enterprise-plan-with-enhanced-secu",
+      "date": "2024-09-04",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-enterprise"
+      ],
+      "headline": "Anthropic launches Claude Enterprise plan with enhanced security and admin controls",
+      "summary": "Anthropic introduced Claude Enterprise, a new plan tailored for business customers, featuring advanced security, compliance, and administrative capabilities. This launch expands Anthropic's enterprise offerings beyond existing tiers, targeting large organizations with strict data governance needs.",
+      "source_urls": [
+        "https://www.computerworld.com/article/3504810/anthropic-launches-the-claude-enterprise-plan.html"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "security",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-09-anthropic-floats-40-billion-valuation-in-new-funding-talks",
+      "date": "2024-09-23",
+      "type": "funding",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic floats $40 billion valuation in new funding talks",
+      "summary": "In September 2024, Anthropic was reported to be in funding discussions with a proposed valuation of $40 billion. This reflects investor interest in the company's growth and model development at that stage, preceding later, much larger funding rounds at higher valuations.",
+      "source_urls": [
+        "https://www.theinformation.com/articles/openai-rival-anthropic-has-floated-40-billion-valuation-in-early-talks-about-new-funding"
+      ],
+      "verified": false,
+      "tags": [
+        "funding-round",
+        "valuation-milestone"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-09-amazon-uk-regulator-approves-amazon-s-4-billion-investment-in-anthr",
+      "date": "2024-09-27",
+      "type": "funding",
+      "providers": [
+        "amazon",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "UK regulator approves Amazon's $4 billion investment in Anthropic",
+      "summary": "The UK's Competition and Markets Authority has approved Amazon's previously announced $4 billion investment in Anthropic, clearing a key regulatory hurdle. This investment strengthens Amazon's position in the AI race via Anthropic and supports Anthropic's independent development path.",
+      "source_urls": [
+        "https://the-decoder.com/amazons-4-billion-investment-in-anthropic-gets-green-light-from-uk-regulator/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "regulatory-approval",
+        "strategic-investment"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-10-anthropic-launches-message-batches-api-for-claude",
+      "date": "2024-10-09",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches Message Batches API for Claude",
+      "summary": "Anthropic introduced the Message Batches API, enabling developers to submit multiple message requests to Claude in a single batch. This improves efficiency for high-volume use cases and streamlines integration into applications requiring asynchronous or bulk processing.",
+      "source_urls": [
+        "https://www.developer-tech.com/news/anthropic-launches-message-batches-api-for-claude/"
+      ],
+      "verified": false,
+      "tags": [
+        "api-launch",
+        "developer-tools",
+        "batch-processing"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-11-anthropic-fine-tuning-for-anthropic-s-claude-3-haiku-model-becomes-gen",
+      "date": "2024-11-01",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic",
+        "amazon"
+      ],
+      "models": [
+        "anthropic/claude-3-haiku"
+      ],
+      "headline": "Fine-tuning for Anthropic's Claude 3 Haiku model becomes generally available on Amazon Bedrock",
+      "summary": "Developers can now fine-tune Anthropic's Claude 3 Haiku model directly within Amazon Bedrock, enabling customized model behavior for specific use cases. This expands enterprise capabilities on AWS's managed ML platform.",
+      "source_urls": [
+        "https://aws.amazon.com/blogs/aws/fine-tuning-for-anthropics-claude-3-haiku-model-in-amazon-bedrock-is-now-generally-available/"
+      ],
+      "verified": false,
+      "tags": [
+        "fine-tuning",
+        "enterprise",
+        "aws",
+        "bedrock",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-11-anthropic-uk-competition-regulator-approves-alphabet-s-investment-in-a",
+      "date": "2024-11-19",
+      "type": "funding",
+      "providers": [
+        "anthropic",
+        "google"
+      ],
+      "models": [],
+      "headline": "UK competition regulator approves Alphabet's investment in Anthropic",
+      "summary": "The UK Competition and Markets Authority has cleared Alphabet's investment in Anthropic, allowing Google's parent company to proceed with its financial backing of the AI startup. This regulatory approval is a key step in the funding process and underscores the growing strategic importance of AI safety and competition in the foundation model space.",
+      "source_urls": [
+        "https://techcrunch.com/2024/11/19/uk-competition-regulator-clears-alphabets-investment-in-anthropic/"
+      ],
+      "verified": false,
+      "tags": [
+        "regulatory-approval",
+        "strategic-investment",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-11-amazon-makes-major-additional-investment-in-anthropic-expand",
+      "date": "2024-11-22",
+      "type": "funding",
+      "providers": [
+        "amazon",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Amazon makes major additional investment in Anthropic, expanding strategic partnership",
+      "summary": "Amazon has significantly increased its financial commitment to Anthropic, marking a strategic deepening of their AI alliance. This move parallels Microsoft's long-standing partnership with OpenAI and underscores Amazon's intent to strengthen its position in the competitive AI landscape through Anthropic's technology.",
+      "source_urls": [
+        "https://observer.com/2024/11/amazon-invest-billion-anthropic/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "cloud-partnership",
+        "strategic-investment"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-anthropic-settles-music-copyright-lawsuit-with-binding-ai-gu",
+      "date": "2025-01-03",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic settles music copyright lawsuit with binding AI guardrails agreement",
+      "summary": "Anthropic has reached a legally binding settlement with music rights holders, including Universal Music Group, over allegations that its AI models were trained on copyrighted lyrics. The agreement includes enforceable 'guardrails' to prevent future copyright violations in training data and model outputs.",
+      "source_urls": [
+        "https://www.reuters.com/legal/litigation/anthropic-reaches-deal-ai-guardrails-lawsuit-over-music-lyrics-2025-01-03/"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "settlement",
+        "music",
+        "legal",
+        "compliance"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-anthropic-confirms-claude-will-not-use-copyrighted-song-lyri",
+      "date": "2025-01-03",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Anthropic confirms Claude will not use copyrighted song lyrics following settlement",
+      "summary": "Following a settlement with music publishers over copyright concerns, Anthropic confirms that its Claude chatbot will not use copyrighted song lyrics in its outputs. This establishes binding AI guardrails as part of the legal resolution.",
+      "source_urls": [
+        "https://www.pcmag.com/news/anthropic-claude-chatbot-wont-use-copyrighted-song-lyrics"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "legal-settlement",
+        "content-policy"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-anthropic-in-talks-to-raise-funding-at-60-billion-valuation",
+      "date": "2025-01-07",
+      "type": "funding",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic in talks to raise funding at $60 billion valuation",
+      "summary": "Anthropic is reportedly in advanced discussions to secure new investment at a $60 billion post-money valuation, reflecting strong investor confidence and continued scaling of the company. This round would represent a significant increase in valuation compared to previous funding events.",
+      "source_urls": [
+        "https://www.cnbc.com/2025/01/07/anthropic-in-talks-to-raise-funding-at-60-billion-valuation.html"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "valuation-milestone"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-anthropic-claude-3-5-sonnet-integrates-with-snowflake-cortex-ai-for-en",
+      "date": "2025-01-09",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [
+        "anthropic/claude-3.5-sonnet"
+      ],
+      "headline": "Claude 3.5 Sonnet integrates with Snowflake Cortex AI for enterprise AI workflows",
+      "summary": "Anthropic's Claude 3.5 Sonnet model is now available within Snowflake Cortex AI, enabling Snowflake customers to leverage the model for data analysis, natural language querying, and AI-driven insights directly within the Snowflake Data Cloud. This integration expands enterprise access to Claude across cloud environments.",
+      "source_urls": [
+        "https://www.snowflake.com/en/blog/anthropic-claude-sonnet-cortex-ai/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "integration",
+        "data-ai",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-anthropic-announces-plans-to-release-two-way-voice-mode-for-",
+      "date": "2025-01-21",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Anthropic announces plans to release two-way voice mode for Claude",
+      "summary": "Anthropic has announced plans to introduce a two-way voice interaction feature for its Claude AI assistant, enabling more natural and dynamic conversational capabilities. This enhancement signals a move toward richer, real-time multimodal engagement with the model.",
+      "source_urls": [
+        "https://techcrunch.com/2025/01/21/anthropic-plans-to-release-a-two-way-voice-mode-for-claude/"
+      ],
+      "verified": false,
+      "tags": [
+        "voice",
+        "multimodal",
+        "roadmap"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-google-invests-an-additional-1-billion-in-anthropic",
+      "date": "2025-01-22",
+      "type": "funding",
+      "providers": [
+        "google",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Google invests an additional $1 billion in Anthropic",
+      "summary": "Google has agreed to a new $1 billion investment in Anthropic, expanding its strategic partnership and financial commitment to the AI company. This follows earlier investments from Google and other major players, underscoring continued confidence in Anthropic's model development and enterprise positioning.",
+      "source_urls": [
+        "https://www.cnbc.com/2025/01/22/google-agrees-to-new-1-billion-investment-in-anthropic.html"
+      ],
+      "verified": false,
+      "tags": [
+        "funding",
+        "strategic-investment",
+        "google-partnership",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-anthropic-judge-receives-technical-tutorial-on-ai-training-in-authors-",
+      "date": "2025-01-31",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Judge receives technical tutorial on AI training in authors' copyright lawsuit against Anthropic",
+      "summary": "In the ongoing copyright litigation brought by authors against Anthropic, the presiding judge was provided with a technical tutorial on how AI models are trained. This procedural step underscores the complexity of the case and the court's effort to understand the technical foundations of AI development.",
+      "source_urls": [
+        "https://www.dailyjournal.com/article/383177-authors-v-anthropic-judge-gets-tutorial-on-ai-training-in-copyright-battle"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "litigation",
+        "legal",
+        "training-data"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-02-anthropic-snowflake-launches-ai-agents-powered-by-anthropic-s-claude",
+      "date": "2025-02-12",
+      "type": "model_launch",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Snowflake launches AI agents powered by Anthropic's Claude",
+      "summary": "Snowflake has launched AI agents built on Anthropic's Claude, enabling automated data workflows and insights within the Snowflake ecosystem. This marks a significant expansion of AI capabilities for enterprise customers beyond simple model access.",
+      "source_urls": [
+        "https://www.ciodive.com/news/Snowflake-Cortex-AI-Agents-Anthropic-Claude/739989/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "agents",
+        "integration",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-03-anthropic-google-and-tencent-launch-new-ai-models-including-",
+      "date": "2025-03-01",
+      "type": "model_launch",
+      "providers": [
+        "anthropic",
+        "google",
+        "other"
+      ],
+      "models": [
+        "anthropic/claude",
+        "google/gemini-coding",
+        "other/tencent-thinking-ai"
+      ],
+      "headline": "Anthropic, Google, and Tencent launch new AI models including updated Claude, a coding assistant, and a 'thinking' AI",
+      "summary": "In early March 2025, Anthropic released a new version of its Claude model, Google launched a new AI coding assistant (likely under the Gemini brand), and Tencent introduced a new 'thinking' AI model. These launches represent competitive advancements in the large language model space from three major players.",
+      "source_urls": [
+        "https://qz.com/claude-google-gemini-tencent-turbo-s-ai-1851767099"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "model-release",
+        "coding",
+        "reasoning"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-03-anthropic-raises-series-e-funding-at-61-5b-post-money-valuat",
+      "date": "2025-03-03",
+      "type": "funding",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic raises Series E funding at $61.5B post-money valuation",
+      "summary": "Anthropic secured a new round of financing in early 2025, marking its Series E, which valued the company at $61.5 billion post-money. This round reflects continued investor confidence in Anthropic's position in the competitive AI landscape.",
+      "source_urls": [
+        "https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation"
+      ],
+      "verified": false,
+      "tags": [
+        "funding",
+        "series-e",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-03-anthropic-secures-3-3b-funding-at-58-3b-valuation-following-",
+      "date": "2025-03-04",
+      "type": "funding",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic secures €3.3B funding at €58.3B valuation following Claude 3.7 Sonnet launch",
+      "summary": "Shortly after launching Claude 3.7 Sonnet, Anthropic raised €3.3B in a new funding round, pushing its valuation to €58.3B. This significant capital infusion underscores strong investor confidence in Anthropic's trajectory and competitive positioning in the AI landscape.",
+      "source_urls": [
+        "https://siliconcanals.com/anthropic-secures-3-3b-funding/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "funding-round"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-03-anthropic-databricks-and-anthropic-announce-five-year-strategic-ai-par",
+      "date": "2025-03-28",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Databricks and Anthropic announce five-year strategic AI partnership",
+      "summary": "Databricks and Anthropic have entered into a five-year partnership to integrate Anthropic's AI models into Databricks' data and AI platform. This collaboration aims to enhance enterprise AI capabilities by combining Databricks' data processing infrastructure with Anthropic's advanced language models.",
+      "source_urls": [
+        "https://technologymagazine.com/articles/databricks-and-anthropic-the-five-year-ai-partnership"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "enterprise",
+        "strategic-partnership"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-anthropic-launches-claude-for-education-a-specialized-offeri",
+      "date": "2025-04-02",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-for-education"
+      ],
+      "headline": "Anthropic launches Claude for Education, a specialized offering for academic use",
+      "summary": "Anthropic introduced Claude for Education, a tailored version of its AI assistant designed for students, educators, and academic institutions. This launch expands Anthropic's vertical-specific strategy following earlier entries like Claude for Financial Services.",
+      "source_urls": [
+        "https://campustechnology.com/articles/2025/04/02/anthropic-launches-claude-for-education.aspx"
+      ],
+      "verified": false,
+      "tags": [
+        "education",
+        "vertical-specific",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-anthropic-launches-voice-ai-interface-for-claude",
+      "date": "2025-04-15",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-voice"
+      ],
+      "headline": "Anthropic launches voice AI interface for Claude",
+      "summary": "Anthropic has launched a new voice-based interaction mode for its Claude AI assistant, enabling users to speak to and hear responses from the model in real time. This follows earlier announcements in January 2025 about upcoming voice capabilities.",
+      "source_urls": [
+        "https://www.theverge.com/news/649175/anthropic-claude-ai-voice-mode-report"
+      ],
+      "verified": false,
+      "tags": [
+        "voice-interface",
+        "multimodal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-anthropic-palantir-anthropic-and-google-deepen-collaboration-on-govern",
+      "date": "2025-04-17",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "google",
+        "other"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Palantir, Anthropic, and Google deepen collaboration on government AI applications using Claude",
+      "summary": "Palantir, Anthropic, and Google have expanded their partnership to accelerate the adoption of AI within U.S. government agencies, leveraging Anthropic's Claude models integrated with Palantir's data platforms and Google Cloud infrastructure. This collaboration aims to deliver secure, enterprise-grade AI solutions for federal use cases.",
+      "source_urls": [
+        "https://fedscoop.com/palantir-anthropic-google-government-ai-claude-partnership/"
+      ],
+      "verified": false,
+      "tags": [
+        "government",
+        "enterprise",
+        "partnership",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-amazon-invests-14-billion-in-anthropic-for-expanded-stake",
+      "date": "2025-04-17",
+      "type": "funding",
+      "providers": [
+        "amazon",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Amazon invests $14 billion in Anthropic for expanded stake",
+      "summary": "Amazon has made a $14 billion investment in Anthropic, significantly deepening its strategic partnership and cloud alignment. This follows prior investments and underscores Amazon's commitment to competing in the frontier AI race through Anthropic.",
+      "source_urls": [
+        "https://finance.yahoo.com/news/amazon-com-amzn-14-billion-032903824.html"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "strategic-investment",
+        "cloud-partnership"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-05-anthropic-lawyers-apologize-in-court-for-ai-generated-false-",
+      "date": "2025-05-16",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Anthropic lawyers apologize in court for AI-generated false citations during music copyright litigation",
+      "summary": "During ongoing copyright litigation with music publishers, Anthropic's legal team acknowledged in court that AI-generated legal research produced fabricated case citations, leading to a formal apology. This incident highlights risks of AI hallucination in legal practice and has become a reference point in discussions about AI accountability.",
+      "source_urls": [
+        "https://www.musicbusinessworldwide.com/anthropic-lawyers-apologize-to-court-over-ai-hallucination-in-copyright-battle-with-music-publishers/"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "legal-ai",
+        "hallucination",
+        "litigation",
+        "music-industry"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-anthropic-launches-new-claude-service-for-military-and-intel",
+      "date": "2025-06-05",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches new Claude service for military and intelligence use",
+      "summary": "Anthropic introduces a specialized version of its Claude AI service tailored for U.S. military and intelligence agencies, enhancing secure access, compliance, and operational capabilities for national security applications.",
+      "source_urls": [
+        "https://www.theverge.com/ai-artificial-intelligence/680465/anthropic-claude-gov-us-government-military-ai-model-launch"
+      ],
+      "verified": false,
+      "tags": [
+        "government",
+        "national-security",
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-anthropic-us-judge-rules-in-favor-of-anthropic-in-copyright-lawsuit",
+      "date": "2025-06-25",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "US judge rules in favor of Anthropic in copyright lawsuit",
+      "summary": "A US federal judge ruled in favor of Anthropic in a copyright case, likely addressing claims related to AI training data. The decision represents a significant legal precedent for the AI industry regarding fair use and liability for training on copyrighted material.",
+      "source_urls": [
+        "https://www.bbc.com/news/articles/c77vr00enzyo"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "fair-use",
+        "legal-precedent"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-anthropic-wins-key-ai-copyright-case-but-remains-liable-for-",
+      "date": "2025-06-26",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic wins key AI copyright case but remains liable for use of pirated books",
+      "summary": "Anthropic achieved a partial legal victory in a copyright lawsuit concerning AI training data, with the court ruling in its favor on key points. However, the company was found liable for using pirated books in its training corpus, establishing accountability for certain data sources.",
+      "source_urls": [
+        "https://www.cbsnews.com/news/anthropic-ai-copyright-case-claude/"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "litigation",
+        "training-data",
+        "legal-precedent"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-07-anthropic-makes-generative-ai-widely-available-at-major-nati",
+      "date": "2025-07-09",
+      "type": "partnership",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Anthropic makes generative AI widely available at major national lab",
+      "summary": "Anthropic has expanded access to its generative AI models at a major U.S. national laboratory, enabling broad use by researchers and scientists. This deployment supports advanced scientific computing, simulation, and data analysis efforts within the federal research ecosystem.",
+      "source_urls": [
+        "https://fedscoop.com/anthropic-makes-generative-ai-widely-available-at-major-national-lab/"
+      ],
+      "verified": false,
+      "tags": [
+        "government",
+        "research",
+        "deployment",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-07-anthropic-introduces-new-rate-limits-for-claude-code-power-u",
+      "date": "2025-07-28",
+      "type": "pricing_change",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-code"
+      ],
+      "headline": "Anthropic introduces new rate limits for Claude Code power users",
+      "summary": "Anthropic has implemented new rate limits targeting heavy users of its Claude Code offering, likely to manage infrastructure costs and ensure fair usage across its user base. This move signals a tightening of access controls for high-volume developers and could influence pricing strategy for specialized AI coding services.",
+      "source_urls": [
+        "https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/"
+      ],
+      "verified": false,
+      "tags": [
+        "rate-limits",
+        "developer-impact",
+        "coding"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-anthropic-faces-landmark-lawsuit-over-ai-training-practices",
+      "date": "2025-08-12",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic faces landmark lawsuit over AI training practices",
+      "summary": "Anthropic is involved in a significant legal case concerning its AI model training methods, marking a pivotal moment in ongoing litigation over intellectual property and fair use in generative AI. The suit likely builds on prior disputes with authors and media companies, but represents a new development in the legal landscape.",
+      "source_urls": [
+        "https://technologymagazine.com/news/a-moment-of-reckoning-inside-anthropics-landmark-lawsuit"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "litigation",
+        "legal-milestone"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-anthropic-launches-higher-education-advisory-board-and-ai-fl",
+      "date": "2025-08-21",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches higher education advisory board and AI Fluency courses",
+      "summary": "Anthropic announces the formation of a higher education advisory board and introduces AI Fluency courses aimed at academic institutions. This initiative is designed to support universities in integrating AI literacy into curricula and fostering responsible AI use among students and faculty.",
+      "source_urls": [
+        "https://www.anthropic.com/news/anthropic-higher-education-initiatives"
+      ],
+      "verified": false,
+      "tags": [
+        "education",
+        "initiative",
+        "advisory-board"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-anthropic-launches-a-chrome-extension-agent-for-claude",
+      "date": "2025-08-26",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches a Chrome extension agent for Claude",
+      "summary": "Anthropic introduced a new AI agent version of Claude that operates within the Chrome browser, enabling users to access its capabilities directly from the browser interface. This expands Claude's usability beyond the web app and API, offering tighter integration into user workflows.",
+      "source_urls": [
+        "https://techcrunch.com/2025/08/26/anthropic-launches-a-claude-ai-agent-that-lives-in-chrome/"
+      ],
+      "verified": false,
+      "tags": [
+        "chrome-extension",
+        "agent",
+        "browser-integration"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-anthropic-tentative-agreement-reached-in-anthropic-copyright-lawsuit",
+      "date": "2025-08-27",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Tentative agreement reached in Anthropic copyright lawsuit",
+      "summary": "Anthropic has reached a tentative agreement to resolve a copyright lawsuit, likely one of the ongoing class actions related to its AI training practices. This follows years of litigation and signals a potential resolution to claims over unauthorized use of authors' works.",
+      "source_urls": [
+        "https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/98493-tentative-agreement-reached-in-anthropic-copyright-lawsuit.html"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "settlement",
+        "legal-milestone"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-anthropic-reaches-tentative-settlement-in-major-copyright-la",
+      "date": "2025-08-27",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic reaches tentative settlement in major copyright lawsuit",
+      "summary": "Anthropic has reached a surprise tentative agreement to settle a high-profile copyright lawsuit related to its AI training practices. The settlement introduces new legal guardrails and could influence industry-wide approaches to training data compliance.",
+      "source_urls": [
+        "https://www.reuters.com/legal/government/anthropics-surprise-settlement-adds-new-wrinkle-ai-copyright-war-2025-08-27/"
+      ],
+      "verified": false,
+      "tags": [
+        "copyright",
+        "legal",
+        "settlement",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-anthropic-claude-becomes-generally-available-in-xcode",
+      "date": "2025-09-15",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Claude becomes generally available in Xcode",
+      "summary": "Anthropic's Claude is now integrated into Xcode, Apple's integrated development environment, enabling developers to access the AI assistant directly within their workflow for coding support and development tasks.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-in-xcode"
+      ],
+      "verified": false,
+      "tags": [
+        "developer-tools",
+        "apple-ecosystem",
+        "integration"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-anthropic-deloitte-deploys-claude-to-470-000-global-employees",
+      "date": "2025-10-06",
+      "type": "partnership",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Deloitte deploys Claude to 470,000 global employees",
+      "summary": "Deloitte makes Claude available to its entire global workforce, marking one of the largest enterprise AI deployments to date. This reflects deep integration of generative AI into professional services workflows at scale.",
+      "source_urls": [
+        "https://www.anthropic.com/news/deloitte-anthropic-partnership"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "adoption",
+        "professional-services",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-anthropic-and-salesforce-expand-partnership-to-deliver-ai-so",
+      "date": "2025-10-14",
+      "type": "partnership",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic and Salesforce expand partnership to deliver AI solutions for regulated industries",
+      "summary": "Anthropic and Salesforce have deepened their strategic collaboration to bring trusted AI capabilities to highly regulated sectors such as finance, healthcare, and government. The partnership aims to integrate Anthropic's AI models into Salesforce's platform with enhanced security, compliance, and governance features tailored for sensitive environments.",
+      "source_urls": [
+        "https://www.salesforce.com/news/press-releases/2025/10/14/anthropic-regulated-industries-partnership-expansion-announcement/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "regulated-industries",
+        "strategic-partnership"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-anthropic-claude-for-enterprise-premium-seats-with-claude-code-become-",
+      "date": "2025-10-15",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "amazon"
+      ],
+      "models": [
+        "anthropic/claude-code"
+      ],
+      "headline": "Claude for Enterprise Premium Seats with Claude Code become available in AWS Marketplace",
+      "summary": "Anthropic expands enterprise distribution by offering Claude for Enterprise, including access to Claude Code, through AWS Marketplace. This enables AWS customers to procure and deploy Anthropic's AI services directly via Amazon's cloud platform, streamlining access for businesses already operating in the AWS ecosystem.",
+      "source_urls": [
+        "https://aws.amazon.com/blogs/awsmarketplace/claude-for-enterprise-premium-seats-with-claude-code-now-available-in-aws-marketplace/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "distribution",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-anthropic-launches-claude-life-sciences-for-life-sciences-re",
+      "date": "2025-10-20",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches Claude Life Sciences for life sciences researchers",
+      "summary": "Anthropic introduced Claude Life Sciences, a specialized offering designed to improve research efficiency for life sciences professionals. This initiative provides tailored tools and workflows to support tasks such as literature analysis, hypothesis generation, and experimental design.",
+      "source_urls": [
+        "https://www.cnbc.com/2025/10/20/anthropic-claude-life-sciences-research-ai.html"
+      ],
+      "verified": false,
+      "tags": [
+        "life-sciences",
+        "research",
+        "vertical-application"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-anthropic-expands-use-of-google-cloud-tpus-and-services",
+      "date": "2025-10-23",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "google"
+      ],
+      "models": [],
+      "headline": "Anthropic expands use of Google Cloud TPUs and services",
+      "summary": "Anthropic announced an expansion of its collaboration with Google Cloud, increasing its reliance on Google's Tensor Processing Units (TPUs) and other cloud services to scale its AI model development and deployment. This marks a strategic deepening of their existing relationship.",
+      "source_urls": [
+        "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services"
+      ],
+      "verified": false,
+      "tags": [
+        "compute-expansion",
+        "tpu",
+        "cloud-partnership",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-amazon-launches-dedicated-ai-infrastructure-project-to-power",
+      "date": "2025-10-29",
+      "type": "partnership",
+      "providers": [
+        "amazon",
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Amazon launches dedicated AI infrastructure project to power Anthropic's Claude models",
+      "summary": "Amazon initiates a new AI infrastructure project specifically designed to support the training and deployment of Anthropic's Claude family of models. This represents a deepening of the existing partnership between the two companies, going beyond prior funding or cloud hosting agreements to include custom infrastructure development.",
+      "source_urls": [
+        "https://www.reuters.com/business/retail-consumer/amazon-launches-ai-infrastructure-project-power-anthropics-claude-model-2025-10-29/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "infrastructure",
+        "cloud",
+        "scaling"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-anthropic-announces-formal-commitments-on-model-deprecation-",
+      "date": "2025-11-04",
+      "type": "model_deprecation",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic announces formal commitments on model deprecation and preservation",
+      "summary": "Anthropic publishes a policy framework outlining how and when models will be deprecated, ensuring advance notice and preservation of access for critical use cases. This establishes clearer lifecycle management standards for enterprise and public sector users.",
+      "source_urls": [
+        "https://www.anthropic.com/research/deprecation-commitments"
+      ],
+      "verified": false,
+      "tags": [
+        "model-lifecycle",
+        "enterprise-readiness",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-anthropic-cognizant-deploys-claude-to-350-000-employees-to-accelerate-",
+      "date": "2025-11-04",
+      "type": "partnership",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Cognizant deploys Claude to 350,000 employees to accelerate internal AI transformation",
+      "summary": "Cognizant is rolling out Anthropic's Claude across its workforce of 350,000 employees, enabling widespread internal use of AI for productivity and transformation initiatives. This represents one of the largest enterprise-wide AI deployments to date and underscores growing adoption of foundation models in professional services.",
+      "source_urls": [
+        "https://www.anthropic.com/news/cognizant-partnership"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise-adoption",
+        "major",
+        "internal-transformation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-microsoft-nvidia-and-anthropic-announce-strategic-partnershi",
+      "date": "2025-11-18",
+      "type": "partnership",
+      "providers": [
+        "microsoft",
+        "nvidia",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Microsoft, NVIDIA, and Anthropic announce strategic partnership to accelerate AI development and deployment",
+      "summary": "Microsoft, NVIDIA, and Anthropic have formed a strategic partnership to integrate their respective strengths in cloud infrastructure, AI hardware, and large language models. The collaboration aims to accelerate the development and deployment of next-generation AI systems, with NVIDIA providing advanced GPUs, Microsoft offering Azure cloud resources, and Anthropic contributing its frontier AI models.",
+      "source_urls": [
+        "https://blogs.microsoft.com/blog/2025/11/18/microsoft-nvidia-and-anthropic-announce-strategic-partnerships/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "cloud",
+        "enterprise",
+        "infrastructure"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-anthropic-claude-integrated-into-microsoft-365-copilot-and-microsoft-f",
+      "date": "2025-11-18",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "microsoft"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Claude integrated into Microsoft 365 Copilot and Microsoft Foundry",
+      "summary": "Anthropic's Claude is now available within Microsoft 365 Copilot and Microsoft Foundry, enabling deeper enterprise integration and expanding its reach within Microsoft's productivity and AI development ecosystems.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-in-microsoft-foundry"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "integration",
+        "microsoft-ecosystem",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-anthropic-acquires-bun-as-claude-code-reaches-1b-milestone",
+      "date": "2025-12-03",
+      "type": "acquisition",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic acquires Bun as Claude Code reaches $1B milestone",
+      "summary": "Anthropic has acquired Bun, a developer tools company, coinciding with the announcement that its code-focused product, Claude Code, has reached $1 billion in revenue. This signals strategic expansion in developer-facing AI tools and commercial traction.",
+      "source_urls": [
+        "https://www.orrick.com/en/News/2025/12/Anthropic-acquires-Bun-as-Claude-Code-reaches-1B-milestone"
+      ],
+      "verified": false,
+      "tags": [
+        "acquisition",
+        "developer-tools",
+        "revenue-milestone",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-anthropic-snowflake-and-anthropic-announce-200-million-partnership-to-",
+      "date": "2025-12-03",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [],
+      "headline": "Snowflake and Anthropic announce $200 million partnership to bring agentic AI to global enterprises",
+      "summary": "Snowflake and Anthropic have entered into a $200 million strategic partnership aimed at integrating agentic AI capabilities into enterprise data workflows. This collaboration will enable organizations to build and deploy autonomous AI agents using Snowflake's data platform and Anthropic's models, enhancing scalability and reliability for mission-critical applications.",
+      "source_urls": [
+        "https://www.anthropic.com/news/snowflake-anthropic-expanded-partnership"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "agentic-ai",
+        "strategic-partnership",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-anthropic-dartmouth-launches-campuswide-claude-program-with-anthropic-",
+      "date": "2025-12-04",
+      "type": "partnership",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Dartmouth launches campuswide Claude program with Anthropic and AWS",
+      "summary": "Dartmouth College has launched a campuswide initiative to deploy Anthropic's Claude across academic and administrative functions, powered by AWS infrastructure. The program aims to integrate AI into research, teaching, and operations with institutional support and governance.",
+      "source_urls": [
+        "https://edscoop.com/dartmouth-college-aws-claude-anthropic/"
+      ],
+      "verified": false,
+      "tags": [
+        "education",
+        "enterprise",
+        "partnership",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-anthropic-accenture-and-anthropic-launch-multi-year-partnership-to-sca",
+      "date": "2025-12-09",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [],
+      "headline": "Accenture and Anthropic launch multi-year partnership to scale enterprise AI from pilot to production",
+      "summary": "Accenture and Anthropic have formed a strategic, multi-year partnership to help enterprises transition from AI experimentation to full-scale production deployment. The collaboration leverages Anthropic's AI models and Accenture's global consulting reach to accelerate responsible AI integration across industries.",
+      "source_urls": [
+        "https://www.anthropic.com/news/anthropic-accenture-partnership"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise-adoption",
+        "strategic-partnership",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-anthropic-launches-skills-an-open-standard-for-agentic-capab",
+      "date": "2025-12-18",
+      "type": "open_source_release",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches Skills, an open standard for agentic capabilities in Claude",
+      "summary": "Anthropic introduces Skills, an open standard designed to enable interoperability and extensibility of agentic functions within the Claude ecosystem. This allows developers to build, share, and integrate reusable capabilities across applications and platforms.",
+      "source_urls": [
+        "https://aibusiness.com/foundation-models/anthropic-launches-skills-open-standard-claude"
+      ],
+      "verified": false,
+      "tags": [
+        "agentic-ai",
+        "open-standard",
+        "developer-tools",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-anthropic-releases-bloom-an-open-source-tool-for-automated-b",
+      "date": "2025-12-19",
+      "type": "open_source_release",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic releases Bloom, an open source tool for automated behavioral evaluations",
+      "summary": "Anthropic introduces Bloom, a new open-source framework designed to automate the evaluation of AI model behaviors, particularly for safety, alignment, and reliability testing. This tool aims to standardize and scale behavioral testing across AI systems.",
+      "source_urls": [
+        "https://www.anthropic.com/research/bloom"
+      ],
+      "verified": false,
+      "tags": [
+        "evaluation",
+        "safety",
+        "alignment",
+        "open-source",
+        "tooling"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-anthropic-signs-term-sheet-for-10-billion-funding-round-at-3",
+      "date": "2026-01-07",
+      "type": "funding",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic signs term sheet for $10 billion funding round at $350 billion valuation",
+      "summary": "Anthropic has secured a term sheet for a $10 billion funding round, valuing the company at $350 billion. This reflects strong investor confidence and positions Anthropic for significant scaling and development in the competitive AI landscape.",
+      "source_urls": [
+        "https://www.cnbc.com/2026/01/07/anthropic-funding-term-sheet-valuation.html"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "funding-round",
+        "high-valuation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-anthropic-launches-claude-for-healthcare-at-jpm26",
+      "date": "2026-01-11",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-for-healthcare"
+      ],
+      "headline": "Anthropic launches Claude for Healthcare at JPM26",
+      "summary": "Anthropic introduced a specialized version of its Claude AI model tailored for healthcare providers and payers. The launch, announced at the JPMorgan Healthcare Conference (JPM26), aims to improve operational and clinical efficiency across health systems through AI-powered automation and insights.",
+      "source_urls": [
+        "https://www.fiercehealthcare.com/ai-and-machine-learning/jpm26-anthropic-launches-claude-healthcare-targeting-health-systems-payers"
+      ],
+      "verified": false,
+      "tags": [
+        "healthcare",
+        "enterprise",
+        "vertical-specific",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-anthropic-launches-cowork-a-general-purpose-computing-enviro",
+      "date": "2026-01-12",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/cowork"
+      ],
+      "headline": "Anthropic launches Cowork, a general-purpose computing environment inspired by Claude Code",
+      "summary": "Anthropic has launched Cowork, a new product designed to extend the capabilities of Claude Code into general computing workflows. The platform enables users to perform complex, multi-step computational tasks with agentic autonomy, marking a strategic expansion of Anthropic's enterprise and developer offerings.",
+      "source_urls": [
+        "https://arstechnica.com/ai/2026/01/anthropic-launches-cowork-a-claude-code-like-for-general-computing/"
+      ],
+      "verified": false,
+      "tags": [
+        "agentic-ai",
+        "developer-tools",
+        "enterprise-ai",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-anthropic-launches-claude-for-healthcare-with-secure-access-",
+      "date": "2026-01-12",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-health"
+      ],
+      "headline": "Anthropic launches Claude for Healthcare with secure access to health records",
+      "summary": "Anthropic launched a specialized version of Claude designed for healthcare applications, featuring secure integration with electronic health record systems. This product enables clinical and administrative workflows while maintaining HIPAA compliance and data privacy.",
+      "source_urls": [
+        "https://thehackernews.com/2026/01/anthropic-launches-claude-ai-for.html"
+      ],
+      "verified": false,
+      "tags": [
+        "healthcare",
+        "major",
+        "product-launch",
+        "secure-integration"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-anthropic-and-teach-for-all-launch-global-ai-training-initia",
+      "date": "2026-01-21",
+      "type": "partnership",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic and Teach For All launch global AI training initiative for educators",
+      "summary": "Anthropic has partnered with Teach For All to launch a global AI training initiative aimed at equipping educators with the knowledge and tools to responsibly integrate AI into teaching and learning environments. The program includes training modules, resources, and support for educators worldwide.",
+      "source_urls": [
+        "https://www.anthropic.com/news/anthropic-teach-for-all"
+      ],
+      "verified": false,
+      "tags": [
+        "education",
+        "global-initiative",
+        "training",
+        "responsible-ai"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-02-anthropic-announces-initiative-to-provide-frontier-cybersecu",
+      "date": "2026-02-20",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic announces initiative to provide frontier cybersecurity capabilities to defenders",
+      "summary": "Anthropic is making advanced AI capabilities available to cybersecurity defenders, likely as part of a government or defense-focused initiative. This reflects a strategic expansion of its model deployment into high-stakes security domains.",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-code-security"
+      ],
+      "verified": false,
+      "tags": [
+        "cybersecurity",
+        "defense",
+        "government",
+        "initiative"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-02-anthropic-launches-claude-code-security-with-enhanced-cybers",
+      "date": "2026-02-24",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-code-security"
+      ],
+      "headline": "Anthropic launches Claude Code Security with enhanced cybersecurity capabilities",
+      "summary": "Anthropic rolls out Claude Code Security, a specialized version of its code-focused model designed to strengthen cybersecurity practices. This launch emphasizes secure code generation, vulnerability detection, and proactive threat mitigation, positioning it as a strategic tool for enterprise and developer use in high-risk environments.",
+      "source_urls": [
+        "https://www.csoonline.com/article/4136294/anthropics-claude-code-security-rollout-is-an-industry-wakeup-call.html"
+      ],
+      "verified": false,
+      "tags": [
+        "security",
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-02-anthropic-launches-mobile-version-of-claude-code-called-remo",
+      "date": "2026-02-24",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-code-remote-control"
+      ],
+      "headline": "Anthropic launches mobile version of Claude Code called Remote Control",
+      "summary": "Anthropic has released a mobile version of its code-focused AI assistant, Claude Code, under the name Remote Control. This enables developers to access coding assistance and tool use capabilities directly from mobile devices, expanding the usability of the product beyond desktop environments.",
+      "source_urls": [
+        "https://venturebeat.com/orchestration/anthropic-just-released-a-mobile-version-of-claude-code-called-remote"
+      ],
+      "verified": false,
+      "tags": [
+        "mobile",
+        "coding",
+        "tool-use",
+        "developer-tools"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-02-anthropic-acquires-vercept-to-enhance-claude-s-computer-use-",
+      "date": "2026-02-25",
+      "type": "acquisition",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic acquires Vercept to enhance Claude's computer use and agentic capabilities",
+      "summary": "Anthropic acquired Vercept, a startup specializing in AI-driven computer interaction, to advance the ability of its Claude models to understand and operate within computing environments. This acquisition strengthens Anthropic's roadmap for more autonomous, tool-using AI agents.",
+      "source_urls": [
+        "https://www.anthropic.com/news/acquires-vercept"
+      ],
+      "verified": false,
+      "tags": [
+        "acquisition",
+        "agentic-ai",
+        "computer-use",
+        "anthropic"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-03-anthropic-us-military-reportedly-used-claude-in-iran-strikes-despite-t",
+      "date": "2026-03-01",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "US military reportedly used Claude in Iran strikes despite Trump administration ban",
+      "summary": "According to reporting, the US military employed Anthropic's Claude AI system in operational planning or execution during strikes on Iran, circumventing a reported directive from the Trump administration to restrict such use. This incident highlights tensions between military operational needs and executive-level AI policy restrictions.",
+      "source_urls": [
+        "https://www.theguardian.com/technology/2026/mar/01/claude-anthropic-iran-strikes-us-military"
+      ],
+      "verified": false,
+      "tags": [
+        "national-security",
+        "regulatory-circumvention",
+        "military-use",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-03-anthropic-launches-claude-marketplace-for-business-ai-tools",
+      "date": "2026-03-09",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches Claude Marketplace for business AI tools",
+      "summary": "Anthropic introduced the Claude Marketplace, a new platform enabling businesses to discover, integrate, and deploy AI tools built on Claude. This move expands Anthropic's enterprise ecosystem by providing a centralized hub for third-party and first-party business applications powered by its models.",
+      "source_urls": [
+        "https://www.pymnts.com/news/artificial-intelligence/2026/anthropic-marketplace-simplifies-ai-buying-for-enterprises/"
+      ],
+      "verified": false,
+      "tags": [
+        "marketplace",
+        "enterprise",
+        "business-tools",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-03-anthropic-u-s-government-bans-anthropic-from-pentagon-ai-programs-foll",
+      "date": "2026-03-09",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "U.S. government bans Anthropic from Pentagon AI programs following prior selection",
+      "summary": "After being selected by the Pentagon for AI development, Anthropic has been banned from participation in defense-related AI initiatives, according to reports. The reversal raises concerns among experts about the stability of public-private AI partnerships and the impact of export controls on national security innovation.",
+      "source_urls": [
+        "https://www.cnbc.com/2026/03/09/anthropic-was-the-pentagons-choice-for-ai-now-its-banned-and-experts-are-worried.html"
+      ],
+      "verified": false,
+      "tags": [
+        "government-contract",
+        "export-controls",
+        "regulatory-reversal",
+        "national-security",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-03-anthropic-judge-remarks-government-s-anthropic-export-ban-appears-puni",
+      "date": "2026-03-24",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Judge remarks government's Anthropic export ban appears punitive",
+      "summary": "A U.S. judge observed that the government's restriction on foreign access to Anthropic's models resembles punishment, raising legal and policy concerns about the implementation of AI export controls. This follows a June 13 directive halting access and subsequent partial restoration after negotiations.",
+      "source_urls": [
+        "https://www.npr.org/2026/03/24/nx-s1-5759276/anthropic-pentagon-claude-preliminary-injunction-hearing"
+      ],
+      "verified": false,
+      "tags": [
+        "export-controls",
+        "legal-challenge",
+        "regulatory-scrutiny",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-03-anthropic-federal-judge-rules-in-favor-of-anthropic-in-legal-standoff-",
+      "date": "2026-03-26",
+      "type": "legal_outcome",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Federal judge rules in favor of Anthropic in legal standoff with Pentagon over AI access",
+      "summary": "A federal judge has sided with Anthropic in a legal dispute with the Pentagon, marking a significant development in the governance of AI access by government entities. The ruling may impact how defense agencies interact with frontier AI companies and enforce export or usage controls.",
+      "source_urls": [
+        "https://www.theguardian.com/us-news/2026/mar/26/anthropic-ai-pentagon"
+      ],
+      "verified": false,
+      "tags": [
+        "government-access",
+        "export-controls",
+        "regulatory-legal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-03-anthropic-throttles-claude-subscriptions-due-to-capacity-con",
+      "date": "2026-03-27",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic throttles Claude subscriptions due to capacity constraints",
+      "summary": "In March 2026, Anthropic implemented throttling on its Claude subscriptions to manage demand against current infrastructure capacity. This move suggests the company is facing scaling challenges despite recent funding and compute partnerships.",
+      "source_urls": [
+        "https://www.infoworld.com/article/4151196/anthropic-throttles-claude-subscriptions-to-meet-capacity.html"
+      ],
+      "verified": false,
+      "tags": [
+        "capacity-constraints",
+        "service-throttling",
+        "scaling-challenges"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-03-anthropic-district-court-temporarily-blocks-u-s-government-s-ban-on-an",
+      "date": "2026-03-27",
+      "type": "regulatory_action",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "District court temporarily blocks U.S. government's ban on Anthropic and its designation as a supply-chain risk",
+      "summary": "A federal district court has issued a temporary injunction blocking the U.S. government's attempt to ban Anthropic from federal AI programs and its designation as a supply-chain risk. The ruling suggests the administration may have overstepped its authority, marking a pivotal moment in the legal battle over AI regulation and access. This follows earlier export restrictions on Anthropic's models and a reported Pentagon ban.",
+      "source_urls": [
+        "https://fedscoop.com/district-court-temporarily-blocks-anthropic-ban-supply-chain-risk-designation/"
+      ],
+      "verified": false,
+      "tags": [
+        "regulatory",
+        "legal",
+        "export-controls",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "temporary",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-anthropic-expands-partnership-with-google-and-broadcom-for-m",
+      "date": "2026-04-06",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "google",
+        "other"
+      ],
+      "models": [],
+      "headline": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
+      "summary": "Anthropic has deepened its collaboration with Google and Broadcom to secure access to multiple gigawatts of next-generation compute infrastructure. This expansion supports Anthropic's scaling of AI training and inference capacity, leveraging Broadcom's advanced networking and chip technologies alongside Google's cloud infrastructure.",
+      "source_urls": [
+        "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "infrastructure-scaling",
+        "google-cloud",
+        "broadcom"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-anthropic-launches-claude-managed-agents-to-accelerate-ai-ag",
+      "date": "2026-04-08",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-managed-agents"
+      ],
+      "headline": "Anthropic launches Claude Managed Agents to accelerate AI agent development",
+      "summary": "Anthropic introduced Claude Managed Agents, a new service designed to streamline and speed up the development of AI agents. This offering provides developers with managed infrastructure and tooling to build, test, and deploy agentic workflows more efficiently.",
+      "source_urls": [
+        "https://siliconangle.com/2026/04/08/anthropic-launches-claude-managed-agents-speed-ai-agent-development/"
+      ],
+      "verified": false,
+      "tags": [
+        "agents",
+        "developer-tools",
+        "launch"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-anthropic-adobe-releases-ai-assistant-for-creative-tools-integrated-wi",
+      "date": "2026-04-15",
+      "type": "partnership",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Adobe releases AI assistant for creative tools integrated with Anthropic's Claude",
+      "summary": "Adobe launched a new AI assistant designed for its creative software suite, with deep integration of Anthropic's Claude to enable advanced AI-driven workflows. This collaboration enhances Adobe's creative tools with enterprise-grade AI capabilities.",
+      "source_urls": [
+        "https://www.reuters.com/legal/litigation/adobe-releases-ai-assistant-creative-tools-says-it-will-work-with-anthropics-2026-04-15/"
+      ],
+      "verified": false,
+      "tags": [
+        "creative-tools",
+        "enterprise",
+        "partnership",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-anthropic-launches-claude-design-a-generative-design-tool-ri",
+      "date": "2026-04-17",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-design"
+      ],
+      "headline": "Anthropic launches Claude Design, a generative design tool rivaling Figma and Canva",
+      "summary": "Anthropic has launched Claude Design, a new AI-powered design platform aimed at competing with established tools like Figma and Canva. Built on the Claude model family, it integrates natural language prompting with visual design workflows, enabling users to generate and iterate on designs through conversational input. This marks a strategic expansion of Anthropic's offerings beyond chat and coding into creative applications.",
+      "source_urls": [
+        "https://thenewstack.io/anthropic-claude-design-launch/"
+      ],
+      "verified": false,
+      "tags": [
+        "design",
+        "creative-ai",
+        "product-launch",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-anthropic-goldman-sachs-restricts-access-to-anthropic-s-claude-for-hon",
+      "date": "2026-04-29",
+      "type": "model_unavailable",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Goldman Sachs restricts access to Anthropic's Claude for Hong Kong bankers",
+      "summary": "Goldman Sachs has cut off access to Anthropic's Claude for its bankers in Hong Kong, according to a source. This move appears to be a response to evolving US export controls and geopolitical sensitivities around AI technology in the region.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/goldman-sachs-bars-hong-kong-bankers-anthropic-ai-use-ft-reports-2026-04-29/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "geopolitical",
+        "access-restriction"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-anthropic-launches-claude-security-a-new-ai-model-tailored-f",
+      "date": "2026-04-30",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-security"
+      ],
+      "headline": "Anthropic launches Claude Security, a new AI model tailored for enterprise cybersecurity use cases.",
+      "summary": "Anthropic introduces Claude Security, a specialized version of its AI model designed for enterprise cybersecurity applications. This launch expands Anthropic's vertical-specific offerings, following earlier domain-focused releases like Claude for Healthcare and Claude Code. The model is positioned to assist with threat detection, security automation, and secure software development.",
+      "source_urls": [
+        "https://www.crn.com/news/security/2026/anthropic-launches-claude-security-5-things-to-know"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "security",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-05-anthropic-launches-claude-for-legal-a-specialized-ai-assista",
+      "date": "2026-05-14",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-for-legal"
+      ],
+      "headline": "Anthropic launches Claude for Legal, a specialized AI assistant for lawyers",
+      "summary": "Anthropic has introduced Claude for Legal, a new offering tailored to the legal profession. This launch expands their suite of domain-specific AI assistants, following similar initiatives in healthcare and finance, aiming to provide lawyers with generative AI tools optimized for legal workflows, research, and document analysis.",
+      "source_urls": [
+        "https://www.abajournal.com/news/article/anthropic-launches-claude-for-legal-giving-lawyers-20-new-program-integrations-and-12-practice-area-plugins"
+      ],
+      "verified": false,
+      "tags": [
+        "legal",
+        "vertical-ai",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-05-anthropic-releases-claude-sandbox-and-security-guidance-plug",
+      "date": "2026-05-27",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-sandbox"
+      ],
+      "headline": "Anthropic releases Claude Sandbox and Security Guidance Plugin",
+      "summary": "Anthropic has launched the Claude Sandbox, a secure environment for testing and developing AI applications, alongside a new Security Guidance Plugin designed to help organizations implement robust AI security practices. These tools enhance developer support and enterprise adoption of the Claude platform.",
+      "source_urls": [
+        "https://www.securityweek.com/anthropic-releases-new-claude-sandbox-security-guidance-plugin/"
+      ],
+      "verified": false,
+      "tags": [
+        "developer-tools",
+        "security",
+        "launch",
+        "enterprise"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-restores-full-capabilities-to-claude-fable-5-after",
+      "date": "2026-06-10",
+      "type": "model_launch",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-fable-5"
+      ],
+      "headline": "Anthropic restores full capabilities to Claude Fable 5 after backlash over covert limitations",
+      "summary": "Following accusations of 'secret sabotage', Anthropic reversed covert capability restrictions it had imposed on Claude Fable 5. The model, launched on June 9 as a Mythos-class model safe for general use, had been quietly limited in performance. After public disclosure and criticism, Anthropic walked back these limits, restoring the model's intended capabilities.",
+      "source_urls": [
+        "https://fortune.com/2026/06/10/anthropic-accu-claude-fable-5-limits-capabilities-ai-researchers-developers/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "governance",
+        "transparency",
+        "backlash"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-dxc-integrates-claude-into-systems-for-banks-airlines-and-re",
+      "date": "2026-06-11",
+      "type": "partnership",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "DXC integrates Claude into systems for banks, airlines, and regulated industries",
+      "summary": "DXC Technology will embed Anthropic's Claude across mission-critical systems used by financial institutions, airlines, and other highly regulated sectors. This partnership expands Claude's reach into secure, compliance-sensitive environments.",
+      "source_urls": [
+        "https://www.anthropic.com/news/dxc-anthropic-alliance"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "regulated-industries",
+        "banking",
+        "aerospace",
+        "partnership"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-invests-150-million-to-launch-1-000-claude-corps-f",
+      "date": "2026-06-18",
+      "type": "funding",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic invests $150 million to launch 1,000 Claude Corps Fellowships",
+      "summary": "Anthropic has committed $150 million to fund the creation of 1,000 Claude Corps Fellowships, a program designed to expand access to AI education, research, and public-interest applications. This initiative reflects a strategic investment in talent development and broader societal deployment of AI.",
+      "source_urls": [
+        "https://www.forbes.com/sites/michaeltnietzel/2026/06/18/anthropic-invests-150-million-to-launch-1000-claude-corps-fellowships/"
+      ],
+      "verified": false,
+      "tags": [
+        "workforce-development",
+        "education",
+        "anthropic-initiative",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-launches-claude-tag-a-virtual-employee-agent-for-s",
+      "date": "2026-06-23",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches Claude Tag, a virtual employee agent for Slack",
+      "summary": "Anthropic has introduced Claude Tag, a new tool that integrates Claude into Slack to function as a virtual employee. This allows teams to automate workflows, retrieve information, and delegate tasks directly within Slack, enhancing productivity and agent-based collaboration in enterprise environments.",
+      "source_urls": [
+        "https://fortune.com/2026/06/23/anthropic-claude-tag-virtual-employee-tool-slack/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "slack-integration",
+        "ai-agent",
+        "workflow-automation"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-california-partners-with-anthropic-to-deploy-ai-tools-across",
+      "date": "2026-06-29",
+      "type": "partnership",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "California partners with Anthropic to deploy AI tools across state agencies",
+      "summary": "Governor Newsom announced a first-of-its-kind partnership with Anthropic to integrate its AI tools into California state agencies, aiming to improve public services. This marks one of the largest state-level adoptions of a commercial AI provider.",
+      "source_urls": [
+        "https://www.gov.ca.gov/2026/06/29/governor-newsom-announces-a-first-of-its-kind-partnership-providing-anthropic-tools-to-state-agencies-and-improving-services-for-californians/"
+      ],
+      "verified": false,
+      "tags": [
+        "government",
+        "enterprise",
+        "major",
+        "public-sector"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-anthropic-claude-in-microsoft-foundry-reaches-general-availability",
+      "date": "2026-06-29",
+      "type": "infrastructure",
+      "providers": [
+        "anthropic",
+        "microsoft"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Claude in Microsoft Foundry reaches general availability",
+      "summary": "Anthropic's Claude models are now generally available through Microsoft Foundry, enabling broader enterprise access and integration within Microsoft's AI development ecosystem.",
+      "source_urls": [
+        "https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "integration",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-anthropic-reinstates-global-access-to-claude-fable-5-after-u",
+      "date": "2026-07-01",
+      "type": "model_unavailable",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-fable-5"
+      ],
+      "headline": "Anthropic reinstates global access to Claude Fable 5 after U.S. lifts export restrictions",
+      "summary": "Following the U.S. government's reversal of emergency export controls, Anthropic has restored worldwide access to its Claude Fable 5 model, which had been restricted since mid-June. This marks a significant shift in U.S. AI export policy and re-establishes global availability of a leading frontier model.",
+      "source_urls": [
+        "https://www.linkedin.com/pulse/anthropic-reinstates-claude-fable-5-worldwide-after-2hcie"
+      ],
+      "verified": false,
+      "tags": [
+        "export-control",
+        "regulatory-reversal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
     }
   ]
 }
