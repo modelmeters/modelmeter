@@ -1337,7 +1337,7 @@
       "max_output_tokens": null,
       "source_url": "https://docs.venice.ai/overview/pricing",
       "last_verified": "2026-07-02",
-      "verification_required": true,
+      "verification_required": false,
       "availability": "available",
       "tags": [
         "pro"
@@ -11088,13 +11088,13 @@
       "tags": [],
       "upstream_model_id": null,
       "deprecated_on": null,
-      "input_cost_per_mtok": 3,
-      "output_cost_per_mtok": 15,
+      "input_cost_per_mtok": 2,
+      "output_cost_per_mtok": 10,
       "cache_write_cost_per_mtok": 2.5,
       "cache_read_cost_per_mtok": 0.2,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "last_verified": "2026-07-02",
-      "verification_required": true,
+      "verification_required": false,
       "availability": "available",
       "notes": "Introductory pricing $2/$10 per Mtok (input/output) through 2026-08-31; standard $3/$15 thereafter (cache write $3.75, read $0.30)."
     },
