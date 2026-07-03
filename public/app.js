@@ -672,9 +672,12 @@ function renderLifecycles() {
     cutoff = new Date(); cutoff.setMonth(cutoff.getMonth() - months);
   }
 
-  // Build + curate rows per provider
+  // Build + curate rows per provider. Venice is excluded here: its lanes are
+  // resales with no lifecycle signal of their own (no deprecation schedule,
+  // upstream-driven churn) and they doubled the chart height. Venice stays in
+  // the events swimlane, the check widget, and the events feed.
   const groups = [];
-  for (const provider of ACROSS_PROVIDERS) {
+  for (const provider of PRICE_PROVIDERS) {
     const candidates = history.models
       .filter(m => m.provider === provider && m.history.length > 0)
       .map(m => {
