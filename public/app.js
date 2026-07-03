@@ -69,6 +69,7 @@ const MODEL_FAMILIES = {
   "anthropic/opus":    ["anthropic/claude-3-opus","anthropic/claude-opus-3","anthropic/claude-opus-4","anthropic/claude-opus-4-5","anthropic/claude-opus-4-6","anthropic/claude-opus-4-7","anthropic/claude-opus-4-8"],
   "anthropic/sonnet":  ["anthropic/claude-3-sonnet","anthropic/claude-3-5-sonnet","anthropic/claude-3-7-sonnet","anthropic/claude-sonnet-3-7","anthropic/claude-sonnet-4","anthropic/claude-sonnet-4-5","anthropic/claude-sonnet-4-6"],
   "anthropic/haiku":   ["anthropic/claude-3-haiku","anthropic/claude-haiku-3","anthropic/claude-3-5-haiku","anthropic/claude-haiku-3-5","anthropic/claude-haiku-4-5"],
+  "anthropic/frontier":["anthropic/claude-sonnet-5","anthropic/claude-fable-5","anthropic/claude-mythos-5"],
   "openai/gpt-5":      ["openai/gpt-5","openai/gpt-5-2","openai/gpt-5-4","openai/gpt-5-5"],
   "openai/gpt-4-line": ["openai/gpt-4-8k","openai/gpt-4","openai/gpt-4-turbo","openai/gpt-4o"],
   "openai/gpt-mini":   ["openai/gpt-3-5-turbo","openai/gpt-4o-mini"],
@@ -110,6 +111,8 @@ async function boot() {
   wireFeedSeverity();
   renderChartControls();
   renderChart();
+  setupPriceTable();
+  renderPriceTable();
   window.addEventListener("resize", () => { renderChart(); });
 }
 
@@ -126,11 +129,37 @@ async function loadModels() {
   for (const m of currentModels) (modelsByProvider[m.provider] ||= []).push(m);
 }
 
+// The compiled history carries duplicate ids from two sources: pages that
+// renamed models mid-history (claude-3-opus vs claude-opus-3) and dot/dash
+// variants (gemini-2.5-pro vs gemini-2-5-pro). Merge them under one canonical
+// id so every view (lifecycles, price, stats) sees one lane per model.
+// TODO: fix at the data layer (build-history.mjs) so /history serves clean ids.
+const RENAMED_IDS = {
+  "anthropic/claude-3-opus": "anthropic/claude-opus-3",
+  "anthropic/claude-3-haiku": "anthropic/claude-haiku-3",
+  "anthropic/claude-3-5-haiku": "anthropic/claude-haiku-3-5",
+  "anthropic/claude-3-7-sonnet": "anthropic/claude-sonnet-3-7",
+  "anthropic/claude-3-5-sonnet": "anthropic/claude-sonnet-3-5",
+};
+function canonicalHistoryId(id) { return RENAMED_IDS[id] ?? id.replace(/\./g, "-"); }
+function dedupeHistory(models) {
+  const byId = new Map();
+  for (const m of models) {
+    const id = canonicalHistoryId(m.id);
+    const prev = byId.get(id);
+    if (!prev) { byId.set(id, { ...m, id }); continue; }
+    const seen = new Set(prev.history.map(h => h.date));
+    prev.history = [...prev.history, ...m.history.filter(h => !seen.has(h.date))].sort((a, b) => a.date.localeCompare(b.date));
+    prev.display_name = prev.display_name || m.display_name;
+  }
+  return [...byId.values()];
+}
 async function loadHistory() {
   try {
     const res = await fetch("/history.json");
     if (!res.ok) { history = null; return; }
     history = await res.json();
+    if (history?.models) history.models = dedupeHistory(history.models);
   } catch { history = null; }
 }
 
@@ -286,6 +315,104 @@ function wireFeedSeverity() {
       renderEventsFeed();
     });
   });
+}
+
+// ---------- price table ----------
+// First-party model makers. Everything else in currentModels (venice, openrouter,
+// together, groq) is a reseller/aggregator, shown only in "all providers" scope.
+const DIRECT_PROVIDERS = ["anthropic", "openai", "google", "xai", "deepseek", "mistral", "cohere"];
+let tableState = { scope: "direct", search: "", sortKey: "provider", sortDir: "asc" };
+
+function fmtPrice(n) { return n == null ? "—" : "$" + n; }
+function fmtCtx(n) {
+  if (n == null) return "—";
+  if (n >= 1e6) return (n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1) + "M";
+  if (n >= 1000) return Math.round(n / 1000) + "K";
+  return String(n);
+}
+
+function tableSortVal(m, key) {
+  if (key === "provider") return m.provider;
+  if (key === "model") return (m.display_name || m.id).toLowerCase();
+  return m[key]; // input_cost_per_mtok | output_cost_per_mtok | context_window
+}
+
+function renderPriceTable() {
+  const body = document.getElementById("price-table-body");
+  const countEl = document.getElementById("table-count");
+  if (!body) return;
+
+  let rows = currentModels.filter(m =>
+    tableState.scope === "all" || DIRECT_PROVIDERS.includes(m.provider)
+  );
+  const q = tableState.search.trim().toLowerCase();
+  if (q) rows = rows.filter(m =>
+    (m.id + " " + (m.display_name || "") + " " + (m.tags || []).join(" ") + " " + (m.aliases || []).join(" "))
+      .toLowerCase().includes(q)
+  );
+
+  const { sortKey, sortDir } = tableState;
+  const dir = sortDir === "asc" ? 1 : -1;
+  rows.sort((a, b) => {
+    const av = tableSortVal(a, sortKey), bv = tableSortVal(b, sortKey);
+    if (av == null && bv == null) return 0;
+    if (av == null) return 1;                 // nulls always last
+    if (bv == null) return -1;
+    if (typeof av === "string") return av.localeCompare(bv) * dir;
+    return (av - bv) * dir;
+  });
+
+  countEl.textContent = `${rows.length} model${rows.length === 1 ? "" : "s"}`;
+  body.innerHTML = rows.map(m => {
+    const prov = PROVIDER_LABELS[m.provider] || m.provider;
+    const color = PROVIDER_COLORS[m.provider] || "#888";
+    const deprecated = m.availability === "deprecated";
+    const tags = (m.tags || []).map(t => `<span class="ptag">${escapeHtml(t)}</span>`).join("");
+    return `<tr${deprecated ? ' class="row-deprecated"' : ""}>
+      <td class="c-prov"><span class="prov-dot" style="background:${color}"></span>${escapeHtml(prov)}</td>
+      <td class="c-model"><a href="/model?id=${encodeURIComponent(m.id)}" title="${escapeHtml(m.id)}">${escapeHtml(m.display_name || m.id)}</a>${deprecated ? ' <span class="ptag" style="color: var(--down)">deprecated</span>' : ""}${tags ? ` <span class="ptags">${tags}</span>` : ""}</td>
+      <td class="c-num">${fmtPrice(m.input_cost_per_mtok)}</td>
+      <td class="c-num">${fmtPrice(m.output_cost_per_mtok)}</td>
+      <td class="c-num">${fmtCtx(m.context_window)}</td>
+    </tr>`;
+  }).join("");
+}
+
+function updateTableSortHeaders() {
+  document.querySelectorAll("#price-table thead th[data-key]").forEach(th => {
+    const active = th.dataset.key === tableState.sortKey;
+    th.classList.toggle("sorted", active);
+    th.setAttribute("data-dir", active ? tableState.sortDir : "");
+  });
+}
+
+function setupPriceTable() {
+  document.querySelectorAll("#table-scope .chip").forEach(chip =>
+    chip.addEventListener("click", () => {
+      document.querySelectorAll("#table-scope .chip").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      tableState.scope = chip.dataset.scope;
+      renderPriceTable();
+    })
+  );
+  const search = document.getElementById("table-search");
+  if (search) search.addEventListener("input", () => { tableState.search = search.value; renderPriceTable(); });
+
+  document.querySelectorAll("#price-table thead th[data-key]").forEach(th =>
+    th.addEventListener("click", () => {
+      const key = th.dataset.key;
+      if (tableState.sortKey === key) {
+        tableState.sortDir = tableState.sortDir === "asc" ? "desc" : "asc";
+      } else {
+        tableState.sortKey = key;
+        // numeric columns default to ascending (cheapest/smallest first)
+        tableState.sortDir = "asc";
+      }
+      updateTableSortHeaders();
+      renderPriceTable();
+    })
+  );
+  updateTableSortHeaders();
 }
 
 function shorten(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
@@ -505,7 +632,8 @@ function renderChart() {
 // One lane per model: bar from first-tracked to shutdown (or today), with the
 // deprecation window (announced → effective) shaded and lifecycle markers.
 // Rows come from the pricing history; windows come from the events record.
-const LIFE_ROWS_PER_PROVIDER = 10;
+const LIFE_ROWS_PER_PROVIDER = 14;
+const lifeExpanded = new Set(); // providers the user expanded to all lanes
 function buildDepMap() {
   // model id (normalized, plus date-suffix-stripped base) → deprecation window.
   // Where several events touch the same id, the earliest effective date governs.
@@ -559,17 +687,30 @@ function renderLifecycles() {
         return { m, provider, start, dep, retired: retired || isDeprecatedCatalog, activeEnd };
       })
       .filter(r => !cutoff || new Date(r.activeEnd) >= cutoff || (r.dep && new Date(r.dep.effective) >= cutoff));
-    // priority: curated family chains → models with deprecation windows → longest history
+    // Priority: deprecation-window models (most recent shutdown first — the
+    // sunsets the record is about), then curated family chains, then
+    // longest-history actives. Collapsed to LIFE_ROWS_PER_PROVIDER by default
+    // with a per-provider expander; the legend always counts the full record.
+    const expanded = lifeExpanded.has(provider);
+    const cap = expanded ? 80 : LIFE_ROWS_PER_PROVIDER;
     const picked = [];
     const seen = new Set();
-    const take = (r) => { if (r && !seen.has(r.m.id) && picked.length < LIFE_ROWS_PER_PROVIDER) { seen.add(r.m.id); picked.push(r); } };
-    for (const id of Object.entries(MODEL_FAMILIES).filter(([k]) => k.startsWith(provider + "/")).flatMap(([, ids]) => ids)) {
-      take(candidates.find(r => r.m.id === id));
-    }
-    for (const r of candidates.filter(r => r.dep).sort((a, b) => a.start.localeCompare(b.start))) take(r);
+    const take = (r) => { if (r && !seen.has(r.m.id) && picked.length < cap) { seen.add(r.m.id); picked.push(r); } };
+    const famIds = Object.entries(MODEL_FAMILIES).filter(([k]) => k.startsWith(provider + "/")).flatMap(([, ids]) => ids);
+    const famRows = famIds.map(id => candidates.find(r => canonicalHistoryId(r.m.id) === canonicalHistoryId(id))).filter(Boolean);
+    // 1. the current lineup (active family members) 2. sunsets, most recent
+    // shutdown first 3. retired family members 4. longest-history actives
+    for (const r of famRows.filter(r => !r.retired)) take(r);
+    for (const r of candidates.filter(r => r.dep).sort((a, b) => b.dep.effective.localeCompare(a.dep.effective))) take(r);
+    for (const r of famRows) take(r);
     for (const r of [...candidates].sort((a, b) => b.m.history.length - a.m.history.length)) take(r);
     picked.sort((a, b) => a.start.localeCompare(b.start));
-    if (picked.length) groups.push({ provider, rows: picked });
+    if (picked.length) groups.push({
+      provider, rows: picked, hidden: candidates.length - picked.length, expanded,
+      fullScheduled: candidates.filter(r => r.dep && r.dep.effective > today).length,
+      fullRetired: candidates.filter(r => r.retired).length,
+      fullCount: candidates.length,
+    });
   }
   if (!groups.length) {
     empty.style.display = "flex"; empty.innerHTML = "no lifecycle data in range"; svg.style.display = "none"; return;
@@ -582,8 +723,8 @@ function renderLifecycles() {
   const allRows = groups.flatMap(g => g.rows);
   const width = svg.clientWidth || 800;
   const padLeft = 150, padRight = 56, padTop = 18, padBottom = 26;
-  const rowH = 15, headH = 20, groupGap = 6;
-  const height = padTop + groups.reduce((s, g) => s + headH + g.rows.length * rowH + groupGap, 0) + padBottom;
+  const rowH = 15, headH = 20, groupGap = 6, expH = 14;
+  const height = padTop + groups.reduce((s, g) => s + headH + g.rows.length * rowH + ((g.hidden > 0 || g.expanded) ? expH : 0) + groupGap, 0) + padBottom;
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
   svg.style.height = `${height}px`;
 
@@ -712,16 +853,27 @@ function renderLifecycles() {
       svg.appendChild(hit);
       y += rowH;
     }
+    if (g.hidden > 0 || g.expanded) {
+      const ex = document.createElementNS(ns, "text");
+      ex.setAttribute("x", String(padLeft)); ex.setAttribute("y", String(y + 10));
+      ex.setAttribute("fill", "#807c72"); ex.setAttribute("font-size", "9");
+      ex.setAttribute("style", "cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em;");
+      ex.textContent = g.expanded ? "− collapse" : `+ ${g.hidden} more`;
+      ex.addEventListener("click", () => { g.expanded ? lifeExpanded.delete(g.provider) : lifeExpanded.add(g.provider); renderChart(); });
+      svg.appendChild(ex);
+      y += expH;
+    }
     y += groupGap;
   }
 
-  const scheduled = allRows.filter(r => r.dep && r.dep.effective > today).length;
-  const retired = allRows.filter(r => r.retired).length;
+  const scheduled = groups.reduce((n, g) => n + g.fullScheduled, 0);
+  const retired = groups.reduce((n, g) => n + g.fullRetired, 0);
+  const total = groups.reduce((n, g) => n + g.fullCount, 0);
   legend.innerHTML = `
     <span><span class="swatch" style="background: var(--text-dim); height: 3px;"></span>tracked lifespan</span>
     <span><span class="swatch" style="background: var(--warn); opacity: 0.4;"></span>deprecation window</span>
     <span><span class="swatch" style="background: var(--down); width: 3px;"></span>shutdown</span>
-    <span style="color: var(--muted-2);">${allRows.length} models · ${scheduled} scheduled · ${retired} retired</span>
+    <span style="color: var(--muted-2);">${allRows.length} of ${total} models shown · ${scheduled} scheduled · ${retired} retired on record</span>
     <span style="margin-left: auto;"><a href="/events.json" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">try as json ↗</a></span>`;
 }
 
@@ -1187,6 +1339,19 @@ function renderSingleModelChart() {
     <span><span class="swatch line" style="background: var(--warn); border-top: 2px dashed var(--warn); background: transparent;"></span>cache write</span>` : ''}
     <span style="color: var(--muted-2);">${series.length} data points</span>
   `;
+}
+
+// Shared tooltip positioner (restored — an old dead-code sweep removed it and
+// silently broke every chart/swimlane hover with a ReferenceError).
+function positionTooltip(tooltip, e, above = false) {
+  const wrap = tooltip.parentElement.getBoundingClientRect();
+  const x = e.clientX - wrap.left + 14;
+  const tipH = tooltip.offsetHeight || 120;
+  const y = above
+    ? e.clientY - wrap.top - tipH - 14
+    : e.clientY - wrap.top + 14;
+  tooltip.style.left = `${Math.min(Math.max(0, x), wrap.width - (tooltip.offsetWidth || 280) - 10)}px`;
+  tooltip.style.top = `${y}px`;
 }
 
 function showChartCrosshair(x) {

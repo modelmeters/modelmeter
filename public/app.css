@@ -371,3 +371,47 @@ button, input, select { font-family: inherit; font-size: inherit; }
 .footer-bar a { color: var(--text-dim); }
 .footer-bar a:hover { color: var(--accent); }
 .footer-bar .sep { color: var(--muted-2); }
+
+/* Current-price table (full width, below the body grid) */
+.table-section { padding: 0 12px 12px; }
+.table-panel { padding: 0; }
+.table-header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 14px; border-bottom: 1px solid var(--border); }
+.table-title { font-size: 11px; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; flex: 0 0 auto; }
+.table-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-left: auto; }
+#table-search { padding: 6px 8px; background: var(--bg); color: var(--text); border: 1px solid var(--border-strong); border-radius: 0; font-family: var(--mono); font-size: 11px; width: 160px; }
+#table-search::placeholder { color: var(--muted-2); }
+.table-count { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.table-wrap { max-height: 640px; overflow: auto; }
+
+.price-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.price-table thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--panel-2); color: var(--muted);
+  text-align: left; text-transform: uppercase; letter-spacing: 0.05em;
+  font-weight: 600; padding: 8px 12px; border-bottom: 1px solid var(--border-strong);
+  white-space: nowrap;
+}
+.price-table th.th-num { text-align: right; }
+.price-table th.th-sort { cursor: pointer; user-select: none; }
+.price-table th.th-sort:hover { color: var(--text); }
+.price-table th.sorted { color: var(--accent); }
+.price-table th.sorted[data-dir="asc"]::after { content: " ▲"; font-size: 8px; }
+.price-table th.sorted[data-dir="desc"]::after { content: " ▼"; font-size: 8px; }
+
+.price-table tbody td { padding: 7px 12px; border-bottom: 1px solid var(--border-soft); vertical-align: baseline; }
+.price-table tbody tr:hover { background: var(--panel-2); }
+.price-table tbody tr.row-deprecated { opacity: 0.45; }
+.price-table .c-num { text-align: right; font-variant-numeric: tabular-nums; color: var(--text-dim); white-space: nowrap; }
+.price-table .c-prov { color: var(--text-dim); white-space: nowrap; }
+.price-table .prov-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.price-table .c-model a { color: var(--text); }
+.price-table .c-model a:hover { color: var(--accent); }
+.price-table .ptags { display: inline-flex; gap: 4px; margin-left: 6px; vertical-align: middle; }
+.price-table .ptag { color: var(--muted); background: var(--panel-3); padding: 1px 5px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.04em; }
+.table-foot { padding: 8px 14px; border-top: 1px solid var(--border); color: var(--muted); font-size: 10px; }
+.table-foot code { color: var(--text-dim); }
+
+@media (max-width: 720px) {
+  .price-table .c-model a { word-break: break-word; }
+  #table-search { width: 110px; }
+}
