@@ -53,7 +53,7 @@ function validateAgainstSchema(dataPath, schemaPath, name) {
 
 console.log("\n[1/3] schema validation");
 validateAgainstSchema("pricing/current.json", "pricing/schema.json", "pricing 1.x");
-validateAgainstSchema("events/current.json", "events/schema.json", "events 1.0.0");
+validateAgainstSchema("events/current.json", "events/schema.json", "events 2.x");
 
 // Alias integrity: each alias must be globally unique and must not collide
 // with any model's canonical id (else lookups would be ambiguous).

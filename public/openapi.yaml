@@ -92,6 +92,78 @@ paths:
           description: Missing `id` parameter.
         "404":
           description: Model not found.
+  /events:
+    get:
+      summary: The changelog of record for the model layer.
+      description: |
+        Source-verified events covering what changed at AI providers — deprecations,
+        price changes, launches — plus the market events (funding, partnerships,
+        legal, regulatory) around them. Each event carries a `severity` describing
+        what it demands of consumers of the affected models, `announced_at` /
+        `effective_at` dates, at least one source, and a verification `status`.
+        Newest first.
+      parameters:
+        - name: provider
+          in: query
+          required: false
+          description: Filter to events touching this provider id.
+          schema: { type: string }
+        - name: type
+          in: query
+          required: false
+          description: Event type, e.g. `model_deprecation`, `pricing_change`, `model_launch`.
+          schema: { type: string }
+        - name: model
+          in: query
+          required: false
+          description: Filter to events affecting this model id (`provider/model` form).
+          schema: { type: string }
+        - name: severity
+          in: query
+          required: false
+          schema: { type: string, enum: [breaking, action_required, informational] }
+        - name: status
+          in: query
+          required: false
+          description: Verification status. Default `verified`. `all` returns verified + unverified; `corrected` (superseded) entries are only returned when requested explicitly.
+          schema: { type: string, enum: [verified, unverified, all, corrected], default: verified }
+        - name: since
+          in: query
+          required: false
+          description: ISO date; events announced on/after.
+          schema: { type: string, format: date }
+        - name: until
+          in: query
+          required: false
+          description: ISO date; events announced on/before.
+          schema: { type: string, format: date }
+        - name: limit
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 500, default: 200 }
+      responses:
+        "200":
+          description: Matching events, newest first.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  schema_version: { type: string }
+                  snapshot_date: { type: string, format: date }
+                  count: { type: integer }
+                  events:
+                    type: array
+                    items: { $ref: "#/components/schemas/Event" }
+  /events.json:
+    get:
+      summary: Raw events snapshot, identical to the repo's `events/current.json` (schema `events/schema.json`).
+      responses:
+        "200":
+          description: Events snapshot.
+          content:
+            application/json:
+              schema: { type: object }
   /pricing.json:
     get:
       summary: Raw current pricing snapshot, identical to the repo's `pricing/current.json`.
@@ -113,6 +185,34 @@ components:
         output_cost_per_mtok: { type: number, nullable: true }
         context_window: { type: integer, nullable: true }
         last_verified: { type: string, format: date }
+    Event:
+      type: object
+      description: Full field definitions live in the versioned JSON Schema at `events/schema.json` (id https://modelmeter.xyz/schema/events/2.0.0).
+      properties:
+        id: { type: string }
+        announced_at: { type: string, format: date, description: "Date the change became public." }
+        effective_at: { type: string, format: date, description: "Date the change takes effect (e.g. sunset date). Absent when immediate or N/A." }
+        detected_at: { type: string, format: date-time, description: "When the pipeline first detected the change. Absent on curated/backfilled entries." }
+        type: { type: string }
+        severity: { type: string, enum: [breaking, action_required, informational] }
+        status: { type: string, enum: [unverified, verified, corrected] }
+        providers: { type: array, items: { type: string } }
+        models: { type: array, items: { type: string } }
+        migration_target: { type: string, description: "Provider-recommended replacement model id, for deprecations/renames/swaps." }
+        corrects: { type: string, description: "For correction events, the id of the superseded event." }
+        headline: { type: string }
+        summary: { type: string }
+        sources:
+          type: array
+          items:
+            type: object
+            properties:
+              url: { type: string, format: uri }
+              quote: { type: string, description: "Verbatim excerpt from the source at detection time." }
+              archived_url: { type: string, format: uri }
+        tags: { type: array, items: { type: string } }
+        created_at: { type: string, format: date }
+        updated_at: { type: string, format: date }
     Estimate:
       type: object
       properties:
