@@ -20919,6 +20919,33 @@
       },
       "created_at": "2026-07-02",
       "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-venice-ai-launches-vvv-token",
+      "date": "2025-01-28",
+      "type": "funding",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice AI launches VVV token",
+      "summary": "Erik Voorhees' AI company Venice AI launched its native VVV token, marking a strategic step in its growth and token-based ecosystem development. This event signals early-stage funding and community engagement efforts for the platform.",
+      "source_urls": [
+        "https://thedefiant.io/news/nfts-and-web3/erik-voorhees-venice-ai-launches-vvv-token"
+      ],
+      "verified": false,
+      "tags": [
+        "token-launch",
+        "early-stage",
+        "uncensored-ai"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
     }
   ]
 }
