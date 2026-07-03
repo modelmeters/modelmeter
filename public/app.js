@@ -46,6 +46,7 @@ let history = null;
 let sharedXParams = null; // set by renderAcrossProvidersChart/renderSingleModelChart, read by renderEventSwimlane
 const activeSwimlaneCategories = new Set(Object.keys(CATEGORY_META).filter(k => k !== "oss"));
 let chartState = {
+  view: "lifecycles",          // "lifecycles" or "price"
   model: null,
   range: "all",
   scale: "log",
@@ -56,7 +57,11 @@ let chartState = {
   showDeprecated: true,
 };
 
-const ACROSS_PROVIDERS = ["anthropic", "openai", "google", "xai"];
+const ACROSS_PROVIDERS = ["anthropic", "openai", "google", "xai", "deepseek", "venice"];
+// Venice is a reseller with ~117 history models — its lines flood the price
+// view (its pricing tracks upstream anyway), so the price chart scopes it out.
+// Lifecycles and the events swimlane keep all six.
+const PRICE_PROVIDERS = ACROSS_PROVIDERS.filter(p => p !== "venice");
 
 
 // Ordered generational chains — used to draw dashed connectors between model segments
@@ -431,6 +436,14 @@ function renderChartControls() {
       renderChart();
     });
   });
+  document.querySelectorAll("#chart-view .chip").forEach(c => {
+    c.addEventListener("click", () => {
+      chartState.view = c.dataset.view;
+      document.querySelectorAll("#chart-view .chip").forEach(x => x.classList.toggle("active", x === c));
+      applyChartControlVisibility();
+      renderChart();
+    });
+  });
   document.querySelectorAll("#chart-mode .chip").forEach(c => {
     c.addEventListener("click", () => {
       chartState.viewMode = c.dataset.mode;
@@ -458,21 +471,248 @@ function renderChartControls() {
 }
 
 function applyChartControlVisibility() {
+  const isPrice = chartState.view === "price";
   const mode = chartState.viewMode;
-  const isAcross = mode === "across";
-  const isSingle = mode === "single";
+  const isAcross = isPrice && mode === "across";
+  const isSingle = isPrice && mode === "single";
   const set = (id, vis) => { const el = document.getElementById(id); if (el) el.style.display = vis; };
+  set("chart-mode", isPrice ? "" : "none");
   set("chart-tier", "none");
   set("chart-price", isAcross ? "" : "none");
   set("chart-model", isSingle ? "" : "none");
   set("chart-cache", isSingle ? "" : "none");
-  set("chart-scale", "");
+  set("chart-scale", isPrice ? "" : "none");
+  set("chart-deprecated", isPrice ? "" : "none");
+  const title = document.getElementById("chart-title");
+  if (title) title.textContent = isPrice ? "Price · per Mtok · over time" : "Model Lifecycles";
 }
 
 function renderChart() {
-  if (chartState.viewMode === "across") renderAcrossProvidersChart();
-  else renderSingleModelChart();
+  const svg = document.getElementById("chart-svg");
+  if (chartState.view === "lifecycles") {
+    renderLifecycles();
+  } else {
+    if (svg) svg.style.height = "420px";
+    if (chartState.viewMode === "across") renderAcrossProvidersChart();
+    else renderSingleModelChart();
+  }
   renderEventSwimlane();
+}
+
+// ---------- model lifecycles ----------
+// One lane per model: bar from first-tracked to shutdown (or today), with the
+// deprecation window (announced → effective) shaded and lifecycle markers.
+// Rows come from the pricing history; windows come from the events record.
+const LIFE_ROWS_PER_PROVIDER = 8;
+function buildDepMap() {
+  // model id (normalized, plus date-suffix-stripped base) → deprecation window.
+  // Where several events touch the same id, the earliest effective date governs.
+  const map = new Map();
+  for (const e of events) {
+    if (e.type !== "model_deprecation" || !e.effective_at || !e.announced_at) continue;
+    for (const m of e.models || []) {
+      const entry = { announced: e.announced_at, effective: e.effective_at, target: e.migration_target, url: e.sources?.[0]?.url, headline: e.headline };
+      for (const key of new Set([normId(m), baseId(m)])) {
+        const prev = map.get(key);
+        if (!prev || entry.effective < prev.effective) map.set(key, entry);
+      }
+    }
+  }
+  return map;
+}
+function renderLifecycles() {
+  const empty = document.getElementById("chart-empty");
+  const svg = document.getElementById("chart-svg");
+  const legend = document.getElementById("chart-legend");
+  legend.innerHTML = "";
+  if (!history) {
+    empty.style.display = "flex";
+    empty.innerHTML = '<span class="loader">⟳</span> waiting for historical pricing data…';
+    svg.style.display = "none";
+    return;
+  }
+
+  const today = new Date().toISOString().slice(0, 10);
+  const depMap = buildDepMap();
+  const currentById = Object.fromEntries(currentModels.map(m => [m.id, m]));
+
+  let cutoff = null;
+  if (chartState.range !== "all") {
+    const months = parseInt(chartState.range, 10);
+    cutoff = new Date(); cutoff.setMonth(cutoff.getMonth() - months);
+  }
+
+  // Build + curate rows per provider
+  const groups = [];
+  for (const provider of ACROSS_PROVIDERS) {
+    const candidates = history.models
+      .filter(m => m.provider === provider && m.history.length > 0)
+      .map(m => {
+        const start = m.history.map(h => h.date).sort()[0];
+        const dep = depMap.get(normId(m.id)) || depMap.get(baseId(m.id));
+        const retired = dep && dep.effective <= today;
+        const activeEnd = retired ? dep.effective : today;
+        const cur = currentById[m.id];
+        const isDeprecatedCatalog = cur?.availability === "deprecated";
+        return { m, provider, start, dep, retired: retired || isDeprecatedCatalog, activeEnd };
+      })
+      .filter(r => !cutoff || new Date(r.activeEnd) >= cutoff || (r.dep && new Date(r.dep.effective) >= cutoff));
+    // priority: curated family chains → models with deprecation windows → longest history
+    const picked = [];
+    const seen = new Set();
+    const take = (r) => { if (r && !seen.has(r.m.id) && picked.length < LIFE_ROWS_PER_PROVIDER) { seen.add(r.m.id); picked.push(r); } };
+    for (const id of Object.entries(MODEL_FAMILIES).filter(([k]) => k.startsWith(provider + "/")).flatMap(([, ids]) => ids)) {
+      take(candidates.find(r => r.m.id === id));
+    }
+    for (const r of candidates.filter(r => r.dep).sort((a, b) => a.start.localeCompare(b.start))) take(r);
+    for (const r of [...candidates].sort((a, b) => b.m.history.length - a.m.history.length)) take(r);
+    picked.sort((a, b) => a.start.localeCompare(b.start));
+    if (picked.length) groups.push({ provider, rows: picked });
+  }
+  if (!groups.length) {
+    empty.style.display = "flex"; empty.innerHTML = "no lifecycle data in range"; svg.style.display = "none"; return;
+  }
+
+  empty.style.display = "none";
+  svg.style.display = "block";
+  svg.innerHTML = "";
+
+  const allRows = groups.flatMap(g => g.rows);
+  const width = svg.clientWidth || 800;
+  const padLeft = 150, padRight = 56, padTop = 18, padBottom = 26;
+  const rowH = 15, headH = 20, groupGap = 6;
+  const height = padTop + groups.reduce((s, g) => s + headH + g.rows.length * rowH + groupGap, 0) + padBottom;
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  svg.style.height = `${height}px`;
+
+  const minDate = cutoff ? new Date(cutoff) : new Date(Math.min(...allRows.map(r => new Date(r.start))));
+  const maxDate = new Date(Math.max(Date.now(), ...allRows.map(r => r.dep ? +new Date(r.dep.effective) : 0)));
+  const xScale = d => padLeft + ((new Date(d) - minDate) / Math.max(1, maxDate - minDate)) * (width - padLeft - padRight);
+  const clampX = d => Math.max(padLeft, Math.min(xScale(d), width - padRight));
+  sharedXParams = { minDate, maxDate, xScale, width, padLeft, padRight, padTop, padBottom };
+
+  const ns = "http://www.w3.org/2000/svg";
+  const tooltip = document.getElementById("chart-tooltip");
+
+  // Quarterly x grid
+  const curTick = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
+  while (curTick <= maxDate) {
+    if (curTick.getMonth() % 3 === 0) {
+      const x = xScale(curTick);
+      const gl = document.createElementNS(ns, "line");
+      gl.setAttribute("x1", x); gl.setAttribute("x2", x);
+      gl.setAttribute("y1", padTop); gl.setAttribute("y2", height - padBottom);
+      gl.setAttribute("class", "grid-line"); svg.appendChild(gl);
+      const lbl = document.createElementNS(ns, "text");
+      lbl.setAttribute("x", x); lbl.setAttribute("y", height - padBottom + 13);
+      lbl.setAttribute("text-anchor", "middle"); lbl.setAttribute("fill", "#807c72"); lbl.setAttribute("font-size", "9");
+      const mo = curTick.toLocaleString("en", { month: "short" }).toUpperCase();
+      lbl.textContent = curTick.getMonth() === 0 ? `${mo} '${String(curTick.getFullYear()).slice(-2)}` : mo;
+      svg.appendChild(lbl);
+    }
+    curTick.setMonth(curTick.getMonth() + 1);
+  }
+  // Today line
+  const tl = document.createElementNS(ns, "line");
+  const tx = xScale(today);
+  tl.setAttribute("x1", tx); tl.setAttribute("x2", tx);
+  tl.setAttribute("y1", padTop); tl.setAttribute("y2", height - padBottom);
+  tl.setAttribute("stroke", "var(--accent)"); tl.setAttribute("stroke-width", "1");
+  tl.setAttribute("stroke-dasharray", "2,4"); tl.setAttribute("opacity", "0.3");
+  svg.appendChild(tl);
+
+  let y = padTop;
+  for (const g of groups) {
+    const color = PROVIDER_COLORS[g.provider] || "#ffffff";
+    const head = document.createElementNS(ns, "text");
+    head.setAttribute("x", "6"); head.setAttribute("y", String(y + 13));
+    head.setAttribute("fill", color); head.setAttribute("font-size", "10");
+    head.setAttribute("style", "text-transform: uppercase; letter-spacing: 0.08em;");
+    head.textContent = PROVIDER_LABELS[g.provider] || g.provider;
+    svg.appendChild(head);
+    y += headH;
+
+    for (const r of g.rows) {
+      const cy = y + rowH / 2;
+      // label
+      const lbl = document.createElementNS(ns, "text");
+      lbl.setAttribute("x", String(padLeft - 8)); lbl.setAttribute("y", String(cy + 3));
+      lbl.setAttribute("text-anchor", "end"); lbl.setAttribute("fill", "#b8b4a8"); lbl.setAttribute("font-size", "9.5");
+      lbl.textContent = shorten(r.m.display_name || r.m.id, 24);
+      svg.appendChild(lbl);
+      // active bar: first-tracked → activeEnd
+      const x1 = clampX(r.start), x2 = clampX(r.activeEnd);
+      const bar = document.createElementNS(ns, "rect");
+      bar.setAttribute("x", String(x1)); bar.setAttribute("y", String(cy - 2));
+      bar.setAttribute("width", String(Math.max(2, x2 - x1))); bar.setAttribute("height", "4");
+      bar.setAttribute("fill", color); bar.setAttribute("opacity", r.retired ? "0.45" : "0.95");
+      svg.appendChild(bar);
+      // first-tracked dot
+      if (!cutoff || new Date(r.start) >= cutoff) {
+        const dot = document.createElementNS(ns, "circle");
+        dot.setAttribute("cx", String(x1)); dot.setAttribute("cy", String(cy));
+        dot.setAttribute("r", "3"); dot.setAttribute("fill", color);
+        svg.appendChild(dot);
+      }
+      if (r.dep) {
+        // deprecation window: announced → effective
+        const wx1 = clampX(r.dep.announced), wx2 = clampX(r.dep.effective);
+        const win = document.createElementNS(ns, "rect");
+        win.setAttribute("x", String(wx1)); win.setAttribute("y", String(cy - 5));
+        win.setAttribute("width", String(Math.max(2, wx2 - wx1))); win.setAttribute("height", "10");
+        win.setAttribute("fill", "var(--warn)"); win.setAttribute("opacity", "0.22");
+        svg.appendChild(win);
+        // shutdown cap
+        const cap = document.createElementNS(ns, "rect");
+        cap.setAttribute("x", String(wx2 - 1)); cap.setAttribute("y", String(cy - 6));
+        cap.setAttribute("width", "2.5"); cap.setAttribute("height", "12");
+        cap.setAttribute("fill", "var(--down)"); cap.setAttribute("opacity", r.retired ? "0.9" : "0.7");
+        svg.appendChild(cap);
+        // scheduled (future) shutdowns get a date label
+        if (r.dep.effective > today) {
+          const dl = document.createElementNS(ns, "text");
+          dl.setAttribute("x", String(wx2 + 5)); dl.setAttribute("y", String(cy + 3));
+          dl.setAttribute("fill", "var(--down)"); dl.setAttribute("font-size", "8.5"); dl.setAttribute("opacity", "0.9");
+          dl.textContent = r.dep.effective.slice(5);
+          svg.appendChild(dl);
+        }
+      }
+      // hover target across the lane
+      const hit = document.createElementNS(ns, "rect");
+      hit.setAttribute("x", String(padLeft)); hit.setAttribute("y", String(y));
+      hit.setAttribute("width", String(width - padLeft - padRight)); hit.setAttribute("height", String(rowH));
+      hit.setAttribute("fill", "transparent"); hit.setAttribute("style", "cursor: pointer");
+      hit.addEventListener("mouseenter", e => {
+        const dep = r.dep
+          ? `<div class="tbody">deprecation announced ${r.dep.announced} · ${r.retired ? "retired" : "shutdown"} ${r.dep.effective}${r.dep.target ? ` · → ${escapeHtml(r.dep.target.split("/").slice(1).join("/"))}` : ""}</div>`
+          : `<div class="tbody">active · no scheduled retirement on record</div>`;
+        tooltip.innerHTML = `
+          <div class="tdate">${PROVIDER_LABELS[r.provider] || r.provider}</div>
+          <div class="thead">${escapeHtml(r.m.display_name || r.m.id)}</div>
+          <div class="tbody">first tracked ${r.start}</div>${dep}
+          <div class="tfoot"><span>${r.dep?.url ? "click for source ↗" : "click for model card ↗"}</span></div>`;
+        positionTooltip(tooltip, e);
+        tooltip.classList.add("show");
+      });
+      hit.addEventListener("mousemove", e => positionTooltip(tooltip, e));
+      hit.addEventListener("mouseleave", () => tooltip.classList.remove("show"));
+      hit.addEventListener("click", () => {
+        window.open(r.dep?.url || `/model?id=${encodeURIComponent(r.m.id)}`, "_blank", "noopener");
+      });
+      svg.appendChild(hit);
+      y += rowH;
+    }
+    y += groupGap;
+  }
+
+  const scheduled = allRows.filter(r => r.dep && r.dep.effective > today).length;
+  const retired = allRows.filter(r => r.retired).length;
+  legend.innerHTML = `
+    <span><span class="swatch" style="background: var(--text-dim); height: 3px;"></span>tracked lifespan</span>
+    <span><span class="swatch" style="background: var(--warn); opacity: 0.4;"></span>deprecation window</span>
+    <span><span class="swatch" style="background: var(--down); width: 3px;"></span>shutdown</span>
+    <span style="color: var(--muted-2);">${allRows.length} models · ${scheduled} scheduled · ${retired} retired</span>
+    <span style="margin-left: auto;"><a href="/events.json" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">try as json ↗</a></span>`;
 }
 
 // ---------- across-providers chart ----------
@@ -495,7 +735,7 @@ function renderAcrossProvidersChart() {
   // Collect all models for the 4 providers, with metadata
   const today = new Date().toISOString().slice(0, 10);
   const allModelLines = [];
-  for (const provider of ACROSS_PROVIDERS) {
+  for (const provider of PRICE_PROVIDERS) {
     const provModels = history.models.filter(m => m.provider === provider);
     const historyIds = new Set(provModels.map(m => m.id));
 
@@ -712,7 +952,7 @@ function renderAcrossProvidersChart() {
   const totalShown = displayLines.length;
   const activeCount = displayLines.filter(ml => !ml.isDeprecated).length;
   let legendHtml = "";
-  for (const p of ACROSS_PROVIDERS) {
+  for (const p of PRICE_PROVIDERS) {
     if (!displayLines.some(ml => ml.provider === p)) continue;
     const color = PROVIDER_COLORS[p] || "#ffffff";
     legendHtml += `<span><span class="swatch line" style="background:${color}"></span>${PROVIDER_LABELS[p] || p}</span>`;
@@ -1006,8 +1246,11 @@ function renderEventSwimlane() {
   slCrosshair.style.display = "none";
   swimSvg.appendChild(slCrosshair);
 
-  // Event dots
-  for (const ev of events) {
+  // Event dots — informational noise filtered: only breaking/action events plus
+  // structural informational ones make the timeline. ("major" is too common in
+  // drafted events to discriminate — 324 of 691 informational events carry it.)
+  const slEvents = events.filter(e => e.severity !== "informational" || e.impact?.magnitude === "structural");
+  for (const ev of slEvents) {
     const evDate = new Date(ev.announced_at);
     if (evDate < minDate || evDate > maxDate) continue;
 

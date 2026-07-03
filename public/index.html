@@ -160,8 +160,12 @@
 
         <div class="panel chart-panel">
           <div class="chart-header">
-            <span class="chart-title">Price · per Mtok · over time</span>
+            <span class="chart-title" id="chart-title">Model Lifecycles</span>
             <div class="chart-controls">
+              <div class="chip-group" id="chart-view">
+                <button class="chip active" data-view="lifecycles">lifecycles</button>
+                <button class="chip" data-view="price">price</button>
+              </div>
               <div class="chip-group" id="chart-mode">
                 <button class="chip active" data-mode="across">across</button>
                 <button class="chip" data-mode="single">single</button>
