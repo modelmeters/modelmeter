@@ -5230,7 +5230,7 @@
     },
     {
       "id": "2026-09-anthropic-claude-sonnet-5-introductory-pricing-ends",
-      "announced_at": "2026-09-01",
+      "announced_at": "2026-06-30",
       "type": "pricing_change",
       "severity": "action_required",
       "status": "verified",
@@ -5257,7 +5257,8 @@
         "price_direction": "up"
       },
       "created_at": "2026-06-30",
-      "updated_at": "2026-06-30"
+      "updated_at": "2026-07-03",
+      "effective_at": "2026-09-01"
     },
     {
       "id": "2023-02-anthropic-partners-with-google-cloud-to-deliver-reliable-and",
@@ -7067,8 +7068,8 @@
     {
       "id": "2025-11-anthropic-announces-formal-commitments-on-model-deprecation-",
       "announced_at": "2025-11-04",
-      "type": "model_deprecation",
-      "severity": "breaking",
+      "type": "policy_change",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "anthropic"
@@ -7092,7 +7093,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-03"
     },
     {
       "id": "2025-11-anthropic-cognizant-deploys-claude-to-350-000-employees-to-accelerate-",
@@ -19949,7 +19950,7 @@
         "xai"
       ],
       "models": [
-        "xiai/grok-build"
+        "xai/grok-build"
       ],
       "headline": "xAI prepares credits-based pricing for upcoming Grok Build launch",
       "summary": "xAI is implementing a credits system in anticipation of the launch of Grok Build, indicating a new monetization model for this upcoming product. This suggests a shift toward usage-based pricing for developer or enterprise-focused AI capabilities.",
@@ -19970,7 +19971,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-03"
     },
     {
       "id": "2026-04-xai-naacp-sues-xai-over-alleged-pollution-in-black-neighborhoods",
@@ -21608,8 +21609,8 @@
     {
       "id": "2025-08-deepseek-delays-new-ai-model-launch-due-to-huawei-chip-issue",
       "announced_at": "2025-08-20",
-      "type": "model_deprecation",
-      "severity": "breaking",
+      "type": "infrastructure",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "deepseek"
@@ -21635,7 +21636,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-03"
     },
     {
       "id": "2025-08-deepseek-releases-upgraded-ai-model-with-support-for-domesti",
