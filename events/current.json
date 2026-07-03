@@ -18403,6 +18403,2522 @@
       },
       "created_at": "2026-07-02",
       "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-12-deepseek-releases-new-open-source-ai-models",
+      "date": "2023-12-02",
+      "type": "open_source_release",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-1.0"
+      ],
+      "headline": "DeepSeek releases new open-source AI models",
+      "summary": "Chinese AI startup DeepSeek unveiled new open-source large language models in December 2023, marking a significant contribution to the open-model ecosystem. This release positioned DeepSeek as a growing force in the global AI landscape.",
+      "source_urls": [
+        "https://www.maginative.com/article/chinese-startup-unveils-impressive-new-ai-chatbot-deepseek/"
+      ],
+      "verified": false,
+      "tags": [
+        "open-source",
+        "model-release",
+        "china"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-05-deepseek-releases-v2-an-open-source-mixture-of-experts-model",
+      "date": "2024-05-10",
+      "type": "open_source_release",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v2"
+      ],
+      "headline": "DeepSeek releases V2, an open-source Mixture-of-Experts model",
+      "summary": "DeepSeek launched V2, a flagship open-source Mixture-of-Experts (MoE) model, marking a significant contribution to the open-weight AI ecosystem. The release positions DeepSeek as a key player in advanced, transparent AI development from China.",
+      "source_urls": [
+        "https://the-decoder.com/deepseek-v2-is-a-chinese-flagship-open-source-mixture-of-experts-model/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "mixture-of-experts",
+        "open-source"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-07-deepseek-releases-improved-open-source-model-deepseek-v2-062",
+      "date": "2024-07-20",
+      "type": "open_source_release",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/DeepSeek-V2-0628"
+      ],
+      "headline": "DeepSeek releases improved open-source model DeepSeek-V2-0628",
+      "summary": "DeepSeek has released DeepSeek-V2-0628, an enhanced version of its open-source DeepSeek-V2 model. This update improves upon the original V2 released in May 2024, offering better performance and capabilities while maintaining open-source accessibility.",
+      "source_urls": [
+        "https://www.marktechpost.com/2024/07/20/deepseek-v2-0628-released-an-improved-open-source-version-of-deepseek-v2/"
+      ],
+      "verified": false,
+      "tags": [
+        "open-source",
+        "mixture-of-experts",
+        "model-improvement"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-11-deepseek-ai-launches-janusflow-a-unified-framework-for-image",
+      "date": "2024-11-12",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/janusflow"
+      ],
+      "headline": "DeepSeek AI launches JanusFlow, a unified framework for image understanding and generation",
+      "summary": "On November 12, 2024, DeepSeek AI introduced JanusFlow, a new multimodal model designed to unify image understanding and generation capabilities. This launch marks a significant step in DeepSeek's efforts to advance multimodal AI systems, enabling more coherent and context-aware visual reasoning and content creation.",
+      "source_urls": [
+        "https://www.marktechpost.com/2024/11/12/deepseek-ai-releases-janusflow-a-unified-framework-for-image-understanding-and-generation/"
+      ],
+      "verified": false,
+      "tags": [
+        "multimodal",
+        "image-generation",
+        "image-understanding",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-deepseek-u-s-navy-bans-use-of-deepseek-over-security-and-ethical-conc",
+      "date": "2025-01-28",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "U.S. Navy bans use of DeepSeek over security and ethical concerns",
+      "summary": "The U.S. Navy has prohibited the use of DeepSeek's AI models across its systems due to unresolved security vulnerabilities and ethical risks associated with data handling and model provenance. This action reflects broader scrutiny of Chinese-origin AI systems within U.S. defense infrastructure.",
+      "source_urls": [
+        "https://www.cnbc.com/2025/01/28/us-navy-restricts-use-of-deepseek-ai-imperative-to-avoid-using.html"
+      ],
+      "verified": false,
+      "tags": [
+        "government-use",
+        "security-concerns",
+        "ethical-ai",
+        "defense-sector"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-groq-groqcloud-makes-deepseek-r1-distill-llama-70b-available-for-",
+      "date": "2025-01-28",
+      "type": "infrastructure",
+      "providers": [
+        "groq",
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-r1-distill-llama-70b"
+      ],
+      "headline": "GroqCloud makes DeepSeek R1 Distill Llama 70B available for low-latency inference",
+      "summary": "GroqCloud has integrated the distilled version of DeepSeek R1 Llama 70B, enabling ultra-fast inference via Groq's LPU architecture. This expands deployment options for the model beyond existing cloud providers and emphasizes Groq's role in accelerating open-weight model access.",
+      "source_urls": [
+        "https://groq.com/blog/groqcloud-makes-deepseek-r1-distill-llama-70b-available"
+      ],
+      "verified": false,
+      "tags": [
+        "distillation",
+        "low-latency",
+        "inference-optimization",
+        "model-availability"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-deepseek-r1-becomes-available-on-microsoft-azure-ai-foundry-",
+      "date": "2025-01-29",
+      "type": "partnership",
+      "providers": [
+        "deepseek",
+        "microsoft"
+      ],
+      "models": [
+        "deepseek/r1"
+      ],
+      "headline": "DeepSeek R1 becomes available on Microsoft Azure AI Foundry and GitHub",
+      "summary": "DeepSeek's R1 model is now accessible through Microsoft Azure AI Foundry and GitHub, expanding its availability to enterprise and developer audiences via Microsoft's cloud platform and developer ecosystem.",
+      "source_urls": [
+        "https://azure.microsoft.com/en-us/blog/deepseek-r1-is-now-available-on-azure-ai-foundry-and-github/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "cloud",
+        "developer-tools",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-deepseek-cerebras-launches-world-s-fastest-inference-for-deepseek-r1-",
+      "date": "2025-01-29",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek",
+        "other"
+      ],
+      "models": [
+        "deepseek/deepseek-r1",
+        "meta/llama-70b"
+      ],
+      "headline": "Cerebras launches world's fastest inference for DeepSeek R1 and Llama-70B",
+      "summary": "Cerebras announces a breakthrough in inference performance, achieving the fastest known inference speeds for both DeepSeek R1 and Meta's Llama-70B models using its wafer-scale technology. This advancement enables faster, more efficient large model deployment without relying on GPU clusters.",
+      "source_urls": [
+        "https://www.cerebras.ai/blog/cerebras-launches-worlds-fastest-deepseek-r1-llama-70b-inference"
+      ],
+      "verified": false,
+      "tags": [
+        "inference",
+        "performance",
+        "wafer-scale",
+        "breakthrough"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-deepseek-r1-models-become-available-on-amazon-web-services-a",
+      "date": "2025-01-30",
+      "type": "partnership",
+      "providers": [
+        "deepseek",
+        "amazon"
+      ],
+      "models": [
+        "deepseek/deepseek-r1"
+      ],
+      "headline": "DeepSeek-R1 models become available on Amazon Web Services (AWS)",
+      "summary": "DeepSeek's R1 model is now accessible via AWS, enabling developers and enterprises using AWS to integrate and deploy the model. This follows prior availability on Microsoft Azure and marks a strategic cloud expansion.",
+      "source_urls": [
+        "https://aws.amazon.com/blogs/aws/deepseek-r1-models-now-available-on-aws/"
+      ],
+      "verified": false,
+      "tags": [
+        "cloud-partnership",
+        "model-availability",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-deepseek-u-s-investigates-deepseek-over-potential-use-of-restricted-a",
+      "date": "2025-01-31",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "U.S. investigates DeepSeek over potential use of restricted AI chips",
+      "summary": "U.S. authorities are reportedly examining whether Chinese AI company DeepSeek used advanced AI chips subject to U.S. export controls in developing its models. This investigation reflects ongoing scrutiny of foreign AI firms' compliance with semiconductor restrictions aimed at limiting advanced AI development outside U.S. oversight.",
+      "source_urls": [
+        "https://www.reuters.com/technology/us-looking-into-whether-deepseek-used-restricted-ai-chips-source-says-2025-01-31/"
+      ],
+      "verified": false,
+      "tags": [
+        "export-controls",
+        "semiconductors",
+        "geopolitics",
+        "investigation"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-01-deepseek-italy-s-data-protection-authority-blocks-deepseek-and-launch",
+      "date": "2025-01-31",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Italy's data protection authority blocks DeepSeek and launches privacy probe",
+      "summary": "Italy's data protection watchdog has blocked access to the AI app DeepSeek over concerns about user data privacy and has initiated a formal investigation into its data processing practices. This marks a significant regulatory challenge for DeepSeek in the European market.",
+      "source_urls": [
+        "https://www.wsj.com/tech/ai/italys-watchdog-blocks-ai-app-deepseek-over-data-privacy-concerns-launches-probe-e766eb52"
+      ],
+      "verified": false,
+      "tags": [
+        "data-privacy",
+        "eu-regulation",
+        "italy",
+        "probe"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-02-deepseek-australia-bans-deepseek-on-government-devices-over-security-",
+      "date": "2025-02-04",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Australia bans DeepSeek on government devices over security risks",
+      "summary": "In February 2025, the Australian government prohibited the use of DeepSeek's AI models on all government-issued devices, citing national security and data privacy concerns. This follows similar actions by other governments evaluating foreign AI systems for potential risks.",
+      "source_urls": [
+        "https://www.bbc.com/news/articles/c8d95v0nr1yo"
+      ],
+      "verified": false,
+      "tags": [
+        "government-restriction",
+        "security-concerns",
+        "regional-policy"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-02-deepseek-r1-integrated-with-nvidia-s-gpu-kernel-automation-a",
+      "date": "2025-02-12",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek",
+        "nvidia"
+      ],
+      "models": [
+        "deepseek/deepseek-r1"
+      ],
+      "headline": "DeepSeek-R1 integrated with NVIDIA's GPU kernel automation and inference scaling",
+      "summary": "NVIDIA Developer published a technical deep dive on automating GPU kernel generation for DeepSeek-R1 using inference-time scaling techniques, improving deployment efficiency on NVIDIA hardware.",
+      "source_urls": [
+        "https://developer.nvidia.com/blog/automating-gpu-kernel-generation-with-deepseek-r1-and-inference-time-scaling/"
+      ],
+      "verified": false,
+      "tags": [
+        "gpu-optimization",
+        "inference-scaling",
+        "infrastructure",
+        "deepseek-r1",
+        "nvidia-partnership"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-02-deepseek-shares-portions-of-its-ai-model-code-reinforcing-co",
+      "date": "2025-02-21",
+      "type": "open_source_release",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/some-model-code"
+      ],
+      "headline": "DeepSeek shares portions of its AI model code, reinforcing commitment to open source",
+      "summary": "In February 2025, DeepSeek announced it would release some of its AI model code to the public, signaling a strategic emphasis on open-source development. This move increases transparency and enables broader community and developer access to its technology.",
+      "source_urls": [
+        "https://www.reuters.com/technology/artificial-intelligence/deepseek-share-some-ai-model-code-doubling-down-open-source-2025-02-21/"
+      ],
+      "verified": false,
+      "tags": [
+        "open-source",
+        "model-release"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-02-deepseek-chinese-universities-launch-courses-focused-on-deepseek-ai-t",
+      "date": "2025-02-21",
+      "type": "partnership",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Chinese universities launch courses focused on DeepSeek AI technology",
+      "summary": "Multiple universities in China have introduced academic courses centered on DeepSeek's AI models and technologies, aiming to train students in advanced AI development and applications as part of the broader national push to strengthen domestic AI capabilities.",
+      "source_urls": [
+        "https://www.reuters.com/technology/artificial-intelligence/chinese-universities-launch-deepseek-courses-capitalise-ai-boom-2025-02-21/"
+      ],
+      "verified": false,
+      "tags": [
+        "education",
+        "ecosystem-growth",
+        "china"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-03-deepseek-ai-adopted-by-multiple-banks-in-china-for-enterpris",
+      "date": "2025-03-01",
+      "type": "partnership",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Deepseek AI adopted by multiple banks in China for enterprise applications",
+      "summary": "Deepseek AI technology is being integrated into China's banking sector, marking a significant step in enterprise adoption. This reflects growing trust in Deepseek's models for mission-critical financial services use cases.",
+      "source_urls": [
+        "https://gfmag.com/technology/deepseek-ai-takes-root-in-chinas-banks/"
+      ],
+      "verified": false,
+      "tags": [
+        "enterprise",
+        "finance",
+        "china",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-03-deepseek-launches-r1-7b-and-14b-distilled-models-for-copilot",
+      "date": "2025-03-03",
+      "type": "model_launch",
+      "providers": [
+        "deepseek",
+        "microsoft"
+      ],
+      "models": [
+        "deepseek/deepseek-r1-7b",
+        "deepseek/deepseek-r1-14b"
+      ],
+      "headline": "DeepSeek launches R1 7B and 14B distilled models for Copilot+ PCs via Azure AI Foundry",
+      "summary": "DeepSeek has released distilled versions of its R1 model—7B and 14B parameter variants—optimized for on-device AI performance on Copilot+ PCs. These models are now available through Microsoft's Azure AI Foundry, expanding access to efficient, edge-based AI inference within the Windows ecosystem.",
+      "source_urls": [
+        "https://blogs.windows.com/windowsdeveloper/2025/03/03/available-today-deepseek-r1-7b-14b-distilled-models-for-copilot-pcs-via-azure-ai-foundry-further-expanding-ai-on-the-edge/"
+      ],
+      "verified": false,
+      "tags": [
+        "edge-ai",
+        "distillation",
+        "copilot-plus"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-03-deepseek-south-dakota-bans-deepseek-and-rednote-for-state-government-",
+      "date": "2025-03-04",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek",
+        "other"
+      ],
+      "models": [
+        "deepseek/deepseek",
+        "other/rednote"
+      ],
+      "headline": "South Dakota bans DeepSeek and RedNote for state government use",
+      "summary": "Governor Rhoden issued a directive prohibiting the use of DeepSeek and RedNote AI models across South Dakota state government agencies, citing security and ethical concerns. This follows similar restrictions enacted by other U.S. states and federal entities.",
+      "source_urls": [
+        "https://news.sd.gov/news?id"
+      ],
+      "verified": false,
+      "tags": [
+        "government-use",
+        "security-concerns",
+        "regulation",
+        "ban"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-03-deepseek-us-commerce-department-bans-deepseek-on-government-devices",
+      "date": "2025-03-17",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "US Commerce Department bans DeepSeek on government devices",
+      "summary": "Multiple bureaus within the US Department of Commerce have prohibited the use of China's DeepSeek AI on government-issued devices, citing security and ethical concerns. This action aligns with broader US government scrutiny of Chinese AI technologies.",
+      "source_urls": [
+        "https://www.reuters.com/technology/artificial-intelligence/us-commerce-department-bureaus-ban-chinas-deepseek-government-devices-sources-2025-03-17/"
+      ],
+      "verified": false,
+      "tags": [
+        "government-use",
+        "security-concerns",
+        "regulation",
+        "us-policy"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-03-deepseek-launches-upgraded-ai-model-intensifying-competition",
+      "date": "2025-03-25",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek launches upgraded AI model intensifying competition with OpenAI",
+      "summary": "On March 25, 2025, DeepSeek released a new version of its AI model, marking a significant advancement in its efforts to compete with OpenAI. The upgrade likely includes improvements in reasoning, multimodal capabilities, or efficiency, reinforcing DeepSeek's position in the global AI race.",
+      "source_urls": [
+        "https://www.reuters.com/technology/artificial-intelligence/chinas-deepseek-releases-ai-model-upgrade-intensifies-rivalry-with-openai-2025-03-25/"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "competition",
+        "model-upgrade"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-deepseek-multiple-u-s-states-ban-deepseek-over-security-and-ethical-c",
+      "date": "2025-04-14",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Multiple U.S. states ban DeepSeek over security and ethical concerns",
+      "summary": "Following federal and international scrutiny, several U.S. states have moved to ban or restrict the use of DeepSeek's AI models on government devices and networks, citing security, privacy, and ethical concerns. This reflects growing regulatory fragmentation and regional risk assessments of Chinese AI providers.",
+      "source_urls": [
+        "https://statetechmagazine.com/article/2025/04/these-states-have-banned-deepseek"
+      ],
+      "verified": false,
+      "tags": [
+        "regulatory",
+        "security",
+        "us-politics",
+        "government-use"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-deepseek-trump-administration-reportedly-considers-nationwide-ban-on-",
+      "date": "2025-04-16",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Trump administration reportedly considers nationwide ban on DeepSeek",
+      "summary": "Following a series of government and state-level restrictions, the Trump administration is reportedly evaluating a comprehensive ban on DeepSeek in the United States over national security, data privacy, and ethical concerns. This marks a potential escalation from prior agency-specific prohibitions to a possible federal-level restriction.",
+      "source_urls": [
+        "https://techcrunch.com/2025/04/16/trump-administration-reportedly-considers-a-us-deepseek-ban/"
+      ],
+      "verified": false,
+      "tags": [
+        "regulatory-scrutiny",
+        "geopolitical-tensions",
+        "security-concerns"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-deepseek-u-s-house-investigates-deepseek-s-funding-and-security-impli",
+      "date": "2025-04-17",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "U.S. House investigates DeepSeek's funding and security implications",
+      "summary": "The U.S. House conducted an investigation into DeepSeek, focusing on its financial backing and potential national security risks associated with its status as a Chinese AI firm. The probe highlights growing scrutiny of foreign AI companies operating in sensitive data and infrastructure domains.",
+      "source_urls": [
+        "https://cyberscoop.com/deepseek-house-ccp-committee-report-national-security-data-risks/"
+      ],
+      "verified": false,
+      "tags": [
+        "regulatory-scrutiny",
+        "national-security",
+        "funding-disclosure",
+        "geopolitical-tensions"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-deepseek-baidu-announces-kunlun-chip-cluster-capable-of-training-deep",
+      "date": "2025-04-25",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Baidu announces Kunlun chip cluster capable of training DeepSeek-class models",
+      "summary": "Baidu states its Kunlun AI chip cluster can train large language models comparable to those developed by DeepSeek, signaling progress in China's domestic AI hardware and training infrastructure.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/chinas-baidu-says-its-kunlun-chip-cluster-can-train-deepseek-like-models-2025-04-25/"
+      ],
+      "verified": false,
+      "tags": [
+        "china",
+        "hardware",
+        "training-infrastructure"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-deepseek-restores-availability-in-south-korea-after-temporar",
+      "date": "2025-04-30",
+      "type": "model_unavailable",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek restores availability in South Korea after temporary suspension",
+      "summary": "After a brief suspension in South Korea due to regulatory or compliance concerns, DeepSeek resumed operations and became available for download again. The event reflects ongoing challenges in deploying AI services across different jurisdictions with varying regulatory standards.",
+      "source_urls": [
+        "https://www.reuters.com/sustainability/boards-policy-regulation/deepseek-available-download-again-south-korea-after-suspension-2025-04-28/"
+      ],
+      "verified": false,
+      "tags": [
+        "geopolitical",
+        "availability",
+        "regional-access"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-deepseek-us-house-select-committee-accuses-deepseek-of-spying-and-cir",
+      "date": "2025-04-30",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "US House Select Committee accuses DeepSeek of spying and circumventing chip export controls",
+      "summary": "On April 30, 2025, a U.S. House Select Committee issued a report formally accusing DeepSeek of engaging in espionage and violating U.S. export controls by obtaining advanced AI chips illegally. This marks a significant escalation in U.S. scrutiny of Chinese AI firms and could lead to broader sanctions or trade restrictions.",
+      "source_urls": [
+        "https://techpolicy.press/us-house-select-committee-report-accuses-deepseek-of-spying-and-circumventing-export-controls-on-chips"
+      ],
+      "verified": false,
+      "tags": [
+        "geopolitical",
+        "export-controls",
+        "security-concerns",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-05-deepseek-releases-updated-r1-reasoning-model-on-hugging-face",
+      "date": "2025-05-28",
+      "type": "open_source_release",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/R1"
+      ],
+      "headline": "DeepSeek releases updated R1 reasoning model on Hugging Face",
+      "summary": "DeepSeek has updated its R1 reasoning AI model and made it publicly available on Hugging Face, expanding access to researchers and developers. This move enhances the model's availability beyond prior deployments on cloud platforms like Azure and AWS.",
+      "source_urls": [
+        "https://techcrunch.com/2025/05/28/deepseek-updates-its-r1-reasoning-ai-model-releases-it-on-hugging-face/"
+      ],
+      "verified": false,
+      "tags": [
+        "reasoning",
+        "open-access",
+        "model-update"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-05-deepseek-launches-distilled-r1-model-capable-of-running-on-a",
+      "date": "2025-05-29",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/R1-distilled"
+      ],
+      "headline": "DeepSeek launches distilled R1 model capable of running on a single GPU",
+      "summary": "DeepSeek introduced a distilled version of its R1 model optimized for efficient deployment, enabling it to run on a single GPU. This advancement lowers hardware requirements and broadens access for developers and enterprises with limited compute resources.",
+      "source_urls": [
+        "https://techcrunch.com/2025/05/29/deepseeks-distilled-new-r1-ai-model-can-run-on-a-single-gpu/"
+      ],
+      "verified": false,
+      "tags": [
+        "model-efficiency",
+        "distillation",
+        "on-prem-deployment",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-nvidia-huawei-ai-chips-show-superior-performance-over-nvidia-in-run",
+      "date": "2025-06-19",
+      "type": "infrastructure",
+      "providers": [
+        "nvidia",
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/r1"
+      ],
+      "headline": "Huawei AI chips show superior performance over Nvidia in running DeepSeek R1 model",
+      "summary": "Benchmark results indicate Huawei's AI chips outperform Nvidia's in inference efficiency and speed on DeepSeek's R1 model, highlighting progress in China's domestic AI hardware ecosystem and potential shifts in global AI compute dynamics.",
+      "source_urls": [
+        "https://www.scmp.com/tech/tech-trends/article/3315068/how-huaweis-ascend-ai-chips-outperform-nvidia-processors-running-deepseeks-r1-model"
+      ],
+      "verified": false,
+      "tags": [
+        "benchmark",
+        "hardware-performance",
+        "china-ai",
+        "inference-efficiency"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-deepseek-us-official-accuses-deepseek-of-aiding-china-s-military-and-",
+      "date": "2025-06-23",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "US official accuses DeepSeek of aiding China's military and evading export controls",
+      "summary": "A US official has alleged that Chinese AI firm DeepSeek has supported China's military and circumvented US export controls on advanced technology. This accusation escalates ongoing US concerns about Chinese AI firms accessing restricted chips and intellectual property, potentially leading to tighter restrictions or sanctions.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/deepseek-aids-chinas-military-evaded-export-controls-us-official-says-2025-06-23/"
+      ],
+      "verified": false,
+      "tags": [
+        "export-controls",
+        "geopolitical-tensions",
+        "military-use",
+        "regulatory-scrutiny"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-deepseek-allegedly-used-shell-companies-to-procure-h100-gpus",
+      "date": "2025-06-23",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek",
+        "nvidia"
+      ],
+      "models": [],
+      "headline": "DeepSeek allegedly used shell companies to procure H100 GPUs in violation of U.S. export controls",
+      "summary": "In mid-2025, reports emerged that Chinese AI firm DeepSeek circumvented U.S. chip export restrictions by acquiring Nvidia H100 GPUs through shell companies. Nvidia publicly denied the claims. The allegations intensified scrutiny over AI hardware proliferation and compliance with export controls.",
+      "source_urls": [
+        "https://www.tomshardware.com/tech-industry/semiconductors/chinese-ai-firm-deepseek-reportedly-using-shell-companies-to-try-and-evade-u-s-chip-restrictions-allegedly-procured-unknown-number-of-h100-ai-gpus-after-ban-but-nvidia-denies-the-claim"
+      ],
+      "verified": false,
+      "tags": [
+        "export-controls",
+        "geopolitical",
+        "compliance",
+        "chip-shortage",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-deepseek-obtains-nvidia-s-high-end-gpus-via-singapore-us-off",
+      "date": "2025-06-25",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek",
+        "nvidia"
+      ],
+      "models": [],
+      "headline": "DeepSeek obtains Nvidia's high-end GPUs via Singapore, US official says",
+      "summary": "A US official alleges that DeepSeek has acquired Nvidia's high-end AI GPUs through Singapore, circumventing US export controls. This highlights ongoing challenges in enforcing semiconductor restrictions and underscores DeepSeek's efforts to secure critical AI compute despite geopolitical constraints.",
+      "source_urls": [
+        "https://asiatimes.com/2025/06/deepseek-gets-nvidias-high-end-gpus-via-singapore-us-official/"
+      ],
+      "verified": false,
+      "tags": [
+        "export-controls",
+        "supply-chain",
+        "geopolitics",
+        "compute-access"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-deepseek-u-s-export-controls-impede-deepseek-s-technological-progress",
+      "date": "2025-06-26",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "U.S. export controls impede DeepSeek's technological progress",
+      "summary": "U.S. export restrictions are hindering DeepSeek's ability to advance its AI development, likely by limiting access to advanced semiconductors or related technologies. This regulatory barrier reflects broader U.S. concerns about Chinese AI firms and technology transfer risks.",
+      "source_urls": [
+        "https://www.theinformation.com/articles/deepseeks-progress-stalled-u-s-export-controls"
+      ],
+      "verified": false,
+      "tags": [
+        "export-controls",
+        "geopolitical-risk",
+        "hardware-access",
+        "regulatory-scrutiny"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-deepseek-r2-model-launch-delayed-as-ceo-expresses-concerns-o",
+      "date": "2025-06-26",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/R2"
+      ],
+      "headline": "DeepSeek R2 model launch delayed as CEO expresses concerns over progress",
+      "summary": "According to The Information, DeepSeek's planned R2 model launch has been stalled due to reservations from the company's CEO about the model's development trajectory. This indicates internal strategic deliberation at a key Chinese AI firm regarding its next-generation model.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/deepseek-r2-launch-stalled-ceo-balks-progress-information-reports-2025-06-26/"
+      ],
+      "verified": false,
+      "tags": [
+        "model-delay",
+        "leadership-concern",
+        "china-ai"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-deepseek-apple-and-google-remove-deepseek-from-app-stores-in-germany",
+      "date": "2025-06-27",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Apple and Google remove DeepSeek from app stores in Germany",
+      "summary": "In June 2025, DeepSeek was banned from Apple's App Store and Google's Play Store in Germany, restricting its distribution in the region. The action reflects growing regulatory scrutiny over data privacy, security, and potential foreign influence concerns associated with Chinese AI firms.",
+      "source_urls": [
+        "https://www.reuters.com/sustainability/boards-policy-regulation/deepseek-faces-expulsion-app-stores-germany-2025-06-27/"
+      ],
+      "verified": false,
+      "tags": [
+        "germany",
+        "app-store",
+        "regulatory-ban",
+        "data-privacy",
+        "security-concerns"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-deepseek-german-official-urges-apple-and-google-to-ban-deepseek-over-",
+      "date": "2025-06-27",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "German official urges Apple and Google to ban DeepSeek over privacy concerns; apps removed",
+      "summary": "A German official called for Apple and Google to ban AI company DeepSeek due to privacy concerns, leading to the removal of DeepSeek's apps from both app stores in Germany. This reflects growing European scrutiny of Chinese AI firms and their data practices.",
+      "source_urls": [
+        "https://www.euronews.com/next/2025/06/27/german-official-urges-apple-and-google-to-ban-ai-company-deepseek-citing-privacy-concerns"
+      ],
+      "verified": false,
+      "tags": [
+        "privacy",
+        "regulation",
+        "germany",
+        "app-store-removal"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-deepseek-sophgo-adapts-chip-product-for-deepseek-in-self-reliance-pus",
+      "date": "2025-06-30",
+      "type": "partnership",
+      "providers": [
+        "deepseek",
+        "other"
+      ],
+      "models": [],
+      "headline": "Sophgo adapts chip product for DeepSeek in self-reliance push",
+      "summary": "China's Sophgo has modified its semiconductor product to support DeepSeek's AI models, advancing domestic AI supply chain independence. This collaboration strengthens China's strategic push to reduce reliance on foreign AI hardware.",
+      "source_urls": [
+        "https://www.scmp.com/tech/tech-trends/article/3316363/chinese-chipmaker-sophgo-adapts-compute-card-deepseek-beijings-self-reliance-push"
+      ],
+      "verified": false,
+      "tags": [
+        "china",
+        "semiconductor",
+        "hardware-partnership",
+        "self-reliance"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-07-nvidia-singapore-court-adjourns-case-on-alleged-smuggling-of-nvidia",
+      "date": "2025-07-01",
+      "type": "regulatory_action",
+      "providers": [
+        "nvidia",
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Singapore court adjourns case on alleged smuggling of Nvidia chips to China for DeepSeek",
+      "summary": "A Singaporean court has adjourned proceedings against three individuals accused of illegally smuggling Nvidia H100 AI chips to China, allegedly for use by the AI company DeepSeek. The case, which highlights ongoing enforcement of global export controls on advanced AI hardware, is set to resume in August 2025. U.S. export restrictions on high-end AI chips to China have intensified scrutiny on supply chain compliance.",
+      "source_urls": [
+        "https://www.tomshardware.com/tech-industry/singapore-ai-chip-court-case-adjourned-until-august-trio-accused-of-illegally-smuggling-nvidia-chips-to-china-for-use-by-ai-firm-deepseek"
+      ],
+      "verified": false,
+      "tags": [
+        "export-controls",
+        "semiconductor",
+        "legal-proceedings",
+        "geopolitical-tensions"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-07-deepseek-czech-government-bans-deepseek-usage-in-public-administratio",
+      "date": "2025-07-09",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Czech government bans DeepSeek usage in public administration",
+      "summary": "The Czech government has prohibited the use of DeepSeek AI models within public administration due to security, privacy, and ethical concerns. This follows similar actions by other nations and reflects growing scrutiny of Chinese AI providers in government systems.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/czech-government-bans-deepseek-usage-public-administration-2025-07-09/"
+      ],
+      "verified": false,
+      "tags": [
+        "government-use",
+        "security-concerns",
+        "regional-restriction"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-deepseek-shifts-r2-training-back-to-nvidia-after-huawei-asce",
+      "date": "2025-08-14",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek",
+        "nvidia"
+      ],
+      "models": [
+        "deepseek/R2"
+      ],
+      "headline": "DeepSeek shifts R2 training back to Nvidia after Huawei Ascend failures, uses Ascend for inference",
+      "summary": "Following reported failures in training its R2 model on Huawei Ascend hardware, DeepSeek is reverting to Nvidia GPUs for training under pressure from Chinese authorities to achieve technological independence. The company will continue using Huawei Ascend chips for inference workloads. This reflects ongoing challenges in China's push to decouple from Western AI hardware.",
+      "source_urls": [
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/deepseek-reportedly-urged-by-chinese-authorities-to-train-new-model-on-huawei-hardware-after-multiple-failures-r2-training-to-switch-back-to-nvidia-hardware-while-ascend-gpus-handle-inference"
+      ],
+      "verified": false,
+      "tags": [
+        "compute-sovereignty",
+        "hardware-shift",
+        "training-inference-split",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-deepseek-delays-new-ai-model-launch-due-to-huawei-chip-issue",
+      "date": "2025-08-20",
+      "type": "model_deprecation",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/new-model"
+      ],
+      "headline": "DeepSeek delays new AI model launch due to Huawei chip issues",
+      "summary": "DeepSeek has postponed the launch of its new AI model because of technical problems with Huawei's AI chips, according to a report by the Financial Times. The company had been exploring Huawei's Ascend chips as an alternative to U.S.-made hardware amid export restrictions, but encountered performance or integration challenges that have delayed the rollout.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/deepseeks-launch-new-ai-model-delayed-by-huawei-chip-issues-ft-reports-2025-08-14/"
+      ],
+      "verified": false,
+      "tags": [
+        "supply-chain",
+        "hardware-dependency",
+        "geopolitical-impact"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-deepseek-releases-upgraded-ai-model-with-support-for-domesti",
+      "date": "2025-08-21",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/upgraded-model-domestic-chip"
+      ],
+      "headline": "DeepSeek releases upgraded AI model with support for domestic chips",
+      "summary": "Chinese AI startup DeepSeek launched an upgraded version of its model designed to run on domestically produced Chinese AI chips, marking a strategic step toward reducing reliance on Western semiconductor technology. This move strengthens China's push for AI self-sufficiency amid ongoing U.S. export controls.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/chinese-ai-startup-deepseek-releases-upgraded-model-with-domestic-chip-support-2025-08-21/"
+      ],
+      "verified": false,
+      "tags": [
+        "china",
+        "semiconductor-independence",
+        "domestic-chips",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-deepseek-hints-latest-model-will-support-compatibility-with-",
+      "date": "2025-08-22",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/latest"
+      ],
+      "headline": "DeepSeek hints latest model will support compatibility with China's next-generation domestic AI chips",
+      "summary": "DeepSeek has indicated that its upcoming model will be designed to work with China's next-generation homegrown AI chips, signaling a strategic push toward full-stack domestic AI infrastructure independence. This move reinforces alignment with national semiconductor initiatives and may influence future training and deployment architectures.",
+      "source_urls": [
+        "https://www.cnbc.com/2025/08/22/deepseek-hints-latest-model-supported-by-chinas-next-generation-homegrown-ai-chips.html"
+      ],
+      "verified": false,
+      "tags": [
+        "infrastructure",
+        "china",
+        "semiconductors",
+        "domestic-independence"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-deepseek-v3-1-becomes-cornerstone-of-china-s-domestic-chip-s",
+      "date": "2025-08-26",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v3.1"
+      ],
+      "headline": "DeepSeek V3.1 becomes cornerstone of China's domestic chip strategy",
+      "summary": "DeepSeek's V3.1 model is positioned as a critical enabler for China's efforts to achieve self-sufficiency in AI chips, signaling deep integration between national AI development goals and semiconductor independence. This reflects a strategic alignment between DeepSeek and Chinese technology policy.",
+      "source_urls": [
+        "https://www.scmp.com/tech/tech-war/article/3323235/tech-war-deepseeks-v31-model-emerges-key-pillar-chinas-chip-self-sufficiency"
+      ],
+      "verified": false,
+      "tags": [
+        "china",
+        "semiconductor",
+        "infrastructure",
+        "geopolitical",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-deepseek-opts-for-huawei-chips-to-train-some-models",
+      "date": "2025-08-29",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek opts for Huawei chips to train some models",
+      "summary": "DeepSeek is shifting part of its model training infrastructure to use Huawei's AI chips, marking a strategic move toward domestic Chinese semiconductor technology. This decision aligns with broader efforts to reduce reliance on U.S.-controlled technologies amid export restrictions.",
+      "source_urls": [
+        "https://www.theinformation.com/articles/deepseek-opts-huawei-chips-train-models"
+      ],
+      "verified": false,
+      "tags": [
+        "compute-sovereignty",
+        "domestic-chips",
+        "strategic-shift"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-deepseek-announces-upcoming-launch-of-high-powered-ai-agent-",
+      "date": "2025-09-04",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/agent"
+      ],
+      "headline": "DeepSeek announces upcoming launch of high-powered AI agent by end of year",
+      "summary": "DeepSeek has announced plans to release a high-powered AI agent before the end of 2025. This represents a strategic move into agentic AI systems, building on their existing model lineup and infrastructure developments.",
+      "source_urls": [
+        "https://www.washingtontimes.com/news/2025/sep/4/deepseek-chinese-artificial-intelligence-system-release-high-powered/"
+      ],
+      "verified": false,
+      "tags": [
+        "agent",
+        "announcement",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-deepseek-v3-1-becomes-available-on-amazon-bedrock",
+      "date": "2025-09-18",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek",
+        "amazon"
+      ],
+      "models": [
+        "deepseek/deepseek-v3.1"
+      ],
+      "headline": "DeepSeek-V3.1 becomes available on Amazon Bedrock",
+      "summary": "The DeepSeek-V3.1 model is now accessible via Amazon Bedrock, enabling AWS customers to integrate it into their applications using a fully managed service. This marks a significant expansion of DeepSeek's cloud availability and strengthens Amazon's position as a multi-model AI platform.",
+      "source_urls": [
+        "https://aws.amazon.com/blogs/aws/deepseek-v3-1-now-available-in-amazon-bedrock/"
+      ],
+      "verified": false,
+      "tags": [
+        "model-availability",
+        "cloud-integration",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-deepseek-launches-v3-1-terminus-with-improved-agentic-tool-u",
+      "date": "2025-09-22",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/DeepSeek-V3.1-Terminus"
+      ],
+      "headline": "DeepSeek launches V3.1-Terminus with improved agentic tool use and reduced language mixing errors",
+      "summary": "DeepSeek released an updated version of its V3.1 model, named Terminus, featuring enhanced capabilities for tool use in agentic workflows and reduced instances of unintended language mixing during multilingual interactions. This update improves reliability and performance for enterprise and developer applications.",
+      "source_urls": [
+        "https://venturebeat.com/technology/deepseek-v3-1-terminus-launches-with-improved-agentic-tool-use-and-reduced"
+      ],
+      "verified": false,
+      "tags": [
+        "model-launch",
+        "agentic-ai",
+        "multilingual",
+        "improved-tool-use"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-deepseek-releases-intermediate-ai-model-as-step-toward-next-",
+      "date": "2025-09-29",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/intermediate-v3"
+      ],
+      "headline": "DeepSeek releases intermediate AI model as step toward next-generation system",
+      "summary": "China's DeepSeek launched an intermediate AI model in September 2025, positioning it as a developmental milestone en route to its next-generation system. This release reflects ongoing iteration in the competitive global AI landscape.",
+      "source_urls": [
+        "https://www.reuters.com/technology/deepseek-releases-model-it-calls-intermediate-step-towards-next-generation-2025-09-29/"
+      ],
+      "verified": false,
+      "tags": [
+        "model-launch",
+        "intermediate-model",
+        "china-ai"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-deepseek-launches-sparse-attention-model-halving-api-costs",
+      "date": "2025-09-29",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/sparse-attention"
+      ],
+      "headline": "DeepSeek launches sparse attention model halving API costs",
+      "summary": "DeepSeek released a new model leveraging sparse attention mechanisms that reduce computational costs, resulting in a 50% decrease in API pricing. This advancement improves efficiency while maintaining performance, positioning DeepSeek competitively in the API market.",
+      "source_urls": [
+        "https://techcrunch.com/2025/09/29/deepseek-releases-sparse-attention-model-that-cuts-api-costs-in-half/"
+      ],
+      "verified": false,
+      "tags": [
+        "cost-reduction",
+        "efficiency",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-deepseek-cuts-api-pricing-in-half-with-new-v3-2-exp-model",
+      "date": "2025-09-29",
+      "type": "pricing_change",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/V3.2-Exp"
+      ],
+      "headline": "DeepSeek cuts API pricing in half with new V3.2-Exp model",
+      "summary": "DeepSeek launched the V3.2-Exp model with significantly reduced API pricing, now costing less than 3 cents per 1 million input tokens. This aggressive pricing move positions the model competitively in the AI inference market and reflects efficiency improvements in the underlying architecture.",
+      "source_urls": [
+        "https://venturebeat.com/ai/deepseeks-new-v3-2-exp-model-cuts-api-pricing-in-half-to-less-than-3-cents"
+      ],
+      "verified": false,
+      "tags": [
+        "pricing",
+        "cost-reduction",
+        "api",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-deepseek-amd-instinct-mi355x-gpus-power-deepseek-v3-2-exp-model",
+      "date": "2025-10-03",
+      "type": "partnership",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v3.2-exp"
+      ],
+      "headline": "AMD Instinct MI355X GPUs power DeepSeek-V3.2-Exp model",
+      "summary": "AMD and DeepSeek collaborate to deploy the DeepSeek-V3.2-Exp model on AMD Instinct MI355X GPUs, marking a strategic advancement in non-NVIDIA AI compute infrastructure. This partnership strengthens AMD's position in the AI accelerator market and enables DeepSeek to scale efficiently with alternative hardware.",
+      "source_urls": [
+        "https://www.amd.com/en/developer/resources/technical-articles/2025/amd-instinct-mi335x-gpu-supports-deepseek-v3-2-exp.html"
+      ],
+      "verified": false,
+      "tags": [
+        "gpu-partnership",
+        "compute-infrastructure",
+        "amd",
+        "deepseek",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-deepseek-launches-3b-parameter-vision-language-model-optimiz",
+      "date": "2025-10-20",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/ocr-3b"
+      ],
+      "headline": "DeepSeek launches 3B-parameter vision-language model optimized for OCR and document conversion",
+      "summary": "DeepSeek released a specialized 3B-parameter VLM designed for high-accuracy optical character recognition and structured data extraction from documents. This model targets enterprise and automation use cases requiring reliable text parsing from scanned inputs.",
+      "source_urls": [
+        "https://www.marktechpost.com/2025/10/20/deepseek-just-released-a-3b-ocr-model-a-3b-vlm-designed-for-high-performance-ocr-and-structured-document-conversion/"
+      ],
+      "verified": false,
+      "tags": [
+        "ocr",
+        "document-ai",
+        "vision-language-model",
+        "enterprise"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-deepseek-ocr-ai-model-achieves-200-000-pages-per-day-through",
+      "date": "2025-10-22",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/ocr"
+      ],
+      "headline": "DeepSeek OCR AI model achieves 200,000 pages per day throughput on single Nvidia A100 GPU",
+      "summary": "DeepSeek demonstrated a significant efficiency milestone with its OCR AI model, capable of processing 200,000 document pages daily on a single Nvidia A100 GPU. This performance highlights advancements in document intelligence infrastructure and positions DeepSeek competitively in high-throughput enterprise AI workloads.",
+      "source_urls": [
+        "https://www.notebookcheck.net/DeepSeek-OCR-AI-model-can-process-200-000-document-pages-a-day-on-a-single-Nvidia-A100-GPU.1144400.0.html"
+      ],
+      "verified": false,
+      "tags": [
+        "ocr",
+        "document-intelligence",
+        "efficiency",
+        "infrastructure",
+        "enterprise-ai"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-deepseek-investigation-reveals-chinese-military-drone-powered-by-deep",
+      "date": "2025-10-27",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek",
+        "nvidia"
+      ],
+      "models": [
+        "deepseek/r1"
+      ],
+      "headline": "Investigation reveals Chinese military drone powered by DeepSeek continues using restricted Nvidia H100 chips",
+      "summary": "An investigative report exposes that China's People's Liberation Army and affiliated institutions are using U.S.-restricted Nvidia H100 GPUs in autonomous combat drones powered by DeepSeek's AI technology, highlighting ongoing circumvention of export controls and deepening reliance on advanced Western AI hardware.",
+      "source_urls": [
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/chinas-autonomous-military-combat-drone-powered-by-deepseek-highlights-nvidia-reliance-investigation-reveals-peoples-liberation-army-supporting-institutions-continue-to-use-restricted-h100-chips"
+      ],
+      "verified": false,
+      "tags": [
+        "military-ai",
+        "export-controls",
+        "geopolitical-tensions",
+        "hardware-reliance",
+        "compliance"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-deepseek-and-qwen-ai-models-released-as-ubuntu-snap-packages",
+      "date": "2025-10-31",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek",
+        "alibaba"
+      ],
+      "models": [
+        "deepseek/deepseek-r1",
+        "alibaba/qwen3-235b"
+      ],
+      "headline": "DeepSeek and Qwen AI models released as Ubuntu Snap packages",
+      "summary": "DeepSeek and Alibaba's Qwen AI models are now available as Ubuntu Snap packages, enabling easier installation and deployment on Linux systems through Canonical's package management system. This move improves accessibility for developers and system administrators using Ubuntu-based environments.",
+      "source_urls": [
+        "https://www.omgubuntu.co.uk/2025/10/deepseek-qwen-ubuntu-snaps"
+      ],
+      "verified": false,
+      "tags": [
+        "linux",
+        "ubuntu",
+        "snap",
+        "infrastructure",
+        "developer-tools"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-deepseek-releases-new-open-source-ai-model",
+      "date": "2025-11-28",
+      "type": "open_source_release",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/unknown-v5"
+      ],
+      "headline": "DeepSeek releases new open-source AI model",
+      "summary": "China's DeepSeek launched a new open-source AI model, marking a significant advancement in its public model offerings. This release strengthens its position in the global open-model ecosystem amid growing competition from Western counterparts.",
+      "source_urls": [
+        "https://www.investors.com/news/technology/nvidia-stock-google-stock-deepseek-china-open-source-ai-models/"
+      ],
+      "verified": false,
+      "tags": [
+        "open-source",
+        "china",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-deepseek-launches-deepseekmath-v2-an-open-weights-math-model",
+      "date": "2025-11-28",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseekmath-v2"
+      ],
+      "headline": "DeepSeek launches DeepSeekMath-V2, an open-weights math model scoring 118/120 on Putnam 2024",
+      "summary": "DeepSeek AI has released DeepSeekMath-V2, a new open-weights model specialized in mathematical reasoning, which achieved a near-perfect score of 118/120 on the Putnam 2024 competition. This model represents a significant advancement in AI's ability to solve complex mathematical problems and is made available to the public under an open-weights license.",
+      "source_urls": [
+        "https://www.marktechpost.com/2025/11/28/deepseek-ai-releases-deepseekmath-v2-the-open-weights-maths-model-that-scored-118-120-on-putnam-2024/"
+      ],
+      "verified": false,
+      "tags": [
+        "mathematical-reasoning",
+        "open-weights",
+        "putnam",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-deepseek-releases-first-open-ai-model-achieving-gold-level-s",
+      "date": "2025-11-29",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/math-olympiad-gold"
+      ],
+      "headline": "DeepSeek releases first open AI model achieving gold-level scores on mathematics olympiad benchmarks",
+      "summary": "DeepSeek launched a new open AI model specifically optimized for advanced mathematical reasoning, achieving performance comparable to gold medalists in international mathematics olympiads. This marks a significant advancement in AI's ability to handle complex mathematical problems and positions DeepSeek as a leader in reasoning-intensive AI tasks.",
+      "source_urls": [
+        "https://www.scmp.com/tech/tech-trends/article/3334553/deepseek-releases-first-open-ai-model-gold-level-scores-maths-olympiad"
+      ],
+      "verified": false,
+      "tags": [
+        "mathematical-reasoning",
+        "open-model",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-deepseek-runway-and-deepseek-release-new-foundation-models",
+      "date": "2025-12-01",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Runway and DeepSeek release new foundation models",
+      "summary": "On December 1, 2025, both Runway and DeepSeek announced the release of new foundation models, marking a significant advancement in their respective AI capabilities. The models are intended for broad application in generative AI tasks, with details on architecture and performance expected to follow.",
+      "source_urls": [
+        "https://siliconangle.com/2025/12/01/runway-deepseek-release-new-foundation-models/"
+      ],
+      "verified": false,
+      "tags": [
+        "model-launch",
+        "foundation-model",
+        "runway",
+        "deepseek"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-deepseek-founder-liang-wenfeng-benefits-from-moore-threads-i",
+      "date": "2025-12-08",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek founder Liang Wenfeng benefits from Moore Threads' IPO",
+      "summary": "DeepSeek founder Liang Wenfeng realized significant personal gains from Moore Threads' initial public offering. Moore Threads, a Chinese AI chip designer, went public with strong market interest, indirectly signaling confidence in the domestic AI hardware ecosystem and the interconnected financial interests between AI model companies and chip firms in China.",
+      "source_urls": [
+        "https://www.scmp.com/tech/tech-trends/article/3335645/deepseek-founder-liang-wenfeng-cleans-chip-firm-moore-threads-shanghai-ipo"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "founder-exit",
+        "china-ai-ecosystem",
+        "chip-investment"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-deepseek-accused-of-using-banned-nvidia-chips-to-train-next-",
+      "date": "2025-12-10",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek accused of using banned Nvidia chips to train next model",
+      "summary": "The Information reports that DeepSeek is using Nvidia chips banned under U.S. export controls to accelerate development of its next-generation AI model, raising compliance and national security concerns. This follows ongoing U.S. investigations into Chinese AI firms' procurement of restricted high-end GPUs.",
+      "source_urls": [
+        "https://www.theinformation.com/articles/deepseek-using-banned-nvidia-chips-race-build-next-model"
+      ],
+      "verified": false,
+      "tags": [
+        "export-controls",
+        "geopolitical-risk",
+        "hardware-procurement",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-nvidia-responds-to-report-that-deepseek-used-banned-blackwel",
+      "date": "2025-12-10",
+      "type": "regulatory_action",
+      "providers": [
+        "nvidia",
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Nvidia responds to report that DeepSeek used banned Blackwell AI chips",
+      "summary": "Nvidia publicly addressed reports that Chinese AI firm DeepSeek utilized banned US-made Blackwell architecture GPUs in its systems, highlighting compliance efforts and raising concerns about enforcement of export controls. The incident underscores ongoing tensions over AI chip proliferation and technology transfer.",
+      "source_urls": [
+        "https://www.cnbc.com/2025/12/10/nvidia-report-china-deepseek-ai-blackwell-chips.html"
+      ],
+      "verified": false,
+      "tags": [
+        "export-controls",
+        "geopolitical-tensions",
+        "compliance",
+        "blackwell",
+        "china-us-ai-rivalry"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-deepseek-publishes-efficient-ai-framework-to-address-chip-co",
+      "date": "2026-01-02",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek publishes efficient AI framework to address chip constraints",
+      "summary": "DeepSeek has released a new efficient AI framework designed to operate effectively under ongoing AI chip supply constraints. This development reflects a strategic effort to maintain performance and scalability despite limitations in access to high-end hardware.",
+      "source_urls": [
+        "https://finance.yahoo.com/news/deepseek-publishes-efficient-ai-framework-150032823.html"
+      ],
+      "verified": false,
+      "tags": [
+        "efficiency",
+        "infrastructure",
+        "chip-constraints"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-deepseek-to-launch-new-coding-focused-ai-model-in-february-2",
+      "date": "2026-01-09",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/coding-model-feb2026"
+      ],
+      "headline": "DeepSeek to launch new coding-focused AI model in February 2026",
+      "summary": "According to The Information, DeepSeek plans to release a new AI model specialized for coding tasks in February 2026. This positions the company to better compete in the developer AI space, complementing its existing V4 and math-focused models.",
+      "source_urls": [
+        "https://www.reuters.com/technology/deepseek-launch-new-ai-model-focused-coding-february-information-reports-2026-01-09/"
+      ],
+      "verified": false,
+      "tags": [
+        "coding",
+        "developer-tools",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-deepseek-research-introduces-engram-conditional-memory-modul",
+      "date": "2026-01-13",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Deepseek Research introduces Engram conditional memory module to decouple compute and RAM pools",
+      "summary": "Deepseek Research has developed a breakthrough memory architecture called the Engram conditional memory module, which commits static knowledge to system RAM and decouples compute power from RAM pools. This innovation aims to bypass traditional GPU and HBM memory constraints, potentially enabling more scalable and efficient AI model deployment.",
+      "source_urls": [
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/deepseek-touts-memory-breakthrough-engram"
+      ],
+      "verified": false,
+      "tags": [
+        "memory-architecture",
+        "infrastructure",
+        "gpu-bypass",
+        "hbm-alternative",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-deepseek-founder-proposes-new-training-method-to-bypass-gpu-",
+      "date": "2026-01-13",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek founder proposes new training method to bypass GPU constraints",
+      "summary": "In a new research paper, DeepSeek's founder introduces an innovative model training approach designed to reduce dependency on high-end GPUs, potentially enabling more scalable and accessible AI development. This work could influence future training paradigms, especially in environments with limited access to cutting-edge hardware.",
+      "source_urls": [
+        "https://www.scmp.com/tech/tech-trends/article/3339740/deepseek-founders-latest-paper-proposes-new-ai-model-training-bypass-gpu-limits"
+      ],
+      "verified": false,
+      "tags": [
+        "research-paper",
+        "training-optimization",
+        "hardware-efficiency"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-alibaba-chinese-ai-firms-accelerate-model-development-one-year-after",
+      "date": "2026-01-27",
+      "type": "infrastructure",
+      "providers": [
+        "alibaba",
+        "moonshot",
+        "deepseek",
+        "zhipu"
+      ],
+      "models": [],
+      "headline": "Chinese AI firms accelerate model development one year after DeepSeek's emergence",
+      "summary": "One year after DeepSeek's disruptive entry, major Chinese AI companies including Alibaba, Moonshot, and others are intensifying efforts to release new frontier models, signaling a strategic push to maintain competitiveness in the rapidly evolving domestic and global AI landscape.",
+      "source_urls": [
+        "https://www.cnbc.com/2026/01/28/chinese-tech-companies-accelerate-ai-model-rollouts-us-rivals-deepseek-moonshot-kimi.html"
+      ],
+      "verified": false,
+      "tags": [
+        "china",
+        "competitive-response",
+        "model-race"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-deepseek-china-conditionally-approves-deepseek-to-purchase-nvidia-h20",
+      "date": "2026-01-30",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek",
+        "nvidia"
+      ],
+      "models": [],
+      "headline": "China conditionally approves DeepSeek to purchase Nvidia H200 chips",
+      "summary": "Chinese authorities have granted conditional approval for DeepSeek to acquire Nvidia's H200 AI chips, a move that eases prior restrictions on high-end AI hardware exports. The decision reflects ongoing geopolitical negotiations around semiconductor trade and AI competitiveness.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/china-conditionally-approves-deepseek-buy-nvidias-h200-chips-sources-2026-01-30/"
+      ],
+      "verified": false,
+      "tags": [
+        "geopolitics",
+        "semiconductors",
+        "export-controls"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-02-deepseek-trains-ai-model-on-nvidia-s-best-chips-despite-u-s-",
+      "date": "2026-02-24",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek",
+        "nvidia"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "DeepSeek trains AI model on Nvidia's best chips despite U.S. export ban",
+      "summary": "A Chinese official confirmed that DeepSeek successfully trained its latest AI model using Nvidia's most advanced GPUs, circumventing U.S. export restrictions. This underscores the ongoing challenge of enforcing chip controls and highlights DeepSeek's continued reliance on U.S. hardware for frontier model development.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/chinas-deepseek-trained-ai-model-nvidias-best-chip-despite-us-ban-official-says-2026-02-24/"
+      ],
+      "verified": false,
+      "tags": [
+        "export-controls",
+        "geopolitics",
+        "hardware",
+        "regulation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-02-deepseek-withholds-latest-ai-model-from-us-chipmakers-includ",
+      "date": "2026-02-26",
+      "type": "regulatory_action",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/latest"
+      ],
+      "headline": "DeepSeek withholds latest AI model from US chipmakers including Nvidia",
+      "summary": "In early 2026, DeepSeek restricted access to its latest AI model for US-based semiconductor companies, notably excluding Nvidia. This move is seen as a response to ongoing US export controls on advanced AI chips and may reflect strategic positioning amid tightening US-China technology restrictions.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/deepseek-withholds-latest-ai-model-us-chipmakers-including-nvidia-sources-say-2026-02-25/"
+      ],
+      "verified": false,
+      "tags": [
+        "export-controls",
+        "geopolitical-tensions",
+        "chipmaker-restriction"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-02-deepseek-grants-huawei-exclusive-early-access-to-v4-model-wi",
+      "date": "2026-02-26",
+      "type": "partnership",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek grants Huawei exclusive early access to V4 model, withholds from US chipmakers",
+      "summary": "DeepSeek has withheld its latest V4 model from US semiconductor companies, including Nvidia, while granting Huawei exclusive early access. This strategic move underscores shifting alliances in the global AI race, as Chinese firms align to circumvent US export controls and advance domestic technological capabilities.",
+      "source_urls": [
+        "https://thechinaacademy.org/deepseek-withholds-v4-model-from-us-chipmakers-grants-huawei-exclusive-early-access/"
+      ],
+      "verified": false,
+      "tags": [
+        "geopolitical",
+        "exclusive-access",
+        "china",
+        "semiconductor",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-02-deepseek-launches-new-v4-ai-model",
+      "date": "2026-02-27",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "DeepSeek launches new V4 AI model",
+      "summary": "DeepSeek released its V4 model, featuring a 512K context window and introducing cached-input pricing to reduce inference costs for repeated queries. This model marks a significant advancement in performance and efficiency, positioning DeepSeek as a direct competitor to leading US AI firms.",
+      "source_urls": [
+        "https://www.ft.com/content/e3366881-0622-40a7-9c34-a0d82e3d573e?syn-25a6b1a6"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "long-context",
+        "cost-efficiency"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-03-deepseek-suffers-major-outage-following-viral-chatbot-launch",
+      "date": "2026-03-30",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "DeepSeek suffers major outage following viral chatbot launch",
+      "summary": "DeepSeek experienced a significant service disruption shortly after its AI chatbot gained sudden popularity, likely due to unexpected surge in user traffic. The outage highlights scalability challenges following rapid adoption.",
+      "source_urls": [
+        "https://www.independent.co.uk/tech/deepseek-down-ai-server-busy-status-b2948145.html"
+      ],
+      "verified": false,
+      "tags": [
+        "outage",
+        "scalability",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "one-time",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-deepseek-v4-model-to-run-on-huawei-chips",
+      "date": "2026-04-03",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek",
+        "other"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek V4 model to run on Huawei chips",
+      "summary": "DeepSeek's V4 model will be powered by Huawei's AI chips, marking a strategic pivot toward domestic Chinese semiconductor technology. This move aligns with China's broader push for AI self-reliance amid U.S. export restrictions on advanced chips.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/deepseeks-v4-model-will-run-huawei-chips-information-reports-2026-04-03/"
+      ],
+      "verified": false,
+      "tags": [
+        "infrastructure",
+        "china",
+        "semiconductors",
+        "huawei",
+        "geopolitical"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-deepseek-launches-expert-chatbot-mode-ahead-of-v4-release",
+      "date": "2026-04-08",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/expert-mode"
+      ],
+      "headline": "DeepSeek launches expert chatbot mode ahead of V4 release",
+      "summary": "China's DeepSeek has introduced a new expert chatbot mode, enhancing its AI capabilities ahead of the anticipated release of its next-generation V4 model. This feature aims to improve domain-specific reasoning and user interaction quality.",
+      "source_urls": [
+        "https://www.scmp.com/tech/policy/article/3349345/chinas-deepseek-adds-instant-and-expert-chatbot-modes-ahead-much-awaited-v4-release"
+      ],
+      "verified": false,
+      "tags": [
+        "expert-mode",
+        "product-update",
+        "china"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-deepseek-tencent-and-alibaba-in-talks-to-invest-in-deepseek-at-over-2",
+      "date": "2026-04-22",
+      "type": "funding",
+      "providers": [
+        "deepseek",
+        "alibaba"
+      ],
+      "models": [],
+      "headline": "Tencent and Alibaba in talks to invest in DeepSeek at over $20 billion valuation",
+      "summary": "According to The Information, Chinese tech giants Tencent and Alibaba are in discussions to invest in AI startup DeepSeek at a valuation exceeding $20 billion. This potential investment signals strong confidence from major industry players in DeepSeek's technology and market position.",
+      "source_urls": [
+        "https://www.reuters.com/world/asia-pacific/tencent-alibaba-talks-invest-deepseek-information-reports-2026-04-22/"
+      ],
+      "verified": false,
+      "tags": [
+        "china",
+        "funding-rumors",
+        "strategic-investment"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-deepseek-releases-reduced-cost-version-of-v4-model-to-compet",
+      "date": "2026-04-24",
+      "type": "pricing_change",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "DeepSeek releases reduced-cost version of V4 model to compete in US-China AI race",
+      "summary": "In April 2026, DeepSeek launched a cost-optimized version of its V4 model, lowering inference prices to enhance competitiveness against U.S. AI providers. This move is part of a broader strategic push amid intensifying U.S.-China AI rivalry, aiming to attract price-sensitive enterprise and developer users globally.",
+      "source_urls": [
+        "https://www.france24.com/en/technology/20260424-us-china-ai-race-intensifies-as-deepseek-releases-new-reduced-cost-model"
+      ],
+      "verified": false,
+      "tags": [
+        "pricing-optimization",
+        "cost-reduction",
+        "us-china-ai-race"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-deepseek-unveils-new-ai-model-optimized-for-huawei-chips",
+      "date": "2026-04-26",
+      "type": "model_launch",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/huawei-tuned-model"
+      ],
+      "headline": "DeepSeek unveils new AI model optimized for Huawei chips",
+      "summary": "DeepSeek launched a new AI model specifically tailored to run on Huawei's domestic AI chips, reinforcing China's push for technological self-reliance amid U.S. export controls. This move signals a strategic alignment between leading Chinese AI and semiconductor firms to reduce dependency on Western hardware.",
+      "source_urls": [
+        "https://www.reuters.com/technology/chinas-deepseek-returns-with-new-model-year-after-viral-rise-2026-04-24/"
+      ],
+      "verified": false,
+      "tags": [
+        "china",
+        "tech-autonomy",
+        "huawei",
+        "semiconductor",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-05-deepseek-secures-10-billion-funding-round-with-agi-ambitions",
+      "date": "2026-05-22",
+      "type": "funding",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek secures $10 billion funding round with AGI ambitions",
+      "summary": "DeepSeek advanced a $10 billion funding round in May 2026, with founder Liang Wenfeng publicly declaring the pursuit of artificial general intelligence (AGI) as the company's core goal. This round follows earlier investments and underscores DeepSeek's growing scale and ambition in the global AI race.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2026-05-22/deepseek-founder-declares-agi-goal-as-10-billion-round-advances"
+      ],
+      "verified": false,
+      "tags": [
+        "major",
+        "funding-round",
+        "agi-goal"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-05-deepseek-makes-permanent-75-price-cut-on-flagship-v4-pro-ai-",
+      "date": "2026-05-23",
+      "type": "pricing_change",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-pro"
+      ],
+      "headline": "DeepSeek makes permanent 75% price cut on flagship V4-Pro AI model",
+      "summary": "In May 2026, DeepSeek implemented a permanent 75% reduction in pricing for its flagship DeepSeek-V4-Pro model, significantly improving its cost-performance ratio and intensifying competition in the AI model market.",
+      "source_urls": [
+        "https://www.reuters.com/world/china/chinas-deepseek-make-permanent-75-price-cut-flagship-v4pro-ai-model-2026-05-23/"
+      ],
+      "verified": false,
+      "tags": [
+        "pricing",
+        "major",
+        "cost-performance"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-05-deepseek-cuts-v4-pro-prices-by-75-to-intensify-ai-pricing-co",
+      "date": "2026-05-25",
+      "type": "pricing_change",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-pro"
+      ],
+      "headline": "DeepSeek cuts V4-Pro prices by 75% to intensify AI pricing competition",
+      "summary": "DeepSeek implemented a steep price reduction for its V4-Pro model, cutting costs by 75% and significantly improving its cost-performance ranking. This move escalates the ongoing AI pricing war, putting pressure on competitors to respond with lower prices or improved performance.",
+      "source_urls": [
+        "https://www.infoworld.com/article/4176709/deepseeks-steep-v4-pro-price-cut-escalates-ai-pricing-war.html"
+      ],
+      "verified": false,
+      "tags": [
+        "pricing-war",
+        "cost-performance",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-huawei-ai-chips-used-to-refine-deepseek-v4-model",
+      "date": "2026-06-05",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "Huawei AI chips used to refine DeepSeek V4 model",
+      "summary": "In a move advancing China's domestic AI capabilities, DeepSeek has leveraged Huawei's Ascend AI chips to optimize and refine its V4 model, reducing reliance on U.S.-made GPUs. This collaboration highlights progress in China's semiconductor self-sufficiency and marks a strategic alignment between leading Chinese AI and chip firms.",
+      "source_urls": [
+        "https://www.scmp.com/tech/article/3356117/huawei-chips-refine-deepseek-model-major-leap-chinas-ai-self-reliance"
+      ],
+      "verified": false,
+      "tags": [
+        "china",
+        "semiconductor-independence",
+        "hardware-software-co-design",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-huawei-led-team-claims-post-training-of-deepseek-s-1-6t-para",
+      "date": "2026-06-06",
+      "type": "infrastructure",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/1.6t-model"
+      ],
+      "headline": "Huawei-led team claims post-training of DeepSeek's 1.6T-parameter model using 1,000 Ascend 910C chips",
+      "summary": "A team led by Huawei claims to have successfully post-trained DeepSeek's 1.6-trillion-parameter model using 1,000 of its Ascend 910C AI chips. This marks a significant demonstration of China's domestic AI hardware and software integration at scale.",
+      "source_urls": [
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/huawei-led-team-claims-it-post-trained-deepseeks-1-6-trillion-parameter-models-on-ascend-910c-chips"
+      ],
+      "verified": false,
+      "tags": [
+        "post-training",
+        "domestic-chips",
+        "scale",
+        "china-ai",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-deepseek-open-sources-dspark-a-framework-accelerating-llm-in",
+      "date": "2026-06-29",
+      "type": "open_source_release",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek open sources DSpark, a framework accelerating LLM inference by up to 85%",
+      "summary": "DeepSeek has released DSpark, a new open-source framework that significantly improves the speed of large language model inference, achieving up to 85% faster performance. This release aims to lower deployment costs and improve efficiency for LLM applications.",
+      "source_urls": [
+        "https://venturebeat.com/orchestration/deepseek-open-sources-dspark-a-new-framework-to-speed-up-llm-inference-by-up-to-85"
+      ],
+      "verified": false,
+      "tags": [
+        "inference-optimization",
+        "framework",
+        "open-source",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-nvidia-software-optimizations-reduce-deepseek-v4-token-costs",
+      "date": "2026-07-01",
+      "type": "infrastructure",
+      "providers": [
+        "nvidia",
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "Nvidia software optimizations reduce DeepSeek V4 token costs by fivefold",
+      "summary": "Nvidia announced that new software advancements have dramatically reduced inference costs for DeepSeek V4, cutting token prices fivefold. This improvement stems from optimized kernel execution and memory management, enhancing efficiency on Nvidia's GPU stack without requiring hardware changes.",
+      "source_urls": [
+        "https://datacenter.news/story/nvidia-says-software-cuts-deepseek-v4-token-costs-fivefold"
+      ],
+      "verified": false,
+      "tags": [
+        "cost-efficiency",
+        "inference-optimization",
+        "software-optimization",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
     }
   ]
 }
