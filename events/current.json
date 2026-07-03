@@ -24478,6 +24478,616 @@
       ],
       "created_at": "2026-07-02",
       "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-google-deprecates-first-gen-embedding-models",
+      "announced_at": "2025-09-16",
+      "effective_at": "2025-10-30",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/embedding-001",
+        "google/embedding-gecko-001",
+        "google/gemini-embedding-exp",
+        "google/gemini-embedding-exp-03-07"
+      ],
+      "migration_target": "google/gemini-embedding-2",
+      "headline": "Google deprecates first-generation Gemini embedding models",
+      "summary": "embedding-001, embedding-gecko-001, and the gemini-embedding-exp models were announced for shutdown in October 2025 (the deprecations table records October 30, 2025). The table lists gemini-embedding-2 as the replacement.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: The following models will be shut down in October 2025: embedding-001 embedding-gecko-001 gemini-embedding-exp-03-07 ( gemini-embedding-exp )",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-google-deprecates-veo-3-0-preview-models",
+      "announced_at": "2025-10-15",
+      "effective_at": "2025-11-12",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/veo-3.0-generate-preview",
+        "google/veo-3.0-fast-generate-preview"
+      ],
+      "headline": "Google deprecates the Veo 3.0 preview models",
+      "summary": "veo-3.0-generate-preview and veo-3.0-fast-generate-preview were announced October 15, 2025 for shutdown November 12, 2025.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: Shut down for veo-3.0-generate-preview and veo-3.0-fast-generate-preview coming November 12, 2025.",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-google-deprecates-gemini-live-models",
+      "announced_at": "2025-10-20",
+      "effective_at": "2025-12-09",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.0-flash-live-001",
+        "google/gemini-live-2.5-flash-preview"
+      ],
+      "migration_target": "google/gemini-3.1-flash-live-preview",
+      "headline": "Google deprecates Gemini Live API models",
+      "summary": "gemini-2.0-flash-live-001 and gemini-live-2.5-flash-preview were announced October 20, 2025 for shutdown December 9, 2025. The deprecations table lists gemini-3.1-flash-live-preview as the replacement for both.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: Shut down for gemini-2.0-flash-live-001 and gemini-live-2.5-flash-preview coming December 09, 2025.",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-google-deprecates-2-5-flash-previews-november-wave",
+      "announced_at": "2025-11-04",
+      "effective_at": "2025-11-18",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.5-flash-lite-preview-06-17",
+        "google/gemini-2.5-flash-preview-05-20"
+      ],
+      "headline": "Google shuts down gemini-2.5-flash-preview-05-20 and flash-lite-preview-06-17",
+      "summary": "First wave of the November 4, 2025 preview cleanup: gemini-2.5-flash-lite-preview-06-17 and gemini-2.5-flash-preview-05-20 shut down November 18, 2025. The deprecations table lists gemini-3.5-flash as the replacement for the flash preview.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: The following models will be shut down: November 18th: gemini-2.5-flash-lite-preview-06-17 gemini-2.5-flash-preview-05-20",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-google-deprecates-thinking-exp-and-2-5-pro-previews",
+      "announced_at": "2025-11-04",
+      "effective_at": "2025-12-02",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.0-flash-thinking-exp",
+        "google/gemini-2.0-flash-thinking-exp-01-21",
+        "google/gemini-2.0-flash-thinking-exp-1219",
+        "google/gemini-2.5-pro-preview-03-25",
+        "google/gemini-2.5-pro-preview-05-06",
+        "google/gemini-2.5-pro-preview-06-05"
+      ],
+      "headline": "Google shuts down the Flash Thinking experiments and all Gemini 2.5 Pro previews",
+      "summary": "Second wave of the November 4, 2025 cleanup: the three gemini-2.0-flash-thinking-exp variants and all three gemini-2.5-pro-preview snapshots shut down December 2, 2025. The deprecations table lists gemini-3.1-pro-preview as the replacement for the 2.5 Pro previews.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "December 2nd: gemini-2.0-flash-thinking-exp gemini-2.0-flash-thinking-exp-01-21 gemini-2.0-flash-thinking-exp-1219 gemini-2.5-pro-preview-03-25 gemini-2.5-pro-preview-05-06 gemini-2.5-pro-preview-06-05",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-google-deprecates-2-0-flash-lite-previews",
+      "announced_at": "2025-11-04",
+      "effective_at": "2025-12-09",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.0-flash-lite-preview",
+        "google/gemini-2.0-flash-lite-preview-02-05"
+      ],
+      "migration_target": "google/gemini-2.5-flash-lite",
+      "headline": "Google shuts down the Gemini 2.0 Flash-Lite previews",
+      "summary": "Third wave of the November 4, 2025 cleanup: gemini-2.0-flash-lite-preview and gemini-2.0-flash-lite-preview-02-05 shut down December 9, 2025. Replacement: gemini-2.5-flash-lite.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "December 9th: gemini-2.0-flash-lite-preview gemini-2.0-flash-lite-preview-02-05",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-google-deprecates-2-0-flash-image-generation-previews",
+      "announced_at": "2025-11-11",
+      "effective_at": "2025-11-14",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.0-flash-exp-image-generation",
+        "google/gemini-2.0-flash-preview-image-generation"
+      ],
+      "headline": "Google shuts down the Gemini 2.0 Flash image-generation previews on three days' notice",
+      "summary": "gemini-2.0-flash-exp-image-generation and gemini-2.0-flash-preview-image-generation were announced November 11, 2025 for shutdown November 14, 2025. The deprecations table lists gemini-2.5-flash-image as the replacement for the preview model.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: The following models will be shut down: November 12: veo-3.0-fast-generate-preview veo-3.0-generate-preview November 14: gemini-2.0-flash-exp-image-generation gemini-2.0-flash-preview-image-generation",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-google-deprecates-text-embedding-004",
+      "announced_at": "2025-12-03",
+      "effective_at": "2026-01-14",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/text-embedding-004"
+      ],
+      "migration_target": "google/gemini-embedding-2",
+      "headline": "Google deprecates text-embedding-004",
+      "summary": "text-embedding-004 was announced December 3, 2025 for shutdown January 14, 2026. The deprecations table lists gemini-embedding-2 as the replacement.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: The text-embedding-004 model will be shut down January 14, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-12-google-deprecates-2-5-flash-image-preview",
+      "announced_at": "2025-12-04",
+      "effective_at": "2026-01-15",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.5-flash-image-preview"
+      ],
+      "migration_target": "google/gemini-2.5-flash-image",
+      "headline": "Google deprecates gemini-2.5-flash-image-preview",
+      "summary": "gemini-2.5-flash-image-preview was announced December 4, 2025 for shutdown January 15, 2026. Replacement: gemini-2.5-flash-image.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: The gemini-2.5-flash-image-preview model will be shut down January 15, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-01-google-deprecates-flash-and-imagen-previews-february-wave",
+      "announced_at": "2026-01-15",
+      "effective_at": "2026-02-17",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.5-flash-preview-09-25",
+        "google/imagen-4.0-generate-preview-06-06",
+        "google/imagen-4.0-ultra-generate-preview-06-06"
+      ],
+      "headline": "Google shuts down gemini-2.5-flash-preview-09-25 and the Imagen 4 previews",
+      "summary": "gemini-2.5-flash-preview-09-25 and the two imagen-4.0 preview snapshots were announced January 15, 2026 for shutdown February 17, 2026. Replacements per the deprecations table: gemini-3.5-flash and the imagen-4.0 GA models respectively.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: The following models will be shut down February 17, 2026: gemini-2.5-flash-preview-09-25 imagen-4.0-generate-preview-06-06 imagen-4.0-ultra-generate-preview-06-06",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-02-google-deprecates-gemini-2-0-flash-family",
+      "announced_at": "2026-02-18",
+      "effective_at": "2026-06-01",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.0-flash",
+        "google/gemini-2.0-flash-001",
+        "google/gemini-2.0-flash-lite",
+        "google/gemini-2.0-flash-lite-001"
+      ],
+      "headline": "Google deprecates the Gemini 2.0 Flash family, shutdown June 2026",
+      "summary": "gemini-2.0-flash, gemini-2.0-flash-001, gemini-2.0-flash-lite, and gemini-2.0-flash-lite-001 were announced February 18, 2026 for shutdown June 1, 2026. Replacements per the deprecations table: gemini-3.5-flash for the Flash models, gemini-3.1-flash-lite for the Lite models.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: The following models will be shut down June 1, 2026: gemini-2.0-flash gemini-2.0-flash-001 gemini-2.0-flash-lite gemini-2.0-flash-lite-001",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-02-google-deprecates-gemini-3-pro-preview",
+      "announced_at": "2026-02-26",
+      "effective_at": "2026-03-09",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-3-pro-preview"
+      ],
+      "migration_target": "google/gemini-3.1-pro-preview",
+      "headline": "Google deprecates Gemini 3 Pro Preview on eleven days' notice",
+      "summary": "gemini-3-pro-preview was announced February 26, 2026 for shutdown March 9, 2026; the gemini-3-pro-preview alias now points to gemini-3.1-pro-preview. Replacement: gemini-3.1-pro-preview.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: Gemini 3 Pro Preview ( gemini-3-pro-preview ) will be shut down March 9, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-03-google-deprecates-2-5-flash-lite-preview-09-2025",
+      "announced_at": "2026-03-10",
+      "effective_at": "2026-03-31",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.5-flash-lite-preview-09-2025"
+      ],
+      "migration_target": "google/gemini-3.1-flash-lite",
+      "headline": "Google deprecates gemini-2.5-flash-lite-preview-09-2025",
+      "summary": "gemini-2.5-flash-lite-preview-09-2025 was announced March 10, 2026 for shutdown March 31, 2026. Replacement: gemini-3.1-flash-lite.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: The gemini-2.5-flash-lite-preview-09-2025 model will be shut down on March 31, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-google-deprecates-gemini-robotics-er-preview",
+      "announced_at": "2026-04-14",
+      "effective_at": "2026-04-30",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-robotics-er-1.5-preview"
+      ],
+      "headline": "Google shuts down gemini-robotics-er-1.5-preview",
+      "summary": "gemini-robotics-er-1.5-preview was announced April 14, 2026 for shutdown April 30, 2026 at 9AM PST. No replacement is named.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: The gemini-robotics-er-1.5-preview model will be shut down on April 30, 2026 at 9AM PST.",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-05-google-deprecates-3-1-flash-lite-preview",
+      "announced_at": "2026-05-07",
+      "effective_at": "2026-05-25",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-3.1-flash-lite-preview"
+      ],
+      "migration_target": "google/gemini-3.1-flash-lite",
+      "headline": "Google deprecates gemini-3.1-flash-lite-preview",
+      "summary": "gemini-3.1-flash-lite-preview was announced May 7, 2026 (deprecating 5/11/26) with shutdown May 25, 2026. Replacement: gemini-3.1-flash-lite.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: The gemini-3.1-flash-lite-preview model is deprecating on 5/11/26 and will be shut down on May 25, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-05-google-deprecates-gemini-3-image-previews",
+      "announced_at": "2026-05-28",
+      "effective_at": "2026-06-25",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-3.1-flash-image-preview",
+        "google/gemini-3-pro-image-preview"
+      ],
+      "headline": "Google deprecates the Gemini 3 image-generation previews",
+      "summary": "gemini-3.1-flash-image-preview and gemini-3-pro-image-preview were announced May 28, 2026 for shutdown June 25, 2026. Replacements per the deprecations table: gemini-3.1-flash-image and gemini-3-pro-image respectively.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement: The gemini-3.1-flash-image-preview and gemini-3-pro-image-preview models are deprecated and will be shut down on June 25, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-google-deprecates-imagen-4-ga-models",
+      "announced_at": "2026-06-15",
+      "effective_at": "2026-08-17",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/imagen-4.0-generate-001",
+        "google/imagen-4.0-ultra-generate-001",
+        "google/imagen-4.0-fast-generate-001"
+      ],
+      "migration_target": "google/gemini-3.1-flash-image",
+      "headline": "Google deprecates the Imagen 4 GA models in favor of Gemini image generation",
+      "summary": "All three imagen-4.0 GA models were announced June 15, 2026 for shutdown August 17, 2026. The deprecations table lists gemini-3.1-flash-image as the replacement for all three — consolidating image generation under Gemini-native models.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement : The following image generation models are being deprecated and will be shut down on August 17, 2026 : Imagen 4 and Gemini 3 Image models : imagen-4.0-generate-001 imagen-4.0-ultra-generate-001 imagen-4.0-fast-generate-001",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-google-deprecates-veo-2-and-veo-3-ga-models",
+      "announced_at": "2026-06-15",
+      "effective_at": "2026-06-30",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/veo-2.0-generate-001",
+        "google/veo-3.0-generate-001",
+        "google/veo-3.0-fast-generate-001"
+      ],
+      "headline": "Google deprecates the Veo 2 and Veo 3 GA video models on fifteen days' notice",
+      "summary": "veo-2.0-generate-001, veo-3.0-generate-001, and veo-3.0-fast-generate-001 were announced June 15, 2026 for shutdown June 30, 2026. Google points to the Veo 3.1 preview IDs or the GA models on the Gemini Enterprise Agent Platform.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement : The following video generation models are being deprecated and will be shut down on June 30, 2026 : Veo models : veo-2.0-generate-001 veo-3.0-generate-001 veo-3.0-fast-generate-001",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-google-shuts-down-gmp-contextual-view-tool",
+      "announced_at": "2026-06-15",
+      "effective_at": "2026-06-15",
+      "type": "endpoint_change",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [],
+      "headline": "Google shuts down the experimental GMP Contextual View tool",
+      "summary": "The experimental GMP Contextual View tool (a fixed interface for Grounding with Google Maps outputs) was shut down June 15, 2026, announced the same day.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "quote": "Deprecation announcement : The experimental GMP Contextual View tool (a fixed interface for Grounding with Google Maps outputs) will shut down on June 15, 2026 :",
+          "archived_url": "https://web.archive.org/web/20260703040039/https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-google-schedules-gemini-embedding-001-shutdown",
+      "announced_at": "2026-07-02",
+      "effective_at": "2026-07-14",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-embedding-001"
+      ],
+      "migration_target": "google/gemini-embedding-2",
+      "headline": "Google schedules gemini-embedding-001 shutdown for July 14, 2026",
+      "summary": "The Gemini deprecations schedule lists gemini-embedding-001 (released July 14, 2025) for earliest shutdown July 14, 2026, replaced by gemini-embedding-2. The changelog carries no dated announcement; announced_at reflects the date this was captured from the schedule.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+          "quote": "gemini-embedding-001 July 14, 2025 July 14, 2026 gemini-embedding-2",
+          "archived_url": "https://web.archive.org/web/20260703040017/https://ai.google.dev/gemini-api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-google-schedules-embedding-2-preview-shutdown",
+      "announced_at": "2026-07-02",
+      "effective_at": "2026-08-10",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/embedding-2-preview"
+      ],
+      "migration_target": "google/gemini-embedding-2",
+      "headline": "Google schedules embedding-2-preview shutdown for August 10, 2026",
+      "summary": "The Gemini deprecations schedule lists embedding-2-preview (released March 10, 2026) for earliest shutdown August 10, 2026, replaced by gemini-embedding-2. The changelog carries no dated announcement; announced_at reflects the capture date.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+          "quote": "embedding-2-preview March 10, 2026 August 10, 2026 gemini-embedding-2",
+          "archived_url": "https://web.archive.org/web/20260703040017/https://ai.google.dev/gemini-api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-google-schedules-2-5-flash-image-shutdown",
+      "announced_at": "2026-07-02",
+      "effective_at": "2026-10-02",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.5-flash-image"
+      ],
+      "migration_target": "google/gemini-3.1-flash-image-preview",
+      "headline": "Google schedules gemini-2.5-flash-image shutdown for October 2, 2026",
+      "summary": "The Gemini deprecations schedule lists gemini-2.5-flash-image (released October 2, 2025) for earliest shutdown October 2, 2026, replaced by gemini-3.1-flash-image-preview. The changelog carries no dated announcement; announced_at reflects the capture date.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+          "quote": "gemini-2.5-flash-image October 2, 2025 October 2, 2026 gemini-3.1-flash-image-preview",
+          "archived_url": "https://web.archive.org/web/20260703040017/https://ai.google.dev/gemini-api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-google-schedules-gemini-2-5-ga-family-shutdown",
+      "announced_at": "2026-07-02",
+      "effective_at": "2026-10-16",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-2.5-pro",
+        "google/gemini-2.5-flash",
+        "google/gemini-2.5-flash-lite"
+      ],
+      "headline": "Google schedules the Gemini 2.5 GA family shutdown for October 16, 2026",
+      "summary": "The Gemini deprecations schedule lists the stable gemini-2.5-pro, gemini-2.5-flash, and gemini-2.5-flash-lite (all GA since mid-2025) for earliest shutdown October 16, 2026. Replacements per the table: gemini-3.1-pro-preview, gemini-3.5-flash, and gemini-3.1-flash-lite respectively. The changelog carries no dated announcement; announced_at reflects the capture date.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+          "quote": "gemini-2.5-pro June 17, 2025 October 16, 2026 gemini-3.1-pro-preview [...] gemini-2.5-flash June 17, 2025 October 16, 2026 gemini-3.5-flash [...] gemini-2.5-flash-lite July 22, 2025 October 16, 2026 gemini-3.1-flash-lite",
+          "archived_url": "https://web.archive.org/web/20260703040017/https://ai.google.dev/gemini-api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
     }
   ]
 }
