@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>modelmeter — agent-callable LLM pricing API & historical cost dashboard</title>
-  <meta name="description" content="Agent-callable JSON API and dashboard for AI model pricing, market events, and 3 years of historical cost data across 11 providers. OpenAPI spec, llms.txt, no auth required." />
+  <title>modelmeter — the changelog of record for the AI stack</title>
+  <meta name="description" content="Machine-readable, source-verified record of everything that changes in the model layer: deprecations with sunset countdowns and migration targets, price changes, releases — plus 3 years of pricing history across 11 providers. JSON API, MCP server, llms.txt, no auth required." />
   <link rel="canonical" href="https://modelmeter.xyz/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <!-- Open Graph (Facebook, LinkedIn, Discord, Slack) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Modelmeter" />
-  <meta property="og:title" content="modelmeter — agent-callable LLM pricing API" />
-  <meta property="og:description" content="JSON API and dashboard for AI model pricing, events, and 3 years of historical cost across 11 providers. Built for agents, friendly to humans." />
+  <meta property="og:title" content="modelmeter — the changelog of record for the AI stack" />
+  <meta property="og:description" content="Source-verified record of what changes in the model layer: deprecations with sunset countdowns, price changes, releases — plus 3 years of pricing history. Built for agents, friendly to humans." />
   <meta property="og:url" content="https://modelmeter.xyz/" />
   <meta property="og:image" content="https://modelmeter.xyz/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -22,8 +22,8 @@
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@modelmeter_" />
-  <meta name="twitter:title" content="modelmeter — agent-callable LLM pricing API" />
-  <meta name="twitter:description" content="JSON API and dashboard for AI model pricing, events, and 3 years of historical cost across 11 providers." />
+  <meta name="twitter:title" content="modelmeter — the changelog of record for the AI stack" />
+  <meta name="twitter:description" content="Source-verified record of what changes in the model layer: deprecations, sunsets, price changes, releases — plus 3 years of pricing history." />
   <meta name="twitter:image" content="https://modelmeter.xyz/og-image.png" />
 
   <!-- Structured data — Google understands what we are -->
@@ -36,7 +36,7 @@
         "@id": "https://modelmeter.xyz/#website",
         "url": "https://modelmeter.xyz/",
         "name": "Modelmeter",
-        "description": "Agent-callable JSON API and dashboard for AI model pricing, events, and historical cost."
+        "description": "The changelog of record for the AI stack: source-verified events covering deprecations, price changes, and releases in the model layer, plus historical pricing."
       },
       {
         "@type": "SoftwareApplication",
@@ -44,7 +44,7 @@
         "name": "Modelmeter",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web",
-        "description": "Agent-first dashboard for AI model pricing, market events, and historical cost analysis. JSON-first API with OpenAPI spec and llms.txt discoverability.",
+        "description": "Agent-first changelog of record for the model layer: deprecations with sunset dates and migration targets, price changes, releases, and historical cost analysis. JSON-first API with OpenAPI spec, MCP server, and llms.txt discoverability.",
         "url": "https://modelmeter.xyz/",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
       },
@@ -113,12 +113,21 @@
         <div class="panel">
           <h3 class="panel-title">Stats <span class="right" id="stats-date">—</span></h3>
           <div class="stats" id="stats">
-            <div class="stat-row"><span class="lbl">models</span><span class="num" id="s-models">—</span></div>
             <div class="stat-row"><span class="lbl">events</span><span class="num" id="s-events">—</span></div>
+            <div class="stat-row"><span class="lbl">breaking</span><span class="num sev-breaking" id="s-breaking">—</span></div>
+            <div class="stat-row"><span class="lbl">action required</span><span class="num sev-action" id="s-action">—</span></div>
+            <div class="stat-row"><span class="lbl">models</span><span class="num" id="s-models">—</span></div>
             <div class="stat-row"><span class="lbl">providers</span><span class="num" id="s-providers">—</span></div>
             <div class="stat-row"><span class="lbl">snapshots</span><span class="num" id="s-snapshots">—</span></div>
             <div class="stat-row"><span class="lbl">history models</span><span class="num" id="s-history">—</span></div>
           </div>
+        </div>
+
+        <div class="panel">
+          <h3 class="panel-title">Notice given <span class="right">announced → shutdown</span></h3>
+          <div class="pp-subtitle">model retirements · from the record</div>
+          <div id="notice-rows"></div>
+          <div class="notice-note">median days of runway each provider has actually given, computed from source-verified deprecation events</div>
         </div>
 
         <div class="panel">
@@ -133,10 +142,10 @@
         <div class="panel">
           <h3 class="panel-title">About</h3>
           <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
-            Agent-first measurement and instrumentation for AI models. Pricing, events, and history exposed as JSON-first APIs that agents can call directly. Humans get a dashboard built on the same endpoints.
+            The changelog of record for the AI stack. Deprecations, sunsets, price changes, and releases in the model layer — recorded as source-verified events with dates, migration targets, and verbatim quotes. Agents call the same JSON endpoints this dashboard is built on.
           </p>
           <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
-            Data is community-maintained, source-cited, and committed to a public GitHub repo. Every entry carries a verification date so callers can judge freshness.
+            Every event cites its source, most with archive snapshots. Entries are published fast as <em>unverified</em>, then human-reviewed to <em>verified</em> — corrections are never silent. The full dataset lives in a public GitHub repo.
           </p>
           <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border-soft);">
             <a href="https://x.com/modelmeter_" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ @modelmeter_ on X</a>
@@ -146,8 +155,18 @@
         </div>
       </div>
 
-      <!-- CENTER column: price chart + privacy premium gauge below -->
+      <!-- CENTER column: sunset board + price chart + event swimlane -->
       <div class="col-center">
+        <div class="panel sunset-panel">
+          <div class="sunset-header">
+            <span class="sunset-title">Sunsets · upcoming retirements & required actions</span>
+            <span class="sunset-sub" id="sunset-count">—</span>
+          </div>
+          <div class="sunset-board" id="sunset-board">
+            <div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">loading…</div>
+          </div>
+        </div>
+
         <div class="panel chart-panel">
           <div class="chart-header">
             <span class="chart-title">Price · per Mtok · over time</span>
@@ -232,6 +251,11 @@
 
         <div class="panel">
           <h3 class="panel-title">Events <span class="right" id="feed-context">all providers</span></h3>
+          <div class="chip-group feed-sev-chips" id="feed-severity">
+            <button class="chip active" data-sev="all">all</button>
+            <button class="chip" data-sev="breaking">breaking</button>
+            <button class="chip" data-sev="action_required">action</button>
+          </div>
           <div class="events-feed" id="events-feed">
             <div style="color: var(--muted); font-size: 11px;">loading…</div>
           </div>

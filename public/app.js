@@ -125,9 +125,12 @@ async function boot() {
   renderTicker();
   renderPriceTicker();
   renderStats();
+  renderSunsets();
+  renderNotice();
   renderPrivacyPremium();
   renderCalculator();
   renderEventsFeed();
+  wireFeedSeverity();
   renderChartControls();
   renderChart();
   window.addEventListener("resize", () => { renderChart(); });
@@ -162,9 +165,11 @@ function renderTicker() {
   const items = recent.map(ev => {
     const url = ev.sources?.[0]?.url || "#";
     const date = ev.announced_at;
+    // severity outranks type for chip color: breaking red, action yellow
+    const chipColor = ev.severity === "breaking" ? "var(--down)" : ev.severity === "action_required" ? "var(--warn)" : typeColor(ev.type);
     return `<span class="ticker-item">
       <span class="tick-date">${date}</span>
-      <span class="tick-cat" style="color:${typeColor(ev.type)}">${typeLabel(ev.type).toUpperCase()}</span>
+      <span class="tick-cat" style="color:${chipColor}">${typeLabel(ev.type).toUpperCase()}</span>
       <a href="${url}" target="_blank" rel="noopener">${escapeHtml(ev.headline)}</a>
     </span>`;
   });
@@ -218,10 +223,92 @@ function renderPriceTicker() {
 function renderStats() {
   document.getElementById("s-models").textContent = currentModels.length || "—";
   document.getElementById("s-events").textContent = events.length || "—";
+  document.getElementById("s-breaking").textContent = events.filter(e => e.severity === "breaking").length || "—";
+  document.getElementById("s-action").textContent = events.filter(e => e.severity === "action_required").length || "—";
   const providers = new Set(currentModels.map(m => m.provider));
   document.getElementById("s-providers").textContent = providers.size || "—";
   document.getElementById("s-snapshots").textContent = history?.snapshot_count ?? "—";
   document.getElementById("s-history").textContent = history?.model_count ?? "—";
+}
+
+// ---------- sunset board ----------
+const SUNSET_COLLAPSED = 10;
+let sunsetExpanded = false;
+function renderSunsets() {
+  const board = document.getElementById("sunset-board");
+  const today = new Date().toISOString().slice(0, 10);
+  const upcoming = events
+    .filter(e => e.effective_at && e.effective_at >= today && (e.severity === "breaking" || e.severity === "action_required"))
+    .sort((a, b) => a.effective_at.localeCompare(b.effective_at));
+  document.getElementById("sunset-count").textContent = upcoming.length ? `${upcoming.length} scheduled` : "";
+  if (!upcoming.length) { board.innerHTML = '<div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">no scheduled retirements on record</div>'; return; }
+
+  const shown = sunsetExpanded ? upcoming : upcoming.slice(0, SUNSET_COLLAPSED);
+  const rows = shown.map(ev => {
+    const days = Math.ceil((new Date(ev.effective_at) - new Date(today)) / 864e5);
+    const daysColor = days <= 30 ? "var(--down)" : days <= 90 ? "var(--warn)" : "var(--text-dim)";
+    const prov = ev.providers?.[0] || "?";
+    const models = (ev.models || []).map(m => m.split("/").slice(1).join("/"));
+    const what = models.length
+      ? `<span class="models">${escapeHtml(shorten(models.join(", "), 72))}</span>`
+      : escapeHtml(shorten(ev.headline, 72));
+    const target = ev.migration_target
+      ? `<span class="arrow">→</span>${escapeHtml(ev.migration_target.split("/").slice(1).join("/"))}`
+      : `<span class="arrow" style="opacity:.5">·</span>`;
+    const url = ev.sources?.[0]?.url || "#";
+    return `<div class="sun-row" title="${escapeHtml(ev.headline)}" onclick="window.open('${url}', '_blank', 'noopener')">
+      <span class="sun-days" style="color:${daysColor}">${days}d</span>
+      <span class="sun-date">${ev.effective_at}</span>
+      <span class="sun-prov"><span class="pp-prov-dash" style="background:${PROVIDER_COLORS[prov] || "var(--muted)"}; margin-right:6px;"></span>${PROVIDER_LABELS[prov] || prov}</span>
+      <span class="sun-what">${what}</span>
+      <span class="sun-target">${target}</span>
+    </div>`;
+  });
+  let more = "";
+  if (upcoming.length > SUNSET_COLLAPSED) {
+    more = `<div class="sun-more" id="sun-more">${sunsetExpanded ? "▲ show fewer" : `▼ show all ${upcoming.length}`}</div>`;
+  }
+  board.innerHTML = rows.join("") + more;
+  document.getElementById("sun-more")?.addEventListener("click", (e) => { e.stopPropagation(); sunsetExpanded = !sunsetExpanded; renderSunsets(); });
+}
+
+// ---------- notice-given panel ----------
+function renderNotice() {
+  const wrap = document.getElementById("notice-rows");
+  const byProv = {};
+  for (const e of events) {
+    if (e.type !== "model_deprecation" || !e.effective_at || !e.announced_at) continue;
+    const days = Math.round((new Date(e.effective_at) - new Date(e.announced_at)) / 864e5);
+    if (days < 0) continue;
+    (byProv[e.providers?.[0] || "?"] ??= []).push(days);
+  }
+  const rows = Object.entries(byProv)
+    .filter(([, arr]) => arr.length >= 3)
+    .map(([p, arr]) => {
+      arr.sort((a, b) => a - b);
+      return { p, n: arr.length, med: arr[Math.floor(arr.length / 2)], min: arr[0] };
+    })
+    .sort((a, b) => b.med - a.med);
+  if (!rows.length) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">not enough deprecation data yet</div>'; return; }
+  wrap.innerHTML = rows.map(r => `<div class="notice-row">
+    <span class="pp-prov-dash" style="background:${PROVIDER_COLORS[r.p] || "var(--muted)"}"></span>
+    <span class="notice-prov">${PROVIDER_LABELS[r.p] || r.p}</span>
+    <span class="notice-med">${r.med}d</span>
+    <span class="notice-n">n=${r.n} · min ${r.min}d</span>
+  </div>`).join("");
+}
+
+// ---------- feed severity filter ----------
+let feedSeverity = "all";
+function wireFeedSeverity() {
+  document.querySelectorAll("#feed-severity .chip").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#feed-severity .chip").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      feedSeverity = btn.dataset.sev;
+      renderEventsFeed();
+    });
+  });
 }
 
 function shorten(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
@@ -377,12 +464,15 @@ function renderEventsFeed() {
   } else {
     ctxLabel.textContent = "all providers";
   }
+  if (feedSeverity !== "all") filtered = filtered.filter(e => e.severity === feedSeverity);
   filtered = [...filtered].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 30);
-  if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no events for this model</div>'; return; }
+  if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no matching events</div>'; return; }
   wrap.innerHTML = filtered.map(ev => {
     const url = ev.sources?.[0]?.url || "#";
+    const sev = ev.severity && ev.severity !== "informational"
+      ? ` · <span class="sev-chip ${ev.severity}">${ev.severity === "action_required" ? "action" : "breaking"}</span>` : "";
     return `<div class="ev-item" onclick="window.open('${url}', '_blank', 'noopener')">
-      <div class="ev-date">${ev.announced_at} · <span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span></div>
+      <div class="ev-date">${ev.announced_at} · <span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span>${sev}</div>
       <div class="ev-headline">${escapeHtml(ev.headline)}</div>
     </div>`;
   }).join("");
