@@ -1,37 +1,68 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://modelmeter.xyz/schema/events/1.0.0",
+  "$id": "https://modelmeter.xyz/schema/events/2.0.0",
   "title": "Modelmeter Events Snapshot",
-  "description": "AI market events that may impact pricing, capacity, or availability of AI models. Used to annotate the pricing timeline.",
+  "description": "The changelog of record for the model layer: source-verified events covering what changed at AI providers — deprecations, price changes, ID renames, context/rate-limit changes, releases — plus the market events (funding, partnerships, legal, regulatory) that give them context. Records live or die on trust: every event carries sources, a verification status, and an explicit correction trail.",
   "type": "object",
   "required": ["schema_version", "snapshot_date", "events"],
   "properties": {
-    "schema_version": { "type": "string", "const": "1.0.0" },
+    "schema_version": { "type": "string", "const": "2.0.0" },
     "snapshot_date": { "type": "string", "format": "date" },
     "events": { "type": "array", "items": { "$ref": "#/$defs/Event" } }
   },
   "$defs": {
     "Event": {
       "type": "object",
-      "required": ["id", "date", "type", "headline", "summary", "source_urls", "verified"],
+      "required": [
+        "id",
+        "announced_at",
+        "type",
+        "severity",
+        "status",
+        "providers",
+        "headline",
+        "summary",
+        "sources",
+        "created_at",
+        "updated_at"
+      ],
       "properties": {
         "id": {
           "type": "string",
-          "description": "Stable slug. Convention: YYYY-MM-{primary-provider}-{short-description}",
+          "description": "Stable slug. Convention: YYYY-MM-{primary-provider}-{short-description}. Never reused; corrections reference it via `corrects`.",
           "pattern": "^[a-z0-9-]+$"
         },
-        "date": {
+        "announced_at": {
           "type": "string",
           "format": "date",
-          "description": "ISO date the event occurred (or was announced). For ongoing situations, the date the situation began."
+          "description": "ISO date the change became public — the announcement, publication, filing, or occurrence date. For ongoing situations, the date the situation began."
+        },
+        "effective_at": {
+          "type": "string",
+          "format": "date",
+          "description": "ISO date the change takes effect, when it differs from the announcement: a deprecation's sunset date, a price change's effective date. Absent when immediate or not applicable. `effective_at - today` is the consumer's runway."
+        },
+        "detected_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "UTC timestamp Modelmeter's pipeline first detected the change. Absent on manually curated or historically backfilled entries."
         },
         "type": {
           "type": "string",
+          "description": "Closed enum. Operational types (what changed in the model layer): pricing_change, model_launch, model_deprecation, model_unavailable, id_rename, model_swap, context_change, rate_limit_change, endpoint_change, capability_change, policy_change, correction. Market-context types: partnership, regulatory_action, acquisition, funding, open_source_release, legal_outcome, infrastructure, leadership_change.",
           "enum": [
             "pricing_change",
             "model_launch",
             "model_deprecation",
             "model_unavailable",
+            "id_rename",
+            "model_swap",
+            "context_change",
+            "rate_limit_change",
+            "endpoint_change",
+            "capability_change",
+            "policy_change",
+            "correction",
             "partnership",
             "regulatory_action",
             "acquisition",
@@ -42,8 +73,19 @@
             "leadership_change"
           ]
         },
+        "severity": {
+          "type": "string",
+          "description": "What the event demands of a consumer of the affected models. `breaking`: removes or renames something in use — model going away, ID changing, endpoint removed. `action_required`: changes the terms of continued use — price, rate limits, context window, behavior-relevant version bump. `informational`: adds or records something without demanding action — releases, funding, partnerships.",
+          "enum": ["breaking", "action_required", "informational"]
+        },
+        "status": {
+          "type": "string",
+          "description": "`unverified`: drafted by the pipeline, awaiting human review — consume with that caveat. `verified`: a human confirmed headline, dates, and sources. `corrected`: superseded — a `correction` event points here via `corrects`; kept for the audit trail, excluded from default API responses.",
+          "enum": ["unverified", "verified", "corrected"]
+        },
         "providers": {
           "type": "array",
+          "minItems": 1,
           "items": {
             "type": "string",
             "enum": [
@@ -61,23 +103,46 @@
           "items": { "type": "string" },
           "description": "Affected model IDs in `provider/model` form, matching pricing/current.json where possible. Empty if event is provider-wide or industry-wide."
         },
+        "migration_target": {
+          "type": "string",
+          "description": "For deprecations/renames/swaps: the provider-recommended replacement model ID in `provider/model` form. Absent if the provider names none."
+        },
+        "corrects": {
+          "type": "string",
+          "description": "For `type: correction` events only: the `id` of the event this correction supersedes. The superseded event's status becomes `corrected`. Corrections are never silent."
+        },
         "headline": {
           "type": "string",
           "description": "One-line summary, neutral tone, factual."
         },
         "summary": {
           "type": "string",
-          "description": "Short paragraph (1-4 sentences) giving the relevant context. Avoid speculation; cite the source."
+          "description": "Short paragraph (1-4 sentences) giving the relevant context. Agent-readable: lead with what changed and what a consumer must do. Avoid speculation; cite the source."
         },
-        "source_urls": {
+        "sources": {
           "type": "array",
           "minItems": 1,
-          "items": { "type": "string", "format": "uri" },
-          "description": "Primary sources. At least one required. Provider announcements, regulatory filings, and reputable journalism only — no aggregator links."
-        },
-        "verified": {
-          "type": "boolean",
-          "description": "true means a human has confirmed the headline, date, and sources match. false means the entry is a stub (e.g., from the digest pipeline) awaiting review."
+          "items": {
+            "type": "object",
+            "required": ["url"],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "Primary source. Provider announcements, changelogs, regulatory filings, and reputable journalism only — no aggregator links."
+              },
+              "quote": {
+                "type": "string",
+                "description": "Verbatim excerpt from the source supporting the claim. Expected on all pipeline-detected operational events; providers edit their own changelogs, so the quote preserves what the source said at detection time."
+              },
+              "archived_url": {
+                "type": "string",
+                "format": "uri",
+                "description": "Archive snapshot (archive.org or similar) of the source at capture time."
+              }
+            }
+          },
+          "description": "At least one source required. The first entry is the primary citation."
         },
         "tags": {
           "type": "array",

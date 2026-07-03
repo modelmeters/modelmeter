@@ -38,11 +38,13 @@ const PROVIDER_LABELS = {
 };
 const TYPE_CATEGORY = {
   model_launch: "model", model_deprecation: "model", model_unavailable: "model",
+  id_rename: "model", model_swap: "model", context_change: "model",
+  rate_limit_change: "model", endpoint_change: "model", capability_change: "model",
   funding: "money", acquisition: "money", partnership: "money", pricing_change: "money",
   infrastructure: "infra",
-  regulatory_action: "regulatory", legal_outcome: "regulatory",
+  regulatory_action: "regulatory", legal_outcome: "regulatory", policy_change: "regulatory",
   open_source_release: "oss",
-  leadership_change: "other",
+  leadership_change: "other", correction: "other",
 };
 const CATEGORY_META = {
   model:      { color: "var(--c-model)",      label: "Models",         desc: "launches, deprecations, availability" },
@@ -134,7 +136,7 @@ async function boot() {
 async function loadEvents() {
   const res = await fetch("/events.json");
   const body = await res.json();
-  events = (body.events || []).filter(e => e.date);
+  events = (body.events || []).filter(e => e.announced_at && e.status !== "corrected");
 }
 
 async function loadModels() {
@@ -156,10 +158,10 @@ async function loadHistory() {
 function renderTicker() {
   const track = document.getElementById("ticker-track");
   if (events.length === 0) { track.innerHTML = '<span class="ticker-item">no events yet</span>'; return; }
-  const recent = [...events].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 20);
+  const recent = [...events].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 20);
   const items = recent.map(ev => {
-    const url = ev.source_urls?.[0] || "#";
-    const date = ev.date;
+    const url = ev.sources?.[0]?.url || "#";
+    const date = ev.announced_at;
     return `<span class="ticker-item">
       <span class="tick-date">${date}</span>
       <span class="tick-cat" style="color:${typeColor(ev.type)}">${typeLabel(ev.type).toUpperCase()}</span>
@@ -375,12 +377,12 @@ function renderEventsFeed() {
   } else {
     ctxLabel.textContent = "all providers";
   }
-  filtered = [...filtered].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 30);
+  filtered = [...filtered].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 30);
   if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no events for this model</div>'; return; }
   wrap.innerHTML = filtered.map(ev => {
-    const url = ev.source_urls?.[0] || "#";
+    const url = ev.sources?.[0]?.url || "#";
     return `<div class="ev-item" onclick="window.open('${url}', '_blank', 'noopener')">
-      <div class="ev-date">${ev.date} · <span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span></div>
+      <div class="ev-date">${ev.announced_at} · <span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span></div>
       <div class="ev-headline">${escapeHtml(ev.headline)}</div>
     </div>`;
   }).join("");
@@ -1028,7 +1030,7 @@ function renderEventSwimlane() {
 
   // Event dots
   for (const ev of events) {
-    const evDate = new Date(ev.date);
+    const evDate = new Date(ev.announced_at);
     if (evDate < minDate || evDate > maxDate) continue;
 
     const x = xScale(evDate);
@@ -1058,7 +1060,7 @@ function renderEventSwimlane() {
         const sl = document.getElementById("swimlane-crosshair");
         if (sl) { sl.setAttribute("x1", String(x)); sl.setAttribute("x2", String(x)); sl.style.display = ""; }
         swimTooltip.innerHTML = `
-          <div class="tdate">${ev.date} · ${(ev.providers || []).map(q => PROVIDER_LABELS[q] || q).join(", ")}</div>
+          <div class="tdate">${ev.announced_at} · ${(ev.providers || []).map(q => PROVIDER_LABELS[q] || q).join(", ")}</div>
           <div class="thead">${escapeHtml(ev.headline)}</div>
           <div class="tbody">${escapeHtml(ev.summary || "")}</div>
           <div class="tfoot"><span style="color: ${color}">${typeLabel(ev.type)}</span><span>click to open ↗</span></div>
@@ -1074,7 +1076,7 @@ function renderEventSwimlane() {
         swimTooltip.classList.remove("show");
       });
       c.addEventListener("click", () => {
-        if (ev.source_urls?.[0]) window.open(ev.source_urls[0], "_blank", "noopener");
+        if (ev.sources?.[0]?.url) window.open(ev.sources[0].url, "_blank", "noopener");
       });
 
       swimSvg.appendChild(c);

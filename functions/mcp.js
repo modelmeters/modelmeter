@@ -81,15 +81,18 @@ const TOOLS = [
   {
     name: "list_events",
     description:
-      "AI market events — model launches, deprecations, regulatory actions, compute partnerships. " +
-      "Useful for explaining why a price changed. Optional filters.",
+      "The changelog of record for the model layer: deprecations, price changes, launches, and the market " +
+      "events around them. Filter by severity to find what demands action: 'breaking' (model going away, " +
+      "ID changing), 'action_required' (price/rate-limit/context changes), 'informational' (releases, funding).",
     inputSchema: {
       type: "object",
       properties: {
         provider: { type: "string", description: "Filter to events touching this provider." },
-        type: { type: "string", description: "Event type, e.g. model_launch, model_unavailable, price_change." },
-        since: { type: "string", description: "ISO date (YYYY-MM-DD); events on/after." },
-        until: { type: "string", description: "ISO date (YYYY-MM-DD); events on/before." },
+        type: { type: "string", description: "Event type, e.g. model_deprecation, pricing_change, model_launch." },
+        severity: { type: "string", enum: ["breaking", "action_required", "informational"], description: "Filter by what the event demands of consumers of the affected models." },
+        status: { type: "string", enum: ["verified", "unverified", "all", "corrected"], description: "Verification status. Default 'verified' (human-confirmed). 'all' = verified + unverified." },
+        since: { type: "string", description: "ISO date (YYYY-MM-DD); events announced on/after." },
+        until: { type: "string", description: "ISO date (YYYY-MM-DD); events announced on/before." },
         limit: { type: "integer", minimum: 1, maximum: 500, description: "Max events. Default 50." },
       },
     },
@@ -199,14 +202,18 @@ function toolGetPriceHistory(args = {}) {
 }
 
 function toolListEvents(args = {}) {
-  const { provider, type, since, until } = args;
+  const { provider, type, severity, since, until } = args;
   const limit = Number.isInteger(args.limit) ? Math.max(1, Math.min(500, args.limit)) : 50;
-  let evs = EVENTS.events.filter((e) => e.verified === true);
+  const status = args.status || "verified";
+  let evs = status === "all"
+    ? EVENTS.events.filter((e) => e.status !== "corrected")
+    : EVENTS.events.filter((e) => e.status === status);
   if (provider) evs = evs.filter((e) => Array.isArray(e.providers) && e.providers.includes(provider));
   if (type) evs = evs.filter((e) => e.type === type);
-  if (since) evs = evs.filter((e) => e.date >= since);
-  if (until) evs = evs.filter((e) => e.date <= until);
-  evs = evs.sort((a, b) => b.date.localeCompare(a.date)).slice(0, limit);
+  if (severity) evs = evs.filter((e) => e.severity === severity);
+  if (since) evs = evs.filter((e) => e.announced_at >= since);
+  if (until) evs = evs.filter((e) => e.announced_at <= until);
+  evs = evs.sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, limit);
   return { snapshot_date: EVENTS.snapshot_date, count: evs.length, events: evs };
 }
 
