@@ -105,6 +105,19 @@
       </div>
     </div>
 
+    <!-- Sunset board: the record's headline, full width -->
+    <div class="sunset-section">
+      <div class="panel sunset-panel">
+        <div class="sunset-header">
+          <span class="sunset-title">Sunsets · upcoming retirements & required actions</span>
+          <span class="sunset-sub" id="sunset-count">—</span>
+        </div>
+        <div class="sunset-board" id="sunset-board">
+          <div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">loading…</div>
+        </div>
+      </div>
+    </div>
+
     <!-- Body grid: left | center | right -->
     <div class="body">
 
@@ -130,6 +143,16 @@
         </div>
 
         <div class="panel">
+          <h3 class="panel-title">Check your stack</h3>
+          <div class="field">
+            <label for="check-input">Model IDs you depend on</label>
+            <input id="check-input" type="text" placeholder="gpt-4o, claude-sonnet-4-6, gemini-2.5-flash" autocomplete="off" spellcheck="false" />
+          </div>
+          <button class="btn" id="check-btn">Check</button>
+          <div id="check-result"></div>
+        </div>
+
+        <div class="panel">
           <h3 class="panel-title">About</h3>
           <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
             The changelog of record for the AI stack. Deprecations, sunsets, price changes, and releases in the model layer — recorded as source-verified events with dates, migration targets, and verbatim quotes. Agents call the same JSON endpoints this dashboard is built on.
@@ -146,18 +169,8 @@
         </div>
       </div>
 
-      <!-- CENTER column: sunset board + price chart + event swimlane -->
+      <!-- CENTER column: model lifecycles / price chart + event swimlane -->
       <div class="col-center">
-        <div class="panel sunset-panel">
-          <div class="sunset-header">
-            <span class="sunset-title">Sunsets · upcoming retirements & required actions</span>
-            <span class="sunset-sub" id="sunset-count">—</span>
-          </div>
-          <div class="sunset-board" id="sunset-board">
-            <div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">loading…</div>
-          </div>
-        </div>
-
         <div class="panel chart-panel">
           <div class="chart-header">
             <span class="chart-title" id="chart-title">Model Lifecycles</span>
@@ -224,16 +237,6 @@
 
       <!-- RIGHT column: calculator + events feed -->
       <div class="col-right">
-        <div class="panel">
-          <h3 class="panel-title">Check your stack</h3>
-          <div class="field">
-            <label for="check-input">Model IDs you depend on</label>
-            <input id="check-input" type="text" placeholder="gpt-4o, claude-sonnet-4-6, gemini-2.5-flash" autocomplete="off" spellcheck="false" />
-          </div>
-          <button class="btn" id="check-btn">Check</button>
-          <div id="check-result"></div>
-        </div>
-
         <div class="panel">
           <h3 class="panel-title">Events <span class="right" id="feed-context">all providers</span></h3>
           <div class="chip-group feed-sev-chips" id="feed-severity">

@@ -678,13 +678,19 @@ function renderLifecycles() {
     const candidates = history.models
       .filter(m => m.provider === provider && m.history.length > 0)
       .map(m => {
-        const start = m.history.map(h => h.date).sort()[0];
+        const dates = m.history.map(h => h.date).sort();
+        const start = dates[0];
         const dep = depMap.get(normId(m.id)) || depMap.get(baseId(m.id));
-        const retired = dep && dep.effective <= today;
-        const activeEnd = retired ? dep.effective : today;
         const cur = currentById[m.id];
-        const isDeprecatedCatalog = cur?.availability === "deprecated";
-        return { m, provider, start, dep, retired: retired || isDeprecatedCatalog, activeEnd };
+        // Three ways a model ends: a documented shutdown (dep event), a
+        // catalog deprecation, or silent removal — it just stops being listed
+        // (xAI publishes no deprecation schedule at all). Silent removals end
+        // at the last snapshot the model appeared in, marked "last seen".
+        const docRetired = dep && dep.effective <= today;
+        const delisted = !dep && !cur;
+        const catalogDeprecated = cur?.availability === "deprecated";
+        const activeEnd = docRetired ? dep.effective : delisted ? dates[dates.length - 1] : today;
+        return { m, provider, start, dep, cur, delisted, retired: docRetired || delisted || catalogDeprecated, activeEnd };
       })
       .filter(r => !cutoff || new Date(r.activeEnd) >= cutoff || (r.dep && new Date(r.dep.effective) >= cutoff));
     // Priority: deprecation-window models (most recent shutdown first — the
@@ -708,7 +714,8 @@ function renderLifecycles() {
     if (picked.length) groups.push({
       provider, rows: picked, hidden: candidates.length - picked.length, expanded,
       fullScheduled: candidates.filter(r => r.dep && r.dep.effective > today).length,
-      fullRetired: candidates.filter(r => r.retired).length,
+      fullRetired: candidates.filter(r => r.retired && !r.delisted).length,
+      fullDelisted: candidates.filter(r => r.delisted).length,
       fullCount: candidates.length,
     });
   }
@@ -805,6 +812,15 @@ function renderLifecycles() {
         dot.setAttribute("r", "3"); dot.setAttribute("fill", color);
         svg.appendChild(dot);
       }
+      if (r.delisted) {
+        // silent removal: grey cap at last-seen — no documented shutdown
+        const dx = clampX(r.activeEnd);
+        const cap = document.createElementNS(ns, "rect");
+        cap.setAttribute("x", String(dx - 1)); cap.setAttribute("y", String(cy - 5));
+        cap.setAttribute("width", "2.5"); cap.setAttribute("height", "10");
+        cap.setAttribute("fill", "var(--muted-2)");
+        svg.appendChild(cap);
+      }
       if (r.dep) {
         // deprecation window: announced → effective
         const wx1 = clampX(r.dep.announced), wx2 = clampX(r.dep.effective);
@@ -836,7 +852,11 @@ function renderLifecycles() {
       hit.addEventListener("mouseenter", e => {
         const dep = r.dep
           ? `<div class="tbody">deprecation announced ${r.dep.announced} · ${r.retired ? "retired" : "shutdown"} ${r.dep.effective}${r.dep.target ? ` · → ${escapeHtml(r.dep.target.split("/").slice(1).join("/"))}` : ""}</div>`
-          : `<div class="tbody">active · no scheduled retirement on record</div>`;
+          : r.delisted
+            ? `<div class="tbody">silently delisted · last seen ${r.activeEnd} · no deprecation schedule published</div>`
+            : r.retired
+              ? `<div class="tbody">marked deprecated in the catalog</div>`
+              : `<div class="tbody">active · no scheduled retirement on record</div>`;
         tooltip.innerHTML = `
           <div class="tdate">${PROVIDER_LABELS[r.provider] || r.provider}</div>
           <div class="thead">${escapeHtml(r.m.display_name || r.m.id)}</div>
@@ -868,12 +888,14 @@ function renderLifecycles() {
 
   const scheduled = groups.reduce((n, g) => n + g.fullScheduled, 0);
   const retired = groups.reduce((n, g) => n + g.fullRetired, 0);
+  const delisted = groups.reduce((n, g) => n + g.fullDelisted, 0);
   const total = groups.reduce((n, g) => n + g.fullCount, 0);
   legend.innerHTML = `
     <span><span class="swatch" style="background: var(--text-dim); height: 3px;"></span>tracked lifespan</span>
     <span><span class="swatch" style="background: var(--warn); opacity: 0.4;"></span>deprecation window</span>
     <span><span class="swatch" style="background: var(--down); width: 3px;"></span>shutdown</span>
-    <span style="color: var(--muted-2);">${allRows.length} of ${total} models shown · ${scheduled} scheduled · ${retired} retired on record</span>
+    <span><span class="swatch" style="background: var(--muted-2); width: 3px;"></span>silently delisted</span>
+    <span style="color: var(--muted-2);">${allRows.length} of ${total} models shown · ${scheduled} scheduled · ${retired} retired · ${delisted} silently delisted</span>
     <span style="margin-left: auto;"><a href="/events.json" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">try as json ↗</a></span>`;
 }
 

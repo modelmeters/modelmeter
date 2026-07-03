@@ -198,7 +198,7 @@ button, input, select { font-family: inherit; font-size: inherit; }
 .calc-cta .cta-link:hover { border-color: var(--accent); color: var(--accent); }
 
 /* Events feed in right column */
-.events-feed { display: grid; gap: 8px; max-height: 320px; overflow-y: auto; padding-right: 4px; }
+.events-feed { display: grid; gap: 8px; max-height: 920px; overflow-y: auto; padding-right: 4px; }
 .events-feed::-webkit-scrollbar { width: 6px; }
 .events-feed::-webkit-scrollbar-track { background: var(--bg); }
 .events-feed::-webkit-scrollbar-thumb { background: var(--border-strong); }
@@ -280,7 +280,8 @@ button, input, select { font-family: inherit; font-size: inherit; }
 .sev-chip.action_required { color: var(--warn); }
 .sev-chip.informational { color: var(--muted); }
 
-/* Sunset board */
+/* Sunset board (full-width strip above the grid) */
+.sunset-section { padding: 12px 12px 0; }
 .sunset-panel { padding: 0; overflow: hidden; }
 .sunset-header { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--border); }
 .sunset-title { font-size: 11px; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; }
