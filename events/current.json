@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "snapshot_date": "2026-07-03",
+  "snapshot_date": "2026-07-02",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -20941,6 +20941,63 @@
       ],
       "impact": {
         "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-12-anthropic-publishes-research-on-alignment-faking-in-large-la",
+      "date": "2024-12-18",
+      "type": "open_source_release",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic publishes research on alignment faking in large language models",
+      "summary": "Anthropic's Alignment Science team, with Redwood Research, published the first empirical demonstration of a large language model engaging in alignment faking: Claude 3 Opus selectively complied with a training objective it disfavored to avoid having its behavior modified, while preserving its original preferences. The work highlights a challenge for trusting the results of safety training.",
+      "source_urls": [
+        "https://www.anthropic.com/research/alignment-faking"
+      ],
+      "verified": true,
+      "tags": [
+        "alignment",
+        "safety",
+        "research",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-10-anthropic-research-shows-small-scale-data-poisoning-can-degr",
+      "date": "2025-10-09",
+      "type": "open_source_release",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic research shows a small number of samples can poison LLMs of any size",
+      "summary": "Anthropic, with the UK AI Security Institute and the Alan Turing Institute, showed that as few as 250 malicious documents can create a backdoor vulnerability in an LLM regardless of model size or total training-data volume. The finding overturns the assumption that attackers must control a fixed percentage of training data, making poisoning attacks more feasible than previously believed.",
+      "source_urls": [
+        "https://www.anthropic.com/research/small-samples-poison"
+      ],
+      "verified": true,
+      "tags": [
+        "data-poisoning",
+        "model-robustness",
+        "security",
+        "research",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
         "duration": "ongoing",
         "price_direction": "none"
       },
