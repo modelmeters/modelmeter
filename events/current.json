@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-02",
+  "snapshot_date": "2026-07-03",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -25088,6 +25088,131 @@
       ],
       "created_at": "2026-07-02",
       "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-07-deepseek-introduces-peak-hour-pricing-for-v4-api",
+      "announced_at": "2026-07-03",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "DeepSeek introduces peak-hour pricing for V4 API",
+      "summary": "Starting in July 2026, DeepSeek implements differential pricing for its V4 model API based on time-of-day usage, charging higher rates during peak demand hours. This reflects growing strain on inference infrastructure and an effort to manage load through economic incentives.",
+      "sources": [
+        {
+          "url": "https://winbuzzer.com/2026/07/03/deepseek-v4-may-add-peak-hour-pricing-to-its-api-xcxwbn/"
+        }
+      ],
+      "tags": [
+        "major",
+        "capacity-management"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-03",
+      "updated_at": "2026-07-03"
+    },
+    {
+      "id": "2026-07-venice-ai-raises-65m-in-series-a-funding",
+      "announced_at": "2026-07-03",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice AI raises $65M in Series A funding",
+      "summary": "Venice AI secures $65 million in Series A funding to scale its AI infrastructure and expand its inference platform. The investment signals strong investor confidence in Venice's position within the competitive AI provider landscape.",
+      "sources": [
+        {
+          "url": "https://www.finsmes.com/2026/07/venice-ai-raises-65m-in-series-a-funding.html"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-03",
+      "updated_at": "2026-07-03"
+    },
+    {
+      "id": "2026-07-anthropic-in-discussions-with-samsung-to-develop-custom-ai-c",
+      "announced_at": "2026-07-02",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "nvidia"
+      ],
+      "models": [],
+      "headline": "Anthropic in discussions with Samsung to develop custom AI chip",
+      "summary": "Anthropic is exploring a partnership with Samsung to design and manufacture a custom AI chip, aiming to optimize performance and reduce dependency on existing GPU suppliers. This move follows OpenAI's recent announcement of a custom chip collaboration with Broadcom, signaling a growing trend of major AI firms seeking greater hardware control.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/02/anthropic-is-discussing-a-new-custom-chip-with-samsung/"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "custom-chip",
+        "samsung",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-03",
+      "updated_at": "2026-07-03"
+    },
+    {
+      "id": "2026-06-nvidia-software-optimizations-reduce-deepseek-v4-token-costs",
+      "announced_at": "2026-06-30",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "nvidia",
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/v4"
+      ],
+      "headline": "Nvidia software optimizations reduce DeepSeek V4 token costs by up to fivefold through Blackwell tuning",
+      "summary": "One month after the launch of DeepSeek V4, Nvidia implemented pure software optimizations on its Blackwell architecture, achieving up to a 5x reduction in token generation costs. This advancement significantly improves inference efficiency without requiring changes to the model architecture or hardware infrastructure.",
+      "sources": [
+        {
+          "url": "https://wccftech.com/nvidia-slashes-deepseek-v4-token-costs-by-up-to-5x-one-month-after-launch/"
+        }
+      ],
+      "tags": [
+        "major",
+        "efficiency",
+        "blackwell",
+        "pricing"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-03",
+      "updated_at": "2026-07-03"
     }
   ]
 }
