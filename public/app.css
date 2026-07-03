@@ -324,6 +324,16 @@ button, input, select { font-family: inherit; font-size: inherit; }
 /* Feed severity filter */
 .feed-sev-chips { margin-bottom: 10px; }
 
+/* Check your stack */
+#check-result { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border-soft); display: none; }
+#check-result.show { display: grid; gap: 6px; }
+.chk-row { display: grid; gap: 2px; padding: 6px 8px; border: 1px solid var(--border); background: var(--panel-2); font-size: 11px; cursor: pointer; }
+.chk-row:hover { border-color: var(--accent-dim); }
+.chk-id { color: var(--text); font-weight: 600; }
+.chk-verdict { color: var(--text-dim); line-height: 1.4; }
+.chk-note { color: var(--muted); font-size: 10px; margin-top: 4px; }
+.chk-note a { color: var(--text-dim); }
+
 /* Tooltip (shared) */
 .tooltip {
   position: absolute;

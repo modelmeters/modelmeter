@@ -1,34 +1,5 @@
 // ---------- constants ----------
 
-// Venice referral code — appended as ?ref=<code> on every "run via Venice" link.
-const VENICE_REFERRAL = "9conaa";
-const VENICE_REF_PARAM = "ref";
-
-// Compute the best Venice deep-link for a model in our catalog.
-// - If the model is itself a venice/* entry: deep-link with model param.
-// - Otherwise: if any venice/* entry resells this model (upstream_model_id match):
-//   deep-link to that one.
-// - Otherwise: fall back to venice.ai/chat with just the ref code.
-function veniceUrlFor(modelId) {
-  const base = "https://venice.ai/chat";
-  const refQ = VENICE_REFERRAL
-    ? `?${encodeURIComponent(VENICE_REF_PARAM)}=${encodeURIComponent(VENICE_REFERRAL)}`
-    : "";
-  const sep = refQ ? "&" : "?";
-  const model = currentModels.find((m) => m.id === modelId);
-  if (!model) return `${base}${refQ}`;
-  if (model.provider === "venice") {
-    return `${base}${refQ}${sep}model=${encodeURIComponent(model.model)}`;
-  }
-  const reseller = currentModels.find(
-    (m) => m.provider === "venice" && m.upstream_model_id === modelId
-  );
-  if (reseller) {
-    return `${base}${refQ}${sep}model=${encodeURIComponent(reseller.model)}`;
-  }
-  return `${base}${refQ}`;
-}
-
 const PROVIDER_LABELS = {
   openai: "OpenAI", anthropic: "Anthropic", google: "Google", xai: "xAI", venice: "Venice",
   microsoft: "Microsoft", amazon: "Amazon", meta: "Meta", nvidia: "NVIDIA", deepseek: "DeepSeek",
@@ -127,8 +98,7 @@ async function boot() {
   renderStats();
   renderSunsets();
   renderNotice();
-  renderPrivacyPremium();
-  renderCalculator();
+  renderCheck();
   renderEventsFeed();
   wireFeedSeverity();
   renderChartControls();
@@ -313,146 +283,64 @@ function wireFeedSeverity() {
 
 function shorten(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
 
-// ---------- Privacy Premium gauge ----------
-// ---------- Privacy Premium (Venice vs direct flagship) ----------
-function computePrivacyPremium() {
-  const rows = [];
-  for (const provider of ACROSS_PROVIDERS) {
-    const active = currentModels.filter(m =>
-      m.provider === provider &&
-      m.input_cost_per_mtok != null &&
-      m.availability !== "deprecated"
-    );
-    if (active.length === 0) continue;
-    active.sort((a, b) => b.input_cost_per_mtok - a.input_cost_per_mtok);
-    const flagship = active[0];
-    const veniceModel = currentModels.find(m =>
-      m.provider === "venice" &&
-      m.upstream_model_id === flagship.id &&
-      m.input_cost_per_mtok != null
-    );
-    const markup_pct = veniceModel
-      ? (((veniceModel.input_cost_per_mtok + (veniceModel.output_cost_per_mtok ?? 0)) /
-          (flagship.input_cost_per_mtok + (flagship.output_cost_per_mtok ?? 0))) - 1) * 100
-      : null;
-    rows.push({ provider, flagship, veniceModel, markup_pct });
-  }
-  const valid = rows.filter(r => r.markup_pct != null);
-  const avg = valid.length > 0 ? valid.reduce((s, r) => s + r.markup_pct, 0) / valid.length : null;
-  return { avg, rows };
+// ---------- check your stack ----------
+// Client-side preview of the /check endpoint: match user model ids against the
+// events record and report scheduled retirements / breaking history per model.
+function normId(x) { return String(x).toLowerCase().trim().replace(/\./g, "-"); }
+function baseId(x) { return normId(x).replace(/-\d{4}-\d{2}-\d{2}$/, "").replace(/-\d{4}$/, ""); }
+function renderCheck() {
+  const btn = document.getElementById("check-btn");
+  const input = document.getElementById("check-input");
+  if (!btn || !input) return;
+  btn.addEventListener("click", runCheck);
+  input.addEventListener("keydown", e => { if (e.key === "Enter") runCheck(); });
 }
-
-function renderPrivacyPremium() {
-  const avgEl = document.getElementById("privacy-avg");
-  const listEl = document.getElementById("privacy-pairs");
-  if (!avgEl || !listEl) return;
-  const { avg, rows } = computePrivacyPremium();
-  avgEl.textContent = avg != null ? `+${Math.round(avg)}% AVG` : "—";
-  listEl.innerHTML = rows.map(r => {
-    const color = PROVIDER_COLORS[r.provider] || "#ffffff";
-    const provName = PROVIDER_LABELS[r.provider] || r.provider;
-    const modelShort = shorten(r.flagship.display_name, 20);
-    const dash = `<span class="pp-prov-dash" style="background:${color}" title="${escapeHtml(provName)}"></span>`;
-    if (!r.veniceModel) {
-      return `<div class="pp-row pp-na">
-        ${dash}
-        <span class="pp-model" title="${escapeHtml(r.flagship.display_name)}">${escapeHtml(modelShort)}</span>
-        <span class="pp-pct" style="color:var(--muted-2)">—</span>
-        <span></span>
-      </div>`;
+function runCheck() {
+  const raw = document.getElementById("check-input").value;
+  const out = document.getElementById("check-result");
+  const tokens = raw.split(/[\s,]+/).map(t => t.trim()).filter(Boolean);
+  if (!tokens.length) { out.className = "show"; out.innerHTML = '<div style="color: var(--muted);">enter one or more model ids</div>'; return; }
+  const today = new Date().toISOString().slice(0, 10);
+  const rows = tokens.slice(0, 12).map(tok => {
+    const q = normId(tok), qb = baseId(tok);
+    // events whose affected-model list matches this id (with or without provider prefix, date-suffix tolerant)
+    const hits = events.filter(e => (e.models || []).some(m => {
+      const bare = normId(m.split("/").slice(1).join("/"));
+      return bare === q || bare === qb || baseId(bare) === q || baseId(bare) === qb || normId(m) === q;
+    }));
+    const upcoming = hits.filter(e => e.effective_at && e.effective_at >= today).sort((a, b) => a.effective_at.localeCompare(b.effective_at));
+    const past = hits.filter(e => e.effective_at && e.effective_at < today).sort((a, b) => b.effective_at.localeCompare(a.effective_at));
+    const label = `<span class="chk-id">${escapeHtml(tok)}</span>`;
+    if (upcoming.length) {
+      const ev = upcoming[0];
+      const days = Math.ceil((new Date(ev.effective_at) - new Date(today)) / 864e5);
+      const col = days <= 30 ? "var(--down)" : days <= 90 ? "var(--warn)" : "var(--text-dim)";
+      const tgt = ev.migration_target ? ` → ${escapeHtml(ev.migration_target.split("/").slice(1).join("/"))}` : "";
+      const url = ev.sources?.[0]?.url || "#";
+      return `<div class="chk-row" onclick="window.open('${url}', '_blank', 'noopener')" title="${escapeHtml(ev.headline)}">${label}<span class="chk-verdict" style="color:${col}">⚠ ${days}d — ${typeLabel(ev.type)} ${ev.effective_at}${tgt}</span></div>`;
     }
-    const veniceUrl = veniceUrlFor(r.flagship.id);
-    return `<div class="pp-row">
-      ${dash}
-      <span class="pp-model" title="${escapeHtml(r.flagship.display_name)}">${escapeHtml(modelShort)}</span>
-      <span class="pp-pct">+${Math.round(r.markup_pct)}%</span>
-      <a href="${veniceUrl}" target="_blank" rel="noopener" class="pp-run" title="$${r.flagship.input_cost_per_mtok} direct → $${r.veniceModel.input_cost_per_mtok} via Venice">→</a>
-    </div>`;
-  }).join("");
-}
-
-// ---------- calculator ----------
-function renderCalculator() {
-  const sel = document.getElementById("calc-model");
-  const calcBtn = document.getElementById("calc-btn");
-  sel.innerHTML = "";
-  const order = ["anthropic", "openai", "google", "xai", "venice"];
-  for (const p of order) {
-    if (!modelsByProvider[p]) continue;
-    const g = document.createElement("optgroup");
-    g.label = PROVIDER_LABELS[p] || p;
-    for (const m of modelsByProvider[p].sort((a, b) => a.display_name.localeCompare(b.display_name))) {
-      const opt = document.createElement("option");
-      opt.value = m.id;
-      opt.textContent = `${m.display_name} · $${m.input_cost_per_mtok}/$${m.output_cost_per_mtok}`;
-      g.appendChild(opt);
+    if (past.length) {
+      const ev = past[0];
+      const url = ev.sources?.[0]?.url || "#";
+      return `<div class="chk-row" onclick="window.open('${url}', '_blank', 'noopener')" title="${escapeHtml(ev.headline)}">${label}<span class="chk-verdict" style="color:var(--down)">✗ ${typeLabel(ev.type)} — effective ${ev.effective_at}</span></div>`;
     }
-    sel.appendChild(g);
-  }
-  sel.disabled = false;
-  calcBtn.disabled = false;
-  // Default to claude-sonnet-4-6 if present
-  const def = currentModels.find(m => m.id === "anthropic/claude-sonnet-4-6") || currentModels[0];
-  if (def) sel.value = def.id;
-  sel.addEventListener("change", () => {
-    chartState.model = sel.value;
-    renderChart();
-    renderEventsFeed();
+    if (hits.length) {
+      const ev = [...hits].sort((a, b) => b.announced_at.localeCompare(a.announced_at))[0];
+      const url = ev.sources?.[0]?.url || "#";
+      return `<div class="chk-row" onclick="window.open('${url}', '_blank', 'noopener')" title="${escapeHtml(ev.headline)}">${label}<span class="chk-verdict" style="color:var(--warn)">· ${typeLabel(ev.type)} ${ev.announced_at}</span></div>`;
+    }
+    const known = currentModels.some(m => { const bare = normId(m.id.split("/").slice(1).join("/")); return bare === q || bare === qb || normId(m.id) === q; });
+    return `<div class="chk-row">${label}<span class="chk-verdict" style="color:${known ? "var(--up)" : "var(--muted-2)"}">${known ? "✓ no scheduled changes on record" : "? not in catalog — unrecognized id"}</span></div>`;
   });
-  calcBtn.addEventListener("click", calculate);
-  document.getElementById("calc-input").addEventListener("keydown", e => { if (e.key === "Enter") calculate(); });
-  document.getElementById("calc-output").addEventListener("keydown", e => { if (e.key === "Enter") calculate(); });
-}
-
-async function calculate() {
-  const model = document.getElementById("calc-model").value;
-  const input = document.getElementById("calc-input").value;
-  const output = document.getElementById("calc-output").value;
-  if (!model) return;
-  const url = `/estimate?model=${encodeURIComponent(model)}&input=${input}&output=${output}`;
-  const result = document.getElementById("calc-result");
-  result.className = "show";
-  result.textContent = "calculating…";
-  try {
-    const res = await fetch(url);
-    const body = await res.json();
-    if (res.status !== 200) {
-      result.className = "show error";
-      result.innerHTML = `<strong>error:</strong> ${escapeHtml(body.error?.message ?? "request failed")}`;
-      return;
-    }
-    renderCalcResult(body, url);
-  } catch {
-    result.className = "show error";
-    result.textContent = "request failed";
-  }
-}
-
-function renderCalcResult(r, callUrl) {
-  let html = `<div class="total-line">$${r.total_cost_usd.toFixed(6)}</div>`;
-  html += `<div class="calc-breakdown">`;
-  html += `<div>${r.input_tokens.toLocaleString()} in × $${r.rates_per_mtok.input}/Mtok</div><div class="v">$${r.input_cost_usd.toFixed(6)}</div>`;
-  html += `<div>${r.output_tokens.toLocaleString()} out × $${r.rates_per_mtok.output}/Mtok</div><div class="v">$${r.output_cost_usd.toFixed(6)}</div>`;
-  html += `</div>`;
-  if (r.tier_applied) html += `<div style="color: var(--warn); font-size: 11px; margin-top: 4px;">(overage tier rates applied)</div>`;
-  if (r.upstream?.total_cost_usd != null) {
-    const direction = r.upstream.markup_percent > 0 ? "above" : "below";
-    const abs = Math.abs(r.upstream.markup_percent);
-    html += `<div class="calc-up-block">vs <strong>${escapeHtml(r.upstream.display_name)}</strong> direct: $${r.upstream.total_cost_usd.toFixed(6)} · <span class="pct">${abs.toFixed(1)}% ${direction}</span></div>`;
-  }
-  const veniceUrl = veniceUrlFor(r.model);
-  html += `<div class="calc-cta">
-    <a href="${veniceUrl}" target="_blank" rel="noopener" class="cta-link">run privately w/ Venice →</a>
-  </div>`;
-  html += `<div class="try-json">json: <a href="${callUrl}" target="_blank">${escapeHtml(callUrl)}</a></div>`;
-  document.getElementById("calc-result").innerHTML = html;
+  out.className = "show";
+  out.innerHTML = rows.join("") + `<div class="chk-note">checked against ${events.length} recorded events · <a href="/events.json" target="_blank" rel="noopener">events.json ↗</a></div>`;
 }
 
 // ---------- events feed (right column) ----------
 function renderEventsFeed() {
   const wrap = document.getElementById("events-feed");
   const ctxLabel = document.getElementById("feed-context");
-  const modelId = chartState.model || document.getElementById("calc-model")?.value;
+  const modelId = chartState.viewMode === "single" ? chartState.model : null;
   const model = currentModels.find(m => m.id === modelId);
   let filtered = events;
   if (model) {

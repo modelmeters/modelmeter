@@ -130,15 +130,6 @@
         </div>
 
         <div class="panel">
-          <h3 class="panel-title">Privacy Premium <span class="right" id="privacy-avg">—</span></h3>
-          <div class="pp-subtitle">via Venice · flagship per provider</div>
-          <div id="privacy-pairs"></div>
-          <div class="pp-cta">
-            <a id="pp-cta-link" href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" class="pp-cta-link">run privately w/ Venice →</a>
-          </div>
-        </div>
-
-        <div class="panel">
           <h3 class="panel-title">About</h3>
           <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
             The changelog of record for the AI stack. Deprecations, sunsets, price changes, and releases in the model layer — recorded as source-verified events with dates, migration targets, and verbatim quotes. Agents call the same JSON endpoints this dashboard is built on.
@@ -147,6 +138,7 @@
             Every event cites its source, most with archive snapshots. Entries are published fast as <em>unverified</em>, then human-reviewed to <em>verified</em> — corrections are never silent. The full dataset lives in a public GitHub repo.
           </p>
           <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border-soft);">
+            <a href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ our pipeline runs privately on Venice</a>
             <a href="https://x.com/modelmeter_" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ @modelmeter_ on X</a>
             <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ github.com/modelmeters</a>
             <a href="/llms.txt" style="color: var(--text-dim); font-size: 11px;">→ llms.txt (for agents)</a>
@@ -229,23 +221,13 @@
       <!-- RIGHT column: calculator + events feed -->
       <div class="col-right">
         <div class="panel">
-          <h3 class="panel-title">Calculator</h3>
+          <h3 class="panel-title">Check your stack</h3>
           <div class="field">
-            <label for="calc-model">Model</label>
-            <select id="calc-model" disabled><option>loading…</option></select>
+            <label for="check-input">Model IDs you depend on</label>
+            <input id="check-input" type="text" placeholder="gpt-4o, claude-sonnet-4-6, gemini-2.5-flash" autocomplete="off" spellcheck="false" />
           </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="calc-input">Input tokens</label>
-              <input id="calc-input" type="number" min="0" step="1" value="1000" />
-            </div>
-            <div class="field">
-              <label for="calc-output">Output tokens</label>
-              <input id="calc-output" type="number" min="0" step="1" value="500" />
-            </div>
-          </div>
-          <button class="btn" id="calc-btn" disabled>Estimate</button>
-          <div id="calc-result"></div>
+          <button class="btn" id="check-btn">Check</button>
+          <div id="check-result"></div>
         </div>
 
         <div class="panel">
