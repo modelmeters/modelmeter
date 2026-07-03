@@ -23192,6 +23192,1002 @@
       },
       "created_at": "2026-07-02",
       "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2022-06-openai-retires-legacy-endpoints-engines-search-classifications",
+      "announced_at": "2022-06-03",
+      "effective_at": "2022-12-03",
+      "type": "endpoint_change",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI retires legacy endpoints /v1/engines, /v1/search, /v1/classifications, and /v1/answers",
+      "summary": "OpenAI shut down four legacy API endpoints on December 3, 2022. /v1/engines was replaced by /v1/models; /v1/search, /v1/classifications, and /v1/answers were removed with transition guides.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "2022-12-03 /v1/engines /v1/models 2022-12-03 /v1/search View transition guide 2022-12-03 /v1/classifications View transition guide 2022-12-03 /v1/answers View transition guide",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-03-openai-retires-codex-code-models",
+      "announced_at": "2023-03-20",
+      "effective_at": "2023-03-23",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/code-davinci-002",
+        "openai/code-davinci-001",
+        "openai/code-cushman-002",
+        "openai/code-cushman-001"
+      ],
+      "headline": "OpenAI retires the Codex code models",
+      "summary": "OpenAI shut down the Codex family (code-davinci-001/002, code-cushman-001/002) on March 23, 2023, three days after the announcement. The deprecations page currently lists gpt-4o as the recommended replacement.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "2023-03-20: Codex models — Shutdown date Deprecated model Recommended replacement 2023-03-23 code-davinci-002 gpt-4o 2023-03-23 code-davinci-001 gpt-4o 2023-03-23 code-cushman-002 gpt-4o 2023-03-23 code-cushman-001 gpt-4o",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-06-openai-marks-gpt-4-0314-legacy",
+      "announced_at": "2023-06-13",
+      "effective_at": "2024-06-13",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4-0314"
+      ],
+      "migration_target": "openai/gpt-4o",
+      "headline": "OpenAI marks gpt-4-0314 legacy with retirement at earliest June 2024",
+      "summary": "With the June 13, 2023 chat-model update announcement, the original gpt-4-0314 snapshot was marked legacy with retirement at earliest June 13, 2024; from January 10, 2024 only existing users could keep using it. Recommended replacement: gpt-4o.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On June 13, 2023, we announced new chat model versions in the Function calling and other API updates blog post. The three original versions will be retired in June 2024 at the earliest. As of January 10, 2024, only existing users of these models will be able to continue using them.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-06-openai-deprecates-gpt-3-5-turbo-0301",
+      "announced_at": "2023-06-13",
+      "effective_at": "2024-09-13",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-3.5-turbo-0301"
+      ],
+      "migration_target": "openai/gpt-3.5-turbo",
+      "headline": "OpenAI deprecates gpt-3.5-turbo-0301, shutdown September 2024",
+      "summary": "The original gpt-3.5-turbo-0301 snapshot, announced deprecated in the June 13, 2023 chat-model update, was shut down on September 13, 2024. Recommended replacement: gpt-3.5-turbo.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "2024-09-13 gpt-3.5-turbo-0301 $15.00 / 1M input tokens + $20.00 / 1M output tokens gpt-3.5-turbo",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-06-openai-deprecates-gpt-4-32k-0314",
+      "announced_at": "2023-06-13",
+      "effective_at": "2025-06-06",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4-32k-0314"
+      ],
+      "migration_target": "openai/gpt-4o",
+      "headline": "OpenAI deprecates gpt-4-32k-0314, shutdown June 2025",
+      "summary": "The gpt-4-32k-0314 snapshot from the June 13, 2023 chat-model update was shut down on June 6, 2025. Recommended replacement: gpt-4o.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "2025-06-06 gpt-4-32k-0314 $60.00 / 1M input tokens + $120.00 / 1M output tokens gpt-4o",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-07-openai-retires-gpt-3-era-models-and-first-gen-embeddings",
+      "announced_at": "2023-07-06",
+      "effective_at": "2024-01-04",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/text-ada-001",
+        "openai/text-babbage-001",
+        "openai/text-curie-001",
+        "openai/text-davinci-001",
+        "openai/text-davinci-002",
+        "openai/text-davinci-003",
+        "openai/ada",
+        "openai/babbage",
+        "openai/curie",
+        "openai/davinci",
+        "openai/code-davinci-002",
+        "openai/text-davinci-edit-001",
+        "openai/code-davinci-edit-001",
+        "openai/text-similarity-ada-001",
+        "openai/text-search-ada-doc-001",
+        "openai/text-search-ada-query-001",
+        "openai/code-search-ada-code-001",
+        "openai/code-search-ada-text-001",
+        "openai/text-similarity-babbage-001",
+        "openai/text-search-babbage-doc-001",
+        "openai/text-search-babbage-query-001",
+        "openai/code-search-babbage-code-001",
+        "openai/code-search-babbage-text-001",
+        "openai/text-similarity-curie-001",
+        "openai/text-search-curie-doc-001",
+        "openai/text-search-curie-query-001",
+        "openai/text-similarity-davinci-001",
+        "openai/text-search-davinci-doc-001",
+        "openai/text-search-davinci-query-001"
+      ],
+      "headline": "OpenAI retires GPT-3-era completion, edit, and first-generation embedding models",
+      "summary": "OpenAI announced the retirement of older GPT-3/GPT-3.5 completion models (InstructGPT + base ada/babbage/curie/davinci), the edit models and /v1/edits endpoint, and all first-generation text embedding models, all shut down January 4, 2024. Replacements: gpt-3.5-turbo-instruct for InstructGPT-style use, babbage-002/davinci-002 for base models, gpt-4o for edits, text-embedding-3-small for embeddings.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On July 06, 2023, we announced the upcoming retirements of older GPT-3 and GPT-3.5 models served via the completions endpoint. We also announced the upcoming retirement of our first-generation text embedding models. They will be shut down on January 04, 2024.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-08-openai-retires-v1-fine-tunes-endpoint",
+      "announced_at": "2023-08-22",
+      "effective_at": "2024-01-04",
+      "type": "endpoint_change",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI retires the /v1/fine-tunes endpoint and models fine-tuned with it",
+      "summary": "With the launch of the new fine-tuning API (/v1/fine_tuning/jobs), OpenAI shut down the original /v1/fine-tunes API on January 4, 2024 — including models fine-tuned through it, which became inaccessible and had to be re-trained on the new endpoint.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On August 22nd, 2023, we announced the new fine-tuning API ( /v1/fine_tuning/jobs ) and that the original /v1/fine-tunes API along with legacy models (including those fine-tuned with the /v1/fine-tunes API) will be shut down on January 04, 2024.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2023-11-openai-deprecates-gpt-3-5-turbo-0613-snapshots",
+      "announced_at": "2023-11-06",
+      "effective_at": "2024-09-13",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-3.5-turbo-0613",
+        "openai/gpt-3.5-turbo-16k-0613"
+      ],
+      "migration_target": "openai/gpt-3.5-turbo",
+      "headline": "OpenAI deprecates gpt-3.5-turbo-0613 and gpt-3.5-turbo-16k-0613",
+      "summary": "Alongside the release of an updated GPT-3.5-Turbo (16k context by default), OpenAI deprecated the 0613 snapshots; both were shut down September 13, 2024. From June 17, 2024 only existing users could continue using them. Recommended replacement: gpt-3.5-turbo.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On November 6th, 2023, we announced the release of an updated GPT-3.5-Turbo model (which now comes by default with 16k context) along with deprecation of gpt-3.5-turbo-0613 and gpt-3.5-turbo-16k-0613 .",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-06-openai-deprecates-gpt-4-vision-preview",
+      "announced_at": "2024-06-06",
+      "effective_at": "2024-12-06",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4-vision-preview",
+        "openai/gpt-4-1106-vision-preview"
+      ],
+      "migration_target": "openai/gpt-4o",
+      "headline": "OpenAI deprecates gpt-4-vision-preview models, shutdown December 2024",
+      "summary": "The GPT-4 Vision Preview snapshots were deprecated June 6, 2024 with six months' notice and shut down December 6, 2024. From June 17, 2024 only existing users could access them. Recommended replacement: gpt-4o.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On June 6th, 2024, we notified developers using gpt-4-32k and gpt-4-vision-preview of their upcoming deprecations in one year and six months respectively. As of June 17, 2024, only existing users of these models will be able to continue using them.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-06-openai-deprecates-gpt-4-32k",
+      "announced_at": "2024-06-06",
+      "effective_at": "2025-06-06",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4-32k",
+        "openai/gpt-4-32k-0613",
+        "openai/gpt-4-32k-0314"
+      ],
+      "migration_target": "openai/gpt-4o",
+      "headline": "OpenAI deprecates the gpt-4-32k family, shutdown June 2025",
+      "summary": "The gpt-4-32k models ($60/$120 per 1M tokens) were deprecated June 6, 2024 with one year's notice and shut down June 6, 2025. Recommended replacement: gpt-4o.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "2025-06-06 gpt-4-32k $60.00 / 1M input tokens + $120 / 1M output tokens gpt-4o",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-08-openai-ends-new-fine-tuning-on-babbage-002-davinci-002",
+      "announced_at": "2024-08-29",
+      "effective_at": "2024-10-28",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/babbage-002",
+        "openai/davinci-002"
+      ],
+      "migration_target": "openai/gpt-4o-mini",
+      "headline": "OpenAI ends new fine-tuning training on babbage-002 and davinci-002",
+      "summary": "From October 28, 2024, new fine-tuning training runs on babbage-002 and davinci-002 were no longer supported. Existing fine-tuned models were unaffected. Recommended replacement for new training: gpt-4o-mini.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On August 29th, 2024, we notified developers fine-tuning babbage-002 and davinci-002 that new fine-tuning training runs on these models will no longer be supported starting October 28, 2024.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2024-10-openai-shuts-down-assistants-api-beta-v1",
+      "announced_at": "2024-10-02",
+      "effective_at": "2024-12-18",
+      "type": "endpoint_change",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI shuts down Assistants API beta v1",
+      "summary": "Access to the Assistants API v1 beta (OpenAI-Beta: assistants=v1) was discontinued December 18, 2024, following the v2 beta release announced in April 2024. Replacement: OpenAI-Beta: assistants=v2.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "In April 2024 when we released the v2 beta version of the Assistants API, we announced that access to the v1 beta would be shut off by the end of 2024. Access to the v1 beta will be discontinued on December 18, 2024.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-openai-deprecates-gpt-4-5-preview",
+      "announced_at": "2025-04-14",
+      "effective_at": "2025-07-14",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4.5-preview"
+      ],
+      "migration_target": "openai/gpt-4.1",
+      "headline": "OpenAI deprecates gpt-4.5-preview, removed July 2025",
+      "summary": "The gpt-4.5-preview model was deprecated April 14, 2025 and removed from the API on July 14, 2025 — three months' notice, consistent with preview-model policy. Recommended replacement: gpt-4.1.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On April 14th, 2025, we notified developers that the gpt-4.5-preview model is deprecated and will be removed from the API in the coming months.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-openai-deprecates-o1-preview",
+      "announced_at": "2025-04-28",
+      "effective_at": "2025-07-28",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/o1-preview"
+      ],
+      "migration_target": "openai/o3",
+      "headline": "OpenAI deprecates o1-preview, shutdown July 2025",
+      "summary": "o1-preview was deprecated April 28, 2025 with three months' notice and removed July 28, 2025. Recommended replacement: o3.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On April 28th, 2025, we notified developers using o1-preview and o1-mini of their deprecations and removal from the API in three months and six months respectively.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-openai-deprecates-o1-mini",
+      "announced_at": "2025-04-28",
+      "effective_at": "2025-10-27",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/o1-mini"
+      ],
+      "migration_target": "openai/o4-mini",
+      "headline": "OpenAI deprecates o1-mini, shutdown October 2025",
+      "summary": "o1-mini was deprecated April 28, 2025 with six months' notice and removed October 27, 2025. Recommended replacement: o4-mini.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "Shutdown date Model / system Recommended replacement 2025-07-28 o1-preview o3 2025-10-27 o1-mini o4-mini",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-04-openai-deprecates-text-moderation-models",
+      "announced_at": "2025-04-28",
+      "effective_at": "2025-10-27",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/text-moderation-007",
+        "openai/text-moderation-stable",
+        "openai/text-moderation-latest"
+      ],
+      "migration_target": "openai/omni-moderation",
+      "headline": "OpenAI deprecates the text-moderation models",
+      "summary": "The text-moderation model family was deprecated April 28, 2025 with six months' notice and removed October 27, 2025. Recommended replacement: omni-moderation.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On April 28th, 2025, we notified developers using text-moderation of its deprecation and removal from the API in six months.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-openai-deprecates-gpt-4o-realtime-preview-2024-10-01",
+      "announced_at": "2025-06-10",
+      "effective_at": "2025-10-10",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4o-realtime-preview-2024-10-01"
+      ],
+      "migration_target": "openai/gpt-realtime-1.5",
+      "headline": "OpenAI deprecates gpt-4o-realtime-preview-2024-10-01",
+      "summary": "The 2024-10-01 realtime preview snapshot was deprecated June 10, 2025 with three months' notice and removed October 10, 2025. The deprecations page lists gpt-realtime-1.5 as the replacement.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On June 10th, 2025, we notified developers using gpt-4o-realtime-preview-2024-10-01 of its deprecation and removal from the API in three months.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-06-openai-deprecates-gpt-4o-audio-preview-2024-10-01",
+      "announced_at": "2025-06-10",
+      "effective_at": "2025-10-10",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4o-audio-preview-2024-10-01"
+      ],
+      "migration_target": "openai/gpt-audio-1.5",
+      "headline": "OpenAI deprecates gpt-4o-audio-preview-2024-10-01",
+      "summary": "The 2024-10-01 audio preview snapshot was deprecated June 10, 2025 with three months' notice and removed October 10, 2025. The deprecations page lists gpt-audio-1.5 as the replacement.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On June 10th, 2025, we notified developers using gpt-4o-audio-preview-2024-10-01 of its deprecation and removal from the API in three months.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-08-openai-deprecates-assistants-api",
+      "announced_at": "2025-08-26",
+      "effective_at": "2026-08-26",
+      "type": "endpoint_change",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI deprecates the Assistants API, shutdown August 2026",
+      "summary": "The Assistants API was deprecated August 26, 2025 with one year's notice; it shuts down August 26, 2026. Replacements: the Responses API and Conversations API, with a published migration guide.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On August 26th, 2025, we notified developers using the Assistants API of its deprecation and removal from the API one year later, on August 26, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-openai-retires-realtime-api-beta",
+      "announced_at": "2025-09-15",
+      "effective_at": "2026-05-12",
+      "type": "endpoint_change",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI retires the Realtime API Beta interface",
+      "summary": "The Realtime API Beta (OpenAI-Beta: realtime=v1) was deprecated September 15, 2025 and removed May 12, 2026, replaced by the GA Realtime API with a published migration guide.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "The Realtime API Beta was deprecated and removed from the API on May 12, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-openai-deprecates-gpt-4o-realtime-and-audio-preview-models",
+      "announced_at": "2025-09-15",
+      "effective_at": "2026-05-07",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4o-realtime-preview",
+        "openai/gpt-4o-realtime-preview-2025-06-03",
+        "openai/gpt-4o-realtime-preview-2024-12-17",
+        "openai/gpt-4o-mini-realtime-preview",
+        "openai/gpt-4o-audio-preview",
+        "openai/gpt-4o-mini-audio-preview"
+      ],
+      "headline": "OpenAI deprecates the gpt-4o realtime and audio preview model families",
+      "summary": "All remaining gpt-4o realtime and audio preview models were deprecated in September 2025 with six months' notice and removed May 7, 2026. Replacements: gpt-realtime-1.5 / gpt-realtime-mini for realtime, gpt-audio-1.5 / gpt-audio-mini for audio.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "In September, 2025, we notified developers using gpt-4o-realtime-preview models of their deprecation and removal from the API in six months.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-openai-deprecates-legacy-gpt-4-snapshots-march-2026-wave",
+      "announced_at": "2025-09-26",
+      "effective_at": "2026-03-26",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4-0314",
+        "openai/gpt-4-1106-preview",
+        "openai/gpt-4-0125-preview",
+        "openai/gpt-4-turbo-preview"
+      ],
+      "headline": "OpenAI deprecates legacy GPT-4 snapshots, shutdown March 2026",
+      "summary": "gpt-4-0314, gpt-4-1106-preview, and gpt-4-0125-preview (including the gpt-4-turbo-preview aliases pointing at it) were deprecated September 26, 2025 and shut down March 26, 2026. The page recommends gpt-5, or gpt-4.1 for latency-sensitive non-reasoning tasks.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "To improve reliability and make it easier for developers to choose the right models, we are deprecating a set of older OpenAI models with declining usage over the next six to twelve months. Access to these models will be shut down on the dates below.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-09-openai-deprecates-gpt-3-5-instruct-and-base-models-sept-2026-wave",
+      "announced_at": "2025-09-26",
+      "effective_at": "2026-09-28",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-3.5-turbo-instruct",
+        "openai/babbage-002",
+        "openai/davinci-002",
+        "openai/gpt-3.5-turbo-1106"
+      ],
+      "headline": "OpenAI deprecates gpt-3.5-turbo-instruct and base models, shutdown September 2026",
+      "summary": "gpt-3.5-turbo-instruct, babbage-002, davinci-002, and gpt-3.5-turbo-1106 were deprecated September 26, 2025 and shut down September 28, 2026 — the end of the completions-era models. The page recommends gpt-5.4-mini or gpt-5-mini.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "2026-09-28 gpt-3.5-turbo-instruct gpt-5.4-mini or gpt-5-mini 2026-09-28 babbage-002 gpt-5.4-mini or gpt-5-mini 2026-09-28 davinci-002 gpt-5.4-mini or gpt-5-mini 2026-09-28 gpt-3.5-turbo-1106 gpt-5.4-mini or gpt-5-mini",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-openai-deprecates-dall-e-2-and-dall-e-3",
+      "announced_at": "2025-11-14",
+      "effective_at": "2026-05-12",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/dall-e-2",
+        "openai/dall-e-3"
+      ],
+      "headline": "OpenAI deprecates DALL·E 2 and DALL·E 3, removed May 2026",
+      "summary": "The DALL·E image models were deprecated November 14, 2025 and removed May 12, 2026. The page recommends gpt-image-2, gpt-image-1, or gpt-image-1-mini as replacements.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On November 14th, 2025, we notified developers using DALL·E model snapshots of their deprecation and removal from the API on May 12, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-openai-deprecates-codex-mini-latest",
+      "announced_at": "2025-11-17",
+      "effective_at": "2026-02-12",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/codex-mini-latest"
+      ],
+      "migration_target": "openai/gpt-5-codex-mini",
+      "headline": "OpenAI deprecates codex-mini-latest and the legacy local shell tool",
+      "summary": "codex-mini-latest was deprecated November 17, 2025 and removed February 12, 2026, taking the legacy local shell tool (only available with it) along. Recommended replacement: gpt-5-codex-mini with the latest shell tool.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On November 17th, 2025, we notified developers using codex-mini-latest model of its deprecation and removal from the API on February 12, 2026. As part of this deprecation, we will no longer support our legacy local shell tool, which is only available for use with codex-mini-latest .",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2025-11-openai-deprecates-chatgpt-4o-latest",
+      "announced_at": "2025-11-18",
+      "effective_at": "2026-02-17",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/chatgpt-4o-latest"
+      ],
+      "migration_target": "openai/gpt-5.1-chat-latest",
+      "headline": "OpenAI deprecates chatgpt-4o-latest, removed February 2026",
+      "summary": "The chatgpt-4o-latest snapshot was deprecated November 18, 2025 and removed February 17, 2026. Recommended replacement: gpt-5.1-chat-latest.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On November 18th, 2025, we notified developers using chatgpt-4o-latest model snapshot of its deprecation and removal from the API on February 17, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-03-openai-deprecates-sora-2-and-videos-api",
+      "announced_at": "2026-03-24",
+      "effective_at": "2026-09-24",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/sora-2",
+        "openai/sora-2-pro",
+        "openai/sora-2-2025-10-06",
+        "openai/sora-2-2025-12-08",
+        "openai/sora-2-pro-2025-10-06"
+      ],
+      "headline": "OpenAI deprecates Sora 2 models and the Videos API with no named replacement",
+      "summary": "The Sora 2 video generation aliases and snapshots plus the entire Videos API were deprecated March 24, 2026 and shut down September 24, 2026. The deprecations page lists no recommended replacement for any of them.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On March 24th, 2026, we notified developers using the Videos API and Sora 2 video generation model aliases and snapshots of their deprecation and removal from the API on September 24, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-openai-deprecates-legacy-snapshots-july-2026-wave",
+      "announced_at": "2026-04-22",
+      "effective_at": "2026-07-23",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/computer-use-preview",
+        "openai/computer-use-preview-2025-03-11",
+        "openai/gpt-4o-mini-search-preview-2025-03-11",
+        "openai/gpt-4o-mini-tts-2025-03-20",
+        "openai/gpt-4o-search-preview-2025-03-11",
+        "openai/gpt-5-chat-latest",
+        "openai/gpt-5-codex",
+        "openai/gpt-5.1-chat-latest",
+        "openai/gpt-5.1-codex",
+        "openai/gpt-5.1-codex-max",
+        "openai/gpt-5.1-codex-mini",
+        "openai/gpt-audio-mini-2025-10-06",
+        "openai/gpt-realtime-mini-2025-10-06",
+        "openai/o3-deep-research",
+        "openai/o3-deep-research-2025-06-26",
+        "openai/o4-mini-deep-research",
+        "openai/o4-mini-deep-research-2025-06-26",
+        "openai/gpt-5.2-codex"
+      ],
+      "headline": "OpenAI deprecates GPT-5-era chat/codex variants and preview models, shutdown July 2026",
+      "summary": "The first wave of the April 22, 2026 legacy-snapshot deprecation shuts down July 23, 2026: gpt-5/5.1 chat-latest and codex variants (including gpt-5.2-codex), computer-use/search/tts previews, deep-research models, and 2025-10-06 audio/realtime mini snapshots. Substitutes are mostly gpt-5.5, gpt-5.4-mini, and gpt-5.5-pro per model.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "To improve reliability and make it easier for developers to choose the right models, we are deprecating a set of older OpenAI models. Access to these models will be shut down on the dates below.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-04-openai-deprecates-legacy-snapshots-october-2026-wave",
+      "announced_at": "2026-04-22",
+      "effective_at": "2026-10-23",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-3.5-turbo",
+        "openai/gpt-3.5-turbo-0125",
+        "openai/gpt-4",
+        "openai/gpt-4-0613",
+        "openai/gpt-4-1106-preview",
+        "openai/gpt-4-turbo",
+        "openai/gpt-4-turbo-2024-04-09",
+        "openai/gpt-4.1-nano",
+        "openai/gpt-4.1-nano-2025-04-14",
+        "openai/gpt-4o-2024-05-13",
+        "openai/gpt-image-1",
+        "openai/o1",
+        "openai/o1-2024-12-17",
+        "openai/o1-pro",
+        "openai/o1-pro-2025-03-19",
+        "openai/o3-mini",
+        "openai/o3-mini-2025-01-31",
+        "openai/o4-mini",
+        "openai/o4-mini-2025-04-16"
+      ],
+      "headline": "OpenAI retires GPT-3.5/GPT-4-era models, o1/o3-mini/o4-mini, and gpt-image-1, shutdown October 2026",
+      "summary": "The second wave of the April 22, 2026 deprecation shuts down October 23, 2026: the remaining gpt-3.5-turbo and gpt-4/gpt-4-turbo aliases, gpt-4.1-nano, gpt-4o-2024-05-13, gpt-image-1, o1, o1-pro, o3-mini, and o4-mini — plus fine-tuned versions (ft-gpt-3.5-turbo, ft-gpt-4, ft-gpt-4.1-nano, ft-babbage-002, ft-davinci-002). Substitutes are gpt-5.5, gpt-5.4-mini/nano, gpt-5.5-pro, and gpt-image-2 per model.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "2026-10-23 gpt-4-0613 | gpt-4 , gpt-4-0613-completions , gpt-4-completions gpt-5.5 [...] 2026-10-23 o4-mini-2025-04-16 | o4-mini gpt-5.4-mini",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-05-openai-phases-out-self-serve-fine-tuning",
+      "announced_at": "2026-05-07",
+      "effective_at": "2027-01-06",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI phases out self-serve fine-tuning",
+      "summary": "OpenAI is winding down the self-serve fine-tuning platform in stages: from May 7, 2026 organizations that never ran fine-tuning cannot start; from July 2, 2026 job creation requires recent fine-tuned inference; from January 6, 2027 even active customers cannot create new jobs. Inference on existing fine-tuned models continues until each underlying base model is deprecated.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On May 7th, 2026, we notified developers using OpenAI's self-serve fine-tuning platform of updates to availability. Inference on fine-tuned models will continue to be available until the base models are deprecated.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-05-openai-deprecates-gpt-5-2-and-5-3-chat-latest",
+      "announced_at": "2026-05-08",
+      "effective_at": "2026-08-10",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.2-chat-latest",
+        "openai/gpt-5.3-chat-latest"
+      ],
+      "migration_target": "openai/gpt-5.5",
+      "headline": "OpenAI deprecates gpt-5.2-chat-latest and gpt-5.3-chat-latest",
+      "summary": "The gpt-5.2 and gpt-5.3 chat-latest snapshots were deprecated May 8, 2026 and shut down August 10, 2026. Recommended replacement: gpt-5.5.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On May 8th, 2026, we notified developers using gpt-5.2-chat-latest and gpt-5.3-chat-latest model snapshots of their deprecation and removal from the API.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-openai-deprecates-gpt-image-1-family",
+      "announced_at": "2026-06-02",
+      "effective_at": "2026-12-01",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-image-1-mini",
+        "openai/gpt-image-1.5",
+        "openai/chatgpt-image-latest"
+      ],
+      "migration_target": "openai/gpt-image-2",
+      "headline": "OpenAI deprecates the GPT Image 1 family, shutdown December 2026",
+      "summary": "gpt-image-1-mini, gpt-image-1.5, and chatgpt-image-latest were deprecated June 2, 2026 and shut down December 1, 2026. Recommended replacement: gpt-image-2.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On June 2, 2026, we notified developers using older GPT Image models of their deprecation and removal from the API on December 1, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-openai-deprecates-reusable-prompts-api",
+      "announced_at": "2026-06-03",
+      "effective_at": "2026-11-30",
+      "type": "endpoint_change",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI deprecates reusable prompt objects and the v1/prompts API",
+      "summary": "Reusable prompt objects were deprecated June 3, 2026 with prompt creation de-emphasized immediately; the v1/prompts API shuts down November 30, 2026. Migration: move reusable prompt content into application code.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On June 3, 2026, we notified developers using reusable prompts in the dashboard and API that reusable prompt objects are being deprecated.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-openai-deprecates-evals-platform",
+      "announced_at": "2026-06-03",
+      "effective_at": "2026-11-30",
+      "type": "endpoint_change",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI deprecates the Evals platform",
+      "summary": "The Evals platform was deprecated June 3, 2026; existing evals become read-only October 31, 2026 and the dashboard and API shut down November 30, 2026. OpenAI points to Promptfoo as a migration path.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On June 3, 2026, we notified developers using the Evals platform that the product is being deprecated.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-openai-deprecates-agent-builder",
+      "announced_at": "2026-06-03",
+      "effective_at": "2026-11-30",
+      "type": "endpoint_change",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI deprecates Agent Builder",
+      "summary": "Agent Builder was deprecated June 3, 2026 and shuts down November 30, 2026. ChatKit remains available; OpenAI's migration guide points to the Agents SDK or ChatGPT Workspace Agents.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On June 3, 2026, we notified developers using Agent Builder that the product is being deprecated. ChatKit remains available.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-06-openai-deprecates-gpt-5-and-o3-snapshots",
+      "announced_at": "2026-06-11",
+      "effective_at": "2026-12-11",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5-2025-08-07",
+        "openai/gpt-5-mini-2025-08-07",
+        "openai/gpt-5-nano-2025-08-07",
+        "openai/gpt-5-pro-2025-10-06",
+        "openai/o3-2025-04-16",
+        "openai/o3-pro-2025-06-10"
+      ],
+      "headline": "OpenAI deprecates original GPT-5 and o3 snapshots, shutdown December 2026",
+      "summary": "The original GPT-5 snapshots (gpt-5, mini, nano, pro) and the o3/o3-pro snapshots were deprecated June 11, 2026 and shut down December 11, 2026. Replacements per model: gpt-5.5, gpt-5.4-mini, gpt-5.4-nano, and gpt-5.5-pro.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "On June 11, 2026, we notified developers using older GPT-5 and o3 model snapshots of their deprecation and removal from the API on December 11, 2026.",
+          "archived_url": "https://web.archive.org/web/20260703035231/https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "created_at": "2026-07-02",
+      "updated_at": "2026-07-02"
     }
   ]
 }
