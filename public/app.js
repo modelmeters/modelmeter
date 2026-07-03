@@ -70,6 +70,8 @@ const MODEL_FAMILIES = {
   "anthropic/sonnet":  ["anthropic/claude-3-sonnet","anthropic/claude-3-5-sonnet","anthropic/claude-3-7-sonnet","anthropic/claude-sonnet-3-7","anthropic/claude-sonnet-4","anthropic/claude-sonnet-4-5","anthropic/claude-sonnet-4-6"],
   "anthropic/haiku":   ["anthropic/claude-3-haiku","anthropic/claude-haiku-3","anthropic/claude-3-5-haiku","anthropic/claude-haiku-3-5","anthropic/claude-haiku-4-5"],
   "openai/gpt-5":      ["openai/gpt-5","openai/gpt-5-2","openai/gpt-5-4","openai/gpt-5-5"],
+  "openai/gpt-4-line": ["openai/gpt-4-8k","openai/gpt-4","openai/gpt-4-turbo","openai/gpt-4o"],
+  "openai/gpt-mini":   ["openai/gpt-3-5-turbo","openai/gpt-4o-mini"],
   "google/gemini-pro": ["google/gemini-1-5-pro","google/gemini-2-5-pro"],
   "google/gemini-flash":["google/gemini-1-5-flash","google/gemini-2-0-flash","google/gemini-2-5-flash","google/gemini-3-flash-preview","google/gemini-3-5-flash"],
   "xai/grok":          ["xai/grok-beta","xai/grok-2","xai/grok-3","xai/grok-4","xai/grok-4-3"],
@@ -503,7 +505,7 @@ function renderChart() {
 // One lane per model: bar from first-tracked to shutdown (or today), with the
 // deprecation window (announced → effective) shaded and lifecycle markers.
 // Rows come from the pricing history; windows come from the events record.
-const LIFE_ROWS_PER_PROVIDER = 8;
+const LIFE_ROWS_PER_PROVIDER = 10;
 function buildDepMap() {
   // model id (normalized, plus date-suffix-stripped base) → deprecation window.
   // Where several events touch the same id, the earliest effective date governs.
@@ -612,6 +614,14 @@ function renderLifecycles() {
     }
     curTick.setMonth(curTick.getMonth() + 1);
   }
+  // Crosshair (driven by swimlane hover)
+  const ch = document.createElementNS(ns, "line");
+  ch.setAttribute("id", "chart-crosshair");
+  ch.setAttribute("x1", "-1"); ch.setAttribute("x2", "-1");
+  ch.setAttribute("y1", String(padTop)); ch.setAttribute("y2", String(height - padBottom));
+  ch.setAttribute("class", "chart-crosshair");
+  ch.style.display = "none";
+  svg.appendChild(ch);
   // Today line
   const tl = document.createElementNS(ns, "line");
   const tx = xScale(today);
@@ -748,7 +758,7 @@ function renderAcrossProvidersChart() {
       // Inject current price as synthetic today-point for active models
       if (!isDeprecated && cur[priceField] != null && cur[priceField] > 0) {
         const last = series[series.length - 1];
-        if (!last || last.date < today) series.push({ date: today, [priceField]: cur[priceField] });
+        if (!last || last.date < today) series.push({ date: today, [priceField]: cur[priceField], _synthetic: true });
         else if (last.date === today) series[series.length - 1] = { ...last, [priceField]: cur[priceField] };
       }
       if (series.length === 0) continue;
@@ -897,9 +907,16 @@ function renderAcrossProvidersChart() {
     path.setAttribute("opacity", String(opacity));
     svg.appendChild(path);
 
-    // Dots at price-change points
+    // Dots only where something happened: series start, an actual price
+    // change, or the last real point of a deprecated line — not the synthetic
+    // today-point every active model carries (that was a wall of dots at the
+    // right edge).
     const r = 3.5;
-    for (const pt of visible) {
+    for (let i = 0; i < visible.length; i++) {
+      const pt = visible[i];
+      const changed = i > 0 && pt[priceField] !== visible[i - 1][priceField];
+      const isLastReal = i === visible.length - 1 && !pt._synthetic;
+      if (!(i === 0 || changed || isLastReal)) continue;
       const c = document.createElementNS(ns, "circle");
       c.setAttribute("cx", String(xScale(pt.date)));
       c.setAttribute("cy", String(yScale(pt[priceField])));
