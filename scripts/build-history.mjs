@@ -21,6 +21,23 @@ const files = readdirSync(SNAPSHOTS_DIR)
 
 console.log(`Reading ${files.length} snapshot files…`);
 
+// Old snapshots carry ids under two conventions that later changed: provider
+// pages renamed models mid-history (claude-3-opus → claude-opus-3) and some
+// extractions kept dots where the catalog uses dashes (gemini-2.5-pro vs
+// gemini-2-5-pro). Canonicalize on merge so one model = one series.
+const RENAMED_IDS = {
+  "anthropic/claude-3-opus": "anthropic/claude-opus-3",
+  "anthropic/claude-3-haiku": "anthropic/claude-haiku-3",
+  "anthropic/claude-3-5-haiku": "anthropic/claude-haiku-3-5",
+  "anthropic/claude-3-7-sonnet": "anthropic/claude-sonnet-3-7",
+  "anthropic/claude-3-5-sonnet": "anthropic/claude-sonnet-3-5",
+  // venice hyphenation drift (catalog uses qwen3-*)
+  "venice/qwen-3-235b": "venice/qwen3-235b",
+  "venice/qwen-3-4b": "venice/qwen3-4b",
+  "venice/qwen-3-235b-a22b-instruct-2507": "venice/qwen3-235b-a22b-instruct-2507",
+};
+const canonicalId = (id) => RENAMED_IDS[id] ?? id.replace(/\./g, "-");
+
 const byModel = new Map();
 
 for (const f of files) {
@@ -35,15 +52,16 @@ for (const f of files) {
   if (!date) continue;
   for (const m of snap.models || []) {
     if (!m.id) continue;
-    if (!byModel.has(m.id)) {
-      byModel.set(m.id, {
-        id: m.id,
+    const id = canonicalId(m.id);
+    if (!byModel.has(id)) {
+      byModel.set(id, {
+        id,
         provider: m.provider,
         display_name: m.display_name,
         history: [],
       });
     }
-    const entry = byModel.get(m.id);
+    const entry = byModel.get(id);
     entry.history.push({
       date,
       input_cost_per_mtok: m.input_cost_per_mtok ?? null,
@@ -65,15 +83,16 @@ try {
   const currentDate = current.snapshot_date;
   for (const m of current.models || []) {
     if (!m.id) continue;
-    if (!byModel.has(m.id)) {
-      byModel.set(m.id, {
-        id: m.id,
+    const id = canonicalId(m.id);
+    if (!byModel.has(id)) {
+      byModel.set(id, {
+        id,
         provider: m.provider,
         display_name: m.display_name,
         history: [],
       });
     }
-    const entry = byModel.get(m.id);
+    const entry = byModel.get(id);
     // Only add if there isn't already an entry for this date
     if (!entry.history.some((h) => h.date === currentDate)) {
       entry.history.push({
