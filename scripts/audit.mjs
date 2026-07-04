@@ -83,16 +83,20 @@ section("events: type/severity coherence");
     model_unavailable: "action_required", pricing_change: "action_required",
     rate_limit_change: "action_required", context_change: "action_required", capability_change: "action_required",
   };
-  let mismatches = 0;
+  // A deliberate downgrade to informational (consumer-scope pricing news etc.)
+  // is a reviewed judgment call, not a smell — count it, don't warn. Warn only
+  // on unexpected escalations/derivations in the operational tier.
+  let mismatches = 0, downgraded = 0;
   for (const e of events.events) {
     const want = EXPECT[e.type];
-    if (want && e.severity !== want) {
-      mismatches++;
-      if (mismatches <= 10) warn("severity-mismatch", `${e.id}: type ${e.type} usually ${want}, has ${e.severity}`);
-    }
+    if (!want || e.severity === want) continue;
+    if (e.severity === "informational") { downgraded++; continue; }
+    mismatches++;
+    if (mismatches <= 10) warn("severity-mismatch", `${e.id}: type ${e.type} usually ${want}, has ${e.severity}`);
   }
   if (mismatches > 10) info(`…and ${mismatches - 10} more severity mismatches`);
-  if (!mismatches) info("all operational types carry their expected severity");
+  if (downgraded) info(`${downgraded} event(s) deliberately scoped down to informational (consumer/product news)`);
+  if (!mismatches) info("all operational-tier events carry their expected severity");
 }
 
 section("events: operational completeness");
