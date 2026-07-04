@@ -489,15 +489,18 @@ function renderChart() {
   syncFeedHeight();
 }
 
-// The events feed matches the lifecycles panel height exactly (they sit
-// side-by-side), scrolling internally — re-synced on every render so the
-// bottom edges stay aligned through expander clicks and resizes.
+// The events feed spans from the top of the lifecycles panel to the bottom
+// of the events swimlane — the full center column, no gap under the feed.
+// Re-synced on every render so the edges stay aligned through expander
+// clicks and resizes; the feed scrolls internally.
 function syncFeedHeight() {
   if (typeof document.querySelector !== "function") return;
   const chartPanel = document.querySelector(".chart-panel");
+  const swimPanel = document.querySelector(".swimlane-panel");
   const feedPanel = document.querySelector(".col-right .panel");
-  if (!chartPanel || !feedPanel || !chartPanel.offsetHeight) return;
-  feedPanel.style.height = chartPanel.offsetHeight + "px";
+  if (!chartPanel || !swimPanel || !feedPanel || !chartPanel.offsetHeight) return;
+  const height = swimPanel.getBoundingClientRect().bottom - chartPanel.getBoundingClientRect().top;
+  feedPanel.style.height = Math.round(height) + "px";
 }
 
 // ---------- model lifecycles ----------
