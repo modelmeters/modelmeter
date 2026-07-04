@@ -7,7 +7,7 @@
 // rather than making internal HTTP round-trips. /swap is intentionally NOT
 // exposed until the quality gate lands (see .private/QUALITY_LAYER_PLAN.md).
 
-import { PRICING, EVENTS, findModel, effectiveRates, round } from "./_lib.js";
+import { PRICING, EVENTS, findModel, effectiveRates, round, checkModelId, deprecationRows } from "./_lib.js";
 import { buildModelCard } from "./model.js";
 import history from "../pricing/history.json";
 
@@ -94,6 +94,38 @@ const TOOLS = [
         since: { type: "string", description: "ISO date (YYYY-MM-DD); events announced on/after." },
         until: { type: "string", description: "ISO date (YYYY-MM-DD); events announced on/before." },
         limit: { type: "integer", minimum: 1, maximum: 500, description: "Max events. Default 50." },
+      },
+    },
+  },
+  {
+    name: "check_model_dependencies",
+    description:
+      "Is my stack okay? Check a list of model ids against the record: scheduled retirements with " +
+      "days-remaining countdowns and migration targets, past retirements, and other breaking/" +
+      "action-required changes. Id matching tolerates dots vs dashes, dated snapshot suffixes, and " +
+      "bare or provider-prefixed forms. Call this at startup or in CI with the models you depend on.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        models: {
+          type: "array", items: { type: "string" }, minItems: 1, maxItems: 50,
+          description: "Model ids to check, e.g. [\"gpt-4o\", \"claude-sonnet-4-6\", \"gemini-2.5-flash\"].",
+        },
+      },
+      required: ["models"],
+    },
+  },
+  {
+    name: "list_deprecations",
+    description:
+      "Per-model retirement rows from the record: which model dies when, with runway and migration " +
+      "target. Default shows scheduled (upcoming) retirements sorted by shutdown date.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        provider: { type: "string", description: "Filter to one provider id." },
+        status: { type: "string", enum: ["scheduled", "retired", "all"], description: "Default scheduled." },
+        limit: { type: "integer", minimum: 1, maximum: 500, description: "Max rows. Default 100." },
       },
     },
   },
@@ -217,12 +249,40 @@ function toolListEvents(args = {}) {
   return { snapshot_date: EVENTS.snapshot_date, count: evs.length, events: evs };
 }
 
+function toolCheckDependencies(args = {}) {
+  const models = Array.isArray(args.models) ? args.models.map((s) => String(s).trim()).filter(Boolean) : [];
+  if (!models.length) throw new Error("models must be a non-empty array of model ids");
+  if (models.length > 50) throw new Error("too many models (max 50 per call)");
+  const today = new Date().toISOString().slice(0, 10);
+  const results = models.map((q) => checkModelId(q, today));
+  const summary = { total: results.length };
+  for (const r of results) summary[r.status] = (summary[r.status] ?? 0) + 1;
+  return { checked_at: today, summary, results };
+}
+
+function toolListDeprecations(args = {}) {
+  const status = args.status || "scheduled";
+  const limit = Number.isInteger(args.limit) ? Math.max(1, Math.min(500, args.limit)) : 100;
+  const today = new Date().toISOString().slice(0, 10);
+  let rows = deprecationRows();
+  if (args.provider) rows = rows.filter((r) => r.provider === args.provider);
+  if (status === "scheduled") rows = rows.filter((r) => r.effective_at >= today);
+  else if (status === "retired") rows = rows.filter((r) => r.effective_at < today);
+  rows = rows
+    .map((r) => (r.effective_at >= today ? { ...r, days_remaining: Math.ceil((new Date(r.effective_at) - new Date(today)) / 864e5) } : r))
+    .sort((a, b) => status === "retired" ? b.effective_at.localeCompare(a.effective_at) : a.effective_at.localeCompare(b.effective_at))
+    .slice(0, limit);
+  return { as_of: today, count: rows.length, deprecations: rows };
+}
+
 const TOOL_IMPL = {
   estimate_cost: toolEstimateCost,
   get_model: toolGetModel,
   list_models: toolListModels,
   get_price_history: toolGetPriceHistory,
   list_events: toolListEvents,
+  check_model_dependencies: toolCheckDependencies,
+  list_deprecations: toolListDeprecations,
 };
 
 // ---------- JSON-RPC plumbing ----------
@@ -242,8 +302,10 @@ function handleMessage(msg, env) {
       capabilities: { tools: {} },
       serverInfo: SERVER_INFO,
       instructions:
-        "Modelmeter: agent-callable LLM pricing, model cards, price history, and market events. " +
-        "Start with list_models to discover ids, then get_model or estimate_cost.",
+        "Modelmeter: the changelog of record for the AI stack, agent-callable. " +
+        "check_model_dependencies answers \"is my stack okay?\" for a list of model ids; " +
+        "list_deprecations shows what dies when. Pricing: start with list_models to discover " +
+        "ids, then get_model or estimate_cost.",
     });
   }
 

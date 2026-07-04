@@ -66,6 +66,8 @@
   }
   </script>
 
+  <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Model-layer changes (RSS)" />
+  <link rel="alternate" type="application/feed+json" href="/feed.json" title="Model-layer changes (JSON Feed)" />
   <link rel="alternate" type="application/json" href="/pricing.json" title="Current pricing" />
   <link rel="alternate" type="application/json" href="/events.json" title="Events" />
   <link rel="alternate" type="application/json" href="/history.json" title="Historical pricing" />
@@ -289,6 +291,12 @@
 
     <!-- Footer -->
     <div class="footer-bar">
+      <a href="/check?models=gpt-4o,claude-sonnet-4-6">CHECK</a>
+      <span class="sep">·</span>
+      <a href="/deprecations">DEPRECATIONS</a>
+      <span class="sep">·</span>
+      <a href="/feed.xml">RSS</a>
+      <span class="sep">·</span>
       <a href="/openapi.yaml">OPENAPI</a>
       <span class="sep">·</span>
       <a href="/llms.txt">LLMS.TXT</a>

@@ -50,10 +50,19 @@ export function findModel(id) {
   if (aliased) return aliased;
   const q = normId(id);
   const qBare = q.includes("/") ? q.slice(q.indexOf("/") + 1) : q;
-  return PRICING.models.find((m) =>
+  const normMatch = PRICING.models.find((m) =>
     normId(m.id) === q ||
     (m.aliases ?? []).some((a) => { const na = normId(a); return na === q || na === qBare; })
-  ) ?? null;
+  );
+  if (normMatch) return normMatch;
+  // Bare canonical id ("claude-sonnet-4-6" without the provider prefix). May be
+  // ambiguous when a reseller mirrors the id (venice/claude-opus-4-5) — prefer
+  // the first-party entry (no upstream_model_id).
+  if (!q.includes("/")) {
+    const bare = PRICING.models.filter((m) => normId(m.id).split("/")[1] === q);
+    if (bare.length) return bare.find((m) => !m.upstream_model_id) ?? bare[0];
+  }
+  return null;
 }
 
 function normId(s) {
@@ -148,4 +157,103 @@ export function clientHashes(request) {
     cf_country: request.headers.get("cf-ipcountry") ?? null,
     cf_colo: request.cf?.colo ?? null,
   };
+}
+
+// ---------- the deprecation record (shared by /check, /deprecations, MCP, feeds) ----------
+// Tolerant id normalization: providers write model ids with dots vs dashes and
+// dated snapshot suffixes (-2025-08-07, -20250805, -03-25, -0613).
+export function evNormId(s) { return String(s).toLowerCase().trim().replace(/\./g, "-"); }
+export function evBaseId(s) {
+  return evNormId(s)
+    .replace(/-\d{4}-\d{2}-\d{2}$/, "").replace(/-\d{8}$/, "")
+    .replace(/-\d{2}-\d{2}$/, "").replace(/-\d{4}$/, "");
+}
+
+// Index of operational (breaking / action_required) events keyed by every
+// normalized form of every affected model id. Built once at module init.
+const OP_EVENT_INDEX = new Map();
+for (const e of events.events) {
+  if (e.severity !== "breaking" && e.severity !== "action_required") continue;
+  for (const m of e.models ?? []) {
+    const bare = m.includes("/") ? m.slice(m.indexOf("/") + 1) : m;
+    for (const k of new Set([evNormId(m), evBaseId(m), evNormId(bare), evBaseId(bare)])) {
+      if (!OP_EVENT_INDEX.has(k)) OP_EVENT_INDEX.set(k, []);
+      if (!OP_EVENT_INDEX.get(k).includes(e)) OP_EVENT_INDEX.get(k).push(e);
+    }
+  }
+}
+
+function eventRef(e) {
+  return {
+    id: e.id, type: e.type, severity: e.severity, status: e.status,
+    announced_at: e.announced_at, effective_at: e.effective_at ?? null,
+    migration_target: e.migration_target ?? null,
+    headline: e.headline, source: e.sources?.[0]?.url ?? null,
+  };
+}
+
+// Verdict for one model id: is anything in the record affecting it?
+export function checkModelId(query, today = new Date().toISOString().slice(0, 10)) {
+  const qs = new Set([evNormId(query), evBaseId(query)]);
+  const hits = [];
+  for (const q of qs) for (const e of OP_EVENT_INDEX.get(q) ?? []) if (!hits.includes(e)) hits.push(e);
+
+  const catalogModel = findModel(query);
+  const upcoming = hits.filter((e) => e.effective_at && e.effective_at >= today)
+    .sort((a, b) => a.effective_at.localeCompare(b.effective_at));
+  const past = hits.filter((e) => e.effective_at && e.effective_at < today)
+    .sort((a, b) => b.effective_at.localeCompare(a.effective_at));
+  const undated = hits.filter((e) => !e.effective_at)
+    .sort((a, b) => b.announced_at.localeCompare(a.announced_at));
+
+  let status, primary = null;
+  if (upcoming.length) {
+    status = "scheduled"; primary = upcoming[0];
+  } else if (past.length) {
+    status = "retired"; primary = past[0];
+  } else if (undated.length) {
+    status = "affected"; primary = undated[0];
+  } else if (catalogModel) {
+    status = catalogModel.availability === "deprecated" ? "deprecated_in_catalog" : "ok";
+  } else {
+    status = "unknown";
+  }
+
+  return {
+    query,
+    model_id: catalogModel?.id ?? null,
+    status,
+    ...(primary?.effective_at && status === "scheduled"
+      ? { days_remaining: Math.ceil((new Date(primary.effective_at) - new Date(today)) / 864e5), effective_at: primary.effective_at }
+      : {}),
+    ...(status === "retired" ? { effective_at: primary.effective_at } : {}),
+    ...(primary?.migration_target ? { migration_target: primary.migration_target } : {}),
+    events: hits
+      .sort((a, b) => (b.effective_at ?? b.announced_at).localeCompare(a.effective_at ?? a.announced_at))
+      .slice(0, 5).map(eventRef),
+  };
+}
+
+// Per-model deprecation rows expanded from the events record — the view
+// consumers actually want ("which model dies when"), vs. per-announcement events.
+export function deprecationRows() {
+  const rows = [];
+  for (const e of events.events) {
+    if ((e.type !== "model_deprecation" && e.type !== "model_swap") || !e.effective_at) continue;
+    for (const m of e.models ?? []) {
+      rows.push({
+        model: m,
+        provider: e.providers?.[0] ?? m.split("/")[0],
+        type: e.type,
+        announced_at: e.announced_at,
+        effective_at: e.effective_at,
+        migration_target: e.migration_target ?? null,
+        event_id: e.id,
+        headline: e.headline,
+        source: e.sources?.[0]?.url ?? null,
+        verification: e.status,
+      });
+    }
+  }
+  return rows;
 }
