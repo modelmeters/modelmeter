@@ -84,7 +84,7 @@
         </div>
         <div class="brand">
           <span class="name">modelmeter</span>
-          <span class="ver">v0.1</span>
+          <span class="ver">v1.0</span>
         </div>
       </div>
       <div class="status-pill">
@@ -131,7 +131,7 @@
             <div class="stat-row"><span class="lbl">events</span><span class="num" id="s-events">—</span></div>
             <div class="stat-row"><span class="lbl">breaking</span><span class="num sev-breaking" id="s-breaking">—</span></div>
             <div class="stat-row"><span class="lbl">action required</span><span class="num sev-action" id="s-action">—</span></div>
-            <div class="stat-row"><span class="lbl">models</span><span class="num" id="s-models">—</span></div>
+            <div class="stat-row"><span class="lbl">active models</span><span class="num" id="s-models">—</span></div>
             <div class="stat-row"><span class="lbl">providers</span><span class="num" id="s-providers">—</span></div>
             <div class="stat-row"><span class="lbl">snapshots</span><span class="num" id="s-snapshots">—</span></div>
             <div class="stat-row"><span class="lbl">history models</span><span class="num" id="s-history">—</span></div>
@@ -242,8 +242,7 @@
         <div class="panel">
           <h3 class="panel-title">Events <span class="right" id="feed-context">all providers</span></h3>
           <div class="chip-group feed-sev-chips" id="feed-severity">
-            <button class="chip active" data-sev="all">all</button>
-            <button class="chip" data-sev="breaking">breaking</button>
+            <button class="chip active" data-sev="breaking">breaking</button>
             <button class="chip" data-sev="action_required">action</button>
           </div>
           <div class="events-feed" id="events-feed">

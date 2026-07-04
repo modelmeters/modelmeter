@@ -246,7 +246,9 @@ function renderSunsets() {
   const upcoming = events
     .filter(e => e.effective_at && e.effective_at >= today && (e.severity === "breaking" || e.severity === "action_required"))
     .sort((a, b) => a.effective_at.localeCompare(b.effective_at));
-  document.getElementById("sunset-count").textContent = upcoming.length ? `${upcoming.length} scheduled` : "";
+  const allVerified = upcoming.length && upcoming.every(e => e.status === "verified");
+  document.getElementById("sunset-count").innerHTML = upcoming.length
+    ? `${upcoming.length} scheduled${allVerified ? ' · <span style="color: var(--up)">all human-verified ✓</span>' : ""}` : "";
   if (!upcoming.length) { board.innerHTML = '<div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">no scheduled retirements on record</div>'; return; }
 
   const shown = sunsetExpanded ? upcoming : upcoming.slice(0, SUNSET_COLLAPSED);
@@ -254,6 +256,7 @@ function renderSunsets() {
     const days = Math.ceil((new Date(ev.effective_at) - new Date(today)) / 864e5);
     const daysColor = days <= 30 ? "var(--down)" : days <= 90 ? "var(--warn)" : "var(--text-dim)";
     const prov = ev.providers?.[0] || "?";
+    const maker = ev.providers?.[1];
     const models = (ev.models || []).map(m => m.split("/").slice(1).join("/"));
     const what = models.length
       ? `<span class="models">${escapeHtml(shorten(models.join(", "), 72))}</span>`
@@ -265,7 +268,7 @@ function renderSunsets() {
     return `<div class="sun-row" title="${escapeHtml(ev.headline)}" onclick="window.open('${url}', '_blank', 'noopener')">
       <span class="sun-days" style="color:${daysColor}">${days}d</span>
       <span class="sun-date">${ev.effective_at}</span>
-      <span class="sun-prov"><span class="pp-prov-dash" style="background:${PROVIDER_COLORS[prov] || "var(--muted)"}; margin-right:6px;"></span>${PROVIDER_LABELS[prov] || prov}</span>
+      <span class="sun-prov"><span class="pp-prov-dash" style="background:${PROVIDER_COLORS[prov] || "var(--muted)"}; margin-right:6px;"></span>${PROVIDER_LABELS[prov] || prov}${maker ? ` <span style="color: var(--muted-2)">· ${PROVIDER_LABELS[maker] || maker}</span>` : ""}</span>
       <span class="sun-what">${what}</span>
       <span class="sun-target">${target}</span>
     </div>`;
@@ -305,7 +308,7 @@ function renderNotice() {
 }
 
 // ---------- feed severity filter ----------
-let feedSeverity = "all";
+let feedSeverity = "breaking";
 function wireFeedSeverity() {
   document.querySelectorAll("#feed-severity .chip").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -486,15 +489,16 @@ function renderEventsFeed() {
   } else {
     ctxLabel.textContent = "all providers";
   }
-  if (feedSeverity !== "all") filtered = filtered.filter(e => e.severity === feedSeverity);
+  filtered = filtered.filter(e => e.severity === feedSeverity);
   filtered = [...filtered].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 30);
   if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no matching events</div>'; return; }
   wrap.innerHTML = filtered.map(ev => {
     const url = ev.sources?.[0]?.url || "#";
     const sev = ev.severity && ev.severity !== "informational"
       ? ` · <span class="sev-chip ${ev.severity}">${ev.severity === "action_required" ? "action" : "breaking"}</span>` : "";
+    const unv = ev.status === "unverified" ? ' · <span class="sev-chip informational">unverified</span>' : "";
     return `<div class="ev-item" onclick="window.open('${url}', '_blank', 'noopener')">
-      <div class="ev-date">${ev.announced_at} · <span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span>${sev}</div>
+      <div class="ev-date">${ev.announced_at} · <span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span>${sev}${unv}</div>
       <div class="ev-headline">${escapeHtml(ev.headline)}</div>
     </div>`;
   }).join("");
@@ -702,20 +706,24 @@ function renderLifecycles() {
     // with a per-provider expander; the legend always counts the full record.
     const expanded = lifeExpanded.has(provider);
     const cap = expanded ? 80 : LIFE_ROWS_PER_PROVIDER;
+    // Default view: the living — active models and scheduled sunsets. Retired
+    // and delisted history appears on expand.
+    const pool = expanded ? candidates : candidates.filter(r => !r.retired);
     const picked = [];
     const seen = new Set();
     const take = (r) => { if (r && !seen.has(r.m.id) && picked.length < cap) { seen.add(r.m.id); picked.push(r); } };
     const famIds = Object.entries(MODEL_FAMILIES).filter(([k]) => k.startsWith(provider + "/")).flatMap(([, ids]) => ids);
-    const famRows = famIds.map(id => candidates.find(r => canonicalHistoryId(r.m.id) === canonicalHistoryId(id))).filter(Boolean);
-    // 1. the current lineup (active family members) 2. sunsets, most recent
-    // shutdown first 3. retired family members 4. longest-history actives
+    const famRows = famIds.map(id => pool.find(r => canonicalHistoryId(r.m.id) === canonicalHistoryId(id))).filter(Boolean);
+    // 1. current lineup (family members) 2. scheduled sunsets, nearest first
+    // 3. remaining family 4. longest-history rest
     for (const r of famRows.filter(r => !r.retired)) take(r);
-    for (const r of candidates.filter(r => r.dep).sort((a, b) => b.dep.effective.localeCompare(a.dep.effective))) take(r);
+    for (const r of pool.filter(r => r.dep).sort((a, b) => (a.dep.effective > today ? a.dep.effective : "9" + a.dep.effective).localeCompare(b.dep.effective > today ? b.dep.effective : "9" + b.dep.effective))) take(r);
     for (const r of famRows) take(r);
-    for (const r of [...candidates].sort((a, b) => b.m.history.length - a.m.history.length)) take(r);
+    for (const r of [...pool].sort((a, b) => b.m.history.length - a.m.history.length)) take(r);
     picked.sort((a, b) => a.start.localeCompare(b.start));
     if (picked.length) groups.push({
       provider, rows: picked, hidden: candidates.length - picked.length, expanded,
+      hiddenRetired: expanded ? 0 : candidates.filter(r => r.retired).length,
       fullScheduled: candidates.filter(r => r.dep && r.dep.effective > today).length,
       fullRetired: candidates.filter(r => r.retired && !r.delisted).length,
       fullDelisted: candidates.filter(r => r.delisted).length,
@@ -815,6 +823,24 @@ function renderLifecycles() {
         dot.setAttribute("r", "3"); dot.setAttribute("fill", color);
         svg.appendChild(dot);
       }
+      // price-change ticks: the model's pricing biography on its lane.
+      // Green = price fell, red = rose (input rate). History is already
+      // compressed to change points, so consecutive differing values = a change.
+      const hist = (r.m.history ?? []).filter(h => h.input_cost_per_mtok != null && h.input_cost_per_mtok > 0);
+      let priceChanges = 0, lastChange = null;
+      for (let i = 1; i < hist.length; i++) {
+        if (hist[i].input_cost_per_mtok === hist[i - 1].input_cost_per_mtok) continue;
+        priceChanges++;
+        const down = hist[i].input_cost_per_mtok < hist[i - 1].input_cost_per_mtok;
+        lastChange = { date: hist[i].date, from: hist[i - 1].input_cost_per_mtok, to: hist[i].input_cost_per_mtok, down };
+        const px = clampX(hist[i].date);
+        const tick = document.createElementNS(ns, "path");
+        tick.setAttribute("d", down ? `M ${px - 3} ${cy - 4} L ${px + 3} ${cy - 4} L ${px} ${cy + 1} Z` : `M ${px - 3} ${cy + 4} L ${px + 3} ${cy + 4} L ${px} ${cy - 1} Z`);
+        tick.setAttribute("fill", down ? "var(--up)" : "var(--down)");
+        tick.setAttribute("opacity", r.retired ? "0.5" : "0.95");
+        svg.appendChild(tick);
+      }
+      r._priceChanges = priceChanges; r._lastChange = lastChange;
       if (r.delisted) {
         // silent removal: grey cap at last-seen — no documented shutdown
         const dx = clampX(r.activeEnd);
@@ -863,7 +889,7 @@ function renderLifecycles() {
         tooltip.innerHTML = `
           <div class="tdate">${PROVIDER_LABELS[r.provider] || r.provider}</div>
           <div class="thead">${escapeHtml(r.m.display_name || r.m.id)}</div>
-          <div class="tbody">first tracked ${r.start}</div>${dep}
+          <div class="tbody">first tracked ${r.start}${r._priceChanges ? ` · ${r._priceChanges} price change${r._priceChanges > 1 ? "s" : ""} (last ${r._lastChange.date}: $${r._lastChange.from} → $${r._lastChange.to}/Mtok in)` : " · no price changes on record"}</div>${dep}
           <div class="tfoot"><span>${r.dep?.url ? "click for source ↗" : "click for model card ↗"}</span></div>`;
         positionTooltip(tooltip, e);
         tooltip.classList.add("show");
@@ -881,7 +907,7 @@ function renderLifecycles() {
       ex.setAttribute("x", String(padLeft)); ex.setAttribute("y", String(y + 10));
       ex.setAttribute("fill", "#807c72"); ex.setAttribute("font-size", "9");
       ex.setAttribute("style", "cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em;");
-      ex.textContent = g.expanded ? "− collapse" : `+ ${g.hidden} more`;
+      ex.textContent = g.expanded ? "− collapse" : `+ ${g.hidden} more${g.hiddenRetired ? ` (${g.hiddenRetired} retired)` : ""}`;
       ex.addEventListener("click", () => { g.expanded ? lifeExpanded.delete(g.provider) : lifeExpanded.add(g.provider); renderChart(); });
       svg.appendChild(ex);
       y += expH;
@@ -898,6 +924,7 @@ function renderLifecycles() {
     <span><span class="swatch" style="background: var(--warn); opacity: 0.4;"></span>deprecation window</span>
     <span><span class="swatch" style="background: var(--down); width: 3px;"></span>shutdown</span>
     <span><span class="swatch" style="background: var(--muted-2); width: 3px;"></span>silently delisted</span>
+    <span>▾ <span style="color: var(--up)">price cut</span> · ▴ <span style="color: var(--down)">price rise</span></span>
     <span style="color: var(--muted-2);">${allRows.length} of ${total} models shown · ${scheduled} scheduled · ${retired} retired · ${delisted} silently delisted</span>
     <span style="margin-left: auto;"><a href="/events.json" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">try as json ↗</a></span>`;
 }
@@ -1407,13 +1434,15 @@ function renderEventSwimlane() {
 
   const { minDate, maxDate, xScale, width, padLeft, padRight } = sharedXParams;
 
-  // Determine lane providers
+  // Lanes: only providers with events that actually plot after the severity
+  // filter below (Venice has news events but nothing operational — no lane).
+  const slPlotted = events.filter(e => e.severity !== "informational" || e.impact?.magnitude === "structural");
   let laneProviders;
-  if (chartState.viewMode === "single" && chartState.model) {
+  if (chartState.view === "price" && chartState.viewMode === "single" && chartState.model) {
     const m = history?.models?.find(m => m.id === chartState.model);
     laneProviders = m ? [m.provider] : ACROSS_PROVIDERS.slice();
   } else {
-    laneProviders = ACROSS_PROVIDERS.filter(p => events.some(e => (e.providers || []).includes(p)));
+    laneProviders = ACROSS_PROVIDERS.filter(p => slPlotted.some(e => (e.providers || []).includes(p)));
   }
 
   const slPadLeft = padLeft, slPadRight = padRight, slPadTop = 6, slPadBottom = 4;
@@ -1456,8 +1485,7 @@ function renderEventSwimlane() {
   // Event dots — informational noise filtered: only breaking/action events plus
   // structural informational ones make the timeline. ("major" is too common in
   // drafted events to discriminate — 324 of 691 informational events carry it.)
-  const slEvents = events.filter(e => e.severity !== "informational" || e.impact?.magnitude === "structural");
-  for (const ev of slEvents) {
+  for (const ev of slPlotted) {
     const evDate = new Date(ev.announced_at);
     if (evDate < minDate || evDate > maxDate) continue;
 
