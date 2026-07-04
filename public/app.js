@@ -421,7 +421,7 @@ function shorten(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
 // Client-side preview of the /check endpoint: match user model ids against the
 // events record and report scheduled retirements / breaking history per model.
 function normId(x) { return String(x).toLowerCase().trim().replace(/\./g, "-"); }
-function baseId(x) { return normId(x).replace(/-\d{4}-\d{2}-\d{2}$/, "").replace(/-\d{4}$/, ""); }
+function baseId(x) { return normId(x).replace(/-\d{4}-\d{2}-\d{2}$/, "").replace(/-\d{8}$/, "").replace(/-\d{2}-\d{2}$/, "").replace(/-\d{4}$/, ""); }
 function renderCheck() {
   const btn = document.getElementById("check-btn");
   const input = document.getElementById("check-input");

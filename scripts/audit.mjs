@@ -28,7 +28,7 @@ const section = (t) => console.log(`\n[${t}]`);
 
 // ---------- shared id resolution ----------
 const normId = (x) => String(x).toLowerCase().trim().replace(/\./g, "-");
-const baseId = (x) => normId(x).replace(/-\d{4}-\d{2}-\d{2}$/, "").replace(/-\d{4}$/, "");
+const baseId = (x) => normId(x).replace(/-\d{4}-\d{2}-\d{2}$/, "").replace(/-\d{8}$/, "").replace(/-\d{2}-\d{2}$/, "").replace(/-\d{4}$/, "");
 const known = new Set();
 for (const m of pricing.models) {
   known.add(normId(m.id)); known.add(baseId(m.id));

@@ -3,14 +3,18 @@ info:
   title: Modelmeter API
   version: 0.1.0
   description: |
-    Agent-first measurement and instrumentation for AI models.
+    The changelog of record for the AI stack: source-verified events covering what
+    changes in the model layer — deprecations with sunset dates and migration
+    targets, price changes, releases — plus current pricing, model cards, and
+    three years of price history.
 
     All responses are JSON. URLs are stable. Endpoints do not require authentication for V1,
     but rate limits apply per IP. An API-key tier with higher limits is planned.
 
-    The pricing data backing this API lives at https://github.com/modelmeters/modelmeter and is
-    updated by community PRs. Every model entry includes a `last_verified` field; do not
-    treat values as authoritative without checking that date.
+    The data backing this API lives at https://github.com/modelmeters/modelmeter and is
+    updated by an autonomous watch/draft pipeline plus human review. Every model entry
+    includes a `last_verified` field and every event a verification `status`; judge
+    freshness and confidence from those, not from vibes.
   contact:
     name: Modelmeter
     url: https://modelmeter.xyz
