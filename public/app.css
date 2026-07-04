@@ -198,7 +198,7 @@ button, input, select { font-family: inherit; font-size: inherit; }
 .calc-cta .cta-link:hover { border-color: var(--accent); color: var(--accent); }
 
 /* Events feed in right column */
-.col-right { display: flex; flex-direction: column; }
+.col-right { display: block; align-self: start; }
 .col-right .panel { display: flex; flex-direction: column; }
 .col-right .panel > .events-feed { flex: 1; min-height: 320px; }
 .events-feed { display: grid; gap: 8px; align-content: start; max-height: none; overflow-y: auto; padding-right: 4px; }

@@ -486,6 +486,18 @@ function renderChartControls() {
 function renderChart() {
   renderLifecycles();
   renderEventSwimlane();
+  syncFeedHeight();
+}
+
+// The events feed matches the lifecycles panel height exactly (they sit
+// side-by-side), scrolling internally — re-synced on every render so the
+// bottom edges stay aligned through expander clicks and resizes.
+function syncFeedHeight() {
+  if (typeof document.querySelector !== "function") return;
+  const chartPanel = document.querySelector(".chart-panel");
+  const feedPanel = document.querySelector(".col-right .panel");
+  if (!chartPanel || !feedPanel || !chartPanel.offsetHeight) return;
+  feedPanel.style.height = chartPanel.offsetHeight + "px";
 }
 
 // ---------- model lifecycles ----------
