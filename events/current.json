@@ -5390,7 +5390,7 @@
       "id": "2023-09-anthropic-launches-claude-pro-a-paid-subscription-tier-with-",
       "announced_at": "2023-09-07",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "anthropic"
@@ -5414,7 +5414,7 @@
         "price_direction": "up"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2023-10-anthropic-universal-music-group-sues-anthropic-for-alleged-copyright-i",
@@ -5674,7 +5674,7 @@
       "id": "2024-05-anthropic-launches-iphone-app-and-new-premium-plan-for-busin",
       "announced_at": "2024-05-01",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "anthropic"
@@ -5699,7 +5699,7 @@
         "price_direction": "mixed"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2024-07-anthropic-releases-official-claude-app-for-android",
@@ -6693,9 +6693,9 @@
     {
       "id": "2025-07-anthropic-introduces-new-rate-limits-for-claude-code-power-u",
       "announced_at": "2025-07-28",
-      "type": "pricing_change",
+      "type": "rate_limit_change",
       "severity": "action_required",
-      "status": "unverified",
+      "status": "verified",
       "providers": [
         "anthropic"
       ],
@@ -6703,7 +6703,7 @@
         "anthropic/claude-code"
       ],
       "headline": "Anthropic introduces new rate limits for Claude Code power users",
-      "summary": "Anthropic has implemented new rate limits targeting heavy users of its Claude Code offering, likely to manage infrastructure costs and ensure fair usage across its user base. This move signals a tightening of access controls for high-volume developers and could influence pricing strategy for specialized AI coding services.",
+      "summary": "Anthropic has implemented new rate limits targeting heavy users of its Claude Code offering, likely to manage infrastructure costs and ensure fair usage across its user base. This move signals a tightening of access controls for high-volume developers and could influence pricing strategy for specialized AI coding services. Announced July 28, 2025; weekly limits effective August 28, 2025, on Pro and Max subscription tiers alongside existing five-hour limits.",
       "sources": [
         {
           "url": "https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/"
@@ -6720,7 +6720,8 @@
         "price_direction": "mixed"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04",
+      "effective_at": "2025-08-28"
     },
     {
       "id": "2025-08-anthropic-faces-landmark-lawsuit-over-ai-training-practices",
@@ -8024,7 +8025,7 @@
       "id": "2026-04-anthropic-goldman-sachs-restricts-access-to-anthropic-s-claude-for-hon",
       "announced_at": "2026-04-29",
       "type": "model_unavailable",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "anthropic"
@@ -8050,7 +8051,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2026-04-anthropic-launches-claude-security-a-new-ai-model-tailored-f",
@@ -8349,7 +8350,7 @@
       "announced_at": "2026-07-01",
       "type": "model_unavailable",
       "severity": "action_required",
-      "status": "unverified",
+      "status": "verified",
       "providers": [
         "anthropic"
       ],
@@ -8374,7 +8375,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2026-07-venice-raises-65-million-at-1-billion-valuation-to-scale-pri",
@@ -8561,37 +8562,6 @@
         "export-control",
         "regulation",
         "global-access",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
-      "id": "2026-07-deepseek-introduces-utility-style-pricing-for-deepseek-v4",
-      "announced_at": "2026-07-01",
-      "type": "pricing_change",
-      "severity": "action_required",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [
-        "deepseek/deepseek-v4"
-      ],
-      "headline": "DeepSeek introduces utility-style pricing for DeepSeek V4",
-      "summary": "DeepSeek has launched a utility-based pricing model for its DeepSeek V4 model, marking a departure from traditional subscription or tiered pricing and positioning itself competitively beyond China's current LLM price war.",
-      "sources": [
-        {
-          "url": "https://www.digitimes.com/news/a20260701PD207/deepseek-llm-api-price-gpu.html"
-        }
-      ],
-      "tags": [
-        "pricing",
         "major"
       ],
       "impact": {
@@ -8829,7 +8799,7 @@
       "id": "2026-06-anthropic-offers-50-discount-on-claude-for-california-agenci",
       "announced_at": "2026-06-29",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "anthropic"
@@ -8855,7 +8825,7 @@
         "price_direction": "down"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2026-06-anthropic-senator-elizabeth-warren-and-representative-mary-gay-scanlon",
@@ -13229,8 +13199,8 @@
     {
       "id": "2023-11-google-delays-release-of-gemini-ai-model",
       "announced_at": "2023-11-16",
-      "type": "model_unavailable",
-      "severity": "action_required",
+      "type": "infrastructure",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "google"
@@ -13257,7 +13227,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2024-01-google-settles-5-billion-privacy-lawsuit-related-to-user-tra",
@@ -13781,7 +13751,7 @@
       "announced_at": "2024-08-08",
       "type": "pricing_change",
       "severity": "action_required",
-      "status": "unverified",
+      "status": "verified",
       "providers": [
         "google"
       ],
@@ -13806,7 +13776,7 @@
         "price_direction": "down"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2024-08-google-launches-first-ai-powered-android-update-and-new-pixe",
@@ -14009,7 +13979,7 @@
       "announced_at": "2024-09-24",
       "type": "pricing_change",
       "severity": "action_required",
-      "status": "unverified",
+      "status": "verified",
       "providers": [
         "google"
       ],
@@ -14017,7 +13987,7 @@
         "google/gemini-1.5-pro"
       ],
       "headline": "Google reduces pricing for Gemini 1.5 Pro and increases rate limits",
-      "summary": "Google updated its Gemini model lineup with production-ready versions and reduced prices for the Gemini 1.5 Pro tier. The changes also included increased rate limits, improving accessibility and scalability for developers and enterprise users. This reflects Google's ongoing effort to compete with other large models on cost and performance.",
+      "summary": "Google updated its Gemini model lineup with production-ready versions and reduced prices for the Gemini 1.5 Pro tier. The changes also included increased rate limits, improving accessibility and scalability for developers and enterprise users. This reflects Google's ongoing effort to compete with other large models on cost and performance. Price reduction effective October 1, 2024 (64% input / 52% output / 64% cached for prompts under 128K).",
       "sources": [
         {
           "url": "https://developers.googleblog.com/en/updated-gemini-models-reduced-15-pro-pricing-increased-rate-limits-and-more/"
@@ -14034,7 +14004,8 @@
         "price_direction": "down"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04",
+      "effective_at": "2024-10-01"
     },
     {
       "id": "2024-09-google-releases-updated-gemini-1-5-pro-and-flash-models-002-",
@@ -14270,7 +14241,7 @@
       "announced_at": "2024-11-03",
       "type": "pricing_change",
       "severity": "action_required",
-      "status": "unverified",
+      "status": "verified",
       "providers": [
         "google"
       ],
@@ -14295,7 +14266,7 @@
         "price_direction": "up"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2024-11-google-gemini-launches-ios-app-for-iphone",
@@ -14461,7 +14432,7 @@
       "id": "2025-01-google-workspace-increases-prices-and-bundles-gemini-ai-acce",
       "announced_at": "2025-01-15",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "google"
@@ -14488,13 +14459,13 @@
         "price_direction": "up"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2025-01-google-lowers-gemini-pricing",
       "announced_at": "2025-01-16",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "google"
@@ -14519,7 +14490,7 @@
         "price_direction": "down"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2025-01-google-wayfair-and-google-cloud-expand-partnership-to-transform-onl",
@@ -14653,7 +14624,7 @@
       "id": "2025-02-google-notebooklm-plus-now-available-via-google-one-ai-premium-subs",
       "announced_at": "2025-02-10",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "google"
@@ -14677,13 +14648,13 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2025-02-google-gemini-ai-removed-from-ios-google-app",
       "announced_at": "2025-02-19",
       "type": "model_unavailable",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "google"
@@ -14708,7 +14679,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2025-02-google-salesforce-and-google-expand-partnership-to-integrate-gemini",
@@ -15388,7 +15359,7 @@
       "id": "2025-06-google-launches-gemini-cli-with-generous-free-tier",
       "announced_at": "2025-06-25",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "google"
@@ -15414,7 +15385,7 @@
         "price_direction": "down"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2025-06-google-launches-open-source-gemini-cli-for-terminal-use",
@@ -17298,39 +17269,6 @@
       "updated_at": "2026-07-02"
     },
     {
-      "id": "2026-07-google-gemini-reduces-prices-in-competitive-response-to-new-",
-      "announced_at": "2026-07-01",
-      "type": "pricing_change",
-      "severity": "action_required",
-      "status": "unverified",
-      "providers": [
-        "google"
-      ],
-      "models": [
-        "google/gemini"
-      ],
-      "headline": "Google Gemini reduces prices in competitive response to new Claude model launches",
-      "summary": "Amid the release of new Claude models by Anthropic, Google has lowered prices for its Gemini AI service. This move positions Gemini more competitively in the generative AI market, particularly against Anthropic's updated offerings.",
-      "sources": [
-        {
-          "url": "https://finance.biggo.com/news/b57f09b5-66f6-4b2f-96cb-bc7bd48d9baa"
-        }
-      ],
-      "tags": [
-        "pricing",
-        "competition",
-        "gemini",
-        "claude"
-      ],
-      "impact": {
-        "magnitude": "moderate",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
       "id": "2026-07-google-zillow-partners-with-google-gemini-to-enhance-rental-propert",
       "announced_at": "2026-07-02",
       "type": "partnership",
@@ -17496,7 +17434,7 @@
       "id": "2024-04-xai-x-makes-grok-chatbot-available-to-premium-subscribers",
       "announced_at": "2024-04-05",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "xai"
@@ -17521,7 +17459,7 @@
         "price_direction": "mixed"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2024-04-xai-s-grok-2-requires-20-000-h100-gpus-grok-3-may-require-10",
@@ -18917,7 +18855,7 @@
       "id": "2025-08-xai-x-to-introduce-ads-on-grok-to-fund-gpu-costs",
       "announced_at": "2025-08-07",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "xai"
@@ -18943,7 +18881,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2025-08-xai-tests-grok-4-20-for-potential-launch-to-compete-with-gpt",
@@ -19328,8 +19266,8 @@
     {
       "id": "2025-11-xai-delays-grok-5-launch-to-next-year",
       "announced_at": "2025-11-14",
-      "type": "model_unavailable",
-      "severity": "action_required",
+      "type": "infrastructure",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "xai"
@@ -19354,7 +19292,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2025-12-xai-new-filings-detail-elon-musk-s-lawsuit-against-apple-reveali",
@@ -19944,7 +19882,7 @@
       "id": "2026-04-xai-prepares-credits-based-pricing-for-upcoming-grok-build-l",
       "announced_at": "2026-04-11",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "xai"
@@ -19971,7 +19909,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-03"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2026-04-xai-naacp-sues-xai-over-alleged-pollution-in-black-neighborhoods",
@@ -21100,7 +21038,7 @@
       "id": "2025-04-deepseek-restores-availability-in-south-korea-after-temporar",
       "announced_at": "2025-04-30",
       "type": "model_unavailable",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "deepseek"
@@ -21124,7 +21062,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2025-04-deepseek-us-house-select-committee-accuses-deepseek-of-spying-and-cir",
@@ -21935,7 +21873,7 @@
       "announced_at": "2025-09-29",
       "type": "pricing_change",
       "severity": "action_required",
-      "status": "unverified",
+      "status": "verified",
       "providers": [
         "deepseek"
       ],
@@ -21961,7 +21899,7 @@
         "price_direction": "down"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2025-10-deepseek-amd-instinct-mi355x-gpus-power-deepseek-v3-2-exp-model",
@@ -22814,7 +22752,7 @@
       "announced_at": "2026-04-24",
       "type": "pricing_change",
       "severity": "action_required",
-      "status": "unverified",
+      "status": "verified",
       "providers": [
         "deepseek"
       ],
@@ -22839,7 +22777,7 @@
         "price_direction": "down"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2026-04-deepseek-unveils-new-ai-model-optimized-for-huawei-chips",
@@ -22910,7 +22848,7 @@
       "announced_at": "2026-05-23",
       "type": "pricing_change",
       "severity": "action_required",
-      "status": "unverified",
+      "status": "verified",
       "providers": [
         "deepseek"
       ],
@@ -22935,39 +22873,7 @@
         "price_direction": "down"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
-    },
-    {
-      "id": "2026-05-deepseek-cuts-v4-pro-prices-by-75-to-intensify-ai-pricing-co",
-      "announced_at": "2026-05-25",
-      "type": "pricing_change",
-      "severity": "action_required",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [
-        "deepseek/deepseek-v4-pro"
-      ],
-      "headline": "DeepSeek cuts V4-Pro prices by 75% to intensify AI pricing competition",
-      "summary": "DeepSeek implemented a steep price reduction for its V4-Pro model, cutting costs by 75% and significantly improving its cost-performance ranking. This move escalates the ongoing AI pricing war, putting pressure on competitors to respond with lower prices or improved performance.",
-      "sources": [
-        {
-          "url": "https://www.infoworld.com/article/4176709/deepseeks-steep-v4-pro-price-cut-escalates-ai-pricing-war.html"
-        }
-      ],
-      "tags": [
-        "pricing-war",
-        "cost-performance",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-04"
     },
     {
       "id": "2026-06-deepseek-huawei-ai-chips-used-to-refine-deepseek-v4-model",
