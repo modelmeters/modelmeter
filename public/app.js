@@ -43,18 +43,10 @@ let events = [];
 let modelsByProvider = {};
 let currentModels = [];
 let history = null;
-let sharedXParams = null; // set by renderAcrossProvidersChart/renderSingleModelChart, read by renderEventSwimlane
+let sharedXParams = null; // set by renderLifecycles, read by renderEventSwimlane
 const activeSwimlaneCategories = new Set(Object.keys(CATEGORY_META).filter(k => k !== "oss"));
 let chartState = {
-  view: "lifecycles",          // "lifecycles" or "price"
-  model: null,
   range: "all",
-  scale: "log",
-  cache: false,
-  viewMode: "across",          // "across" or "single"
-  tier: "flagship",            // "flagship" | "mid" | "fast"
-  priceField: "input_cost_per_mtok",
-  showDeprecated: true,
 };
 
 const ACROSS_PROVIDERS = ["anthropic", "openai", "google", "xai", "deepseek", "venice"];
@@ -76,6 +68,8 @@ const MODEL_FAMILIES = {
   "google/gemini-pro": ["google/gemini-1-5-pro","google/gemini-2-5-pro"],
   "google/gemini-flash":["google/gemini-1-5-flash","google/gemini-2-0-flash","google/gemini-2-5-flash","google/gemini-3-flash-preview","google/gemini-3-5-flash"],
   "xai/grok":          ["xai/grok-beta","xai/grok-2","xai/grok-3","xai/grok-4","xai/grok-4-3"],
+  "deepseek/chat":     ["deepseek/deepseek-chat","deepseek/deepseek-v4-flash"],
+  "deepseek/reasoner": ["deepseek/deepseek-reasoner","deepseek/deepseek-v4-pro"],
 };
 const PROVIDER_COLORS = {
   anthropic: "#ff8a65",
@@ -108,7 +102,6 @@ async function boot() {
   renderNotice();
   renderCheck();
   renderEventsFeed();
-  wireFeedSeverity();
   renderChartControls();
   renderChart();
   setupPriceTable();
@@ -246,7 +239,9 @@ function renderSunsets() {
   const upcoming = events
     .filter(e => e.effective_at && e.effective_at >= today && (e.severity === "breaking" || e.severity === "action_required"))
     .sort((a, b) => a.effective_at.localeCompare(b.effective_at));
-  document.getElementById("sunset-count").textContent = upcoming.length ? `${upcoming.length} scheduled` : "";
+  const allVerified = upcoming.length && upcoming.every(e => e.status === "verified");
+  document.getElementById("sunset-count").innerHTML = upcoming.length
+    ? `${upcoming.length} scheduled${allVerified ? ' · <span style="color: var(--up)">all human-verified ✓</span>' : ""}` : "";
   if (!upcoming.length) { board.innerHTML = '<div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">no scheduled retirements on record</div>'; return; }
 
   const shown = sunsetExpanded ? upcoming : upcoming.slice(0, SUNSET_COLLAPSED);
@@ -254,6 +249,7 @@ function renderSunsets() {
     const days = Math.ceil((new Date(ev.effective_at) - new Date(today)) / 864e5);
     const daysColor = days <= 30 ? "var(--down)" : days <= 90 ? "var(--warn)" : "var(--text-dim)";
     const prov = ev.providers?.[0] || "?";
+    const maker = ev.providers?.[1];
     const models = (ev.models || []).map(m => m.split("/").slice(1).join("/"));
     const what = models.length
       ? `<span class="models">${escapeHtml(shorten(models.join(", "), 72))}</span>`
@@ -265,7 +261,7 @@ function renderSunsets() {
     return `<div class="sun-row" title="${escapeHtml(ev.headline)}" onclick="window.open('${url}', '_blank', 'noopener')">
       <span class="sun-days" style="color:${daysColor}">${days}d</span>
       <span class="sun-date">${ev.effective_at}</span>
-      <span class="sun-prov"><span class="pp-prov-dash" style="background:${PROVIDER_COLORS[prov] || "var(--muted)"}; margin-right:6px;"></span>${PROVIDER_LABELS[prov] || prov}</span>
+      <span class="sun-prov"><span class="pp-prov-dash" style="background:${PROVIDER_COLORS[prov] || "var(--muted)"}; margin-right:6px;"></span>${PROVIDER_LABELS[prov] || prov}${maker ? ` <span style="color: var(--muted-2)">· ${PROVIDER_LABELS[maker] || maker}</span>` : ""}</span>
       <span class="sun-what">${what}</span>
       <span class="sun-target">${target}</span>
     </div>`;
@@ -302,19 +298,6 @@ function renderNotice() {
     <span class="notice-med">${r.med}d</span>
     <span class="notice-n">n=${r.n} · min ${r.min}d</span>
   </div>`).join("");
-}
-
-// ---------- feed severity filter ----------
-let feedSeverity = "all";
-function wireFeedSeverity() {
-  document.querySelectorAll("#feed-severity .chip").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll("#feed-severity .chip").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      feedSeverity = btn.dataset.sev;
-      renderEventsFeed();
-    });
-  });
 }
 
 // ---------- price table ----------
@@ -474,27 +457,16 @@ function runCheck() {
 function renderEventsFeed() {
   const wrap = document.getElementById("events-feed");
   const ctxLabel = document.getElementById("feed-context");
-  const modelId = chartState.viewMode === "single" ? chartState.model : null;
-  const model = currentModels.find(m => m.id === modelId);
-  let filtered = events;
-  if (model) {
-    filtered = events.filter(e =>
-      (e.providers || []).includes(model.provider) ||
-      (e.models || []).includes(model.id)
-    );
-    ctxLabel.textContent = PROVIDER_LABELS[model.provider] || model.provider;
-  } else {
-    ctxLabel.textContent = "all providers";
-  }
-  if (feedSeverity !== "all") filtered = filtered.filter(e => e.severity === feedSeverity);
-  filtered = [...filtered].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 30);
+  ctxLabel.textContent = "all providers · newest first";
+  const filtered = [...events].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 60);
   if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no matching events</div>'; return; }
   wrap.innerHTML = filtered.map(ev => {
     const url = ev.sources?.[0]?.url || "#";
     const sev = ev.severity && ev.severity !== "informational"
       ? ` · <span class="sev-chip ${ev.severity}">${ev.severity === "action_required" ? "action" : "breaking"}</span>` : "";
+    const unv = ev.status === "unverified" ? ' · <span class="sev-chip informational">unverified</span>' : "";
     return `<div class="ev-item" onclick="window.open('${url}', '_blank', 'noopener')">
-      <div class="ev-date">${ev.announced_at} · <span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span>${sev}</div>
+      <div class="ev-date">${ev.announced_at} · <span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span>${sev}${unv}</div>
       <div class="ev-headline">${escapeHtml(ev.headline)}</div>
     </div>`;
   }).join("");
@@ -502,36 +474,6 @@ function renderEventsFeed() {
 
 // ---------- chart ----------
 function renderChartControls() {
-  const sel = document.getElementById("chart-model");
-  sel.innerHTML = "";
-  if (!history) {
-    sel.innerHTML = '<option>no history yet</option>';
-    sel.disabled = true;
-    return;
-  }
-  // Build options grouped by provider, sorted by history length descending
-  const byProvider = {};
-  for (const m of history.models) (byProvider[m.provider] ||= []).push(m);
-  const order = ["anthropic", "openai", "google", "xai", "venice"];
-  for (const p of order) {
-    if (!byProvider[p]) continue;
-    const g = document.createElement("optgroup");
-    g.label = PROVIDER_LABELS[p] || p;
-    const sorted = byProvider[p].sort((a, b) => b.history.length - a.history.length);
-    for (const m of sorted) {
-      const opt = document.createElement("option");
-      opt.value = m.id;
-      opt.textContent = `${m.display_name} (${m.history.length})`;
-      g.appendChild(opt);
-    }
-    sel.appendChild(g);
-  }
-  // Pick default: model with most history overall
-  const best = [...history.models].sort((a, b) => b.history.length - a.history.length)[0];
-  if (best) { sel.value = best.id; chartState.model = best.id; }
-  sel.disabled = false;
-  sel.addEventListener("change", () => { chartState.model = sel.value; renderChart(); renderEventsFeed(); });
-
   document.querySelectorAll("#chart-range .chip").forEach(c => {
     c.addEventListener("click", () => {
       chartState.range = c.dataset.range;
@@ -539,93 +481,26 @@ function renderChartControls() {
       renderChart();
     });
   });
-  document.querySelectorAll("#chart-scale .chip").forEach(c => {
-    c.addEventListener("click", () => {
-      chartState.scale = c.dataset.scale;
-      document.querySelectorAll("#chart-scale .chip").forEach(x => x.classList.toggle("active", x === c));
-      renderChart();
-    });
-  });
-  document.querySelectorAll("#chart-cache .chip").forEach(c => {
-    c.addEventListener("click", () => {
-      chartState.cache = c.dataset.cache === "on";
-      document.querySelectorAll("#chart-cache .chip").forEach(x => x.classList.toggle("active", x === c));
-      renderChart();
-    });
-  });
-  document.querySelectorAll("#chart-deprecated .chip").forEach(c => {
-    c.addEventListener("click", () => {
-      chartState.showDeprecated = c.dataset.deprecated === "all";
-      document.querySelectorAll("#chart-deprecated .chip").forEach(x => x.classList.toggle("active", x === c));
-      // Auto-zoom to 12mo when switching to active-only so recent models are visible
-      if (!chartState.showDeprecated && chartState.range === "all") {
-        chartState.range = "12";
-        document.querySelectorAll("#chart-range .chip").forEach(x => x.classList.toggle("active", x.dataset.range === "12"));
-      }
-      renderChart();
-    });
-  });
-  document.querySelectorAll("#chart-view .chip").forEach(c => {
-    c.addEventListener("click", () => {
-      chartState.view = c.dataset.view;
-      document.querySelectorAll("#chart-view .chip").forEach(x => x.classList.toggle("active", x === c));
-      applyChartControlVisibility();
-      renderChart();
-    });
-  });
-  document.querySelectorAll("#chart-mode .chip").forEach(c => {
-    c.addEventListener("click", () => {
-      chartState.viewMode = c.dataset.mode;
-      document.querySelectorAll("#chart-mode .chip").forEach(x => x.classList.toggle("active", x === c));
-      applyChartControlVisibility();
-      renderChart();
-      renderEventsFeed();
-    });
-  });
-  document.querySelectorAll("#chart-tier .chip").forEach(c => {
-    c.addEventListener("click", () => {
-      chartState.tier = c.dataset.tier;
-      document.querySelectorAll("#chart-tier .chip").forEach(x => x.classList.toggle("active", x === c));
-      renderChart();
-    });
-  });
-  document.querySelectorAll("#chart-price .chip").forEach(c => {
-    c.addEventListener("click", () => {
-      chartState.priceField = c.dataset.price;
-      document.querySelectorAll("#chart-price .chip").forEach(x => x.classList.toggle("active", x === c));
-      renderChart();
-    });
-  });
-  applyChartControlVisibility();
-}
-
-function applyChartControlVisibility() {
-  const isPrice = chartState.view === "price";
-  const mode = chartState.viewMode;
-  const isAcross = isPrice && mode === "across";
-  const isSingle = isPrice && mode === "single";
-  const set = (id, vis) => { const el = document.getElementById(id); if (el) el.style.display = vis; };
-  set("chart-mode", isPrice ? "" : "none");
-  set("chart-tier", "none");
-  set("chart-price", isAcross ? "" : "none");
-  set("chart-model", isSingle ? "" : "none");
-  set("chart-cache", isSingle ? "" : "none");
-  set("chart-scale", isPrice ? "" : "none");
-  set("chart-deprecated", isPrice ? "" : "none");
-  const title = document.getElementById("chart-title");
-  if (title) title.textContent = isPrice ? "Price · per Mtok · over time" : "Model Lifecycles";
 }
 
 function renderChart() {
-  const svg = document.getElementById("chart-svg");
-  if (chartState.view === "lifecycles") {
-    renderLifecycles();
-  } else {
-    if (svg) svg.style.height = "420px";
-    if (chartState.viewMode === "across") renderAcrossProvidersChart();
-    else renderSingleModelChart();
-  }
+  renderLifecycles();
   renderEventSwimlane();
+  syncFeedHeight();
+}
+
+// The events feed spans from the top of the lifecycles panel to the bottom
+// of the events swimlane — the full center column, no gap under the feed.
+// Re-synced on every render so the edges stay aligned through expander
+// clicks and resizes; the feed scrolls internally.
+function syncFeedHeight() {
+  if (typeof document.querySelector !== "function") return;
+  const chartPanel = document.querySelector(".chart-panel");
+  const swimPanel = document.querySelector(".swimlane-panel");
+  const feedPanel = document.querySelector(".col-right .panel");
+  if (!chartPanel || !swimPanel || !feedPanel || !chartPanel.offsetHeight) return;
+  const height = swimPanel.getBoundingClientRect().bottom - chartPanel.getBoundingClientRect().top;
+  feedPanel.style.height = Math.round(height) + "px";
 }
 
 // ---------- model lifecycles ----------
@@ -702,20 +577,29 @@ function renderLifecycles() {
     // with a per-provider expander; the legend always counts the full record.
     const expanded = lifeExpanded.has(provider);
     const cap = expanded ? 80 : LIFE_ROWS_PER_PROVIDER;
+    // Default view: the lineage story + what's dying — curated family chains
+    // (alive AND dead, so the generational arc survives) plus every scheduled
+    // sunset. The snapshot graveyard (dated variants, delisted previews)
+    // appears on expand. Providers without curated chains fall back to living
+    // models so their lanes aren't empty.
+    const famIds = Object.entries(MODEL_FAMILIES).filter(([k]) => k.startsWith(provider + "/")).flatMap(([, ids]) => ids);
+    const famRows = famIds.map(id => candidates.find(r => canonicalHistoryId(r.m.id) === canonicalHistoryId(id))).filter(Boolean);
     const picked = [];
     const seen = new Set();
     const take = (r) => { if (r && !seen.has(r.m.id) && picked.length < cap) { seen.add(r.m.id); picked.push(r); } };
-    const famIds = Object.entries(MODEL_FAMILIES).filter(([k]) => k.startsWith(provider + "/")).flatMap(([, ids]) => ids);
-    const famRows = famIds.map(id => candidates.find(r => canonicalHistoryId(r.m.id) === canonicalHistoryId(id))).filter(Boolean);
-    // 1. the current lineup (active family members) 2. sunsets, most recent
-    // shutdown first 3. retired family members 4. longest-history actives
-    for (const r of famRows.filter(r => !r.retired)) take(r);
-    for (const r of candidates.filter(r => r.dep).sort((a, b) => b.dep.effective.localeCompare(a.dep.effective))) take(r);
-    for (const r of famRows) take(r);
-    for (const r of [...candidates].sort((a, b) => b.m.history.length - a.m.history.length)) take(r);
+    if (expanded) {
+      for (const r of famRows) take(r);
+      for (const r of candidates.filter(r => r.dep).sort((a, b) => b.dep.effective.localeCompare(a.dep.effective))) take(r);
+      for (const r of [...candidates].sort((a, b) => b.m.history.length - a.m.history.length)) take(r);
+    } else {
+      for (const r of famRows) take(r);
+      for (const r of candidates.filter(r => r.dep && r.dep.effective > today).sort((a, b) => a.dep.effective.localeCompare(b.dep.effective))) take(r);
+      if (picked.length < 5) for (const r of candidates.filter(r => !r.retired).sort((a, b) => b.m.history.length - a.m.history.length)) take(r);
+    }
     picked.sort((a, b) => a.start.localeCompare(b.start));
     if (picked.length) groups.push({
       provider, rows: picked, hidden: candidates.length - picked.length, expanded,
+      hiddenRetired: expanded ? 0 : candidates.filter(r => r.retired).length,
       fullScheduled: candidates.filter(r => r.dep && r.dep.effective > today).length,
       fullRetired: candidates.filter(r => r.retired && !r.delisted).length,
       fullDelisted: candidates.filter(r => r.delisted).length,
@@ -815,6 +699,24 @@ function renderLifecycles() {
         dot.setAttribute("r", "3"); dot.setAttribute("fill", color);
         svg.appendChild(dot);
       }
+      // price-change ticks: the model's pricing biography on its lane.
+      // Green = price fell, red = rose (input rate). History is already
+      // compressed to change points, so consecutive differing values = a change.
+      const hist = (r.m.history ?? []).filter(h => h.input_cost_per_mtok != null && h.input_cost_per_mtok > 0);
+      let priceChanges = 0, lastChange = null;
+      for (let i = 1; i < hist.length; i++) {
+        if (hist[i].input_cost_per_mtok === hist[i - 1].input_cost_per_mtok) continue;
+        priceChanges++;
+        const down = hist[i].input_cost_per_mtok < hist[i - 1].input_cost_per_mtok;
+        lastChange = { date: hist[i].date, from: hist[i - 1].input_cost_per_mtok, to: hist[i].input_cost_per_mtok, down };
+        const px = clampX(hist[i].date);
+        const tick = document.createElementNS(ns, "path");
+        tick.setAttribute("d", down ? `M ${px - 3} ${cy - 4} L ${px + 3} ${cy - 4} L ${px} ${cy + 1} Z` : `M ${px - 3} ${cy + 4} L ${px + 3} ${cy + 4} L ${px} ${cy - 1} Z`);
+        tick.setAttribute("fill", down ? "var(--up)" : "var(--down)");
+        tick.setAttribute("opacity", r.retired ? "0.5" : "0.95");
+        svg.appendChild(tick);
+      }
+      r._priceChanges = priceChanges; r._lastChange = lastChange;
       if (r.delisted) {
         // silent removal: grey cap at last-seen — no documented shutdown
         const dx = clampX(r.activeEnd);
@@ -863,7 +765,7 @@ function renderLifecycles() {
         tooltip.innerHTML = `
           <div class="tdate">${PROVIDER_LABELS[r.provider] || r.provider}</div>
           <div class="thead">${escapeHtml(r.m.display_name || r.m.id)}</div>
-          <div class="tbody">first tracked ${r.start}</div>${dep}
+          <div class="tbody">first tracked ${r.start}${r._priceChanges ? ` · ${r._priceChanges} price change${r._priceChanges > 1 ? "s" : ""} (last ${r._lastChange.date}: $${r._lastChange.from} → $${r._lastChange.to}/Mtok in)` : " · no price changes on record"}</div>${dep}
           <div class="tfoot"><span>${r.dep?.url ? "click for source ↗" : "click for model card ↗"}</span></div>`;
         positionTooltip(tooltip, e);
         tooltip.classList.add("show");
@@ -881,7 +783,7 @@ function renderLifecycles() {
       ex.setAttribute("x", String(padLeft)); ex.setAttribute("y", String(y + 10));
       ex.setAttribute("fill", "#807c72"); ex.setAttribute("font-size", "9");
       ex.setAttribute("style", "cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em;");
-      ex.textContent = g.expanded ? "− collapse" : `+ ${g.hidden} more`;
+      ex.textContent = g.expanded ? "− collapse" : `+ ${g.hidden} snapshots & retired`;
       ex.addEventListener("click", () => { g.expanded ? lifeExpanded.delete(g.provider) : lifeExpanded.add(g.provider); renderChart(); });
       svg.appendChild(ex);
       y += expH;
@@ -898,472 +800,9 @@ function renderLifecycles() {
     <span><span class="swatch" style="background: var(--warn); opacity: 0.4;"></span>deprecation window</span>
     <span><span class="swatch" style="background: var(--down); width: 3px;"></span>shutdown</span>
     <span><span class="swatch" style="background: var(--muted-2); width: 3px;"></span>silently delisted</span>
+    <span>▾ <span style="color: var(--up)">price cut</span> · ▴ <span style="color: var(--down)">price rise</span></span>
     <span style="color: var(--muted-2);">${allRows.length} of ${total} models shown · ${scheduled} scheduled · ${retired} retired · ${delisted} silently delisted</span>
     <span style="margin-left: auto;"><a href="/events.json" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">try as json ↗</a></span>`;
-}
-
-// ---------- across-providers chart ----------
-function renderAcrossProvidersChart() {
-  const empty = document.getElementById("chart-empty");
-  const svg = document.getElementById("chart-svg");
-  const legend = document.getElementById("chart-legend");
-  legend.innerHTML = "";
-
-  if (!history) {
-    empty.style.display = "flex";
-    empty.innerHTML = '<span class="loader">⟳</span> waiting for historical pricing data…';
-    svg.style.display = "none";
-    return;
-  }
-
-  const priceField = chartState.priceField;
-  const currentById = Object.fromEntries(currentModels.map(m => [m.id, m]));
-
-  // Collect all models for the 4 providers, with metadata
-  const today = new Date().toISOString().slice(0, 10);
-  const allModelLines = [];
-  for (const provider of PRICE_PROVIDERS) {
-    const provModels = history.models.filter(m => m.provider === provider);
-    const historyIds = new Set(provModels.map(m => m.id));
-
-    for (const m of provModels) {
-      const series = m.history
-        .filter(h => h[priceField] != null && h[priceField] > 0)
-        .sort((a, b) => a.date.localeCompare(b.date));
-      const cur = currentById[m.id];
-      const isDeprecated = !cur || cur.availability === "deprecated";
-      // Inject current price as synthetic today-point for active models
-      if (!isDeprecated && cur[priceField] != null && cur[priceField] > 0) {
-        const last = series[series.length - 1];
-        if (!last || last.date < today) series.push({ date: today, [priceField]: cur[priceField], _synthetic: true });
-        else if (last.date === today) series[series.length - 1] = { ...last, [priceField]: cur[priceField] };
-      }
-      if (series.length === 0) continue;
-      allModelLines.push({ m, provider, series, isDeprecated });
-    }
-
-    // Also include active models from current.json that have no history entry yet
-    for (const cur of currentModels) {
-      if (cur.provider !== provider) continue;
-      if (historyIds.has(cur.id)) continue;
-      if (cur.availability === "deprecated") continue;
-      const price = cur[priceField];
-      if (price == null || price <= 0) continue;
-      const syntheticM = { id: cur.id, display_name: cur.display_name || cur.id, history: [] };
-      allModelLines.push({ m: syntheticM, provider, series: [{ date: today, [priceField]: price }], isDeprecated: false });
-    }
-  }
-  if (allModelLines.length === 0) {
-    empty.style.display = "flex";
-    empty.innerHTML = "no historical data";
-    svg.style.display = "none";
-    return;
-  }
-
-  // Range filter: keep models with any data in range; include last-before-cutoff as anchor
-  let cutoff = null;
-  if (chartState.range !== "all") {
-    const months = parseInt(chartState.range, 10);
-    cutoff = new Date(); cutoff.setMonth(cutoff.getMonth() - months);
-  }
-  const visibleLines = [];
-  for (const ml of allModelLines) {
-    if (!cutoff) { visibleLines.push({ ...ml, visible: ml.series }); continue; }
-    const after = ml.series.filter(h => new Date(h.date) >= cutoff);
-    const before = ml.series.filter(h => new Date(h.date) < cutoff);
-    const anchor = before.length > 0 ? [before[before.length - 1]] : [];
-    const visible = [...anchor, ...after];
-    if (visible.length > 0) visibleLines.push({ ...ml, visible });
-  }
-  if (visibleLines.length === 0) {
-    empty.style.display = "flex";
-    empty.innerHTML = "no data in range";
-    svg.style.display = "none";
-    return;
-  }
-
-  // Filter deprecated if toggle is set to active-only
-  const displayLines = chartState.showDeprecated ? visibleLines : visibleLines.filter(ml => !ml.isDeprecated);
-
-  empty.style.display = "none";
-  svg.style.display = "block";
-  svg.innerHTML = "";
-
-  const width = svg.clientWidth || 800;
-  const height = 420;
-  const padLeft = 60, padRight = 24, padTop = 24, padBottom = 40;
-  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-
-  // Global date + price range across all visible series
-  const allDates = displayLines.flatMap(ml => ml.visible.map(h => new Date(h.date)));
-  const allPrices = displayLines.flatMap(ml => ml.visible.map(h => h[priceField]));
-  const minDate = cutoff ? new Date(cutoff) : new Date(Math.min(...allDates));
-  const maxDate = new Date(Math.max(...allDates, Date.now()));
-  const xScale = d => padLeft + ((new Date(d) - minDate) / Math.max(1, maxDate - minDate)) * (width - padLeft - padRight);
-  sharedXParams = { minDate, maxDate, xScale, width, padLeft, padRight, padTop, padBottom };
-
-  const positive = allPrices.filter(v => v > 0);
-  let yMin = Math.min(...positive) * 0.6;
-  let yMax = Math.max(...positive) * 1.4;
-  if (chartState.scale !== "log") { yMin = 0; yMax = Math.max(...positive) * 1.15; }
-  const yScale = v => {
-    if (chartState.scale === "log") {
-      if (v <= 0) return height - padBottom;
-      const logMin = Math.log10(yMin || 0.001), logMax = Math.log10(yMax);
-      return padTop + (1 - (Math.log10(v) - logMin) / (logMax - logMin)) * (height - padTop - padBottom);
-    }
-    return padTop + (1 - v / yMax) * (height - padTop - padBottom);
-  };
-
-  const ns = "http://www.w3.org/2000/svg";
-
-  // Y-axis grid + labels
-  for (let i = 0; i <= 5; i++) {
-    let v;
-    if (chartState.scale === "log") {
-      const lm = Math.log10(yMin || 0.001), lM = Math.log10(yMax);
-      v = Math.pow(10, lm + (i / 5) * (lM - lm));
-    } else { v = (yMax / 5) * i; }
-    const y = yScale(v);
-    const gl = document.createElementNS(ns, "line");
-    gl.setAttribute("x1", padLeft); gl.setAttribute("x2", width - padRight);
-    gl.setAttribute("y1", y); gl.setAttribute("y2", y);
-    gl.setAttribute("class", "grid-line");
-    svg.appendChild(gl);
-    const lbl = document.createElementNS(ns, "text");
-    lbl.setAttribute("x", padLeft - 8); lbl.setAttribute("y", y + 3);
-    lbl.setAttribute("text-anchor", "end"); lbl.setAttribute("class", "grid-label");
-    lbl.setAttribute("fill", "#ece9e0");
-    lbl.textContent = `$${v < 1 ? v.toFixed(3) : v.toFixed(v < 10 ? 2 : 0)}`;
-    svg.appendChild(lbl);
-  }
-
-  // X-axis labels (quarterly) — uppercase month, year only at January
-  const cur = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
-  while (cur <= maxDate) {
-    if (cur.getMonth() % 3 === 0) {
-      const x = xScale(cur);
-      const gl = document.createElementNS(ns, "line");
-      gl.setAttribute("x1", x); gl.setAttribute("x2", x);
-      gl.setAttribute("y1", padTop); gl.setAttribute("y2", height - padBottom);
-      gl.setAttribute("class", "grid-line"); svg.appendChild(gl);
-      const lbl = document.createElementNS(ns, "text");
-      lbl.setAttribute("x", x); lbl.setAttribute("y", height - padBottom + 14);
-      lbl.setAttribute("text-anchor", "middle"); lbl.setAttribute("class", "grid-label");
-      lbl.setAttribute("fill", "#ece9e0");
-      const mo = cur.toLocaleString("en", { month: "short" }).toUpperCase();
-      lbl.textContent = cur.getMonth() === 0 ? `${mo} '${String(cur.getFullYear()).slice(-2)}` : mo;
-      svg.appendChild(lbl);
-    }
-    cur.setMonth(cur.getMonth() + 1);
-  }
-
-  for (const ml of displayLines) {
-    const { provider, visible, isDeprecated } = ml;
-    const color = PROVIDER_COLORS[provider] || "#ffffff";
-    const strokeWidth = 1;
-
-    // Opacity: full for all active models, dimmed for deprecated
-    const opacity = isDeprecated ? 0.2 : 1;
-
-    // Step-function path
-    let d = "";
-    for (let i = 0; i < visible.length; i++) {
-      const x = xScale(visible[i].date);
-      const y = yScale(visible[i][priceField]);
-      if (i === 0) d += `M ${x} ${y}`;
-      else { const py = yScale(visible[i-1][priceField]); d += ` L ${x} ${py} L ${x} ${y}`; }
-    }
-    // Active lines terminate at today via synthetic current-price point
-
-    const path = document.createElementNS(ns, "path");
-    path.setAttribute("d", d);
-    path.setAttribute("fill", "none");
-    path.setAttribute("stroke", color);
-    path.setAttribute("stroke-width", String(strokeWidth));
-    path.setAttribute("opacity", String(opacity));
-    svg.appendChild(path);
-
-    // Dots only where something happened: series start, an actual price
-    // change, or the last real point of a deprecated line — not the synthetic
-    // today-point every active model carries (that was a wall of dots at the
-    // right edge).
-    const r = 3.5;
-    for (let i = 0; i < visible.length; i++) {
-      const pt = visible[i];
-      const changed = i > 0 && pt[priceField] !== visible[i - 1][priceField];
-      const isLastReal = i === visible.length - 1 && !pt._synthetic;
-      if (!(i === 0 || changed || isLastReal)) continue;
-      const c = document.createElementNS(ns, "circle");
-      c.setAttribute("cx", String(xScale(pt.date)));
-      c.setAttribute("cy", String(yScale(pt[priceField])));
-      c.setAttribute("r", String(r));
-      c.setAttribute("fill", color);
-      c.setAttribute("opacity", String(opacity));
-      c.setAttribute("stroke", "var(--panel)");
-      c.setAttribute("stroke-width", "0.5");
-      c.setAttribute("style", "cursor: pointer");
-      attachProviderPointTooltip(c, provider, { date: pt.date, price: pt[priceField], display_name: ml.m.display_name });
-      svg.appendChild(c);
-    }
-  }
-
-  // Family connectors: dashed step between consecutive model generations
-  for (const [familyKey, memberIds] of Object.entries(MODEL_FAMILIES)) {
-    const provider = familyKey.split("/")[0];
-    const color = PROVIDER_COLORS[provider] || "#ffffff";
-    for (let i = 0; i < memberIds.length - 1; i++) {
-      const mlA = displayLines.find(ml => ml.m.id === memberIds[i]);
-      const mlB = displayLines.find(ml => ml.m.id === memberIds[i + 1]);
-      if (!mlA || !mlB) continue;
-      const lastPt = mlA.visible[mlA.visible.length - 1];
-      const firstPt = mlB.visible[0];
-      if (!lastPt || !firstPt) continue;
-      const x1 = xScale(lastPt.date), y1 = yScale(lastPt[priceField]);
-      const x2 = xScale(firstPt.date), y2 = yScale(firstPt[priceField]);
-      const conn = document.createElementNS(ns, "path");
-      conn.setAttribute("d", `M ${x1} ${y1} L ${x2} ${y1} L ${x2} ${y2}`);
-      conn.setAttribute("fill", "none");
-      conn.setAttribute("stroke", color);
-      conn.setAttribute("stroke-width", "0.75");
-      conn.setAttribute("stroke-dasharray", "4,4");
-      conn.setAttribute("opacity", "0.35");
-      svg.appendChild(conn);
-    }
-  }
-
-  // Crosshair line
-  const crosshair = document.createElementNS(ns, "line");
-  crosshair.setAttribute("id", "chart-crosshair");
-  crosshair.setAttribute("x1", "-1"); crosshair.setAttribute("x2", "-1");
-  crosshair.setAttribute("y1", String(padTop)); crosshair.setAttribute("y2", String(height - padBottom));
-  crosshair.setAttribute("class", "chart-crosshair");
-  crosshair.style.display = "none";
-  svg.appendChild(crosshair);
-
-  // Legend: provider color swatches + flagship model names
-  const priceLabel = priceField === "input_cost_per_mtok" ? "input" : "output";
-  const totalShown = displayLines.length;
-  const activeCount = displayLines.filter(ml => !ml.isDeprecated).length;
-  let legendHtml = "";
-  for (const p of PRICE_PROVIDERS) {
-    if (!displayLines.some(ml => ml.provider === p)) continue;
-    const color = PROVIDER_COLORS[p] || "#ffffff";
-    legendHtml += `<span><span class="swatch line" style="background:${color}"></span>${PROVIDER_LABELS[p] || p}</span>`;
-  }
-  legendHtml += `<span style="color: var(--muted-2);">${activeCount} active · ${totalShown - activeCount} deprecated · ${priceLabel}</span>`;
-  legendHtml += `<span style="margin-left: auto;"><a href="/history.json" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">try as json ↗</a></span>`;
-  legend.innerHTML = legendHtml;
-}
-
-
-// renderIndexChart removed — replaced by Option D two-panel layout (price chart + event swimlane)
-
-function attachProviderPointTooltip(el, provider, pt) {
-  const tooltip = document.getElementById("chart-tooltip");
-  el.addEventListener("mouseenter", e => {
-    const priceLabel = chartState.priceField === "input_cost_per_mtok" ? "input" : "output";
-    tooltip.innerHTML = `
-      <div class="tdate">${pt.date} · ${PROVIDER_LABELS[provider] || provider}</div>
-      <div class="thead">${escapeHtml(pt.display_name)}</div>
-      <div class="tbody">${priceLabel}: $${pt.price.toFixed(pt.price < 1 ? 4 : 2)} / Mtok</div>
-    `;
-    positionTooltip(tooltip, e);
-    tooltip.classList.add("show");
-  });
-  el.addEventListener("mousemove", e => positionTooltip(tooltip, e));
-  el.addEventListener("mouseleave", () => tooltip.classList.remove("show"));
-}
-
-function renderSingleModelChart() {
-  const empty = document.getElementById("chart-empty");
-  const svg = document.getElementById("chart-svg");
-  const legend = document.getElementById("chart-legend");
-  legend.innerHTML = "";
-
-  if (!history || !chartState.model) {
-    empty.style.display = "flex";
-    svg.style.display = "none";
-    return;
-  }
-  const model = history.models.find(m => m.id === chartState.model);
-  if (!model || model.history.length === 0) {
-    empty.style.display = "flex";
-    empty.innerHTML = "no history available for this model";
-    svg.style.display = "none";
-    return;
-  }
-
-  empty.style.display = "none";
-  svg.style.display = "block";
-  svg.innerHTML = "";
-
-  // Compute time range
-  let series = model.history.slice().sort((a, b) => a.date.localeCompare(b.date));
-  if (chartState.range !== "all") {
-    const months = parseInt(chartState.range, 10);
-    const cutoff = new Date(); cutoff.setMonth(cutoff.getMonth() - months);
-    series = series.filter(h => new Date(h.date) >= cutoff);
-    if (series.length === 0) { empty.style.display = "flex"; empty.innerHTML = `no data in last ${months} months`; svg.style.display = "none"; return; }
-  }
-
-  const width = svg.clientWidth || 800;
-  const height = 420;
-  const padLeft = 60, padRight = 24, padTop = 24, padBottom = 40;
-  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-
-  const dates = series.map(h => new Date(h.date));
-  const minDate = new Date(Math.min(...dates));
-  const maxDate = new Date(Math.max(...dates, Date.now()));
-  const xScale = d => padLeft + ((new Date(d) - minDate) / Math.max(1, maxDate - minDate)) * (width - padLeft - padRight);
-  sharedXParams = { minDate, maxDate, xScale, width, padLeft, padRight, padTop, padBottom: 40 };
-
-  // Collect y values for scale
-  const yVals = [];
-  for (const h of series) {
-    if (h.input_cost_per_mtok != null) yVals.push(h.input_cost_per_mtok);
-    if (h.output_cost_per_mtok != null) yVals.push(h.output_cost_per_mtok);
-    if (chartState.cache) {
-      if (h.cache_read_cost_per_mtok != null) yVals.push(h.cache_read_cost_per_mtok);
-      if (h.cache_write_cost_per_mtok != null) yVals.push(h.cache_write_cost_per_mtok);
-    }
-  }
-  if (yVals.length === 0) { empty.style.display = "flex"; empty.innerHTML = "no numeric pricing in selected range"; svg.style.display = "none"; return; }
-  let yMin = 0, yMax = Math.max(...yVals);
-  if (chartState.scale === "log") {
-    const positive = yVals.filter(v => v > 0);
-    yMin = Math.min(...positive) * 0.6;
-    yMax = Math.max(...positive) * 1.4;
-  } else {
-    yMax = yMax * 1.15;
-  }
-  const yScale = v => {
-    if (chartState.scale === "log") {
-      if (v <= 0) return height - padBottom;
-      const logMin = Math.log10(yMin || 0.001);
-      const logMax = Math.log10(yMax);
-      const logV = Math.log10(v);
-      return padTop + (1 - (logV - logMin) / (logMax - logMin)) * (height - padTop - padBottom);
-    }
-    return padTop + (1 - v / yMax) * (height - padTop - padBottom);
-  };
-
-  const ns = "http://www.w3.org/2000/svg";
-
-  // Y-axis grid + labels
-  const yTickCount = 5;
-  for (let i = 0; i <= yTickCount; i++) {
-    let v;
-    if (chartState.scale === "log") {
-      const lm = Math.log10(yMin || 0.001), lM = Math.log10(yMax);
-      v = Math.pow(10, lm + (i / yTickCount) * (lM - lm));
-    } else {
-      v = (yMax / yTickCount) * i;
-    }
-    const y = yScale(v);
-    const line = document.createElementNS(ns, "line");
-    line.setAttribute("x1", padLeft); line.setAttribute("x2", width - padRight);
-    line.setAttribute("y1", y); line.setAttribute("y2", y);
-    line.setAttribute("class", "grid-line");
-    svg.appendChild(line);
-    const lbl = document.createElementNS(ns, "text");
-    lbl.setAttribute("x", padLeft - 8); lbl.setAttribute("y", y + 3);
-    lbl.setAttribute("text-anchor", "end");
-    lbl.setAttribute("class", "grid-label");
-    lbl.setAttribute("fill", "#ece9e0");
-    lbl.textContent = `$${v < 1 ? v.toFixed(3) : v.toFixed(v < 10 ? 2 : 0)}`;
-    svg.appendChild(lbl);
-  }
-
-  // X-axis labels (quarterly)
-  const months = [];
-  const cursor = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
-  while (cursor <= maxDate) {
-    if (cursor.getMonth() % 3 === 0) {
-      months.push(new Date(cursor));
-    }
-    cursor.setMonth(cursor.getMonth() + 1);
-  }
-  for (const m of months) {
-    const x = xScale(m);
-    const line = document.createElementNS(ns, "line");
-    line.setAttribute("x1", x); line.setAttribute("x2", x);
-    line.setAttribute("y1", padTop); line.setAttribute("y2", height - padBottom);
-    line.setAttribute("class", "grid-line");
-    svg.appendChild(line);
-    const lbl = document.createElementNS(ns, "text");
-    lbl.setAttribute("x", x); lbl.setAttribute("y", height - padBottom + 14);
-    lbl.setAttribute("text-anchor", "middle");
-    lbl.setAttribute("class", "grid-label");
-    lbl.setAttribute("fill", "#ece9e0");
-    const monthName = m.toLocaleString("en", { month: "short" });
-    lbl.textContent = `${monthName} '${String(m.getFullYear()).slice(-2)}`;
-    svg.appendChild(lbl);
-  }
-
-  // Step-function lines for input/output (and cache if enabled)
-  function pathFor(key, color, dash) {
-    const points = series.filter(h => h[key] != null);
-    if (points.length === 0) return;
-    let d = "";
-    for (let i = 0; i < points.length; i++) {
-      const x = xScale(points[i].date);
-      const y = yScale(points[i][key]);
-      if (i === 0) d += `M ${x} ${y}`;
-      else {
-        const prevY = yScale(points[i - 1][key]);
-        d += ` L ${x} ${prevY} L ${x} ${y}`;
-      }
-    }
-    // Extend the line to today
-    const lastX = xScale(maxDate);
-    const lastY = yScale(points[points.length - 1][key]);
-    d += ` L ${lastX} ${lastY}`;
-    const path = document.createElementNS(ns, "path");
-    path.setAttribute("d", d);
-    path.setAttribute("fill", "none");
-    path.setAttribute("stroke", color);
-    path.setAttribute("stroke-width", "2");
-    if (dash) path.setAttribute("stroke-dasharray", dash);
-    svg.appendChild(path);
-    // Dots at each data point
-    for (const p of points) {
-      const c = document.createElementNS(ns, "circle");
-      c.setAttribute("cx", xScale(p.date));
-      c.setAttribute("cy", yScale(p[key]));
-      c.setAttribute("r", "3");
-      c.setAttribute("fill", color);
-      c.setAttribute("stroke", "var(--panel)");
-      c.setAttribute("stroke-width", "1");
-      svg.appendChild(c);
-    }
-  }
-
-  pathFor("input_cost_per_mtok", "var(--c-infra)");
-  pathFor("output_cost_per_mtok", "var(--down)");
-  if (chartState.cache) {
-    pathFor("cache_read_cost_per_mtok", "var(--c-money)", "4,3");
-    pathFor("cache_write_cost_per_mtok", "var(--warn)", "4,3");
-  }
-
-  // Crosshair line
-  const crosshairNs = "http://www.w3.org/2000/svg";
-  const crosshairEl = document.createElementNS(crosshairNs, "line");
-  crosshairEl.setAttribute("id", "chart-crosshair");
-  crosshairEl.setAttribute("x1", "-1"); crosshairEl.setAttribute("x2", "-1");
-  crosshairEl.setAttribute("y1", String(padTop)); crosshairEl.setAttribute("y2", String(height - padBottom));
-  crosshairEl.setAttribute("class", "chart-crosshair");
-  crosshairEl.style.display = "none";
-  svg.appendChild(crosshairEl);
-
-  // Legend
-  legend.innerHTML = `
-    <span><span class="swatch line" style="background: var(--c-infra)"></span>input</span>
-    <span><span class="swatch line" style="background: var(--down)"></span>output</span>
-    ${chartState.cache ? `<span><span class="swatch line" style="background: var(--c-money); border-top: 2px dashed var(--c-money); background: transparent;"></span>cache read</span>
-    <span><span class="swatch line" style="background: var(--warn); border-top: 2px dashed var(--warn); background: transparent;"></span>cache write</span>` : ''}
-    <span style="color: var(--muted-2);">${series.length} data points</span>
-  `;
 }
 
 // Shared tooltip positioner (restored — an old dead-code sweep removed it and
@@ -1407,14 +846,10 @@ function renderEventSwimlane() {
 
   const { minDate, maxDate, xScale, width, padLeft, padRight } = sharedXParams;
 
-  // Determine lane providers
-  let laneProviders;
-  if (chartState.viewMode === "single" && chartState.model) {
-    const m = history?.models?.find(m => m.id === chartState.model);
-    laneProviders = m ? [m.provider] : ACROSS_PROVIDERS.slice();
-  } else {
-    laneProviders = ACROSS_PROVIDERS.filter(p => events.some(e => (e.providers || []).includes(p)));
-  }
+  // Lanes: only providers with events that actually plot after the severity
+  // filter below (Venice has news events but nothing operational — no lane).
+  const slPlotted = events.filter(e => e.severity !== "informational" || e.impact?.magnitude === "structural");
+  const laneProviders = ACROSS_PROVIDERS.filter(p => slPlotted.some(e => (e.providers || []).includes(p)));
 
   const slPadLeft = padLeft, slPadRight = padRight, slPadTop = 6, slPadBottom = 4;
   const laneH = 22;
@@ -1456,8 +891,7 @@ function renderEventSwimlane() {
   // Event dots — informational noise filtered: only breaking/action events plus
   // structural informational ones make the timeline. ("major" is too common in
   // drafted events to discriminate — 324 of 691 informational events carry it.)
-  const slEvents = events.filter(e => e.severity !== "informational" || e.impact?.magnitude === "structural");
-  for (const ev of slEvents) {
+  for (const ev of slPlotted) {
     const evDate = new Date(ev.announced_at);
     if (evDate < minDate || evDate > maxDate) continue;
 

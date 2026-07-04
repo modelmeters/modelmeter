@@ -84,7 +84,7 @@
         </div>
         <div class="brand">
           <span class="name">modelmeter</span>
-          <span class="ver">v0.1</span>
+          <span class="ver">v1.0</span>
         </div>
       </div>
       <div class="status-pill">
@@ -131,7 +131,7 @@
             <div class="stat-row"><span class="lbl">events</span><span class="num" id="s-events">—</span></div>
             <div class="stat-row"><span class="lbl">breaking</span><span class="num sev-breaking" id="s-breaking">—</span></div>
             <div class="stat-row"><span class="lbl">action required</span><span class="num sev-action" id="s-action">—</span></div>
-            <div class="stat-row"><span class="lbl">models</span><span class="num" id="s-models">—</span></div>
+            <div class="stat-row"><span class="lbl">active models</span><span class="num" id="s-models">—</span></div>
             <div class="stat-row"><span class="lbl">providers</span><span class="num" id="s-providers">—</span></div>
             <div class="stat-row"><span class="lbl">snapshots</span><span class="num" id="s-snapshots">—</span></div>
             <div class="stat-row"><span class="lbl">history models</span><span class="num" id="s-history">—</span></div>
@@ -163,7 +163,7 @@
             Every event cites its source, most with archive snapshots. Entries are published fast as <em>unverified</em>, then human-reviewed to <em>verified</em> — corrections are never silent. The full dataset lives in a public GitHub repo.
           </p>
           <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border-soft);">
-            <a href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ our pipeline runs privately on Venice</a>
+            <a href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ our pipeline runs on Venice</a>
             <a href="https://x.com/modelmeter_" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ @modelmeter_ on X</a>
             <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ github.com/modelmeters</a>
             <a href="/llms.txt" style="color: var(--text-dim); font-size: 11px;">→ llms.txt (for agents)</a>
@@ -177,40 +177,10 @@
           <div class="chart-header">
             <span class="chart-title" id="chart-title">Model Lifecycles</span>
             <div class="chart-controls">
-              <div class="chip-group" id="chart-view">
-                <button class="chip active" data-view="lifecycles">lifecycles</button>
-                <button class="chip" data-view="price">price</button>
-              </div>
-              <div class="chip-group" id="chart-mode">
-                <button class="chip active" data-mode="across">across</button>
-                <button class="chip" data-mode="single">single</button>
-              </div>
-              <div class="chip-group" id="chart-tier">
-                <button class="chip active" data-tier="flagship">flagship</button>
-                <button class="chip" data-tier="mid">mid</button>
-                <button class="chip" data-tier="fast">fast</button>
-              </div>
-              <div class="chip-group" id="chart-price">
-                <button class="chip active" data-price="input_cost_per_mtok">in</button>
-                <button class="chip" data-price="output_cost_per_mtok">out</button>
-              </div>
-              <select id="chart-model" disabled style="display: none;"><option>loading…</option></select>
               <div class="chip-group" id="chart-range">
                 <button class="chip" data-range="6">6mo</button>
                 <button class="chip" data-range="12">12mo</button>
                 <button class="chip active" data-range="all">all</button>
-              </div>
-              <div class="chip-group" id="chart-scale">
-                <button class="chip" data-scale="linear">lin</button>
-                <button class="chip active" data-scale="log">log</button>
-              </div>
-              <div class="chip-group" id="chart-cache" style="display: none;">
-                <button class="chip active" data-cache="off">no cache</button>
-                <button class="chip" data-cache="on">+ cache</button>
-              </div>
-              <div class="chip-group" id="chart-deprecated">
-                <button class="chip active" data-deprecated="all">all</button>
-                <button class="chip" data-deprecated="active">active</button>
               </div>
             </div>
           </div>
@@ -241,11 +211,6 @@
       <div class="col-right">
         <div class="panel">
           <h3 class="panel-title">Events <span class="right" id="feed-context">all providers</span></h3>
-          <div class="chip-group feed-sev-chips" id="feed-severity">
-            <button class="chip active" data-sev="all">all</button>
-            <button class="chip" data-sev="breaking">breaking</button>
-            <button class="chip" data-sev="action_required">action</button>
-          </div>
           <div class="events-feed" id="events-feed">
             <div style="color: var(--muted); font-size: 11px;">loading…</div>
           </div>

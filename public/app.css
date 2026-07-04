@@ -198,7 +198,10 @@ button, input, select { font-family: inherit; font-size: inherit; }
 .calc-cta .cta-link:hover { border-color: var(--accent); color: var(--accent); }
 
 /* Events feed in right column */
-.events-feed { display: grid; gap: 8px; max-height: 920px; overflow-y: auto; padding-right: 4px; }
+.col-right { display: block; align-self: start; }
+.col-right .panel { display: flex; flex-direction: column; }
+.col-right .panel > .events-feed { flex: 1; min-height: 320px; }
+.events-feed { display: grid; gap: 8px; align-content: start; max-height: none; overflow-y: auto; padding-right: 4px; }
 .events-feed::-webkit-scrollbar { width: 6px; }
 .events-feed::-webkit-scrollbar-track { background: var(--bg); }
 .events-feed::-webkit-scrollbar-thumb { background: var(--border-strong); }
