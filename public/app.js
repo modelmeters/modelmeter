@@ -1,34 +1,5 @@
 // ---------- constants ----------
 
-// Venice referral code — appended as ?ref=<code> on every "run via Venice" link.
-const VENICE_REFERRAL = "9conaa";
-const VENICE_REF_PARAM = "ref";
-
-// Compute the best Venice deep-link for a model in our catalog.
-// - If the model is itself a venice/* entry: deep-link with model param.
-// - Otherwise: if any venice/* entry resells this model (upstream_model_id match):
-//   deep-link to that one.
-// - Otherwise: fall back to venice.ai/chat with just the ref code.
-function veniceUrlFor(modelId) {
-  const base = "https://venice.ai/chat";
-  const refQ = VENICE_REFERRAL
-    ? `?${encodeURIComponent(VENICE_REF_PARAM)}=${encodeURIComponent(VENICE_REFERRAL)}`
-    : "";
-  const sep = refQ ? "&" : "?";
-  const model = currentModels.find((m) => m.id === modelId);
-  if (!model) return `${base}${refQ}`;
-  if (model.provider === "venice") {
-    return `${base}${refQ}${sep}model=${encodeURIComponent(model.model)}`;
-  }
-  const reseller = currentModels.find(
-    (m) => m.provider === "venice" && m.upstream_model_id === modelId
-  );
-  if (reseller) {
-    return `${base}${refQ}${sep}model=${encodeURIComponent(reseller.model)}`;
-  }
-  return `${base}${refQ}`;
-}
-
 const PROVIDER_LABELS = {
   openai: "OpenAI", anthropic: "Anthropic", google: "Google", xai: "xAI", venice: "Venice",
   microsoft: "Microsoft", amazon: "Amazon", meta: "Meta", nvidia: "NVIDIA", deepseek: "DeepSeek",
@@ -75,6 +46,7 @@ let history = null;
 let sharedXParams = null; // set by renderAcrossProvidersChart/renderSingleModelChart, read by renderEventSwimlane
 const activeSwimlaneCategories = new Set(Object.keys(CATEGORY_META).filter(k => k !== "oss"));
 let chartState = {
+  view: "lifecycles",          // "lifecycles" or "price"
   model: null,
   range: "all",
   scale: "log",
@@ -85,7 +57,11 @@ let chartState = {
   showDeprecated: true,
 };
 
-const ACROSS_PROVIDERS = ["anthropic", "openai", "google", "xai"];
+const ACROSS_PROVIDERS = ["anthropic", "openai", "google", "xai", "deepseek", "venice"];
+// Venice is a reseller with ~117 history models — its lines flood the price
+// view (its pricing tracks upstream anyway), so the price chart scopes it out.
+// Lifecycles and the events swimlane keep all six.
+const PRICE_PROVIDERS = ACROSS_PROVIDERS.filter(p => p !== "venice");
 
 
 // Ordered generational chains — used to draw dashed connectors between model segments
@@ -93,7 +69,10 @@ const MODEL_FAMILIES = {
   "anthropic/opus":    ["anthropic/claude-3-opus","anthropic/claude-opus-3","anthropic/claude-opus-4","anthropic/claude-opus-4-5","anthropic/claude-opus-4-6","anthropic/claude-opus-4-7","anthropic/claude-opus-4-8"],
   "anthropic/sonnet":  ["anthropic/claude-3-sonnet","anthropic/claude-3-5-sonnet","anthropic/claude-3-7-sonnet","anthropic/claude-sonnet-3-7","anthropic/claude-sonnet-4","anthropic/claude-sonnet-4-5","anthropic/claude-sonnet-4-6"],
   "anthropic/haiku":   ["anthropic/claude-3-haiku","anthropic/claude-haiku-3","anthropic/claude-3-5-haiku","anthropic/claude-haiku-3-5","anthropic/claude-haiku-4-5"],
+  "anthropic/frontier":["anthropic/claude-sonnet-5","anthropic/claude-fable-5","anthropic/claude-mythos-5"],
   "openai/gpt-5":      ["openai/gpt-5","openai/gpt-5-2","openai/gpt-5-4","openai/gpt-5-5"],
+  "openai/gpt-4-line": ["openai/gpt-4-8k","openai/gpt-4","openai/gpt-4-turbo","openai/gpt-4o"],
+  "openai/gpt-mini":   ["openai/gpt-3-5-turbo","openai/gpt-4o-mini"],
   "google/gemini-pro": ["google/gemini-1-5-pro","google/gemini-2-5-pro"],
   "google/gemini-flash":["google/gemini-1-5-flash","google/gemini-2-0-flash","google/gemini-2-5-flash","google/gemini-3-flash-preview","google/gemini-3-5-flash"],
   "xai/grok":          ["xai/grok-beta","xai/grok-2","xai/grok-3","xai/grok-4","xai/grok-4-3"],
@@ -125,11 +104,15 @@ async function boot() {
   renderTicker();
   renderPriceTicker();
   renderStats();
-  renderPrivacyPremium();
-  renderCalculator();
+  renderSunsets();
+  renderNotice();
+  renderCheck();
   renderEventsFeed();
+  wireFeedSeverity();
   renderChartControls();
   renderChart();
+  setupPriceTable();
+  renderPriceTable();
   window.addEventListener("resize", () => { renderChart(); });
 }
 
@@ -146,11 +129,37 @@ async function loadModels() {
   for (const m of currentModels) (modelsByProvider[m.provider] ||= []).push(m);
 }
 
+// The compiled history carries duplicate ids from two sources: pages that
+// renamed models mid-history (claude-3-opus vs claude-opus-3) and dot/dash
+// variants (gemini-2.5-pro vs gemini-2-5-pro). Merge them under one canonical
+// id so every view (lifecycles, price, stats) sees one lane per model.
+// TODO: fix at the data layer (build-history.mjs) so /history serves clean ids.
+const RENAMED_IDS = {
+  "anthropic/claude-3-opus": "anthropic/claude-opus-3",
+  "anthropic/claude-3-haiku": "anthropic/claude-haiku-3",
+  "anthropic/claude-3-5-haiku": "anthropic/claude-haiku-3-5",
+  "anthropic/claude-3-7-sonnet": "anthropic/claude-sonnet-3-7",
+  "anthropic/claude-3-5-sonnet": "anthropic/claude-sonnet-3-5",
+};
+function canonicalHistoryId(id) { return RENAMED_IDS[id] ?? id.replace(/\./g, "-"); }
+function dedupeHistory(models) {
+  const byId = new Map();
+  for (const m of models) {
+    const id = canonicalHistoryId(m.id);
+    const prev = byId.get(id);
+    if (!prev) { byId.set(id, { ...m, id }); continue; }
+    const seen = new Set(prev.history.map(h => h.date));
+    prev.history = [...prev.history, ...m.history.filter(h => !seen.has(h.date))].sort((a, b) => a.date.localeCompare(b.date));
+    prev.display_name = prev.display_name || m.display_name;
+  }
+  return [...byId.values()];
+}
 async function loadHistory() {
   try {
     const res = await fetch("/history.json");
     if (!res.ok) { history = null; return; }
     history = await res.json();
+    if (history?.models) history.models = dedupeHistory(history.models);
   } catch { history = null; }
 }
 
@@ -162,9 +171,11 @@ function renderTicker() {
   const items = recent.map(ev => {
     const url = ev.sources?.[0]?.url || "#";
     const date = ev.announced_at;
+    // severity outranks type for chip color: breaking red, action yellow
+    const chipColor = ev.severity === "breaking" ? "var(--down)" : ev.severity === "action_required" ? "var(--warn)" : typeColor(ev.type);
     return `<span class="ticker-item">
       <span class="tick-date">${date}</span>
-      <span class="tick-cat" style="color:${typeColor(ev.type)}">${typeLabel(ev.type).toUpperCase()}</span>
+      <span class="tick-cat" style="color:${chipColor}">${typeLabel(ev.type).toUpperCase()}</span>
       <a href="${url}" target="_blank" rel="noopener">${escapeHtml(ev.headline)}</a>
     </span>`;
   });
@@ -218,154 +229,252 @@ function renderPriceTicker() {
 function renderStats() {
   document.getElementById("s-models").textContent = currentModels.length || "—";
   document.getElementById("s-events").textContent = events.length || "—";
+  document.getElementById("s-breaking").textContent = events.filter(e => e.severity === "breaking").length || "—";
+  document.getElementById("s-action").textContent = events.filter(e => e.severity === "action_required").length || "—";
   const providers = new Set(currentModels.map(m => m.provider));
   document.getElementById("s-providers").textContent = providers.size || "—";
   document.getElementById("s-snapshots").textContent = history?.snapshot_count ?? "—";
   document.getElementById("s-history").textContent = history?.model_count ?? "—";
 }
 
-function shorten(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
+// ---------- sunset board ----------
+const SUNSET_COLLAPSED = 10;
+let sunsetExpanded = false;
+function renderSunsets() {
+  const board = document.getElementById("sunset-board");
+  const today = new Date().toISOString().slice(0, 10);
+  const upcoming = events
+    .filter(e => e.effective_at && e.effective_at >= today && (e.severity === "breaking" || e.severity === "action_required"))
+    .sort((a, b) => a.effective_at.localeCompare(b.effective_at));
+  document.getElementById("sunset-count").textContent = upcoming.length ? `${upcoming.length} scheduled` : "";
+  if (!upcoming.length) { board.innerHTML = '<div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">no scheduled retirements on record</div>'; return; }
 
-// ---------- Privacy Premium gauge ----------
-// ---------- Privacy Premium (Venice vs direct flagship) ----------
-function computePrivacyPremium() {
-  const rows = [];
-  for (const provider of ACROSS_PROVIDERS) {
-    const active = currentModels.filter(m =>
-      m.provider === provider &&
-      m.input_cost_per_mtok != null &&
-      m.availability !== "deprecated"
-    );
-    if (active.length === 0) continue;
-    active.sort((a, b) => b.input_cost_per_mtok - a.input_cost_per_mtok);
-    const flagship = active[0];
-    const veniceModel = currentModels.find(m =>
-      m.provider === "venice" &&
-      m.upstream_model_id === flagship.id &&
-      m.input_cost_per_mtok != null
-    );
-    const markup_pct = veniceModel
-      ? (((veniceModel.input_cost_per_mtok + (veniceModel.output_cost_per_mtok ?? 0)) /
-          (flagship.input_cost_per_mtok + (flagship.output_cost_per_mtok ?? 0))) - 1) * 100
-      : null;
-    rows.push({ provider, flagship, veniceModel, markup_pct });
+  const shown = sunsetExpanded ? upcoming : upcoming.slice(0, SUNSET_COLLAPSED);
+  const rows = shown.map(ev => {
+    const days = Math.ceil((new Date(ev.effective_at) - new Date(today)) / 864e5);
+    const daysColor = days <= 30 ? "var(--down)" : days <= 90 ? "var(--warn)" : "var(--text-dim)";
+    const prov = ev.providers?.[0] || "?";
+    const models = (ev.models || []).map(m => m.split("/").slice(1).join("/"));
+    const what = models.length
+      ? `<span class="models">${escapeHtml(shorten(models.join(", "), 72))}</span>`
+      : escapeHtml(shorten(ev.headline, 72));
+    const target = ev.migration_target
+      ? `<span class="arrow">→</span>${escapeHtml(ev.migration_target.split("/").slice(1).join("/"))}`
+      : `<span class="arrow" style="opacity:.5">·</span>`;
+    const url = ev.sources?.[0]?.url || "#";
+    return `<div class="sun-row" title="${escapeHtml(ev.headline)}" onclick="window.open('${url}', '_blank', 'noopener')">
+      <span class="sun-days" style="color:${daysColor}">${days}d</span>
+      <span class="sun-date">${ev.effective_at}</span>
+      <span class="sun-prov"><span class="pp-prov-dash" style="background:${PROVIDER_COLORS[prov] || "var(--muted)"}; margin-right:6px;"></span>${PROVIDER_LABELS[prov] || prov}</span>
+      <span class="sun-what">${what}</span>
+      <span class="sun-target">${target}</span>
+    </div>`;
+  });
+  let more = "";
+  if (upcoming.length > SUNSET_COLLAPSED) {
+    more = `<div class="sun-more" id="sun-more">${sunsetExpanded ? "▲ show fewer" : `▼ show all ${upcoming.length}`}</div>`;
   }
-  const valid = rows.filter(r => r.markup_pct != null);
-  const avg = valid.length > 0 ? valid.reduce((s, r) => s + r.markup_pct, 0) / valid.length : null;
-  return { avg, rows };
+  board.innerHTML = rows.join("") + more;
+  document.getElementById("sun-more")?.addEventListener("click", (e) => { e.stopPropagation(); sunsetExpanded = !sunsetExpanded; renderSunsets(); });
 }
 
-function renderPrivacyPremium() {
-  const avgEl = document.getElementById("privacy-avg");
-  const listEl = document.getElementById("privacy-pairs");
-  if (!avgEl || !listEl) return;
-  const { avg, rows } = computePrivacyPremium();
-  avgEl.textContent = avg != null ? `+${Math.round(avg)}% AVG` : "—";
-  listEl.innerHTML = rows.map(r => {
-    const color = PROVIDER_COLORS[r.provider] || "#ffffff";
-    const provName = PROVIDER_LABELS[r.provider] || r.provider;
-    const modelShort = shorten(r.flagship.display_name, 20);
-    const dash = `<span class="pp-prov-dash" style="background:${color}" title="${escapeHtml(provName)}"></span>`;
-    if (!r.veniceModel) {
-      return `<div class="pp-row pp-na">
-        ${dash}
-        <span class="pp-model" title="${escapeHtml(r.flagship.display_name)}">${escapeHtml(modelShort)}</span>
-        <span class="pp-pct" style="color:var(--muted-2)">—</span>
-        <span></span>
-      </div>`;
-    }
-    const veniceUrl = veniceUrlFor(r.flagship.id);
-    return `<div class="pp-row">
-      ${dash}
-      <span class="pp-model" title="${escapeHtml(r.flagship.display_name)}">${escapeHtml(modelShort)}</span>
-      <span class="pp-pct">+${Math.round(r.markup_pct)}%</span>
-      <a href="${veniceUrl}" target="_blank" rel="noopener" class="pp-run" title="$${r.flagship.input_cost_per_mtok} direct → $${r.veniceModel.input_cost_per_mtok} via Venice">→</a>
-    </div>`;
+// ---------- notice-given panel ----------
+function renderNotice() {
+  const wrap = document.getElementById("notice-rows");
+  const byProv = {};
+  for (const e of events) {
+    if (e.type !== "model_deprecation" || !e.effective_at || !e.announced_at) continue;
+    const days = Math.round((new Date(e.effective_at) - new Date(e.announced_at)) / 864e5);
+    if (days < 0) continue;
+    (byProv[e.providers?.[0] || "?"] ??= []).push(days);
+  }
+  const rows = Object.entries(byProv)
+    .filter(([, arr]) => arr.length >= 3)
+    .map(([p, arr]) => {
+      arr.sort((a, b) => a - b);
+      return { p, n: arr.length, med: arr[Math.floor(arr.length / 2)], min: arr[0] };
+    })
+    .sort((a, b) => b.med - a.med);
+  if (!rows.length) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">not enough deprecation data yet</div>'; return; }
+  wrap.innerHTML = rows.map(r => `<div class="notice-row">
+    <span class="pp-prov-dash" style="background:${PROVIDER_COLORS[r.p] || "var(--muted)"}"></span>
+    <span class="notice-prov">${PROVIDER_LABELS[r.p] || r.p}</span>
+    <span class="notice-med">${r.med}d</span>
+    <span class="notice-n">n=${r.n} · min ${r.min}d</span>
+  </div>`).join("");
+}
+
+// ---------- feed severity filter ----------
+let feedSeverity = "all";
+function wireFeedSeverity() {
+  document.querySelectorAll("#feed-severity .chip").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#feed-severity .chip").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      feedSeverity = btn.dataset.sev;
+      renderEventsFeed();
+    });
+  });
+}
+
+// ---------- price table ----------
+// First-party model makers. Everything else in currentModels (venice, openrouter,
+// together, groq) is a reseller/aggregator, shown only in "all providers" scope.
+const DIRECT_PROVIDERS = ["anthropic", "openai", "google", "xai", "deepseek", "mistral", "cohere"];
+let tableState = { scope: "direct", search: "", sortKey: "provider", sortDir: "asc" };
+
+function fmtPrice(n) { return n == null ? "—" : "$" + n; }
+function fmtCtx(n) {
+  if (n == null) return "—";
+  if (n >= 1e6) return (n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1) + "M";
+  if (n >= 1000) return Math.round(n / 1000) + "K";
+  return String(n);
+}
+
+function tableSortVal(m, key) {
+  if (key === "provider") return m.provider;
+  if (key === "model") return (m.display_name || m.id).toLowerCase();
+  return m[key]; // input_cost_per_mtok | output_cost_per_mtok | context_window
+}
+
+function renderPriceTable() {
+  const body = document.getElementById("price-table-body");
+  const countEl = document.getElementById("table-count");
+  if (!body) return;
+
+  let rows = currentModels.filter(m =>
+    tableState.scope === "all" || DIRECT_PROVIDERS.includes(m.provider)
+  );
+  const q = tableState.search.trim().toLowerCase();
+  if (q) rows = rows.filter(m =>
+    (m.id + " " + (m.display_name || "") + " " + (m.tags || []).join(" ") + " " + (m.aliases || []).join(" "))
+      .toLowerCase().includes(q)
+  );
+
+  const { sortKey, sortDir } = tableState;
+  const dir = sortDir === "asc" ? 1 : -1;
+  rows.sort((a, b) => {
+    const av = tableSortVal(a, sortKey), bv = tableSortVal(b, sortKey);
+    if (av == null && bv == null) return 0;
+    if (av == null) return 1;                 // nulls always last
+    if (bv == null) return -1;
+    if (typeof av === "string") return av.localeCompare(bv) * dir;
+    return (av - bv) * dir;
+  });
+
+  countEl.textContent = `${rows.length} model${rows.length === 1 ? "" : "s"}`;
+  body.innerHTML = rows.map(m => {
+    const prov = PROVIDER_LABELS[m.provider] || m.provider;
+    const color = PROVIDER_COLORS[m.provider] || "#888";
+    const deprecated = m.availability === "deprecated";
+    const tags = (m.tags || []).map(t => `<span class="ptag">${escapeHtml(t)}</span>`).join("");
+    return `<tr${deprecated ? ' class="row-deprecated"' : ""}>
+      <td class="c-prov"><span class="prov-dot" style="background:${color}"></span>${escapeHtml(prov)}</td>
+      <td class="c-model"><a href="/model?id=${encodeURIComponent(m.id)}" title="${escapeHtml(m.id)}">${escapeHtml(m.display_name || m.id)}</a>${deprecated ? ' <span class="ptag" style="color: var(--down)">deprecated</span>' : ""}${tags ? ` <span class="ptags">${tags}</span>` : ""}</td>
+      <td class="c-num">${fmtPrice(m.input_cost_per_mtok)}</td>
+      <td class="c-num">${fmtPrice(m.output_cost_per_mtok)}</td>
+      <td class="c-num">${fmtCtx(m.context_window)}</td>
+    </tr>`;
   }).join("");
 }
 
-// ---------- calculator ----------
-function renderCalculator() {
-  const sel = document.getElementById("calc-model");
-  const calcBtn = document.getElementById("calc-btn");
-  sel.innerHTML = "";
-  const order = ["anthropic", "openai", "google", "xai", "venice"];
-  for (const p of order) {
-    if (!modelsByProvider[p]) continue;
-    const g = document.createElement("optgroup");
-    g.label = PROVIDER_LABELS[p] || p;
-    for (const m of modelsByProvider[p].sort((a, b) => a.display_name.localeCompare(b.display_name))) {
-      const opt = document.createElement("option");
-      opt.value = m.id;
-      opt.textContent = `${m.display_name} · $${m.input_cost_per_mtok}/$${m.output_cost_per_mtok}`;
-      g.appendChild(opt);
-    }
-    sel.appendChild(g);
-  }
-  sel.disabled = false;
-  calcBtn.disabled = false;
-  // Default to claude-sonnet-4-6 if present
-  const def = currentModels.find(m => m.id === "anthropic/claude-sonnet-4-6") || currentModels[0];
-  if (def) sel.value = def.id;
-  sel.addEventListener("change", () => {
-    chartState.model = sel.value;
-    renderChart();
-    renderEventsFeed();
+function updateTableSortHeaders() {
+  document.querySelectorAll("#price-table thead th[data-key]").forEach(th => {
+    const active = th.dataset.key === tableState.sortKey;
+    th.classList.toggle("sorted", active);
+    th.setAttribute("data-dir", active ? tableState.sortDir : "");
   });
-  calcBtn.addEventListener("click", calculate);
-  document.getElementById("calc-input").addEventListener("keydown", e => { if (e.key === "Enter") calculate(); });
-  document.getElementById("calc-output").addEventListener("keydown", e => { if (e.key === "Enter") calculate(); });
 }
 
-async function calculate() {
-  const model = document.getElementById("calc-model").value;
-  const input = document.getElementById("calc-input").value;
-  const output = document.getElementById("calc-output").value;
-  if (!model) return;
-  const url = `/estimate?model=${encodeURIComponent(model)}&input=${input}&output=${output}`;
-  const result = document.getElementById("calc-result");
-  result.className = "show";
-  result.textContent = "calculating…";
-  try {
-    const res = await fetch(url);
-    const body = await res.json();
-    if (res.status !== 200) {
-      result.className = "show error";
-      result.innerHTML = `<strong>error:</strong> ${escapeHtml(body.error?.message ?? "request failed")}`;
-      return;
+function setupPriceTable() {
+  document.querySelectorAll("#table-scope .chip").forEach(chip =>
+    chip.addEventListener("click", () => {
+      document.querySelectorAll("#table-scope .chip").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      tableState.scope = chip.dataset.scope;
+      renderPriceTable();
+    })
+  );
+  const search = document.getElementById("table-search");
+  if (search) search.addEventListener("input", () => { tableState.search = search.value; renderPriceTable(); });
+
+  document.querySelectorAll("#price-table thead th[data-key]").forEach(th =>
+    th.addEventListener("click", () => {
+      const key = th.dataset.key;
+      if (tableState.sortKey === key) {
+        tableState.sortDir = tableState.sortDir === "asc" ? "desc" : "asc";
+      } else {
+        tableState.sortKey = key;
+        // numeric columns default to ascending (cheapest/smallest first)
+        tableState.sortDir = "asc";
+      }
+      updateTableSortHeaders();
+      renderPriceTable();
+    })
+  );
+  updateTableSortHeaders();
+}
+
+function shorten(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
+
+// ---------- check your stack ----------
+// Client-side preview of the /check endpoint: match user model ids against the
+// events record and report scheduled retirements / breaking history per model.
+function normId(x) { return String(x).toLowerCase().trim().replace(/\./g, "-"); }
+function baseId(x) { return normId(x).replace(/-\d{4}-\d{2}-\d{2}$/, "").replace(/-\d{8}$/, "").replace(/-\d{2}-\d{2}$/, "").replace(/-\d{4}$/, ""); }
+function renderCheck() {
+  const btn = document.getElementById("check-btn");
+  const input = document.getElementById("check-input");
+  if (!btn || !input) return;
+  btn.addEventListener("click", runCheck);
+  input.addEventListener("keydown", e => { if (e.key === "Enter") runCheck(); });
+}
+function runCheck() {
+  const raw = document.getElementById("check-input").value;
+  const out = document.getElementById("check-result");
+  const tokens = raw.split(/[\s,]+/).map(t => t.trim()).filter(Boolean);
+  if (!tokens.length) { out.className = "show"; out.innerHTML = '<div style="color: var(--muted);">enter one or more model ids</div>'; return; }
+  const today = new Date().toISOString().slice(0, 10);
+  const rows = tokens.slice(0, 12).map(tok => {
+    const q = normId(tok), qb = baseId(tok);
+    // events whose affected-model list matches this id (with or without provider prefix, date-suffix tolerant)
+    const hits = events.filter(e => (e.models || []).some(m => {
+      const bare = normId(m.split("/").slice(1).join("/"));
+      return bare === q || bare === qb || baseId(bare) === q || baseId(bare) === qb || normId(m) === q;
+    }));
+    const upcoming = hits.filter(e => e.effective_at && e.effective_at >= today).sort((a, b) => a.effective_at.localeCompare(b.effective_at));
+    const past = hits.filter(e => e.effective_at && e.effective_at < today).sort((a, b) => b.effective_at.localeCompare(a.effective_at));
+    const label = `<span class="chk-id">${escapeHtml(tok)}</span>`;
+    if (upcoming.length) {
+      const ev = upcoming[0];
+      const days = Math.ceil((new Date(ev.effective_at) - new Date(today)) / 864e5);
+      const col = days <= 30 ? "var(--down)" : days <= 90 ? "var(--warn)" : "var(--text-dim)";
+      const tgt = ev.migration_target ? ` → ${escapeHtml(ev.migration_target.split("/").slice(1).join("/"))}` : "";
+      const url = ev.sources?.[0]?.url || "#";
+      return `<div class="chk-row" onclick="window.open('${url}', '_blank', 'noopener')" title="${escapeHtml(ev.headline)}">${label}<span class="chk-verdict" style="color:${col}">⚠ ${days}d — ${typeLabel(ev.type)} ${ev.effective_at}${tgt}</span></div>`;
     }
-    renderCalcResult(body, url);
-  } catch {
-    result.className = "show error";
-    result.textContent = "request failed";
-  }
-}
-
-function renderCalcResult(r, callUrl) {
-  let html = `<div class="total-line">$${r.total_cost_usd.toFixed(6)}</div>`;
-  html += `<div class="calc-breakdown">`;
-  html += `<div>${r.input_tokens.toLocaleString()} in × $${r.rates_per_mtok.input}/Mtok</div><div class="v">$${r.input_cost_usd.toFixed(6)}</div>`;
-  html += `<div>${r.output_tokens.toLocaleString()} out × $${r.rates_per_mtok.output}/Mtok</div><div class="v">$${r.output_cost_usd.toFixed(6)}</div>`;
-  html += `</div>`;
-  if (r.tier_applied) html += `<div style="color: var(--warn); font-size: 11px; margin-top: 4px;">(overage tier rates applied)</div>`;
-  if (r.upstream?.total_cost_usd != null) {
-    const direction = r.upstream.markup_percent > 0 ? "above" : "below";
-    const abs = Math.abs(r.upstream.markup_percent);
-    html += `<div class="calc-up-block">vs <strong>${escapeHtml(r.upstream.display_name)}</strong> direct: $${r.upstream.total_cost_usd.toFixed(6)} · <span class="pct">${abs.toFixed(1)}% ${direction}</span></div>`;
-  }
-  const veniceUrl = veniceUrlFor(r.model);
-  html += `<div class="calc-cta">
-    <a href="${veniceUrl}" target="_blank" rel="noopener" class="cta-link">run privately w/ Venice →</a>
-  </div>`;
-  html += `<div class="try-json">json: <a href="${callUrl}" target="_blank">${escapeHtml(callUrl)}</a></div>`;
-  document.getElementById("calc-result").innerHTML = html;
+    if (past.length) {
+      const ev = past[0];
+      const url = ev.sources?.[0]?.url || "#";
+      return `<div class="chk-row" onclick="window.open('${url}', '_blank', 'noopener')" title="${escapeHtml(ev.headline)}">${label}<span class="chk-verdict" style="color:var(--down)">✗ ${typeLabel(ev.type)} — effective ${ev.effective_at}</span></div>`;
+    }
+    if (hits.length) {
+      const ev = [...hits].sort((a, b) => b.announced_at.localeCompare(a.announced_at))[0];
+      const url = ev.sources?.[0]?.url || "#";
+      return `<div class="chk-row" onclick="window.open('${url}', '_blank', 'noopener')" title="${escapeHtml(ev.headline)}">${label}<span class="chk-verdict" style="color:var(--warn)">· ${typeLabel(ev.type)} ${ev.announced_at}</span></div>`;
+    }
+    const known = currentModels.some(m => { const bare = normId(m.id.split("/").slice(1).join("/")); return bare === q || bare === qb || normId(m.id) === q; });
+    return `<div class="chk-row">${label}<span class="chk-verdict" style="color:${known ? "var(--up)" : "var(--muted-2)"}">${known ? "✓ no scheduled changes on record" : "? not in catalog — unrecognized id"}</span></div>`;
+  });
+  out.className = "show";
+  out.innerHTML = rows.join("") + `<div class="chk-note">checked against ${events.length} recorded events · <a href="/events.json" target="_blank" rel="noopener">events.json ↗</a></div>`;
 }
 
 // ---------- events feed (right column) ----------
 function renderEventsFeed() {
   const wrap = document.getElementById("events-feed");
   const ctxLabel = document.getElementById("feed-context");
-  const modelId = chartState.model || document.getElementById("calc-model")?.value;
+  const modelId = chartState.viewMode === "single" ? chartState.model : null;
   const model = currentModels.find(m => m.id === modelId);
   let filtered = events;
   if (model) {
@@ -377,12 +486,15 @@ function renderEventsFeed() {
   } else {
     ctxLabel.textContent = "all providers";
   }
+  if (feedSeverity !== "all") filtered = filtered.filter(e => e.severity === feedSeverity);
   filtered = [...filtered].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 30);
-  if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no events for this model</div>'; return; }
+  if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no matching events</div>'; return; }
   wrap.innerHTML = filtered.map(ev => {
     const url = ev.sources?.[0]?.url || "#";
+    const sev = ev.severity && ev.severity !== "informational"
+      ? ` · <span class="sev-chip ${ev.severity}">${ev.severity === "action_required" ? "action" : "breaking"}</span>` : "";
     return `<div class="ev-item" onclick="window.open('${url}', '_blank', 'noopener')">
-      <div class="ev-date">${ev.announced_at} · <span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span></div>
+      <div class="ev-date">${ev.announced_at} · <span style="color: ${typeColor(ev.type)}">${typeLabel(ev.type)}</span>${sev}</div>
       <div class="ev-headline">${escapeHtml(ev.headline)}</div>
     </div>`;
   }).join("");
@@ -453,6 +565,14 @@ function renderChartControls() {
       renderChart();
     });
   });
+  document.querySelectorAll("#chart-view .chip").forEach(c => {
+    c.addEventListener("click", () => {
+      chartState.view = c.dataset.view;
+      document.querySelectorAll("#chart-view .chip").forEach(x => x.classList.toggle("active", x === c));
+      applyChartControlVisibility();
+      renderChart();
+    });
+  });
   document.querySelectorAll("#chart-mode .chip").forEach(c => {
     c.addEventListener("click", () => {
       chartState.viewMode = c.dataset.mode;
@@ -480,21 +600,306 @@ function renderChartControls() {
 }
 
 function applyChartControlVisibility() {
+  const isPrice = chartState.view === "price";
   const mode = chartState.viewMode;
-  const isAcross = mode === "across";
-  const isSingle = mode === "single";
+  const isAcross = isPrice && mode === "across";
+  const isSingle = isPrice && mode === "single";
   const set = (id, vis) => { const el = document.getElementById(id); if (el) el.style.display = vis; };
+  set("chart-mode", isPrice ? "" : "none");
   set("chart-tier", "none");
   set("chart-price", isAcross ? "" : "none");
   set("chart-model", isSingle ? "" : "none");
   set("chart-cache", isSingle ? "" : "none");
-  set("chart-scale", "");
+  set("chart-scale", isPrice ? "" : "none");
+  set("chart-deprecated", isPrice ? "" : "none");
+  const title = document.getElementById("chart-title");
+  if (title) title.textContent = isPrice ? "Price · per Mtok · over time" : "Model Lifecycles";
 }
 
 function renderChart() {
-  if (chartState.viewMode === "across") renderAcrossProvidersChart();
-  else renderSingleModelChart();
+  const svg = document.getElementById("chart-svg");
+  if (chartState.view === "lifecycles") {
+    renderLifecycles();
+  } else {
+    if (svg) svg.style.height = "420px";
+    if (chartState.viewMode === "across") renderAcrossProvidersChart();
+    else renderSingleModelChart();
+  }
   renderEventSwimlane();
+}
+
+// ---------- model lifecycles ----------
+// One lane per model: bar from first-tracked to shutdown (or today), with the
+// deprecation window (announced → effective) shaded and lifecycle markers.
+// Rows come from the pricing history; windows come from the events record.
+const LIFE_ROWS_PER_PROVIDER = 14;
+const lifeExpanded = new Set(); // providers the user expanded to all lanes
+function buildDepMap() {
+  // model id (normalized, plus date-suffix-stripped base) → deprecation window.
+  // Where several events touch the same id, the earliest effective date governs.
+  const map = new Map();
+  for (const e of events) {
+    if (e.type !== "model_deprecation" || !e.effective_at || !e.announced_at) continue;
+    for (const m of e.models || []) {
+      const entry = { announced: e.announced_at, effective: e.effective_at, target: e.migration_target, url: e.sources?.[0]?.url, headline: e.headline };
+      for (const key of new Set([normId(m), baseId(m)])) {
+        const prev = map.get(key);
+        if (!prev || entry.effective < prev.effective) map.set(key, entry);
+      }
+    }
+  }
+  return map;
+}
+function renderLifecycles() {
+  const empty = document.getElementById("chart-empty");
+  const svg = document.getElementById("chart-svg");
+  const legend = document.getElementById("chart-legend");
+  legend.innerHTML = "";
+  if (!history) {
+    empty.style.display = "flex";
+    empty.innerHTML = '<span class="loader">⟳</span> waiting for historical pricing data…';
+    svg.style.display = "none";
+    return;
+  }
+
+  const today = new Date().toISOString().slice(0, 10);
+  const depMap = buildDepMap();
+  const currentById = Object.fromEntries(currentModels.map(m => [m.id, m]));
+
+  let cutoff = null;
+  if (chartState.range !== "all") {
+    const months = parseInt(chartState.range, 10);
+    cutoff = new Date(); cutoff.setMonth(cutoff.getMonth() - months);
+  }
+
+  // Build + curate rows per provider. Venice is excluded here: its lanes are
+  // resales with no lifecycle signal of their own (no deprecation schedule,
+  // upstream-driven churn) and they doubled the chart height. Venice stays in
+  // the events swimlane, the check widget, and the events feed.
+  const groups = [];
+  for (const provider of PRICE_PROVIDERS) {
+    const candidates = history.models
+      .filter(m => m.provider === provider && m.history.length > 0)
+      .map(m => {
+        const dates = m.history.map(h => h.date).sort();
+        const start = dates[0];
+        const dep = depMap.get(normId(m.id)) || depMap.get(baseId(m.id));
+        const cur = currentById[m.id];
+        // Three ways a model ends: a documented shutdown (dep event), a
+        // catalog deprecation, or silent removal — it just stops being listed
+        // (xAI publishes no deprecation schedule at all). Silent removals end
+        // at the last snapshot the model appeared in, marked "last seen".
+        const docRetired = dep && dep.effective <= today;
+        const delisted = !dep && !cur;
+        const catalogDeprecated = cur?.availability === "deprecated";
+        const activeEnd = docRetired ? dep.effective : delisted ? dates[dates.length - 1] : today;
+        return { m, provider, start, dep, cur, delisted, retired: docRetired || delisted || catalogDeprecated, activeEnd };
+      })
+      .filter(r => !cutoff || new Date(r.activeEnd) >= cutoff || (r.dep && new Date(r.dep.effective) >= cutoff));
+    // Priority: deprecation-window models (most recent shutdown first — the
+    // sunsets the record is about), then curated family chains, then
+    // longest-history actives. Collapsed to LIFE_ROWS_PER_PROVIDER by default
+    // with a per-provider expander; the legend always counts the full record.
+    const expanded = lifeExpanded.has(provider);
+    const cap = expanded ? 80 : LIFE_ROWS_PER_PROVIDER;
+    const picked = [];
+    const seen = new Set();
+    const take = (r) => { if (r && !seen.has(r.m.id) && picked.length < cap) { seen.add(r.m.id); picked.push(r); } };
+    const famIds = Object.entries(MODEL_FAMILIES).filter(([k]) => k.startsWith(provider + "/")).flatMap(([, ids]) => ids);
+    const famRows = famIds.map(id => candidates.find(r => canonicalHistoryId(r.m.id) === canonicalHistoryId(id))).filter(Boolean);
+    // 1. the current lineup (active family members) 2. sunsets, most recent
+    // shutdown first 3. retired family members 4. longest-history actives
+    for (const r of famRows.filter(r => !r.retired)) take(r);
+    for (const r of candidates.filter(r => r.dep).sort((a, b) => b.dep.effective.localeCompare(a.dep.effective))) take(r);
+    for (const r of famRows) take(r);
+    for (const r of [...candidates].sort((a, b) => b.m.history.length - a.m.history.length)) take(r);
+    picked.sort((a, b) => a.start.localeCompare(b.start));
+    if (picked.length) groups.push({
+      provider, rows: picked, hidden: candidates.length - picked.length, expanded,
+      fullScheduled: candidates.filter(r => r.dep && r.dep.effective > today).length,
+      fullRetired: candidates.filter(r => r.retired && !r.delisted).length,
+      fullDelisted: candidates.filter(r => r.delisted).length,
+      fullCount: candidates.length,
+    });
+  }
+  if (!groups.length) {
+    empty.style.display = "flex"; empty.innerHTML = "no lifecycle data in range"; svg.style.display = "none"; return;
+  }
+
+  empty.style.display = "none";
+  svg.style.display = "block";
+  svg.innerHTML = "";
+
+  const allRows = groups.flatMap(g => g.rows);
+  const width = svg.clientWidth || 800;
+  const padLeft = 150, padRight = 56, padTop = 18, padBottom = 26;
+  const rowH = 15, headH = 20, groupGap = 6, expH = 14;
+  const height = padTop + groups.reduce((s, g) => s + headH + g.rows.length * rowH + ((g.hidden > 0 || g.expanded) ? expH : 0) + groupGap, 0) + padBottom;
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  svg.style.height = `${height}px`;
+
+  const minDate = cutoff ? new Date(cutoff) : new Date(Math.min(...allRows.map(r => new Date(r.start))));
+  const maxDate = new Date(Math.max(Date.now(), ...allRows.map(r => r.dep ? +new Date(r.dep.effective) : 0)));
+  const xScale = d => padLeft + ((new Date(d) - minDate) / Math.max(1, maxDate - minDate)) * (width - padLeft - padRight);
+  const clampX = d => Math.max(padLeft, Math.min(xScale(d), width - padRight));
+  sharedXParams = { minDate, maxDate, xScale, width, padLeft, padRight, padTop, padBottom };
+
+  const ns = "http://www.w3.org/2000/svg";
+  const tooltip = document.getElementById("chart-tooltip");
+
+  // Quarterly x grid
+  const curTick = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
+  while (curTick <= maxDate) {
+    if (curTick.getMonth() % 3 === 0) {
+      const x = xScale(curTick);
+      const gl = document.createElementNS(ns, "line");
+      gl.setAttribute("x1", x); gl.setAttribute("x2", x);
+      gl.setAttribute("y1", padTop); gl.setAttribute("y2", height - padBottom);
+      gl.setAttribute("class", "grid-line"); svg.appendChild(gl);
+      const lbl = document.createElementNS(ns, "text");
+      lbl.setAttribute("x", x); lbl.setAttribute("y", height - padBottom + 13);
+      lbl.setAttribute("text-anchor", "middle"); lbl.setAttribute("fill", "#807c72"); lbl.setAttribute("font-size", "9");
+      const mo = curTick.toLocaleString("en", { month: "short" }).toUpperCase();
+      lbl.textContent = curTick.getMonth() === 0 ? `${mo} '${String(curTick.getFullYear()).slice(-2)}` : mo;
+      svg.appendChild(lbl);
+    }
+    curTick.setMonth(curTick.getMonth() + 1);
+  }
+  // Crosshair (driven by swimlane hover)
+  const ch = document.createElementNS(ns, "line");
+  ch.setAttribute("id", "chart-crosshair");
+  ch.setAttribute("x1", "-1"); ch.setAttribute("x2", "-1");
+  ch.setAttribute("y1", String(padTop)); ch.setAttribute("y2", String(height - padBottom));
+  ch.setAttribute("class", "chart-crosshair");
+  ch.style.display = "none";
+  svg.appendChild(ch);
+  // Today line
+  const tl = document.createElementNS(ns, "line");
+  const tx = xScale(today);
+  tl.setAttribute("x1", tx); tl.setAttribute("x2", tx);
+  tl.setAttribute("y1", padTop); tl.setAttribute("y2", height - padBottom);
+  tl.setAttribute("stroke", "var(--accent)"); tl.setAttribute("stroke-width", "1");
+  tl.setAttribute("stroke-dasharray", "2,4"); tl.setAttribute("opacity", "0.3");
+  svg.appendChild(tl);
+
+  let y = padTop;
+  for (const g of groups) {
+    const color = PROVIDER_COLORS[g.provider] || "#ffffff";
+    const head = document.createElementNS(ns, "text");
+    head.setAttribute("x", "6"); head.setAttribute("y", String(y + 13));
+    head.setAttribute("fill", color); head.setAttribute("font-size", "10");
+    head.setAttribute("style", "text-transform: uppercase; letter-spacing: 0.08em;");
+    head.textContent = PROVIDER_LABELS[g.provider] || g.provider;
+    svg.appendChild(head);
+    y += headH;
+
+    for (const r of g.rows) {
+      const cy = y + rowH / 2;
+      // label
+      const lbl = document.createElementNS(ns, "text");
+      lbl.setAttribute("x", String(padLeft - 8)); lbl.setAttribute("y", String(cy + 3));
+      lbl.setAttribute("text-anchor", "end"); lbl.setAttribute("fill", "#b8b4a8"); lbl.setAttribute("font-size", "9.5");
+      lbl.textContent = shorten(r.m.display_name || r.m.id, 24);
+      svg.appendChild(lbl);
+      // active bar: first-tracked → activeEnd
+      const x1 = clampX(r.start), x2 = clampX(r.activeEnd);
+      const bar = document.createElementNS(ns, "rect");
+      bar.setAttribute("x", String(x1)); bar.setAttribute("y", String(cy - 2));
+      bar.setAttribute("width", String(Math.max(2, x2 - x1))); bar.setAttribute("height", "4");
+      bar.setAttribute("fill", color); bar.setAttribute("opacity", r.retired ? "0.45" : "0.95");
+      svg.appendChild(bar);
+      // first-tracked dot
+      if (!cutoff || new Date(r.start) >= cutoff) {
+        const dot = document.createElementNS(ns, "circle");
+        dot.setAttribute("cx", String(x1)); dot.setAttribute("cy", String(cy));
+        dot.setAttribute("r", "3"); dot.setAttribute("fill", color);
+        svg.appendChild(dot);
+      }
+      if (r.delisted) {
+        // silent removal: grey cap at last-seen — no documented shutdown
+        const dx = clampX(r.activeEnd);
+        const cap = document.createElementNS(ns, "rect");
+        cap.setAttribute("x", String(dx - 1)); cap.setAttribute("y", String(cy - 5));
+        cap.setAttribute("width", "2.5"); cap.setAttribute("height", "10");
+        cap.setAttribute("fill", "var(--muted-2)");
+        svg.appendChild(cap);
+      }
+      if (r.dep) {
+        // deprecation window: announced → effective
+        const wx1 = clampX(r.dep.announced), wx2 = clampX(r.dep.effective);
+        const win = document.createElementNS(ns, "rect");
+        win.setAttribute("x", String(wx1)); win.setAttribute("y", String(cy - 5));
+        win.setAttribute("width", String(Math.max(2, wx2 - wx1))); win.setAttribute("height", "10");
+        win.setAttribute("fill", "var(--warn)"); win.setAttribute("opacity", "0.22");
+        svg.appendChild(win);
+        // shutdown cap
+        const cap = document.createElementNS(ns, "rect");
+        cap.setAttribute("x", String(wx2 - 1)); cap.setAttribute("y", String(cy - 6));
+        cap.setAttribute("width", "2.5"); cap.setAttribute("height", "12");
+        cap.setAttribute("fill", "var(--down)"); cap.setAttribute("opacity", r.retired ? "0.9" : "0.7");
+        svg.appendChild(cap);
+        // scheduled (future) shutdowns get a date label
+        if (r.dep.effective > today) {
+          const dl = document.createElementNS(ns, "text");
+          dl.setAttribute("x", String(wx2 + 5)); dl.setAttribute("y", String(cy + 3));
+          dl.setAttribute("fill", "var(--down)"); dl.setAttribute("font-size", "8.5"); dl.setAttribute("opacity", "0.9");
+          dl.textContent = r.dep.effective.slice(5);
+          svg.appendChild(dl);
+        }
+      }
+      // hover target across the lane
+      const hit = document.createElementNS(ns, "rect");
+      hit.setAttribute("x", String(padLeft)); hit.setAttribute("y", String(y));
+      hit.setAttribute("width", String(width - padLeft - padRight)); hit.setAttribute("height", String(rowH));
+      hit.setAttribute("fill", "transparent"); hit.setAttribute("style", "cursor: pointer");
+      hit.addEventListener("mouseenter", e => {
+        const dep = r.dep
+          ? `<div class="tbody">deprecation announced ${r.dep.announced} · ${r.retired ? "retired" : "shutdown"} ${r.dep.effective}${r.dep.target ? ` · → ${escapeHtml(r.dep.target.split("/").slice(1).join("/"))}` : ""}</div>`
+          : r.delisted
+            ? `<div class="tbody">silently delisted · last seen ${r.activeEnd} · no deprecation schedule published</div>`
+            : r.retired
+              ? `<div class="tbody">marked deprecated in the catalog</div>`
+              : `<div class="tbody">active · no scheduled retirement on record</div>`;
+        tooltip.innerHTML = `
+          <div class="tdate">${PROVIDER_LABELS[r.provider] || r.provider}</div>
+          <div class="thead">${escapeHtml(r.m.display_name || r.m.id)}</div>
+          <div class="tbody">first tracked ${r.start}</div>${dep}
+          <div class="tfoot"><span>${r.dep?.url ? "click for source ↗" : "click for model card ↗"}</span></div>`;
+        positionTooltip(tooltip, e);
+        tooltip.classList.add("show");
+      });
+      hit.addEventListener("mousemove", e => positionTooltip(tooltip, e));
+      hit.addEventListener("mouseleave", () => tooltip.classList.remove("show"));
+      hit.addEventListener("click", () => {
+        window.open(r.dep?.url || `/model?id=${encodeURIComponent(r.m.id)}`, "_blank", "noopener");
+      });
+      svg.appendChild(hit);
+      y += rowH;
+    }
+    if (g.hidden > 0 || g.expanded) {
+      const ex = document.createElementNS(ns, "text");
+      ex.setAttribute("x", String(padLeft)); ex.setAttribute("y", String(y + 10));
+      ex.setAttribute("fill", "#807c72"); ex.setAttribute("font-size", "9");
+      ex.setAttribute("style", "cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em;");
+      ex.textContent = g.expanded ? "− collapse" : `+ ${g.hidden} more`;
+      ex.addEventListener("click", () => { g.expanded ? lifeExpanded.delete(g.provider) : lifeExpanded.add(g.provider); renderChart(); });
+      svg.appendChild(ex);
+      y += expH;
+    }
+    y += groupGap;
+  }
+
+  const scheduled = groups.reduce((n, g) => n + g.fullScheduled, 0);
+  const retired = groups.reduce((n, g) => n + g.fullRetired, 0);
+  const delisted = groups.reduce((n, g) => n + g.fullDelisted, 0);
+  const total = groups.reduce((n, g) => n + g.fullCount, 0);
+  legend.innerHTML = `
+    <span><span class="swatch" style="background: var(--text-dim); height: 3px;"></span>tracked lifespan</span>
+    <span><span class="swatch" style="background: var(--warn); opacity: 0.4;"></span>deprecation window</span>
+    <span><span class="swatch" style="background: var(--down); width: 3px;"></span>shutdown</span>
+    <span><span class="swatch" style="background: var(--muted-2); width: 3px;"></span>silently delisted</span>
+    <span style="color: var(--muted-2);">${allRows.length} of ${total} models shown · ${scheduled} scheduled · ${retired} retired · ${delisted} silently delisted</span>
+    <span style="margin-left: auto;"><a href="/events.json" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">try as json ↗</a></span>`;
 }
 
 // ---------- across-providers chart ----------
@@ -517,7 +922,7 @@ function renderAcrossProvidersChart() {
   // Collect all models for the 4 providers, with metadata
   const today = new Date().toISOString().slice(0, 10);
   const allModelLines = [];
-  for (const provider of ACROSS_PROVIDERS) {
+  for (const provider of PRICE_PROVIDERS) {
     const provModels = history.models.filter(m => m.provider === provider);
     const historyIds = new Set(provModels.map(m => m.id));
 
@@ -530,7 +935,7 @@ function renderAcrossProvidersChart() {
       // Inject current price as synthetic today-point for active models
       if (!isDeprecated && cur[priceField] != null && cur[priceField] > 0) {
         const last = series[series.length - 1];
-        if (!last || last.date < today) series.push({ date: today, [priceField]: cur[priceField] });
+        if (!last || last.date < today) series.push({ date: today, [priceField]: cur[priceField], _synthetic: true });
         else if (last.date === today) series[series.length - 1] = { ...last, [priceField]: cur[priceField] };
       }
       if (series.length === 0) continue;
@@ -679,9 +1084,16 @@ function renderAcrossProvidersChart() {
     path.setAttribute("opacity", String(opacity));
     svg.appendChild(path);
 
-    // Dots at price-change points
+    // Dots only where something happened: series start, an actual price
+    // change, or the last real point of a deprecated line — not the synthetic
+    // today-point every active model carries (that was a wall of dots at the
+    // right edge).
     const r = 3.5;
-    for (const pt of visible) {
+    for (let i = 0; i < visible.length; i++) {
+      const pt = visible[i];
+      const changed = i > 0 && pt[priceField] !== visible[i - 1][priceField];
+      const isLastReal = i === visible.length - 1 && !pt._synthetic;
+      if (!(i === 0 || changed || isLastReal)) continue;
       const c = document.createElementNS(ns, "circle");
       c.setAttribute("cx", String(xScale(pt.date)));
       c.setAttribute("cy", String(yScale(pt[priceField])));
@@ -734,7 +1146,7 @@ function renderAcrossProvidersChart() {
   const totalShown = displayLines.length;
   const activeCount = displayLines.filter(ml => !ml.isDeprecated).length;
   let legendHtml = "";
-  for (const p of ACROSS_PROVIDERS) {
+  for (const p of PRICE_PROVIDERS) {
     if (!displayLines.some(ml => ml.provider === p)) continue;
     const color = PROVIDER_COLORS[p] || "#ffffff";
     legendHtml += `<span><span class="swatch line" style="background:${color}"></span>${PROVIDER_LABELS[p] || p}</span>`;
@@ -954,6 +1366,19 @@ function renderSingleModelChart() {
   `;
 }
 
+// Shared tooltip positioner (restored — an old dead-code sweep removed it and
+// silently broke every chart/swimlane hover with a ReferenceError).
+function positionTooltip(tooltip, e, above = false) {
+  const wrap = tooltip.parentElement.getBoundingClientRect();
+  const x = e.clientX - wrap.left + 14;
+  const tipH = tooltip.offsetHeight || 120;
+  const y = above
+    ? e.clientY - wrap.top - tipH - 14
+    : e.clientY - wrap.top + 14;
+  tooltip.style.left = `${Math.min(Math.max(0, x), wrap.width - (tooltip.offsetWidth || 280) - 10)}px`;
+  tooltip.style.top = `${y}px`;
+}
+
 function showChartCrosshair(x) {
   const line = document.getElementById("chart-crosshair");
   if (!line) return;
@@ -1028,8 +1453,11 @@ function renderEventSwimlane() {
   slCrosshair.style.display = "none";
   swimSvg.appendChild(slCrosshair);
 
-  // Event dots
-  for (const ev of events) {
+  // Event dots — informational noise filtered: only breaking/action events plus
+  // structural informational ones make the timeline. ("major" is too common in
+  // drafted events to discriminate — 324 of 691 informational events carry it.)
+  const slEvents = events.filter(e => e.severity !== "informational" || e.impact?.magnitude === "structural");
+  for (const ev of slEvents) {
     const evDate = new Date(ev.announced_at);
     if (evDate < minDate || evDate > maxDate) continue;
 

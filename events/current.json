@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-02",
+  "snapshot_date": "2026-07-03",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -5230,7 +5230,7 @@
     },
     {
       "id": "2026-09-anthropic-claude-sonnet-5-introductory-pricing-ends",
-      "announced_at": "2026-09-01",
+      "announced_at": "2026-06-30",
       "type": "pricing_change",
       "severity": "action_required",
       "status": "verified",
@@ -5257,7 +5257,8 @@
         "price_direction": "up"
       },
       "created_at": "2026-06-30",
-      "updated_at": "2026-06-30"
+      "updated_at": "2026-07-03",
+      "effective_at": "2026-09-01"
     },
     {
       "id": "2023-02-anthropic-partners-with-google-cloud-to-deliver-reliable-and",
@@ -7067,8 +7068,8 @@
     {
       "id": "2025-11-anthropic-announces-formal-commitments-on-model-deprecation-",
       "announced_at": "2025-11-04",
-      "type": "model_deprecation",
-      "severity": "breaking",
+      "type": "policy_change",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "anthropic"
@@ -7092,7 +7093,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-03"
     },
     {
       "id": "2025-11-anthropic-cognizant-deploys-claude-to-350-000-employees-to-accelerate-",
@@ -19949,7 +19950,7 @@
         "xai"
       ],
       "models": [
-        "xiai/grok-build"
+        "xai/grok-build"
       ],
       "headline": "xAI prepares credits-based pricing for upcoming Grok Build launch",
       "summary": "xAI is implementing a credits system in anticipation of the launch of Grok Build, indicating a new monetization model for this upcoming product. This suggests a shift toward usage-based pricing for developer or enterprise-focused AI capabilities.",
@@ -19970,7 +19971,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-03"
     },
     {
       "id": "2026-04-xai-naacp-sues-xai-over-alleged-pollution-in-black-neighborhoods",
@@ -21608,8 +21609,8 @@
     {
       "id": "2025-08-deepseek-delays-new-ai-model-launch-due-to-huawei-chip-issue",
       "announced_at": "2025-08-20",
-      "type": "model_deprecation",
-      "severity": "breaking",
+      "type": "infrastructure",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "deepseek"
@@ -21635,7 +21636,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-03"
     },
     {
       "id": "2025-08-deepseek-releases-upgraded-ai-model-with-support-for-domesti",
@@ -25088,6 +25089,98 @@
       ],
       "created_at": "2026-07-02",
       "updated_at": "2026-07-02"
+    },
+    {
+      "id": "2026-05-xai-retires-grok-3-and-grok-4-era-models",
+      "announced_at": "2026-05-07",
+      "effective_at": "2026-05-15",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4-1-fast-reasoning",
+        "xai/grok-4-1-fast-non-reasoning",
+        "xai/grok-4-fast-reasoning",
+        "xai/grok-4-fast-non-reasoning",
+        "xai/grok-4-0709",
+        "xai/grok-code-fast-1",
+        "xai/grok-3",
+        "xai/grok-imagine-image-pro"
+      ],
+      "headline": "xAI retires Grok 3, Grok 4-era, and grok-code-fast models effective May 15, 2026",
+      "summary": "xAI retired eight models from its API effective May 15, 2026 at 12:00 PM PT. Recommended replacements per the migration guide: grok-4.3 (at varying reasoning-effort levels) for the Grok 3/4 text models, grok-build-0.1 for grok-code-fast-1, and grok-imagine-image-quality for grok-imagine-image-pro. The migration page itself is undated; announced_at reflects the earliest archive.org capture of the page (2026-05-07).",
+      "migration_target": "xai/grok-4-3",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+          "quote": "As we continue advancing Grok, we are retiring several earlier models to focus fully on our newest generation. Effective May 15, 2026 at 12:00 PM PT , the following models will be retired from the xAI API:",
+          "archived_url": "https://web.archive.org/web/20260704021107/https://docs.x.ai/developers/migration/may-15-retirement"
+        }
+      ],
+      "created_at": "2026-07-03",
+      "updated_at": "2026-07-03"
+    },
+    {
+      "id": "2026-05-xai-redirects-retired-slugs-to-grok-4-3",
+      "announced_at": "2026-05-07",
+      "effective_at": "2026-05-15",
+      "type": "model_swap",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4-1-fast-reasoning",
+        "xai/grok-4-1-fast-non-reasoning",
+        "xai/grok-4-fast-reasoning",
+        "xai/grok-4-fast-non-reasoning",
+        "xai/grok-4-0709",
+        "xai/grok-code-fast-1",
+        "xai/grok-3"
+      ],
+      "headline": "xAI silently redirects retired Grok model slugs to grok-4.3 at grok-4.3 pricing",
+      "summary": "From May 15, 2026, requests to the retired Grok slugs do not fail — they automatically redirect to grok-4.3 (grok-code-fast-1 redirects to grok-build-0.1) and are billed at the new model's rates ($1.25/$2.50 per 1M tokens) instead of the original model's. Code keeps working while the model and the price underneath it change — the exact stable-ID model swap the record exists to flag.",
+      "migration_target": "xai/grok-4-3",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+          "quote": "After May 15, 2026 at 12:00 PM PT , requests to the retired model slugs above will automatically redirect to grok-4.3 . The slugs themselves continue to resolve, so you do not need to change your code to avoid breakage. Grok 4.3 is priced differently than the various models it replaces.",
+          "archived_url": "https://web.archive.org/web/20260704021107/https://docs.x.ai/developers/migration/may-15-retirement"
+        }
+      ],
+      "created_at": "2026-07-03",
+      "updated_at": "2026-07-03"
+    },
+    {
+      "id": "2026-07-deepseek-deprecates-deepseek-chat-and-reasoner-slugs",
+      "announced_at": "2026-06-30",
+      "effective_at": "2026-07-24",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-chat",
+        "deepseek/deepseek-reasoner"
+      ],
+      "headline": "DeepSeek deprecates the deepseek-chat and deepseek-reasoner model names, remapping them to DeepSeek-V4-Flash modes",
+      "summary": "The deepseek-chat and deepseek-reasoner model names are deprecated effective July 24, 2026 at 15:59 UTC. For compatibility the slugs continue to work, remapped to the non-thinking and thinking modes of deepseek-v4-flash respectively — a stable-ID swap to a different underlying model. The pricing page does not date the announcement; announced_at reflects when the notice was first verified into this catalog (2026-06-30).",
+      "migration_target": "deepseek/deepseek-v4-flash",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "quote": "(1) The model names deepseek-chat and deepseek-reasoner will be deprecated on 2026/07/24 15:59 UTC. For compatibility, they correspond to the non-thinking mode and thinking mode of deepseek-v4-flash , respectively.",
+          "archived_url": "https://web.archive.org/web/20260703075843/https://api-docs.deepseek.com/quick_start/pricing"
+        }
+      ],
+      "created_at": "2026-07-03",
+      "updated_at": "2026-07-03"
     }
   ]
 }

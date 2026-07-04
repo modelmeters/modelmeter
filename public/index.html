@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>modelmeter — agent-callable LLM pricing API & historical cost dashboard</title>
-  <meta name="description" content="Agent-callable JSON API and dashboard for AI model pricing, market events, and 3 years of historical cost data across 11 providers. OpenAPI spec, llms.txt, no auth required." />
+  <title>modelmeter — the changelog of record for the AI stack</title>
+  <meta name="description" content="Machine-readable, source-verified record of everything that changes in the model layer: deprecations with sunset countdowns and migration targets, price changes, releases — plus 3 years of pricing history across 11 providers. JSON API, MCP server, llms.txt, no auth required." />
   <link rel="canonical" href="https://modelmeter.xyz/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <!-- Open Graph (Facebook, LinkedIn, Discord, Slack) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Modelmeter" />
-  <meta property="og:title" content="modelmeter — agent-callable LLM pricing API" />
-  <meta property="og:description" content="JSON API and dashboard for AI model pricing, events, and 3 years of historical cost across 11 providers. Built for agents, friendly to humans." />
+  <meta property="og:title" content="modelmeter — the changelog of record for the AI stack" />
+  <meta property="og:description" content="Source-verified record of what changes in the model layer: deprecations with sunset countdowns, price changes, releases — plus 3 years of pricing history. Built for agents, friendly to humans." />
   <meta property="og:url" content="https://modelmeter.xyz/" />
   <meta property="og:image" content="https://modelmeter.xyz/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Modelmeter dashboard — multi-provider LLM pricing chart, calculator, events ticker, and Privacy Premium Index gauge" />
+  <meta property="og:image:alt" content="Modelmeter dashboard — sunset countdown board, model lifecycle timelines, notice-buffer stats, and price history across AI providers" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@modelmeter_" />
-  <meta name="twitter:title" content="modelmeter — agent-callable LLM pricing API" />
-  <meta name="twitter:description" content="JSON API and dashboard for AI model pricing, events, and 3 years of historical cost across 11 providers." />
+  <meta name="twitter:title" content="modelmeter — the changelog of record for the AI stack" />
+  <meta name="twitter:description" content="Source-verified record of what changes in the model layer: deprecations, sunsets, price changes, releases — plus 3 years of pricing history." />
   <meta name="twitter:image" content="https://modelmeter.xyz/og-image.png" />
 
   <!-- Structured data — Google understands what we are -->
@@ -36,7 +36,7 @@
         "@id": "https://modelmeter.xyz/#website",
         "url": "https://modelmeter.xyz/",
         "name": "Modelmeter",
-        "description": "Agent-callable JSON API and dashboard for AI model pricing, events, and historical cost."
+        "description": "The changelog of record for the AI stack: source-verified events covering deprecations, price changes, and releases in the model layer, plus historical pricing."
       },
       {
         "@type": "SoftwareApplication",
@@ -44,7 +44,7 @@
         "name": "Modelmeter",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web",
-        "description": "Agent-first dashboard for AI model pricing, market events, and historical cost analysis. JSON-first API with OpenAPI spec and llms.txt discoverability.",
+        "description": "Agent-first changelog of record for the model layer: deprecations with sunset dates and migration targets, price changes, releases, and historical cost analysis. JSON-first API with OpenAPI spec, MCP server, and llms.txt discoverability.",
         "url": "https://modelmeter.xyz/",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
       },
@@ -105,6 +105,19 @@
       </div>
     </div>
 
+    <!-- Sunset board: the record's headline, full width -->
+    <div class="sunset-section">
+      <div class="panel sunset-panel">
+        <div class="sunset-header">
+          <span class="sunset-title">Sunsets · upcoming retirements & required actions</span>
+          <span class="sunset-sub" id="sunset-count">—</span>
+        </div>
+        <div class="sunset-board" id="sunset-board">
+          <div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">loading…</div>
+        </div>
+      </div>
+    </div>
+
     <!-- Body grid: left | center | right -->
     <div class="body">
 
@@ -113,8 +126,10 @@
         <div class="panel">
           <h3 class="panel-title">Stats <span class="right" id="stats-date">—</span></h3>
           <div class="stats" id="stats">
-            <div class="stat-row"><span class="lbl">models</span><span class="num" id="s-models">—</span></div>
             <div class="stat-row"><span class="lbl">events</span><span class="num" id="s-events">—</span></div>
+            <div class="stat-row"><span class="lbl">breaking</span><span class="num sev-breaking" id="s-breaking">—</span></div>
+            <div class="stat-row"><span class="lbl">action required</span><span class="num sev-action" id="s-action">—</span></div>
+            <div class="stat-row"><span class="lbl">models</span><span class="num" id="s-models">—</span></div>
             <div class="stat-row"><span class="lbl">providers</span><span class="num" id="s-providers">—</span></div>
             <div class="stat-row"><span class="lbl">snapshots</span><span class="num" id="s-snapshots">—</span></div>
             <div class="stat-row"><span class="lbl">history models</span><span class="num" id="s-history">—</span></div>
@@ -122,23 +137,31 @@
         </div>
 
         <div class="panel">
-          <h3 class="panel-title">Privacy Premium <span class="right" id="privacy-avg">—</span></h3>
-          <div class="pp-subtitle">via Venice · flagship per provider</div>
-          <div id="privacy-pairs"></div>
-          <div class="pp-cta">
-            <a id="pp-cta-link" href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" class="pp-cta-link">run privately w/ Venice →</a>
+          <h3 class="panel-title">Notice buffer</h3>
+          <div id="notice-rows"></div>
+          <div class="notice-note">median days between a retirement announcement and its shutdown · n = retirements measured · min = shortest notice ever given</div>
+        </div>
+
+        <div class="panel">
+          <h3 class="panel-title">Check your stack</h3>
+          <div class="field">
+            <label for="check-input">Model IDs you depend on</label>
+            <input id="check-input" type="text" placeholder="gpt-4o, claude-sonnet-4-6, gemini-2.5-flash" autocomplete="off" spellcheck="false" />
           </div>
+          <button class="btn" id="check-btn">Check</button>
+          <div id="check-result"></div>
         </div>
 
         <div class="panel">
           <h3 class="panel-title">About</h3>
           <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
-            Agent-first measurement and instrumentation for AI models. Pricing, events, and history exposed as JSON-first APIs that agents can call directly. Humans get a dashboard built on the same endpoints.
+            The changelog of record for the AI stack. Deprecations, sunsets, price changes, and releases in the model layer — recorded as source-verified events with dates, migration targets, and verbatim quotes. Agents call the same JSON endpoints this dashboard is built on.
           </p>
           <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
-            Data is community-maintained, source-cited, and committed to a public GitHub repo. Every entry carries a verification date so callers can judge freshness.
+            Every event cites its source, most with archive snapshots. Entries are published fast as <em>unverified</em>, then human-reviewed to <em>verified</em> — corrections are never silent. The full dataset lives in a public GitHub repo.
           </p>
           <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border-soft);">
+            <a href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ our pipeline runs privately on Venice</a>
             <a href="https://x.com/modelmeter_" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ @modelmeter_ on X</a>
             <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ github.com/modelmeters</a>
             <a href="/llms.txt" style="color: var(--text-dim); font-size: 11px;">→ llms.txt (for agents)</a>
@@ -146,12 +169,16 @@
         </div>
       </div>
 
-      <!-- CENTER column: price chart + privacy premium gauge below -->
+      <!-- CENTER column: model lifecycles / price chart + event swimlane -->
       <div class="col-center">
         <div class="panel chart-panel">
           <div class="chart-header">
-            <span class="chart-title">Price · per Mtok · over time</span>
+            <span class="chart-title" id="chart-title">Model Lifecycles</span>
             <div class="chart-controls">
+              <div class="chip-group" id="chart-view">
+                <button class="chip active" data-view="lifecycles">lifecycles</button>
+                <button class="chip" data-view="price">price</button>
+              </div>
               <div class="chip-group" id="chart-mode">
                 <button class="chip active" data-mode="across">across</button>
                 <button class="chip" data-mode="single">single</button>
@@ -208,34 +235,51 @@
 
       </div>
 
-      <!-- RIGHT column: calculator + events feed -->
+      <!-- RIGHT column: events feed -->
       <div class="col-right">
         <div class="panel">
-          <h3 class="panel-title">Calculator</h3>
-          <div class="field">
-            <label for="calc-model">Model</label>
-            <select id="calc-model" disabled><option>loading…</option></select>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="calc-input">Input tokens</label>
-              <input id="calc-input" type="number" min="0" step="1" value="1000" />
-            </div>
-            <div class="field">
-              <label for="calc-output">Output tokens</label>
-              <input id="calc-output" type="number" min="0" step="1" value="500" />
-            </div>
-          </div>
-          <button class="btn" id="calc-btn" disabled>Estimate</button>
-          <div id="calc-result"></div>
-        </div>
-
-        <div class="panel">
           <h3 class="panel-title">Events <span class="right" id="feed-context">all providers</span></h3>
+          <div class="chip-group feed-sev-chips" id="feed-severity">
+            <button class="chip active" data-sev="all">all</button>
+            <button class="chip" data-sev="breaking">breaking</button>
+            <button class="chip" data-sev="action_required">action</button>
+          </div>
           <div class="events-feed" id="events-feed">
             <div style="color: var(--muted); font-size: 11px;">loading…</div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Full-width current-price table -->
+    <div class="table-section">
+      <div class="panel table-panel">
+        <div class="table-header">
+          <span class="table-title">Prices · per Mtok · current</span>
+          <div class="table-controls">
+            <div class="chip-group" id="table-scope">
+              <button class="chip active" data-scope="direct">direct</button>
+              <button class="chip" data-scope="all">all providers</button>
+            </div>
+            <input type="search" id="table-search" placeholder="filter models…" autocomplete="off" spellcheck="false" />
+            <span class="table-count" id="table-count">—</span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="price-table" id="price-table">
+            <thead>
+              <tr>
+                <th data-key="provider" class="th-sort">Provider</th>
+                <th data-key="model" class="th-sort">Model</th>
+                <th data-key="input_cost_per_mtok" class="th-sort th-num">Input</th>
+                <th data-key="output_cost_per_mtok" class="th-sort th-num">Output</th>
+                <th data-key="context_window" class="th-sort th-num">Context</th>
+              </tr>
+            </thead>
+            <tbody id="price-table-body"></tbody>
+          </table>
+        </div>
+        <div class="table-foot">Each row links to <code>/model?id=…</code> · this view is <a href="/models">/models</a> rendered</div>
       </div>
     </div>
 
