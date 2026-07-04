@@ -76,6 +76,8 @@ const MODEL_FAMILIES = {
   "google/gemini-pro": ["google/gemini-1-5-pro","google/gemini-2-5-pro"],
   "google/gemini-flash":["google/gemini-1-5-flash","google/gemini-2-0-flash","google/gemini-2-5-flash","google/gemini-3-flash-preview","google/gemini-3-5-flash"],
   "xai/grok":          ["xai/grok-beta","xai/grok-2","xai/grok-3","xai/grok-4","xai/grok-4-3"],
+  "deepseek/chat":     ["deepseek/deepseek-chat","deepseek/deepseek-v4-flash"],
+  "deepseek/reasoner": ["deepseek/deepseek-reasoner","deepseek/deepseek-v4-pro"],
 };
 const PROVIDER_COLORS = {
   anthropic: "#ff8a65",
@@ -706,20 +708,25 @@ function renderLifecycles() {
     // with a per-provider expander; the legend always counts the full record.
     const expanded = lifeExpanded.has(provider);
     const cap = expanded ? 80 : LIFE_ROWS_PER_PROVIDER;
-    // Default view: the living — active models and scheduled sunsets. Retired
-    // and delisted history appears on expand.
-    const pool = expanded ? candidates : candidates.filter(r => !r.retired);
+    // Default view: the lineage story + what's dying — curated family chains
+    // (alive AND dead, so the generational arc survives) plus every scheduled
+    // sunset. The snapshot graveyard (dated variants, delisted previews)
+    // appears on expand. Providers without curated chains fall back to living
+    // models so their lanes aren't empty.
+    const famIds = Object.entries(MODEL_FAMILIES).filter(([k]) => k.startsWith(provider + "/")).flatMap(([, ids]) => ids);
+    const famRows = famIds.map(id => candidates.find(r => canonicalHistoryId(r.m.id) === canonicalHistoryId(id))).filter(Boolean);
     const picked = [];
     const seen = new Set();
     const take = (r) => { if (r && !seen.has(r.m.id) && picked.length < cap) { seen.add(r.m.id); picked.push(r); } };
-    const famIds = Object.entries(MODEL_FAMILIES).filter(([k]) => k.startsWith(provider + "/")).flatMap(([, ids]) => ids);
-    const famRows = famIds.map(id => pool.find(r => canonicalHistoryId(r.m.id) === canonicalHistoryId(id))).filter(Boolean);
-    // 1. current lineup (family members) 2. scheduled sunsets, nearest first
-    // 3. remaining family 4. longest-history rest
-    for (const r of famRows.filter(r => !r.retired)) take(r);
-    for (const r of pool.filter(r => r.dep).sort((a, b) => (a.dep.effective > today ? a.dep.effective : "9" + a.dep.effective).localeCompare(b.dep.effective > today ? b.dep.effective : "9" + b.dep.effective))) take(r);
-    for (const r of famRows) take(r);
-    for (const r of [...pool].sort((a, b) => b.m.history.length - a.m.history.length)) take(r);
+    if (expanded) {
+      for (const r of famRows) take(r);
+      for (const r of candidates.filter(r => r.dep).sort((a, b) => b.dep.effective.localeCompare(a.dep.effective))) take(r);
+      for (const r of [...candidates].sort((a, b) => b.m.history.length - a.m.history.length)) take(r);
+    } else {
+      for (const r of famRows) take(r);
+      for (const r of candidates.filter(r => r.dep && r.dep.effective > today).sort((a, b) => a.dep.effective.localeCompare(b.dep.effective))) take(r);
+      if (picked.length < 5) for (const r of candidates.filter(r => !r.retired).sort((a, b) => b.m.history.length - a.m.history.length)) take(r);
+    }
     picked.sort((a, b) => a.start.localeCompare(b.start));
     if (picked.length) groups.push({
       provider, rows: picked, hidden: candidates.length - picked.length, expanded,
@@ -907,7 +914,7 @@ function renderLifecycles() {
       ex.setAttribute("x", String(padLeft)); ex.setAttribute("y", String(y + 10));
       ex.setAttribute("fill", "#807c72"); ex.setAttribute("font-size", "9");
       ex.setAttribute("style", "cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em;");
-      ex.textContent = g.expanded ? "− collapse" : `+ ${g.hidden} more${g.hiddenRetired ? ` (${g.hiddenRetired} retired)` : ""}`;
+      ex.textContent = g.expanded ? "− collapse" : `+ ${g.hidden} snapshots & retired`;
       ex.addEventListener("click", () => { g.expanded ? lifeExpanded.delete(g.provider) : lifeExpanded.add(g.provider); renderChart(); });
       svg.appendChild(ex);
       y += expH;
