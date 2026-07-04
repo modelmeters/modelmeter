@@ -1,0 +1,47 @@
+name: "Modelmeter Check"
+description: >-
+  Fail CI when AI models your repo depends on are deprecated, sunsetting, or
+  already retired — powered by modelmeter.xyz, the changelog of record for the
+  AI stack. Scans your repo for known model ids (or takes an explicit list) and
+  checks them against source-verified deprecation events.
+branding:
+  icon: "alert-triangle"
+  color: "yellow"
+inputs:
+  models:
+    description: >-
+      Comma-separated model ids to check (e.g. "gpt-4o, claude-sonnet-4-6").
+      If empty, the repository is scanned for occurrences of known model ids.
+    required: false
+    default: ""
+  paths:
+    description: "Directory to scan when models is empty."
+    required: false
+    default: "."
+  fail-on:
+    description: >-
+      When to fail the job: "breaking" (any retired model or scheduled sunset
+      within warn-days), "retired" (only already-retired models), or "none"
+      (report only).
+    required: false
+    default: "breaking"
+  warn-days:
+    description: "Treat sunsets within this many days as failing (with fail-on: breaking)."
+    required: false
+    default: "120"
+  api-base:
+    description: "Modelmeter API base URL."
+    required: false
+    default: "https://modelmeter.xyz"
+runs:
+  using: "composite"
+  steps:
+    - name: Check model dependencies against the record
+      shell: bash
+      env:
+        INPUT_MODELS: ${{ inputs.models }}
+        INPUT_PATHS: ${{ inputs.paths }}
+        INPUT_FAIL_ON: ${{ inputs.fail-on }}
+        INPUT_WARN_DAYS: ${{ inputs.warn-days }}
+        INPUT_API_BASE: ${{ inputs.api-base }}
+      run: node "$GITHUB_ACTION_PATH/check.mjs"

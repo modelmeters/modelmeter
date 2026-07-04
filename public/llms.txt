@@ -9,6 +9,9 @@ Modelmeter exists so AI agents can answer questions like "is anything in my stac
 - [/estimate](https://modelmeter.xyz/estimate?model=anthropic/claude-sonnet-4-6&input=1000&output=500): cost of an LLM call given model, input tokens, output tokens. Includes upstream markup comparison for reseller entries.
 - [/models](https://modelmeter.xyz/models): list of available models with current pricing. Filters: `provider`, `include_unverified`, `include_unavailable`, `exclude_tags`.
 - [/model](https://modelmeter.xyz/model?id=anthropic/claude-opus-4-8): unified card for one model in a single call — normalized pricing, capabilities (context window, vision, reasoning, tags), availability, reseller markup vs. upstream, and a price-history summary (launch vs. current price, % change, last change date, all-time low/high). Param: `id`.
+- [/check](https://modelmeter.xyz/check?models=gpt-4o,claude-sonnet-4-6): is my stack okay? Verdict per model id: scheduled retirements with days-remaining and migration targets, past retirements, other breaking changes, or a clean bill. Param: `models` (comma-separated, max 50). THE endpoint to call at startup or in CI.
+- [/deprecations](https://modelmeter.xyz/deprecations): per-model retirement rows — which model dies when, with runway and migration target. Filters: `provider`, `model`, `status` (`scheduled` default | `retired` | `all`), `limit`.
+- [/feed.xml](https://modelmeter.xyz/feed.xml) + [/feed.json](https://modelmeter.xyz/feed.json): RSS 2.0 / JSON Feed 1.1 of breaking and action-required events — plug into Feedly, Slack RSS, or email bridges.
 - [/events](https://modelmeter.xyz/events): the changelog of record for the model layer — deprecations, price changes, launches, plus surrounding market events (funding, partnerships, regulatory). Each event has a `severity` (`breaking` | `action_required` | `informational`), `announced_at`/`effective_at` dates, sources, and a verification `status`. Filters: `provider`, `type`, `model`, `severity`, `since`, `until`, `status` (`verified` default | `unverified` | `all` | `corrected`), `limit`.
 - [/history](https://modelmeter.xyz/history): historical pricing time-series per model. Filters: `model`, `provider`, `since`, `until`.
 - [/pricing.json](https://modelmeter.xyz/pricing.json): raw current pricing snapshot
@@ -22,7 +25,7 @@ Modelmeter is also a remote MCP server. Point any MCP client (Claude, Hermes, et
 
 - Endpoint: `https://modelmeter.xyz/mcp` (Streamable HTTP transport, JSON-RPC 2.0, no auth)
 
-Tools exposed: `estimate_cost`, `get_model`, `list_models`, `get_price_history`, `list_events`.
+Tools exposed: `check_model_dependencies` (is my stack okay?), `list_deprecations`, `estimate_cost`, `get_model`, `list_models`, `get_price_history`, `list_events`.
 Start with `list_models` to discover ids, then `get_model` or `estimate_cost`. The MCP tools return
 the same data as the REST endpoints above — use whichever your runtime prefers.
 

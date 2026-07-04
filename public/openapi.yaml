@@ -96,6 +96,84 @@ paths:
           description: Missing `id` parameter.
         "404":
           description: Model not found.
+  /check:
+    get:
+      summary: Is my stack okay?
+      description: |
+        The record's flagship question. For each model id: scheduled retirements
+        with days-remaining and migration targets, past retirements, other
+        breaking/action-required changes, or a clean bill. Id matching tolerates
+        dots vs dashes, dated snapshot suffixes, and bare or provider-prefixed
+        forms. Also available as the MCP tool `check_model_dependencies` and the
+        GitHub Action `modelmeters/modelmeter/actions/check`.
+      parameters:
+        - name: models
+          in: query
+          required: true
+          description: Comma-separated model ids, max 50 (e.g. `gpt-4o,claude-sonnet-4-6`).
+          schema: { type: string }
+      responses:
+        "200":
+          description: Verdict per model plus a summary.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  checked_at: { type: string, format: date }
+                  summary: { type: object }
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        query: { type: string }
+                        model_id: { type: string, description: "Resolved catalog id, null if unknown." }
+                        status: { type: string, enum: [ok, scheduled, retired, affected, deprecated_in_catalog, unknown] }
+                        days_remaining: { type: integer }
+                        effective_at: { type: string, format: date }
+                        migration_target: { type: string }
+                        events: { type: array, items: { type: object } }
+        "400":
+          description: Missing or invalid models parameter.
+  /deprecations:
+    get:
+      summary: Per-model retirement rows — which model dies when.
+      description: |
+        The events record expanded to one row per affected model, with runway
+        (days_remaining), migration target, source, and verification status.
+      parameters:
+        - name: provider
+          in: query
+          required: false
+          schema: { type: string }
+        - name: model
+          in: query
+          required: false
+          schema: { type: string }
+        - name: status
+          in: query
+          required: false
+          schema: { type: string, enum: [scheduled, retired, all], default: scheduled }
+        - name: limit
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 500, default: 200 }
+      responses:
+        "200":
+          description: Deprecation rows sorted by shutdown date.
+          content:
+            application/json:
+              schema: { type: object }
+  /feed.json:
+    get:
+      summary: JSON Feed 1.1 of operational events (breaking + action_required). RSS twin at /feed.xml.
+      responses:
+        "200":
+          description: JSON Feed.
+          content:
+            application/feed+json:
+              schema: { type: object }
   /events:
     get:
       summary: The changelog of record for the model layer.

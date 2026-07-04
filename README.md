@@ -13,6 +13,9 @@ Built primarily for AI agents to call programmatically, secondarily for humans t
 - `GET /estimate?model=X&input=N&output=M` — token cost for a hypothetical call, including upstream-markup comparison for reseller models
 - `GET /models` — current model catalog, with filters
 - `GET /model?id=X` — unified card for one model: normalized pricing, capabilities (context window, vision, reasoning, tags), availability, reseller markup, and a price-history summary (launch vs. current price, % change, all-time low/high)
+- `GET /check?models=gpt-4o,claude-sonnet-4-6` — **is my stack okay?** Verdict per model: scheduled retirements with days-remaining and migration targets, past retirements, breaking changes, or a clean bill
+- `GET /deprecations` — per-model retirement rows: which model dies when, with runway and migration target
+- `GET /feed.xml` / `GET /feed.json` — RSS 2.0 / JSON Feed 1.1 of breaking and action-required events
 - `GET /events` — the changelog of record: deprecations, price changes, launches and surrounding market events, each with `severity` (`breaking` | `action_required` | `informational`), `announced_at`/`effective_at` dates, sources with quotes, and verification `status`. Filters: `provider`, `type`, `model`, `severity`, `since`, `until`, `status`
 - `GET /history` — historical pricing time-series per model, with filters
 - `GET /pricing.json` — raw pricing snapshot
@@ -20,6 +23,20 @@ Built primarily for AI agents to call programmatically, secondarily for humans t
 - `GET /history.json` — raw historical time-series
 
 See [`public/openapi.yaml`](public/openapi.yaml) for the full spec.
+
+## GitHub Action
+
+Fail CI when a model your repo depends on is deprecated, sunsetting, or already retired:
+
+```yaml
+- uses: modelmeters/modelmeter/actions/check@main
+  # with:
+  #   models: "gpt-4o, claude-sonnet-4-6"   # optional — otherwise the repo is scanned for known model ids
+  #   fail-on: breaking                      # breaking (default) | retired | none
+  #   warn-days: "120"                       # sunsets within N days fail; beyond N warn
+```
+
+The action scans your repo for known model ids (catalog + every model named in a deprecation event, dashed and dotted spellings), calls `/check`, annotates the exact `file:line` of each affected model, writes a job-summary table with migration targets, and exits nonzero per your `fail-on` policy.
 
 ## MCP server
 
@@ -29,7 +46,7 @@ Modelmeter is also a remote [MCP](https://modelcontextprotocol.io) server, so an
 https://modelmeter.xyz/mcp
 ```
 
-Tools: `estimate_cost`, `get_model`, `list_models`, `get_price_history`, `list_events`. Start with `list_models` to discover ids, then `get_model` or `estimate_cost`. The MCP tools return the same data as the REST endpoints above — use whichever your runtime prefers.
+Tools: `check_model_dependencies`, `list_deprecations`, `estimate_cost`, `get_model`, `list_models`, `get_price_history`, `list_events`. Start with `list_models` to discover ids, then `get_model` or `estimate_cost`. The MCP tools return the same data as the REST endpoints above — use whichever your runtime prefers.
 
 ## Datasets
 
