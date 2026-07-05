@@ -443,14 +443,13 @@ button, input, select { font-family: inherit; font-size: inherit; }
 
 
 /* Left rail slimmer */
-.body { grid-template-columns: 230px 1fr; }
+.body { grid-template-columns: 285px 1fr; }
 .col-left { min-width: 0; }
 .col-center { min-width: 0; }
 
 /* Lifecycles chart: keep legible on narrow screens via horizontal scroll */
-.chart-canvas-wrap { overflow-x: auto; }
+.svg-scroll { overflow-x: auto; }
 .chart-svg { min-width: 760px; }
-.swimlane-canvas-wrap { overflow-x: auto; }
 .swimlane-svg { min-width: 760px; }
 
 /* ============ mobile ============ */
@@ -486,9 +485,9 @@ button, input, select { font-family: inherit; font-size: inherit; }
 /* hero split: info | divider | sunsets */
 .hero { grid-template-columns: 1fr 1.15fr; gap: 0; }
 .hero-copy { padding: 24px 24px 20px 0; }
-.hero-sunsets { border-left: 1px solid var(--border-strong); padding: 20px 0 16px 24px; min-width: 0; display: flex; flex-direction: column; }
+.hero-sunsets { border-left: 1px solid var(--border-strong); padding: 20px 0 16px 24px; min-width: 0; position: relative; }
 .hero-sunsets .sunset-header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 8px; }
-.hero-sunsets .sunset-board { display: grid; align-content: start; flex: 1; max-height: 156px; overflow-y: auto; padding-right: 4px; }
+.hero-sunsets .sunset-board { display: grid; align-content: start; position: absolute; top: 52px; bottom: 14px; left: 24px; right: 0; overflow-y: auto; padding-right: 4px; }
 .hero-sunsets .sunset-board::-webkit-scrollbar { width: 6px; }
 .hero-sunsets .sunset-board::-webkit-scrollbar-track { background: var(--bg); }
 .hero-sunsets .sunset-board::-webkit-scrollbar-thumb { background: var(--border-strong); }
@@ -552,6 +551,7 @@ button, input, select { font-family: inherit; font-size: inherit; }
   .hero { grid-template-columns: 1fr; }
   .hero-copy { padding: 20px 0 16px; }
   .hero-sunsets { border-left: none; border-top: 1px solid var(--border-strong); padding: 16px 0 12px; }
+  .hero-sunsets .sunset-board { position: static; max-height: 220px; }
   .feed-rail-panel { max-height: 480px; }
 }
 @media (max-width: 720px) {

@@ -185,7 +185,6 @@ function renderStats() {
   document.getElementById("s-action").textContent = events.filter(e => e.severity === "action_required").length || "—";
   const providers = new Set(currentModels.map(m => m.provider));
   document.getElementById("s-providers").textContent = providers.size || "—";
-  document.getElementById("s-snapshots").textContent = history?.snapshot_count ?? "—";
   document.getElementById("s-history").textContent = history?.model_count ?? "—";
 }
 

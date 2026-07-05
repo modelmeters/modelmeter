@@ -107,7 +107,7 @@
     <div class="hero">
       <div class="hero-copy">
         <h1>The AI Changelog</h1>
-        <p>Source-verified deprecations, sunsets, silent model swaps, and price changes — with countdowns, migration targets, and receipts. Built for agents, friendly to humans.</p>
+        <p>Source-verified deprecations, sunsets, silent model swaps, and price changes - with countdowns, migration targets, and receipts. Built for agents, friendly to humans.</p>
         <div class="hero-links">
           <a href="/llms.txt">for agents ↗</a>
           <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener">github ↗</a>
@@ -116,13 +116,12 @@
         <div class="hero-stats">
           <div class="hero-stats-title">Stats <span id="stats-date">—</span></div>
           <div class="stats hero-stats-grid" id="stats">
-            <div class="stat-row"><span class="lbl">events</span><span class="num" id="s-events">—</span></div>
-            <div class="stat-row"><span class="lbl">breaking</span><span class="num sev-breaking" id="s-breaking">—</span></div>
-            <div class="stat-row"><span class="lbl">action required</span><span class="num sev-action" id="s-action">—</span></div>
             <div class="stat-row"><span class="lbl">active models</span><span class="num" id="s-models">—</span></div>
-            <div class="stat-row"><span class="lbl">providers</span><span class="num" id="s-providers">—</span></div>
-            <div class="stat-row"><span class="lbl">snapshots</span><span class="num" id="s-snapshots">—</span></div>
             <div class="stat-row"><span class="lbl">history models</span><span class="num" id="s-history">—</span></div>
+            <div class="stat-row"><span class="lbl">events</span><span class="num" id="s-events">—</span></div>
+            <div class="stat-row"><span class="lbl">providers</span><span class="num" id="s-providers">—</span></div>
+            <div class="stat-row"><span class="lbl">action required</span><span class="num sev-action" id="s-action">—</span></div>
+            <div class="stat-row"><span class="lbl">breaking</span><span class="num sev-breaking" id="s-breaking">—</span></div>
           </div>
         </div>
       </div>
@@ -186,7 +185,7 @@
             <div class="chart-empty" id="chart-empty">
               <span class="loader">⟳</span> waiting for historical pricing data…
             </div>
-            <svg class="chart-svg" id="chart-svg" style="display: none;" aria-label="Price over time chart"></svg>
+            <div class="svg-scroll"><svg class="chart-svg" id="chart-svg" style="display: none;" aria-label="Model lifecycles chart"></svg></div>
             <div class="tooltip" id="chart-tooltip" role="tooltip"></div>
           </div>
           <div class="chart-legend" id="chart-legend"></div>
@@ -198,7 +197,7 @@
             <div id="swimlane-cat-legend" class="swimlane-cat-legend"></div>
           </div>
           <div class="swimlane-canvas-wrap" style="position: relative;">
-            <svg class="swimlane-svg" id="swimlane-svg" aria-label="Event timeline swimlane"></svg>
+            <div class="svg-scroll"><svg class="swimlane-svg" id="swimlane-svg" aria-label="Event timeline swimlane"></svg></div>
             <div class="tooltip" id="swimlane-tooltip" role="tooltip"></div>
           </div>
         </div>
@@ -251,10 +250,10 @@
           <button class="modal-close" id="about-close" aria-label="Close">✕</button>
         </div>
           <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
-            The changelog of record for the AI stack. Deprecations, sunsets, price changes, and releases in the model layer — recorded as source-verified events with dates, migration targets, and verbatim quotes. Agents call the same JSON endpoints this dashboard is built on.
+            The changelog of record for the AI stack. Deprecations, sunsets, price changes, and releases in the model layer - recorded as source-verified events with dates, migration targets, and verbatim quotes. Agents call the same JSON endpoints this dashboard is built on.
           </p>
           <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
-            Every event cites its source, most with archive snapshots. Entries are published fast as <em>unverified</em>, then human-reviewed to <em>verified</em> — corrections are never silent. The full dataset lives in a public GitHub repo.
+            Every event cites its source, most with archive snapshots. Entries are published fast as <em>unverified</em>, then human-reviewed to <em>verified</em> - corrections are never silent. The full dataset lives in a public GitHub repo.
           </p>
           <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border-soft);">
             <a href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ our pipeline runs on Venice</a>
@@ -294,6 +293,8 @@
       <a href="/history">HISTORY</a>
       <span class="sep">·</span>
       <a href="https://github.com/modelmeters/modelmeter">GITHUB</a>
+      <span class="sep">·</span>
+      <a href="https://x.com/modelmeter_" target="_blank" rel="noopener">X</a>
     </div>
   </div>
 
