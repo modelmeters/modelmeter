@@ -26637,35 +26637,6 @@
       "updated_at": "2026-07-04"
     },
     {
-      "id": "2026-07-anthropic-s-fable-5-platform-restored-after-export-control-r",
-      "announced_at": "2026-07-03",
-      "type": "regulatory_action",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [],
-      "headline": "Anthropic's Fable 5 platform restored after export control-related outage",
-      "summary": "Anthropic's Fable 5 platform was temporarily taken offline due to an export control intervention but has since been restored. The incident highlights regulatory scrutiny affecting AI platform availability and international access.",
-      "sources": [
-        {
-          "url": "https://nationalinterest.org/blog/buzz/anthropics-fable-5-platform-back-online-after-export-control-cutoff-ps-070326"
-        }
-      ],
-      "tags": [
-        "export-controls",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-07-04",
-      "updated_at": "2026-07-04"
-    },
-    {
       "id": "2026-07-other-keling-ai-raises-nearly-3-billion-in-second-largest-single-r",
       "announced_at": "2026-07-03",
       "type": "funding",
@@ -26694,34 +26665,6 @@
       "updated_at": "2026-07-04"
     },
     {
-      "id": "2026-07-venice-ai-raises-65m-series-a-at-1b-valuation-led-by-dragonf",
-      "announced_at": "2026-07-01",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "venice"
-      ],
-      "models": [],
-      "headline": "Venice AI raises $65M Series A at $1B valuation led by Dragonfly",
-      "summary": "Venice AI secured $65 million in Series A funding at a $1 billion equity valuation, led by Dragonfly. This investment marks a significant milestone in scaling its AI infrastructure and services.",
-      "sources": [
-        {
-          "url": "https://www.theblock.co/post/406934/venice-ai-funding-equity-valuation-dragonfly"
-        }
-      ],
-      "tags": [
-        "major"
-      ],
-      "impact": {
-        "magnitude": "structural",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-07-04",
-      "updated_at": "2026-07-04"
-    },
-    {
       "id": "2026-07-anthropic-claude-fable-5-from-anthropic-becomes-available-on-amazon-we",
       "announced_at": "2026-07-01",
       "type": "model_launch",
@@ -26744,41 +26687,6 @@
       "tags": [
         "major",
         "cloud-integration"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-07-04",
-      "updated_at": "2026-07-04"
-    },
-    {
-      "id": "2026-06-anthropic-claude-models-become-generally-available-on-microsoft-azure-",
-      "announced_at": "2026-06-29",
-      "type": "partnership",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "anthropic",
-        "microsoft"
-      ],
-      "models": [
-        "anthropic/claude-3.5-sonnet",
-        "anthropic/claude-3.5-haiku",
-        "anthropic/claude-3-opus"
-      ],
-      "headline": "Claude models become generally available on Microsoft Azure AI Foundry",
-      "summary": "Anthropic's Claude models are now generally available through Microsoft's Azure AI Foundry platform, expanding enterprise access to its AI models. This integration enables Azure customers to leverage Claude across various workloads with supported fine-tuning, embeddings, and guardrail capabilities.",
-      "sources": [
-        {
-          "url": "https://seekingalpha.com/news/4608259-anthropic-says-claude-now-generally-available-in-microsoft-foundry"
-        }
-      ],
-      "tags": [
-        "major",
-        "enterprise",
-        "azure"
       ],
       "impact": {
         "magnitude": "major",
