@@ -100,10 +100,26 @@
       </div>
     </div>
 
-    <!-- Price ticker -->
-    <div class="ticker ticker-slow" id="price-ticker">
-      <div class="ticker-track" id="price-ticker-track">
-        <span class="ticker-item"><span class="tick-date">loading prices…</span></span>
+
+
+    <!-- Hero: what this is + the flagship action -->
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>The changelog of record for the AI stack</h1>
+        <p>Source-verified deprecations, sunsets, silent model swaps, and price changes — with countdowns, migration targets, and receipts. Built for agents, friendly to humans.</p>
+        <div class="hero-links">
+          <a href="/llms.txt">for agents ↗</a>
+          <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener">github ↗</a>
+          <a href="/feed.xml">rss ↗</a>
+        </div>
+      </div>
+      <div class="hero-check">
+        <label for="check-input">Check your stack</label>
+        <div class="hero-check-row">
+          <input id="check-input" type="text" placeholder="gpt-4o, claude-sonnet-4-6, gemini-2.5-flash" autocomplete="off" spellcheck="false" />
+          <button class="btn" id="check-btn">Check</button>
+        </div>
+        <div id="check-result"></div>
       </div>
     </div>
 
@@ -145,16 +161,6 @@
         </div>
 
         <div class="panel">
-          <h3 class="panel-title">Check your stack</h3>
-          <div class="field">
-            <label for="check-input">Model IDs you depend on</label>
-            <input id="check-input" type="text" placeholder="gpt-4o, claude-sonnet-4-6, gemini-2.5-flash" autocomplete="off" spellcheck="false" />
-          </div>
-          <button class="btn" id="check-btn">Check</button>
-          <div id="check-result"></div>
-        </div>
-
-        <div class="panel">
           <h3 class="panel-title">About</h3>
           <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
             The changelog of record for the AI stack. Deprecations, sunsets, price changes, and releases in the model layer — recorded as source-verified events with dates, migration targets, and verbatim quotes. Agents call the same JSON endpoints this dashboard is built on.
@@ -171,8 +177,13 @@
         </div>
       </div>
 
-      <!-- CENTER column: model lifecycles / price chart + event swimlane -->
+      <!-- MAIN column: tabbed lifecycles / prices -->
       <div class="col-center">
+        <div class="main-tabs chip-group" id="main-view">
+          <button class="chip active" data-view="lifecycles">🧬 lifecycles</button>
+          <button class="chip" data-view="prices">💰 prices</button>
+        </div>
+        <div id="lifecycles-wrap">
         <div class="panel chart-panel">
           <div class="chart-header">
             <span class="chart-title" id="chart-title">Model Lifecycles</span>
@@ -204,22 +215,8 @@
             <div class="tooltip" id="swimlane-tooltip" role="tooltip"></div>
           </div>
         </div>
-
-      </div>
-
-      <!-- RIGHT column: events feed -->
-      <div class="col-right">
-        <div class="panel">
-          <h3 class="panel-title">Events <span class="right" id="feed-context">all providers</span></h3>
-          <div class="events-feed" id="events-feed">
-            <div style="color: var(--muted); font-size: 11px;">loading…</div>
-          </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Full-width current-price table -->
-    <div class="table-section">
+        <div id="prices-wrap" style="display: none;">
       <div class="panel table-panel">
         <div class="table-header">
           <span class="table-title">Prices · per Mtok · current</span>
@@ -248,11 +245,26 @@
         </div>
         <div class="table-foot">Each row links to <code>/model?id=…</code> · this view is <a href="/models">/models</a> rendered</div>
       </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- Events timeline removed; events still surface in the price chart, ticker, and right-column feed. -->
     <!-- Re-add later as an overlay on the price chart if desired. -->
 
+
+
+    <!-- Events: full-width card grid -->
+    <div class="feed-section">
+      <div class="panel feed-panel">
+        <h3 class="panel-title">Events <span class="right" id="feed-context">all providers · newest first</span></h3>
+        <div class="events-feed" id="events-feed">
+          <div style="color: var(--muted); font-size: 11px;">loading…</div>
+        </div>
+        <div class="feed-more" id="feed-more" style="display: none;">▼ show more</div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <div class="footer-bar">

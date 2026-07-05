@@ -103,6 +103,7 @@ async function boot() {
   renderCheck();
   renderEventsFeed();
   renderChartControls();
+  wireMainTabs();
   renderChart();
   setupPriceTable();
   renderPriceTable();
@@ -454,11 +455,18 @@ function runCheck() {
 }
 
 // ---------- events feed (right column) ----------
+let feedExpanded = false;
 function renderEventsFeed() {
   const wrap = document.getElementById("events-feed");
   const ctxLabel = document.getElementById("feed-context");
   ctxLabel.textContent = "all providers · newest first";
-  const filtered = [...events].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 60);
+  const all = [...events].sort((a, b) => b.announced_at.localeCompare(a.announced_at));
+  const filtered = all.slice(0, feedExpanded ? 60 : 12);
+  const more = document.getElementById("feed-more");
+  if (more) {
+    more.style.display = all.length > 12 && !feedExpanded ? "" : "none";
+    if (!more._wired) { more._wired = true; more.addEventListener("click", () => { feedExpanded = true; renderEventsFeed(); }); }
+  }
   if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no matching events</div>'; return; }
   wrap.innerHTML = filtered.map(ev => {
     const url = ev.sources?.[0]?.url || "#";
@@ -486,22 +494,20 @@ function renderChartControls() {
 function renderChart() {
   renderLifecycles();
   renderEventSwimlane();
-  syncFeedHeight();
 }
 
-// The events feed spans from the top of the lifecycles panel to the bottom
-// of the events swimlane — the full center column, no gap under the feed.
-// Re-synced on every render so the edges stay aligned through expander
-// clicks and resizes; the feed scrolls internally.
-function syncFeedHeight() {
-  if (typeof document.querySelector !== "function") return;
-  const chartPanel = document.querySelector(".chart-panel");
-  const swimPanel = document.querySelector(".swimlane-panel");
-  const feedPanel = document.querySelector(".col-right .panel");
-  if (!chartPanel || !swimPanel || !feedPanel || !chartPanel.offsetHeight) return;
-  const height = swimPanel.getBoundingClientRect().bottom - chartPanel.getBoundingClientRect().top;
-  feedPanel.style.height = Math.round(height) + "px";
+function wireMainTabs() {
+  document.querySelectorAll("#main-view .chip").forEach(c => {
+    c.addEventListener("click", () => {
+      document.querySelectorAll("#main-view .chip").forEach(x => x.classList.toggle("active", x === c));
+      const prices = c.dataset.view === "prices";
+      document.getElementById("lifecycles-wrap").style.display = prices ? "none" : "";
+      document.getElementById("prices-wrap").style.display = prices ? "" : "none";
+      if (!prices) renderChart(); // svg width recalc after being hidden
+    });
+  });
 }
+
 
 // ---------- model lifecycles ----------
 // One lane per model: bar from first-tracked to shutdown (or today), with the
