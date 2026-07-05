@@ -190,8 +190,6 @@ function renderStats() {
 }
 
 // ---------- sunset board ----------
-const SUNSET_WINDOW_DAYS = 14;
-let sunsetExpanded = false;
 function renderSunsets() {
   const board = document.getElementById("sunset-board");
   const today = new Date().toISOString().slice(0, 10);
@@ -204,9 +202,7 @@ function renderSunsets() {
   if (!upcoming.length) { board.innerHTML = '<div style="color: var(--muted); font-size: 11px; padding: 12px 0;">no scheduled retirements on record</div>'; return; }
 
   const days = (ev) => Math.ceil((new Date(ev.effective_at) - new Date(today)) / 864e5);
-  const near = upcoming.filter(ev => days(ev) <= SUNSET_WINDOW_DAYS);
-  const shown = sunsetExpanded ? upcoming : (near.length ? near : upcoming.slice(0, 3));
-  const rows = shown.map(ev => {
+  const rows = upcoming.map(ev => {
     const d = days(ev);
     const daysColor = d <= 30 ? "var(--down)" : d <= 90 ? "var(--warn)" : "var(--text-dim)";
     const prov = ev.providers?.[0] || "?";
@@ -222,11 +218,7 @@ function renderSunsets() {
       <span class="sun-what"><span class="sun-prov-inline">${escapeHtml(provLabel)}</span> ${escapeHtml(shorten(what, 60))}${target}</span>
     </div>`;
   });
-  const hidden = upcoming.length - shown.length;
-  const more = (hidden > 0 || sunsetExpanded)
-    ? `<div class="sun-more" id="sun-more">${sunsetExpanded ? "▲ next two weeks only" : `▼ show all ${upcoming.length} scheduled`}</div>` : "";
-  board.innerHTML = rows.join("") + more;
-  document.getElementById("sun-more")?.addEventListener("click", (e) => { e.stopPropagation(); sunsetExpanded = !sunsetExpanded; renderSunsets(); });
+  board.innerHTML = rows.join("");
 }
 
 // ---------- notice-given panel ----------

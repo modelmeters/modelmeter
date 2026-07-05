@@ -113,10 +113,22 @@
           <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener">github ↗</a>
           <a href="/feed.xml">rss ↗</a>
         </div>
+        <div class="hero-stats">
+          <div class="hero-stats-title">Stats <span id="stats-date">—</span></div>
+          <div class="stats hero-stats-grid" id="stats">
+            <div class="stat-row"><span class="lbl">events</span><span class="num" id="s-events">—</span></div>
+            <div class="stat-row"><span class="lbl">breaking</span><span class="num sev-breaking" id="s-breaking">—</span></div>
+            <div class="stat-row"><span class="lbl">action required</span><span class="num sev-action" id="s-action">—</span></div>
+            <div class="stat-row"><span class="lbl">active models</span><span class="num" id="s-models">—</span></div>
+            <div class="stat-row"><span class="lbl">providers</span><span class="num" id="s-providers">—</span></div>
+            <div class="stat-row"><span class="lbl">snapshots</span><span class="num" id="s-snapshots">—</span></div>
+            <div class="stat-row"><span class="lbl">history models</span><span class="num" id="s-history">—</span></div>
+          </div>
+        </div>
       </div>
       <div class="hero-sunsets">
         <div class="sunset-header">
-          <span class="sunset-title">Sunsets · next two weeks</span>
+          <span class="sunset-title">Upcoming sunsets</span>
           <span class="sunset-sub" id="sunset-count">—</span>
         </div>
         <div class="sunset-board" id="sunset-board">
@@ -138,19 +150,6 @@
 
       <!-- LEFT column: stats + markup spread -->
       <div class="col-left">
-        <div class="panel">
-          <h3 class="panel-title">Stats <span class="right" id="stats-date">—</span></h3>
-          <div class="stats" id="stats">
-            <div class="stat-row"><span class="lbl">events</span><span class="num" id="s-events">—</span></div>
-            <div class="stat-row"><span class="lbl">breaking</span><span class="num sev-breaking" id="s-breaking">—</span></div>
-            <div class="stat-row"><span class="lbl">action required</span><span class="num sev-action" id="s-action">—</span></div>
-            <div class="stat-row"><span class="lbl">active models</span><span class="num" id="s-models">—</span></div>
-            <div class="stat-row"><span class="lbl">providers</span><span class="num" id="s-providers">—</span></div>
-            <div class="stat-row"><span class="lbl">snapshots</span><span class="num" id="s-snapshots">—</span></div>
-            <div class="stat-row"><span class="lbl">history models</span><span class="num" id="s-history">—</span></div>
-          </div>
-        </div>
-
         <div class="panel">
           <h3 class="panel-title">Notice buffer</h3>
           <div id="notice-rows"></div>
