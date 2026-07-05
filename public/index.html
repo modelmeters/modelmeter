@@ -86,6 +86,7 @@
           <span class="name">modelmeter</span>
           <span class="ver">v1.0</span>
         </div>
+        <button class="info-zone" id="about-open" aria-label="About modelmeter" title="About">i</button>
       </div>
       <div class="status-pill">
         <span class="dot"></span>
@@ -113,28 +114,24 @@
           <a href="/feed.xml">rss ↗</a>
         </div>
       </div>
-      <div class="hero-check">
-        <label for="check-input">Check your stack</label>
-        <div class="hero-check-row">
-          <input id="check-input" type="text" placeholder="gpt-4o, claude-sonnet-4-6, gemini-2.5-flash" autocomplete="off" spellcheck="false" />
-          <button class="btn" id="check-btn">Check</button>
-        </div>
-        <div id="check-result"></div>
-      </div>
-    </div>
-
-    <!-- Sunset board: the record's headline, full width -->
-    <div class="sunset-section">
-      <div class="panel sunset-panel">
+      <div class="hero-sunsets">
         <div class="sunset-header">
-          <span class="sunset-title">Sunsets · upcoming retirements & required actions</span>
+          <span class="sunset-title">Sunsets · next two weeks</span>
           <span class="sunset-sub" id="sunset-count">—</span>
         </div>
         <div class="sunset-board" id="sunset-board">
-          <div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">loading…</div>
+          <div style="color: var(--muted); font-size: 11px; padding: 12px 0;">loading…</div>
         </div>
       </div>
     </div>
+
+    <!-- Check your stack: full-width bar above the chart -->
+    <div class="check-bar">
+      <label for="check-input">Check your stack</label>
+      <input id="check-input" type="text" placeholder="gpt-4o, claude-sonnet-4-6, gemini-2.5-flash" autocomplete="off" spellcheck="false" />
+      <button class="btn" id="check-btn">Check</button>
+    </div>
+    <div class="check-results-wrap"><div id="check-result"></div></div>
 
     <!-- Body grid: left | center | right -->
     <div class="body">
@@ -160,19 +157,10 @@
           <div class="notice-note">median days between a retirement announcement and its shutdown · n = retirements measured · min = shortest notice ever given</div>
         </div>
 
-        <div class="panel">
-          <h3 class="panel-title">About</h3>
-          <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
-            The changelog of record for the AI stack. Deprecations, sunsets, price changes, and releases in the model layer — recorded as source-verified events with dates, migration targets, and verbatim quotes. Agents call the same JSON endpoints this dashboard is built on.
-          </p>
-          <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
-            Every event cites its source, most with archive snapshots. Entries are published fast as <em>unverified</em>, then human-reviewed to <em>verified</em> — corrections are never silent. The full dataset lives in a public GitHub repo.
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border-soft);">
-            <a href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ our pipeline runs on Venice</a>
-            <a href="https://x.com/modelmeter_" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ @modelmeter_ on X</a>
-            <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ github.com/modelmeters</a>
-            <a href="/llms.txt" style="color: var(--text-dim); font-size: 11px;">→ llms.txt (for agents)</a>
+        <div class="panel feed-rail-panel">
+          <h3 class="panel-title">Events <span class="right" id="feed-context">newest first</span></h3>
+          <div class="events-feed" id="events-feed">
+            <div style="color: var(--muted); font-size: 11px;">loading…</div>
           </div>
         </div>
       </div>
@@ -255,14 +243,26 @@
 
 
 
-    <!-- Events: full-width card grid -->
-    <div class="feed-section">
-      <div class="panel feed-panel">
-        <h3 class="panel-title">Events <span class="right" id="feed-context">all providers · newest first</span></h3>
-        <div class="events-feed" id="events-feed">
-          <div style="color: var(--muted); font-size: 11px;">loading…</div>
+
+    <!-- About modal -->
+    <div class="modal-overlay" id="about-modal" style="display: none;">
+      <div class="modal" role="dialog" aria-label="About modelmeter">
+        <div class="modal-head">
+          <h3 class="panel-title" style="margin: 0;">About</h3>
+          <button class="modal-close" id="about-close" aria-label="Close">✕</button>
         </div>
-        <div class="feed-more" id="feed-more" style="display: none;">▼ show more</div>
+          <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
+            The changelog of record for the AI stack. Deprecations, sunsets, price changes, and releases in the model layer — recorded as source-verified events with dates, migration targets, and verbatim quotes. Agents call the same JSON endpoints this dashboard is built on.
+          </p>
+          <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
+            Every event cites its source, most with archive snapshots. Entries are published fast as <em>unverified</em>, then human-reviewed to <em>verified</em> — corrections are never silent. The full dataset lives in a public GitHub repo.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border-soft);">
+            <a href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ our pipeline runs on Venice</a>
+            <a href="https://x.com/modelmeter_" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ @modelmeter_ on X</a>
+            <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ github.com/modelmeters</a>
+            <a href="/llms.txt" style="color: var(--text-dim); font-size: 11px;">→ llms.txt (for agents)</a>
+          </div>
       </div>
     </div>
 

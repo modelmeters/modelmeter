@@ -103,6 +103,7 @@ async function boot() {
   renderEventsFeed();
   renderChartControls();
   wireMainTabs();
+  wireAbout();
   renderChart();
   setupPriceTable();
   renderPriceTable();
@@ -189,7 +190,7 @@ function renderStats() {
 }
 
 // ---------- sunset board ----------
-const SUNSET_COLLAPSED = 10;
+const SUNSET_WINDOW_DAYS = 14;
 let sunsetExpanded = false;
 function renderSunsets() {
   const board = document.getElementById("sunset-board");
@@ -199,35 +200,31 @@ function renderSunsets() {
     .sort((a, b) => a.effective_at.localeCompare(b.effective_at));
   const allVerified = upcoming.length && upcoming.every(e => e.status === "verified");
   document.getElementById("sunset-count").innerHTML = upcoming.length
-    ? `${upcoming.length} scheduled${allVerified ? ' · <span style="color: var(--up)">all human-verified ✓</span>' : ""}` : "";
-  if (!upcoming.length) { board.innerHTML = '<div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">no scheduled retirements on record</div>'; return; }
+    ? `${upcoming.length} scheduled${allVerified ? ' · <span style="color: var(--up)">verified ✓</span>' : ""}` : "";
+  if (!upcoming.length) { board.innerHTML = '<div style="color: var(--muted); font-size: 11px; padding: 12px 0;">no scheduled retirements on record</div>'; return; }
 
-  const shown = sunsetExpanded ? upcoming : upcoming.slice(0, SUNSET_COLLAPSED);
+  const days = (ev) => Math.ceil((new Date(ev.effective_at) - new Date(today)) / 864e5);
+  const near = upcoming.filter(ev => days(ev) <= SUNSET_WINDOW_DAYS);
+  const shown = sunsetExpanded ? upcoming : (near.length ? near : upcoming.slice(0, 3));
   const rows = shown.map(ev => {
-    const days = Math.ceil((new Date(ev.effective_at) - new Date(today)) / 864e5);
-    const daysColor = days <= 30 ? "var(--down)" : days <= 90 ? "var(--warn)" : "var(--text-dim)";
+    const d = days(ev);
+    const daysColor = d <= 30 ? "var(--down)" : d <= 90 ? "var(--warn)" : "var(--text-dim)";
     const prov = ev.providers?.[0] || "?";
     const maker = ev.providers?.[1];
     const models = (ev.models || []).map(m => m.split("/").slice(1).join("/"));
-    const what = models.length
-      ? `<span class="models">${escapeHtml(shorten(models.join(", "), 72))}</span>`
-      : escapeHtml(shorten(ev.headline, 72));
-    const target = ev.migration_target
-      ? `<span class="arrow">→</span>${escapeHtml(ev.migration_target.split("/").slice(1).join("/"))}`
-      : `<span class="arrow" style="opacity:.5">·</span>`;
+    const what = models.length ? models.join(", ") : ev.headline;
+    const provLabel = `${PROVIDER_LABELS[prov] || prov}${maker ? ` · ${PROVIDER_LABELS[maker] || maker}` : ""}`;
+    const target = ev.migration_target ? ` <span class="sun-target-inline">→ ${escapeHtml(ev.migration_target.split("/").slice(1).join("/"))}</span>` : "";
     const url = ev.sources?.[0]?.url || "#";
-    return `<div class="sun-row" title="${escapeHtml(ev.headline)}" onclick="window.open('${url}', '_blank', 'noopener')">
-      <span class="sun-days" style="color:${daysColor}">${days}d</span>
-      <span class="sun-date">${ev.effective_at}</span>
-      <span class="sun-prov"><span class="pp-prov-dash" style="background:${PROVIDER_COLORS[prov] || "var(--muted)"}; margin-right:6px;"></span>${PROVIDER_LABELS[prov] || prov}${maker ? ` <span style="color: var(--muted-2)">· ${PROVIDER_LABELS[maker] || maker}</span>` : ""}</span>
-      <span class="sun-what">${what}</span>
-      <span class="sun-target">${target}</span>
+    return `<div class="sun-row" title="${escapeHtml(ev.headline)} · ${ev.effective_at}" onclick="window.open('${url}', '_blank', 'noopener')">
+      <span class="sun-days" style="color:${daysColor}">${d}d</span>
+      <span class="pp-prov-dash" style="background:${PROVIDER_COLORS[prov] || "var(--muted)"}"></span>
+      <span class="sun-what"><span class="sun-prov-inline">${escapeHtml(provLabel)}</span> ${escapeHtml(shorten(what, 60))}${target}</span>
     </div>`;
   });
-  let more = "";
-  if (upcoming.length > SUNSET_COLLAPSED) {
-    more = `<div class="sun-more" id="sun-more">${sunsetExpanded ? "▲ show fewer" : `▼ show all ${upcoming.length}`}</div>`;
-  }
+  const hidden = upcoming.length - shown.length;
+  const more = (hidden > 0 || sunsetExpanded)
+    ? `<div class="sun-more" id="sun-more">${sunsetExpanded ? "▲ next two weeks only" : `▼ show all ${upcoming.length} scheduled`}</div>` : "";
   board.innerHTML = rows.join("") + more;
   document.getElementById("sun-more")?.addEventListener("click", (e) => { e.stopPropagation(); sunsetExpanded = !sunsetExpanded; renderSunsets(); });
 }
@@ -412,18 +409,9 @@ function runCheck() {
 }
 
 // ---------- events feed (right column) ----------
-let feedExpanded = false;
 function renderEventsFeed() {
   const wrap = document.getElementById("events-feed");
-  const ctxLabel = document.getElementById("feed-context");
-  ctxLabel.textContent = "all providers · newest first";
-  const all = [...events].sort((a, b) => b.announced_at.localeCompare(a.announced_at));
-  const filtered = all.slice(0, feedExpanded ? 60 : 12);
-  const more = document.getElementById("feed-more");
-  if (more) {
-    more.style.display = all.length > 12 && !feedExpanded ? "" : "none";
-    if (!more._wired) { more._wired = true; more.addEventListener("click", () => { feedExpanded = true; renderEventsFeed(); }); }
-  }
+  const filtered = [...events].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 60);
   if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no matching events</div>'; return; }
   wrap.innerHTML = filtered.map(ev => {
     const url = ev.sources?.[0]?.url || "#";
@@ -451,6 +439,27 @@ function renderChartControls() {
 function renderChart() {
   renderLifecycles();
   renderEventSwimlane();
+  syncFeedHeight();
+}
+
+function syncFeedHeight() {
+  if (typeof document.querySelector !== "function") return;
+  const feedPanel = document.querySelector(".feed-rail-panel");
+  const swimPanel = document.querySelector(".swimlane-panel");
+  if (!feedPanel || !swimPanel) return;
+  if (window.innerWidth <= 1100 || swimPanel.offsetHeight === 0) { feedPanel.style.height = ""; return; }
+  const h = swimPanel.getBoundingClientRect().bottom - feedPanel.getBoundingClientRect().top;
+  if (h > 200) feedPanel.style.height = Math.round(h) + "px";
+}
+
+function wireAbout() {
+  const modal = document.getElementById("about-modal");
+  const open = document.getElementById("about-open");
+  const close = document.getElementById("about-close");
+  if (!modal || !open) return;
+  open.addEventListener("click", () => { modal.style.display = ""; });
+  close?.addEventListener("click", () => { modal.style.display = "none"; });
+  modal.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
 }
 
 function wireMainTabs() {
