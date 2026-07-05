@@ -96,7 +96,6 @@ async function boot() {
   document.getElementById("status-text").textContent = `live · ${today}`;
   document.getElementById("stats-date").textContent = today;
   renderTicker();
-  renderPriceTicker();
   renderStats();
   renderSunsets();
   renderNotice();
@@ -174,48 +173,6 @@ function renderTicker() {
     </span>`;
   });
   // Duplicate to allow seamless loop
-  track.innerHTML = items.join('') + items.join('');
-}
-
-// ---------- price ticker ----------
-function renderPriceTicker() {
-  const track = document.getElementById("price-ticker-track");
-  if (!history?.models?.length) { track.innerHTML = '<span class="ticker-item">no price history yet</span>'; return; }
-
-  // Find models with a price change between their last two snapshots
-  const changes = [];
-  for (const m of history.models) {
-    const h = m.history.filter(e => e.input_cost_per_mtok != null);
-    if (h.length < 2) continue;
-    const prev = h[h.length - 2];
-    const curr = h[h.length - 1];
-    if (prev.input_cost_per_mtok === curr.input_cost_per_mtok) continue;
-    const dir = curr.input_cost_per_mtok < prev.input_cost_per_mtok ? "↓" : "↑";
-    const color = dir === "↓" ? "var(--down)" : "var(--up)";
-    changes.push({ m, prev, curr, dir, color, date: curr.date });
-  }
-
-  const source = changes.length > 0
-    ? [...changes].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 40)
-    : null;
-
-  const items = source
-    ? source.map(({ m, prev, curr, dir, color, date }) =>
-        `<span class="ticker-item">
-          <span class="tick-date">${date}</span>
-          <span style="color:${color}">${dir}</span>
-          <span>${escapeHtml(m.display_name)}</span>
-          <span style="color:var(--muted)">$${prev.input_cost_per_mtok} → <span style="color:${color}">$${curr.input_cost_per_mtok}</span>/Mtok in</span>
-        </span>`)
-    : history.models.slice(0, 40).map(m => {
-        const last = m.history.filter(e => e.input_cost_per_mtok != null).slice(-1)[0];
-        if (!last) return '';
-        return `<span class="ticker-item">
-          <span>${escapeHtml(m.display_name)}</span>
-          <span style="color:var(--muted)">$${last.input_cost_per_mtok}/Mtok in</span>
-        </span>`;
-      }).filter(Boolean);
-
   track.innerHTML = items.join('') + items.join('');
 }
 
