@@ -107,7 +107,15 @@ async function boot() {
   renderChart();
   setupPriceTable();
   renderPriceTable();
-  window.addEventListener("resize", () => { renderChart(); });
+  let lastW = window.innerWidth;
+  window.addEventListener("resize", () => {
+    // Mobile browsers fire resize when the URL bar hides/shows during
+    // scroll (height-only change) — re-rendering then yanks the scroll
+    // position. Only react to actual width changes.
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    renderChart();
+  });
 }
 
 async function loadEvents() {

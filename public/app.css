@@ -443,7 +443,7 @@ button, input, select { font-family: inherit; font-size: inherit; }
 
 
 /* Left rail slimmer */
-.body { grid-template-columns: 285px 1fr; }
+.body { grid-template-columns: 315px 1fr; }
 .col-left { min-width: 0; }
 .col-center { min-width: 0; }
 
@@ -487,7 +487,7 @@ button, input, select { font-family: inherit; font-size: inherit; }
 .hero-copy { padding: 24px 24px 20px 0; }
 .hero-sunsets { border-left: 1px solid var(--border-strong); padding: 20px 0 16px 24px; min-width: 0; position: relative; }
 .hero-sunsets .sunset-header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 8px; }
-.hero-sunsets .sunset-board { display: grid; align-content: start; position: absolute; top: 52px; bottom: 14px; left: 24px; right: 0; overflow-y: auto; padding-right: 4px; }
+.hero-sunsets .sunset-board { display: grid; align-content: start; position: absolute; top: 60px; bottom: 14px; left: 24px; right: 0; overflow-y: auto; padding-right: 4px; }
 .hero-sunsets .sunset-board::-webkit-scrollbar { width: 6px; }
 .hero-sunsets .sunset-board::-webkit-scrollbar-track { background: var(--bg); }
 .hero-sunsets .sunset-board::-webkit-scrollbar-thumb { background: var(--border-strong); }
