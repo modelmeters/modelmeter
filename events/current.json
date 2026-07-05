@@ -26635,6 +26635,66 @@
       },
       "created_at": "2026-07-04",
       "updated_at": "2026-07-04"
+    },
+    {
+      "id": "2026-07-other-keling-ai-raises-nearly-3-billion-in-second-largest-single-r",
+      "announced_at": "2026-07-03",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Keling AI raises nearly $3 billion in second-largest single round after DeepSeek",
+      "summary": "Keling AI has secured approximately $3 billion in a recent financing round, marking one of the largest AI-focused fundraisings to date. This positions Keling as a major contender in the competitive AI landscape, following DeepSeek's record round.",
+      "sources": [
+        {
+          "url": "https://news.futunn.com/en/post/75483155/keling-ai-has-completed-a-financing-round-of-nearly-usd"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-04",
+      "updated_at": "2026-07-04"
+    },
+    {
+      "id": "2026-07-anthropic-claude-fable-5-from-anthropic-becomes-available-on-amazon-we",
+      "announced_at": "2026-07-01",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "amazon"
+      ],
+      "models": [
+        "anthropic/claude-fable-5"
+      ],
+      "headline": "Claude Fable 5 from Anthropic becomes available on Amazon Web Services.",
+      "summary": "Anthropic's new model, Claude Fable 5, is now accessible via AWS, expanding its deployment options and integration within the Amazon cloud ecosystem. This enhances availability for enterprise users and signals a strategic cloud partnership.",
+      "sources": [
+        {
+          "url": "https://www.aboutamazon.com/news/aws/claude-fable-5-anthropic-available-amazon-bedrock"
+        }
+      ],
+      "tags": [
+        "major",
+        "cloud-integration"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-04",
+      "updated_at": "2026-07-04"
     }
   ]
 }
