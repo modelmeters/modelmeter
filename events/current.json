@@ -26727,34 +26727,6 @@
       "updated_at": "2026-07-05"
     },
     {
-      "id": "2026-07-deepseek-raises-over-7b-in-record-funding-round-valuation-ex",
-      "announced_at": "2026-07-04",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [],
-      "headline": "DeepSeek raises over $7B in record funding round, valuation exceeds $50B",
-      "summary": "DeepSeek has completed a massive fundraising round exceeding $7B, according to a report, pushing its valuation above $50B. This positions DeepSeek as one of the most highly valued private AI companies globally and signals strong investor confidence in its long-term strategy and technological roadmap.",
-      "sources": [
-        {
-          "url": "https://www.msn.com/en-us/money/other/deepseek-completes-record-7b-plus-fundraising-valuation-tops-50b-report/ar-AA25K6se?ocid"
-        }
-      ],
-      "tags": [
-        "major"
-      ],
-      "impact": {
-        "magnitude": "structural",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-07-05",
-      "updated_at": "2026-07-05"
-    },
-    {
       "id": "2026-07-anthropic-calls-for-ai-regulation-following-white-house-loos",
       "announced_at": "2026-07-02",
       "type": "regulatory_action",
@@ -26787,7 +26759,7 @@
     {
       "id": "2026-07-anthropic-us-lifts-export-control-restrictions-on-anthropic-enabling-c",
       "announced_at": "2026-07-01",
-      "type": "regulatory_action",
+      "type": "infrastructure",
       "severity": "informational",
       "status": "unverified",
       "providers": [
@@ -26814,7 +26786,7 @@
         "price_direction": "none"
       },
       "created_at": "2026-07-05",
-      "updated_at": "2026-07-05"
+      "updated_at": "2026-07-06"
     }
   ]
 }
