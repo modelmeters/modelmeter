@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-05",
+  "snapshot_date": "2026-07-06",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -26778,6 +26778,162 @@
         }
       ],
       "created_at": "2026-07-05",
+      "updated_at": "2026-07-06"
+    },
+    {
+      "id": "2026-07-deepseek-secures-7-billion-in-new-funding-to-scale-ai-infras",
+      "announced_at": "2026-07-06",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek secures $7 billion in new funding to scale AI infrastructure and model development",
+      "summary": "DeepSeek is raising $7 billion in a new funding round, marking one of the largest single raises in the AI sector and signaling a major escalation in China's private AI development efforts. The capital will be used to expand compute capacity, accelerate next-generation model training, and strengthen global competitiveness.",
+      "sources": [
+        {
+          "url": "https://ascendants.in/business-stories/deepseek-7-billion-funding-round-china-ai-startup/"
+        }
+      ],
+      "tags": [
+        "major",
+        "funding",
+        "china",
+        "scale"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-06",
+      "updated_at": "2026-07-06"
+    },
+    {
+      "id": "2026-07-deepseek-tencent-cloud-officially-launches-deepseek-v4-with-peak-vall",
+      "announced_at": "2026-07-06",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "Tencent Cloud officially launches DeepSeek-V4 with peak-valley pricing, mid-July 2026",
+      "summary": "Tencent Cloud is set to officially release DeepSeek-V4, a 'direct-from-manufacturer' model, in mid-July 2026. The launch introduces a peak-valley pricing mechanism, marking a structural shift in how inference costs are structured based on demand cycles.",
+      "sources": [
+        {
+          "url": "https://news.futunn.com/en/post/75547703/tencent-cloud-the-official-release-of-deepseek-v4-a-direct"
+        }
+      ],
+      "tags": [
+        "major",
+        "pricing-innovation"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-06",
+      "updated_at": "2026-07-06"
+    },
+    {
+      "id": "2026-07-deepseek-introduces-tiered-api-pricing-for-deepseek-v4",
+      "announced_at": "2026-07-05",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek introduces tiered API pricing for DeepSeek V4",
+      "summary": "DeepSeek has implemented a tiered pricing structure for its DeepSeek V4 model API, differentiating costs based on usage levels or performance tiers. This change marks a shift from flat-rate pricing and may affect affordability and scalability for developers and enterprises relying on the model.",
+      "sources": [
+        {
+          "url": "https://www.tradingview.com/news/tradingview:b727029655da6:0-weekly-recap-share-buybacks-and-deepseek-v4-tiered-api-pricing/"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-06",
+      "updated_at": "2026-07-06"
+    },
+    {
+      "id": "2026-07-xai-launches-grok-4-with-enhanced-reasoning-and-multimodal-c",
+      "announced_at": "2026-07-05",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4"
+      ],
+      "headline": "xAI launches Grok 4 with enhanced reasoning and multimodal capabilities",
+      "summary": "xAI has launched Grok 4, the next generation in its large language model series, featuring improved reasoning, expanded knowledge coverage, and enhanced multimodal processing. The model is now available via xAI's API and integrated platforms, with priority access for premium subscribers.",
+      "sources": [
+        {
+          "url": "https://www.msn.com/en-in/money/news/elon-musk-owned-xai-to-launch-grok-4-how-to-watch-livestream-what-is-changing-and-more/ar-AA1IaKac?apiversion"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-06",
+      "updated_at": "2026-07-06"
+    },
+    {
+      "id": "2026-06-anthropic-s-claude-models-become-available-on-microsoft-azur",
+      "announced_at": "2026-06-30",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "microsoft"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Anthropic's Claude models become available on Microsoft Azure AI Foundry",
+      "summary": "Starting June 30, 2026, Anthropic's Claude models are now accessible through Microsoft's Azure AI Foundry platform, enabling enterprises to integrate Claude into their workflows alongside Microsoft's AI services. This partnership expands the reach of Claude models into Microsoft's extensive cloud and enterprise customer base.",
+      "sources": [
+        {
+          "url": "https://aibusiness.com/agentic-ai/anthropic-s-claude-models-available-microsoft-foundry"
+        }
+      ],
+      "tags": [
+        "major",
+        "enterprise",
+        "cloud-integration"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-06",
       "updated_at": "2026-07-06"
     }
   ]
