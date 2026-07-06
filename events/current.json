@@ -26781,68 +26781,6 @@
       "updated_at": "2026-07-06"
     },
     {
-      "id": "2026-07-deepseek-secures-7-billion-in-new-funding-to-scale-ai-infras",
-      "announced_at": "2026-07-06",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [],
-      "headline": "DeepSeek secures $7 billion in new funding to scale AI infrastructure and model development",
-      "summary": "DeepSeek is raising $7 billion in a new funding round, marking one of the largest single raises in the AI sector and signaling a major escalation in China's private AI development efforts. The capital will be used to expand compute capacity, accelerate next-generation model training, and strengthen global competitiveness.",
-      "sources": [
-        {
-          "url": "https://ascendants.in/business-stories/deepseek-7-billion-funding-round-china-ai-startup/"
-        }
-      ],
-      "tags": [
-        "major",
-        "funding",
-        "china",
-        "scale"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-07-06",
-      "updated_at": "2026-07-06"
-    },
-    {
-      "id": "2026-07-deepseek-tencent-cloud-officially-launches-deepseek-v4-with-peak-vall",
-      "announced_at": "2026-07-06",
-      "type": "model_launch",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [
-        "deepseek/deepseek-v4"
-      ],
-      "headline": "Tencent Cloud officially launches DeepSeek-V4 with peak-valley pricing, mid-July 2026",
-      "summary": "Tencent Cloud is set to officially release DeepSeek-V4, a 'direct-from-manufacturer' model, in mid-July 2026. The launch introduces a peak-valley pricing mechanism, marking a structural shift in how inference costs are structured based on demand cycles.",
-      "sources": [
-        {
-          "url": "https://news.futunn.com/en/post/75547703/tencent-cloud-the-official-release-of-deepseek-v4-a-direct"
-        }
-      ],
-      "tags": [
-        "major",
-        "pricing-innovation"
-      ],
-      "impact": {
-        "magnitude": "structural",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-07-06",
-      "updated_at": "2026-07-06"
-    },
-    {
       "id": "2026-07-deepseek-introduces-tiered-api-pricing-for-deepseek-v4",
       "announced_at": "2026-07-05",
       "type": "pricing_change",
