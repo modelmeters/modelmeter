@@ -26697,36 +26697,6 @@
       "updated_at": "2026-07-04"
     },
     {
-      "id": "2026-07-venice-ai-achieves-1b-unicorn-valuation-in-first-funding-rou",
-      "announced_at": "2026-07-05",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "venice"
-      ],
-      "models": [],
-      "headline": "Venice.ai achieves $1B unicorn valuation in first funding round",
-      "summary": "On July 5, 2026, Venice.ai secured a $1 billion valuation in its initial funding round, marking a significant milestone for the Seattle-based AI company. This influx of capital positions Venice.ai to expand its infrastructure, model offerings, and market presence.",
-      "sources": [
-        {
-          "url": "https://hoodline.com/2026/07/seattle-ai-rebel-venice-ai-rockets-to-1-billion-unicorn-on-first-funding-round/"
-        }
-      ],
-      "tags": [
-        "major",
-        "valuation",
-        "funding-round"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-07-05",
-      "updated_at": "2026-07-05"
-    },
-    {
       "id": "2026-07-anthropic-calls-for-ai-regulation-following-white-house-loos",
       "announced_at": "2026-07-02",
       "type": "regulatory_action",
