@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-04",
+  "snapshot_date": "2026-07-05",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -26695,6 +26695,68 @@
       },
       "created_at": "2026-07-04",
       "updated_at": "2026-07-04"
+    },
+    {
+      "id": "2026-07-anthropic-calls-for-ai-regulation-following-white-house-loos",
+      "announced_at": "2026-07-02",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic calls for AI regulation following White House loosening of restrictions on cyber-capable models",
+      "summary": "In early July 2026, Anthropic advocated for increased AI regulation after the White House eased constraints on AI models with cyber capabilities. The company expressed concerns about potential misuse and emphasized the need for responsible deployment frameworks.",
+      "sources": [
+        {
+          "url": "https://www.vitallaw.com/news/anthropic-seeks-ai-regulation-after-white-house-unshackles-cyber-capable-ai-models/cspd016e46c73612b1473b998c7d83de46b7d4"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "policy",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-05",
+      "updated_at": "2026-07-05"
+    },
+    {
+      "id": "2026-07-anthropic-us-lifts-export-control-restrictions-on-anthropic-enabling-c",
+      "announced_at": "2026-07-01",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-fable-5"
+      ],
+      "headline": "US lifts export control restrictions on Anthropic, enabling Claude Fable 5's return to international markets",
+      "summary": "The United States has lifted export control restrictions that previously limited Anthropic's ability to distribute Claude Fable 5 internationally. This regulatory change allows Anthropic to resume offering the model globally, reversing prior availability constraints imposed by national security or foreign policy concerns.",
+      "sources": [
+        {
+          "url": "https://9to5mac.com/2026/07/01/claude-fable-5-cleared-to-return-as-us-lifts-anthropics-export-control-restriction/"
+        }
+      ],
+      "tags": [
+        "export-control",
+        "regulation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-05",
+      "updated_at": "2026-07-06"
     }
   ]
 }
