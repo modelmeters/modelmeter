@@ -96,17 +96,26 @@ async function boot() {
   document.getElementById("status-text").textContent = `live · ${today}`;
   document.getElementById("stats-date").textContent = today;
   renderTicker();
-  renderPriceTicker();
   renderStats();
   renderSunsets();
   renderNotice();
   renderCheck();
   renderEventsFeed();
   renderChartControls();
+  wireMainTabs();
+  wireAbout();
   renderChart();
   setupPriceTable();
   renderPriceTable();
-  window.addEventListener("resize", () => { renderChart(); });
+  let lastW = window.innerWidth;
+  window.addEventListener("resize", () => {
+    // Mobile browsers fire resize when the URL bar hides/shows during
+    // scroll (height-only change) — re-rendering then yanks the scroll
+    // position. Only react to actual width changes.
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    renderChart();
+  });
 }
 
 async function loadEvents() {
@@ -176,48 +185,6 @@ function renderTicker() {
   track.innerHTML = items.join('') + items.join('');
 }
 
-// ---------- price ticker ----------
-function renderPriceTicker() {
-  const track = document.getElementById("price-ticker-track");
-  if (!history?.models?.length) { track.innerHTML = '<span class="ticker-item">no price history yet</span>'; return; }
-
-  // Find models with a price change between their last two snapshots
-  const changes = [];
-  for (const m of history.models) {
-    const h = m.history.filter(e => e.input_cost_per_mtok != null);
-    if (h.length < 2) continue;
-    const prev = h[h.length - 2];
-    const curr = h[h.length - 1];
-    if (prev.input_cost_per_mtok === curr.input_cost_per_mtok) continue;
-    const dir = curr.input_cost_per_mtok < prev.input_cost_per_mtok ? "↓" : "↑";
-    const color = dir === "↓" ? "var(--down)" : "var(--up)";
-    changes.push({ m, prev, curr, dir, color, date: curr.date });
-  }
-
-  const source = changes.length > 0
-    ? [...changes].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 40)
-    : null;
-
-  const items = source
-    ? source.map(({ m, prev, curr, dir, color, date }) =>
-        `<span class="ticker-item">
-          <span class="tick-date">${date}</span>
-          <span style="color:${color}">${dir}</span>
-          <span>${escapeHtml(m.display_name)}</span>
-          <span style="color:var(--muted)">$${prev.input_cost_per_mtok} → <span style="color:${color}">$${curr.input_cost_per_mtok}</span>/Mtok in</span>
-        </span>`)
-    : history.models.slice(0, 40).map(m => {
-        const last = m.history.filter(e => e.input_cost_per_mtok != null).slice(-1)[0];
-        if (!last) return '';
-        return `<span class="ticker-item">
-          <span>${escapeHtml(m.display_name)}</span>
-          <span style="color:var(--muted)">$${last.input_cost_per_mtok}/Mtok in</span>
-        </span>`;
-      }).filter(Boolean);
-
-  track.innerHTML = items.join('') + items.join('');
-}
-
 // ---------- stats ----------
 function renderStats() {
   document.getElementById("s-models").textContent = currentModels.length || "—";
@@ -226,13 +193,10 @@ function renderStats() {
   document.getElementById("s-action").textContent = events.filter(e => e.severity === "action_required").length || "—";
   const providers = new Set(currentModels.map(m => m.provider));
   document.getElementById("s-providers").textContent = providers.size || "—";
-  document.getElementById("s-snapshots").textContent = history?.snapshot_count ?? "—";
   document.getElementById("s-history").textContent = history?.model_count ?? "—";
 }
 
 // ---------- sunset board ----------
-const SUNSET_COLLAPSED = 10;
-let sunsetExpanded = false;
 function renderSunsets() {
   const board = document.getElementById("sunset-board");
   const today = new Date().toISOString().slice(0, 10);
@@ -241,37 +205,27 @@ function renderSunsets() {
     .sort((a, b) => a.effective_at.localeCompare(b.effective_at));
   const allVerified = upcoming.length && upcoming.every(e => e.status === "verified");
   document.getElementById("sunset-count").innerHTML = upcoming.length
-    ? `${upcoming.length} scheduled${allVerified ? ' · <span style="color: var(--up)">all human-verified ✓</span>' : ""}` : "";
-  if (!upcoming.length) { board.innerHTML = '<div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">no scheduled retirements on record</div>'; return; }
+    ? `${upcoming.length} scheduled${allVerified ? ' · <span style="color: var(--up)">verified ✓</span>' : ""}` : "";
+  if (!upcoming.length) { board.innerHTML = '<div style="color: var(--muted); font-size: 11px; padding: 12px 0;">no scheduled retirements on record</div>'; return; }
 
-  const shown = sunsetExpanded ? upcoming : upcoming.slice(0, SUNSET_COLLAPSED);
-  const rows = shown.map(ev => {
-    const days = Math.ceil((new Date(ev.effective_at) - new Date(today)) / 864e5);
-    const daysColor = days <= 30 ? "var(--down)" : days <= 90 ? "var(--warn)" : "var(--text-dim)";
+  const days = (ev) => Math.ceil((new Date(ev.effective_at) - new Date(today)) / 864e5);
+  const rows = upcoming.map(ev => {
+    const d = days(ev);
+    const daysColor = d <= 30 ? "var(--down)" : d <= 90 ? "var(--warn)" : "var(--text-dim)";
     const prov = ev.providers?.[0] || "?";
     const maker = ev.providers?.[1];
     const models = (ev.models || []).map(m => m.split("/").slice(1).join("/"));
-    const what = models.length
-      ? `<span class="models">${escapeHtml(shorten(models.join(", "), 72))}</span>`
-      : escapeHtml(shorten(ev.headline, 72));
-    const target = ev.migration_target
-      ? `<span class="arrow">→</span>${escapeHtml(ev.migration_target.split("/").slice(1).join("/"))}`
-      : `<span class="arrow" style="opacity:.5">·</span>`;
+    const what = models.length ? models.join(", ") : ev.headline;
+    const provLabel = `${PROVIDER_LABELS[prov] || prov}${maker ? ` · ${PROVIDER_LABELS[maker] || maker}` : ""}`;
+    const target = ev.migration_target ? ` <span class="sun-target-inline">→ ${escapeHtml(ev.migration_target.split("/").slice(1).join("/"))}</span>` : "";
     const url = ev.sources?.[0]?.url || "#";
-    return `<div class="sun-row" title="${escapeHtml(ev.headline)}" onclick="window.open('${url}', '_blank', 'noopener')">
-      <span class="sun-days" style="color:${daysColor}">${days}d</span>
-      <span class="sun-date">${ev.effective_at}</span>
-      <span class="sun-prov"><span class="pp-prov-dash" style="background:${PROVIDER_COLORS[prov] || "var(--muted)"}; margin-right:6px;"></span>${PROVIDER_LABELS[prov] || prov}${maker ? ` <span style="color: var(--muted-2)">· ${PROVIDER_LABELS[maker] || maker}</span>` : ""}</span>
-      <span class="sun-what">${what}</span>
-      <span class="sun-target">${target}</span>
+    return `<div class="sun-row" title="${escapeHtml(ev.headline)} · ${ev.effective_at}" onclick="window.open('${url}', '_blank', 'noopener')">
+      <span class="sun-days" style="color:${daysColor}">${d}d</span>
+      <span class="pp-prov-dash" style="background:${PROVIDER_COLORS[prov] || "var(--muted)"}"></span>
+      <span class="sun-what"><span class="sun-prov-inline">${escapeHtml(provLabel)}</span> ${escapeHtml(shorten(what, 60))}${target}</span>
     </div>`;
   });
-  let more = "";
-  if (upcoming.length > SUNSET_COLLAPSED) {
-    more = `<div class="sun-more" id="sun-more">${sunsetExpanded ? "▲ show fewer" : `▼ show all ${upcoming.length}`}</div>`;
-  }
-  board.innerHTML = rows.join("") + more;
-  document.getElementById("sun-more")?.addEventListener("click", (e) => { e.stopPropagation(); sunsetExpanded = !sunsetExpanded; renderSunsets(); });
+  board.innerHTML = rows.join("");
 }
 
 // ---------- notice-given panel ----------
@@ -456,8 +410,6 @@ function runCheck() {
 // ---------- events feed (right column) ----------
 function renderEventsFeed() {
   const wrap = document.getElementById("events-feed");
-  const ctxLabel = document.getElementById("feed-context");
-  ctxLabel.textContent = "all providers · newest first";
   const filtered = [...events].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 60);
   if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no matching events</div>'; return; }
   wrap.innerHTML = filtered.map(ev => {
@@ -489,19 +441,38 @@ function renderChart() {
   syncFeedHeight();
 }
 
-// The events feed spans from the top of the lifecycles panel to the bottom
-// of the events swimlane — the full center column, no gap under the feed.
-// Re-synced on every render so the edges stay aligned through expander
-// clicks and resizes; the feed scrolls internally.
 function syncFeedHeight() {
   if (typeof document.querySelector !== "function") return;
-  const chartPanel = document.querySelector(".chart-panel");
+  const feedPanel = document.querySelector(".feed-rail-panel");
   const swimPanel = document.querySelector(".swimlane-panel");
-  const feedPanel = document.querySelector(".col-right .panel");
-  if (!chartPanel || !swimPanel || !feedPanel || !chartPanel.offsetHeight) return;
-  const height = swimPanel.getBoundingClientRect().bottom - chartPanel.getBoundingClientRect().top;
-  feedPanel.style.height = Math.round(height) + "px";
+  if (!feedPanel || !swimPanel) return;
+  if (window.innerWidth <= 1100 || swimPanel.offsetHeight === 0) { feedPanel.style.height = ""; return; }
+  const h = swimPanel.getBoundingClientRect().bottom - feedPanel.getBoundingClientRect().top;
+  if (h > 200) feedPanel.style.height = Math.round(h) + "px";
 }
+
+function wireAbout() {
+  const modal = document.getElementById("about-modal");
+  const open = document.getElementById("about-open");
+  const close = document.getElementById("about-close");
+  if (!modal || !open) return;
+  open.addEventListener("click", () => { modal.style.display = ""; });
+  close?.addEventListener("click", () => { modal.style.display = "none"; });
+  modal.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
+}
+
+function wireMainTabs() {
+  document.querySelectorAll("#main-view .chip").forEach(c => {
+    c.addEventListener("click", () => {
+      document.querySelectorAll("#main-view .chip").forEach(x => x.classList.toggle("active", x === c));
+      const prices = c.dataset.view === "prices";
+      document.getElementById("lifecycles-wrap").style.display = prices ? "none" : "";
+      document.getElementById("prices-wrap").style.display = prices ? "" : "none";
+      if (!prices) renderChart(); // svg width recalc after being hidden
+    });
+  });
+}
+
 
 // ---------- model lifecycles ----------
 // One lane per model: bar from first-tracked to shutdown (or today), with the

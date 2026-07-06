@@ -86,6 +86,7 @@
           <span class="name">modelmeter</span>
           <span class="ver">v1.0</span>
         </div>
+        <button class="info-zone" id="about-open" aria-label="About modelmeter" title="About">i</button>
       </div>
       <div class="status-pill">
         <span class="dot"></span>
@@ -100,25 +101,48 @@
       </div>
     </div>
 
-    <!-- Price ticker -->
-    <div class="ticker ticker-slow" id="price-ticker">
-      <div class="ticker-track" id="price-ticker-track">
-        <span class="ticker-item"><span class="tick-date">loading prices…</span></span>
-      </div>
-    </div>
 
-    <!-- Sunset board: the record's headline, full width -->
-    <div class="sunset-section">
-      <div class="panel sunset-panel">
+
+    <!-- Hero: what this is + the flagship action -->
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>The AI Changelog</h1>
+        <p>Source-verified deprecations, sunsets, silent model swaps, and price changes - with countdowns, migration targets, and receipts. Built for agents, friendly to humans.</p>
+        <div class="hero-links">
+          <a href="/llms.txt">for agents ↗</a>
+          <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener">github ↗</a>
+          <a href="/feed.xml">rss ↗</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stats-title">Stats <span id="stats-date">—</span></div>
+          <div class="stats hero-stats-grid" id="stats">
+            <div class="stat-row"><span class="lbl">active models</span><span class="num" id="s-models">—</span></div>
+            <div class="stat-row"><span class="lbl">history models</span><span class="num" id="s-history">—</span></div>
+            <div class="stat-row"><span class="lbl">events</span><span class="num" id="s-events">—</span></div>
+            <div class="stat-row"><span class="lbl">providers</span><span class="num" id="s-providers">—</span></div>
+            <div class="stat-row"><span class="lbl">action required</span><span class="num sev-action" id="s-action">—</span></div>
+            <div class="stat-row"><span class="lbl">breaking</span><span class="num sev-breaking" id="s-breaking">—</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-sunsets">
         <div class="sunset-header">
-          <span class="sunset-title">Sunsets · upcoming retirements & required actions</span>
+          <span class="sunset-title">Upcoming sunsets</span>
           <span class="sunset-sub" id="sunset-count">—</span>
         </div>
         <div class="sunset-board" id="sunset-board">
-          <div style="color: var(--muted); font-size: 11px; padding: 12px 14px;">loading…</div>
+          <div style="color: var(--muted); font-size: 11px; padding: 12px 0;">loading…</div>
         </div>
       </div>
     </div>
+
+    <!-- Check your stack: full-width bar above the chart -->
+    <div class="check-bar">
+      <label for="check-input">Check your stack</label>
+      <input id="check-input" type="text" placeholder="gpt-4o, claude-sonnet-4-6, gemini-2.5-flash" autocomplete="off" spellcheck="false" />
+      <button class="btn" id="check-btn">Check</button>
+    </div>
+    <div class="check-results-wrap"><div id="check-result"></div></div>
 
     <!-- Body grid: left | center | right -->
     <div class="body">
@@ -126,53 +150,26 @@
       <!-- LEFT column: stats + markup spread -->
       <div class="col-left">
         <div class="panel">
-          <h3 class="panel-title">Stats <span class="right" id="stats-date">—</span></h3>
-          <div class="stats" id="stats">
-            <div class="stat-row"><span class="lbl">events</span><span class="num" id="s-events">—</span></div>
-            <div class="stat-row"><span class="lbl">breaking</span><span class="num sev-breaking" id="s-breaking">—</span></div>
-            <div class="stat-row"><span class="lbl">action required</span><span class="num sev-action" id="s-action">—</span></div>
-            <div class="stat-row"><span class="lbl">active models</span><span class="num" id="s-models">—</span></div>
-            <div class="stat-row"><span class="lbl">providers</span><span class="num" id="s-providers">—</span></div>
-            <div class="stat-row"><span class="lbl">snapshots</span><span class="num" id="s-snapshots">—</span></div>
-            <div class="stat-row"><span class="lbl">history models</span><span class="num" id="s-history">—</span></div>
-          </div>
-        </div>
-
-        <div class="panel">
           <h3 class="panel-title">Notice buffer</h3>
           <div id="notice-rows"></div>
           <div class="notice-note">median days between a retirement announcement and its shutdown · n = retirements measured · min = shortest notice ever given</div>
         </div>
 
-        <div class="panel">
-          <h3 class="panel-title">Check your stack</h3>
-          <div class="field">
-            <label for="check-input">Model IDs you depend on</label>
-            <input id="check-input" type="text" placeholder="gpt-4o, claude-sonnet-4-6, gemini-2.5-flash" autocomplete="off" spellcheck="false" />
-          </div>
-          <button class="btn" id="check-btn">Check</button>
-          <div id="check-result"></div>
-        </div>
-
-        <div class="panel">
-          <h3 class="panel-title">About</h3>
-          <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
-            The changelog of record for the AI stack. Deprecations, sunsets, price changes, and releases in the model layer — recorded as source-verified events with dates, migration targets, and verbatim quotes. Agents call the same JSON endpoints this dashboard is built on.
-          </p>
-          <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
-            Every event cites its source, most with archive snapshots. Entries are published fast as <em>unverified</em>, then human-reviewed to <em>verified</em> — corrections are never silent. The full dataset lives in a public GitHub repo.
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border-soft);">
-            <a href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ our pipeline runs on Venice</a>
-            <a href="https://x.com/modelmeter_" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ @modelmeter_ on X</a>
-            <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ github.com/modelmeters</a>
-            <a href="/llms.txt" style="color: var(--text-dim); font-size: 11px;">→ llms.txt (for agents)</a>
+        <div class="panel feed-rail-panel">
+          <h3 class="panel-title">Events <span class="right" id="feed-context">newest first</span></h3>
+          <div class="events-feed" id="events-feed">
+            <div style="color: var(--muted); font-size: 11px;">loading…</div>
           </div>
         </div>
       </div>
 
-      <!-- CENTER column: model lifecycles / price chart + event swimlane -->
+      <!-- MAIN column: tabbed lifecycles / prices -->
       <div class="col-center">
+        <div class="main-tabs chip-group" id="main-view">
+          <button class="chip active" data-view="lifecycles">🧬 lifecycles</button>
+          <button class="chip" data-view="prices">💰 prices</button>
+        </div>
+        <div id="lifecycles-wrap">
         <div class="panel chart-panel">
           <div class="chart-header">
             <span class="chart-title" id="chart-title">Model Lifecycles</span>
@@ -188,7 +185,7 @@
             <div class="chart-empty" id="chart-empty">
               <span class="loader">⟳</span> waiting for historical pricing data…
             </div>
-            <svg class="chart-svg" id="chart-svg" style="display: none;" aria-label="Price over time chart"></svg>
+            <div class="svg-scroll"><svg class="chart-svg" id="chart-svg" style="display: none;" aria-label="Model lifecycles chart"></svg></div>
             <div class="tooltip" id="chart-tooltip" role="tooltip"></div>
           </div>
           <div class="chart-legend" id="chart-legend"></div>
@@ -200,26 +197,12 @@
             <div id="swimlane-cat-legend" class="swimlane-cat-legend"></div>
           </div>
           <div class="swimlane-canvas-wrap" style="position: relative;">
-            <svg class="swimlane-svg" id="swimlane-svg" aria-label="Event timeline swimlane"></svg>
+            <div class="svg-scroll"><svg class="swimlane-svg" id="swimlane-svg" aria-label="Event timeline swimlane"></svg></div>
             <div class="tooltip" id="swimlane-tooltip" role="tooltip"></div>
           </div>
         </div>
-
-      </div>
-
-      <!-- RIGHT column: events feed -->
-      <div class="col-right">
-        <div class="panel">
-          <h3 class="panel-title">Events <span class="right" id="feed-context">all providers</span></h3>
-          <div class="events-feed" id="events-feed">
-            <div style="color: var(--muted); font-size: 11px;">loading…</div>
-          </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Full-width current-price table -->
-    <div class="table-section">
+        <div id="prices-wrap" style="display: none;">
       <div class="panel table-panel">
         <div class="table-header">
           <span class="table-title">Prices · per Mtok · current</span>
@@ -248,11 +231,38 @@
         </div>
         <div class="table-foot">Each row links to <code>/model?id=…</code> · this view is <a href="/models">/models</a> rendered</div>
       </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- Events timeline removed; events still surface in the price chart, ticker, and right-column feed. -->
     <!-- Re-add later as an overlay on the price chart if desired. -->
 
+
+
+
+    <!-- About modal -->
+    <div class="modal-overlay" id="about-modal" style="display: none;">
+      <div class="modal" role="dialog" aria-label="About modelmeter">
+        <div class="modal-head">
+          <h3 class="panel-title" style="margin: 0;">About</h3>
+          <button class="modal-close" id="about-close" aria-label="Close">✕</button>
+        </div>
+          <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
+            The changelog of record for the AI stack. Deprecations, sunsets, price changes, and releases in the model layer - recorded as source-verified events with dates, migration targets, and verbatim quotes. Agents call the same JSON endpoints this dashboard is built on.
+          </p>
+          <p style="color: var(--text-dim); font-size: 11px; margin: 0 0 10px; line-height: 1.6;">
+            Every event cites its source, most with archive snapshots. Entries are published fast as <em>unverified</em>, then human-reviewed to <em>verified</em> - corrections are never silent. The full dataset lives in a public GitHub repo.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border-soft);">
+            <a href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ our pipeline runs on Venice</a>
+            <a href="https://x.com/modelmeter_" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ @modelmeter_ on X</a>
+            <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ github.com/modelmeters</a>
+            <a href="/llms.txt" style="color: var(--text-dim); font-size: 11px;">→ llms.txt (for agents)</a>
+          </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <div class="footer-bar">
@@ -283,6 +293,8 @@
       <a href="/history">HISTORY</a>
       <span class="sep">·</span>
       <a href="https://github.com/modelmeters/modelmeter">GITHUB</a>
+      <span class="sep">·</span>
+      <a href="https://x.com/modelmeter_" target="_blank" rel="noopener">X</a>
     </div>
   </div>
 
