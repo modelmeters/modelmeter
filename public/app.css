@@ -561,6 +561,6 @@ button, input, select { font-family: inherit; font-size: inherit; }
 }
 
 /* trust presentation round */
-.feed-mode-chips { margin-bottom: 10px; }
+.feed-mode-chips { margin-bottom: 10px; align-self: flex-start; }
 .price-table .c-verified a { color: var(--muted); font-size: 10px; }
 .price-table .c-verified a:hover { color: var(--accent); }
