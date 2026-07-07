@@ -27056,34 +27056,6 @@
       },
       "created_at": "2026-07-07",
       "updated_at": "2026-07-07"
-    },
-    {
-      "id": "2026-07-venice-ai-raises-65m-in-series-a-funding-round",
-      "announced_at": "2026-07-06",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "venice"
-      ],
-      "models": [],
-      "headline": "Venice AI raises $65M in Series A funding round.",
-      "summary": "Venice AI secured $65 million in Series A funding, signaling strong market confidence in its AI inference platform. This capital will likely be used to expand compute capacity, enhance model hosting capabilities, and strengthen competitive positioning in the AI API market.",
-      "sources": [
-        {
-          "url": "https://www.kucoin.com/news/flash/crypto-weekly-funding-report-9-deals-venice-ai-raises-65m-in-series-a"
-        }
-      ],
-      "tags": [
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-07-07",
-      "updated_at": "2026-07-07"
     }
   ]
 }
