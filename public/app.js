@@ -181,8 +181,9 @@ function renderTicker() {
       <a href="${url}" target="_blank" rel="noopener">${escapeHtml(ev.headline)}</a>
     </span>`;
   });
-  // Duplicate to allow seamless loop
-  track.innerHTML = items.join('') + items.join('');
+  // Duplicate to allow a seamless CSS scroll loop; the second copy is
+  // aria-hidden so scrapers and screen readers don't read doubled content.
+  track.innerHTML = items.join('') + '<span aria-hidden="true">' + items.join('') + '</span>';
 }
 
 // ---------- stats ----------
