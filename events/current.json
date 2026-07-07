@@ -8651,7 +8651,7 @@
       "models": [
         "anthropic/claude-sonnet-5"
       ],
-      "headline": "Anthropic launches Claude Sonnet 5, its most capable Son游戏副本 model, on Amazon Bedrock",
+      "headline": "Anthropic launches Claude Sonnet 5, its most capable Sonnet model, on Amazon Bedrock",
       "summary": "Claude Sonnet 5 is the first Sonnet-class model of Anthropic's latest generation, offering a significant capability improvement. It is now available on Amazon Bedrock and the Claude Platform on AWS, expanding access for enterprise and developer use cases.",
       "sources": [
         {
@@ -8669,7 +8669,7 @@
         "price_direction": "mixed"
       },
       "created_at": "2026-07-02",
-      "updated_at": "2026-07-02"
+      "updated_at": "2026-07-06"
     },
     {
       "id": "2026-06-anthropic-launches-claude-science-a-specialized-ai-workbench",

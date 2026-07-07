@@ -64,6 +64,19 @@ section("events: correction trail");
   }
 }
 
+section("events: text integrity");
+{
+  // LLM-extraction mojibake guard: CJK/Hangul runs inside otherwise-English
+  // event text (the "Son游戏副本" class — caught by an external reviewer, to
+  // our mild embarrassment).
+  let hits = 0;
+  for (const e of events.events) {
+    const m = (e.headline + " " + e.summary).match(/[\u4e00-\u9fff\u3040-\u30ff\uac00-\ud7af]{2,}/);
+    if (m) { hits++; err("garbled-text", `${e.id}: unexpected script run "${m[0].slice(0, 12)}"`); }
+  }
+  if (!hits) info("no unexpected-script runs in event text");
+}
+
 section("events: sources");
 {
   const FORBIDDEN = ["news.google.com", "google.com/rss"];
