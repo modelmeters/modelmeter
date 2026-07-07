@@ -835,6 +835,29 @@
       "deprecated_on": null
     },
     {
+      "id": "venice/claude-sonnet-5",
+      "provider": "venice",
+      "model": "claude-sonnet-5",
+      "display_name": "Venice: Claude Sonnet 5",
+      "input_cost_per_mtok": 3,
+      "output_cost_per_mtok": 15,
+      "cache_write_cost_per_mtok": 3.75,
+      "cache_read_cost_per_mtok": 0.3,
+      "context_window": 1000000,
+      "max_output_tokens": null,
+      "source_url": "https://docs.venice.ai/overview/pricing",
+      "last_verified": "2026-07-06",
+      "verification_required": false,
+      "availability": "available",
+      "tags": [
+        "reseller",
+        "beta"
+      ],
+      "upstream_model_id": "anthropic/claude-sonnet-5",
+      "notes": "Beta on Venice. Matches Anthropic standard rates (direct intro pricing is $2/$10 until 2026-09-01).",
+      "deprecated_on": null
+    },
+    {
       "id": "venice/openai-gpt-4o-2024-11-20",
       "provider": "venice",
       "model": "openai-gpt-4o-2024-11-20",
