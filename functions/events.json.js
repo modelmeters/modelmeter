@@ -1,4 +1,4 @@
-import { EVENTS, logRequest, clientHashes } from "./_lib.js";
+import { EVENTS, logRequest, clientHashes , cachedJson} from "./_lib.js";
 
 export const onRequestGet = async ({ request, env }) => {
   logRequest({
@@ -9,15 +9,7 @@ export const onRequestGet = async ({ request, env }) => {
     ...clientHashes(request),
   }, env);
 
-  return new Response(JSON.stringify(EVENTS, null, 2) + "\n", {
-    status: 200,
-    headers: {
-      "content-type": "application/json; charset=utf-8",
-      "access-control-allow-origin": "*",
-      "access-control-allow-methods": "GET, OPTIONS",
-      "cache-control": "public, max-age=300, s-maxage=300",
-    },
-  });
+  return cachedJson(JSON.stringify(EVENTS, null, 2) + "\n", request, [EVENTS.snapshot_date, EVENTS.events.length]);
 };
 
 export const onRequestOptions = async () => {

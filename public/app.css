@@ -559,3 +559,8 @@ button, input, select { font-family: inherit; font-size: inherit; }
   .check-bar label { width: 100%; }
   .sun-target-inline { display: none; }
 }
+
+/* trust presentation round */
+.feed-mode-chips { margin-bottom: 10px; align-self: flex-start; }
+.price-table .c-verified a { color: var(--muted); font-size: 10px; }
+.price-table .c-verified a:hover { color: var(--accent); }

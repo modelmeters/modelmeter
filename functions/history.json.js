@@ -1,5 +1,5 @@
 import history from "../pricing/history.json";
-import { logRequest, clientHashes } from "./_lib.js";
+import { logRequest, clientHashes, cachedJson } from "./_lib.js";
 
 export const onRequestGet = async ({ request, env }) => {
   logRequest({
@@ -11,15 +11,7 @@ export const onRequestGet = async ({ request, env }) => {
     ...clientHashes(request),
   }, env);
 
-  return new Response(JSON.stringify(history, null, 2) + "\n", {
-    status: 200,
-    headers: {
-      "content-type": "application/json; charset=utf-8",
-      "access-control-allow-origin": "*",
-      "access-control-allow-methods": "GET, OPTIONS",
-      "cache-control": "public, max-age=600, s-maxage=600",
-    },
-  });
+  return cachedJson(JSON.stringify(history, null, 2) + "\n", request, [history.generated_at?.slice(0, 10) ?? "0", history.model_count]);
 };
 
 export const onRequestOptions = async () => {

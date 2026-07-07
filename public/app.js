@@ -101,6 +101,7 @@ async function boot() {
   renderNotice();
   renderCheck();
   renderEventsFeed();
+  wireFeedMode();
   renderChartControls();
   wireMainTabs();
   wireAbout();
@@ -192,7 +193,8 @@ function renderStats() {
   document.getElementById("s-events").textContent = events.length || "—";
   document.getElementById("s-breaking").textContent = events.filter(e => e.severity === "breaking").length || "—";
   document.getElementById("s-action").textContent = events.filter(e => e.severity === "action_required").length || "—";
-  const providers = new Set(currentModels.map(m => m.provider));
+  const providers = new Set(events.flatMap(e => e.providers || []));
+  providers.delete("other");
   document.getElementById("s-providers").textContent = providers.size || "—";
   document.getElementById("s-history").textContent = history?.model_count ?? "—";
 }
@@ -306,12 +308,15 @@ function renderPriceTable() {
     const color = PROVIDER_COLORS[m.provider] || "#888";
     const deprecated = m.availability === "deprecated";
     const tags = (m.tags || []).map(t => `<span class="ptag">${escapeHtml(t)}</span>`).join("");
+    const verified = m.last_verified
+      ? `<a href="${escapeHtml(m.source_url || "#")}" target="_blank" rel="noopener" title="Verified against ${escapeHtml(m.source_url || "source")} on ${m.last_verified}">${m.last_verified}</a>` : "—";
     return `<tr${deprecated ? ' class="row-deprecated"' : ""}>
       <td class="c-prov"><span class="prov-dot" style="background:${color}"></span>${escapeHtml(prov)}</td>
       <td class="c-model"><a href="/model?id=${encodeURIComponent(m.id)}" title="${escapeHtml(m.id)}">${escapeHtml(m.display_name || m.id)}</a>${deprecated ? ' <span class="ptag" style="color: var(--down)">deprecated</span>' : ""}${tags ? ` <span class="ptags">${tags}</span>` : ""}</td>
       <td class="c-num">${fmtPrice(m.input_cost_per_mtok)}</td>
       <td class="c-num">${fmtPrice(m.output_cost_per_mtok)}</td>
       <td class="c-num">${fmtCtx(m.context_window)}</td>
+      <td class="c-num c-verified">${verified}</td>
     </tr>`;
   }).join("");
 }
@@ -409,9 +414,21 @@ function runCheck() {
 }
 
 // ---------- events feed (right column) ----------
+let feedMode = "operational"; // the trust split: verified model-layer changes by default
+function wireFeedMode() {
+  document.querySelectorAll("#feed-mode .chip").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#feed-mode .chip").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      feedMode = btn.dataset.mode;
+      renderEventsFeed();
+    });
+  });
+}
 function renderEventsFeed() {
   const wrap = document.getElementById("events-feed");
-  const filtered = [...events].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 60);
+  const pool = feedMode === "operational" ? events.filter(e => e.severity !== "informational") : events;
+  const filtered = [...pool].sort((a, b) => b.announced_at.localeCompare(a.announced_at)).slice(0, 60);
   if (filtered.length === 0) { wrap.innerHTML = '<div style="color: var(--muted); font-size: 11px;">no matching events</div>'; return; }
   wrap.innerHTML = filtered.map(ev => {
     const url = ev.sources?.[0]?.url || "#";

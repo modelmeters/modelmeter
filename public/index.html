@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>modelmeter — the changelog of record for the AI stack</title>
-  <meta name="description" content="Machine-readable, source-verified record of everything that changes in the model layer: deprecations with sunset countdowns and migration targets, price changes, releases — plus 3 years of pricing history across 11 providers. JSON API, MCP server, llms.txt, no auth required." />
+  <title>modelmeter — The AI Changelog</title>
+  <meta name="description" content="The AI Changelog. Source-verified deprecations, sunsets, silent model swaps, and price changes - with countdowns, migration targets, and receipts. Built for agents, friendly to humans. JSON API, MCP server, no auth required." />
   <link rel="canonical" href="https://modelmeter.xyz/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <!-- Open Graph (Facebook, LinkedIn, Discord, Slack) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Modelmeter" />
-  <meta property="og:title" content="modelmeter — the changelog of record for the AI stack" />
-  <meta property="og:description" content="Source-verified record of what changes in the model layer: deprecations with sunset countdowns, price changes, releases — plus 3 years of pricing history. Built for agents, friendly to humans." />
+  <meta property="og:title" content="modelmeter — The AI Changelog" />
+  <meta property="og:description" content="Source-verified deprecations, sunsets, silent model swaps, and price changes - with countdowns, migration targets, and receipts. Built for agents, friendly to humans." />
   <meta property="og:url" content="https://modelmeter.xyz/" />
   <meta property="og:image" content="https://modelmeter.xyz/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -22,8 +22,8 @@
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@modelmeter_" />
-  <meta name="twitter:title" content="modelmeter — the changelog of record for the AI stack" />
-  <meta name="twitter:description" content="Source-verified record of what changes in the model layer: deprecations, sunsets, price changes, releases — plus 3 years of pricing history." />
+  <meta name="twitter:title" content="modelmeter — The AI Changelog" />
+  <meta name="twitter:description" content="Source-verified deprecations, sunsets, silent model swaps, and price changes - with countdowns, migration targets, and receipts. Built for agents, friendly to humans." />
   <meta name="twitter:image" content="https://modelmeter.xyz/og-image.png" />
 
   <!-- Structured data — Google understands what we are -->
@@ -112,6 +112,8 @@
           <a href="/llms.txt">for agents ↗</a>
           <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener">github ↗</a>
           <a href="/feed.xml">rss ↗</a>
+          <a href="https://github.com/modelmeters/modelmeter#github-action" target="_blank" rel="noopener">ci action ↗</a>
+          <a href="/methodology">methodology ↗</a>
         </div>
         <div class="hero-stats">
           <div class="hero-stats-title">Stats <span id="stats-date">—</span></div>
@@ -119,7 +121,7 @@
             <div class="stat-row"><span class="lbl">active models</span><span class="num" id="s-models">—</span></div>
             <div class="stat-row"><span class="lbl">history models</span><span class="num" id="s-history">—</span></div>
             <div class="stat-row"><span class="lbl">events</span><span class="num" id="s-events">—</span></div>
-            <div class="stat-row"><span class="lbl">providers</span><span class="num" id="s-providers">—</span></div>
+            <div class="stat-row"><span class="lbl">providers &amp; platforms</span><span class="num" id="s-providers">—</span></div>
             <div class="stat-row"><span class="lbl">action required</span><span class="num sev-action" id="s-action">—</span></div>
             <div class="stat-row"><span class="lbl">breaking</span><span class="num sev-breaking" id="s-breaking">—</span></div>
           </div>
@@ -157,6 +159,10 @@
 
         <div class="panel feed-rail-panel">
           <h3 class="panel-title">Events <span class="right" id="feed-context">newest first</span></h3>
+          <div class="chip-group feed-mode-chips" id="feed-mode">
+            <button class="chip active" data-mode="operational" title="Verified model-layer changes: deprecations, price changes, swaps">operational</button>
+            <button class="chip" data-mode="all" title="Everything, including unverified industry news">all</button>
+          </div>
           <div class="events-feed" id="events-feed">
             <div style="color: var(--muted); font-size: 11px;">loading…</div>
           </div>
@@ -224,6 +230,7 @@
                 <th data-key="input_cost_per_mtok" class="th-sort th-num">Input</th>
                 <th data-key="output_cost_per_mtok" class="th-sort th-num">Output</th>
                 <th data-key="context_window" class="th-sort th-num">Context</th>
+                <th data-key="last_verified" class="th-sort th-num">Verified</th>
               </tr>
             </thead>
             <tbody id="price-table-body"></tbody>
@@ -256,6 +263,7 @@
             Every event cites its source, most with archive snapshots. Entries are published fast as <em>unverified</em>, then human-reviewed to <em>verified</em> - corrections are never silent. The full dataset lives in a public GitHub repo.
           </p>
           <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border-soft);">
+            <a href="/methodology" style="color: var(--text-dim); font-size: 11px;">→ how the record is made (methodology)</a>
             <a href="https://venice.ai/chat?ref=9conaa" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ our pipeline runs on Venice</a>
             <a href="https://x.com/modelmeter_" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ @modelmeter_ on X</a>
             <a href="https://github.com/modelmeters/modelmeter" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 11px;">→ github.com/modelmeters</a>
@@ -275,6 +283,10 @@
       <a href="/openapi.yaml">OPENAPI</a>
       <span class="sep">·</span>
       <a href="/llms.txt">LLMS.TXT</a>
+      <span class="sep">·</span>
+      <a href="/methodology">METHODOLOGY</a>
+      <span class="sep">·</span>
+      <a href="https://github.com/modelmeters/modelmeter#github-action">CI ACTION</a>
       <span class="sep">·</span>
       <a href="/pricing.json">PRICING.JSON</a>
       <span class="sep">·</span>
