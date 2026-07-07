@@ -1,4 +1,4 @@
-import { PRICING, logRequest, clientHashes } from "./_lib.js";
+import { PRICING, logRequest, clientHashes , cachedJson} from "./_lib.js";
 
 export const onRequestGet = async ({ request, env }) => {
   logRequest({
@@ -9,15 +9,7 @@ export const onRequestGet = async ({ request, env }) => {
     ...clientHashes(request),
   }, env);
 
-  return new Response(JSON.stringify(PRICING, null, 2) + "\n", {
-    status: 200,
-    headers: {
-      "content-type": "application/json; charset=utf-8",
-      "access-control-allow-origin": "*",
-      "access-control-allow-methods": "GET, OPTIONS",
-      "cache-control": "public, max-age=300, s-maxage=300",
-    },
-  });
+  return cachedJson(JSON.stringify(PRICING, null, 2) + "\n", request, [PRICING.snapshot_date, PRICING.models.length]);
 };
 
 export const onRequestOptions = async () => {

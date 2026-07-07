@@ -17,6 +17,7 @@ Modelmeter exists so AI agents can answer questions like "is anything in my stac
 - [/pricing.json](https://modelmeter.xyz/pricing.json): raw current pricing snapshot
 - [/events.json](https://modelmeter.xyz/events.json): raw events snapshot
 - [/history.json](https://modelmeter.xyz/history.json): raw historical time-series
+- [/methodology](https://modelmeter.xyz/methodology): how the record is made — sources, verification lifecycle, what "silent swap" means here, corrections policy
 - [/openapi.yaml](https://modelmeter.xyz/openapi.yaml): OpenAPI 3.1 spec for the API
 
 ## MCP server (for tool-calling agents)

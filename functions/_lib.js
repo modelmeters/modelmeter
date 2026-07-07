@@ -257,3 +257,18 @@ export function deprecationRows() {
   }
   return rows;
 }
+
+// Weak ETag support for the raw snapshot endpoints: pollers get 304s instead
+// of re-downloading unchanged multi-MB JSON. Tag derives from snapshot
+// identity (date + count), which changes exactly when the data does.
+export function cachedJson(body, request, tagParts, contentType = "application/json; charset=utf-8") {
+  const etag = `W/"${tagParts.join("-")}"`;
+  const headers = {
+    "content-type": contentType,
+    "access-control-allow-origin": "*",
+    "cache-control": "public, max-age=300, s-maxage=300",
+    etag,
+  };
+  if (request.headers.get("if-none-match") === etag) return new Response(null, { status: 304, headers });
+  return new Response(body, { headers });
+}

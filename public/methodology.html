@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Methodology — modelmeter</title>
+  <meta name="description" content="How Modelmeter detects, verifies, and corrects model-layer changes: sources, the verification lifecycle, what 'silent swap' means here, and what we deliberately do not claim." />
+  <link rel="canonical" href="https://modelmeter.xyz/methodology" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/app.css" />
+  <style>
+    .doc { max-width: 760px; margin: 0 auto; padding: 28px 16px 48px; }
+    .doc h1 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; margin: 0 0 18px; }
+    .doc h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 28px 0 10px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .doc p, .doc li { color: var(--text-dim); font-size: 12px; line-height: 1.7; }
+    .doc ul, .doc ol { padding-left: 18px; margin: 8px 0; }
+    .doc code { background: var(--panel-2); border: 1px solid var(--border); padding: 1px 5px; font-size: 11px; color: var(--text); }
+    .doc a { color: var(--text); text-decoration: underline; text-decoration-color: var(--border-strong); }
+    .doc a:hover { color: var(--accent); }
+    .doc .status { display: inline-block; padding: 1px 6px; border: 1px solid currentColor; border-radius: 2px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="topbar">
+      <div class="topbar-left">
+        <a class="icon-zone" href="/" aria-label="Home"><img class="icon" src="/icon.svg" alt="modelmeter" /></a>
+        <div class="brand"><span class="name">modelmeter</span><span class="ver">methodology</span></div>
+      </div>
+      <div class="status-pill"><a href="/" style="color: var(--muted);">← dashboard</a></div>
+    </div>
+
+    <div class="doc">
+      <h1>How the record is made</h1>
+      <p>Modelmeter is a record, and records live or die on trust. This page explains exactly how entries are detected, verified, labeled, and corrected — and what we deliberately do <em>not</em> claim.</p>
+
+      <h2>Sources: first-party only</h2>
+      <p>Every recorded value traces to an authoritative source: a provider's own deprecation page, changelog, pricing page, migration guide, or filing — or, for market-context events, primary reporting. We never record values inferred by a model, recalled from memory, or copied from another aggregator. Operational events carry a <strong>verbatim quote</strong> from the source at capture time and, wherever possible, an <strong>archive.org snapshot</strong> — because providers edit their own changelogs.</p>
+
+      <h2>Detection: watch, diff, classify</h2>
+      <p>Provider documentation surfaces (deprecation pages, changelogs, model lists, pricing pages — 16 surfaces and growing) are fetched and diffed <strong>daily</strong>. Unchanged pages cost nothing and produce nothing. When a page changes, the change is confirmed by a second fetch (to reject unstable renders), mechanically diffed, classified, and drafted as a structured event with its quote. Historical depth was built the same way from archived pages, hand-verified.</p>
+
+      <h2>The verification lifecycle</h2>
+      <ul>
+        <li><span class="status" style="color: var(--muted)">unverified</span> — drafted by the pipeline, published fast, honestly labeled. Consume with that caveat; the API lets you filter it out (<code>/events?status=verified</code>).</li>
+        <li><span class="status" style="color: var(--up)">verified</span> — a human confirmed the headline, dates, and sources against the cited page. <strong>100% of operational (breaking / action-required) events are verified.</strong></li>
+        <li><span class="status" style="color: var(--warn)">corrected</span> — superseded. Corrections are never silent: a <code>correction</code> event points at what it replaces, and the original stays in the record for the audit trail.</li>
+      </ul>
+      <p>Severity is a strict taxonomy: <code>breaking</code> (something you use is removed or renamed), <code>action_required</code> (the terms of continued use change — price, rate limits, context), <code>informational</code> (market context: releases, funding, partnerships). The dashboard's default feed shows operational events; industry news is a toggle away and never presented as verified operational fact.</p>
+
+      <h2>What "silent model swap" means here</h2>
+      <p>Only ever a <strong>documented</strong> behavior: a provider's own page stating that a retired model ID redirects to a different model (for example, xAI's migration guide: retired Grok slugs "automatically redirect to grok-4.3… priced differently"). We record what providers publish and diff what they edit. Claims about undocumented behavioral drift — "the model feels different" — are <em>out of scope by policy</em>: we do not run behavioral fingerprinting, and we will not publish a swap claim without a source you can click.</p>
+
+      <h2>Platform schedules are independent facts</h2>
+      <p>Amazon Bedrock, Azure AI Foundry, and Vertex AI set their own retirement schedules, which differ from the model maker's. The record keeps them platform-scoped (<code>amazon/…</code>, <code>microsoft/…</code>) because a Bedrock deployment needs Bedrock's date — the same model can have three different sunset dates depending on where you run it.</p>
+
+      <h2>Honest uncertainty</h2>
+      <p>When a provider publishes no announcement date, the event says so explicitly in its summary and uses the best <em>documented</em> bound (earliest archive capture, or the effective date) rather than an invented one. Missing values stay null. Every pricing entry carries <code>last_verified</code> and its source URL — judge freshness from those, not from vibes.</p>
+
+      <h2>Machine-audited, in public</h2>
+      <p>Every change to the dataset must pass a <a href="https://github.com/modelmeters/modelmeter/blob/main/scripts/audit.mjs">public integrity audit</a> in CI: cross-dataset reference resolution, timeline sanity, source rules (aggregator links are banned), duplicate guards, price-anomaly detection, and text-integrity checks. If the audit fails, the change cannot merge. You can run it yourself: <code>npm run check</code>.</p>
+
+      <h2>Consume it</h2>
+      <p><a href="/check?models=gpt-4o,claude-sonnet-4-6">/check</a> · <a href="/deprecations">/deprecations</a> · <a href="/events">/events</a> · <a href="/feed.xml">RSS</a> · <a href="/openapi.yaml">OpenAPI</a> · <a href="/llms.txt">llms.txt</a> · MCP at <code>modelmeter.xyz/mcp</code> (registry: <code>xyz.modelmeter/modelmeter</code>) · <a href="https://github.com/modelmeters/modelmeter#github-action">GitHub Action</a> that fails CI before your model does.</p>
+      <p>Found an error? <a href="https://github.com/modelmeters/modelmeter/issues">Open an issue</a> — corrections are part of the record, not an embarrassment to it.</p>
+    </div>
+
+    <div class="footer-bar">
+      <a href="/">DASHBOARD</a><span class="sep">·</span>
+      <a href="/openapi.yaml">OPENAPI</a><span class="sep">·</span>
+      <a href="/llms.txt">LLMS.TXT</a><span class="sep">·</span>
+      <a href="https://github.com/modelmeters/modelmeter">GITHUB</a>
+    </div>
+  </div>
+</body>
+</html>
