@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "snapshot_date": "2026-07-05",
+  "snapshot_date": "2026-07-07",
   "models": [
     {
       "id": "anthropic/claude-fable-5",
@@ -507,13 +507,13 @@
       "context_window": 1048576,
       "max_output_tokens": 65536,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-      "last_verified": "2026-07-01",
+      "last_verified": "2026-07-07",
       "verification_required": false,
-      "availability": "available",
+      "availability": "deprecated",
       "tags": [],
       "upstream_model_id": null,
-      "notes": "Prior-gen, still available. 1M context per docs. Batch/Flex 50% off.",
-      "deprecated_on": null
+      "notes": "Prior-gen, still available. 1M context per docs. Batch/Flex 50% off. Removed from the Gemini API pricing page 2026-07; earliest shutdown 2026-10-16 per the Gemini deprecations schedule (see events record).",
+      "deprecated_on": "2026-10-16"
     },
     {
       "id": "google/gemini-2-5-flash-lite",
@@ -527,13 +527,13 @@
       "context_window": 1048576,
       "max_output_tokens": 65536,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-      "last_verified": "2026-07-01",
+      "last_verified": "2026-07-07",
       "verification_required": false,
-      "availability": "available",
+      "availability": "deprecated",
       "tags": [],
       "upstream_model_id": null,
-      "notes": "Prior-gen, still available. Batch/Flex 50% off.",
-      "deprecated_on": null
+      "notes": "Prior-gen, still available. Batch/Flex 50% off. Removed from the Gemini API pricing page 2026-07; earliest shutdown 2026-10-16 per the Gemini deprecations schedule (see events record).",
+      "deprecated_on": "2026-10-16"
     },
     {
       "id": "xai/grok-4-3",
@@ -2311,15 +2311,15 @@
       "provider": "venice",
       "model": "kimi-k2-7-code",
       "display_name": "Venice: Kimi K2.7 Code",
-      "input_cost_per_mtok": 0.9,
-      "output_cost_per_mtok": 4.3,
+      "input_cost_per_mtok": 0.75,
+      "output_cost_per_mtok": 3.5,
       "cache_write_cost_per_mtok": null,
       "cache_read_cost_per_mtok": 0.2,
       "context_window": 256000,
       "max_output_tokens": null,
       "source_url": "https://docs.venice.ai/overview/pricing",
-      "last_verified": "2026-06-25",
-      "verification_required": false,
+      "last_verified": "2026-07-07",
+      "verification_required": true,
       "availability": "available",
       "tags": [
         "beta",
