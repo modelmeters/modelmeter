@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-05",
+  "snapshot_date": "2026-07-07",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -26779,6 +26779,130 @@
       ],
       "created_at": "2026-07-05",
       "updated_at": "2026-07-06"
+    },
+    {
+      "id": "2026-07-deepseek-in-development-of-custom-ai-chip-to-enhance-inferen",
+      "announced_at": "2026-07-07",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek in development of custom AI chip to enhance inference efficiency",
+      "summary": "Citing internal sources, Reuters reports that DeepSeek is designing its own AI chip to reduce reliance on third-party hardware and optimize performance for its models, particularly DeepSeek-V4 and future iterations. This move signals a strategic push toward full-stack AI development, potentially lowering operational costs and improving scalability.",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/world/china/chinas-deepseek-developing-its-own-ai-chip-sources-say-2026-07-07/"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "semiconductor",
+        "in-house"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-07",
+      "updated_at": "2026-07-07"
+    },
+    {
+      "id": "2026-07-cohere-lightworks-scotiabank-sun-life-and-telus-launch-canadian-ai-",
+      "announced_at": "2026-07-07",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "cohere",
+        "other"
+      ],
+      "models": [],
+      "headline": "Lightworks, Scotiabank, Sun Life, and TELUS launch Canadian AI Consortium to build AI control infrastructure",
+      "summary": "A coalition of Lightworks, Scotiabank, Sun Life, and TELUS has formed an AI Consortium focused on developing critical AI control infrastructure in Canada. This initiative aims to establish secure, compliant, and scalable frameworks for AI deployment across sectors, with implications for model governance, access controls, and national AI policy alignment.",
+      "sources": [
+        {
+          "url": "https://ca.finance.yahoo.com/news/lightworks-scotiabank-sun-life-telus-103000030.html"
+        }
+      ],
+      "tags": [
+        "canada",
+        "governance",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-07",
+      "updated_at": "2026-07-07"
+    },
+    {
+      "id": "2026-07-xai-officially-rebrands-as-spacexai-five-months-after-merger",
+      "announced_at": "2026-07-07",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai",
+        "spacex"
+      ],
+      "models": [],
+      "headline": "xAI officially rebrands as SpaceXAI five months after merger",
+      "summary": "Following its acquisition by SpaceX, xAI has formally changed its name to SpaceXAI, signaling full integration into the aerospace company. This marks a major consolidation in the AI sector, aligning advanced AI development with SpaceX's long-term technological goals.",
+      "sources": [
+        {
+          "url": "https://www.techzine.eu/news/applications/142728/xai-officially-becomes-spacexai-five-months-after-merger/"
+        }
+      ],
+      "tags": [
+        "major",
+        "corporate-restructuring"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "structural",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-07",
+      "updated_at": "2026-07-07"
+    },
+    {
+      "id": "2026-07-amazon-minimax-models-become-available-on-amazon-bedrock",
+      "announced_at": "2026-07-06",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "amazon"
+      ],
+      "models": [
+        "amazon/minimax-abori",
+        "amazon/minimax-abori-pro"
+      ],
+      "headline": "MiniMax models become available on Amazon Bedrock",
+      "summary": "MiniMax's Abori and Abori Pro models are now accessible via Amazon Bedrock, enabling AWS customers to leverage these models for on-demand inference with scalable APIs. This integration expands Bedrock's multimodal and reasoning capabilities to international markets.",
+      "sources": [
+        {
+          "url": "https://aws.amazon.com/blogs/machine-learning/run-minimax-models-on-amazon-bedrock/"
+        }
+      ],
+      "tags": [
+        "major",
+        "multimodal",
+        "international"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-07",
+      "updated_at": "2026-07-07"
     }
   ]
 }
