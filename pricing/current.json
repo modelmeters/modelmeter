@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "snapshot_date": "2026-07-07",
+  "snapshot_date": "2026-07-08",
   "models": [
     {
       "id": "anthropic/claude-fable-5",
@@ -2318,8 +2318,8 @@
       "context_window": 256000,
       "max_output_tokens": null,
       "source_url": "https://docs.venice.ai/overview/pricing",
-      "last_verified": "2026-07-07",
-      "verification_required": true,
+      "last_verified": "2026-07-08",
+      "verification_required": false,
       "availability": "available",
       "tags": [
         "beta",
