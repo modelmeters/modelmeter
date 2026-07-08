@@ -26903,6 +26903,31 @@
       },
       "created_at": "2026-07-07",
       "updated_at": "2026-07-07"
+    },
+    {
+      "id": "2026-07-openai-gpt-realtime-2-1-and-gpt-realtime-2-1-mini-launched",
+      "announced_at": "2026-07-06",
+      "detected_at": "2026-07-07T17:30:02.513Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-realtime-2.1",
+        "openai/gpt-realtime-2.1-mini"
+      ],
+      "headline": "GPT-Realtime-2.1 and GPT-Realtime-2.1 mini launched",
+      "summary": "OpenAI released GPT-Realtime-2.1, an updated realtime reasoning model with improved alphanumeric recognition, silence and noise handling, and interruption behavior. Additionally, GPT-Realtime-2.1 mini was released as a faster, lower-cost distilled version for realtime voice applications.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Released GPT-Realtime-2.1 , an updated realtime reasoning model with improved alphanumeric recognition, silence and noise handling, and interruption behavior. Also released GPT-Realtime-2.1 mini , a faster, lower-cost distilled reasoning model for realtime voice applications."
+        }
+      ],
+      "created_at": "2026-07-07",
+      "updated_at": "2026-07-07"
     }
   ]
 }
