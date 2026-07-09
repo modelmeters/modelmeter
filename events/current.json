@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-07",
+  "snapshot_date": "2026-07-08",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -26928,6 +26928,324 @@
       ],
       "created_at": "2026-07-07",
       "updated_at": "2026-07-07"
+    },
+    {
+      "id": "2023-10-nousresearch-yarn-mistral-7b-128k-release",
+      "announced_at": "2023-10-31",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "nousresearch/Yarn-Mistral-7b-128k"
+      ],
+      "headline": "Nous Research releases Yarn-Mistral-7B-128K, extending Mistral 7B to 128K context",
+      "summary": "Nous Research publishes Yarn-Mistral-7b-128k (Apache-2.0), a Mistral-7B model further pretrained with the YaRN method to a 128K-token context window. YaRN (arXiv:2309.00071) becomes a widely adopted technique for efficient context-window extension.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/Yarn-Mistral-7b-128k",
+          "quote": "Nous-Yarn-Mistral-7b-128k is a state-of-the-art language model for long context, further pretrained on long context data"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2023-12-nousresearch-hermes-2-yi-34b-release",
+      "announced_at": "2023-12-23",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "nousresearch/Nous-Hermes-2-Yi-34B"
+      ],
+      "headline": "Nous Research releases Nous Hermes 2 - Yi-34B",
+      "summary": "Nous Research releases Nous-Hermes-2-Yi-34B (Apache-2.0), a fine-tune of 01.AI's Yi-34B trained on 1,000,000 primarily GPT-4-generated entries. An early entry in the Nous Hermes 2 generation.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/Nous-Hermes-2-Yi-34B",
+          "quote": "Nous Hermes 2 - Yi-34B is a state of the art Yi Fine-tune"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2024-01-nousresearch-genstruct-7b-release",
+      "announced_at": "2024-01-05",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "nousresearch/Genstruct-7B"
+      ],
+      "headline": "Nous Research releases Genstruct-7B, an instruction-generation model",
+      "summary": "Nous Research releases Genstruct-7B (Apache-2.0), a Mistral-7B-based model that generates valid instructions from a raw-text corpus, enabling creation of partially synthetic instruction-tuning datasets. Inspired by Ada-Instruct, grounding generations in user-provided context passages.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/Genstruct-7B",
+          "quote": "Genstruct 7B is an instruction-generation model, designed to create valid instructions given a raw text corpus"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2024-01-nousresearch-hermes-2-mixtral-8x7b-release",
+      "announced_at": "2024-01-11",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "nousresearch/Nous-Hermes-2-Mixtral-8x7B-DPO"
+      ],
+      "headline": "Nous Research releases Nous Hermes 2 - Mixtral 8x7B (DPO + SFT)",
+      "summary": "Nous Research releases Nous-Hermes-2-Mixtral-8x7B (Apache-2.0), its first flagship built on Mistral's Mixtral 8x7B mixture-of-experts model, trained on over 1,000,000 entries. Published in both DPO and SFT variants.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO",
+          "quote": "Nous Hermes 2 Mixtral 8x7B DPO is the new flagship Nous Research model trained over the Mixtral 8x7B MoE LLM"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2024-03-nousresearch-hermes-2-pro-mistral-7b-release",
+      "announced_at": "2024-03-11",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "nousresearch/Hermes-2-Pro-Mistral-7B"
+      ],
+      "headline": "Nous Research releases Hermes 2 Pro - Mistral 7B with function calling and JSON mode",
+      "summary": "Nous Research releases Hermes-2-Pro-Mistral-7B (Apache-2.0), a retrained Nous Hermes 2 on a cleaned OpenHermes 2.5 dataset plus a new function-calling and JSON-mode dataset - establishing the Hermes line's structured tool-use capability.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/Hermes-2-Pro-Mistral-7B",
+          "quote": "Hermes 2 Pro on Mistral 7B is the new flagship 7B Hermes!"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2024-06-nousresearch-hermes-2-theta-llama-3-70b-release",
+      "announced_at": "2024-06-14",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "nousresearch/Hermes-2-Theta-Llama-3-70B"
+      ],
+      "headline": "Nous Research releases Hermes 2 Theta - Llama-3 70B",
+      "summary": "Nous Research releases Hermes-2-Theta-Llama-3-70B (Llama 3 license), an experimental merged model built on Meta Llama 3 70B in collaboration with Charles Goddard and Arcee AI.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/Hermes-2-Theta-Llama-3-70B",
+          "quote": "Hermes-2 Θ (Theta) 70B is the continuation of our experimental merged model released by Nous Research, in collaboration with Charles Goddard and Arcee AI"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2024-08-nousresearch-hermes-3-release",
+      "announced_at": "2024-08-13",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "venice/hermes-3-llama-3-1-405b",
+        "openrouter/nousresearch-hermes-3-llama-3-1-405b",
+        "openrouter/nousresearch-hermes-3-llama-3-1-70b"
+      ],
+      "headline": "Nous Research releases Hermes 3 on Llama 3.1 (8B, 70B, 405B)",
+      "summary": "Nous Research releases the Hermes 3 generation (Llama 3 license) across 8B, 70B, and flagship 405B sizes - its first full-parameter finetune of Meta Llama-3.1-405B. Hermes 3 405B is hosted by resellers including Venice and OpenRouter.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B",
+          "quote": "Hermes 3 405B is the latest flagship model in the Hermes series of LLMs by Nous Research, and the first full parameter finetune since the release of Llama-3.1 405B"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2025-02-nousresearch-deephermes-3-release",
+      "announced_at": "2025-02-12",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "nousresearch/DeepHermes-3-Llama-3-8B-Preview"
+      ],
+      "headline": "Nous Research releases DeepHermes 3, unifying reasoning and normal response modes",
+      "summary": "Nous Research releases DeepHermes-3-Llama-3-8B-Preview (Llama 3 license), one of the first models to unify long chain-of-thought reasoning and traditional instruct responses in a single model, toggled by a system prompt. Larger 3B and 24B previews followed.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/DeepHermes-3-Llama-3-8B-Preview",
+          "quote": "one of the first models in the world to unify Reasoning (long chains of thought that improve answer accuracy) and normal LLM response modes into one model"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2025-08-nousresearch-hermes-4-release",
+      "announced_at": "2025-08-06",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "openrouter/nousresearch-hermes-4-405b",
+        "openrouter/nousresearch-hermes-4-70b"
+      ],
+      "headline": "Nous Research releases Hermes 4, a hybrid-mode reasoning model on Llama 3.1 405B",
+      "summary": "Nous Research releases Hermes 4 (Llama 3 license), a frontier hybrid-mode reasoning model built on Llama-3.1-405B, with 70B and 14B sizes following in August. Adds a synthesized post-training corpus emphasizing verified reasoning traces, with gains in math, code, STEM, and format-faithful output. Available via resellers including OpenRouter.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/Hermes-4-405B",
+          "quote": "Hermes 4 405B is a frontier, hybrid-mode reasoning model based on Llama-3.1-405B by Nous Research"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2025-11-nousresearch-hermes-4-3-36b-release",
+      "announced_at": "2025-11-17",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "nousresearch/Hermes-4.3-36B"
+      ],
+      "headline": "Nous Research releases Hermes 4.3 (36B), its first decentralized-trained model",
+      "summary": "Nous Research releases Hermes-4.3-36B (Apache-2.0), a frontier hybrid-mode reasoning model based on ByteDance's Seed-OSS-36B base - the first Hermes model trained in a decentralized manner over the internet using the Psyche network.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/Hermes-4.3-36B",
+          "quote": "This is our first Hermes model trained in a decentralized manner over the internet using Psyche"
+        },
+        {
+          "url": "https://nousresearch.com/introducing-hermes-4-3/"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2025-12-nousresearch-nomos-1-release",
+      "announced_at": "2025-12-07",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "nousresearch/nomos-1"
+      ],
+      "headline": "Nous Research releases Nomos 1 for mathematical proof-writing",
+      "summary": "Nous Research releases Nomos-1 (Apache-2.0), a specialization of Qwen3-30B-A3B-Thinking-2507 for mathematical problem-solving and proof-writing in natural language, trained with Hillclimb AI. Scores 87/120 on Putnam 2025; ships with the open-source Nomos Reasoning Harness.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/nomos-1",
+          "quote": "We release Nomos 1, a specialization of Qwen/Qwen3-30B-A3B-Thinking-2507 for mathematical problem-solving and proof-writing in natural language"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2025-12-nousresearch-nouscoder-14b-release",
+      "announced_at": "2025-12-23",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nousresearch"
+      ],
+      "models": [
+        "nousresearch/NousCoder-14B"
+      ],
+      "headline": "Nous Research releases NousCoder-14B for competitive programming",
+      "summary": "Nous Research releases NousCoder-14B (Apache-2.0), a competitive-programming model post-trained on Qwen3-14B via reinforcement learning over 24k verifiable coding problems. Reaches 67.87% Pass@1 on LiveCodeBench v6, up 7.08 points over the Qwen3-14B baseline.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/NousResearch/NousCoder-14B",
+          "quote": "a competitive programming model post-trained on Qwen3-14B via reinforcement learning"
+        }
+      ],
+      "tags": [
+        "open-weight"
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
     }
   ]
 }

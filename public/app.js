@@ -5,7 +5,7 @@ const PROVIDER_LABELS = {
   microsoft: "Microsoft", amazon: "Amazon", meta: "Meta", nvidia: "NVIDIA", deepseek: "DeepSeek",
   mistral: "Mistral", cohere: "Cohere", alibaba: "Alibaba", zhipu: "Zhipu", moonshot: "Moonshot",
   spacex: "SpaceX", groq: "Groq", together: "Together", fireworks: "Fireworks", openrouter: "OpenRouter",
-  other: "Other",
+  nousresearch: "Nous Research", other: "Other",
 };
 const TYPE_CATEGORY = {
   model_launch: "model", model_deprecation: "model", model_unavailable: "model",
@@ -83,6 +83,7 @@ const PROVIDER_COLORS = {
   together:  "#fbbf24",
   groq:      "#22d3ee",
   openrouter:"#94a3b8",
+  nousresearch:"#d4b483",
 };
 
 // ---------- boot ----------

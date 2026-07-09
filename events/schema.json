@@ -93,7 +93,7 @@
               "meta", "deepseek", "alibaba", "zhipu", "moonshot",
               "mistral", "cohere", "nvidia", "amazon", "microsoft",
               "spacex", "groq", "together", "fireworks", "openrouter",
-              "other"
+              "nousresearch", "other"
             ]
           },
           "description": "Provider IDs affected. Includes providers we do not track pricing for (Meta, Microsoft, etc.) — events can involve more entities than the pricing dataset."
