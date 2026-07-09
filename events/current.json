@@ -27560,34 +27560,6 @@
       "migration_target": "microsoft/MAI-Image-2.5"
     },
     {
-      "id": "2026-07-venice-ai-raises-65m-in-series-a-funding-at-1b-valuation",
-      "announced_at": "2026-07-09",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "venice"
-      ],
-      "models": [],
-      "headline": "Venice AI raises $65M in Series A funding at $1B valuation",
-      "summary": "Venice AI secured $65 million in Series A funding at a $1 billion valuation, underscoring investor confidence in its privacy-focused, uncensored AI platform. The capital will accelerate infrastructure scaling and model deployment.",
-      "sources": [
-        {
-          "url": "https://theaiinsider.tech/2026/07/09/venice-ai-closes-65m-series-a-at-1b-valuation-betting-on-privacy-focused-uncensored-ai-access/"
-        }
-      ],
-      "tags": [
-        "major"
-      ],
-      "impact": {
-        "magnitude": "structural",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-07-09",
-      "updated_at": "2026-07-09"
-    },
-    {
       "id": "2026-07-other-ollama-raises-65m-and-reaches-nearly-9m-users",
       "announced_at": "2026-07-09",
       "type": "funding",
