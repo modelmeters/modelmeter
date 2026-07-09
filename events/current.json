@@ -27434,6 +27434,130 @@
       },
       "created_at": "2026-07-08",
       "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2026-07-anthropic-claude-sonnet-5-launched-with-1m-token-context-window-and-in",
+      "announced_at": "2026-07-08",
+      "detected_at": "2026-07-08T17:30:58.114Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "verified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-sonnet-5"
+      ],
+      "headline": "Claude Sonnet 5 launched with 1M token context window and introductory pricing",
+      "summary": "Claude Sonnet 5 is now available with a 1M token context window, 128k max output tokens, and introductory pricing of $2/$10 per MTok until August 31, 2026, after which standard pricing of $3/$15 applies. Priority Tier is not available on this model.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We've launched Claude Sonnet 5 ( claude-sonnet-5 ), the next generation of our Sonnet model family, at introductory pricing of $2 / $10 per MTok through August 31, 2026 (standard $3 / $15 thereafter). Claude Sonnet 5 supports a 1M token context window , 128k max output tokens, and the same set of tools and platform features as Claude Sonnet 4.6, except Priority Tier , which is not available on Claude Sonnet 5."
+        }
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-anthropic-adaptive-thinking-enabled-by-default-manual-extended-thinkin",
+      "announced_at": "2026-07-08",
+      "detected_at": "2026-07-08T17:30:58.114Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "verified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-sonnet-5"
+      ],
+      "headline": "Adaptive thinking enabled by default; manual extended thinking removed in Claude Sonnet 5",
+      "summary": "In Claude Sonnet 5, adaptive thinking is now on by default. Manual extended thinking is removed and returns a 400 error. Setting sampling parameters (temperature, top_p, top_k) to non-default values also returns a 400 error.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "Three behavior changes apply when migrating: adaptive thinking is now on by default; manual extended thinking ( thinking: {type: \"enabled\", budget_tokens: N} ) is removed and returns a 400 error (it was deprecated on Sonnet 4.6); and setting sampling parameters ( temperature , top_p , top_k ) to non-default values returns a 400 error."
+        }
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-anthropic-claude-sonnet-5-uses-new-tokenizer-producing-30-more-tokens",
+      "announced_at": "2026-07-08",
+      "detected_at": "2026-07-08T17:30:58.114Z",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "verified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-sonnet-5"
+      ],
+      "headline": "Claude Sonnet 5 uses new tokenizer producing ~30% more tokens",
+      "summary": "Claude Sonnet 5 uses a new tokenizer that generates approximately 30% more tokens for the same text, varying by content and workload.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "Claude Sonnet 5 also uses a new tokenizer that produces approximately 30% more tokens for the same text. The exact increase depends on the content and workload shape."
+        }
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-04-microsoft-mai-image-2e-to-be-retired-on-2026-08-15",
+      "announced_at": "2026-04-09",
+      "effective_at": "2026-08-15",
+      "detected_at": "2026-07-08T17:30:58.114Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "microsoft"
+      ],
+      "models": [
+        "microsoft/MAI-Image-2e"
+      ],
+      "headline": "MAI-Image-2e (Azure Foundry) to be retired on 2026-08-15",
+      "summary": "Microsoft's MAI-Image-2e image model (Preview on Microsoft Foundry, version 2026-04-09) is scheduled for retirement on 2026-08-15, with MAI-Image-2.5-Flash named as the replacement, per the Foundry model retirement schedule.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
+          "quote": "MAI-Image-2e | 2026-04-09 | Preview | 2026-08-15 | MAI-Image-2.5-Flash"
+        }
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-09",
+      "migration_target": "microsoft/MAI-Image-2.5-Flash"
+    },
+    {
+      "id": "2026-02-microsoft-mai-image-2-to-be-retired",
+      "announced_at": "2026-02-20",
+      "detected_at": "2026-07-08T17:30:58.114Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "microsoft"
+      ],
+      "models": [
+        "microsoft/MAI-Image-2"
+      ],
+      "headline": "MAI-Image-2 (Azure Foundry) to be retired on 2026-08-15",
+      "summary": "Microsoft's MAI-Image-2 image model (Preview on Microsoft Foundry, version 2026-02-20) is scheduled for retirement on 2026-08-15, with MAI-Image-2.5 named as the replacement, per the Foundry model retirement schedule.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
+          "quote": "MAI-Image-2 | 2026-02-20 | Preview | 2026-08-15 | MAI-Image-2.5"
+        }
+      ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-09",
+      "effective_at": "2026-08-15",
+      "migration_target": "microsoft/MAI-Image-2.5"
     }
   ]
 }
