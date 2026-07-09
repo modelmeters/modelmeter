@@ -27405,37 +27405,6 @@
       "updated_at": "2026-07-08"
     },
     {
-      "id": "2026-07-xai-publicly-launches-grok-4-5-the-latest-iteration-of-its-a",
-      "announced_at": "2026-07-08",
-      "type": "model_launch",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "xai"
-      ],
-      "models": [
-        "xai/grok-4.5"
-      ],
-      "headline": "xAI (SpaceXAI) makes Grok 4.5 publicly available",
-      "summary": "xAI, now branded SpaceXAI, opens Grok 4.5 to public access, following the model's late-June launch and private beta at SpaceX and Tesla. Reported by multiple outlets as an 'Opus-class' model positioned against Anthropic's Claude Opus.",
-      "sources": [
-        {
-          "url": "https://www.cnbctv18.com/technology/what-is-grok-4-5-elon-musk-announces-public-launch-of-xais-latest-ai-model-19941342.htm"
-        }
-      ],
-      "tags": [
-        "major",
-        "public-launch"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-07-08",
-      "updated_at": "2026-07-08"
-    },
-    {
       "id": "2026-07-anthropic-claude-sonnet-5-launched-with-1m-token-context-window-and-in",
       "announced_at": "2026-07-08",
       "detected_at": "2026-07-08T17:30:58.114Z",
@@ -27558,6 +27527,144 @@
       "updated_at": "2026-07-09",
       "effective_at": "2026-08-15",
       "migration_target": "microsoft/MAI-Image-2.5"
+    },
+    {
+      "id": "2026-07-openai-released-the-gpt-5-6-model-family",
+      "announced_at": "2026-07-09",
+      "detected_at": "2026-07-09T17:30:54.193Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.6-sol",
+        "openai/gpt-5.6-terra",
+        "openai/gpt-5.6-luna"
+      ],
+      "headline": "Released the GPT-5.6 model family",
+      "summary": "OpenAI released the GPT-5.6 model family on the OpenAI API: GPT-5.6 Sol (frontier capability), GPT-5.6 Terra (balanced intelligence/cost), and GPT-5.6 Luna (efficient, high-volume; $1/$6 per Mtok). Confirmed on Azure AI Foundry as GA the same day.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Released the GPT-5.6 model family , including GPT-5.6 Sol for frontier capability, GPT-5.6 Terra for a balance of intelligence and cost, and GPT-5.6 Luna for efficient, high-volume workloads. The gpt-5.6 alias routes requests to gpt-5.6-sol ."
+        }
+      ],
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-openai-gpt-5-6-adds-new-capabilities",
+      "announced_at": "2026-07-09",
+      "detected_at": "2026-07-09T17:30:54.193Z",
+      "type": "capability_change",
+      "severity": "informational",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.6-sol",
+        "openai/gpt-5.6-terra",
+        "openai/gpt-5.6-luna"
+      ],
+      "headline": "GPT-5.6 adds new capabilities",
+      "summary": "GPT-5.6 introduces programmatic tool calling, explicit prompt caching controls, persisted reasoning, max reasoning effort, Pro mode, multi-agent orchestration in beta for the Responses API, and support for images at original dimensions with original or auto image detail.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "GPT-5.6 adds Programmatic Tool Calling , explicit prompt caching controls , persisted reasoning, max reasoning effort, and Pro mode , and Multi-agent orchestration in beta for the Responses API . GPT-5.6 also accepts images at their original dimensions with original or auto image detail."
+        }
+      ],
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-xai-grok-4-5-launches-on-xai-api",
+      "announced_at": "2026-07-08",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "verified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "xAI launches Grok 4.5 on the xAI API (500k context, $2/$6 per Mtok)",
+      "summary": "xAI (SpaceXAI) launched grok-4.5 on the xAI API as its flagship for code, agentic tool calling, and knowledge work, with configurable reasoning effort. 500k-token context; priced at $2.00 input / $6.00 output per 1M tokens. grok-4.3 and grok-build-0.1 remain listed alongside it.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/release-notes",
+          "quote": "Grok 4.5, SpaceXAI's model for coding, agentic tasks, and knowledge work, is now available on the xAI API. Priced at $2 / 1M input tokens and $6 / 1M output tokens, with configurable reasoning effort"
+        },
+        {
+          "url": "https://docs.x.ai/docs/models",
+          "quote": "grok-4.5 — Our flagship model for code and everything else: agentic tool calling, minimal hallucinations, configurable reasoning. Context 500k tokens. Input $2.00 / 1M tokens. Output $6.00 / 1M tokens"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-amazon-bedrock-legacy-claude-opus-4-1",
+      "announced_at": "2026-07-08",
+      "effective_at": "2027-01-08",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "amazon"
+      ],
+      "models": [
+        "amazon/anthropic.claude-opus-4-1-20250805-v1:0"
+      ],
+      "headline": "Amazon Bedrock moves Claude Opus 4.1 to Legacy (EOL 2027-01-08)",
+      "summary": "Amazon Bedrock moved Claude Opus 4.1 (anthropic.claude-opus-4-1-20250805-v1:0) to the Legacy state on 2026-07-08 in us-east-1, us-east-2, and us-west-2, with an end-of-life date of 2027-01-08. Public extended access (at potentially higher, provider-set pricing) begins 2026-10-08. New customers cannot start using a Legacy model.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
+          "quote": "Claude Opus 4.1 | anthropic.claude-opus-4-1-20250805-v1:0 | Legacy date: July 8, 2026 | EOL date: January 8, 2027 | Public extended access start date: October 8, 2026"
+        }
+      ],
+      "tags": [
+        "platform-schedule"
+      ],
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-deepseek-deprecates-deepseek-chat-and-deepseek-reasoner-names",
+      "announced_at": "2026-07-09",
+      "effective_at": "2026-07-24",
+      "type": "id_rename",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-chat",
+        "deepseek/deepseek-reasoner"
+      ],
+      "migration_target": "deepseek/deepseek-v4-flash",
+      "headline": "DeepSeek deprecates the deepseek-chat and deepseek-reasoner model names",
+      "summary": "DeepSeek will deprecate the API model names deepseek-chat and deepseek-reasoner on 2026-07-24 15:59 UTC. Both are modes of deepseek-v4-flash (deepseek-chat = non-thinking, deepseek-reasoner = thinking); callers should migrate to the deepseek-v4-flash name. The underlying model remains available under the new name.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "quote": "The model names deepseek-chat and deepseek-reasoner will be deprecated on 2026/07/24 15:59 UTC."
+        }
+      ],
+      "tags": [
+        "id-rename"
+      ],
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
     }
   ]
 }
