@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-08",
+  "snapshot_date": "2026-07-09",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27244,6 +27244,194 @@
       "tags": [
         "open-weight"
       ],
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2026-07-other-sambanova-raises-1b-at-11b-valuation-in-series-f-first-close",
+      "announced_at": "2026-07-08",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "SambaNova raises $1B at $11B valuation in Series F first close.",
+      "summary": "AI chip maker SambaNova secured $1B in funding at an $11B valuation, a significant increase from Intel's rumored $1.6B acquisition bid months prior. This round underscores strong investor confidence in SambaNova's position in the competitive AI hardware market.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/08/sambanova-draws-1b-at-11b-valuation-in-series-f-first-close/"
+        }
+      ],
+      "tags": [
+        "major",
+        "hardware",
+        "funding"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2026-07-nvidia-d-matrix-launches-corsair-ai-inference-platform-to-challenge",
+      "announced_at": "2026-07-08",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nvidia"
+      ],
+      "models": [],
+      "headline": "D-Matrix launches Corsair AI inference platform to challenge Nvidia's GPU dominance",
+      "summary": "D-Matrix has launched the Corsair AI inference platform, positioning it as a competitive alternative to Nvidia's dominant GPU-based AI acceleration stack. The platform aims to deliver high-efficiency inference capabilities for large language models and other AI workloads, signaling a new entrant in the foundational AI infrastructure space.",
+      "sources": [
+        {
+          "url": "https://cryptobriefing.com/d-matrix-corsair-challenges-nvidia-ai-inference/"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "competition",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2026-07-nvidia-launches-27b-ai-factory-initiative-partnering-with-ch",
+      "announced_at": "2026-07-08",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nvidia"
+      ],
+      "models": [],
+      "headline": "Nvidia launches $27B 'AI factory' initiative partnering with chip rivals to scale AI compute infrastructure",
+      "summary": "Under Jensen Huang's 'AI factory' strategy, Nvidia commits $27 billion to partner with competing chip firms to dramatically expand AI compute capacity. This initiative aims to standardize and scale the production of AI hardware infrastructure globally.",
+      "sources": [
+        {
+          "url": "https://cryptobriefing.com/nvidia-partners-ai-chip-rivals-strategy/"
+        }
+      ],
+      "tags": [
+        "major",
+        "ai-infrastructure",
+        "compute-capacity"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2026-07-together-ai-launches-provisioned-throughput-for-reserved-inf",
+      "announced_at": "2026-07-08",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "together"
+      ],
+      "models": [
+        "together/minimax-m3",
+        "together/glm-5.2"
+      ],
+      "headline": "Together AI launches Provisioned Throughput for reserved inference capacity on open models",
+      "summary": "Together AI introduces Provisioned Throughput, a new offering that provides reserved inference capacity for frontier open models like MiniMax M3 and GLM-5.2. It features token-based pricing, a 99% uptime SLA, and costs up to 90% less than proprietary APIs, eliminating GPU-hour calculations and infrastructure management.",
+      "sources": [
+        {
+          "url": "https://www.together.ai/blog/provisioned-throughput"
+        }
+      ],
+      "tags": [
+        "major",
+        "cost-efficiency",
+        "sla",
+        "inference"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2026-07-xai-expanded-lawsuit-alleges-xai-s-grok-enabled-generation-of-de",
+      "announced_at": "2026-07-07",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "Expanded lawsuit alleges xAI's Grok enabled generation of deepfake child sexual abuse material",
+      "summary": "A growing legal action against xAI claims its Grok AI model was used to create and distribute deepfake child sexual exploitation content, raising serious concerns about model misuse, content moderation, and corporate liability. The lawsuit could prompt regulatory scrutiny and force changes in model safeguards or deployment policies.",
+      "sources": [
+        {
+          "url": "https://cyberscoop.com/deepfake-csam-lawsuit-grok-xai-expands-stability-ai/"
+        }
+      ],
+      "tags": [
+        "legal",
+        "major",
+        "content-moderation",
+        "liability"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-08",
+      "updated_at": "2026-07-08"
+    },
+    {
+      "id": "2026-07-xai-publicly-launches-grok-4-5-the-latest-iteration-of-its-a",
+      "announced_at": "2026-07-08",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "xAI (SpaceXAI) makes Grok 4.5 publicly available",
+      "summary": "xAI, now branded SpaceXAI, opens Grok 4.5 to public access, following the model's late-June launch and private beta at SpaceX and Tesla. Reported by multiple outlets as an 'Opus-class' model positioned against Anthropic's Claude Opus.",
+      "sources": [
+        {
+          "url": "https://www.cnbctv18.com/technology/what-is-grok-4-5-elon-musk-announces-public-launch-of-xais-latest-ai-model-19941342.htm"
+        }
+      ],
+      "tags": [
+        "major",
+        "public-launch"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
       "created_at": "2026-07-08",
       "updated_at": "2026-07-08"
     }
