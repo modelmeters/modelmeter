@@ -27558,6 +27558,95 @@
       "updated_at": "2026-07-09",
       "effective_at": "2026-08-15",
       "migration_target": "microsoft/MAI-Image-2.5"
+    },
+    {
+      "id": "2026-07-venice-ai-raises-65m-in-series-a-funding-at-1b-valuation",
+      "announced_at": "2026-07-09",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "venice"
+      ],
+      "models": [],
+      "headline": "Venice AI raises $65M in Series A funding at $1B valuation",
+      "summary": "Venice AI secured $65 million in Series A funding at a $1 billion valuation, underscoring investor confidence in its privacy-focused, uncensored AI platform. The capital will accelerate infrastructure scaling and model deployment.",
+      "sources": [
+        {
+          "url": "https://theaiinsider.tech/2026/07/09/venice-ai-closes-65m-series-a-at-1b-valuation-betting-on-privacy-focused-uncensored-ai-access/"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-other-ollama-raises-65m-and-reaches-nearly-9m-users",
+      "announced_at": "2026-07-09",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Ollama raises $65M and reaches nearly 9M users",
+      "summary": "Ollama, a leading open-source tool for running AI models locally, has secured $65M in funding and grown its user base to nearly 9 million. The platform has gained widespread developer adoption, evidenced by 176,000 GitHub stars and 17,000 forks, reinforcing its role in decentralized AI inference.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/09/popular-open-source-ai-developer-tool-ollama-raises-65m-grows-to-nearly-9m-users/"
+        }
+      ],
+      "tags": [
+        "major",
+        "open-source",
+        "developer-tools"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-cohere-humain-and-cohere-launch-strategic-sovereign-ai-compute-coll",
+      "announced_at": "2026-07-09",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "cohere",
+        "other"
+      ],
+      "models": [],
+      "headline": "HUMAIN and Cohere launch strategic sovereign AI compute collaboration",
+      "summary": "HUMAIN and Cohere have partnered to develop sovereign AI compute solutions, aiming to establish regionally controlled AI infrastructure with localized data governance and model deployment. This collaboration emphasizes data residency and compliance for African markets.",
+      "sources": [
+        {
+          "url": "https://techafricanews.com/2026/07/09/humain-and-cohere-launch-strategic-sovereign-ai-compute-collaboration/"
+        }
+      ],
+      "tags": [
+        "sovereign-ai",
+        "africa",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
     }
   ]
 }
