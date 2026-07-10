@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-09",
+  "snapshot_date": "2026-07-10",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27558,6 +27558,36 @@
       "updated_at": "2026-07-09",
       "effective_at": "2026-08-15",
       "migration_target": "microsoft/MAI-Image-2.5"
+    },
+    {
+      "id": "2026-07-openai-the-new-york-times-files-motion-for-sanctions-alleging-opena",
+      "announced_at": "2026-07-09",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "The New York Times files motion for sanctions alleging OpenAI hid evidence in ChatGPT copyright trial",
+      "summary": "The New York Times and other publishers allege that OpenAI concealed tools and datasets that could trace copyrighted journalism in ChatGPT outputs, escalating their ongoing copyright lawsuit with a motion for sanctions. This legal action highlights growing tensions over data transparency and intellectual property in AI model training.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/09/new-york-times-says-openai-hid-evidence-in-chatgpt-copyright-trial/"
+        }
+      ],
+      "tags": [
+        "copyright",
+        "litigation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-10",
+      "updated_at": "2026-07-10"
     }
   ]
 }
