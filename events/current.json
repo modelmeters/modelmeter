@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-09",
+  "snapshot_date": "2026-07-10",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27558,6 +27558,54 @@
       "updated_at": "2026-07-09",
       "effective_at": "2026-08-15",
       "migration_target": "microsoft/MAI-Image-2.5"
+    },
+    {
+      "id": "2026-07-anthropic-new-agent-memory-2026-07-22-beta-header-changes-memory-listi",
+      "announced_at": "2026-07-02",
+      "detected_at": "2026-07-10T17:30:57.349Z",
+      "type": "capability_change",
+      "severity": "informational",
+      "status": "verified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "New agent-memory-2026-07-22 beta header changes memory listing behavior",
+      "summary": "The agent-memory-2026-07-22 beta header modifies how memory listing results are returned, enforcing a stable server-defined order, restricting depth values, and changing path_prefix matching behavior. It replaces the managed-agents-2026-04-01 header for memory store calls.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We've added the agent-memory-2026-07-22 beta header, which changes how listing memories ( GET /v1/memory_stores/{memory_store_id}/memories ) behaves: results are returned in a stable, server-defined order and the order_by and order parameters are ignored; depth accepts only 0 , 1 , or being omitted (other values return a 400 error); and path_prefix must end with / and matches whole path segments instead of a substring. Page cursors issued without the header aren't valid with it, so restart from the first page when you adopt it. On memory store endpoints, agent-memory-2026-07-22 replaces managed-agents-2026-04-01 ; sending both returns a 400 error. On July 22, 2026, the managed-agents-2026-04-01 header adopts the same list behavior. See Beta headers ."
+        }
+      ],
+      "created_at": "2026-07-10",
+      "updated_at": "2026-07-10"
+    },
+    {
+      "id": "2026-06-google-gemini-3-1-flash-lite-image-nano-banana-2-lite-ga",
+      "announced_at": "2026-06-30",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "verified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-3.1-flash-lite-image"
+      ],
+      "headline": "Google releases gemini-3.1-flash-lite-image (Nano Banana 2 Lite) to GA",
+      "summary": "Google released gemini-3.1-flash-lite-image, marketed as Nano Banana 2 Lite, to general availability on the Gemini API - a built-in multimodal model optimized for ultra-low latency and cost-effective image generation and editing.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog?hl=en",
+          "quote": "Released gemini-3.1-flash-lite-image (Nano Banana 2 Lite) to general availability (GA), our built-in multimodal model optimized for ultra-low latency and cost-effective image generation and editing."
+        }
+      ],
+      "tags": [
+        "image"
+      ],
+      "created_at": "2026-07-10",
+      "updated_at": "2026-07-10"
     }
   ]
 }
