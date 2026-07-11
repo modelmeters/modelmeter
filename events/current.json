@@ -27580,32 +27580,6 @@
       ],
       "created_at": "2026-07-10",
       "updated_at": "2026-07-10"
-    },
-    {
-      "id": "2026-06-google-gemini-3-1-flash-lite-image-nano-banana-2-lite-ga",
-      "announced_at": "2026-06-30",
-      "type": "model_launch",
-      "severity": "informational",
-      "status": "verified",
-      "providers": [
-        "google"
-      ],
-      "models": [
-        "google/gemini-3.1-flash-lite-image"
-      ],
-      "headline": "Google releases gemini-3.1-flash-lite-image (Nano Banana 2 Lite) to GA",
-      "summary": "Google released gemini-3.1-flash-lite-image, marketed as Nano Banana 2 Lite, to general availability on the Gemini API - a built-in multimodal model optimized for ultra-low latency and cost-effective image generation and editing.",
-      "sources": [
-        {
-          "url": "https://ai.google.dev/gemini-api/docs/changelog?hl=en",
-          "quote": "Released gemini-3.1-flash-lite-image (Nano Banana 2 Lite) to general availability (GA), our built-in multimodal model optimized for ultra-low latency and cost-effective image generation and editing."
-        }
-      ],
-      "tags": [
-        "image"
-      ],
-      "created_at": "2026-07-10",
-      "updated_at": "2026-07-10"
     }
   ]
 }
