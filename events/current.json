@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-09",
+  "snapshot_date": "2026-07-11",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27558,6 +27558,96 @@
       "updated_at": "2026-07-09",
       "effective_at": "2026-08-15",
       "migration_target": "microsoft/MAI-Image-2.5"
+    },
+    {
+      "id": "2026-07-other-u-s-seeks-to-restrict-chinese-ai-models-in-corporate-use-but",
+      "announced_at": "2026-07-11",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "U.S. seeks to restrict Chinese AI models in corporate use, but open-weight models undermine enforcement",
+      "summary": "The U.S. government is pushing to exclude Chinese AI models from corporate America due to security and geopolitical concerns. However, the proliferation of open-weight models enables continued access and deployment despite regulatory intent, limiting the effectiveness of such restrictions.",
+      "sources": [
+        {
+          "url": "https://www.techtimes.com/articles/320171/20260711/washington-wants-chinese-ai-out-corporate-america-open-weights-block-ban.htm"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "geopolitical",
+        "open-weights",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-11",
+      "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-other-minimax-raises-2-05b-for-record-open-weight-ai-model-develop",
+      "announced_at": "2026-07-10",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "MiniMax raises $2.05B for record open-weight AI model development",
+      "summary": "MiniMax has secured $2.05B in funding to develop a record-scale open-weight AI model, marking one of the largest financings in the AI sector this year. This investment positions MiniMax as a major player in the open-model ecosystem and could accelerate the release of high-capacity models with broad accessibility.",
+      "sources": [
+        {
+          "url": "https://www.msn.com/en-us/news/insight/minimax-to-raise-2-05b-for-record-open-weight-ai-model/gm-GMAFBB756C?gemSnapshotKey"
+        }
+      ],
+      "tags": [
+        "major",
+        "open-weight"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-11",
+      "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-anthropic-100-authors-file-75m-lawsuit-against-anthropic-for-alleged-u",
+      "announced_at": "2026-07-04",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "100 authors file $75M lawsuit against Anthropic for alleged unauthorized use of copyrighted works in model training",
+      "summary": "A group of 100 authors has filed a lawsuit demanding $75 million in damages from Anthropic, alleging that the company used their copyrighted works without permission to train its AI systems. The suit raises critical questions about intellectual property rights in AI development and could set legal precedents for data sourcing in the industry.",
+      "sources": [
+        {
+          "url": "https://nypost.com/2026/07/04/us-news/100-authors-demand-over-75m-from-ai-company-that-stole-their-work-to-train-systems-lawsuit/"
+        }
+      ],
+      "tags": [
+        "major",
+        "copyright",
+        "litigation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-11",
+      "updated_at": "2026-07-11"
     }
   ]
 }
