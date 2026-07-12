@@ -27563,7 +27563,7 @@
       "id": "2026-07-xai-grok-models-updated-with-new-knowledge-cutoff-dates",
       "announced_at": "2026-07-12",
       "detected_at": "2026-07-12T17:30:06.403Z",
-      "type": "capability_change",
+      "type": "infrastructure",
       "severity": "action_required",
       "status": "unverified",
       "providers": [
