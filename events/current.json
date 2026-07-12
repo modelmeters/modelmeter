@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-09",
+  "snapshot_date": "2026-07-12",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27558,6 +27558,32 @@
       "updated_at": "2026-07-09",
       "effective_at": "2026-08-15",
       "migration_target": "microsoft/MAI-Image-2.5"
+    },
+    {
+      "id": "2026-07-xai-grok-models-updated-with-new-knowledge-cutoff-dates",
+      "announced_at": "2026-07-12",
+      "detected_at": "2026-07-12T17:30:06.403Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/Grok 4.5",
+        "xai/Grok 3",
+        "xai/Grok 4"
+      ],
+      "headline": "Grok models updated with new knowledge cutoff dates",
+      "summary": "The knowledge cutoff date for Grok 4.5 has been updated to February 1, 2026, while the previous cutoff for Grok 3 and Grok 4 was November 2024. This reflects an advancement in the knowledge base of the Grok model series.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/docs/models",
+          "quote": "The knowledge cut-off date of Grok 4.5 is February 1, 2026."
+        }
+      ],
+      "created_at": "2026-07-12",
+      "updated_at": "2026-07-12"
     }
   ]
 }
