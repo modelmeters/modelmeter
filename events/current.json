@@ -27819,7 +27819,7 @@
       "id": "2026-07-anthropic-introduces-rupee-denominated-subscription-plans-fo",
       "announced_at": "2026-07-13",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "anthropic"
