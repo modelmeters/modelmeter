@@ -27814,32 +27814,6 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
-    },
-    {
-      "id": "2026-07-deepseek-chat-and-deepseek-reasoner-to-be-deprecated-on-2026",
-      "announced_at": "2026-07-13",
-      "detected_at": "2026-07-13T17:30:06.678Z",
-      "type": "model_deprecation",
-      "severity": "breaking",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [
-        "deepseek/deepseek-chat",
-        "deepseek/deepseek-reasoner"
-      ],
-      "migration_target": "deepseek/deepseek-v4-flash",
-      "headline": "deepseek-chat and deepseek-reasoner to be deprecated on 2026/07/24",
-      "summary": "The model names deepseek-chat and deepseek-reasoner will be deprecated on 2026/07/24 and will no longer be available. They currently map to non-thinking and thinking modes of deepseek-v4-flash respectively.",
-      "sources": [
-        {
-          "url": "https://api-docs.deepseek.com/updates",
-          "quote": "deepseek-chat (to be deprecated on 2026/07/24)\ndeepseek-reasoner (to be deprecated on 2026/07/24)\n* The model names deepseek-chat and deepseek-reasoner will be deprecated on 2026/07/24 15:59 UTC. For compatibility, they correspond to the non-thinking mode and thinking mode of deepseek-v4-flash , respectively."
-        }
-      ],
-      "created_at": "2026-07-13",
-      "updated_at": "2026-07-13"
     }
   ]
 }
