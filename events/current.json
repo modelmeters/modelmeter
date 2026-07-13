@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-09",
+  "snapshot_date": "2026-07-13",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27558,6 +27558,262 @@
       "updated_at": "2026-07-09",
       "effective_at": "2026-08-15",
       "migration_target": "microsoft/MAI-Image-2.5"
+    },
+    {
+      "id": "2026-07-openai-gpt-5-6-adds-new-capabilities",
+      "announced_at": "2026-07-09",
+      "detected_at": "2026-07-09T17:30:54.193Z",
+      "type": "capability_change",
+      "severity": "informational",
+      "status": "verified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.6-sol",
+        "openai/gpt-5.6-terra",
+        "openai/gpt-5.6-luna"
+      ],
+      "headline": "GPT-5.6 adds new capabilities",
+      "summary": "GPT-5.6 introduces programmatic tool calling, explicit prompt caching controls, persisted reasoning, max reasoning effort, Pro mode, multi-agent orchestration in beta for the Responses API, and support for images at original dimensions with original or auto image detail.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "GPT-5.6 adds Programmatic Tool Calling , explicit prompt caching controls , persisted reasoning, max reasoning effort, and Pro mode , and Multi-agent orchestration in beta for the Responses API . GPT-5.6 also accepts images at their original dimensions with original or auto image detail."
+        }
+      ],
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-amazon-bedrock-legacy-claude-opus-4-1",
+      "announced_at": "2026-07-08",
+      "effective_at": "2027-01-08",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "verified",
+      "providers": [
+        "amazon"
+      ],
+      "models": [
+        "amazon/anthropic.claude-opus-4-1-20250805-v1:0"
+      ],
+      "headline": "Amazon Bedrock moves Claude Opus 4.1 to Legacy (EOL 2027-01-08)",
+      "summary": "Amazon Bedrock moved Claude Opus 4.1 (anthropic.claude-opus-4-1-20250805-v1:0) to the Legacy state on 2026-07-08 in us-east-1, us-east-2, and us-west-2, with an end-of-life date of 2027-01-08. Public extended access (at potentially higher, provider-set pricing) begins 2026-10-08. New customers cannot start using a Legacy model.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
+          "quote": "Claude Opus 4.1 | anthropic.claude-opus-4-1-20250805-v1:0 | Legacy date: July 8, 2026 | EOL date: January 8, 2027 | Public extended access start date: October 8, 2026"
+        }
+      ],
+      "tags": [
+        "platform-schedule"
+      ],
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-other-ollama-raises-65m-and-reaches-nearly-9m-users",
+      "announced_at": "2026-07-09",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Ollama raises $65M and reaches nearly 9M users",
+      "summary": "Ollama, a leading open-source tool for running AI models locally, has secured $65M in funding and grown its user base to nearly 9 million. The platform has gained widespread developer adoption, evidenced by 176,000 GitHub stars and 17,000 forks, reinforcing its role in decentralized AI inference.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/09/popular-open-source-ai-developer-tool-ollama-raises-65m-grows-to-nearly-9m-users/"
+        }
+      ],
+      "tags": [
+        "major",
+        "open-source",
+        "developer-tools"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-cohere-humain-and-cohere-launch-strategic-sovereign-ai-compute-coll",
+      "announced_at": "2026-07-09",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "cohere",
+        "other"
+      ],
+      "models": [],
+      "headline": "HUMAIN and Cohere launch strategic sovereign AI compute collaboration",
+      "summary": "HUMAIN and Cohere have partnered to develop sovereign AI compute solutions, aiming to establish regionally controlled AI infrastructure with localized data governance and model deployment. This collaboration emphasizes data residency and compliance for African markets.",
+      "sources": [
+        {
+          "url": "https://techafricanews.com/2026/07/09/humain-and-cohere-launch-strategic-sovereign-ai-compute-collaboration/"
+        }
+      ],
+      "tags": [
+        "sovereign-ai",
+        "africa",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-09",
+      "updated_at": "2026-07-09"
+    },
+    {
+      "id": "2026-07-anthropic-new-agent-memory-2026-07-22-beta-header-changes-memory-listi",
+      "announced_at": "2026-07-02",
+      "detected_at": "2026-07-10T17:30:57.349Z",
+      "type": "capability_change",
+      "severity": "informational",
+      "status": "verified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "New agent-memory-2026-07-22 beta header changes memory listing behavior",
+      "summary": "The agent-memory-2026-07-22 beta header modifies how memory listing results are returned, enforcing a stable server-defined order, restricting depth values, and changing path_prefix matching behavior. It replaces the managed-agents-2026-04-01 header for memory store calls.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We've added the agent-memory-2026-07-22 beta header, which changes how listing memories ( GET /v1/memory_stores/{memory_store_id}/memories ) behaves: results are returned in a stable, server-defined order and the order_by and order parameters are ignored; depth accepts only 0 , 1 , or being omitted (other values return a 400 error); and path_prefix must end with / and matches whole path segments instead of a substring. Page cursors issued without the header aren't valid with it, so restart from the first page when you adopt it. On memory store endpoints, agent-memory-2026-07-22 replaces managed-agents-2026-04-01 ; sending both returns a 400 error. On July 22, 2026, the managed-agents-2026-04-01 header adopts the same list behavior. See Beta headers ."
+        }
+      ],
+      "created_at": "2026-07-10",
+      "updated_at": "2026-07-10"
+    },
+    {
+      "id": "2026-07-openai-the-new-york-times-files-motion-for-sanctions-alleging-opena",
+      "announced_at": "2026-07-09",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "The New York Times files motion for sanctions alleging OpenAI hid evidence in ChatGPT copyright trial",
+      "summary": "The New York Times and other publishers allege that OpenAI concealed tools and datasets that could trace copyrighted journalism in ChatGPT outputs, escalating their ongoing copyright lawsuit with a motion for sanctions. This legal action highlights growing tensions over data transparency and intellectual property in AI model training.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/09/new-york-times-says-openai-hid-evidence-in-chatgpt-copyright-trial/"
+        }
+      ],
+      "tags": [
+        "copyright",
+        "litigation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-10",
+      "updated_at": "2026-07-10"
+    },
+    {
+      "id": "2026-07-other-u-s-seeks-to-restrict-chinese-ai-models-in-corporate-use-but",
+      "announced_at": "2026-07-11",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "U.S. seeks to restrict Chinese AI models in corporate use, but open-weight models undermine enforcement",
+      "summary": "The U.S. government is pushing to exclude Chinese AI models from corporate America due to security and geopolitical concerns. However, the proliferation of open-weight models enables continued access and deployment despite regulatory intent, limiting the effectiveness of such restrictions.",
+      "sources": [
+        {
+          "url": "https://www.techtimes.com/articles/320171/20260711/washington-wants-chinese-ai-out-corporate-america-open-weights-block-ban.htm"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "geopolitical",
+        "open-weights",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-11",
+      "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-other-minimax-raises-2-05b-for-record-open-weight-ai-model-develop",
+      "announced_at": "2026-07-10",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "MiniMax raises $2.05B for record open-weight AI model development",
+      "summary": "MiniMax has secured $2.05B in funding to develop a record-scale open-weight AI model, marking one of the largest financings in the AI sector this year. This investment positions MiniMax as a major player in the open-model ecosystem and could accelerate the release of high-capacity models with broad accessibility.",
+      "sources": [
+        {
+          "url": "https://www.msn.com/en-us/news/insight/minimax-to-raise-2-05b-for-record-open-weight-ai-model/gm-GMAFBB756C?gemSnapshotKey"
+        }
+      ],
+      "tags": [
+        "major",
+        "open-weight"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-11",
+      "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-anthropic-100-authors-file-75m-lawsuit-against-anthropic-for-alleged-u",
+      "announced_at": "2026-07-04",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "100 authors file $75M lawsuit against Anthropic for alleged unauthorized use of copyrighted works in model training",
+      "summary": "A group of 100 authors has filed a lawsuit demanding $75 million in damages from Anthropic, alleging that the company used their copyrighted works without permission to train its AI systems. The suit raises critical questions about intellectual property rights in AI development and could set legal precedents for data sourcing in the industry.",
+      "sources": [
+        {
+          "url": "https://nypost.com/2026/07/04/us-news/100-authors-demand-over-75m-from-ai-company-that-stole-their-work-to-train-systems-lawsuit/"
+        }
+      ],
+      "tags": [
+        "major",
+        "copyright",
+        "litigation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-11",
+      "updated_at": "2026-07-11"
     }
   ]
 }
