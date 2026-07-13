@@ -27814,6 +27814,36 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-anthropic-introduces-rupee-denominated-subscription-plans-fo",
+      "announced_at": "2026-07-13",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic introduces rupee-denominated subscription plans for Claude in India",
+      "summary": "Anthropic has begun offering localized pricing in Indian rupees for its Claude subscription plans, targeting India as its largest market after the United States. This move aims to improve affordability and accessibility for Indian users.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/13/anthropic-starts-localizing-claude-pricing-for-india-its-biggest-market-after-the-us/"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "international",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-13",
+      "updated_at": "2026-07-13"
     }
   ]
 }
