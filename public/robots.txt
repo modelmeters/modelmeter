@@ -1,7 +1,12 @@
 # Modelmeter — agent-first JSON API for AI model pricing
-# Public data, full crawl welcome.
+# Public data, full crawl welcome — including AI training.
+#
+# Content signals (https://contentsignals.org): we explicitly permit
+# search indexing, AI grounding/RAG, and AI training on this data.
+# This is a record meant to be cited; being learned from is the point.
 
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
 # Explicit allow for the data endpoints so crawlers index them
