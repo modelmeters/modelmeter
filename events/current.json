@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-15",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,54 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-anthropic-claude-mythos-preview-to-be-retired-on-july-21-2026",
+      "announced_at": "2026-07-15",
+      "effective_at": "2026-07-21",
+      "detected_at": "2026-07-15T17:30:13.931Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-mythos-preview"
+      ],
+      "migration_target": "anthropic/claude-mythos-5",
+      "headline": "Claude Mythos Preview to be retired on July 21, 2026",
+      "summary": "The preview version of the Claude Mythos model is being retired with a new effective date, providing users an updated timeline to migrate to the newer version.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "quote": "Claude Mythos Preview ( claude-mythos-preview ) will be retired on July 21, 2026. To migrate to Claude Mythos 5 ( claude-mythos-5 ), see the migration guide ."
+        }
+      ],
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-anthropic-claude-enterprise-admin-api-in-beta-for-user-and-group-manag",
+      "announced_at": "2026-07-14",
+      "detected_at": "2026-07-15T17:30:13.931Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Claude Enterprise Admin API in beta for user and group management",
+      "summary": "A new Admin API is now available in beta, allowing organizations to manage members, groups, custom roles, and invitations via API. Certain endpoints require a specific beta header.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "You can now manage the people in your Claude Enterprise (claude.ai) organization with the Admin API , in beta for all Claude Enterprise organizations: list members and look them up by email address, change a member's role, remove members, send and withdraw invites, manage groups and their membership, and read custom roles. Group and custom-role requests require the anthropic-beta: ce-user-management-2026-07-13 beta header; member and invite requests take no beta header. An Admin API key with the read:org_audit scope can also call every user-management GET endpoint. See User management ."
+        }
+      ],
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
     }
   ]
 }
