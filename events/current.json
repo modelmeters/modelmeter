@@ -27940,35 +27940,6 @@
       "updated_at": "2026-07-15"
     },
     {
-      "id": "2026-07-deepseek-targets-70b-valuation-in-new-funding-round-followin",
-      "announced_at": "2026-07-15",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [],
-      "headline": "DeepSeek targets $70B valuation in new funding round following Series A",
-      "summary": "DeepSeek is reportedly seeking a $70 billion valuation in a new funding round, marking a significant milestone following its Series A. This positions the company as a major player in the global AI race, with implications for model development, infrastructure investment, and competitive dynamics.",
-      "sources": [
-        {
-          "url": "https://www.indexbox.io/blog/deepseek-in-talks-for-new-funding-round-at-70-billion-valuation/"
-        }
-      ],
-      "tags": [
-        "major",
-        "valuation"
-      ],
-      "impact": {
-        "magnitude": "structural",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-07-15",
-      "updated_at": "2026-07-15"
-    },
-    {
       "id": "2026-07-anthropic-introduces-new-pricing-model-for-claude",
       "announced_at": "2026-07-15",
       "type": "pricing_change",
@@ -28173,36 +28144,6 @@
         "magnitude": "major",
         "duration": "ongoing",
         "price_direction": "up"
-      },
-      "created_at": "2026-07-15",
-      "updated_at": "2026-07-15"
-    },
-    {
-      "id": "2026-07-groq-raises-650m-to-scale-its-global-ai-inference-cloud",
-      "announced_at": "2026-07-13",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "groq"
-      ],
-      "models": [],
-      "headline": "Groq raises $650M to scale its global AI inference cloud",
-      "summary": "Groq has secured a $650 million growth round to expand its AI inference infrastructure globally. This funding will accelerate the deployment of its low-latency inference platform, enhancing capacity and potentially lowering costs for high-performance model serving.",
-      "sources": [
-        {
-          "url": "https://theaisoftwarereport.com/groq-secures-650-million-growth-round-to-scale-global-ai-inference-cloud/"
-        }
-      ],
-      "tags": [
-        "major",
-        "inference",
-        "scaling"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
       },
       "created_at": "2026-07-15",
       "updated_at": "2026-07-15"
