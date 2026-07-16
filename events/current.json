@@ -27847,7 +27847,7 @@
     {
       "id": "2026-07-xai-announces-full-open-sourcing-of-its-codebase-following-g",
       "announced_at": "2026-07-16",
-      "type": "open_source_release",
+      "type": "security_incident",
       "severity": "informational",
       "status": "unverified",
       "providers": [
