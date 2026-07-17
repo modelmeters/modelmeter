@@ -27874,34 +27874,6 @@
       "updated_at": "2026-07-17"
     },
     {
-      "id": "2026-07-deepseek-raises-funding-at-52b-valuation-backed-by-tencent-a",
-      "announced_at": "2026-07-17",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [],
-      "headline": "DeepSeek raises funding at $52B valuation backed by Tencent and CATL",
-      "summary": "DeepSeek secured a major investment round valuing the company at $52 billion, with participation from Tencent and CATL. This positions DeepSeek as a top-tier AI player and will likely accelerate development of its next-generation models and inference infrastructure.",
-      "sources": [
-        {
-          "url": "https://www.caixinglobal.com/2026-07-17/deepseek-reaches-52-billion-valuation-in-round-backed-by-tencent-catl-102465358.html"
-        }
-      ],
-      "tags": [
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-07-17",
-      "updated_at": "2026-07-17"
-    },
-    {
       "id": "2026-07-moonshot-ai-launches-kimi-k3-for-developers",
       "announced_at": "2026-07-17",
       "type": "model_launch",
@@ -28015,35 +27987,6 @@
       "tags": [
         "major",
         "pricing"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-07-17",
-      "updated_at": "2026-07-17"
-    },
-    {
-      "id": "2026-07-deepseek-seeks-new-funding-weeks-after-7-billion-round-ft-re",
-      "announced_at": "2026-07-14",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [],
-      "headline": "DeepSeek seeks new funding weeks after $7 billion round, FT reports",
-      "summary": "DeepSeek is pursuing additional capital shortly after closing a $7 billion funding round, signaling aggressive expansion or increased infrastructure demands. This move underscores the intense investment pace in the AI sector and DeepSeek's strategic positioning.",
-      "sources": [
-        {
-          "url": "https://www.investing.com/news/stock-market-news/deepseek-seeks-new-funding-weeks-after-7-billion-round-ft-reports-93CH-4790632"
-        }
-      ],
-      "tags": [
-        "funding",
-        "major"
       ],
       "impact": {
         "magnitude": "major",
