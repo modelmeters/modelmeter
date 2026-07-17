@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-17",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,32 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-anthropic-mid-conversation-system-messages-now-available-without-beta-",
+      "announced_at": "2026-07-15",
+      "detected_at": "2026-07-17T17:30:19.131Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/Claude Fable 5",
+        "anthropic/Claude Mythos 5",
+        "anthropic/Claude Opus 4.8"
+      ],
+      "headline": "Mid-conversation system messages now available without beta header",
+      "summary": "Mid-conversation system messages are now generally available on the specified models across the Claude API, Amazon Bedrock, and Google Cloud, without requiring a beta header.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "Mid-conversation system messages are available on Claude Fable 5, Claude Mythos 5, and Claude Opus 4.8, on the Claude API, Claude in Amazon Bedrock , and Google Cloud . No beta header is required. This corrects earlier availability notes."
+        }
+      ],
+      "created_at": "2026-07-17",
+      "updated_at": "2026-07-17"
     }
   ]
 }
