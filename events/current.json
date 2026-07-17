@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-17",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,272 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-other-nebius-secures-775m-gpu-backed-loan-to-fund-ai-cloud-expansi",
+      "announced_at": "2026-07-17",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Nebius secures $775M GPU-backed loan to fund AI cloud expansion",
+      "summary": "Nebius has secured a $775 million loan backed by GPUs to expand its AI cloud infrastructure. The funding will enable increased compute capacity for AI workloads, positioning Nebius as a growing competitor in the cloud AI market.",
+      "sources": [
+        {
+          "url": "https://theenergymag.com/news/market-news/nebius-group-secures-775-million-debt-facility-for-ai-cloud-infrastructure"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-17",
+      "updated_at": "2026-07-17"
+    },
+    {
+      "id": "2026-07-other-chip-backed-loan-of-400m-signals-shift-toward-inference-infr",
+      "announced_at": "2026-07-17",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Chip-backed loan of $400M signals shift toward inference infrastructure investment",
+      "summary": "A $400 million financing deal backed by AI chips highlights growing investor focus on inference capacity, indicating a strategic pivot in AI infrastructure funding away from pure GPU compute toward specialized, cost-efficient deployment solutions.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/17/why-the-first-gpu-financiers-are-turning-to-inference-chips-in-a-400-million-deal/"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "funding"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-17",
+      "updated_at": "2026-07-17"
+    },
+    {
+      "id": "2026-07-deepseek-raises-funding-at-52b-valuation-backed-by-tencent-a",
+      "announced_at": "2026-07-17",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises funding at $52B valuation backed by Tencent and CATL",
+      "summary": "DeepSeek secured a major investment round valuing the company at $52 billion, with participation from Tencent and CATL. This positions DeepSeek as a top-tier AI player and will likely accelerate development of its next-generation models and inference infrastructure.",
+      "sources": [
+        {
+          "url": "https://www.caixinglobal.com/2026-07-17/deepseek-reaches-52-billion-valuation-in-round-backed-by-tencent-catl-102465358.html"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-17",
+      "updated_at": "2026-07-17"
+    },
+    {
+      "id": "2026-07-moonshot-ai-launches-kimi-k3-for-developers",
+      "announced_at": "2026-07-17",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "moonshot"
+      ],
+      "models": [
+        "moonshotai/kimi-k3"
+      ],
+      "headline": "Moonshot AI launches Kimi K3 for developers",
+      "summary": "Moonshot AI has silently launched Kimi K3, a new flagship model made available to developers. The release expands Moonshot's presence in the competitive long-context and high-performance AI model market.",
+      "sources": [
+        {
+          "url": "https://streamlinefeed.co.ke/news/inside-the-silent-launch-that-unleashed-kimi-k3-on-developers"
+        }
+      ],
+      "tags": [
+        "major",
+        "developers"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-17",
+      "updated_at": "2026-07-17"
+    },
+    {
+      "id": "2026-07-deepseek-implied-valuation-reaches-52-billion-based-on-chine",
+      "announced_at": "2026-07-17",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek implied valuation reaches $52 billion based on Chinese regulatory filing",
+      "summary": "A recent regulatory filing in China indicates DeepSeek's valuation is approximately $52 billion, reflecting strong market confidence and positioning the company as a major player in the global AI race.",
+      "sources": [
+        {
+          "url": "https://979weve.com/2026/07/16/chinese-filing-implies-deepseek-valuation-of-around-52-billion/"
+        }
+      ],
+      "tags": [
+        "major",
+        "valuation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-17",
+      "updated_at": "2026-07-17"
+    },
+    {
+      "id": "2026-07-meta-develops-custom-ai-chip-to-redefine-ai-economics",
+      "announced_at": "2026-07-17",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "meta"
+      ],
+      "models": [],
+      "headline": "Meta develops custom AI chip to redefine AI economics",
+      "summary": "Meta is advancing its own custom AI silicon, aiming to reduce reliance on third-party hardware and lower inference costs at scale. This move could shift competitive dynamics in AI infrastructure and influence pricing models across the industry.",
+      "sources": [
+        {
+          "url": "https://www.hpcwire.com/2026/07/16/metas-custom-ai-chip-could-redefine-the-economics-of-ai/"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "custom-chip",
+        "efficiency",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-17",
+      "updated_at": "2026-07-17"
+    },
+    {
+      "id": "2026-07-deepseek-cuts-model-inference-prices-by-75",
+      "announced_at": "2026-07-16",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v3",
+        "deepseek/deepseek-r1"
+      ],
+      "headline": "DeepSeek cuts model inference prices by 75%",
+      "summary": "DeepSeek implemented a 75% reduction in inference pricing across its model suite, significantly undercutting competitors and intensifying price competition in the AI market. This move pressures valuation expectations for peer AI companies, particularly Anthropic, and may force repricing across major cloud AI providers.",
+      "sources": [
+        {
+          "url": "https://cryptobriefing.com/deepseeks-75-price-cut-pressures-ai-market-impacts-anthropic-valuation/"
+        }
+      ],
+      "tags": [
+        "major",
+        "pricing"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-17",
+      "updated_at": "2026-07-17"
+    },
+    {
+      "id": "2026-07-deepseek-seeks-new-funding-weeks-after-7-billion-round-ft-re",
+      "announced_at": "2026-07-14",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek seeks new funding weeks after $7 billion round, FT reports",
+      "summary": "DeepSeek is pursuing additional capital shortly after closing a $7 billion funding round, signaling aggressive expansion or increased infrastructure demands. This move underscores the intense investment pace in the AI sector and DeepSeek's strategic positioning.",
+      "sources": [
+        {
+          "url": "https://www.investing.com/news/stock-market-news/deepseek-seeks-new-funding-weeks-after-7-billion-round-ft-reports-93CH-4790632"
+        }
+      ],
+      "tags": [
+        "funding",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-17",
+      "updated_at": "2026-07-17"
+    },
+    {
+      "id": "2026-07-moonshot-ai-achieves-30b-valuation-up-sixfold",
+      "announced_at": "2026-07-14",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "moonshot"
+      ],
+      "models": [],
+      "headline": "Moonshot AI achieves $30B valuation, up sixfold",
+      "summary": "Moonshot AI's valuation has surged to $30B, marking a sixfold increase and reflecting strong investor confidence in its Kimi platform. This positions Moonshot as a major player in the global AI race.",
+      "sources": [
+        {
+          "url": "https://tech-insider.org/au/moonshot-ai-kimi-valuation-2026/"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-17",
+      "updated_at": "2026-07-17"
     }
   ]
 }
