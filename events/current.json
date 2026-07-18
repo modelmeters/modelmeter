@@ -27819,7 +27819,7 @@
       "id": "2026-07-anthropic-reduces-claude-fable-5-usage-limits-in-max-and-tea",
       "announced_at": "2026-07-18",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "anthropic"
@@ -27910,7 +27910,7 @@
     {
       "id": "2026-07-xai-grok-4-5-api-pricing-reveals-cloud-routing-inefficiencies",
       "announced_at": "2026-07-17",
-      "type": "pricing_change",
+      "type": "infrastructure",
       "severity": "action_required",
       "status": "unverified",
       "providers": [
