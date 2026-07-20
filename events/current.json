@@ -27945,84 +27945,6 @@
       "updated_at": "2026-07-20"
     },
     {
-      "id": "2025-09-deepseek-chat-and-deepseek-reasoner-upgraded-to-deepseek-v3-",
-      "announced_at": "2025-09-29",
-      "detected_at": "2026-07-20T17:30:22.927Z",
-      "type": "model_swap",
-      "severity": "breaking",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [
-        "deepseek/deepseek-chat",
-        "deepseek/deepseek-reasoner"
-      ],
-      "migration_target": "deepseek/DeepSeek-V3.2-Exp",
-      "headline": "deepseek-chat and deepseek-reasoner upgraded to DeepSeek-V3.2-Exp",
-      "summary": "Both models have been upgraded to DeepSeek-V3.2-Exp, with chat as non-thinking mode and reasoner as thinking mode.",
-      "sources": [
-        {
-          "url": "https://api-docs.deepseek.com/updates",
-          "quote": "Both deepseek-chat and deepseek-reasoner have been upgraded to DeepSeek-V3.2-Exp.\ndeepseek-chat corresponds to DeepSeek-V3.2-Exp&#x27;s non-thinking mode\ndeepseek-reasoner corresponds to its thinking mode"
-        }
-      ],
-      "created_at": "2026-07-20",
-      "updated_at": "2026-07-20"
-    },
-    {
-      "id": "2025-09-deepseek-chat-and-deepseek-reasoner-upgraded-to-deepseek-v3-",
-      "announced_at": "2025-09-22",
-      "detected_at": "2026-07-20T17:30:22.927Z",
-      "type": "model_swap",
-      "severity": "breaking",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [
-        "deepseek/deepseek-chat",
-        "deepseek/deepseek-reasoner"
-      ],
-      "migration_target": "deepseek/DeepSeek-V3.1-Terminus",
-      "headline": "deepseek-chat and deepseek-reasoner upgraded to DeepSeek-V3.1-Terminus",
-      "summary": "Both models upgraded to DeepSeek-V3.1-Terminus, maintaining capabilities while improving language consistency and agent performance.",
-      "sources": [
-        {
-          "url": "https://api-docs.deepseek.com/updates",
-          "quote": "Both deepseek-chat and deepseek-reasoner have been upgraded to DeepSeek-V3.1-Terminus. deepseek-chat corresponds to DeepSeek-V3.1-Terminus&#x27;s non-thinking mode , while deepseek-reasoner corresponds to its thinking mode .\nThis update maintains the model&#x27;s original capabilities while addressing issues reported by users, including:\nLanguage consistency: Reduced occurrences of Chinese-English mixing and occasional abnormal characters;\nAgent capabilities: Further optimized the performance of the Code Agent and Search Agent."
-        }
-      ],
-      "created_at": "2026-07-20",
-      "updated_at": "2026-07-20"
-    },
-    {
-      "id": "2025-08-deepseek-chat-and-deepseek-reasoner-upgraded-to-deepseek-v3-",
-      "announced_at": "2025-08-21",
-      "detected_at": "2026-07-20T17:30:22.927Z",
-      "type": "model_swap",
-      "severity": "breaking",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [
-        "deepseek/deepseek-chat",
-        "deepseek/deepseek-reasoner"
-      ],
-      "migration_target": "deepseek/DeepSeek-V3.1",
-      "headline": "deepseek-chat and deepseek-reasoner upgraded to DeepSeek-V3.1",
-      "summary": "Both models upgraded to DeepSeek-V3.1 with hybrid reasoning architecture, improved efficiency, and enhanced agent capabilities.",
-      "sources": [
-        {
-          "url": "https://api-docs.deepseek.com/updates",
-          "quote": "Both deepseek-chat and deepseek-reasoner have been upgraded to DeepSeek-V3.1. deepseek-chat corresponds to DeepSeek-V3.1&#x27;s non-thinking mode , while deepseek-reasoner corresponds to its thinking mode .\nKey updates in DeepSeek-V3.1:\nHybrid reasoning architecture : A single model supports both thinking mode and non-thinking mode\nImproved reasoning efficiency : Compared to DeepSeek-R1-0528, DeepSeek-V3.1-Think provides answers in significantly less time\nEnhanced agent capabilities : With post-training optimization, the new model achieves major improvements in tool usage and intelligent agent tasks"
-        }
-      ],
-      "created_at": "2026-07-20",
-      "updated_at": "2026-07-20"
-    },
-    {
       "id": "2025-05-deepseek-reasoner-upgraded-to-deepseek-r1-0528",
       "announced_at": "2025-05-28",
       "detected_at": "2026-07-20T17:30:22.927Z",
@@ -28097,31 +28019,6 @@
       "updated_at": "2026-07-20"
     },
     {
-      "id": "2024-12-deepseek-chat-upgraded-to-deepseek-v3",
-      "announced_at": "2024-12-26",
-      "detected_at": "2026-07-20T17:30:22.927Z",
-      "type": "model_swap",
-      "severity": "breaking",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [
-        "deepseek/deepseek-chat"
-      ],
-      "migration_target": "deepseek/DeepSeek-V3",
-      "headline": "deepseek-chat upgraded to DeepSeek-V3",
-      "summary": "The deepseek-chat model has been upgraded to DeepSeek-V3 while maintaining API compatibility.",
-      "sources": [
-        {
-          "url": "https://api-docs.deepseek.com/updates",
-          "quote": "The deepseek-chat model has been upgraded to DeepSeek-V3. The API remains unchanged. You can invoke DeepSeek-V3 by specifying model=&#x27;deepseek-chat&#x27; ."
-        }
-      ],
-      "created_at": "2026-07-20",
-      "updated_at": "2026-07-20"
-    },
-    {
       "id": "2024-12-deepseek-chat-upgraded-to-deepseek-v2-5-1210",
       "announced_at": "2024-12-10",
       "detected_at": "2026-07-20T17:30:22.927Z",
@@ -28176,7 +28073,7 @@
       "id": "2024-08-deepseek-api-launches-context-caching-on-disk-technology",
       "announced_at": "2024-08-02",
       "detected_at": "2026-07-20T17:30:22.927Z",
-      "type": "infrastructure",
+      "type": "pricing_change",
       "severity": "informational",
       "status": "unverified",
       "providers": [
