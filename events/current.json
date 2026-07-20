@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-20",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,412 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-xai-s-grok-integrates-with-microsoft-word-and-powerpoint-at-",
+      "announced_at": "2026-07-20",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai",
+        "microsoft"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "xAI's Grok integrates with Microsoft Word and PowerPoint at zero cost",
+      "summary": "Starting in July 2026, xAI has launched a deep integration of its AI assistant Grok into Microsoft Word and PowerPoint, offering full functionality at no charge. This strategic move undercuts Microsoft's own Copilot service, which remains a paid add-on, signaling a major competitive shift in the AI-powered productivity software market.",
+      "sources": [
+        {
+          "url": "https://cryptobriefing.com/xai-grok-microsoft-office-free-add-ins/"
+        }
+      ],
+      "tags": [
+        "major",
+        "integration",
+        "free-tier"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-alibaba-trump-administration-considers-ban-on-chinese-ai-models-due-",
+      "announced_at": "2026-07-20",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "alibaba",
+        "zhipu",
+        "moonshot",
+        "other"
+      ],
+      "models": [],
+      "headline": "Trump administration considers ban on Chinese AI models due to competitive concerns",
+      "summary": "Amid growing AI competition, the Trump White House is evaluating a potential ban on Chinese AI models, which could restrict their deployment and usage within the U.S. and impact market dynamics for Chinese AI providers.",
+      "sources": [
+        {
+          "url": "https://cryptobriefing.com/trump-white-house-ban-chinese-ai-models/"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "geopolitical",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-deepseek-and-alibaba-launch-new-frontier-ai-models",
+      "announced_at": "2026-07-20",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek",
+        "alibaba"
+      ],
+      "models": [],
+      "headline": "DeepSeek and Alibaba launch new frontier AI models",
+      "summary": "DeepSeek and Alibaba have introduced new offerings in the frontier AI space, signaling intensified competition and potential shifts in model performance and pricing. Specific model details and capabilities were not immediately disclosed.",
+      "sources": [
+        {
+          "url": "https://cybernews.com/ai-news/deepseek-and-alibaba-launch-fresh-assaults-on-frontier-ai/"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-deepseek-plans-7-4b-funding-round-at-74b-valuation",
+      "announced_at": "2026-07-20",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek plans $7.4B funding round at $74B valuation",
+      "summary": "Chinese AI company DeepSeek is reportedly preparing a $7.4 billion funding round that would value the company at $74 billion. This would be one of the largest private financings in the AI sector, reflecting strong investor appetite for advanced model development and infrastructure scaling.",
+      "sources": [
+        {
+          "url": "https://bebeez.eu/2026/07/20/chinese-ai-giant-deepseek-mulling-for-a-7-4-billion-us-dollars-round-for-an-enterprise-value-of-74-billion/"
+        }
+      ],
+      "tags": [
+        "major",
+        "funding"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-deepseek-v4-full-power-version-launches",
+      "announced_at": "2026-07-20",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek V4 full-power version launches",
+      "summary": "DeepSeek releases the full-power version of DeepSeek V4, significantly enhancing its capabilities and availability in the AI model market.",
+      "sources": [
+        {
+          "url": "https://eu.36kr.com/en/p/3903106705606274"
+        }
+      ],
+      "tags": [
+        "major",
+        "inference",
+        "performance"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-alibaba-chinese-open-weight-ai-models-surpass-u-s-counterparts-in-us",
+      "announced_at": "2026-07-20",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "alibaba",
+        "zhipu",
+        "moonshot",
+        "openai",
+        "meta",
+        "anthropic",
+        "other"
+      ],
+      "models": [],
+      "headline": "Chinese open-weight AI models surpass U.S. counterparts in usage on developer platform due to pricing advantage",
+      "summary": "On OpenRouter, Chinese open-weight AI models have overtaken U.S. models in developer adoption, with usage reaching three times that of U.S. alternatives. The shift is attributed to more competitive pricing, signaling a structural realignment in global AI model accessibility and developer preference.",
+      "sources": [
+        {
+          "url": "https://www.digitaltoday.co.kr/en/view/83100/chinas-open-weight-ai-overtakes-us-models-on-developer-platform-usage-three-times-higher-on-price"
+        }
+      ],
+      "tags": [
+        "major",
+        "open-weight",
+        "pricing-advantage",
+        "developer-adoption"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-together-ai-and-y-combinator-launch-dedicated-gpu-cluster-fo",
+      "announced_at": "2026-07-20",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "together",
+        "other"
+      ],
+      "models": [],
+      "headline": "Together AI and Y Combinator launch dedicated GPU cluster for YC startups",
+      "summary": "Together AI has partnered with Y Combinator to provide YC-backed startups with streamlined access to GPU compute through a dedicated cluster, removing the need for long-term contracts. This initiative aims to accelerate AI development and deployment for early-stage companies by improving infrastructure availability and reducing time-to-market.",
+      "sources": [
+        {
+          "url": "https://www.together.ai/blog/together-yc-gpu-cluster"
+        }
+      ],
+      "tags": [
+        "startup",
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-nvidia-etched-seeks-20b-valuation-to-fund-development-of-ai-chips-c",
+      "announced_at": "2026-07-19",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nvidia"
+      ],
+      "models": [],
+      "headline": "Etched seeks $20B valuation to fund development of AI chips challenging Nvidia",
+      "summary": "AI chip startup Etched is pursuing a $20B valuation to accelerate the development of its specialized AI inference hardware, aiming to disrupt Nvidia's market dominance. This move signals growing investor appetite for alternative AI compute platforms.",
+      "sources": [
+        {
+          "url": "https://www.msn.com/en-us/news/insight/ai-chip-startup-etched-seeks-20b-valuation-to-challenge-nvidia/gm-GM156F4A5E?gemSnapshotKey"
+        }
+      ],
+      "tags": [
+        "hardware",
+        "competition",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-meta-and-anthropic-in-early-discussions-for-10b-ai-compute-p",
+      "announced_at": "2026-07-19",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "meta",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Meta and Anthropic in early discussions for $10B AI compute partnership",
+      "summary": "Meta and Anthropic are reportedly in initial talks for a potential $10 billion AI compute agreement, signaling a strategic collaboration to scale Anthropic's model training and inference capacity using Meta's infrastructure resources.",
+      "sources": [
+        {
+          "url": "https://www.msn.com/en-us/news/insight/meta-in-10b-talks-to-lease-ai-compute-to-anthropic/gm-GM7513BE7E?gemSnapshotKey"
+        }
+      ],
+      "tags": [
+        "major",
+        "compute"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-deepseek-v4-launched-with-peak-valley-pricing-model",
+      "announced_at": "2026-07-19",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek V4 launched with 'Peak-Valley Pricing' model",
+      "summary": "DeepSeek has released its V4 model, introducing a dynamic 'Peak-Valley Pricing' structure that adjusts inference costs based on demand cycles. This represents a shift toward time-variable pricing in AI model usage, potentially improving off-peak accessibility while managing peak load.",
+      "sources": [
+        {
+          "url": "https://www.kucoin.com/news/flash/deepseek-v4-set-for-release-introduces-peak-valley-pricing"
+        }
+      ],
+      "tags": [
+        "major",
+        "pricing"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-other-nebius-secures-775m-gpu-backed-loan-to-expand-ai-cloud-infra",
+      "announced_at": "2026-07-17",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Nebius secures $775M GPU-backed loan to expand AI cloud infrastructure",
+      "summary": "Nebius has secured a $775 million loan backed by GPUs to fund the expansion of its AI cloud computing capabilities. This significant financing will increase capacity for AI model training and inference, positioning Nebius as a stronger competitor in the cloud AI market and potentially influencing pricing and availability across the industry.",
+      "sources": [
+        {
+          "url": "https://www.theenergymag.com/news/market-news/nebius-group-secures-775-million-debt-facility-for-ai-cloud-infrastructure"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-anthropic-deloitte-launches-secure-software-platform-powered-by-anthro",
+      "announced_at": "2026-07-16",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Deloitte launches secure software platform powered by Anthropic's Claude models",
+      "summary": "Deloitte has launched a new platform designed to deliver secure software development and deployment using Anthropic's Claude models, targeting regulated industries and emphasizing data protection and compliance. This partnership integrates Claude into Deloitte's enterprise offerings, expanding its footprint in secure, large-scale AI deployments.",
+      "sources": [
+        {
+          "url": "https://www.deloitte.com/us/en/about/press-room/deloitte-launches-cyber-secure-software-powered-by-anthropic-secure-supply-chain.html"
+        }
+      ],
+      "tags": [
+        "enterprise",
+        "security",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "2026-07-deepseek-chinese-regulatory-filing-suggests-deepseek-valuation-near-5",
+      "announced_at": "2026-07-16",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Chinese regulatory filing suggests DeepSeek valuation near $52 billion",
+      "summary": "A recent Chinese regulatory filing indicates that DeepSeek has achieved a valuation of approximately $52 billion, reflecting substantial market confidence and positioning the company as a major player in the global AI race.",
+      "sources": [
+        {
+          "url": "https://srnnews.com/chinese-filing-implies-deepseek-valuation-of-around-52-billion/"
+        }
+      ],
+      "tags": [
+        "major",
+        "valuation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-20",
+      "updated_at": "2026-07-20"
     }
   ]
 }
