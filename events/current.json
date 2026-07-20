@@ -28042,7 +28042,7 @@
     {
       "id": "2026-07-nvidia-etched-seeks-20b-valuation-to-fund-development-of-ai-chips-c",
       "announced_at": "2026-07-19",
-      "type": "funding",
+      "type": "infrastructure",
       "severity": "informational",
       "status": "unverified",
       "providers": [
@@ -28102,7 +28102,7 @@
     {
       "id": "2026-07-deepseek-v4-launched-with-peak-valley-pricing-model",
       "announced_at": "2026-07-19",
-      "type": "model_launch",
+      "type": "pricing_change",
       "severity": "informational",
       "status": "unverified",
       "providers": [
@@ -28133,7 +28133,7 @@
     {
       "id": "2026-07-other-nebius-secures-775m-gpu-backed-loan-to-expand-ai-cloud-infra",
       "announced_at": "2026-07-17",
-      "type": "funding",
+      "type": "infrastructure",
       "severity": "informational",
       "status": "unverified",
       "providers": [
