@@ -27865,7 +27865,7 @@
       "id": "2026-07-microsoft-fireworks-models-on-standard-inference-now-subject-to-15-day",
       "announced_at": "2026-07-21",
       "detected_at": "2026-07-22T17:30:19.519Z",
-      "type": "policy_change",
+      "type": "model_deprecation",
       "severity": "informational",
       "status": "unverified",
       "providers": [
