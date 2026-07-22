@@ -28180,63 +28180,6 @@
       },
       "created_at": "2026-07-22",
       "updated_at": "2026-07-22"
-    },
-    {
-      "id": "2026-07-deepseek-raises-capital-at-74-billion-valuation-ahead-of-ons",
-      "announced_at": "2026-07-18",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [],
-      "headline": "DeepSeek raises capital at $74 billion valuation ahead of onshore IPO",
-      "summary": "Chinese AI company DeepSeek is securing new investment at a $74 billion valuation in preparation for a domestic IPO, according to sources. This positions it among the highest-valued private AI firms globally and underscores the growing scale of China's AI sector.",
-      "sources": [
-        {
-          "url": "https://www.marketscreener.com/news/china-s-deepseek-to-raise-fresh-capital-at-74-billion-valuation-ahead-of-onshore-ipo-sources-say-ce7f51dadf89f225"
-        }
-      ],
-      "tags": [
-        "major"
-      ],
-      "impact": {
-        "magnitude": "structural",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-07-22",
-      "updated_at": "2026-07-22"
-    },
-    {
-      "id": "2026-07-deepseek-raises-7-4b-in-first-external-funding-round-to-expa",
-      "announced_at": "2026-07-17",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [],
-      "headline": "DeepSeek raises $7.4B in first external funding round to expand global operations",
-      "summary": "DeepSeek secured $7.4B in its first external investment round, marking one of the largest AI funding events to date. The capital will be used to scale infrastructure, accelerate model development, and expand international competition against OpenAI and Anthropic.",
-      "sources": [
-        {
-          "url": "https://cryptobriefing.com/deepseek-raises-7b-challenge-openai-anthropic/"
-        }
-      ],
-      "tags": [
-        "major",
-        "global-expansion"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-07-22",
-      "updated_at": "2026-07-22"
     }
   ]
 }
