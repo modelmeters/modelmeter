@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-23",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,340 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-openai-multiple-preview-and-mini-models-migrated-to-gpt-5-6-terra",
+      "announced_at": "2026-07-23",
+      "effective_at": "2026-07-23",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "model_swap",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/computer-use-preview-2025-03-11",
+        "openai/gpt-4o-mini-search-preview-2025-03-11",
+        "openai/gpt-4o-search-preview-2025-03-11",
+        "openai/gpt-5.1-codex-mini",
+        "openai/gpt-realtime-mini-2025-10-06",
+        "openai/o3-deep-research-2025-06-26",
+        "openai/o4-mini-deep-research-2025-06-26"
+      ],
+      "migration_target": "openai/gpt-5.6-terra",
+      "headline": "Multiple preview and mini models migrated to gpt-5.6-terra",
+      "summary": "Several preview and mini models including computer-use-preview, gpt-4o search variants, gpt-5.1-codex-mini, gpt-realtime-mini, and o3/o4 deep research variants are being transitioned to gpt-5.6-terra as of July 23, 2026.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "July 23, 2026 computer-use-preview-2025-03-11 | computer-use-preview gpt-5.6-terra\nJuly 23, 2026 gpt-4o-mini-search-preview-2025-03-11 gpt-5.6-terra\nJuly 23, 2026 gpt-4o-search-preview-2025-03-11 gpt-5.6-terra\nJuly 23, 2026 gpt-5.1-codex-mini gpt-5.6-terra\nJuly 23, 2026 gpt-realtime-mini-2025-10-06 gpt-realtime-2.1-mini\nJuly 23, 2026 o3-deep-research-2025-06-26 | o3-deep-research gpt-5.6-sol\nJuly 23, 2026 o4-mini-deep-research-2025-06-26 | o4-mini-deep-research gpt-5.6-sol"
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-openai-legacy-models-deprecated-in-favor-of-gpt-5-6-sol",
+      "announced_at": "2026-07-23",
+      "effective_at": "2026-10-23",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "model_swap",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-3.5-turbo-0125",
+        "openai/gpt-4-0613",
+        "openai/gpt-4-1106-preview",
+        "openai/gpt-4-turbo",
+        "openai/gpt-4.1-nano",
+        "openai/gpt-4o-2024-05-13",
+        "openai/o1-2024-12-17",
+        "openai/o1-pro-2025-03-19",
+        "openai/o3-mini-2025-01-31",
+        "openai/ft-o4-mini-2025-04-16",
+        "openai/o4-mini-2025-04-16"
+      ],
+      "migration_target": "openai/gpt-5.6-sol",
+      "headline": "Legacy models deprecated in favor of gpt-5.6-sol",
+      "summary": "Multiple older models including gpt-3.5-turbo, gpt-4 variants, gpt-4o, o1 series, and o4-mini variants are being retired on October 23, 2026, with migration to gpt-5.6-sol.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "2026-10-23 gpt-3.5-turbo-0125 | gpt-3.5-turbo , gpt-3.5-turbo-completions gpt-5.6-terra\n2026-10-23 gpt-4-0613 | gpt-4 , gpt-4-0613-completions , gpt-4-completions gpt-5.6-sol\n2026-10-23 gpt-4-1106-preview gpt-5.6-sol\n2026-10-23 gpt-4-turbo | gpt-4-turbo-2024-04-09 , gpt-4-turbo-completions gpt-5.6-sol\n2026-10-23 gpt-4.1-nano | gpt-4.1-nano-2025-04-14 gpt-5.6-luna\n2026-10-23 gpt-4o-2024-05-13 gpt-5.6-sol\n2026-10-23 o1-2024-12-17 | o1 gpt-5.6-sol\n2026-10-23 o1-pro-2025-03-19 | o1-pro gpt-5.6-sol ( reasoning.mode: pro )\n2026-10-23 o3-mini-2025-01-31 | o3-mini gpt-5.6-sol\n2026-10-23 ft-o4-mini-2025-04-16 gpt-5.6-terra\n2026-10-23 o4-mini-2025-04-16 | o4-mini gpt-5.6-terra"
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-openai-introduces-hard-spend-limits-with-429-error-enforceme",
+      "announced_at": "2026-07-22",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI introduces hard spend limits with 429 error enforcement on API platform",
+      "summary": "OpenAI has introduced hard spend limits for organizations and projects on its API platform. When the monthly cap is reached, API requests will return a 429 error, effectively interrupting traffic. This enhances cost control by allowing enforced budget caps.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Added hard spend limits for organizations and projects on the OpenAI API platform. Set a monthly cap that causes affected API requests to return a 429 error when tracked spend reaches the limit. Use spend alerts for notification before traffic is interrupted. Read more in the spend limits guide ."
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-anthropic-effort-levels-now-configurable-for-claude-managed-agents",
+      "announced_at": "2026-07-22",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Effort levels now configurable for Claude Managed Agents",
+      "summary": "Users can now set an effort level in the model configuration when creating a Claude Managed Agents agent, allowing control over processing intensity.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "You can now set an effort level on a Claude Managed Agents agent's model configuration. Pass effort inside the model object when you create the agent . See Effort levels for what each level does."
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-anthropic-webhooks-expanded-for-environment-and-memory-store-lifecycle",
+      "announced_at": "2026-07-22",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Webhooks expanded for environment and memory store lifecycle events",
+      "summary": "New webhooks cover four environment.* and three memory_store.* event types, enabling event-driven reactions instead of polling.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "Webhooks for Claude Managed Agents now cover the environment and memory store lifecycle: four environment.* event types and three memory_store.* event types. You can react to environment and memory store lifecycle changes without polling. See the Environment events and Memory store events tabs in Subscribe to webhooks ."
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-anthropic-initial-events-supported-when-creating-agent-sessions",
+      "announced_at": "2026-07-22",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Initial events supported when creating agent sessions",
+      "summary": "Sessions can now be seeded with up to 50 initial events (user.message, user.define_outcome) at creation time, enabling immediate agent loop execution.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "When creating a Claude Managed Agents session, you can now seed it with initial events . Pass initial_events on POST /v1/sessions with up to 50 user.message and user.define_outcome events. A non-empty list starts the agent loop in the same call, so you don't need a separate send-events request to start work."
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-anthropic-version-field-optional-in-agent-updates",
+      "announced_at": "2026-07-22",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Version field optional in agent updates",
+      "summary": "The version field is now optional when updating a Claude Managed Agents agent, allowing unconditional updates unless optimistic concurrency is desired.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "The version field is now optional when updating a Claude Managed Agents agent . Supply it for optimistic concurrency (a mismatch returns a 409 error), or omit it to apply the update unconditionally. See Update semantics ."
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-anthropic-event-deltas-supported-in-session-thread-streams",
+      "announced_at": "2026-07-22",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Event deltas supported in session thread streams",
+      "summary": "Thread-level event streams now support deltas, enabling real-time preview of subagent text generation.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "Claude Managed Agents session thread event streams now support event deltas . GET /v1/sessions/{session_id}/threads/{thread_id}/stream accepts the same event_deltas[] query parameter as the session-level stream, so you can preview a subagent's text as the model generates it. A connection previews only the thread it's reading. See Preview session thread events ."
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-anthropic-output-spill-threshold-changed-from-100k-tokens-to-100k-char",
+      "announced_at": "2026-07-22",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Output spill threshold changed from 100K tokens to 100K characters",
+      "summary": "Large outputs from agent_toolset and MCP tools now spill to a sandbox file when exceeding 100K characters (approx 25K tokens), correcting a previous token-based description.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "With Claude Managed Agents, large outputs from agent_toolset and MCP tools exceeding 100K characters (about 25K tokens) are now automatically spilled to a file in the sandbox. The model receives a truncated preview with the file path and can read the full content from there."
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-anthropic-dreams-for-claude-managed-agents-available-as-research-previ",
+      "announced_at": "2026-07-22",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Dreams for Claude Managed Agents available as research preview",
+      "summary": "Dreams feature introduced as research preview, enabling reorganization of memory stores with merged duplicates and surfaced insights, accessible via beta header.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "Dreams for Claude Managed Agents are now available as a research preview. A dream reads an existing memory store alongside past session transcripts and produces a reorganized output memory store with duplicates merged, stale entries replaced, and new insights surfaced. Dream endpoints are gated by the dreaming-2026-04-21 beta header. Request access to try it."
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-xai-voice-agent-api-renamed-to-speech-to-speech-api",
+      "announced_at": "2026-07-23",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "infrastructure",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Voice Agent API renamed to Speech to Speech API",
+      "summary": "The API previously known as Voice Agent API has been renamed to Speech to Speech API, indicating a possible shift in focus or functionality.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/docs/models",
+          "quote": "Speech to Speech API"
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-xai-adjustable-vad-threshold-added-to-speech-to-text",
+      "announced_at": "2026-07-23",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Adjustable VAD threshold added to Speech to Text",
+      "summary": "Speech to Text now supports a vad_threshold parameter to control voice-activity detection, enabling transcription of quieter or noisier speech.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/release-notes",
+          "quote": "Adjustable VAD threshold for Speech to Text\nSpeech to Text now accepts a vad_threshold parameter (streaming query param and batch multipart field) to tune the voice-activity gate that skips non-speech audio. Lower values transcribe quieter or noisier speech — useful for narrowband telephony — and 0 disables the gate. See the Speech to Text docs ."
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-xai-custom-voice-cloning-now-available",
+      "announced_at": "2026-07-23",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Custom voice cloning now available",
+      "summary": "Users can now clone voices from short audio clips and use them across Text-to-Speech and Speech to Speech APIs, managed via the xAI console.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/release-notes",
+          "quote": "You can now clone a voice from a short audio clip and use it across the Text-to-Speech and Speech to Speech APIs. Create and manage your voice catalog from the xAI console. For more details, check out the Custom Voices docs and our blog post ."
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-xai-launch-of-grok-voice-think-fast-1-0-model-for-speech-to-spee",
+      "announced_at": "2026-07-23",
+      "detected_at": "2026-07-23T17:30:18.538Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-voice-think-fast-1.0"
+      ],
+      "headline": "Launch of grok-voice-think-fast-1.0 model for Speech to Speech API",
+      "summary": "The new model grok-voice-think-fast-1.0 is now available for use with the Speech to Speech API.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/release-notes",
+          "quote": "You can now use grok-voice-think-fast-1.0 with the Speech to Speech API. To get started, check out the Speech to Speech docs . For more details, see our blog post ."
+        }
+      ],
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
     }
   ]
 }
