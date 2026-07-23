@@ -27943,7 +27943,7 @@
     {
       "id": "2026-07-deepseek-outlines-pricing-strategy-focused-on-reasonable-pro",
       "announced_at": "2026-07-23",
-      "type": "pricing_change",
+      "type": "informational",
       "severity": "action_required",
       "status": "unverified",
       "providers": [
@@ -28066,7 +28066,7 @@
     {
       "id": "2026-07-deepseek-launches-v4-full-blooded-edition-with-peak-off-peak",
       "announced_at": "2026-07-19",
-      "type": "model_launch",
+      "type": "pricing_change",
       "severity": "informational",
       "status": "unverified",
       "providers": [
@@ -28085,37 +28085,6 @@
       "tags": [
         "major",
         "pricing-innovation"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-07-23",
-      "updated_at": "2026-07-23"
-    },
-    {
-      "id": "2026-07-groq-secures-400m-investment-from-early-gpu-financiers-to-sc",
-      "announced_at": "2026-07-17",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "groq"
-      ],
-      "models": [],
-      "headline": "Groq secures $400M investment from early GPU financiers to scale inference chip production",
-      "summary": "Groq has secured a $400 million funding round led by early investors in GPU technology, marking a strategic pivot toward scaling its inference-optimized LPU (Language Processing Unit) architecture. This investment underscores growing confidence in dedicated inference hardware as a scalable and cost-efficient alternative to general-purpose GPUs for deploying large language models in production environments.",
-      "sources": [
-        {
-          "url": "https://finance.yahoo.com/technology/ai/articles/why-first-gpu-financiers-turning-120000050.html"
-        }
-      ],
-      "tags": [
-        "inference",
-        "funding",
-        "hardware",
-        "major"
       ],
       "impact": {
         "magnitude": "major",
