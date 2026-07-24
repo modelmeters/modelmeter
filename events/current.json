@@ -27819,7 +27819,7 @@
       "id": "2026-07-openai-apps-sdk-renamed-to-plugins",
       "announced_at": "2026-07-24",
       "detected_at": "2026-07-24T17:30:20.290Z",
-      "type": "id_rename",
+      "type": "capability_change",
       "severity": "breaking",
       "status": "unverified",
       "providers": [
@@ -27883,30 +27883,6 @@
         {
           "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
           "quote": "temperature , top_p , top_k Deprecated (Claude Opus 4.7 and later) Returns a 400 error when set to a non-default value on Claude 4.7 and later models and Claude Mythos Preview . Omit and use prompting to guide model behavior."
-        }
-      ],
-      "created_at": "2026-07-24",
-      "updated_at": "2026-07-24"
-    },
-    {
-      "id": "2026-07-anthropic-claude-opus-5-launched-with-1m-token-context-and-improved-ca",
-      "announced_at": "2026-07-24",
-      "detected_at": "2026-07-24T17:30:20.290Z",
-      "type": "model_launch",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/claude-opus-5"
-      ],
-      "headline": "Claude Opus 5 launched with 1M token context and improved capabilities",
-      "summary": "Claude Opus 5 is now available with a 1M token context window (default and maximum), 128k max output tokens, thinking enabled by default, and maintained pricing of $5/$25 per MTok. It supports the full effort ladder including 'max' level.",
-      "sources": [
-        {
-          "url": "https://platform.claude.com/docs/en/release-notes/api",
-          "quote": "We've launched Claude Opus 5 ( claude-opus-5 ), a step-change improvement over Claude Opus 4.8. Claude Opus 5 supports a 1M token context window (both the default and the maximum), 128k max output tokens, and thinking on by default, at $5 / $25 per MTok, the same pricing as Claude Opus 4.8."
         }
       ],
       "created_at": "2026-07-24",
@@ -27977,30 +27953,6 @@
         {
           "url": "https://platform.claude.com/docs/en/release-notes/api",
           "quote": "The fallbacks parameter now supports a \"default\" mode, which applies Anthropic's recommended fallback models by refusal category. Server-side fallback is in beta, and the \"default\" mode requires the server-side-fallback-2026-07-01 beta header. See Refusals and fallback ."
-        }
-      ],
-      "created_at": "2026-07-24",
-      "updated_at": "2026-07-24"
-    },
-    {
-      "id": "2026-07-anthropic-claude-opus-4-8-launched-with-1m-token-context-by-default",
-      "announced_at": "2026-07-24",
-      "detected_at": "2026-07-24T17:30:20.290Z",
-      "type": "model_launch",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/claude-opus-4-8"
-      ],
-      "headline": "Claude Opus 4.8 launched with 1M token context by default",
-      "summary": "Claude Opus 4.8 is now available as the most capable generally available model, supporting a 1M token context window by default across all platforms, 128k max output tokens, and same tools/features as Opus 4.7.",
-      "sources": [
-        {
-          "url": "https://platform.claude.com/docs/en/release-notes/api",
-          "quote": "We've launched Claude Opus 4.8 ( claude-opus-4-8 ), our most capable generally available model. Claude Opus 4.8 supports a 1M token context window by default on the Claude API, Amazon Bedrock, Google Cloud, and Microsoft Foundry, 128k max output tokens, and the same set of tools and platform features as Claude Opus 4.7."
         }
       ],
       "created_at": "2026-07-24",
@@ -28120,52 +28072,6 @@
         {
           "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
           "quote": "2026-09-16"
-        }
-      ],
-      "created_at": "2026-07-24",
-      "updated_at": "2026-07-24"
-    },
-    {
-      "id": "2026-07-microsoft-removal-of-retirement-date-2026-09-18",
-      "announced_at": "2026-07-24",
-      "effective_at": "2026-09-18",
-      "detected_at": "2026-07-24T17:30:20.290Z",
-      "type": "correction",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "microsoft"
-      ],
-      "models": [],
-      "headline": "Removal of retirement date 2026-09-18",
-      "summary": "The previously listed retirement date of 2026-09-18 has been removed.",
-      "sources": [
-        {
-          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
-          "quote": "2026-09-18"
-        }
-      ],
-      "created_at": "2026-07-24",
-      "updated_at": "2026-07-24"
-    },
-    {
-      "id": "2026-07-microsoft-removal-of-retirement-date-2027-04-15",
-      "announced_at": "2026-07-24",
-      "effective_at": "2027-04-15",
-      "detected_at": "2026-07-24T17:30:20.290Z",
-      "type": "correction",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "microsoft"
-      ],
-      "models": [],
-      "headline": "Removal of retirement date 2027-04-15",
-      "summary": "The previously listed retirement date of 2027-04-15 has been removed.",
-      "sources": [
-        {
-          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
-          "quote": "2027-04-15"
         }
       ],
       "created_at": "2026-07-24",
