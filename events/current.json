@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-24",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,585 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-nvidia-and-mistral-urge-us-policymakers-to-avoid-broad-restr",
+      "announced_at": "2026-07-24",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nvidia",
+        "mistral",
+        "other"
+      ],
+      "models": [],
+      "headline": "Nvidia and Mistral urge US policymakers to avoid broad restrictions on open-weight AI models",
+      "summary": "In response to proposed U.S. restrictions on Chinese AI models, leading AI companies including Nvidia and Mistral are advocating against sweeping limitations on open-weight models, warning such measures could hinder innovation and global collaboration. The debate centers on balancing national security concerns with the open development of AI.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/24/as-us-weighs-response-to-chinese-ai-industry-urges-against-broad-open-weight-restrictions/"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "open-weight",
+        "advocacy",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-openai-gpt-5-6-sol-terra-and-luna-models-become-generally-av",
+      "announced_at": "2026-07-24",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai",
+        "amazon"
+      ],
+      "models": [
+        "openai/gpt-5.6-sol",
+        "openai/gpt-5.6-terra",
+        "openai/gpt-5.6-luna"
+      ],
+      "headline": "OpenAI GPT-5.6 Sol, Terra, and Luna models become generally available on Amazon Bedrock",
+      "summary": "OpenAI's GPT-5.6 series models—Sol, Terra, and Luna—are now generally available via Amazon Bedrock, enabling enterprises to run inference through the bedrock-mantle endpoint. The integration supports cost reduction via prompt caching, connection to the OpenAI Codex coding agent, and includes guidance on quota management.",
+      "sources": [
+        {
+          "url": "https://aws.amazon.com/blogs/machine-learning/get-started-with-openai-gpt-5-6-sol-terra-and-luna-on-amazon-bedrock/"
+        }
+      ],
+      "tags": [
+        "multimodal",
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-openrouter-stripe-reportedly-nearing-10b-acquisition-of-openrouter",
+      "announced_at": "2026-07-24",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openrouter"
+      ],
+      "models": [],
+      "headline": "Stripe reportedly nearing $10B acquisition of OpenRouter",
+      "summary": "Stripe is reportedly close to acquiring AI startup OpenRouter for $10 billion, marking a major entry into the AI infrastructure space. OpenRouter serves as a unified API for accessing multiple large language models, and this acquisition could integrate advanced AI capabilities directly into Stripe’s developer and payment ecosystem.",
+      "sources": [
+        {
+          "url": "https://www.citybiz.co/article/878774/stripe-reportedly-nears-10b-acquisition-of-ai-startup-openrouter/"
+        }
+      ],
+      "tags": [
+        "major",
+        "infrastructure"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-openrouter-reportedly-in-talks-to-be-acquired-at-67-7b-valua",
+      "announced_at": "2026-07-24",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openrouter"
+      ],
+      "models": [],
+      "headline": "OpenRouter reportedly in talks to be acquired at $67.7B valuation",
+      "summary": "OpenRouter, a major multi-model inference platform and aggregator, is reportedly preparing for a sale or acquisition at a $67.7 billion valuation. This would represent one of the largest transactions in the AI infrastructure space, signaling strong market consolidation around model distribution platforms.",
+      "sources": [
+        {
+          "url": "https://eu.36kr.com/en/p/3909136642053505"
+        }
+      ],
+      "tags": [
+        "major",
+        "infrastructure",
+        "market-consolidation"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "structural",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-openrouter-valuation-increases-significantly-following-new-f",
+      "announced_at": "2026-07-24",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openrouter"
+      ],
+      "models": [],
+      "headline": "OpenRouter valuation increases significantly following new funding or growth",
+      "summary": "OpenRouter's valuation has surged from $1.3 billion, indicating a major funding round or rapid growth. This positions OpenRouter as a stronger player in the AI inference routing market, potentially expanding capacity and influence.",
+      "sources": [
+        {
+          "url": "https://www.chaincatcher.com/en/article/2277989"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-deepseek-retires-legacy-model-names-effective-2026-07-24",
+      "announced_at": "2026-07-24",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/legacy-model-1",
+        "deepseek/legacy-model-2"
+      ],
+      "headline": "DeepSeek retires legacy model names effective 2026-07-24",
+      "summary": "DeepSeek has officially retired its legacy model names, discontinuing support for older model endpoints. Users must migrate to current models to avoid service disruption.",
+      "sources": [
+        {
+          "url": "https://www.techi.com/deepseek-chat-reasoner-retirement-v4-migration/"
+        }
+      ],
+      "tags": [
+        "major",
+        "migration"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-xai-elon-musk-calls-for-rival-ai-labs-to-mutually-vet-models-bef",
+      "announced_at": "2026-07-24",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Elon Musk calls for rival AI labs to mutually vet models before release",
+      "summary": "Elon Musk, CEO of xAI, has proposed that competing AI laboratories conduct peer reviews of each other's models prior to public release. This initiative aims to enhance safety, reduce risks of harmful outputs, and establish industry-wide accountability mechanisms.",
+      "sources": [
+        {
+          "url": "https://startupfortune.com/elon-musk-wants-rival-ai-labs-to-vet-each-others-models-before-release/"
+        }
+      ],
+      "tags": [
+        "safety",
+        "governance",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-other-amd-and-cerebras-partner-to-develop-ultra-low-latency-high-t",
+      "announced_at": "2026-07-23",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "AMD and Cerebras partner to develop ultra-low-latency, high-throughput AI inference system",
+      "summary": "AMD has partnered with Cerebras to create a new AI inference platform targeting ultra-low latency and high throughput. This collaboration aims to deliver a competitive alternative to existing GPU-based systems, potentially reshaping inference infrastructure and efficiency.",
+      "sources": [
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/amd-partners-with-big-chip-co-cerebras-for-ultra-low-latency-and-high-throughput-ai-inference-system/"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-claude-voice-mode-expands-to-opus-and-sonnet-models",
+      "announced_at": "2026-07-23",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/opus",
+        "anthropic/sonnet"
+      ],
+      "headline": "Claude voice mode expands to Opus and Sonnet models",
+      "summary": "Anthropic has extended voice mode capabilities to its Opus and Sonnet models, previously limited to Haiku. This enables richer, real-time conversational interactions with higher-intelligence models across platforms including Gmail, Slack, and Canva.",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/970065/anthropic-voice-mode-claude-opus-sonnet-haiku-ai"
+        }
+      ],
+      "tags": [
+        "voice",
+        "multimodal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-music-publishers-file-amended-lawsuit-against-anthropic-for-",
+      "announced_at": "2026-07-23",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Music publishers file amended lawsuit against Anthropic for alleged unauthorized use of lyrics in model training",
+      "summary": "Music publishers have filed an amended lawsuit against Anthropic, alleging the unauthorized use of copyrighted lyrics in training its AI models. This legal action follows court approval of Anthropic's separate $1.5B settlement with authors over similar claims, signaling ongoing legal challenges around IP rights in AI development.",
+      "sources": [
+        {
+          "url": "https://www.musicbusinessworldwide.com/music-publishers-file-amended-lyrics-lawsuit-against-anthropic-just-as-ai-firms-separate-1-5b-piracy-settlement-with-authors-wins-court-approval/"
+        }
+      ],
+      "tags": [
+        "copyright",
+        "litigation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-xai-launches-grok-4-5-to-the-public-across-mobile-and-web-pl",
+      "announced_at": "2026-07-23",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "xAI launches Grok 4.5 to the public across mobile and web platforms",
+      "summary": "xAI has expanded the rollout of Grok 4.5, making it widely available on mobile apps and web. This release follows the company's rebranding as SpaceXAI and marks a broader accessibility push for its flagship AI model.",
+      "sources": [
+        {
+          "url": "https://www.androidheadlines.com/2026/07/grok-4-5-rollout-ios-android-web-productivity-features.html"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-other-amd-launches-next-generation-ai-infrastructure-zen-6-epyc-cp",
+      "announced_at": "2026-07-22",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "AMD launches next-generation AI infrastructure: Zen 6 EPYC CPUs, Instinct MI400 Series, and Helios AI Rack",
+      "summary": "At the 'Advancing AI 2026' event, AMD unveiled its Zen 6 EPYC CPUs, Instinct MI400 Series accelerators, and the Helios AI Rack, marking a major advancement in AI compute infrastructure. These launches position AMD as a stronger competitor in the AI hardware space, offering alternatives to Nvidia's dominance and potentially influencing model deployment costs and efficiency.",
+      "sources": [
+        {
+          "url": "https://wccftech.com/watch-amd-advancing-ai-2026-event-live-here/"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "launch",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-amd-and-anthropic-announce-strategic-ai-infrastructure-partn",
+      "announced_at": "2026-07-22",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [],
+      "headline": "AMD and Anthropic announce strategic AI infrastructure partnership with up to $5B investment",
+      "summary": "AMD and Anthropic have formed a strategic partnership focused on advancing AI infrastructure, backed by up to $5 billion in investment. The collaboration aims to accelerate the development and deployment of next-generation AI models through enhanced hardware-software integration.",
+      "sources": [
+        {
+          "url": "https://ca.finance.yahoo.com/news/amd-anthropic-announce-strategic-ai-141700254.html"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-settles-copyright-lawsuit-for-1-5-billion-with-blo",
+      "announced_at": "2026-07-22",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic settles copyright lawsuit for $1.5 billion, with Bloomsbury among beneficiaries",
+      "summary": "Anthropic has agreed to a $1.5 billion settlement in a class-action lawsuit alleging unauthorized use of copyrighted works in training data. The settlement includes payments to publishers such as the UK's Bloomsbury, marking one of the largest legal resolutions in the AI industry to date.",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/legal/litigation/uks-bloomsbury-among-beneficiaries-15-billion-anthropic-copyright-lawsuit-2026-07-22/"
+        }
+      ],
+      "tags": [
+        "copyright",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-court-approves-anthropic-s-1-5b-copyright-settlement",
+      "announced_at": "2026-07-21",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Court approves Anthropic's $1.5B copyright settlement",
+      "summary": "A federal court has approved Anthropic's $1.5 billion settlement resolving claims over unauthorized use of copyrighted material in training its AI models. The landmark decision sets a significant precedent for AI industry liability and data sourcing practices.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/"
+        }
+      ],
+      "tags": [
+        "major",
+        "copyright",
+        "litigation"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-deepseek-halts-new-subscriptions-due-to-overwhelming-demand-",
+      "announced_at": "2026-07-20",
+      "type": "model_unavailable",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek halts new subscriptions due to overwhelming demand overwhelming capacity",
+      "summary": "DeepSeek has paused new user signups as demand for its AI model has exceeded available capacity. This indicates significant strain on infrastructure and limited headroom for scaling access in the short term.",
+      "sources": [
+        {
+          "url": "https://broadbandbreakfast.com/chinas-new-ai-model-halts-new-subscriptions-as-demand-swamps-capacity/"
+        }
+      ],
+      "tags": [
+        "capacity-constraint",
+        "high-demand"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-meta-considers-10b-compute-partnership-with-anthropic",
+      "announced_at": "2026-07-20",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "meta",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Meta considers $10B compute partnership with Anthropic",
+      "summary": "Meta is evaluating a multi-billion dollar compute deal with Anthropic to provide cloud infrastructure and processing power. The potential agreement would support Anthropic's large-scale model training and inference needs, marking a significant realignment in AI infrastructure strategy.",
+      "sources": [
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/meta-weighs-10-billion-anthropic-123840145.html"
+        }
+      ],
+      "tags": [
+        "major",
+        "compute-partnership"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-deepseek-launches-v4-model-with-novel-peak-valley-pricing-mo",
+      "announced_at": "2026-07-19",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek launches V4 model with novel peak-valley pricing model",
+      "summary": "DeepSeek has launched its DeepSeek V4 model, introducing a novel peak-valley pricing structure that dynamically adjusts inference costs based on demand fluctuations. This represents a significant shift in AI pricing economics, potentially influencing broader industry approaches to capacity management and cost optimization.",
+      "sources": [
+        {
+          "url": "https://www.thestandard.com.hk/innovation/article/337603/DeepSeek-to-launch-V4-model-as-early-as-Monday-with-novel-peak-valley-pricing"
+        }
+      ],
+      "tags": [
+        "major",
+        "pricing",
+        "inference"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-deepseek-raises-capital-at-74b-valuation-ahead-of-onshore-ip",
+      "announced_at": "2026-07-18",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises capital at $74B valuation ahead of onshore IPO",
+      "summary": "DeepSeek is securing new investment at a $74 billion valuation in preparation for a domestic IPO in China. This positions the company as one of the highest-valued AI startups globally and underscores the growing strength of China's private AI sector.",
+      "sources": [
+        {
+          "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L6N43K020:0-china-s-deepseek-to-raise-fresh-capital-at-74-billion-valuation-ahead-of-onshore-ipo-sources-say/"
+        }
+      ],
+      "tags": [
+        "major",
+        "china",
+        "ipo"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
     }
   ]
 }
