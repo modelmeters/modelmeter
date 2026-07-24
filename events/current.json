@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-24",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,362 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-openai-apps-sdk-renamed-to-plugins",
+      "announced_at": "2026-07-24",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "id_rename",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "Apps SDK renamed to Plugins",
+      "summary": "OpenAI has rebranded the 'Apps SDK' to 'Plugins', reflecting a shift in the platform's extensibility model. Documentation sections, guidelines, and workflows have been updated accordingly.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "ChatGPT Plugins\nPlugins Workspace Agents Commerce Ads\nPlugins Workspace Agents Commerce Ads Docs section Select...\nPlugin architecture\nMCP server\nBrainstorm use cases\nBuild an MCP server\nAdd UI to your MCP server (optional)\nPackage your plugin\nTest and publish\nConnect and test your plugin\nSubmit and publish\nSubmission error reference\nConversion specs\nPlugin guidelines\nMCP server review requirements\nPlugin UI reference\nCheckout API reference\nVoice"
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-claude-mythos-preview-deprecation-timeline-extended",
+      "announced_at": "2026-07-24",
+      "effective_at": "2027-07-24",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-mythos-preview"
+      ],
+      "migration_target": "anthropic/claude-mythos-5",
+      "headline": "Claude Mythos Preview deprecation timeline extended",
+      "summary": "The deprecation of Claude Mythos Preview has been delayed, with retirement now not occurring sooner than July 24, 2027. Users are advised to migrate to Claude Mythos 5.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "quote": "Claude Mythos Preview ( claude-mythos-preview ) is deprecated. To migrate to Claude Mythos 5 ( claude-mythos-5 ), see the migration guide ."
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-non-default-sampling-parameters-now-return-400-error-on-newe",
+      "announced_at": "2026-07-24",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-5",
+        "anthropic/claude-mythos-preview"
+      ],
+      "headline": "Non-default sampling parameters now return 400 error on newer models",
+      "summary": "Setting non-default values for temperature, top_p, and top_k returns a 400 error on Claude Opus 5 and later models, including Claude Mythos Preview, indicating enforcement of default parameter usage.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "quote": "temperature , top_p , top_k Deprecated (Claude Opus 4.7 and later) Returns a 400 error when set to a non-default value on Claude 4.7 and later models and Claude Mythos Preview . Omit and use prompting to guide model behavior."
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-claude-opus-5-launched-with-1m-token-context-and-improved-ca",
+      "announced_at": "2026-07-24",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-5"
+      ],
+      "headline": "Claude Opus 5 launched with 1M token context and improved capabilities",
+      "summary": "Claude Opus 5 is now available with a 1M token context window (default and maximum), 128k max output tokens, thinking enabled by default, and maintained pricing of $5/$25 per MTok. It supports the full effort ladder including 'max' level.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We've launched Claude Opus 5 ( claude-opus-5 ), a step-change improvement over Claude Opus 4.8. Claude Opus 5 supports a 1M token context window (both the default and the maximum), 128k max output tokens, and thinking on by default, at $5 / $25 per MTok, the same pricing as Claude Opus 4.8."
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-thinking-parameter-behavior-changed-in-claude-opus-5",
+      "announced_at": "2026-07-24",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-5"
+      ],
+      "headline": "Thinking parameter behavior changed in Claude Opus 5",
+      "summary": "In Claude Opus 5, disabling thinking is only allowed at effort levels 'high' or below. Setting thinking to disabled with effort 'xhigh' or 'max' will result in a 400 error, a breaking change from Opus 4.8.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "On Claude Opus 5, disabling thinking is allowed only at effort high or below: thinking: {\"type\": \"disabled\"} with effort xhigh or max returns a 400 error, a breaking change from Claude Opus 4.8."
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-mid-conversation-tool-changes-now-in-beta-for-claude-opus-5",
+      "announced_at": "2026-07-24",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-5"
+      ],
+      "headline": "Mid-conversation tool changes now in beta for Claude Opus 5",
+      "summary": "Beta support for adding or removing tools between conversation turns while preserving prompt cache is now available for Claude Opus 5 by including the mid-conversation-tool-changes-2026-07-01 beta header.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "Mid-conversation tool changes are now in beta on Claude Opus 5: add or remove tools between turns of a conversation while preserving the prompt cache. Include the mid-conversation-tool-changes-2026-07-01 beta header in your requests."
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-fallbacks-parameter-now-supports-default-mode-with-beta-head",
+      "announced_at": "2026-07-24",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Fallbacks parameter now supports 'default' mode with beta header",
+      "summary": "The fallbacks parameter now supports a 'default' mode that applies Anthropic's recommended fallback models by refusal category. This feature is in beta and requires the server-side-fallback-2026-07-01 header.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "The fallbacks parameter now supports a \"default\" mode, which applies Anthropic's recommended fallback models by refusal category. Server-side fallback is in beta, and the \"default\" mode requires the server-side-fallback-2026-07-01 beta header. See Refusals and fallback ."
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-claude-opus-4-8-launched-with-1m-token-context-by-default",
+      "announced_at": "2026-07-24",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-4-8"
+      ],
+      "headline": "Claude Opus 4.8 launched with 1M token context by default",
+      "summary": "Claude Opus 4.8 is now available as the most capable generally available model, supporting a 1M token context window by default across all platforms, 128k max output tokens, and same tools/features as Opus 4.7.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We've launched Claude Opus 4.8 ( claude-opus-4-8 ), our most capable generally available model. Claude Opus 4.8 supports a 1M token context window by default on the Claude API, Amazon Bedrock, Google Cloud, and Microsoft Foundry, 128k max output tokens, and the same set of tools and platform features as Claude Opus 4.7."
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-claude-opus-4-7-launched-with-api-breaking-changes",
+      "announced_at": "2026-07-24",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-4-7"
+      ],
+      "headline": "Claude Opus 4.7 launched with API breaking changes",
+      "summary": "Claude Opus 4.7 is now available as the most capable model for complex reasoning and agentic coding at same pricing as Opus 4.6, but includes API breaking changes compared to Opus 4.6.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We've launched Claude Opus 4.7 , our most capable generally available model for complex reasoning and agentic coding, at the same $5 / $25 per MTok pricing as Opus 4.6. See What's new in Claude Opus 4.7 for capability improvements, new features, and the updated tokenizer. Opus 4.7 includes API breaking changes versus Opus 4.6; see the migration guide before upgrading."
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-anthropic-claude-opus-5-replaces-opus-4-8-as-recommended-model",
+      "announced_at": "2026-07-24",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "model_swap",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-4-8",
+        "anthropic/claude-opus-5"
+      ],
+      "migration_target": "anthropic/claude-opus-5",
+      "headline": "Claude Opus 5 replaces Opus 4.8 as recommended model",
+      "summary": "Claude Opus 5 has replaced Opus 4.8 as the recommended model for complex agentic coding and enterprise work, with updated API identifiers and default settings.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+          "quote": "If you're unsure which model to use, start with Claude Opus 5 for complex agentic coding and enterprise work. For workloads that need the highest available capability, use Claude Fable 5 ."
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-10-microsoft-azure-ai-foundry-model-retirement-date-set-for-2027-04-14",
+      "announced_at": "2026-10-21",
+      "effective_at": "2027-04-14",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "microsoft"
+      ],
+      "models": [],
+      "headline": "Azure AI Foundry model retirement date set for 2027-04-14",
+      "summary": "A model retirement in Azure AI Foundry is announced with an effective date of 2027-04-14.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
+          "quote": "2027-04-14"
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-microsoft-azure-ai-foundry-model-retirement-scheduled-for-2028-02-09",
+      "announced_at": "2026-07-24",
+      "effective_at": "2028-02-09",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "microsoft"
+      ],
+      "models": [],
+      "headline": "Azure AI Foundry model retirement scheduled for 2028-02-09",
+      "summary": "A model retirement in Azure AI Foundry is scheduled with an effective date of 2028-02-09.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
+          "quote": "2028-02-09"
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-microsoft-removal-of-retirement-date-2026-09-16",
+      "announced_at": "2026-07-24",
+      "effective_at": "2026-09-16",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "correction",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "microsoft"
+      ],
+      "models": [],
+      "headline": "Removal of retirement date 2026-09-16",
+      "summary": "The previously listed retirement date of 2026-09-16 has been removed.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
+          "quote": "2026-09-16"
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-microsoft-removal-of-retirement-date-2026-09-18",
+      "announced_at": "2026-07-24",
+      "effective_at": "2026-09-18",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "correction",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "microsoft"
+      ],
+      "models": [],
+      "headline": "Removal of retirement date 2026-09-18",
+      "summary": "The previously listed retirement date of 2026-09-18 has been removed.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
+          "quote": "2026-09-18"
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
+    },
+    {
+      "id": "2026-07-microsoft-removal-of-retirement-date-2027-04-15",
+      "announced_at": "2026-07-24",
+      "effective_at": "2027-04-15",
+      "detected_at": "2026-07-24T17:30:20.290Z",
+      "type": "correction",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "microsoft"
+      ],
+      "models": [],
+      "headline": "Removal of retirement date 2027-04-15",
+      "summary": "The previously listed retirement date of 2027-04-15 has been removed.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
+          "quote": "2027-04-15"
+        }
+      ],
+      "created_at": "2026-07-24",
+      "updated_at": "2026-07-24"
     }
   ]
 }
