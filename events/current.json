@@ -28187,7 +28187,7 @@
     {
       "id": "2026-07-anthropic-amd-and-anthropic-announce-strategic-ai-infrastructure-partn",
       "announced_at": "2026-07-22",
-      "type": "partnership",
+      "type": "infrastructure",
       "severity": "informational",
       "status": "unverified",
       "providers": [
@@ -28323,38 +28323,6 @@
       "tags": [
         "major",
         "compute-partnership"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "mixed"
-      },
-      "created_at": "2026-07-24",
-      "updated_at": "2026-07-24"
-    },
-    {
-      "id": "2026-07-deepseek-launches-v4-model-with-novel-peak-valley-pricing-mo",
-      "announced_at": "2026-07-19",
-      "type": "model_launch",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [
-        "deepseek/deepseek-v4"
-      ],
-      "headline": "DeepSeek launches V4 model with novel peak-valley pricing model",
-      "summary": "DeepSeek has launched its DeepSeek V4 model, introducing a novel peak-valley pricing structure that dynamically adjusts inference costs based on demand fluctuations. This represents a significant shift in AI pricing economics, potentially influencing broader industry approaches to capacity management and cost optimization.",
-      "sources": [
-        {
-          "url": "https://www.thestandard.com.hk/innovation/article/337603/DeepSeek-to-launch-V4-model-as-early-as-Monday-with-novel-peak-valley-pricing"
-        }
-      ],
-      "tags": [
-        "major",
-        "pricing",
-        "inference"
       ],
       "impact": {
         "magnitude": "major",
