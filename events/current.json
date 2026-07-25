@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-25",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,131 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-anthropic-claude-opus-5-now-supports-full-effort-ladder-including-max-",
+      "announced_at": "2026-07-25",
+      "detected_at": "2026-07-25T17:30:18.244Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-5"
+      ],
+      "headline": "Claude Opus 5 now supports full effort ladder including max level",
+      "summary": "Claude Opus 5 has expanded its effort control to include the full range of settings from low to max, enabling fine-tuned performance for different use cases, with 'max' recommended for capability-critical tasks.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "Effort is the primary control for steering Claude Opus 5: the model supports the full ladder ( low , medium , high , xhigh , max ), with max for capability-critical work."
+        }
+      ],
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-anthropic-mid-conversation-tool-changes-now-in-beta-for-additional-mod",
+      "announced_at": "2026-07-25",
+      "detected_at": "2026-07-25T17:30:18.244Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-fable-5",
+        "anthropic/claude-mythos-5",
+        "anthropic/claude-opus-4-8",
+        "anthropic/claude-opus-5"
+      ],
+      "headline": "Mid-conversation tool changes now in beta for additional models",
+      "summary": "The beta feature allowing addition or removal of tools during a conversation while preserving the prompt cache is now extended to Claude Fable 5, Mythos 5, Opus 4.8, and Opus 5, requiring the beta header in requests.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "Mid-conversation tool changes are now in beta on Claude Fable 5, Claude Mythos 5, Claude Opus 4.8, and Claude Opus 5: add or remove tools between turns of a conversation while preserving the prompt cache. Include the mid-conversation-tool-changes-2026-07-01 beta header in your requests."
+        }
+      ],
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-anthropic-fast-mode-removed-for-claude-opus-4-7",
+      "announced_at": "2026-07-25",
+      "detected_at": "2026-07-25T17:30:18.244Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-4-7"
+      ],
+      "migration_target": "anthropic/claude-opus-5, claude-opus-4-8",
+      "headline": "Fast mode removed for Claude Opus 4.7",
+      "summary": "Fast mode has been removed for Claude Opus 4.7; requests with speed: 'fast' now result in an error and do not fall back to standard speed. Users are advised to migrate to Claude Opus 5 or Opus 4.8 to continue using fast mode.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We've removed fast mode for Claude Opus 4.7. Requests to claude-opus-4-7 with speed: \"fast\" now return an error; unlike Claude Opus 4.6, they do not fall back to standard speed. Claude Opus 4.7 itself remains available at standard speed. To continue using fast mode, migrate to Claude Opus 5 or Claude Opus 4.8. Read more in Fast mode ."
+        }
+      ],
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-microsoft-azure-ai-foundry-model-retirement-timeline-updated",
+      "announced_at": "2026-07-24",
+      "effective_at": "2026-07-21",
+      "detected_at": "2026-07-25T17:30:18.244Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "microsoft"
+      ],
+      "models": [],
+      "headline": "Azure AI Foundry model retirement timeline updated",
+      "summary": "Microsoft updated the deprecation schedule for Azure AI Foundry models, removing previous dates and setting a new effective date of July 21, 2026, for model retirements.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
+          "quote": "2026-07-21"
+        }
+      ],
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-google-gemini-robotics-er-2-0-renamed-to-gemini-robotics-er-2",
+      "announced_at": "2026-07-25",
+      "detected_at": "2026-07-25T17:30:18.244Z",
+      "type": "id_rename",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/Gemini Robotics-ER 2.0",
+        "google/Gemini Robotics-ER 2"
+      ],
+      "migration_target": "google/Gemini Robotics-ER 2",
+      "headline": "Gemini Robotics-ER 2.0 renamed to Gemini Robotics-ER 2",
+      "summary": "The model previously known as Gemini Robotics-ER 2.0 is now listed as Gemini Robotics-ER 2, indicating a version or naming update.",
+      "sources": [
+        {
+          "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+          "quote": "Gemini Robotics-ER 2"
+        }
+      ],
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
     }
   ]
 }
