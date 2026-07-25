@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-25",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,346 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-deepseek-communicates-funding-pause-to-prospective-investors",
+      "announced_at": "2026-07-25",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek communicates funding pause to prospective investors",
+      "summary": "According to Bloomberg News reporting via Reuters, DeepSeek has informed prospective investors of a pause in its fundraising activities. This development comes amid ongoing industry shifts in AI investment and follows DeepSeek's recent announcement of developing a custom AI chip for inference efficiency.",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/world/china/deepseek-tells-prospective-investors-funding-pause-bloomberg-news-reports-2026-07-25/"
+        }
+      ],
+      "tags": [
+        "funding",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-openai-signs-open-source-ai-letter-leaving-anthropic-as-most",
+      "announced_at": "2026-07-25",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai",
+        "anthropic",
+        "cohere",
+        "other"
+      ],
+      "models": [],
+      "headline": "OpenAI signs open source AI letter, leaving Anthropic as most prominent non-signatory",
+      "summary": "In a notable shift, OpenAI has joined other major AI organizations in signing an open source AI letter, aligning itself with broader industry calls for openness. This move contrasts with Anthropic's decision not to sign, positioning Anthropic as the most prominent holdout among leading AI developers.",
+      "sources": [
+        {
+          "url": "https://officechai.com/ai/in-game-theory-twist-openai-also-signs-open-source-ai-letter-leaving-anthropic-as-most-prominent-non-signatory/"
+        }
+      ],
+      "tags": [
+        "open-source",
+        "major",
+        "industry-collaboration"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-xai-launches-grok-4-6-and-grok-4-7-in-rapid-succession",
+      "announced_at": "2026-07-25",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.6",
+        "xai/grok-4.7"
+      ],
+      "headline": "xAI launches Grok 4.6 and Grok 4.7 in rapid succession",
+      "summary": "xAI has released Grok 4.6 and 4.7 in back-to-back updates, marking the fastest model iteration cadence achieved by any frontier AI lab to date. These releases demonstrate accelerated development cycles and could influence industry standards for model deployment frequency.",
+      "sources": [
+        {
+          "url": "https://startupfortune.com/xai-is-shipping-grok-46-and-47-back-to-back-in-a-release-cadence-no-frontier-lab-has-matched/"
+        }
+      ],
+      "tags": [
+        "major",
+        "release-cadence"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-spacex-spacexai-announces-grok-4-6-and-grok-4-7-releases-for-august",
+      "announced_at": "2026-07-24",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "spacex"
+      ],
+      "models": [
+        "spacexai/grok-4.6",
+        "spacexai/grok-4.7"
+      ],
+      "headline": "SpaceXAI announces Grok 4.6 and Grok 4.7 releases for August and September 2026",
+      "summary": "SpaceXAI has announced the upcoming release of Grok 4.6 in two weeks and Grok 4.7 in four weeks, continuing its rapid iteration cycle following the recent launch of Grok 4.5. These updates signal ongoing development momentum under the SpaceXAI brand.",
+      "sources": [
+        {
+          "url": "https://www.nextbigfuture.com/2026/07/spacexai-will-release-grok-4-6-in-2-weeks-and-grok-4-7-in-4-weeks.html"
+        }
+      ],
+      "tags": [
+        "major",
+        "roadmap"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-other-cognition-acquires-poke-to-enhance-ai-personality-and-intera",
+      "announced_at": "2026-07-24",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other",
+        "openai"
+      ],
+      "models": [],
+      "headline": "Cognition acquires Poke to enhance AI personality and interaction design in Devin",
+      "summary": "Cognition's acquisition of Poke integrates Poke's conversational style and interaction model into Devin, signaling a strategic focus on AI personality as a key differentiator. This move highlights a growing industry trend where user experience and interaction quality are valued on par with model performance.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/24/why-cognition-bought-poke-ai-personality-is-becoming-a-competitive-advantage/"
+        }
+      ],
+      "tags": [
+        "agent",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-anthropic-releases-claude-opus-5-with-capabilities-approachi",
+      "announced_at": "2026-07-24",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/opus-5"
+      ],
+      "headline": "Anthropic releases Claude Opus 5 with capabilities approaching Claude Fable 5",
+      "summary": "Anthropic has launched Claude Opus 5, its latest flagship model, which the company states approaches the performance level of its previously released Fable 5 model. This release positions Opus 5 as a top-tier offering for enterprise and advanced AI applications.",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/970105/claude-opus-5-announced-anthropic-ai-model-release"
+        }
+      ],
+      "tags": [
+        "major",
+        "opus",
+        "fable"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-anthropic-claude-opus-5-becomes-available-in-github-copilot",
+      "announced_at": "2026-07-24",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "microsoft"
+      ],
+      "models": [
+        "anthropic/opus-5"
+      ],
+      "headline": "Claude Opus 5 becomes available in GitHub Copilot",
+      "summary": "Anthropic's Claude Opus 5 is now integrated into GitHub Copilot, enabling developers to access its advanced reasoning and coding capabilities directly within their IDE. This marks a significant expansion of Opus 5's reach into the software development ecosystem.",
+      "sources": [
+        {
+          "url": "https://github.blog/changelog/2026-07-24-claude-opus-5-is-now-available-in-github-copilot/"
+        }
+      ],
+      "tags": [
+        "coding",
+        "developer-tools",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-openrouter-stripe-reportedly-in-talks-to-acquire-openrouter-for-10-bill",
+      "announced_at": "2026-07-24",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openrouter"
+      ],
+      "models": [],
+      "headline": "Stripe reportedly in talks to acquire OpenRouter for $10 billion",
+      "summary": "Stripe is exploring a $10 billion acquisition of OpenRouter, a leading AI model routing and marketplace platform. The move signals Stripe's strategic expansion into AI infrastructure, potentially integrating model access and billing directly into its developer-first financial stack.",
+      "sources": [
+        {
+          "url": "https://parameter.io/stripe-eyes-10-billion-acquisition-of-ai-model-marketplace-openrouter/"
+        }
+      ],
+      "tags": [
+        "major",
+        "marketplace"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-nvidia-cerebras-releases-ai-processor-58x-larger-and-15x-faster-tha",
+      "announced_at": "2026-07-23",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nvidia"
+      ],
+      "models": [],
+      "headline": "Cerebras releases AI processor 58x larger and 15x faster than Nvidia's GPU",
+      "summary": "Cerebras has launched a new AI chip that is 58 times larger and 15 times faster than Nvidia's current GPU offerings, marking a significant advancement in AI hardware and challenging Nvidia's market dominance.",
+      "sources": [
+        {
+          "url": "https://finance.biggo.com/news/3cfd5602-5a52-4118-9693-904d5feb5c82"
+        }
+      ],
+      "tags": [
+        "hardware",
+        "competition",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-anthropic-reaches-multi-million-dollar-settlement-with-harry",
+      "announced_at": "2026-07-22",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic reaches multi-million dollar settlement with Harry Potter publisher over copyright infringement claims",
+      "summary": "Anthropic has agreed to pay millions in a settlement with the publisher of Harry Potter to resolve allegations of copyright infringement related to AI model training. The settlement underscores growing legal risks for AI companies using copyrighted literary works without authorization.",
+      "sources": [
+        {
+          "url": "https://www.theguardian.com/technology/2026/jul/22/bloomsbury-book-publisher-anthropic-copyright-settlement"
+        }
+      ],
+      "tags": [
+        "major",
+        "copyright",
+        "legal"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
+    },
+    {
+      "id": "2026-07-deepseek-raises-fresh-capital-at-74-billion-valuation-ahead-",
+      "announced_at": "2026-07-19",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises fresh capital at $74 billion valuation ahead of onshore IPO",
+      "summary": "DeepSeek is reportedly raising new funding at a $74 billion valuation in preparation for an onshore IPO in China. This positions DeepSeek as one of the most highly valued AI startups globally, reflecting strong investor confidence and potentially accelerating its model development and deployment roadmap.",
+      "sources": [
+        {
+          "url": "https://www.manilatimes.net/2026/07/20/business/foreign-business/chinas-deepseek-to-raise-fresh-capital-at-74-billion-valuation-ahead-of-onshore-ipo-sources-say/2387159"
+        }
+      ],
+      "tags": [
+        "major",
+        "onshore-ipo",
+        "china"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-25",
+      "updated_at": "2026-07-25"
     }
   ]
 }
