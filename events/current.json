@@ -28124,36 +28124,6 @@
       },
       "created_at": "2026-07-25",
       "updated_at": "2026-07-25"
-    },
-    {
-      "id": "2026-07-deepseek-raises-fresh-capital-at-74-billion-valuation-ahead-",
-      "announced_at": "2026-07-19",
-      "type": "funding",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "deepseek"
-      ],
-      "models": [],
-      "headline": "DeepSeek raises fresh capital at $74 billion valuation ahead of onshore IPO",
-      "summary": "DeepSeek is reportedly raising new funding at a $74 billion valuation in preparation for an onshore IPO in China. This positions DeepSeek as one of the most highly valued AI startups globally, reflecting strong investor confidence and potentially accelerating its model development and deployment roadmap.",
-      "sources": [
-        {
-          "url": "https://www.manilatimes.net/2026/07/20/business/foreign-business/chinas-deepseek-to-raise-fresh-capital-at-74-billion-valuation-ahead-of-onshore-ipo-sources-say/2387159"
-        }
-      ],
-      "tags": [
-        "major",
-        "onshore-ipo",
-        "china"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "down"
-      },
-      "created_at": "2026-07-25",
-      "updated_at": "2026-07-25"
     }
   ]
 }
