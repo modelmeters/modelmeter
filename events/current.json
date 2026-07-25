@@ -27918,7 +27918,7 @@
       "id": "2026-07-google-gemini-robotics-er-2-0-renamed-to-gemini-robotics-er-2",
       "announced_at": "2026-07-25",
       "detected_at": "2026-07-25T17:30:18.244Z",
-      "type": "id_rename",
+      "type": "version_update",
       "severity": "breaking",
       "status": "unverified",
       "providers": [
