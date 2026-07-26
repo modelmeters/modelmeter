@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-26",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,160 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-deepseek-pauses-new-funding-round-as-ipo-plans-advance",
+      "announced_at": "2026-07-26",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek pauses new funding round as IPO plans advance",
+      "summary": "DeepSeek has reportedly paused its latest funding round as it shifts focus toward preparing for an initial public offering. This strategic move indicates a transition from private capital raising to public market readiness, reflecting confidence in its financial and operational maturity.",
+      "sources": [
+        {
+          "url": "https://seekingalpha.com/news/4618437-deepseek-is-said-to-pause-new-funding-round-as-ipo-plans-advance"
+        }
+      ],
+      "tags": [
+        "ipo",
+        "funding-pause",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-26",
+      "updated_at": "2026-07-26"
+    },
+    {
+      "id": "2026-07-deepseek-s-71-billion-fundraising-round-stalls-instructing-i",
+      "announced_at": "2026-07-25",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek's $71 billion fundraising round stalls, instructing investors to wait",
+      "summary": "DeepSeek has informed investors to wait as its planned $71 billion capital raise encounters delays. This stalling of one of the largest AI fundraising attempts reflects potential challenges in market appetite for mega-rounds and could impact the company's near-term expansion and R&D velocity.",
+      "sources": [
+        {
+          "url": "https://startupfortune.com/deepseek-tells-investors-to-wait-as-its-71-billion-fundraising-round-stalls/"
+        }
+      ],
+      "tags": [
+        "funding",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-26",
+      "updated_at": "2026-07-26"
+    },
+    {
+      "id": "2026-07-anthropic-launches-claude-opus-5-with-enhanced-agentic-codin",
+      "announced_at": "2026-07-24",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-5"
+      ],
+      "headline": "Anthropic launches Claude Opus 5 with enhanced agentic coding and computer use at unchanged Opus pricing",
+      "summary": "Claude Opus 5 introduces frontier-class agentic coding and computer use capabilities while maintaining previous Opus pricing tiers. This release strengthens Anthropic's position in the high-performance AI model market.",
+      "sources": [
+        {
+          "url": "https://www.marktechpost.com/2026/07/24/meet-the-new-claude-opus-5-frontier-class-agentic-coding-and-computer-use-at-unchanged-opus-pricing/"
+        }
+      ],
+      "tags": [
+        "major",
+        "agentic",
+        "coding",
+        "computer-use"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-26",
+      "updated_at": "2026-07-26"
+    },
+    {
+      "id": "2026-07-openrouter-stripe-in-advanced-talks-to-acquire-openrouter-at-10b-valuat",
+      "announced_at": "2026-07-24",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openrouter"
+      ],
+      "models": [],
+      "headline": "Stripe in advanced talks to acquire OpenRouter at $10B valuation",
+      "summary": "Stripe is reportedly in advanced negotiations to acquire OpenRouter, a leading AI model routing and marketplace platform, at a $10 billion valuation. The move signals a strategic push by Stripe to dominate AI transaction infrastructure, integrating seamless payments and access across multiple model providers.",
+      "sources": [
+        {
+          "url": "https://cryptonews.net/news/finance/33195243/"
+        }
+      ],
+      "tags": [
+        "marketplace",
+        "fintech",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-26",
+      "updated_at": "2026-07-26"
+    },
+    {
+      "id": "2026-07-other-upstage-launches-solar-open-2-an-open-weight-model-for-auton",
+      "announced_at": "2026-07-23",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [
+        "upstage/solar-open-2"
+      ],
+      "headline": "Upstage launches Solar Open 2, an open-weight model for autonomous tasks",
+      "summary": "Upstage has released Solar Open 2, a new open-weight AI model optimized for autonomous reasoning and task execution. The model is designed to support developers in building agent-based systems without reliance on proprietary APIs.",
+      "sources": [
+        {
+          "url": "https://www.koreatimes.co.kr/business/companies/20260723/upstage-unveils-solar-open-2-open-weight-ai-model-built-for-autonomous-tasks"
+        }
+      ],
+      "tags": [
+        "open-weight",
+        "autonomous-agents",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-26",
+      "updated_at": "2026-07-26"
     }
   ]
 }
