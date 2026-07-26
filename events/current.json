@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-18",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,159 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-anthropic-reduces-claude-fable-5-usage-limits-in-max-and-tea",
+      "announced_at": "2026-07-18",
+      "type": "pricing_change",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-fable-5"
+      ],
+      "headline": "Anthropic reduces Claude Fable 5 usage limits in Max and Team Premium, shifts Pro users to API pricing",
+      "summary": "Anthropic has significantly reduced access to Claude Fable 5 within its Max and Team Premium tiers, while directing Pro users toward API-based usage models. This change reflects a strategic pivot toward enterprise and developer monetization, limiting high-end model access for general users.",
+      "sources": [
+        {
+          "url": "https://the-decoder.com/anthropic-slashes-claude-fable-5-limits-in-max-and-team-premium-and-pushes-pro-users-toward-api-pricing/"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "access",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-18",
+      "updated_at": "2026-07-18"
+    },
+    {
+      "id": "2026-07-anthropic-u-s-export-ban-on-claude-fable-5-fully-resolved-within-19-da",
+      "announced_at": "2026-07-18",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-fable-5"
+      ],
+      "headline": "U.S. export ban on Claude Fable 5 fully resolved within 19 days, restoring international access",
+      "summary": "Following a brief U.S. export restriction, Anthropic's Claude Fable 5 has had 99% of access restored within 19 days. The rapid resolution enabled full international market re-entry, reversing a temporary limitation on global deployment.",
+      "sources": [
+        {
+          "url": "https://tech-insider.org/ca/claude-fable-5-export-ban-2026/"
+        }
+      ],
+      "tags": [
+        "export-control",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-18",
+      "updated_at": "2026-07-18"
+    },
+    {
+      "id": "2026-07-other-nebius-secures-775m-gpu-backed-loan-to-fund-ai-cloud-expansi",
+      "announced_at": "2026-07-17",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Nebius secures $775M GPU-backed loan to fund AI cloud expansion",
+      "summary": "Nebius has secured a $775 million loan backed by GPUs to expand its AI cloud infrastructure. This funding will increase available compute capacity for AI workloads, enhancing competition in the AI cloud market.",
+      "sources": [
+        {
+          "url": "https://theminermag.com/news/market-news/nebius-group-secures-775-million-debt-facility-for-ai-cloud-infrastructure"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-18",
+      "updated_at": "2026-07-18"
+    },
+    {
+      "id": "2026-07-xai-grok-4-5-api-pricing-reveals-cloud-routing-inefficiencies",
+      "announced_at": "2026-07-17",
+      "type": "infrastructure",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "Grok 4.5 API pricing reveals cloud routing inefficiencies",
+      "summary": "Analysis of Grok 4.5's API pricing highlights underlying inefficiencies in cloud routing infrastructure, suggesting suboptimal cost distribution and model deployment strategies despite public availability.",
+      "sources": [
+        {
+          "url": "https://streamlinefeed.co.ke/news/why-grok-4-5-api-pricing-exposes-cloud-routing-inefficiencies"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-18",
+      "updated_at": "2026-07-18"
+    },
+    {
+      "id": "2026-07-deepseek-implied-valuation-reaches-52-billion-based-on-chine",
+      "announced_at": "2026-07-17",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek implied valuation reaches $52 billion based on Chinese regulatory filing",
+      "summary": "A recent Chinese regulatory filing suggests DeepSeek's valuation has reached approximately $52 billion, reflecting substantial investor confidence and positioning the company as a major player in the global AI race.",
+      "sources": [
+        {
+          "url": "https://95kqds.com/2026/07/16/chinese-filing-implies-deepseek-valuation-of-around-52-billion/"
+        }
+      ],
+      "tags": [
+        "major",
+        "valuation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-18",
+      "updated_at": "2026-07-18"
     }
   ]
 }
