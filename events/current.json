@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-27",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,283 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-nvidia-safe-superintelligence-partners-with-nvidia-to-scale-ai-rese",
+      "announced_at": "2026-07-27",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nvidia",
+        "other"
+      ],
+      "models": [],
+      "headline": "Safe Superintelligence partners with Nvidia to scale AI research",
+      "summary": "After two years in stealth, Safe Superintelligence, founded by Ilya Sutskever, has announced a long-term partnership with Nvidia to accelerate its AI research and scale to its next phase. This collaboration leverages Nvidia's advanced computing infrastructure to support SSI's ambitious goals in developing safe superintelligent systems.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/"
+        }
+      ],
+      "tags": [
+        "major",
+        "infrastructure"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-27",
+      "updated_at": "2026-07-27"
+    },
+    {
+      "id": "2026-07-anthropic-cognizant-expands-partnership-with-anthropic-to-embed-claude",
+      "announced_at": "2026-07-27",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [],
+      "headline": "Cognizant expands partnership with Anthropic to embed Claude into industry platforms",
+      "summary": "Cognizant is deepening its collaboration with Anthropic to integrate the Claude model into specialized industry platforms, enhancing AI-driven solutions for enterprise clients. This expansion signals broader adoption of Claude in vertical-specific applications.",
+      "sources": [
+        {
+          "url": "https://www.roi-nj.com/2026/07/27/tech/cognizant-to-embed-claude-in-industry-platforms-with-expanded-anthropic-partnership/"
+        }
+      ],
+      "tags": [
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-27",
+      "updated_at": "2026-07-27"
+    },
+    {
+      "id": "2026-07-nvidia-microsoft-spacex-and-ibm-launch-open-secure-ai-allian",
+      "announced_at": "2026-07-27",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "nvidia",
+        "microsoft",
+        "spacex",
+        "other"
+      ],
+      "models": [],
+      "headline": "Nvidia, Microsoft, SpaceX, and IBM launch Open Secure AI Alliance to develop open-source AI security tools",
+      "summary": "Nvidia and Microsoft have co-founded the Open Secure AI Alliance alongside SpaceX, IBM, and other tech firms to create and share open-source tools for defending against attacks from frontier AI models. The initiative aims to establish stronger security standards across the AI ecosystem, emphasizing transparency and collective defense mechanisms.",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/971281/nvidia-open-secure-ai-alliance-cybersecurity"
+        }
+      ],
+      "tags": [
+        "security",
+        "open-source",
+        "major",
+        "collaboration"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-27",
+      "updated_at": "2026-07-27"
+    },
+    {
+      "id": "2026-07-deepseek-develops-custom-ai-chip-and-launches-instant-paymen",
+      "announced_at": "2026-07-27",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek develops custom AI chip and launches instant payment processing system",
+      "summary": "DeepSeek is advancing its inference infrastructure through the development of a proprietary AI chip aimed at boosting efficiency and reducing costs. Concurrently, the company has introduced an instant payment processing system to streamline transactions within its platform.",
+      "sources": [
+        {
+          "url": "https://www.technology.org/2026/07/27/deepseeks-custom-chip-and-instant-payment-processing/"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-27",
+      "updated_at": "2026-07-27"
+    },
+    {
+      "id": "2026-07-deepseek-pauses-second-funding-round-amid-market-and-geopoli",
+      "announced_at": "2026-07-27",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek pauses second funding round amid market and geopolitical scrutiny",
+      "summary": "DeepSeek has reportedly paused its second funding round due to increasing market and geopolitical scrutiny. This follows heightened regulatory attention on Chinese AI firms and global capital allocation concerns, potentially impacting its roadmap for scaling model development and inference capacity.",
+      "sources": [
+        {
+          "url": "https://www.digitimes.com/news/a20260727VL202/deepseek-ai-fundraising-startup.html"
+        }
+      ],
+      "tags": [
+        "funding",
+        "geopolitical",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-27",
+      "updated_at": "2026-07-27"
+    },
+    {
+      "id": "2026-07-moonshot-ai-releases-open-weight-kimi-k3-model-in-canada-wit",
+      "announced_at": "2026-07-27",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "moonshot"
+      ],
+      "models": [
+        "moonshotai/kimi-k3"
+      ],
+      "headline": "Moonshot AI releases open-weight Kimi K3 model in Canada with 70% cost reduction",
+      "summary": "Moonshot AI has launched an open-weight version of its Kimi K3 model in Canada, offering a 70% reduction in inference costs. This move significantly improves affordability and accessibility for developers and enterprises in the region.",
+      "sources": [
+        {
+          "url": "https://tech-insider.org/ca/kimi-k3-open-weight-release-canada-2026/"
+        }
+      ],
+      "tags": [
+        "major",
+        "open-weight",
+        "pricing"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-27",
+      "updated_at": "2026-07-27"
+    },
+    {
+      "id": "2026-07-groq-ai-chip-startups-challenge-nvidia-through-diversified-hardwa",
+      "announced_at": "2026-07-26",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "groq",
+        "nvidia",
+        "other"
+      ],
+      "models": [],
+      "headline": "AI chip startups challenge Nvidia through diversified hardware strategies",
+      "summary": "Multiple AI chip startups are pursuing distinct technological and business approaches to compete with Nvidia's dominance in AI acceleration, aiming to increase inference capacity and reduce reliance on GPU-centric infrastructure.",
+      "sources": [
+        {
+          "url": "https://www.bitget.com/amp/news/detail/12560605545420"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "competition",
+        "hardware",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-27",
+      "updated_at": "2026-07-27"
+    },
+    {
+      "id": "2026-07-deepseek-announces-pause-in-funding-rounds-to-prospective-in",
+      "announced_at": "2026-07-25",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek announces pause in funding rounds to prospective investors",
+      "summary": "DeepSeek has informed prospective investors of a pause in its fundraising activities, signaling a strategic shift in its capital acquisition approach amid evolving market conditions.",
+      "sources": [
+        {
+          "url": "https://wmbdradio.com/2026/07/25/deepseek-tells-prospective-investors-of-funding-pause-bloomberg-news-reports/"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-27",
+      "updated_at": "2026-07-27"
+    },
+    {
+      "id": "2026-07-xai-spacexai-releases-grok-as-open-source-model",
+      "announced_at": "2026-07-25",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "xAI (SpaceXAI) releases Grok as open-source model",
+      "summary": "Following its rebranding to SpaceXAI, xAI has open-sourced Grok, its ChatGPT-competing large language model. This move enables unrestricted access, modification, and deployment by developers and organizations worldwide.",
+      "sources": [
+        {
+          "url": "https://mashable.com/article/grok-open-source-elon-musk-ai-openai"
+        }
+      ],
+      "tags": [
+        "major",
+        "open-source"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-27",
+      "updated_at": "2026-07-27"
     }
   ]
 }
