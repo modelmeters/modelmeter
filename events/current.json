@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-27",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,29 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-microsoft-azure-ai-foundry-model-retirement-date-updated-to-2027-07-01",
+      "announced_at": "2026-07-27",
+      "effective_at": "2027-07-01",
+      "detected_at": "2026-07-27T17:30:11.613Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "microsoft"
+      ],
+      "models": [],
+      "headline": "Azure AI Foundry model retirement date updated to 2027-07-01",
+      "summary": "Microsoft has updated the retirement date for Azure AI Foundry models to July 1, 2027, replacing previous deprecation dates.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
+          "quote": "2027-07-01"
+        }
+      ],
+      "created_at": "2026-07-27",
+      "updated_at": "2026-07-27"
     }
   ]
 }
