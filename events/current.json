@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-28",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,31 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-openai-launched-gpt-transcribe-and-gpt-live-transcribe-for-file-and",
+      "announced_at": "2026-07-28",
+      "detected_at": "2026-07-28T17:30:09.321Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-transcribe",
+        "openai/gpt-live-transcribe"
+      ],
+      "headline": "Launched GPT Transcribe and GPT Live Transcribe for file and streaming transcription",
+      "summary": "OpenAI launched GPT Transcribe for accurate file transcription and final transcripts of committed Realtime turns, and GPT Live Transcribe for low-latency streaming transcription. Both support free-form transcription context, keyword hints, and multiple input languages.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Transcription\nFile transcription\nJul 28\ngpt-transcribe\ngpt-live-transcribe\nv1/audio/transcriptions\nReleased GPT Transcribe for accurate file transcription and final transcripts of committed Realtime turns, along with GPT Live Transcribe for low-latency streaming transcription.\nBoth models support free-form transcription context, keyword hints, and multiple expected input languages. Compare supported outputs and workflows in the transcription guide ."
+        }
+      ],
+      "created_at": "2026-07-28",
+      "updated_at": "2026-07-28"
     }
   ]
 }
