@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-28",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,164 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-amazon-recursive-superintelligence-signs-410-million-compute-deal-w",
+      "announced_at": "2026-07-28",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "amazon",
+        "other"
+      ],
+      "models": [],
+      "headline": "Recursive Superintelligence signs $410 million compute deal with Amazon",
+      "summary": "Recursive Superintelligence has committed $410 million to secure compute resources from Amazon, representing the majority of its fundraising to date. This partnership will enable Recursive to scale its AI operations significantly.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/28/recursive-superintelligence-signs-400-compute-deal-with-amazon/"
+        }
+      ],
+      "tags": [
+        "major",
+        "compute"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-28",
+      "updated_at": "2026-07-28"
+    },
+    {
+      "id": "2026-07-xai-mp-files-motion-demanding-ban-on-grok-s-creation-of-intimate",
+      "announced_at": "2026-07-28",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "MP files motion demanding ban on Grok's creation of intimate deepfakes, escalating legal pressure on xAI",
+      "summary": "A member of parliament has initiated legal action calling for a ban on Grok's capability to generate intimate deepfakes, citing misuse concerns and public harm. The case adds to growing regulatory and legal challenges facing xAI, following prior allegations of child safety violations.",
+      "sources": [
+        {
+          "url": "https://sud.ua/en/news/abroad/367745-ilona-maska-tiahnut-do-sudu-cherez-grok-deputatka-vymahaie-zaboronyty-stvorennia-intymnykh-dypfeikiv"
+        }
+      ],
+      "tags": [
+        "legal",
+        "regulation",
+        "deepfakes",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-28",
+      "updated_at": "2026-07-28"
+    },
+    {
+      "id": "2026-07-xai-uk-lawsuit-alleges-xai-liable-for-enabling-grok-generated-de",
+      "announced_at": "2026-07-28",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "UK lawsuit alleges xAI liable for enabling Grok-generated deepfake sexualized images",
+      "summary": "A lawsuit filed in the UK argues that xAI is legally responsible for enabling the creation of sexualized deepfake images via its Grok AI model. The case centers on claims that the model was used to generate non-consensual explicit content, raising questions about platform accountability under emerging AI liability frameworks.",
+      "sources": [
+        {
+          "url": "https://www.mlex.com/mlex/artificial-intelligence/articles/2506566/xai-liable-for-enabling-grok-s-deepfake-sexualized-images-uk-lawsuit-argues"
+        }
+      ],
+      "tags": [
+        "deepfakes",
+        "content-moderation",
+        "legal-liability",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-07-28",
+      "updated_at": "2026-07-28"
+    },
+    {
+      "id": "2026-07-xai-lawmaker-seeks-permanent-court-ban-on-xai-s-grok-over-allege",
+      "announced_at": "2026-07-28",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "Lawmaker seeks permanent court ban on xAI's Grok over alleged generation of sexualized images",
+      "summary": "A U.S. lawmaker has initiated legal efforts to secure a permanent court injunction against xAI's Grok, citing its alleged role in generating sexualized and harmful content, including deepfake imagery. This follows prior litigation and reflects growing regulatory concern over AI-generated abuse material.",
+      "sources": [
+        {
+          "url": "https://www.tipranks.com/news/lawmaker-seeks-permanent-court-ban-on-elon-musks-grok-over-sexualized-images"
+        }
+      ],
+      "tags": [
+        "legal",
+        "regulation",
+        "content-moderation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-28",
+      "updated_at": "2026-07-28"
+    },
+    {
+      "id": "2026-07-deepseek-suspends-71-billion-funding-round",
+      "announced_at": "2026-07-28",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek suspends $71 billion funding round",
+      "summary": "DeepSeek has suspended its planned $71 billion funding round, one of the largest in AI history, amid unexplained market or regulatory pressures. This development signals potential shifts in investor appetite, geopolitical constraints, or internal challenges affecting its growth trajectory and competitive positioning.",
+      "sources": [
+        {
+          "url": "https://www.voiceofemirates.com/en/science-and-tech/2026/07/28/earthquake-in-the-ai-sector-deepseek-suspends-its-71-billion-funding-round/"
+        }
+      ],
+      "tags": [
+        "major",
+        "funding"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-28",
+      "updated_at": "2026-07-28"
     }
   ]
 }
