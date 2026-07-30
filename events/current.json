@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-30",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,256 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-openai-gpt-5-6-models-on-amazon-bedrock-gain-explicit-prompt",
+      "announced_at": "2026-07-30",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai",
+        "amazon"
+      ],
+      "models": [
+        "openai/gpt-5.6-sol",
+        "openai/gpt-5.6-terra",
+        "openai/gpt-5.6-luna"
+      ],
+      "headline": "OpenAI GPT-5.6 models on Amazon Bedrock gain explicit prompt caching for cost and performance optimization",
+      "summary": "Amazon Bedrock now supports explicit prompt caching for OpenAI's GPT-5.6 Sol, Terra, and Luna models, enabling developers to selectively cache and reuse parts of prompts. This reduces redundant computation and token usage, lowering inference costs and improving response latency for high-throughput applications.",
+      "sources": [
+        {
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-explicit-prompt-caching-for-openai-gpt-5-6-models-on-amazon-bedrock/"
+        }
+      ],
+      "tags": [
+        "major",
+        "caching",
+        "cost-efficiency"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-xai-sues-minnesota-over-ai-nudification-ban",
+      "announced_at": "2026-07-30",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "xAI sues Minnesota over AI 'nudification' ban",
+      "summary": "xAI has filed a lawsuit against the state of Minnesota challenging its recently enacted ban on AI-generated nude imagery, known as the 'nudification' ban. The legal action argues the law infringes on free speech and innovation, marking a significant confrontation between AI developers and state-level regulation.",
+      "sources": [
+        {
+          "url": "https://lavocedinewyork.com/en/news/2026/07/30/musks-xai-sues-minnesota-over-landmark-ai-nudification-ban/"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "free-speech",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-openrouter-stripe-plans-10b-acquisition-of-new-venture-founded-by-openr",
+      "announced_at": "2026-07-29",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openrouter",
+        "other"
+      ],
+      "models": [],
+      "headline": "Stripe plans $10B acquisition of new venture founded by OpenRouter's Alex Atallah",
+      "summary": "Stripe is reportedly planning a $10 billion acquisition of a new venture launched by Alex Atallah, founder of OpenRouter. The move signals a major expansion into AI infrastructure by the fintech giant.",
+      "sources": [
+        {
+          "url": "https://www.ababnews.com/news/ccb4d694-7c32-4c96-aab6-d65a3aa7d5da"
+        }
+      ],
+      "tags": [
+        "major",
+        "acquisition",
+        "infrastructure"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-spacex-spacexai-sues-minnesota-to-block-nudify-app-ban-citing-50-bi",
+      "announced_at": "2026-07-29",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "spacex"
+      ],
+      "models": [],
+      "headline": "SpaceXAI sues Minnesota to block 'nudify' app ban, citing $50 billion risk",
+      "summary": "SpaceXAI filed a lawsuit against the state of Minnesota to prevent enforcement of a ban on 'nudify' apps, arguing that such restrictions create a precedent threatening up to $50 billion in AI business risk. The case centers on free speech and commercial use of generative AI for image manipulation.",
+      "sources": [
+        {
+          "url": "https://finance.biggo.com/news/fdd83edc-78df-419d-a944-3fee705f0aef"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "image-generation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-together-ai-and-moonshot-ai-partner-to-natively-serve-kimi-m",
+      "announced_at": "2026-07-29",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "together",
+        "moonshot"
+      ],
+      "models": [
+        "moonshot/kimi-k2-instruct",
+        "moonshot/kimi-k2-instruct-0905"
+      ],
+      "headline": "Together AI and Moonshot AI partner to natively serve Kimi models",
+      "summary": "Together AI has entered a strategic partnership with Moonshot AI to natively host and serve Kimi models on its platform. This integration enhances model availability and inference scalability for Moonshot's models through Together's infrastructure.",
+      "sources": [
+        {
+          "url": "https://www.together.ai/blog/together-ai-announces-strategic-partnership-with-moonshot-ai-to-natively-serve-kimi-models"
+        }
+      ],
+      "tags": [
+        "major",
+        "inference",
+        "model-access"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-deepseek-communicates-funding-pause-to-prospective-investors",
+      "announced_at": "2026-07-25",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek communicates funding pause to prospective investors",
+      "summary": "DeepSeek has informed potential investors of a pause in its fundraising efforts, signaling possible shifts in its financial strategy or market conditions affecting its growth trajectory.",
+      "sources": [
+        {
+          "url": "https://m.economictimes.com/tech/artificial-intelligence/deepseek-tells-prospective-investors-of-funding-pause-bloomberg-news-reports/articleshow/132629114.cms"
+        }
+      ],
+      "tags": [
+        "funding",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-anthropic-samsung-sds-adopts-anthropic-s-claude-and-forms-strategic-pa",
+      "announced_at": "2026-07-25",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Samsung SDS adopts Anthropic's Claude and forms strategic partnership to expand enterprise AI business",
+      "summary": "Samsung SDS has integrated Anthropic's Claude into its enterprise AI offerings and established a strategic partnership to jointly expand their AI capabilities. This collaboration aims to accelerate the deployment of secure, scalable AI solutions across enterprise clients, leveraging Claude's reasoning and Samsung SDS's industry expertise.",
+      "sources": [
+        {
+          "url": "https://www.samsungsds.com/en/news/1295098_5252.html"
+        }
+      ],
+      "tags": [
+        "enterprise",
+        "major",
+        "strategic-partnership"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-cohere-raises-new-funding-in-2026-round",
+      "announced_at": "2026-07-25",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "cohere"
+      ],
+      "models": [],
+      "headline": "Cohere raises new funding in 2026 round",
+      "summary": "Cohere secures significant investment in a 2026 funding round, signaling continued market confidence and enabling further development of its AI models and infrastructure.",
+      "sources": [
+        {
+          "url": "https://tracxn.com/d/companies/cohere/__o4xfwmr3XwgsGEyH41XvwBm6Xd-SjsMlSld3d4ci6G0/funding-and-investors"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
     }
   ]
 }
