@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-30",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,202 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-openai-gpt-5-6-luna-and-terra-see-significant-price-reductions",
+      "announced_at": "2026-07-30",
+      "effective_at": "2026-07-30",
+      "detected_at": "2026-07-30T17:30:04.774Z",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/GPT-5.6 Luna",
+        "openai/GPT-5.6 Terra"
+      ],
+      "headline": "GPT-5.6 Luna and Terra see significant price reductions",
+      "summary": "GPT-5.6 Luna pricing reduced by 80% and GPT-5.6 Terra by 20% effective July 30.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Starting July 30, GPT-5.6 Luna costs 80% less, while GPT-5.6 Terra costs 20% less. See pricing details ."
+        }
+      ],
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-openai-fast-mode-introduced-replacing-priority-processing",
+      "announced_at": "2026-07-30",
+      "detected_at": "2026-07-30T17:30:04.774Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/GPT-5.6 Sol"
+      ],
+      "migration_target": "openai/Fast mode",
+      "headline": "Fast mode introduced, replacing Priority Processing",
+      "summary": "Fast mode launched in API, offering up to 2.5× faster speeds at twice the price; backward compatible with existing 'priority' tagged requests now using Fast mode.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "We're also introducing Fast mode in the API, which replaces our Priority Processing offering. For GPT-5.6 Sol, Fast mode now delivers up to 2.5× faster speeds than standard processing at twice the price. This change is backward compatible: requests tagged priority will automatically use Fast mode."
+        }
+      ],
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-openai-launches-official-terraform-provider",
+      "announced_at": "2026-07-29",
+      "detected_at": "2026-07-30T17:30:04.774Z",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "migration_target": "openai/Terraform",
+      "headline": "OpenAI launches official Terraform provider",
+      "summary": "OpenAI releases an official Terraform provider to manage API Platform resources as infrastructure as code, available from the Terraform Registry.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Released the official OpenAI Terraform provider for managing OpenAI API Platform resources as infrastructure as code.\nProvision and manage projects, users, groups, roles, access assignments, service accounts, certificates, invitations, and project-level rate limits. Use standard Terraform workflows to review and apply changes, import existing resources, and detect and reconcile configuration drift. Install the provider from the Terraform Registry ."
+        }
+      ],
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-openai-updates-pricing-for-fast-mode-and-priority-processing",
+      "announced_at": "2026-07-30",
+      "detected_at": "2026-07-30T17:30:04.774Z",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI updates pricing for Fast mode and Priority processing tiers",
+      "summary": "OpenAI has updated the pricing for its Fast mode and Priority processing service tiers. Fast mode is now priced at $2 per input MTok and $12 per output MTok, down from the previous Priority processing rate of $2.50 per input MTok and $15 per output MTok. The lower-tier service pricing has also been adjusted to $0.20 per input MTok and $1.20 per output MTok, previously $1 and $6 respectively.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/models",
+          "quote": "Fast mode\n$2 / Input MTok\n$12 / Output MTok\n$0.20 / Input MTok\n$1.20 / Output MTok"
+        }
+      ],
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-google-gemini-robotics-model-gemini-robotics-er-2-preview-to-be-dep",
+      "announced_at": "2026-07-30",
+      "effective_at": "2026-08-31",
+      "detected_at": "2026-07-30T17:30:04.774Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-robotics-er-2-preview"
+      ],
+      "headline": "Gemini robotics model gemini-robotics-er-2-preview to be deprecated",
+      "summary": "The gemini-robotics-er-2-preview model is scheduled for deprecation on August 31, 2026.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/deprecations?hl=en",
+          "quote": "August 31, 2026"
+        }
+      ],
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-google-gemini-robotics-er-2-launched-in-public-preview",
+      "announced_at": "2026-07-30",
+      "detected_at": "2026-07-30T17:30:04.774Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-robotics-er-2-preview",
+        "google/gemini-robotics-er-2-streaming-preview"
+      ],
+      "headline": "Gemini Robotics ER 2 launched in public preview",
+      "summary": "Google released two new embodied reasoning model endpoints for robotics: gemini-robotics-er-2-preview and gemini-robotics-er-2-streaming-preview, featuring advanced spatial reasoning, agentic code execution, multi-step tool orchestration, video moment finding, progress classification, multi-robot coordination, and real-time text streaming with bidirectional audio and video input.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog?hl=en",
+          "quote": "Gemini Robotics ER 2 in public preview : Released two new embodied\nreasoning model endpoints for robotics:\ngemini-robotics-er-2-preview : Advanced spatial reasoning, agentic\ncode execution, multi-step tool orchestration, video moment finding,\nprogress classification, and multi-robot coordination.\ngemini-robotics-er-2-streaming-preview : Optimized for real-time\ntext streaming using the Live API, enabling low-latency robot agents with\nbidirectional audio and video input."
+        }
+      ],
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-xai-speech-to-speech-agent-pricing-changed-from-3-00-hour-to-0-0",
+      "announced_at": "2026-07-30",
+      "detected_at": "2026-07-30T17:30:04.774Z",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/Speech to Speech"
+      ],
+      "headline": "Speech to Speech agent pricing changed from $3.00/hour to $0.05/minute",
+      "summary": "The cost for using the Speech to Speech agent has been updated to $0.05 per minute, down from the previous rate of $3.00 per hour.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/docs/models",
+          "quote": "Agent Starting at $0.05 / min"
+        }
+      ],
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "id": "2026-07-xai-grok-voice-think-fast-2-0-launched-with-speech-to-speech",
+      "announced_at": "2026-07-29",
+      "effective_at": "2026-08-05",
+      "detected_at": "2026-07-30T17:30:04.774Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-voice-think-fast-2.0"
+      ],
+      "migration_target": "xai/grok-voice-latest",
+      "headline": "Grok Voice Think Fast 2.0 launched with Speech to Speech",
+      "summary": "The grok-voice-think-fast-2.0 model is now available, featuring Speech to Speech capabilities. The grok-voice-latest alias will begin routing to this model on August 5, 2026.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/release-notes",
+          "quote": "grok-voice-think-fast-2.0 is now available with Speech to Speech. grok-voice-latest will route to this model starting August 5, 2026."
+        }
+      ],
+      "created_at": "2026-07-30",
+      "updated_at": "2026-07-30"
     }
   ]
 }
