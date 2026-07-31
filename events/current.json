@@ -27839,29 +27839,6 @@
       "updated_at": "2026-07-31"
     },
     {
-      "id": "2025-09-openai-legacy-gpt-model-snapshots-deprecated",
-      "announced_at": "2025-09-26",
-      "effective_at": "2026-03-26",
-      "detected_at": "2026-07-31T17:30:00.956Z",
-      "type": "model_deprecation",
-      "severity": "breaking",
-      "status": "unverified",
-      "providers": [
-        "openai"
-      ],
-      "models": [],
-      "headline": "Legacy GPT model snapshots deprecated",
-      "summary": "OpenAI deprecated a set of older GPT models with declining usage on September 26, 2025, with access shut down on March 26, 2026.",
-      "sources": [
-        {
-          "url": "https://platform.openai.com/docs/deprecations",
-          "quote": "2025-09-26: Legacy GPT model snapshots (March 2026 shutdown)\nTo improve reliability and make it easier for developers to choose the right models, we deprecated a set of older OpenAI models with declining usage. Access to these models was shut down on March 26, 2026."
-        }
-      ],
-      "created_at": "2026-07-31",
-      "updated_at": "2026-07-31"
-    },
-    {
       "id": "2026-07-openai-multiple-models-deprecated-effective-october-23-2026",
       "announced_at": "2026-07-31",
       "effective_at": "2026-10-23",
@@ -27919,7 +27896,7 @@
       "id": "2026-07-deepseek-v4-flash-api-enters-public-beta",
       "announced_at": "2026-07-31",
       "detected_at": "2026-07-31T17:30:00.956Z",
-      "type": "model_launch",
+      "type": "model_update",
       "severity": "informational",
       "status": "unverified",
       "providers": [
