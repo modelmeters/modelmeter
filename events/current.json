@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-31",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,130 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-04-openai-legacy-gpt-model-snapshots-deprecated",
+      "announced_at": "2026-04-22",
+      "effective_at": "2026-07-23",
+      "detected_at": "2026-07-31T17:30:00.956Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "Legacy GPT model snapshots deprecated",
+      "summary": "OpenAI announced the deprecation of older GPT models on April 22, 2026, with access shut down on July 23, 2026.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "2026-04-22: Legacy GPT model snapshots (July 2026 shutdown)\nOn April 22, 2026, we announced the deprecation of the following older OpenAI models. Access to these models was shut down on July 23, 2026."
+        }
+      ],
+      "created_at": "2026-07-31",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "id": "2025-09-openai-legacy-gpt-model-snapshots-deprecated",
+      "announced_at": "2025-09-26",
+      "effective_at": "2026-03-26",
+      "detected_at": "2026-07-31T17:30:00.956Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "Legacy GPT model snapshots deprecated",
+      "summary": "OpenAI deprecated a set of older GPT models with declining usage on September 26, 2025, with access shut down on March 26, 2026.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "2025-09-26: Legacy GPT model snapshots (March 2026 shutdown)\nTo improve reliability and make it easier for developers to choose the right models, we deprecated a set of older OpenAI models with declining usage. Access to these models was shut down on March 26, 2026."
+        }
+      ],
+      "created_at": "2026-07-31",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "id": "2026-07-openai-multiple-models-deprecated-effective-october-23-2026",
+      "announced_at": "2026-07-31",
+      "effective_at": "2026-10-23",
+      "detected_at": "2026-07-31T17:30:00.956Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-3.5-turbo-0125",
+        "openai/gpt-3.5-turbo",
+        "openai/gpt-3.5-turbo-completions",
+        "openai/gpt-4-0613",
+        "openai/gpt-4",
+        "openai/gpt-4-0613-completions",
+        "openai/gpt-4-completions",
+        "openai/gpt-4-1106-preview",
+        "openai/gpt-4-turbo",
+        "openai/gpt-4-turbo-2024-04-09",
+        "openai/gpt-4-turbo-completions",
+        "openai/gpt-4.1-nano",
+        "openai/gpt-4.1-nano-2025-04-14",
+        "openai/gpt-4o-2024-05-13",
+        "openai/gpt-image-1",
+        "openai/o1-2024-12-17",
+        "openai/o1",
+        "openai/o1-pro-2025-03-19",
+        "openai/o1-pro",
+        "openai/o3-mini-2025-01-31",
+        "openai/o3-mini",
+        "openai/ft-o4-mini-2025-04-16",
+        "openai/o4-mini-2025-04-16",
+        "openai/o4-mini",
+        "openai/ft-gpt-3.5-turbo",
+        "openai/ft-gpt-4",
+        "openai/ft-gpt-4.1-nano-2025-04-14",
+        "openai/ft-babbage-002",
+        "openai/ft-davinci-002"
+      ],
+      "migration_target": "openai/gpt-5.6-terra",
+      "headline": "Multiple models deprecated effective October 23, 2026",
+      "summary": "Multiple OpenAI models are scheduled for deprecation on October 23, 2026, with migration paths to newer models such as gpt-5.6-terra, gpt-5.6-sol, gpt-5.6-luna, gpt-5.4-mini, gpt-5.5, and gpt-5.4-nano.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "October 23, 2026 gpt-3.5-turbo-0125 | gpt-3.5-turbo , gpt-3.5-turbo-completions gpt-5.6-terra\nOctober 23, 2026 gpt-4-0613 | gpt-4 , gpt-4-0613-completions , gpt-4-completions gpt-5.6-sol\nOctober 23, 2026 gpt-4-1106-preview gpt-5.6-sol\nOctober 23, 2026 gpt-4-turbo | gpt-4-turbo-2024-04-09 , gpt-4-turbo-completions gpt-5.6-sol\nOctober 23, 2026 gpt-4.1-nano | gpt-4.1-nano-2025-04-14 gpt-5.6-luna\nOctober 23, 2026 gpt-4o-2024-05-13 gpt-5.6-sol\nOctober 23, 2026 gpt-image-1 gpt-image-2\nOctober 23, 2026 o1-2024-12-17 | o1 gpt-5.6-sol\nOctober 23, 2026 o1-pro-2025-03-19 | o1-pro gpt-5.6-sol ( reasoning.mode: pro )\nOctober 23, 2026 o3-mini-2025-01-31 | o3-mini gpt-5.6-sol\nOctober 23, 2026 ft-o4-mini-2025-04-16 gpt-5.6-terra\nOctober 23, 2026 o4-mini-2025-04-16 | o4-mini gpt-5.6-terra\nOctober 23, 2026 ft-gpt-3.5-turbo gpt-5.4-mini\nOctober 23, 2026 ft-gpt-4 gpt-5.5\nOctober 23, 2026 ft-gpt-4.1-nano-2025-04-14 gpt-5.4-nano\nOctober 23, 2026 ft-babbage-002 gpt-5.4-mini\nOctober 23, 2026 ft-davinci-002 gpt-5.4-mini"
+        }
+      ],
+      "created_at": "2026-07-31",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "id": "2026-07-deepseek-v4-flash-api-enters-public-beta",
+      "announced_at": "2026-07-31",
+      "detected_at": "2026-07-31T17:30:00.956Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-flash"
+      ],
+      "headline": "DeepSeek-V4-Flash API enters public beta",
+      "summary": "The DeepSeek-V4-Flash model is now available in public beta with enhanced agent capabilities and updated benchmarks. The model natively supports the Responses API format and is adapted for Codex. Model architecture and size remain the same as the preview version, with only re-post-training applied.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/updates",
+          "quote": "The official release of the DeepSeek-V4-Flash API is now in public beta. The API calling method remains unchanged — simply set the model name to deepseek-v4-flash to use the latest version."
+        }
+      ],
+      "created_at": "2026-07-31",
+      "updated_at": "2026-07-31"
     }
   ]
 }
