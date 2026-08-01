@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-01",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,30 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-xai-grok-imagine-video-1-5-now-supports-reference-to-video-gener",
+      "announced_at": "2026-07-31",
+      "detected_at": "2026-08-01T17:30:57.737Z",
+      "type": "capability_change",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-imagine-video-1.5"
+      ],
+      "headline": "grok-imagine-video-1.5 now supports reference-to-video generation",
+      "summary": "The grok-imagine-video-1.5 model has been updated to support reference-to-video generation, including optional preset voices, alongside existing text-to-video and image-to-video capabilities, with native 1080p output.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/release-notes",
+          "quote": "grok-imagine-video-1.5 now supports text-to-video, image-to-video, and reference-to-video (including optional preset voices), with native 1080p for T2V and I2V."
+        }
+      ],
+      "created_at": "2026-08-01",
+      "updated_at": "2026-08-01"
     }
   ]
 }
