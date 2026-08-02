@@ -27875,37 +27875,6 @@
       },
       "created_at": "2026-08-02",
       "updated_at": "2026-08-02"
-    },
-    {
-      "id": "2026-08-xai-minnesota-court-denies-xai-s-injunction-request-upholding-ba",
-      "announced_at": "2026-08-01",
-      "type": "regulatory_action",
-      "severity": "informational",
-      "status": "unverified",
-      "providers": [
-        "xai"
-      ],
-      "models": [],
-      "headline": "Minnesota court denies xAI's injunction request, upholding ban on 'nudify' apps",
-      "summary": "A Minnesota judge denied xAI's request to block the state's ban on AI-powered 'nudify' apps, allowing enforcement of restrictions on tools that generate non-consensual intimate imagery. This decision reinforces state-level regulatory authority over harmful AI applications.",
-      "sources": [
-        {
-          "url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps/"
-        }
-      ],
-      "tags": [
-        "regulation",
-        "content-moderation",
-        "legal",
-        "major"
-      ],
-      "impact": {
-        "magnitude": "major",
-        "duration": "ongoing",
-        "price_direction": "none"
-      },
-      "created_at": "2026-08-02",
-      "updated_at": "2026-08-02"
     }
   ]
 }
