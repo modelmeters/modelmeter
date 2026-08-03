@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-03",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,31 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-google-model-id-renamed",
+      "announced_at": "2026-08-03",
+      "detected_at": "2026-08-03T17:30:45.549Z",
+      "type": "id_rename",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/Gemini Robotics-ER 2"
+      ],
+      "migration_target": "google/Gemini Robotics ER 2",
+      "headline": "Model ID renamed",
+      "summary": "Gemini Robotics-ER 2 has been renamed to Gemini Robotics ER 2",
+      "sources": [
+        {
+          "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+          "quote": "Gemini Robotics ER 2"
+        }
+      ],
+      "created_at": "2026-08-03",
+      "updated_at": "2026-08-03"
     }
   ]
 }
