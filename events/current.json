@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-05",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,132 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-openai-retires-fine-tuned-models-with-migration-to-gpt-5-6-s",
+      "announced_at": "2026-08-05",
+      "effective_at": "2026-10-23",
+      "detected_at": "2026-08-05T17:30:30.987Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/ft-gpt-3.5-turbo",
+        "openai/ft-gpt-4",
+        "openai/ft-gpt-4.1-nano-2025-04-14",
+        "openai/ft-babbage-002",
+        "openai/ft-davinci-002"
+      ],
+      "migration_target": "openai/gpt-5.6-terra, gpt-5.6-sol, gpt-5.6-luna",
+      "headline": "OpenAI retires fine-tuned models with migration to gpt-5.6 series",
+      "summary": "Multiple fine-tuned models are being deprecated and replaced with newer gpt-5.6 series models on October 23, 2026.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "October 23, 2026 ft-gpt-3.5-turbo gpt-5.6-terra\nOctober 23, 2026 ft-gpt-4 gpt-5.6-sol\nOctober 23, 2026 ft-gpt-4.1-nano-2025-04-14 gpt-5.6-luna\nOctober 23, 2026 ft-babbage-002 gpt-5.6-terra\nOctober 23, 2026 ft-davinci-002 gpt-5.6-terra"
+        }
+      ],
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "id": "2026-08-openai-gpt-4o-mini-tts-2025-03-20-is-no-longer-available",
+      "announced_at": "2026-08-05",
+      "effective_at": "2026-07-23",
+      "detected_at": "2026-08-05T17:30:30.987Z",
+      "type": "model_unavailable",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-4o-mini-tts-2025-03-20"
+      ],
+      "migration_target": "openai/gpt-4o-mini-tts-2025-12-15",
+      "headline": "gpt-4o-mini-tts-2025-03-20 is no longer available",
+      "summary": "The model gpt-4o-mini-tts-2025-03-20 was removed and is no longer accessible, with no direct migration path specified beyond a newer TTS variant.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/deprecations",
+          "quote": "July 23, 2026 gpt-4o-mini-tts-2025-03-20 gpt-4o-mini-tts-2025-12-15"
+        }
+      ],
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "id": "2026-08-openai-fast-mode-now-supports-long-context-requests-for-gpt-5-6-mod",
+      "announced_at": "2026-08-05",
+      "detected_at": "2026-08-05T17:30:30.987Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/GPT-5.6 Sol",
+        "openai/GPT-5.6 Terra",
+        "openai/GPT-5.6 Luna"
+      ],
+      "headline": "Fast mode now supports long-context requests for GPT-5.6 models",
+      "summary": "GPT-5.6 Sol, GPT-5.6 Terra, and GPT-5.6 Luna now support long-context prompts exceeding 272K tokens in Fast mode, delivering speeds up to 2.5× faster than Standard tier.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Fast mode now supports long-context requests for GPT-5.6 Sol, GPT-5.6 Terra, and GPT-5.6 Luna. As of today, long-context prompts exceeding 272K tokens can run in Fast mode , delivering speeds up to 2.5× faster than the Standard tier. See pricing details ."
+        }
+      ],
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "id": "2026-08-openai-usage-and-costs-dashboards-now-support-filtering-and-groupin",
+      "announced_at": "2026-08-04",
+      "detected_at": "2026-08-05T17:30:30.987Z",
+      "type": "capability_change",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "Usage and Costs dashboards now support filtering and grouping by API key",
+      "summary": "Customers can now filter and group data by API key in the Usage and Costs dashboards; the Usage API and Costs API also support the API key dimension for programmatic reporting and analysis.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Customers can now filter and group data by API key in the Usage and Costs dashboards . The Usage API and Costs API also support the API key dimension for programmatic reporting and analysis."
+        }
+      ],
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "id": "2026-08-anthropic-inference-hooks-now-in-beta-for-claude-enterprise-organizati",
+      "announced_at": "2026-08-05",
+      "detected_at": "2026-08-05T17:30:30.987Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Inference hooks now in beta for Claude Enterprise organizations",
+      "summary": "Claude Enterprise organizations can now use inference hooks to integrate with their AI security servers, enabling pre-inference approval workflows for prompts across claude.ai, Cowork, and Claude Code with signed requests, configurable failure handling, and denial logging in the compliance Activity Feed.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "Inference hooks are now in beta for Claude Enterprise organizations. Point Claude at your organization&#x27;s AI security server, and each governed prompt across claude.ai, Cowork, and Claude Code is held for the server&#x27;s allow or deny verdict before inference proceeds. Requests are signed, failure handling is configurable, and every denial is recorded in the compliance Activity Feed . See Inference hooks ."
+        }
+      ],
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
     }
   ]
 }
