@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "snapshot_date": "2026-07-08",
+  "snapshot_date": "2026-08-05",
   "models": [
     {
       "id": "anthropic/claude-fable-5",
@@ -1343,15 +1343,15 @@
       "provider": "venice",
       "model": "deepseek-v4-flash",
       "display_name": "Venice: DeepSeek V4 Flash",
-      "input_cost_per_mtok": 0.14,
-      "output_cost_per_mtok": 0.28,
+      "input_cost_per_mtok": 0.18,
+      "output_cost_per_mtok": 0.37,
       "cache_write_cost_per_mtok": null,
       "cache_read_cost_per_mtok": 0.03,
       "context_window": 1000000,
       "max_output_tokens": null,
       "source_url": "https://docs.venice.ai/overview/pricing",
-      "last_verified": "2026-06-28",
-      "verification_required": false,
+      "last_verified": "2026-08-05",
+      "verification_required": true,
       "availability": "available",
       "tags": [
         "flash"
