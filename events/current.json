@@ -27846,35 +27846,6 @@
       "updated_at": "2026-08-05"
     },
     {
-      "id": "2026-08-openai-deprecates-legacy-models-in-favor-of-gpt-5-6-terra",
-      "announced_at": "2026-08-05",
-      "effective_at": "2026-09-28",
-      "detected_at": "2026-08-05T17:30:30.987Z",
-      "type": "model_deprecation",
-      "severity": "breaking",
-      "status": "unverified",
-      "providers": [
-        "openai"
-      ],
-      "models": [
-        "openai/gpt-3.5-turbo-instruct",
-        "openai/babbage-002",
-        "openai/davinci-002",
-        "openai/gpt-3.5-turbo-1106"
-      ],
-      "migration_target": "openai/gpt-5.6-terra",
-      "headline": "OpenAI deprecates legacy models in favor of gpt-5.6-terra",
-      "summary": "Several older base models are being retired on September 28, 2026, with migration directed to gpt-5.6-terra.",
-      "sources": [
-        {
-          "url": "https://platform.openai.com/docs/deprecations",
-          "quote": "2026-09-28 gpt-3.5-turbo-instruct gpt-5.6-terra\n2026-09-28 babbage-002 gpt-5.6-terra\n2026-09-28 davinci-002 gpt-5.6-terra\n2026-09-28 gpt-3.5-turbo-1106 gpt-5.6-terra"
-        }
-      ],
-      "created_at": "2026-08-05",
-      "updated_at": "2026-08-05"
-    },
-    {
       "id": "2026-08-openai-gpt-4o-mini-tts-2025-03-20-is-no-longer-available",
       "announced_at": "2026-08-05",
       "effective_at": "2026-07-23",
@@ -27931,7 +27902,7 @@
       "announced_at": "2026-08-04",
       "detected_at": "2026-08-05T17:30:30.987Z",
       "type": "capability_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "openai"
