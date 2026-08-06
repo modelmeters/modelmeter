@@ -27816,60 +27816,10 @@
       "updated_at": "2026-07-11"
     },
     {
-      "id": "2026-08-anthropic-claude-opus-4-1-model-retired",
-      "announced_at": "2026-08-06",
-      "effective_at": "2026-08-05",
-      "detected_at": "2026-08-06T17:30:24.339Z",
-      "type": "model_unavailable",
-      "severity": "action_required",
-      "status": "unverified",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/claude-opus-4-1-20250805"
-      ],
-      "headline": "Claude Opus 4.1 model retired",
-      "summary": "The claude-opus-4-1-20250805 model is no longer available as of August 5, 2026.",
-      "sources": [
-        {
-          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
-          "quote": "claude-opus-4-1-20250805 Retired June 5, 2026 August 5, 2026\nThis model was retired August 5, 2026."
-        }
-      ],
-      "created_at": "2026-08-06",
-      "updated_at": "2026-08-06"
-    },
-    {
-      "id": "2026-08-anthropic-claude-opus-4-1-model-retired",
-      "announced_at": "2026-08-06",
-      "detected_at": "2026-08-06T17:30:24.339Z",
-      "type": "model_unavailable",
-      "severity": "action_required",
-      "status": "unverified",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/claude-opus-4-1-20250805"
-      ],
-      "migration_target": "anthropic/Claude Opus 5",
-      "headline": "Claude Opus 4.1 model retired",
-      "summary": "The Claude Opus 4.1 model has been retired and is no longer available for use; requests now return an error.",
-      "sources": [
-        {
-          "url": "https://platform.claude.com/docs/en/release-notes/api",
-          "quote": "We've retired the Claude Opus 4.1 model ( claude-opus-4-1-20250805 ). All requests to this model will now return an error. We recommend upgrading to Claude Opus 5 . Researchers can request ongoing access through the External Researcher Access Program ."
-        }
-      ],
-      "created_at": "2026-08-06",
-      "updated_at": "2026-08-06"
-    },
-    {
       "id": "2026-08-microsoft-claude-opus-4-8-model-retired",
       "announced_at": "2026-08-06",
       "detected_at": "2026-08-06T17:30:24.339Z",
-      "type": "model_deprecation",
+      "type": "model_unavailable",
       "severity": "breaking",
       "status": "unverified",
       "providers": [
