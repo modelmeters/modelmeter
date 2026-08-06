@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-06",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,55 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-microsoft-claude-opus-4-8-model-retired",
+      "announced_at": "2026-08-06",
+      "detected_at": "2026-08-06T17:30:24.339Z",
+      "type": "model_unavailable",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "microsoft"
+      ],
+      "models": [
+        "microsoft/claude-opus-4-8"
+      ],
+      "migration_target": "microsoft/claude-opus-5",
+      "headline": "Claude Opus 4.8 model retired",
+      "summary": "The claude-opus-4-8 model has been retired as part of the Azure AI Foundry model lifecycle management.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
+          "quote": "claude-opus-4-8"
+        }
+      ],
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-microsoft-claude-opus-5-model-introduced",
+      "announced_at": "2026-08-06",
+      "detected_at": "2026-08-06T17:30:24.339Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "microsoft"
+      ],
+      "models": [
+        "microsoft/claude-opus-5"
+      ],
+      "headline": "Claude Opus 5 model introduced",
+      "summary": "The claude-opus-5 model is now available, replacing the previous version in the model lineup.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/model-lifecycle-retirement",
+          "quote": "claude-opus-5"
+        }
+      ],
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
     }
   ]
 }
