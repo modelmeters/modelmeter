@@ -27820,7 +27820,7 @@
       "announced_at": "2026-07-31",
       "detected_at": "2026-08-07T17:30:18.202Z",
       "type": "model_swap",
-      "severity": "breaking",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "deepseek"
