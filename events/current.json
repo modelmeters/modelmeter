@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-07",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,337 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-deepseek-implements-strategic-pricing-changes-attracting-ind",
+      "announced_at": "2026-08-07",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek implements strategic pricing changes attracting industry-wide attention",
+      "summary": "DeepSeek has introduced new pricing moves that are being closely watched across the AI industry. These changes signal a potential shift in how open-weight models are monetized and could influence competitive pricing strategies among major providers.",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/newsletters/2026-08-07/deepseek-s-plan-to-raise-prices-have-a-whole-industry-watching"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-08-07",
+      "updated_at": "2026-08-07"
+    },
+    {
+      "id": "2026-08-anthropic-establishes-internal-team-to-develop-custom-ai-chi",
+      "announced_at": "2026-08-07",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic establishes internal team to develop custom AI chips for Claude",
+      "summary": "Anthropic has formed a dedicated team to design custom AI chips aimed at optimizing performance and efficiency for its Claude models. This vertical integration effort signals a strategic shift toward controlling both hardware and software stacks.",
+      "sources": [
+        {
+          "url": "https://fstoppers.com/artificial-intelligence/anthropic-builds-chip-team-ai-demand-surges-903912"
+        }
+      ],
+      "tags": [
+        "major",
+        "semiconductors",
+        "inference"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-07",
+      "updated_at": "2026-08-07"
+    },
+    {
+      "id": "2026-08-cohere-university-of-toronto-partners-with-cohere-to-advance-respon",
+      "announced_at": "2026-08-07",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "cohere",
+        "other"
+      ],
+      "models": [],
+      "headline": "University of Toronto partners with Cohere to advance responsible AI adoption at scale",
+      "summary": "The University of Toronto has entered a strategic partnership with Cohere to promote the ethical and scalable deployment of AI technologies. This collaboration aims to integrate Cohere's AI models and platforms into academic research and institutional workflows, with a focus on governance, transparency, and societal impact.",
+      "sources": [
+        {
+          "url": "https://educationnewscanada.com/article/education/level/university/1/1212633/u-of-t-partnership-with-cohere-sets-the-stage-for-responsible-ai-adoption-at-scale-.html"
+        }
+      ],
+      "tags": [
+        "responsible-ai",
+        "academic-collaboration",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-07",
+      "updated_at": "2026-08-07"
+    },
+    {
+      "id": "2026-08-deepseek-restarts-funding-round-for-ambitious-ai-expansion",
+      "announced_at": "2026-08-07",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek restarts funding round for ambitious AI expansion",
+      "summary": "DeepSeek has restarted its funding efforts to support an ambitious expansion of its AI capabilities, signaling increased investment in model development, infrastructure, and market reach. This move reinforces its position as a leading Chinese AI firm competing on the global stage.",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/videos/2026-08-07/the-china-show-8-7-2026-video"
+        }
+      ],
+      "tags": [
+        "funding",
+        "expansion",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-07",
+      "updated_at": "2026-08-07"
+    },
+    {
+      "id": "2026-08-other-amd-acquires-chip-startup-specializing-in-ai-model-hardened-",
+      "announced_at": "2026-08-06",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "AMD acquires chip startup specializing in AI model-hardened silicon",
+      "summary": "AMD has acquired a chip startup focused on integrating AI models directly into silicon, aiming to improve inference efficiency and performance. This move positions AMD to better compete in the AI accelerator market against Nvidia and supports tighter hardware-model co-design trends.",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/amp/2026/08/06/amd-buys-taalas-startup-that-hardwires-ai-models-into-its-silicon.html"
+        }
+      ],
+      "tags": [
+        "hardware",
+        "inference",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-07",
+      "updated_at": "2026-08-07"
+    },
+    {
+      "id": "2026-08-deepseek-raises-prices-due-to-unsustainable-demand-surge-fol",
+      "announced_at": "2026-08-06",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises prices due to unsustainable demand surge following aggressive price cuts",
+      "summary": "DeepSeek is increasing its pricing after a previous round of price cuts designed to compete with OpenAI triggered a massive spike in usage that exceeded its available GPU capacity. The company's 20,000-GPU infrastructure could not sustain the load, forcing a reversal of pricing strategy to manage demand and maintain service stability.",
+      "sources": [
+        {
+          "url": "https://wccftech.com/deepseek-forced-to-raise-prices-as-its-recent-price-cuts-to-snub-openai-unleashed-a-demand-tsnunami-that-its-20000-gpu-stash-cant-handle/"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "capacity",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-07",
+      "updated_at": "2026-08-07"
+    },
+    {
+      "id": "2026-08-deepseek-announces-significant-price-increase-for-its-ai-ser",
+      "announced_at": "2026-08-06",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek announces significant price increase for its AI services",
+      "summary": "DeepSeek has announced a significant price hike for its AI services, marking a strategic shift in its pricing model. The increase will impact access costs for its models, including DeepSeek-V3 and DeepSeek-R1 variants, potentially affecting developer and enterprise adoption.",
+      "sources": [
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/deepseek-plans-significant-price-increase-025333567.html"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-07",
+      "updated_at": "2026-08-07"
+    },
+    {
+      "id": "2026-08-anthropic-confirms-in-house-chip-team-to-co-design-custom-ai",
+      "announced_at": "2026-08-05",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic confirms in-house chip team to co-design custom AI hardware",
+      "summary": "Anthropic has officially confirmed the formation of an internal chip design team focused on co-developing custom silicon to optimize performance and reduce inference costs for its Claude models. This vertical integration effort aims to cut operational expenses significantly and enhance control over AI deployment infrastructure.",
+      "sources": [
+        {
+          "url": "https://www.techtimes.com/articles/323238/20260805/anthropic-confirms-house-chip-team-co-design-bet-could-cut-claude-inference-costs-half.htm"
+        }
+      ],
+      "tags": [
+        "major",
+        "custom-silicon",
+        "cost-reduction"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-07",
+      "updated_at": "2026-08-07"
+    },
+    {
+      "id": "2026-08-groq-reports-172-5m-annual-recurring-revenue-and-6-9b-valuat",
+      "announced_at": "2026-08-04",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "groq"
+      ],
+      "models": [],
+      "headline": "Groq reports $172.5M annual recurring revenue and $6.9B valuation in 2025",
+      "summary": "In 2025, Groq achieved $172.5M in annual recurring revenue and reached a $6.9B valuation, reflecting strong market demand for its ultra-fast inference platform and positioning it as a significant player in the AI compute stack.",
+      "sources": [
+        {
+          "url": "https://getlatka.com/companies/groq.com"
+        }
+      ],
+      "tags": [
+        "major",
+        "inference",
+        "valuation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-07",
+      "updated_at": "2026-08-07"
+    },
+    {
+      "id": "2026-08-deepseek-introduces-0-28-agentic-output-floor-disrupting-ai-",
+      "announced_at": "2026-08-01",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/agentic-output"
+      ],
+      "headline": "DeepSeek introduces $0.28 agentic output floor, disrupting AI pricing",
+      "summary": "DeepSeek has set a new benchmark in AI pricing with a $0.28 agentic output floor, significantly undercutting competitors and redefining cost expectations for high-intensity reasoning and agent workflows.",
+      "sources": [
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/deepseek-disrupts-ai-pricing-0-090126822.html"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "agentic",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-07",
+      "updated_at": "2026-08-07"
+    },
+    {
+      "id": "2026-07-xai-court-denies-xai-s-motion-to-block-minnesota-s-ban-on-ai-nud",
+      "announced_at": "2026-07-31",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Court denies xAI's motion to block Minnesota's ban on AI nudification technology",
+      "summary": "A Minnesota judge ruled against xAI's legal challenge to halt enforcement of a state ban on AI-generated nude imagery, affirming restrictions on the use of AI for non-consensual image synthesis. The decision upholds state authority to regulate specific AI applications and limits xAI's deployment of such capabilities in Minnesota.",
+      "sources": [
+        {
+          "url": "https://www.grandforksherald.com/news/minnesota/judge-denies-musks-xai-request-to-halt-minnesotas-ban-on-ai-nudification-technology"
+        }
+      ],
+      "tags": [
+        "content-policy",
+        "regional-restriction",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-07",
+      "updated_at": "2026-08-07"
     }
   ]
 }
