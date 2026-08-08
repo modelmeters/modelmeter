@@ -27880,7 +27880,7 @@
     {
       "id": "2026-08-deepseek-announces-upcoming-price-increase-for-its-ai-models",
       "announced_at": "2026-08-07",
-      "type": "pricing_change",
+      "type": "informational",
       "severity": "action_required",
       "status": "unverified",
       "providers": [
@@ -27939,7 +27939,7 @@
     {
       "id": "2026-08-deepseek-increases-model-pricing-potentially-benefiting-comp",
       "announced_at": "2026-08-07",
-      "type": "pricing_change",
+      "type": "informational",
       "severity": "action_required",
       "status": "unverified",
       "providers": [
