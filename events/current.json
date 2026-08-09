@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-09",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,158 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-xai-grok-4-6-potentially-launching-with-major-reasoning-upgrades",
+      "announced_at": "2026-08-09",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.6"
+      ],
+      "headline": "Grok 4.6 potentially launching with major reasoning upgrades",
+      "summary": "Speculation emerges about the imminent release of Grok 4.6, featuring significant improvements in reasoning capabilities. This follows the recent public availability of Grok 4.5 and indicates rapid iteration by xAI (SpaceXAI) to enhance model performance.",
+      "sources": [
+        {
+          "url": "https://thewincentral.com/grok-4-6-leaks-launch-next-week/"
+        }
+      ],
+      "tags": [
+        "major",
+        "reasoning"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-09",
+      "updated_at": "2026-08-09"
+    },
+    {
+      "id": "2026-08-anthropic-judge-approves-1-5b-settlement-against-anthropic-for-using-p",
+      "announced_at": "2026-08-07",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Judge approves $1.5B settlement against Anthropic for using pirated books to train Claude models",
+      "summary": "A federal judge has approved a $1.5B settlement in a class-action lawsuit alleging that Anthropic trained its Claude AI models on copyrighted books obtained without authorization. The settlement resolves claims of widespread copyright infringement and establishes financial liability for training on unlicensed literary works.",
+      "sources": [
+        {
+          "url": "https://www.bozemandailychronicle.com/wire/business/judge-approves-a-1-5b-anthropic-settlement-over-pirated-books-used-to-train-the-claude/article_f4cc276e-54dd-5120-9892-4ab4105b502a.html"
+        }
+      ],
+      "tags": [
+        "copyright",
+        "litigation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-09",
+      "updated_at": "2026-08-09"
+    },
+    {
+      "id": "2026-08-other-amd-acquires-chip-startup-specializing-in-ai-model-hardened-",
+      "announced_at": "2026-08-06",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "AMD acquires chip startup specializing in AI model-hardened silicon",
+      "summary": "AMD has acquired a startup focused on integrating AI models directly into silicon, enabling optimized inference performance and efficiency. This positions AMD to compete more effectively in the AI accelerator market against Nvidia and custom silicon efforts from other major players.",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/08/06/amd-buys-taalas-startup-that-hardwires-ai-models-into-its-silicon.html"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "major",
+        "specialized-hardware"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-09",
+      "updated_at": "2026-08-09"
+    },
+    {
+      "id": "2026-08-deepseek-resumes-funding-round-seeking-nearly-8-billion",
+      "announced_at": "2026-08-06",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek resumes funding round seeking nearly $8 billion",
+      "summary": "DeepSeek has resumed its funding efforts aiming to raise nearly $8 billion, marking one of the largest AI financing rounds to date. This positions DeepSeek to scale infrastructure, expand model development, and strengthen its competitive stance against major proprietary AI players.",
+      "sources": [
+        {
+          "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN4431G2:0-deepseek-resumes-funding-round-seeking-nearly-8-billion-bloomberg-news-reports/"
+        }
+      ],
+      "tags": [
+        "major",
+        "funding"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-09",
+      "updated_at": "2026-08-09"
+    },
+    {
+      "id": "2026-08-anthropic-establishes-in-house-chip-design-team-to-develop-c",
+      "announced_at": "2026-08-06",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic establishes in-house chip design team to develop custom AI silicon",
+      "summary": "Anthropic has formed an internal team dedicated to designing custom AI chips, marking a strategic move toward full-stack control. This reduces dependency on external hardware providers and aims to improve inference efficiency and cost over time.",
+      "sources": [
+        {
+          "url": "https://www.digitimes.com/news/a20260806VL216/anthropic-design-silicon-claude-chips.html"
+        }
+      ],
+      "tags": [
+        "custom-silicon",
+        "infrastructure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-09",
+      "updated_at": "2026-08-09"
     }
   ]
 }
