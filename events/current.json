@@ -27850,7 +27850,7 @@
       "id": "2026-08-deepseek-signals-imminent-price-increase-for-v4-flash-model-",
       "announced_at": "2026-08-10",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "deepseek"
@@ -27914,7 +27914,7 @@
     {
       "id": "2026-08-other-situational-awareness-invests-400m-in-chip-startup-source-fo",
       "announced_at": "2026-08-09",
-      "type": "funding",
+      "type": "infrastructure",
       "severity": "informational",
       "status": "unverified",
       "providers": [
