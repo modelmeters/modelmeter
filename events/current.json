@@ -27868,7 +27868,7 @@
       "id": "2026-08-openai-updated-chat-latest-to-point-to-latest-chatgpt-model",
       "announced_at": "2026-08-10",
       "detected_at": "2026-08-10T17:30:08.231Z",
-      "type": "capability_change",
+      "type": "infrastructure",
       "severity": "action_required",
       "status": "unverified",
       "providers": [
