@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-10",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,254 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-meta-releases-muse-glimmer-a-30b-parameter-llm-under-apache-",
+      "announced_at": "2026-08-10",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/muse-glimmer-30b"
+      ],
+      "headline": "Meta releases Muse Glimmer, a 30B parameter LLM under Apache 2.0 license",
+      "summary": "Meta has launched Muse Glimmer, a 30 billion parameter large language model released under the permissive Apache 2.0 license, marking its return to open-source AI leadership. The model is immediately available, signaling a strategic push to regain influence in the open-weight community and compete with models like Llama and Qwen.",
+      "sources": [
+        {
+          "url": "https://venturebeat.com/technology/meta-returns-to-open-source-with-muse-glimmer-an-apache-2-0-licensed-30b-parameter-ai-model-optimized-for-agents-available-now"
+        }
+      ],
+      "tags": [
+        "major",
+        "open-source"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
+    },
+    {
+      "id": "2026-08-deepseek-signals-imminent-price-increase-for-v4-flash-model-",
+      "announced_at": "2026-08-10",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-flash"
+      ],
+      "headline": "DeepSeek signals imminent price increase for V4-Flash model after period of ultra-low pricing",
+      "summary": "DeepSeek has publicly warned that its deeply discounted pricing for the V4-Flash model is temporary and will not persist, indicating a forthcoming price adjustment. This follows reports of unusually low inference costs enabled by efficiency gains, suggesting a market correction is imminent.",
+      "sources": [
+        {
+          "url": "https://startupfortune.com/deepseek-warns-its-ultra-cheap-v4-flash-pricing-wont-last/"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "inference",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
+    },
+    {
+      "id": "2026-08-meta-releases-muse-glimmer-an-open-source-local-agentic-mult",
+      "announced_at": "2026-08-10",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/muse-glimmer"
+      ],
+      "headline": "Meta releases Muse Glimmer, an open-source, local, agentic, multimodal AI model",
+      "summary": "Meta has launched Muse Glimmer, a new open-source AI model that supports local execution, agentic behavior, and multimodal inputs. This release enables developers to build and deploy autonomous, multimodal applications without relying on cloud infrastructure.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/blog/muse-glimmer"
+        }
+      ],
+      "tags": [
+        "open-source",
+        "multimodal",
+        "agentic",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
+    },
+    {
+      "id": "2026-08-other-situational-awareness-invests-400m-in-chip-startup-source-fo",
+      "announced_at": "2026-08-09",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Situational Awareness invests $400M in chip startup Source Foundry",
+      "summary": "The AI-focused hedge fund Situational Awareness committed $400M to Source Foundry, a semiconductor startup developing AI accelerators. This investment aims to scale specialized chip production for large-scale model inference, potentially increasing competitive pressure on established GPU vendors.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/08/09/embattled-hedge-fund-situational-awareness-invests-400m-in-chip-startup-source-foundry/"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "hardware",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
+    },
+    {
+      "id": "2026-08-xai-accelerates-grok-release-cycle-to-target-anthropic-s-mar",
+      "announced_at": "2026-08-09",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "xAI accelerates Grok release cycle to target Anthropic's market position in 2026",
+      "summary": "Elon Musk's xAI (now SpaceXAI) is intensifying its Grok model release pace with strategic updates aimed at challenging Anthropic's dominance in the AI market. This includes the recent public release of Grok 4.5 and signals a broader competitive push throughout 2026.",
+      "sources": [
+        {
+          "url": "https://www.startuphub.ai/ai-news/ai-figures/2026/figure-elon-musk-grok-release-cadence-2026-08-09"
+        }
+      ],
+      "tags": [
+        "major",
+        "competition"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
+    },
+    {
+      "id": "2026-08-xai-potts-law-firm-files-third-lawsuit-against-xai-alleging-grok",
+      "announced_at": "2026-08-07",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "Potts Law Firm files third lawsuit against xAI alleging Grok enabled generation of AI-generated child sexual abuse material",
+      "summary": "The Potts Law Firm has announced a third lawsuit against xAI over allegations that its Grok AI model was used to generate child sexual abuse material. This follows prior legal actions and expands the legal scrutiny on xAI's content moderation, model safety, and ethical deployment practices.",
+      "sources": [
+        {
+          "url": "https://katv.com/news/local/potts-law-firm-announce-3rd-lawsuit-against-xai-for-generating-ai-child-sex-abuse-material"
+        }
+      ],
+      "tags": [
+        "legal",
+        "content-moderation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
+    },
+    {
+      "id": "2026-08-deepseek-increases-api-pricing-amid-rising-demand",
+      "announced_at": "2026-08-06",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek increases API pricing amid rising demand",
+      "summary": "DeepSeek has raised its API prices due to increasing demand for its models. This pricing adjustment reflects growing usage and resource constraints, signaling tighter supply-demand balance in the inference market.",
+      "sources": [
+        {
+          "url": "https://www.citynewsservice.cn/articles/china-biz-buzz/tech/deepseek-hikes-api-price-amid-rising-demand-seeks-us74b-funding-3k0eo7qn"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
+    },
+    {
+      "id": "2026-08-anthropic-establishes-in-house-chip-design-team-to-optimize-",
+      "announced_at": "2026-08-05",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic establishes in-house chip design team to optimize hardware for Claude models",
+      "summary": "Anthropic is forming an internal chip design team and hiring engineers to develop custom AI hardware tailored for its Claude models. This move aims to improve inference efficiency, reduce long-term costs, and increase control over the full AI stack from model to silicon.",
+      "sources": [
+        {
+          "url": "https://wmbdradio.com/2026/08/05/anthropic-to-build-in-house-chip-design-team-for-claude-hire-engineers/"
+        }
+      ],
+      "tags": [
+        "major",
+        "infrastructure",
+        "vertical-integration"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
     }
   ]
 }
