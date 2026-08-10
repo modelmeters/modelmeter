@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-10",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,106 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-openai-launched-gpt-5-6-cyber-for-specialized-cybersecurity-tasks",
+      "announced_at": "2026-08-10",
+      "detected_at": "2026-08-10T17:30:08.231Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.6-cyber"
+      ],
+      "migration_target": "openai/daybreak-red-latest",
+      "headline": "Launched GPT-5.6 Cyber for specialized cybersecurity tasks",
+      "summary": "GPT-5.6 Cyber, built on GPT-5.6 Sol, is trained to improve capabilities on specialized cybersecurity tasks such as finding zero-day exploit chains and reduces refusals for highly dual-use cyber tasks. Access requires separate approval through the Daybreak program.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Released GPT-5.6 Cyber , available through Daybreak Red . Built on GPT-5.6 Sol, it is trained to improve capabilities on several specialized cybersecurity tasks (for example, finding zero-day exploit chains) and to reduce refusals for highly dual-use cyber tasks."
+        }
+      ],
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
+    },
+    {
+      "id": "2026-08-openai-launched-daybreak-blue-for-defensive-cybersecurity-work",
+      "announced_at": "2026-08-10",
+      "detected_at": "2026-08-10T17:30:08.231Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/daybreak-blue-latest"
+      ],
+      "headline": "Launched Daybreak Blue for defensive cybersecurity work",
+      "summary": "Daybreak Blue is an alias for frontier general-purpose models with safeguards calibrated specifically for defensive cybersecurity work. Access requires separate approval through the Daybreak program.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Released Daybreak Blue , an alias for our frontier general-purpose models, with safeguards calibrated for defensive cybersecurity work."
+        }
+      ],
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
+    },
+    {
+      "id": "2026-08-openai-updated-chat-latest-to-point-to-latest-chatgpt-model",
+      "announced_at": "2026-08-10",
+      "detected_at": "2026-08-10T17:30:08.231Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/chat-latest"
+      ],
+      "headline": "Updated chat-latest to point to latest ChatGPT model",
+      "summary": "The chat-latest snapshot now points to the latest model available in ChatGPT for Plus and Pro users and will be regularly updated. Intended for testing chat improvements, while GPT-5.6 Sol is recommended for production API usage.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Updated the chat-latest snapshot, which points to the latest model available in ChatGPT for Plus and Pro users. We recommend leveraging GPT-5.6 Sol for production API usage, but feel free to use this model to test the latest improvements for chat use cases. The underlying model snapshot will be regularly updated."
+        }
+      ],
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
+    },
+    {
+      "id": "2026-08-openai-launches-new-cybersecurity-focused-models-and-aliases",
+      "announced_at": "2026-08-10",
+      "detected_at": "2026-08-10T17:30:08.231Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/OpenAI Daybreak",
+        "openai/GPT-5.6 Cyber",
+        "openai/Daybreak Red",
+        "openai/Daybreak Blue"
+      ],
+      "headline": "OpenAI launches new cybersecurity-focused models and aliases",
+      "summary": "OpenAI has introduced new models and aliases targeting cybersecurity applications, including 'GPT-5.6 Cyber' as its most advanced cybersecurity model for authorized vulnerability research and security testing, alongside 'Daybreak Red' and 'Daybreak Blue' as aliases for advanced and safeguarded frontier models respectively.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/models",
+          "quote": "OpenAI Daybreak\nFrontier cyber models for defenders\nGPT-5.6 Cyber\nOur most advanced cybersecurity model for authorized vulnerability research and security testing.\nDaybreak Red\nAn alias for advanced cybersecurity models for authorized vulnerability research and security testing.\nDaybreak Blue\nAn alias for frontier general-purpose models with safeguards for defensive cybersecurity work."
+        }
+      ],
+      "created_at": "2026-08-10",
+      "updated_at": "2026-08-10"
     }
   ]
 }
