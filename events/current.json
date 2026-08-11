@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-11",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,175 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-openai-daybreak-program-introduces-access-tiers-daybreak-blue-and-d",
+      "announced_at": "2026-08-11",
+      "detected_at": "2026-08-11T17:30:06.353Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/GPT-5.6 Sol",
+        "openai/GPT-5.6 Cyber"
+      ],
+      "headline": "Daybreak program introduces access tiers Daybreak Blue and Daybreak Red for cybersecurity applications",
+      "summary": "OpenAI has restructured its Daybreak program into two access tiers: Daybreak Blue for defensive security work using general-purpose models like GPT-5.6 Sol, and Daybreak Red for authorized offensive tasks using purpose-trained models like GPT-5.6 Cyber. Access requires approval.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Daybreak now offers two access tiers for approved defenders: Daybreak Blue and Daybreak Red. Use them to move from security findings to validated fixes in explicitly authorized engagements.\nStart with Daybreak Blue for most defensive security work. It provides access to general-purpose models such as GPT-5.6 Sol for vulnerability discovery, secure code review, detection engineering, incident response, malware analysis, and patch validation. Read more here .\nDaybreak Red provides separately approved access to purpose-trained models such as GPT-5.6 Cyber for authorized vulnerability reproduction, exploit validation, penetration testing, and red teaming, and complex system analysis."
+        }
+      ],
+      "created_at": "2026-08-11",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "2026-08-anthropic-claude-mythos-preview-deprecated-migrated-to-claude-mythos-5",
+      "announced_at": "2026-08-11",
+      "effective_at": "2026-08-05",
+      "detected_at": "2026-08-11T17:30:06.353Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-mythos-preview"
+      ],
+      "migration_target": "anthropic/claude-mythos-5",
+      "headline": "Claude Mythos Preview deprecated, migrated to Claude Mythos 5",
+      "summary": "Claude Mythos Preview has been deprecated and retired as of August 5, 2026, with workloads directed to migrate to Claude Mythos 5.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "quote": "Claude Mythos Preview ( claude-mythos-preview ) is deprecated. To migrate to Claude Mythos 5 ( claude-mythos-5 ), see the migration guide .\nThis model was retired August 5, 2026."
+        }
+      ],
+      "created_at": "2026-08-11",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "2026-08-anthropic-introductory-pricing-for-claude-sonnet-5-made-permanent",
+      "announced_at": "2026-08-10",
+      "detected_at": "2026-08-11T17:30:06.353Z",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-sonnet-5"
+      ],
+      "headline": "Introductory pricing for Claude Sonnet 5 made permanent",
+      "summary": "The introductory pricing of $2/$10 per MTok for Claude Sonnet 5 is now the standard price. The previously scheduled increase to $3/$15 per MTok on September 1, 2026, will not occur.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "The introductory pricing for Claude Sonnet 5 ($2 / $10 per MTok) is now the standard price: the previously scheduled increase to $3 / $15 per MTok on September 1, 2026 will not occur."
+        }
+      ],
+      "created_at": "2026-08-11",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "2026-08-anthropic-claude-opus-5-and-sonnet-5-support-1m-token-context-window",
+      "announced_at": "2026-08-11",
+      "detected_at": "2026-08-11T17:30:06.353Z",
+      "type": "context_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-5",
+        "anthropic/claude-sonnet-5"
+      ],
+      "headline": "Claude Opus 5 and Sonnet 5 support 1M token context window",
+      "summary": "Both Claude Opus 5 and Sonnet 5 now support a 1M token context window, a significant increase from previous versions.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "Claude Opus 5 supports a 1M token context window (both the default and the maximum), 128k max output tokens, and thinking on by default"
+        }
+      ],
+      "created_at": "2026-08-11",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "2026-08-anthropic-compliance-api-now-supports-retrieval-of-local-cowork-and-cl",
+      "announced_at": "2026-08-11",
+      "detected_at": "2026-08-11T17:30:06.353Z",
+      "type": "endpoint_change",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Compliance API now supports retrieval of local Cowork and Claude Code session transcripts",
+      "summary": "The Compliance API now includes beta endpoints for retrieving transcripts of local Cowork and Claude Code sessions for Claude Enterprise organizations. New endpoints: GET /v1/compliance/apps/sessions/local, GET /v1/compliance/apps/sessions/local/{session_id}, and GET /v1/compliance/apps/sessions/local/{session_id}/messages.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "The Compliance API now returns transcripts of Cowork and Claude Code sessions that run on your users' machines, in beta for Claude Enterprise organizations. GET /v1/compliance/apps/sessions/local lists sessions across your organization, GET /v1/compliance/apps/sessions/local/{session_id} retrieves one session's metadata, and GET /v1/compliance/apps/sessions/local/{session_id}/messages returns its transcript, all with your existing Compliance Access Key and the read:compliance_user_data scope."
+        }
+      ],
+      "created_at": "2026-08-11",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "2026-08-anthropic-compliance-api-now-supports-retrieval-of-remote-cowork-sessi",
+      "announced_at": "2026-08-03",
+      "detected_at": "2026-08-11T17:30:06.353Z",
+      "type": "endpoint_change",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Compliance API now supports retrieval of remote Cowork session transcripts",
+      "summary": "The Compliance API now includes beta endpoints for retrieving transcripts of remote Cowork sessions (started on claude.ai web or mobile) for Claude Enterprise organizations. New endpoints: GET /v1/compliance/apps/sessions/remote and GET /v1/compliance/apps/sessions/remote/{session_id}/messages.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "The Compliance API now returns transcripts of Cowork sessions started on claude.ai web or mobile, in beta for Claude Enterprise organizations. GET /v1/compliance/apps/sessions/remote lists sessions and GET /v1/compliance/apps/sessions/remote/{session_id}/messages returns one session's transcript, using your existing Compliance Access Key with the read:compliance_user_data scope."
+        }
+      ],
+      "created_at": "2026-08-11",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "2026-08-anthropic-price-reduction-for-input-tokens-on-claude-opus-4-6-and-sonn",
+      "announced_at": "2026-08-11",
+      "detected_at": "2026-08-11T17:30:06.353Z",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-4-6",
+        "anthropic/claude-sonnet-5"
+      ],
+      "headline": "Price reduction for input tokens on Claude Opus 4.6 and Sonnet 5",
+      "summary": "Input token pricing for Claude Opus 4.6 and Sonnet 5 has been reduced from $3 per MTok to $2 per MTok.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+          "quote": "$25 / output MTok $2 / input MTok"
+        }
+      ],
+      "created_at": "2026-08-11",
+      "updated_at": "2026-08-11"
     }
   ]
 }
