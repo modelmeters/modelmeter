@@ -27863,32 +27863,6 @@
       "updated_at": "2026-08-12"
     },
     {
-      "id": "2026-08-anthropic-retired-claude-sonnet-4-and-claude-opus-4-models",
-      "announced_at": "2026-08-12",
-      "detected_at": "2026-08-12T17:30:07.136Z",
-      "type": "model_unavailable",
-      "severity": "action_required",
-      "status": "unverified",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/claude-sonnet-4-20250514",
-        "anthropic/claude-opus-4-20250514"
-      ],
-      "migration_target": "anthropic/Claude Sonnet 4.6, Claude Opus 4.8",
-      "headline": "Retired Claude Sonnet 4 and Claude Opus 4 models",
-      "summary": "The Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) models are no longer available on the Claude API and requests will return an error.",
-      "sources": [
-        {
-          "url": "https://platform.claude.com/docs/en/release-notes/api",
-          "quote": "We've retired the Claude Sonnet 4 model ( claude-sonnet-4-20250514 ) and the Claude Opus 4 model ( claude-opus-4-20250514 ). All requests to these models on the Claude API will now return an error. We recommend upgrading to Claude Sonnet 4.6 and Claude Opus 4.8 respectively. Researchers can request ongoing access through the External Researcher Access Program ."
-        }
-      ],
-      "created_at": "2026-08-12",
-      "updated_at": "2026-08-12"
-    },
-    {
       "id": "2026-08-anthropic-deprecation-announced-for-claude-opus-4-1",
       "announced_at": "2026-08-12",
       "effective_at": "2026-08-05",
@@ -27909,59 +27883,6 @@
         {
           "url": "https://platform.claude.com/docs/en/release-notes/api",
           "quote": "We announced the deprecation of the Claude Opus 4.1 model ( claude-opus-4-1-20250805 ), with retirement on the Claude API scheduled for August 5, 2026. We recommend migrating to Claude Opus 4.8 . Read more in Model deprecations ."
-        }
-      ],
-      "created_at": "2026-08-12",
-      "updated_at": "2026-08-12"
-    },
-    {
-      "id": "2026-08-anthropic-deprecation-announced-for-claude-sonnet-4-and-claude-opus-4",
-      "announced_at": "2026-08-12",
-      "effective_at": "2026-06-15",
-      "detected_at": "2026-08-12T17:30:07.136Z",
-      "type": "model_deprecation",
-      "severity": "breaking",
-      "status": "unverified",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/claude-sonnet-4-20250514",
-        "anthropic/claude-opus-4-20250514"
-      ],
-      "migration_target": "anthropic/Claude Sonnet 4.6, Claude Opus 4.8",
-      "headline": "Deprecation announced for Claude Sonnet 4 and Claude Opus 4",
-      "summary": "Anthropic announced the deprecation of the Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) models, with retirement on the Claude API scheduled for June 15, 2026.",
-      "sources": [
-        {
-          "url": "https://platform.claude.com/docs/en/release-notes/api",
-          "quote": "We announced the deprecation of the Claude Sonnet 4 model ( claude-sonnet-4-20250514 ) and the Claude Opus 4 model ( claude-opus-4-20250514 ), with retirement on the Claude API scheduled for June 15, 2026. We recommend migrating to Claude Sonnet 4.6 and Claude Opus 4.8 respectively. Read more in Model deprecations ."
-        }
-      ],
-      "created_at": "2026-08-12",
-      "updated_at": "2026-08-12"
-    },
-    {
-      "id": "2026-08-anthropic-retired-claude-sonnet-3-7-and-claude-haiku-3-5-models",
-      "announced_at": "2026-08-12",
-      "detected_at": "2026-08-12T17:30:07.136Z",
-      "type": "model_unavailable",
-      "severity": "action_required",
-      "status": "unverified",
-      "providers": [
-        "anthropic"
-      ],
-      "models": [
-        "anthropic/claude-3-7-sonnet-20250219",
-        "anthropic/claude-3-5-haiku-20241022"
-      ],
-      "migration_target": "anthropic/Claude Sonnet 4.6, Claude Haiku 4.5",
-      "headline": "Retired Claude Sonnet 3.7 and Claude Haiku 3.5 models",
-      "summary": "The Claude Sonnet 3.7 (claude-3-7-sonnet-20250219) and Claude Haiku 3.5 (claude-3-5-haiku-20241022) models are no longer available on the Claude API and requests will return an error; Haiku 3.5 remains available on Amazon Bedrock and Google Cloud.",
-      "sources": [
-        {
-          "url": "https://platform.claude.com/docs/en/release-notes/api",
-          "quote": "We've retired the Claude Sonnet 3.7 model ( claude-3-7-sonnet-20250219 ) and the Claude Haiku 3.5 model ( claude-3-5-haiku-20241022 ). All requests to Claude Sonnet 3.7 will now return an error. Requests to Claude Haiku 3.5 on the Claude API will now return an error; it remains available on Amazon Bedrock and Google Cloud. We recommend upgrading to Claude Sonnet 4.6 and Claude Haiku 4.5 respectively. Researchers can request ongoing access through the External Researcher Access Program ."
         }
       ],
       "created_at": "2026-08-12",
