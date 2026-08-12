@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-12",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,278 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-anthropic-control-inference-location-for-claude-managed-agents",
+      "announced_at": "2026-08-12",
+      "detected_at": "2026-08-12T17:30:07.136Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Control inference location for Claude Managed Agents",
+      "summary": "Users can now specify where model inference runs for a Claude Managed Agents agent by setting `inference_geo` in the model object at creation or for a single session.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "You can now control where model inference runs for a Claude Managed Agents agent. Set inference_geo inside the model object when you create the agent , or override it for a single session . See Data residency for the available geos and pricing."
+        }
+      ],
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-anthropic-retired-claude-opus-4-1-model",
+      "announced_at": "2026-08-12",
+      "detected_at": "2026-08-12T17:30:07.136Z",
+      "type": "model_unavailable",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-4-1-20250805"
+      ],
+      "migration_target": "anthropic/Claude Opus 5",
+      "headline": "Retired Claude Opus 4.1 model",
+      "summary": "The Claude Opus 4.1 model (claude-opus-4-1-20250805) is no longer available on the Claude API and requests will return an error.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We've retired the Claude Opus 4.1 model ( claude-opus-4-1-20250805 ). All requests to this model on the Claude API will now return an error. We recommend upgrading to Claude Opus 5 . Researchers can request ongoing access through the External Researcher Access Program ."
+        }
+      ],
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-anthropic-retired-claude-sonnet-4-and-claude-opus-4-models",
+      "announced_at": "2026-08-12",
+      "detected_at": "2026-08-12T17:30:07.136Z",
+      "type": "model_unavailable",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-sonnet-4-20250514",
+        "anthropic/claude-opus-4-20250514"
+      ],
+      "migration_target": "anthropic/Claude Sonnet 4.6, Claude Opus 4.8",
+      "headline": "Retired Claude Sonnet 4 and Claude Opus 4 models",
+      "summary": "The Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) models are no longer available on the Claude API and requests will return an error.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We've retired the Claude Sonnet 4 model ( claude-sonnet-4-20250514 ) and the Claude Opus 4 model ( claude-opus-4-20250514 ). All requests to these models on the Claude API will now return an error. We recommend upgrading to Claude Sonnet 4.6 and Claude Opus 4.8 respectively. Researchers can request ongoing access through the External Researcher Access Program ."
+        }
+      ],
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-anthropic-deprecation-announced-for-claude-opus-4-1",
+      "announced_at": "2026-08-12",
+      "effective_at": "2026-08-05",
+      "detected_at": "2026-08-12T17:30:07.136Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-4-1-20250805"
+      ],
+      "migration_target": "anthropic/Claude Opus 4.8",
+      "headline": "Deprecation announced for Claude Opus 4.1",
+      "summary": "Anthropic announced the deprecation of the Claude Opus 4.1 model (claude-opus-4-1-20250805), with retirement on the Claude API scheduled for August 5, 2026.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We announced the deprecation of the Claude Opus 4.1 model ( claude-opus-4-1-20250805 ), with retirement on the Claude API scheduled for August 5, 2026. We recommend migrating to Claude Opus 4.8 . Read more in Model deprecations ."
+        }
+      ],
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-anthropic-deprecation-announced-for-claude-sonnet-4-and-claude-opus-4",
+      "announced_at": "2026-08-12",
+      "effective_at": "2026-06-15",
+      "detected_at": "2026-08-12T17:30:07.136Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-sonnet-4-20250514",
+        "anthropic/claude-opus-4-20250514"
+      ],
+      "migration_target": "anthropic/Claude Sonnet 4.6, Claude Opus 4.8",
+      "headline": "Deprecation announced for Claude Sonnet 4 and Claude Opus 4",
+      "summary": "Anthropic announced the deprecation of the Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) models, with retirement on the Claude API scheduled for June 15, 2026.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We announced the deprecation of the Claude Sonnet 4 model ( claude-sonnet-4-20250514 ) and the Claude Opus 4 model ( claude-opus-4-20250514 ), with retirement on the Claude API scheduled for June 15, 2026. We recommend migrating to Claude Sonnet 4.6 and Claude Opus 4.8 respectively. Read more in Model deprecations ."
+        }
+      ],
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-anthropic-retired-claude-sonnet-3-7-and-claude-haiku-3-5-models",
+      "announced_at": "2026-08-12",
+      "detected_at": "2026-08-12T17:30:07.136Z",
+      "type": "model_unavailable",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-3-7-sonnet-20250219",
+        "anthropic/claude-3-5-haiku-20241022"
+      ],
+      "migration_target": "anthropic/Claude Sonnet 4.6, Claude Haiku 4.5",
+      "headline": "Retired Claude Sonnet 3.7 and Claude Haiku 3.5 models",
+      "summary": "The Claude Sonnet 3.7 (claude-3-7-sonnet-20250219) and Claude Haiku 3.5 (claude-3-5-haiku-20241022) models are no longer available on the Claude API and requests will return an error; Haiku 3.5 remains available on Amazon Bedrock and Google Cloud.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We've retired the Claude Sonnet 3.7 model ( claude-3-7-sonnet-20250219 ) and the Claude Haiku 3.5 model ( claude-3-5-haiku-20241022 ). All requests to Claude Sonnet 3.7 will now return an error. Requests to Claude Haiku 3.5 on the Claude API will now return an error; it remains available on Amazon Bedrock and Google Cloud. We recommend upgrading to Claude Sonnet 4.6 and Claude Haiku 4.5 respectively. Researchers can request ongoing access through the External Researcher Access Program ."
+        }
+      ],
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-xai-grok-4-6-launched-as-latest-model-version",
+      "announced_at": "2026-08-12",
+      "detected_at": "2026-08-12T17:30:07.136Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.6"
+      ],
+      "headline": "Grok 4.6 launched as latest model version",
+      "summary": "Grok 4.6 is now the latest model, replacing Grok 4.5, positioned as the most intelligent and fastest model for general use cases including code, with a knowledge cut-off date of February 1, 2026.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/docs/models",
+          "quote": "Grok 4.6\ngrok-4.6\nYour choice depends on your use case. We have dedicated models and APIs for audio, image, and video capabilities. For everything else, including code, use Grok 4.6. It is the most intelligent and fastest model we’ve built.\nThe knowledge cut-off date of Grok 4.6 is February 1, 2026."
+        }
+      ],
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-xai-grok-4-6-launched-with-500k-context-window-and-enhanced-capa",
+      "announced_at": "2026-08-12",
+      "detected_at": "2026-08-12T17:30:07.136Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.6"
+      ],
+      "headline": "Grok 4.6 launched with 500k context window and enhanced capabilities",
+      "summary": "Grok 4.6, a frontier model for coding, agentic tasks, and knowledge work, is now available via the xAI API with support for text and image inputs, text-only output, and a 500k context window.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/release-notes",
+          "quote": "Grok 4.6, SpaceXAI's frontier model for coding, agentic tasks, and knowledge work, is now available on the xAI API. It has a 500k context window, text and image inputs with text-only output, and no text output limit."
+        }
+      ],
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-xai-grok-4-6-introduces-tiered-pricing-based-on-token-volume",
+      "announced_at": "2026-08-12",
+      "detected_at": "2026-08-12T17:30:07.136Z",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.6"
+      ],
+      "headline": "Grok 4.6 introduces tiered pricing based on token volume",
+      "summary": "Pricing for Grok 4.6 is set at $2 / $0.50 / $6 per 1M tokens (input / cached input / output) below 200k prompt tokens, and $4 / $1 / $12 above.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/release-notes",
+          "quote": "Pricing is $2 / $0.50 / $6 per 1M tokens (input / cached input / output) below 200k prompt tokens, and $4 / $1 / $12 above."
+        }
+      ],
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-xai-grok-4-6-supports-variable-reasoning-effort-levels",
+      "announced_at": "2026-08-12",
+      "detected_at": "2026-08-12T17:30:07.136Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.6"
+      ],
+      "headline": "Grok 4.6 supports variable reasoning effort levels",
+      "summary": "Grok 4.6 introduces support for low, medium, high (default), and xhigh reasoning effort levels.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/release-notes",
+          "quote": "Reasoning effort supports low, medium, high (default), and xhigh."
+        }
+      ],
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-xai-grok-bot-launched-for-persistent-agentic-workflows",
+      "announced_at": "2026-08-11",
+      "detected_at": "2026-08-12T17:30:07.136Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/Grok Bot"
+      ],
+      "headline": "Grok Bot launched for persistent agentic workflows",
+      "summary": "Grok Bot is now available, offering durable AI teammates with persistent cloud computing, messaging, approvals, connectors, and routines.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/release-notes",
+          "quote": "Grok Bot is now available. Durable AI teammates that work on a persistent cloud computer, with messaging, approvals, connectors, and routines."
+        }
+      ],
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
     }
   ]
 }
