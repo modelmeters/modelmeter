@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-31",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,132 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-google-oracle-integrates-google-s-gemini-models-into-enterprise-app",
+      "announced_at": "2026-07-31",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini"
+      ],
+      "headline": "Oracle integrates Google's Gemini models into enterprise applications for broad customer rollout",
+      "summary": "Oracle is making Google's Gemini AI models available across its suite of enterprise applications, enabling thousands of business customers to access advanced AI capabilities. This partnership significantly expands the deployment footprint of Gemini models in enterprise workflows.",
+      "sources": [
+        {
+          "url": "https://www.hpcwire.com/aiwire/2026/07/31/oracle-to-make-gemini-models-available-to-thousands-of-enterprise-applications-customers/"
+        }
+      ],
+      "tags": [
+        "enterprise",
+        "major",
+        "distribution"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-31",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "id": "2026-07-anthropic-federal-judge-rules-trump-administration-lacks-evidence-to-l",
+      "announced_at": "2026-07-30",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Federal judge rules Trump administration lacks evidence to label Anthropic a supply-chain risk",
+      "summary": "A federal judge has determined that the Trump administration has not provided sufficient evidence to justify designating Anthropic as a supply-chain risk, challenging the legal basis for restrictions on its AI technology. This decision may lead to the lifting of bans on Anthropic's models in international markets.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/30/judge-says-trump-admin-still-lacks-evidence-for-anthropic-supply-chain-risk-label/"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "export-control",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-31",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "id": "2026-07-openai-reduces-pricing-for-gpt-5-6-on-luna-and-terra-tiers",
+      "announced_at": "2026-07-30",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.6"
+      ],
+      "headline": "OpenAI reduces pricing for GPT-5.6 on Luna and Terra tiers",
+      "summary": "OpenAI has introduced lower pricing for its GPT-5.6 model on the Luna and Terra service tiers, improving price-performance efficiency. This change enables enterprises to scale AI workflows more affordably, reflecting advancements in model efficiency and infrastructure optimization.",
+      "sources": [
+        {
+          "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6"
+        }
+      ],
+      "tags": [
+        "major",
+        "enterprise",
+        "efficiency"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-31",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "id": "2026-07-xai-elon-musk-teases-upcoming-grok-4-6-and-4-7-releases",
+      "announced_at": "2026-07-28",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.6",
+        "xai/grok-4.7"
+      ],
+      "headline": "Elon Musk teases upcoming Grok 4.6 and 4.7 releases",
+      "summary": "Elon Musk has teased the development of Grok 4.6 and 4.7, continuing xAI's aggressive model iteration strategy. These upcoming versions suggest rapid advancement in reasoning, speed, or multimodal capabilities, building on the recently launched Grok 4.5.",
+      "sources": [
+        {
+          "url": "https://m.economictimes.com/tech/artificial-intelligence/elon-musk-teases-grok-4-6-and-4-7-doubling-down-on-xais-rapid-fire-releases/articleshow/132693365.cms"
+        }
+      ],
+      "tags": [
+        "major",
+        "roadmap"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-31",
+      "updated_at": "2026-07-31"
     }
   ]
 }
