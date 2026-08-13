@@ -27935,7 +27935,7 @@
       "id": "2026-08-deepseek-native-support-for-openai-responses-api",
       "announced_at": "2026-08-13",
       "detected_at": "2026-08-13T17:30:01.918Z",
-      "type": "endpoint_change",
+      "type": "capability_change",
       "severity": "breaking",
       "status": "unverified",
       "providers": [
