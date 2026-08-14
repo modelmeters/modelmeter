@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-02",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,67 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-moonshot-ai-s-kimi-k3-model-launched-drawing-global-interest",
+      "announced_at": "2026-08-02",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "moonshot"
+      ],
+      "models": [
+        "moonshotai/kimi-k3"
+      ],
+      "headline": "Moonshot AI's Kimi K3 model launched, drawing global interest and straining capacity",
+      "summary": "Moonshot AI has launched its Kimi K3 model, generating significant international demand that is straining inference capacity. The surge highlights growing competition in the US-China AI race, as Chinese models gain global traction and challenge Western dominance in large language model performance and scalability.",
+      "sources": [
+        {
+          "url": "https://www.milwaukeeindependent.com/newswire/global-interest-chinas-kimi-k3-model-strains-capacity-intensifies-pressure-us-china-ai-race/"
+        }
+      ],
+      "tags": [
+        "major",
+        "capacity-constraint"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02"
+    },
+    {
+      "id": "2026-08-xai-judge-denies-xai-s-request-to-block-minnesota-ban-on-nudify-",
+      "announced_at": "2026-08-01",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Judge denies xAI's request to block Minnesota ban on 'nudify' apps",
+      "summary": "A federal judge has rejected xAI's legal challenge against Minnesota's ban on apps that generate non-consensual nude imagery, commonly referred to as 'nudify' apps. The ruling upholds the state's authority to restrict AI tools that enable digital sexual abuse, setting a precedent for local regulation of generative AI.",
+      "sources": [
+        {
+          "url": "https://bitcoinworld.co.in/judge-denies-xai-request-block-minnesota-nudify-ban/"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "content-policy",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02"
     }
   ]
 }
