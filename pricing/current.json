@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "snapshot_date": "2026-07-08",
+  "snapshot_date": "2026-08-11",
   "models": [
     {
       "id": "anthropic/claude-fable-5",
@@ -11267,15 +11267,15 @@
       "provider": "openai",
       "model": "o4-mini-deep-research",
       "display_name": "o4-mini Deep Research",
-      "input_cost_per_mtok": 1,
-      "output_cost_per_mtok": 4,
+      "input_cost_per_mtok": 0.2,
+      "output_cost_per_mtok": 1.2,
       "cache_write_cost_per_mtok": null,
       "cache_read_cost_per_mtok": null,
       "context_window": null,
       "max_output_tokens": null,
       "source_url": "https://developers.openai.com/api/docs/pricing",
-      "last_verified": "2026-07-01",
-      "verification_required": false,
+      "last_verified": "2026-08-11",
+      "verification_required": true,
       "availability": "available",
       "tags": [
         "mini",
