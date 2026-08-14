@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-08",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,252 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-spacex-xai-nears-60b-acquisition-of-cursor-with-new-products",
+      "announced_at": "2026-08-08",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "spacex",
+        "xai"
+      ],
+      "models": [],
+      "headline": "SpaceX (xAI) nears $60B acquisition of Cursor, with new products expected to adopt Grok branding",
+      "summary": "SpaceX, operating its AI division as xAI, is finalizing a $60 billion acquisition of Cursor, a significant player in AI-powered development tools. The deal, expected to close imminently, signals a major consolidation in the AI industry. Post-acquisition products may be rebranded under the Grok name, integrating xAI's technology stack.",
+      "sources": [
+        {
+          "url": "https://finance.biggo.com/news/5e5a907a-f0f4-4ac8-9e7c-014860bd6bc0"
+        }
+      ],
+      "tags": [
+        "major",
+        "merger"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-08-xai-federal-lawsuit-filed-alleging-xai-s-grok-used-to-produce-an",
+      "announced_at": "2026-08-07",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "Federal lawsuit filed alleging xAI's Grok used to produce and disseminate child sexual abuse material",
+      "summary": "A federal lawsuit has been filed accusing xAI of enabling the production and dissemination of child sexual abuse material through its Grok AI model. This legal action represents a significant escalation from prior allegations and could have far-reaching implications for AI liability and content moderation.",
+      "sources": [
+        {
+          "url": "https://www.nwaonline.com/news/2026/aug/07/federal-lawsuit-alleges-ai-used-to-produce-and/"
+        }
+      ],
+      "tags": [
+        "major",
+        "legal",
+        "content-moderation"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-08-deepseek-announces-upcoming-price-increase-for-its-ai-models",
+      "announced_at": "2026-08-07",
+      "type": "informational",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek announces upcoming price increase for its AI models",
+      "summary": "DeepSeek has issued a warning of an impending price increase for its AI model offerings. The announcement signals a shift in pricing strategy that may affect cost-sensitive users and downstream platforms relying on DeepSeek's inference services.",
+      "sources": [
+        {
+          "url": "https://www.semafor.com/article/08/07/2026/deepseek-warns-of-price-increase"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-08-anthropic-establishes-chip-design-team-to-address-growing-co",
+      "announced_at": "2026-08-07",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic establishes chip-design team to address growing compute demands from Claude models",
+      "summary": "Facing increasing compute demands due to rising Claude usage, Anthropic is forming an internal team to design custom AI chips. This move signals a strategic shift toward greater hardware vertical integration to improve inference efficiency and reduce dependency on external GPU infrastructure.",
+      "sources": [
+        {
+          "url": "https://mlq.ai/news/anthropic-is-building-a-chip-design-team-as-claude-demand-strains-its-compute-strategy/"
+        }
+      ],
+      "tags": [
+        "major",
+        "custom-silicon",
+        "compute-strategy"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-08-deepseek-increases-model-pricing-potentially-benefiting-comp",
+      "announced_at": "2026-08-07",
+      "type": "informational",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v3",
+        "deepseek/deepseek-r1"
+      ],
+      "headline": "DeepSeek increases model pricing, potentially benefiting competing Chinese AI startups",
+      "summary": "DeepSeek has raised prices for its AI models, a move interpreted as strengthening its market position amid growing demand. This shift could redirect traffic and investment toward other Chinese AI startups offering competitive alternatives.",
+      "sources": [
+        {
+          "url": "https://www.moomoo.com/news/post/74294808/deepseek-s-price-increase-could-benefit-other-chinese-ai-start"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "competition",
+        "market-shift",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-08-other-amd-acquires-custom-ai-chipmaker-taalas-to-challenge-nvidia",
+      "announced_at": "2026-08-07",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other",
+        "nvidia"
+      ],
+      "models": [],
+      "headline": "AMD acquires custom AI chipmaker Taalas to challenge NVIDIA",
+      "summary": "AMD has acquired Taalas, a custom AI chipmaker, in a strategic move to strengthen its position in the AI hardware market and directly compete with NVIDIA's dominance in AI accelerators.",
+      "sources": [
+        {
+          "url": "https://www.sammyfans.com/2026/08/06/amd-taalas-custom-ai-nvidia-news/amp/"
+        }
+      ],
+      "tags": [
+        "hardware",
+        "competition",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-08-anthropic-confirms-development-of-in-house-custom-ai-chip-to",
+      "announced_at": "2026-08-05",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic confirms development of in-house custom AI chip to accelerate Claude inference",
+      "summary": "Anthropic has confirmed it is developing its own custom AI chip, marking a strategic shift toward full-stack control of hardware and software. This move aims to improve inference speed, reduce operational costs, and enhance scalability for future Claude models.",
+      "sources": [
+        {
+          "url": "https://www.wionews.com/technology/faster-claude-ai-anthropic-confirms-in-house-custom-chip-development-1785941519576"
+        }
+      ],
+      "tags": [
+        "major",
+        "custom-hardware",
+        "inference-optimization"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-08-xai-minnesota-s-nudification-ban-takes-effect-after-court-reject",
+      "announced_at": "2026-08-02",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Minnesota's nudification ban takes effect after court rejects xAI's motion to pause",
+      "summary": "A Minnesota judge has denied xAI's request to temporarily block enforcement of the state's nudification ban, allowing the law to take immediate effect. This ruling restricts the use of AI models in ways that could facilitate non-consensual image manipulation or deepfake generation within the state.",
+      "sources": [
+        {
+          "url": "https://sea.mashable.com/tech/53179/minnesotas-nudification-ban-takes-effect-after-judge-rejects-xais-bid-to-pause-it"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "content-policy",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
     }
   ]
 }
