@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-01",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,283 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-xai-court-rejects-xai-s-bid-to-block-ai-child-porn-ban-with-500k",
+      "announced_at": "2026-08-01",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Court rejects xAI's bid to block 'AI child porn' ban with $500K penalties per image",
+      "summary": "A U.S. court has denied xAI's attempt to block a regulation that imposes $500,000 penalties per image for AI-generated child sexual abuse material. The ruling establishes legal liability for model outputs and reinforces compliance requirements for AI developers.",
+      "sources": [
+        {
+          "url": "https://www.ibtimes.co.uk/minnesota-ai-nudification-law-challenge-1811851"
+        }
+      ],
+      "tags": [
+        "regulatory",
+        "major",
+        "compliance"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-01",
+      "updated_at": "2026-08-01"
+    },
+    {
+      "id": "2026-08-deepseek-sets-0-28-agentic-output-floor-per-million-tokens",
+      "announced_at": "2026-08-01",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek sets $0.28 agentic output floor per million tokens",
+      "summary": "DeepSeek has introduced a new pricing floor of $0.28 per million tokens for agentic output, significantly undercutting competitors and reshaping cost expectations for high-volume AI inference. This move positions DeepSeek as a price leader in the agentic AI space, targeting enterprise and developer markets.",
+      "sources": [
+        {
+          "url": "https://forkast.news/deepseek-disrupts-ai-pricing-with-0-28-agentic-output-floor/"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "agentic",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-01",
+      "updated_at": "2026-08-01"
+    },
+    {
+      "id": "2026-07-xai-judge-denies-xai-s-request-to-pause-minnesota-nudification-b",
+      "announced_at": "2026-07-31",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Judge denies xAI's request to pause Minnesota nudification ban",
+      "summary": "A Minnesota judge ruled against Elon Musk's xAI in its attempt to halt enforcement of the state's nudification ban, a law aimed at preventing AI-generated non-consensual intimate imagery. This decision reinforces state regulatory authority over AI content generation and may impact xAI's compliance strategies for image synthesis models.",
+      "sources": [
+        {
+          "url": "https://www.nbcnews.com/tech/elon-musk/judge-denies-request-elon-musks-xai-block-mn-nudification-ban-rcna589993"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "content-policy",
+        "legal-precedent",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-01",
+      "updated_at": "2026-08-01"
+    },
+    {
+      "id": "2026-07-other-peregrine-technologies-raises-250m-for-government-focused-ai",
+      "announced_at": "2026-07-31",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Peregrine Technologies raises $250M for government-focused AI initiatives",
+      "summary": "Peregrine Technologies secured a $250 million funding round to advance its specialized approach to government AI applications, signaling strong investor confidence in sovereign and public-sector AI solutions.",
+      "sources": [
+        {
+          "url": "https://www.bbntimes.com/technology/peregrine-technologies-landed-a-250-million-funding-round-with-a-different-approach-to-government-ai"
+        }
+      ],
+      "tags": [
+        "funding",
+        "government",
+        "sovereign-ai"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-01",
+      "updated_at": "2026-08-01"
+    },
+    {
+      "id": "2026-07-openai-gpt-5-6-input-pricing-sharply-reduced-followed-by-official-l",
+      "announced_at": "2026-07-31",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai",
+        "deepseek"
+      ],
+      "models": [
+        "openai/gpt-5.6",
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "GPT-5.6 input pricing sharply reduced, followed by official launch of DeepSeek V4",
+      "summary": "OpenAI significantly reduced input pricing for GPT-5.6 under its Luna tier, undercutting DeepSeek's rates. This was immediately followed by the official launch of DeepSeek V4, marking a competitive response in the high-performance model segment.",
+      "sources": [
+        {
+          "url": "https://eu.36kr.com/en/p/3919319636290946"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "competition",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-01",
+      "updated_at": "2026-08-01"
+    },
+    {
+      "id": "2026-07-openai-cuts-gpt-5-6-luna-api-prices-by-80-three-weeks-after-",
+      "announced_at": "2026-07-31",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/gpt-5.6-luna"
+      ],
+      "headline": "OpenAI cuts GPT-5.6 Luna API prices by 80% three weeks after launch",
+      "summary": "OpenAI has drastically reduced the API price of GPT-5.6 Luna by 80% just three weeks after its release, repricing the entire AI middleware stack. This sudden and aggressive move undercuts competitors and reshapes cost expectations for high-end model inference.",
+      "sources": [
+        {
+          "url": "https://fourweekmba.com/ai-openai-gpt56-luna-api-price-cut-middleware-stack/"
+        }
+      ],
+      "tags": [
+        "major",
+        "inference",
+        "pricing"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-01",
+      "updated_at": "2026-08-01"
+    },
+    {
+      "id": "2026-07-together-ai-launches-autoscaling-endpoints-for-dedicated-inf",
+      "announced_at": "2026-07-31",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "together"
+      ],
+      "models": [],
+      "headline": "Together AI launches autoscaling endpoints for dedicated inference",
+      "summary": "Together AI introduces autoscaling endpoints for LLM inference, allowing users to automatically adjust compute capacity based on demand. This improves efficiency by reducing idle GPU time while managing queue backlogs and cold start tradeoffs through configurable scale-up/down policies.",
+      "sources": [
+        {
+          "url": "https://www.together.ai/blog/autoscaling-endpoints-for-llm-inference"
+        }
+      ],
+      "tags": [
+        "scaling",
+        "inference",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-01",
+      "updated_at": "2026-08-01"
+    },
+    {
+      "id": "2026-07-xai-targets-august-2026-for-grok-4-6-launch",
+      "announced_at": "2026-07-29",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-4.6"
+      ],
+      "headline": "xAI targets August 2026 for Grok 4.6 launch",
+      "summary": "Elon Musk announced a target launch window of August 2026 for Grok 4.6, the next iteration of xAI's large language model. This follows the release of Grok 4.5 in July and signals continued rapid development of the model series.",
+      "sources": [
+        {
+          "url": "https://qazinform.com/news/musk-sets-august-target-for-grok-46-launch-b4671e"
+        }
+      ],
+      "tags": [
+        "major",
+        "update"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-01",
+      "updated_at": "2026-08-01"
+    },
+    {
+      "id": "2026-07-deepseek-informs-investors-of-a-pause-in-further-funding-rou",
+      "announced_at": "2026-07-25",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek informs investors of a pause in further funding rounds following viral discussions",
+      "summary": "After raising nearly $3 billion in a record open-weight AI round, DeepSeek has signaled a temporary halt to additional fundraising. This pause comes amid heightened market scrutiny and viral discourse around the company's trajectory and valuation.",
+      "sources": [
+        {
+          "url": "https://theedgemalaysia.com/node/812033"
+        }
+      ],
+      "tags": [
+        "funding",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-01",
+      "updated_at": "2026-08-01"
     }
   ]
 }
