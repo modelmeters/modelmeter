@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-03",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,284 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-alibaba-releases-qwen-max-its-largest-and-most-capable-ai-mo",
+      "announced_at": "2026-08-03",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "alibaba"
+      ],
+      "models": [
+        "alibaba/qwen-max"
+      ],
+      "headline": "Alibaba releases Qwen Max, its largest and most capable AI model to date",
+      "summary": "Alibaba has launched Qwen Max, claiming it rivals top-tier AI models in performance. This release strengthens Alibaba's position in the global AI race and expands the availability of high-capacity open-weight models.",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/974342/alibaba-qwen-max-open-weight-ai"
+        }
+      ],
+      "tags": [
+        "major",
+        "open-weight"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-03",
+      "updated_at": "2026-08-03"
+    },
+    {
+      "id": "2026-08-deepseek-open-sources-production-model-deepseek-v4-flash-und",
+      "announced_at": "2026-08-03",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-flash"
+      ],
+      "headline": "DeepSeek open-sources production model DeepSeek-V4-Flash under MIT license",
+      "summary": "DeepSeek has released its production-grade DeepSeek-V4-Flash model under the permissive MIT license, enabling free use, modification, and commercial deployment. This move significantly increases accessibility to high-performance AI capabilities and strengthens the open-weight ecosystem.",
+      "sources": [
+        {
+          "url": "https://www.opensourceforu.com/2026/08/deepseek-open-sources-v4-flash/"
+        }
+      ],
+      "tags": [
+        "open-source",
+        "major",
+        "efficiency"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-03",
+      "updated_at": "2026-08-03"
+    },
+    {
+      "id": "2026-08-deepseek-introduces-ultra-low-pricing-disrupting-ai-market",
+      "announced_at": "2026-08-03",
+      "type": "informational",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek introduces ultra-low pricing, disrupting AI market",
+      "summary": "DeepSeek has launched a new pricing model with significantly reduced costs, challenging competitors and reshaping expectations for AI inference affordability.",
+      "sources": [
+        {
+          "url": "https://en.cryptonomist.ch/2026/08/03/deepseek-ai-pricing-low-costs/"
+        }
+      ],
+      "tags": [
+        "major",
+        "pricing"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-03",
+      "updated_at": "2026-08-03"
+    },
+    {
+      "id": "2026-08-other-us-businesses-face-12b-annual-cost-under-proposed-ban-on-chi",
+      "announced_at": "2026-08-03",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "US businesses face $12B annual cost under proposed ban on Chinese AI models",
+      "summary": "A report warns that a potential US ban on Chinese AI models could impose $12 billion in additional annual costs on businesses, driven by increased reliance on more expensive domestic or allied alternatives. The regulatory move reflects growing national security concerns but risks disrupting cost-efficient AI adoption across industries.",
+      "sources": [
+        {
+          "url": "https://www.tradingview.com/news/benzinga:ee4ad6a48094b:0"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "market-shift",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-03",
+      "updated_at": "2026-08-03"
+    },
+    {
+      "id": "2026-08-deepseek-minimax-h3-seedance-2-5-and-deepseek-v4-launched-marking-a-m",
+      "announced_at": "2026-08-03",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek",
+        "other"
+      ],
+      "models": [
+        "minimax/h3",
+        "seedance/2.5",
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "MiniMax H3, Seedance 2.5, and DeepSeek V4 launched, marking a major milestone for China's domestic AI models",
+      "summary": "On August 3, 2026, MiniMax, Seedance, and DeepSeek each launched new versions of their large language models—H3, 2.5, and V4 respectively—signifying rapid progress in China's AI development. These launches enhance domestic AI capacity and introduce new competitive options globally.",
+      "sources": [
+        {
+          "url": "https://eu.36kr.com/en/p/3922353035433603"
+        }
+      ],
+      "tags": [
+        "major",
+        "domestic-ai",
+        "china"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-03",
+      "updated_at": "2026-08-03"
+    },
+    {
+      "id": "2026-08-xai-minnesota-enacts-nudification-ban-restricting-ai-generated-n",
+      "announced_at": "2026-08-02",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Minnesota enacts Nudification Ban restricting AI-generated nudity, despite xAI opposition",
+      "summary": "Minnesota has implemented a law banning the creation or distribution of AI-generated nude images, commonly referred to as 'nudification.' The law is now in effect, marking a significant state-level regulatory intervention in AI content generation. xAI opposed the ban, signaling potential friction between AI developers and emerging state regulations.",
+      "sources": [
+        {
+          "url": "https://gizmodo.com/minnesotas-nudification-ban-is-now-in-effect-despite-xais-efforts-to-stop-it-2000793737"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "content-policy",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-03",
+      "updated_at": "2026-08-03"
+    },
+    {
+      "id": "2026-08-xai-minnesota-court-upholds-ban-on-nudify-apps-despite-legal-cha",
+      "announced_at": "2026-08-02",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Minnesota court upholds ban on 'nudify' apps despite legal challenge from xAI",
+      "summary": "A Minnesota court has upheld a state law banning 'nudify' applications that generate non-consensual intimate imagery, even as xAI contests the regulation in court. This decision sets a significant precedent for AI-related legislation and could influence how generative AI models are governed across the U.S.",
+      "sources": [
+        {
+          "url": "https://en.cryptonomist.ch/2026/08/02/minnesota-ban-nudify-apps/"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "content-policy",
+        "legal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-03",
+      "updated_at": "2026-08-03"
+    },
+    {
+      "id": "2026-08-xai-us-court-rejects-xai-s-challenge-to-ai-nudification-ban-upho",
+      "announced_at": "2026-08-02",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "US court rejects xAI's challenge to AI nudification ban, upholding restrictions on synthetic media generation",
+      "summary": "A US court has denied xAI's legal effort to overturn the ban on AI-generated nude imagery, reinforcing regulatory limits on synthetic media. This decision binds xAI's Grok models and sets a precedent for permissible content generation across the industry.",
+      "sources": [
+        {
+          "url": "https://finway.com.ua/en/court-denies-xai-request-overturn/"
+        }
+      ],
+      "tags": [
+        "content-policy",
+        "legal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-03",
+      "updated_at": "2026-08-03"
+    },
+    {
+      "id": "2026-08-xai-court-rejects-xai-s-request-to-block-ban-on-nudify-apps",
+      "announced_at": "2026-08-01",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Court rejects xAI's request to block ban on 'nudify' apps",
+      "summary": "A court has denied xAI's attempt to prevent enforcement of a ban on AI-powered 'nudify' applications, reinforcing regulatory or legal restrictions on models capable of generating non-consensual intimate imagery. This decision sets a precedent for accountability in AI-generated content.",
+      "sources": [
+        {
+          "url": "https://zamin.uz/en/technology/215665-court-rejects-xai-request-to-block-nudify-apps-ban.html"
+        }
+      ],
+      "tags": [
+        "content-moderation",
+        "regulation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-03",
+      "updated_at": "2026-08-03"
     }
   ]
 }
