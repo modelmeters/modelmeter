@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-29",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,341 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-spacex-xai-spacexai-launches-grok-4-7-with-advanced-ai-capabilities",
+      "announced_at": "2026-07-29",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "spacex"
+      ],
+      "models": [
+        "spacex/grok-4.7"
+      ],
+      "headline": "xAI (SpaceXAI) launches Grok 4.7 with advanced AI capabilities",
+      "summary": "Elon Musk announces the release of Grok 4.7, introducing enhanced artificial intelligence features. This update follows the rebranding of xAI to SpaceXAI and marks a significant advancement in the Grok model series.",
+      "sources": [
+        {
+          "url": "https://www.arabictrader.com/en/news/stock-market/224633/elon-musk-reveals-the-launch-date-of-grok-47-with-advanced-artificial-intelligence-capabilities"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-29",
+      "updated_at": "2026-07-29"
+    },
+    {
+      "id": "2026-07-spacex-xai-spacexai-targets-august-2026-for-grok-4-6-launch",
+      "announced_at": "2026-07-29",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "spacex"
+      ],
+      "models": [
+        "spacex/grok-4.6"
+      ],
+      "headline": "xAI (SpaceXAI) targets August 2026 for Grok 4.6 launch",
+      "summary": "Elon Musk has announced an August 2026 target for the launch of Grok 4.6, the next iteration of xAI's flagship model. This follows the recent rebranding of xAI to SpaceXAI and the release of Grok 4.5 earlier in July 2026.",
+      "sources": [
+        {
+          "url": "https://qazinform.com/amp/musk-sets-august-target-for-grok-46-launch-b4671e/"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-29",
+      "updated_at": "2026-07-29"
+    },
+    {
+      "id": "2026-07-xai-sues-minnesota-over-ban-on-ai-nudify-apps-citing-free-sp",
+      "announced_at": "2026-07-29",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "xAI sues Minnesota over ban on AI 'nudify' apps, citing free speech violations",
+      "summary": "xAI has filed a lawsuit against the state of Minnesota challenging its recently enacted law banning AI-powered 'nudify' applications, arguing the legislation infringes on First Amendment rights. The company claims the law is overly broad and threatens legitimate AI development and expression.",
+      "sources": [
+        {
+          "url": "https://news.abplive.com/technology/elon-musk-xai-takes-minnesota-to-court-over-ai-nudify-app-ban-calls-law-a-threat-to-free-speech-1859252"
+        }
+      ],
+      "tags": [
+        "free-speech",
+        "regulation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-29",
+      "updated_at": "2026-07-29"
+    },
+    {
+      "id": "2026-07-spacex-xai-spacexai-sues-minnesota-over-state-ban-on-ai-generated-n",
+      "announced_at": "2026-07-29",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "spacex"
+      ],
+      "models": [],
+      "headline": "xAI (SpaceXAI) sues Minnesota over state ban on AI-generated nudes",
+      "summary": "Following its rebrand to SpaceXAI, the company has filed a lawsuit against the state of Minnesota challenging its ban on AI-generated nude imagery. The case centers on free speech and AI regulation, with potential implications for content governance and legal boundaries of generative models.",
+      "sources": [
+        {
+          "url": "https://www.newsbytesapp.com/news/science/musk-s-spacexai-sues-minnesota-over-ban-on-ai-generated-nudes/story"
+        }
+      ],
+      "tags": [
+        "legal",
+        "regulation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-29",
+      "updated_at": "2026-07-29"
+    },
+    {
+      "id": "2026-07-other-cyera-acquires-oasis-security-for-1b-to-strengthen-ai-agent-",
+      "announced_at": "2026-07-29",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Cyera acquires Oasis Security for $1B to strengthen AI agent security",
+      "summary": "Cyera has agreed to acquire Oasis Security for $1 billion, marking its third acquisition this year. The move aims to enhance security infrastructure for the rapidly growing ecosystem of AI agents, addressing increasing concerns around data protection and system integrity.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/28/cyera-agrees-to-acquire-oasis-security-for-1b-to-safeguard-proliferating-ai-agents/"
+        }
+      ],
+      "tags": [
+        "security",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-29",
+      "updated_at": "2026-07-29"
+    },
+    {
+      "id": "2026-07-together-ai-introduces-dedicated-model-inference-with-capaci",
+      "announced_at": "2026-07-29",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "together"
+      ],
+      "models": [],
+      "headline": "Together AI introduces dedicated model inference with capacity-aware routing",
+      "summary": "Together AI launches a structured three-part resource model—endpoints, deployments, and configs—for dedicated model inference, enabling capacity-aware routing and more predictable performance for enterprise and high-demand use cases.",
+      "sources": [
+        {
+          "url": "https://www.together.ai/blog/configuring-dedicated-model-inference"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "capacity",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-29",
+      "updated_at": "2026-07-29"
+    },
+    {
+      "id": "2026-07-xai-grok-4-5-integrated-into-github-copilot",
+      "announced_at": "2026-07-28",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai",
+        "microsoft"
+      ],
+      "models": [
+        "xai/grok-4.5"
+      ],
+      "headline": "Grok 4.5 integrated into GitHub Copilot",
+      "summary": "xAI's Grok 4.5 is now available as a backend option in GitHub Copilot, expanding its reach into developer workflows through Microsoft's widely used coding assistant platform.",
+      "sources": [
+        {
+          "url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot/"
+        }
+      ],
+      "tags": [
+        "developer-tools",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-29",
+      "updated_at": "2026-07-29"
+    },
+    {
+      "id": "2026-07-anthropic-claude-ai-discovers-faster-7-round-aes-attack-and-breaks-pos",
+      "announced_at": "2026-07-28",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Claude AI discovers faster 7-round AES attack and breaks post-quantum test scheme",
+      "summary": "Claude AI has identified a novel cryptographic vulnerability, successfully cracking a post-quantum test scheme and uncovering a more efficient attack on 7-round AES. This demonstrates AI's growing capability in advanced cryptanalysis, with potential implications for global encryption standards and security protocols.",
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html"
+        }
+      ],
+      "tags": [
+        "cybersecurity",
+        "cryptography",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-29",
+      "updated_at": "2026-07-29"
+    },
+    {
+      "id": "2026-07-other-fish-audio-raises-52m-seed-round-to-scale-ai-voice-models-fo",
+      "announced_at": "2026-07-28",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Fish Audio raises $52M seed round to scale AI voice models for creators and enterprises",
+      "summary": "Fish Audio has secured $52M in seed funding to expand development of its AI voice models, which are already used by over 8 million people and generate $21M in annual recurring revenue. The investment will accelerate growth in both creator and enterprise markets.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/28/fish-audio-raises-50m-seed-to-build-ai-voice-models-for-creators-and-enterprises/"
+        }
+      ],
+      "tags": [
+        "voice",
+        "startup",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-29",
+      "updated_at": "2026-07-29"
+    },
+    {
+      "id": "2026-07-anthropic-cognizant-deepens-partnership-with-anthropic-to-expand-enter",
+      "announced_at": "2026-07-28",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Cognizant deepens partnership with Anthropic to expand enterprise rollout of Claude",
+      "summary": "Cognizant is expanding its collaboration with Anthropic to accelerate the adoption of Claude AI models across enterprise clients. This strategic tie-up enhances integration capabilities and support services for large-scale deployments.",
+      "sources": [
+        {
+          "url": "https://itbrief.asia/story/cognizant-deepens-anthropic-tie-up-as-claude-rollout-grows"
+        }
+      ],
+      "tags": [
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-29",
+      "updated_at": "2026-07-29"
+    },
+    {
+      "id": "2026-07-anthropic-delaware-court-rules-anthropic-liable-in-1-5b-copyright-infr",
+      "announced_at": "2026-07-27",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Delaware court rules Anthropic liable in $1.5B copyright infringement case brought by authors",
+      "summary": "A federal court in Delaware has ordered Anthropic to pay $1.5 billion in damages for copyright infringement related to the unauthorized use of authors' works in training its AI models. The ruling sets a significant precedent for intellectual property rights in AI development and may prompt industry-wide changes in data sourcing and model training practices.",
+      "sources": [
+        {
+          "url": "https://www.delawarepublic.org/npr-headlines/2026-07-27/authors-have-mixed-feelings-about-the-1-5b-anthropic-copyright-infringement-ruling"
+        }
+      ],
+      "tags": [
+        "copyright",
+        "major",
+        "litigation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-07-29",
+      "updated_at": "2026-07-29"
     }
   ]
 }
