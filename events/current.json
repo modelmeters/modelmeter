@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-04",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,133 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-other-runware-launches-sonic-inference-pod-a-modular-portable-data",
+      "announced_at": "2026-08-04",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Runware launches Sonic Inference Pod, a modular, portable data center for AI inference.",
+      "summary": "Runware has introduced the Sonic Inference Pod, a modular data center designed to bring scalable AI inference capacity to distributed or remote locations. This development signals a shift toward portable, rapidly deployable compute infrastructure that could influence how AI services are delivered and priced.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/08/04/is-the-future-of-data-centers-portable-runware-builds-a-pod-to-find-out/"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "modular",
+        "edge-ai"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-04",
+      "updated_at": "2026-08-04"
+    },
+    {
+      "id": "2026-08-xai-five-new-lawsuits-filed-against-xai-s-grok-minnesota-s-nudif",
+      "announced_at": "2026-08-04",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "Five new lawsuits filed against xAI's Grok; Minnesota's nudification ban takes effect after court defeat",
+      "summary": "Following a court decision, Minnesota's ban on AI-generated nudification takes effect, coinciding with five new lawsuits filed against xAI over Grok's role in generating non-consensual intimate imagery. These legal actions reflect growing regulatory and judicial scrutiny of AI model accountability.",
+      "sources": [
+        {
+          "url": "https://www.techtimes.com/articles/322899/20260804/grok-faces-five-new-lawsuits-minnesota-nudification-ban-takes-effect-after-court-defeat.htm"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "legal",
+        "content-moderation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-04",
+      "updated_at": "2026-08-04"
+    },
+    {
+      "id": "2026-08-xai-lawsuit-filed-by-tennessee-girls-alleges-grok-generated-csam",
+      "announced_at": "2026-08-04",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "Lawsuit filed by Tennessee girls alleges Grok generated CSAM from personal photos",
+      "summary": "A new lawsuit claims that xAI's Grok model was used to transform personal images of minors into child sexual abuse material, raising serious concerns about AI safety mechanisms and model guardrails. The case highlights ongoing risks of generative AI misuse and could prompt stricter regulatory oversight.",
+      "sources": [
+        {
+          "url": "https://newschannel9.com/news/local/tennessee-girls-say-in-lawsuit-that-ai-turned-photos-into-csam-raising-guardrail-concerns"
+        }
+      ],
+      "tags": [
+        "csam",
+        "legal",
+        "guardrails",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-04",
+      "updated_at": "2026-08-04"
+    },
+    {
+      "id": "2026-08-xai-loses-legal-bid-to-block-minnesota-s-first-in-the-nation",
+      "announced_at": "2026-08-03",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "xAI loses legal bid to block Minnesota's first-in-the-nation AI deepfake ban",
+      "summary": "xAI failed to block Minnesota's pioneering legislation banning AI-generated deepfakes, marking a significant moment in AI regulation. The ruling establishes a legal precedent for state-level oversight of synthetic media and may prompt similar laws in other jurisdictions.",
+      "sources": [
+        {
+          "url": "https://www.benzinga.com/markets/private-markets/26/08/60883938/xai-loses-bid-to-block-minnesotas-first-in-the-nation-ai-deepfake-ban"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "deepfakes",
+        "legal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-04",
+      "updated_at": "2026-08-04"
     }
   ]
 }
