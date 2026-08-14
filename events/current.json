@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-06",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,443 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-amazon-bedrock-agentcore-introduces-temporal-policies-and-ra",
+      "announced_at": "2026-08-06",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "amazon"
+      ],
+      "models": [],
+      "headline": "Amazon Bedrock AgentCore introduces temporal policies and rate limiting for agent cost and behavior control",
+      "summary": "Amazon Bedrock AgentCore now supports temporal policies via Dogwood, an open-source policy language, and gateway-level rate limiting. These features enable deterministic control over multi-step agent actions and enforce cost ceilings across agent executions.",
+      "sources": [
+        {
+          "url": "https://aws.amazon.com/blogs/machine-learning/control-agent-behaviors-and-cost-beyond-a-single-action-new-capabilities-in-amazon-bedrock-agentcore/"
+        }
+      ],
+      "tags": [
+        "agents",
+        "governance",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-deepseek-resumes-8-billion-funding-round-with-monolith-parti",
+      "announced_at": "2026-08-06",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek resumes $8 billion funding round with Monolith participating",
+      "summary": "DeepSeek has resumed its $8 billion funding round, attracting interest from Monolith. This significant capital raise underscores strong investor confidence and may enable expanded model development, infrastructure scaling, and competitive positioning in the AI market.",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-resumes-8-billion-round-with-monolith-in-the-running"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-google-mirendil-signs-100m-google-cloud-partnership-to-scale-self-i",
+      "announced_at": "2026-08-06",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "google",
+        "other"
+      ],
+      "models": [],
+      "headline": "Mirendil signs $100M+ Google Cloud partnership to scale self-improving AI research",
+      "summary": "Mirendil has entered a major cloud agreement with Google Cloud to expand its compute infrastructure, supporting research into self-improving AI systems aimed at accelerating scientific discovery and AI development.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/08/06/exclusive-mirendil-inks-100m-google-cloud-deal-to-scale-self-improving-ai/"
+        }
+      ],
+      "tags": [
+        "major",
+        "infrastructure"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-openai-files-motion-to-dismiss-apple-s-trade-secrets-lawsuit",
+      "announced_at": "2026-08-06",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "OpenAI files motion to dismiss Apple's trade secrets lawsuit, calling claims 'meritless'",
+      "summary": "OpenAI has formally responded to Apple's lawsuit alleging theft of trade secrets by filing a motion to dismiss, arguing the claims are unfounded and misrepresent facts. The outcome of this case could set important precedents for IP protection and corporate competition in the AI sector.",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/tech/976042/openai-apple-trade-secrets-lawsuit-dismissal-request"
+        }
+      ],
+      "tags": [
+        "legal",
+        "major",
+        "regulatory"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-deepseek-plans-to-increase-model-pricing-amid-resumed-fundin",
+      "announced_at": "2026-08-06",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek plans to increase model pricing amid resumed funding talks",
+      "summary": "DeepSeek is resuming funding discussions and planning to raise prices for its AI models. This indicates a strategic shift toward higher revenue generation, potentially affecting accessibility and competitive positioning in the inference market.",
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/briefings/deepseek-resumes-funding-talks-plans-hike-model-prices"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "funding",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-deepseek-announces-significant-price-increase-for-its-ai-ser",
+      "announced_at": "2026-08-06",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek announces significant price increase for its AI services",
+      "summary": "DeepSeek has announced a significant price hike for its AI services, marking a major shift in its pricing strategy. This change will directly impact customers relying on DeepSeek's models for inference.",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-plans-significant-price-increase-for-its-ai-services"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-anthropic-establishes-in-house-chip-team-to-accelerate-claud",
+      "announced_at": "2026-08-05",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic establishes in-house chip team to accelerate Claude inference",
+      "summary": "Anthropic has formed an internal team focused on developing custom AI chips to optimize performance and reduce inference costs for its Claude models. This move signals a strategic shift toward vertical integration, aiming to improve speed, efficiency, and cost control independently of external hardware providers.",
+      "sources": [
+        {
+          "url": "https://www.technology.org/2026/08/06/anthropic-builds-in-house-chip-team-to-run-claude-faster/"
+        }
+      ],
+      "tags": [
+        "custom-silicon",
+        "inference-optimization",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-google-jeff-dean-and-other-top-google-ai-researchers-depart-to-foun",
+      "announced_at": "2026-08-05",
+      "type": "leadership_change",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "google",
+        "other"
+      ],
+      "models": [],
+      "headline": "Jeff Dean and other top Google AI researchers depart to found startup focused on AI-driven scientific discovery",
+      "summary": "Jeff Dean, a foundational figure in Google's AI development, has left the company along with other senior AI executives to launch a new startup. The venture aims to leverage AI to accelerate scientific discovery, marking a significant movement of talent from a major tech incumbent to an independent player.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/"
+        }
+      ],
+      "tags": [
+        "major",
+        "talent-shift"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-anthropic-advances-development-of-custom-ai-chip-to-power-fu",
+      "announced_at": "2026-08-05",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic advances development of custom AI chip to power future Claude models",
+      "summary": "Building on prior discussions, Anthropic is now actively pushing forward with the development of its own custom AI chip. This infrastructure investment aims to optimize performance and reduce reliance on third-party hardware for the Claude model line.",
+      "sources": [
+        {
+          "url": "https://sqmagazine.co.uk/anthropic-chip-design-team/"
+        }
+      ],
+      "tags": [
+        "chip-design",
+        "inference-efficiency",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-anthropic-begins-hiring-ai-chip-design-team-to-develop-custo",
+      "announced_at": "2026-08-05",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic begins hiring AI chip design team to develop custom silicon",
+      "summary": "Anthropic is actively recruiting a specialized team to design custom AI chips, signaling a strategic move toward hardware-software co-design. This initiative aims to improve inference efficiency, reduce reliance on third-party hardware, and optimize performance for future Claude models.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/"
+        }
+      ],
+      "tags": [
+        "hardware",
+        "custom-silicon",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-xai-lawsuit-filed-in-benton-county-accuses-photographer-of-using",
+      "announced_at": "2026-08-05",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "Lawsuit filed in Benton County accuses photographer of using xAI's Grok to create AI-generated child sexual abuse images",
+      "summary": "A lawsuit filed in Benton County alleges that a photographer used xAI's Grok to generate child sexual abuse material, marking a significant legal escalation in the ongoing scrutiny of AI misuse. This follows prior expanded allegations from July 7 and increases regulatory and public pressure on xAI regarding model safety and accountability.",
+      "sources": [
+        {
+          "url": "https://www.arkansasonline.com/news/2026/aug/05/lawsuit-filed-in-benton-county-accuses/"
+        }
+      ],
+      "tags": [
+        "major",
+        "misuse",
+        "legal"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-anthropic-eu-ai-act-enforcement-begins-for-ai-model-makers",
+      "announced_at": "2026-08-04",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "openai",
+        "google",
+        "meta",
+        "cohere",
+        "mistral",
+        "deepseek",
+        "alibaba",
+        "zhipu",
+        "moonshot",
+        "amazon",
+        "microsoft",
+        "groq",
+        "together",
+        "fireworks",
+        "openrouter",
+        "other"
+      ],
+      "models": [],
+      "headline": "EU AI Act enforcement begins for AI model makers",
+      "summary": "Enforcement of the EU AI Act officially commences, requiring AI model providers to comply with strict transparency, risk classification, and data governance requirements for models deployed in the European Union. Non-compliant models may face restrictions or bans.",
+      "sources": [
+        {
+          "url": "https://news.outsourceaccelerator.com/eu-ai-act-enforcement/"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "compliance",
+        "eu",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-08-xai-minnesota-enforces-ai-nudify-app-ban-after-rejecting-xai-s-e",
+      "announced_at": "2026-08-03",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Minnesota enforces AI 'nudify' app ban after rejecting xAI's emergency injunction request",
+      "summary": "A Minnesota judge rejected xAI's emergency request to block the state's newly enacted ban on AI-powered 'nudify' apps, allowing the law to take immediate effect. The ruling marks a significant precedent in regulating AI-generated non-consensual intimate imagery and restricts xAI's ability to deploy such capabilities in the state.",
+      "sources": [
+        {
+          "url": "https://www.tekedia.com/minnesotas-ai-nudify-app-ban-takes-effect-after-judge-rejects-xais-emergency-request/"
+        }
+      ],
+      "tags": [
+        "content-moderation",
+        "legal-compliance",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "2026-07-xai-court-denies-xai-petition-to-block-minnesota-s-ban-on-ai-nud",
+      "announced_at": "2026-07-31",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [],
+      "headline": "Court denies xAI petition to block Minnesota's ban on AI nudification technology",
+      "summary": "A U.S. judge rejected xAI's request to enjoin Minnesota’s prohibition on AI-powered 'nudification' tools, allowing the state's ban to remain in effect. The ruling affirms state authority to restrict certain AI image-generation applications on public harm grounds.",
+      "sources": [
+        {
+          "url": "https://www.bemidjipioneer.com/news/minnesota/judge-denies-musks-xai-request-to-halt-minnesotas-ban-on-ai-nudification-technology"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "content-policy",
+        "legal",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-06",
+      "updated_at": "2026-08-06"
     }
   ]
 }
