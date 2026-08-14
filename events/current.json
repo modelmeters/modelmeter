@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-13",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,383 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-deepseek-releases-harness-as-open-source-rival-to-claude-cod",
+      "announced_at": "2026-08-13",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/harness"
+      ],
+      "headline": "DeepSeek releases Harness as open-source rival to Claude Code",
+      "summary": "DeepSeek launched Harness, an open-source model positioned as a competitor to Anthropic's Claude Code, expanding accessible tooling in the AI coding space.",
+      "sources": [
+        {
+          "url": "https://venturebeat.com/technology/deepseek-harness-launches-as-open-source-rival-to-claude-code-alongside-v4-pro-on-api-with-higher-prices"
+        }
+      ],
+      "tags": [
+        "open-source",
+        "code-generation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-deepseek-launches-v4-pro-model-targeting-74b-valuation",
+      "announced_at": "2026-08-13",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-pro"
+      ],
+      "headline": "DeepSeek launches V4 Pro model, targeting $74B valuation",
+      "summary": "DeepSeek has released its V4 Pro model, marking a significant advancement in its AI capabilities amid China's competitive AI landscape. The launch underscores DeepSeek's ambition to scale both technologically and commercially, with a targeted valuation of $74 billion reflecting investor and market confidence.",
+      "sources": [
+        {
+          "url": "https://www.ndtvprofit.com/technology/chinas-fierce-ai-race-deepseek-debuts-v4-pro-model-with-eye-on-74-billion-valuation-11906679"
+        }
+      ],
+      "tags": [
+        "major",
+        "high-performance",
+        "china"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-amazon-quick-integrates-natively-into-microsoft-word-excel-p",
+      "announced_at": "2026-08-13",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "amazon",
+        "microsoft"
+      ],
+      "models": [],
+      "headline": "Amazon Quick integrates natively into Microsoft Word, Excel, PowerPoint, and Outlook",
+      "summary": "Amazon Quick is now available as a native extension within Microsoft 365 apps, enabling agentic AI capabilities such as data analysis, content drafting, and document editing directly inside Word, Excel, PowerPoint, and Outlook. This deep integration brings AI-powered workflows into everyday enterprise productivity tools.",
+      "sources": [
+        {
+          "url": "https://aws.amazon.com/blogs/machine-learning/amazon-quick-for-microsoft-365-agentic-ai-where-you-work/"
+        }
+      ],
+      "tags": [
+        "enterprise",
+        "integration",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-spacex-spacexai-launches-grok-4-6-with-performance-parity-to-gpt-5-",
+      "announced_at": "2026-08-13",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "spacex"
+      ],
+      "models": [
+        "spacexai/grok-4.6"
+      ],
+      "headline": "SpaceXAI launches Grok 4.6 with performance parity to GPT-5.6 Sol and API pricing starting at $2",
+      "summary": "SpaceXAI has released Grok 4.6, claiming performance equivalent to GPT-5.6 Sol. The model is now available via API with entry-level pricing set at $2, positioning it as a competitively priced high-performance option in the market.",
+      "sources": [
+        {
+          "url": "https://www.macobserver.com/news/spacexai-says-grok-4-6-matches-gpt-5-6-sol-while-api-pricing-starts-at-2/"
+        }
+      ],
+      "tags": [
+        "major",
+        "benchmark",
+        "pricing"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-deepseek-raises-api-pricing-for-deepseek-v4-models",
+      "announced_at": "2026-08-13",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek raises API pricing for DeepSeek V4 models",
+      "summary": "DeepSeek has increased the cost of accessing its V4 model API, marking a significant shift in pricing strategy for one of the leading open-weight AI models. This change impacts downstream providers and developers relying on competitive pricing for inference.",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/world/china/deepseek-raises-api-pricing-its-v4-models-2026-08-13/"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-spacex-spacexai-and-cursor-launch-grok-bot-autonomous-ai-teammates-",
+      "announced_at": "2026-08-13",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "spacex",
+        "other"
+      ],
+      "models": [
+        "spacexai/grok-bot"
+      ],
+      "headline": "SpaceXAI and Cursor launch Grok Bot, autonomous AI teammates for desktop and mobile",
+      "summary": "SpaceXAI, formerly xAI, has partnered with Cursor to release 'Grok Bot,' a new line of autonomous AI teammates available across desktop and mobile platforms. This launch expands the functionality of AI agents in personal and professional workflows, marking a structural shift in AI teammate deployment.",
+      "sources": [
+        {
+          "url": "https://hypebeast.com/2026/8/spacexai-grok-bot-brings-autonomous-ai-teammates-to-desktop"
+        }
+      ],
+      "tags": [
+        "major",
+        "autonomous-agents",
+        "cross-platform"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-xai-first-benton-county-lawsuit-filed-against-xai-alleging-use-o",
+      "announced_at": "2026-08-13",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "First Benton County lawsuit filed against xAI alleging use of Grok to generate child sexual abuse images",
+      "summary": "A new lawsuit has been filed in Benton County alleging that xAI's Grok AI model was used by a photographer to create child sexual abuse material. This marks a significant escalation in legal challenges against AI providers for misuse of their models in generating illegal content.",
+      "sources": [
+        {
+          "url": "https://mdcp.nwaonline.com/news/2026/aug/13/first-benton-county-lawsuit-filed-concerning/"
+        }
+      ],
+      "tags": [
+        "legal",
+        "misuse",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-anthropic-enters-into-acquisition-talks-with-israeli-ai-star",
+      "announced_at": "2026-08-13",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic enters into acquisition talks with Israeli AI startup Decart for $6 billion",
+      "summary": "Anthropic is in advanced discussions to acquire Decart, an Israeli AI startup, in a deal valued at $6 billion. The acquisition aims to integrate Decart's technology and talent into Anthropic's model development pipeline, enhancing its competitive position in the AI market.",
+      "sources": [
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/mrrffazk1"
+        }
+      ],
+      "tags": [
+        "major",
+        "acquisition"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-anthropic-investors-project-2-trillion-valuation-ahead-of-re",
+      "announced_at": "2026-08-13",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic investors project $2 trillion valuation ahead of record IPO",
+      "summary": "Ahead of its planned public offering, investor sentiment positions Anthropic for a potential $2 trillion valuation, reflecting massive confidence in its future growth, model dominance, and market influence. This would mark one of the largest tech IPOs in history and significantly elevate Anthropic's strategic position.",
+      "sources": [
+        {
+          "url": "https://www.ft.com/content/840ac156-af1c-4a82-b260-ae791072fcfa?syn-25a6b1a6"
+        }
+      ],
+      "tags": [
+        "major",
+        "ipo",
+        "valuation"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-deepseek-launches-v4-pro-and-xai-launches-grok-4-6-on-the-sa",
+      "announced_at": "2026-08-13",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek",
+        "xai"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-pro",
+        "xai/grok-4.6"
+      ],
+      "headline": "DeepSeek launches V4 Pro and xAI launches Grok 4.6 on the same day, initiating a price war among frontier AI models",
+      "summary": "On 2026-08-13, DeepSeek and xAI simultaneously launched their next-generation models, DeepSeek V4 Pro and Grok 4.6, respectively. The coordinated timing and aggressive pricing strategies have ignited a price war in the frontier AI model market, increasing competitive pressure across major providers.",
+      "sources": [
+        {
+          "url": "https://finance.biggo.com/news/3dd94d75-f0d8-4a36-949c-0b372d8aed7d"
+        }
+      ],
+      "tags": [
+        "major",
+        "pricing-war",
+        "frontier-models"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-other-cognition-reportedly-in-talks-to-raise-at-40b-valuation",
+      "announced_at": "2026-08-12",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Cognition reportedly in talks to raise at $40B valuation",
+      "summary": "Cognition, an AI coding startup, is reportedly in early discussions to raise additional funding at a $40 billion valuation, just months after securing $1 billion at a $26 billion valuation. This potential round underscores strong investor interest in AI-driven software development tools.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/08/12/ai-coding-startup-cognition-reportedly-already-in-talks-to-raise-at-40b-valuation/"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-anthropic-samsung-electronics-integrates-anthropic-s-claude-to-reduce-",
+      "announced_at": "2026-08-12",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Samsung Electronics integrates Anthropic's Claude to reduce chip verification time from one month to two days",
+      "summary": "Samsung Electronics has deployed Anthropic's Claude AI model to automate and accelerate its semiconductor chip verification process, cutting the time required from one month to just two days. This integration marks a significant advancement in applying large language models to complex hardware engineering workflows.",
+      "sources": [
+        {
+          "url": "https://www.moomoo.com/news/post/74558806/samsung-electronics-integrates-anthropic-s-claude-reducing-chip-verification-time"
+        }
+      ],
+      "tags": [
+        "semiconductor",
+        "major",
+        "efficiency"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
     }
   ]
 }
