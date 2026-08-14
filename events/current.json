@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-12",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,346 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-other-lovable-raises-400m-at-13-3b-valuation-following-500m-annual",
+      "announced_at": "2026-08-12",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Lovable raises $400M at $13.3B valuation following $500M annualized revenue milestone",
+      "summary": "Lovable has secured an additional $400M in funding at a $13.3B valuation, fueled by achieving a $500M annualized run rate revenue in June. This positions the company as a major player in the AI landscape.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/08/12/lovable-confirms-new-13-3b-valuation-raises-another-400m/"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-other-nebius-reports-454-year-over-year-revenue-growth-in-q2-2026-",
+      "announced_at": "2026-08-12",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Nebius reports 454% year-over-year revenue growth in Q2 2026 driven by rising AI capacity pricing and margins",
+      "summary": "Nebius, an AI cloud infrastructure provider, announced a 454% year-over-year increase in Q2 revenue, citing rising AI capacity pricing and improved margins. This surge highlights growing demand and pricing power in the AI compute market, positioning Nebius as a rising competitor to established cloud providers.",
+      "sources": [
+        {
+          "url": "https://blockspace.media/insight/nebius-revenue-surges-ai-cloud-margins-q2-2026/"
+        }
+      ],
+      "tags": [
+        "revenue-growth",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-amazon-sagemaker-hyperpod-implements-tiered-kv-cache-with-cu",
+      "announced_at": "2026-08-12",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "amazon"
+      ],
+      "models": [],
+      "headline": "Amazon SageMaker HyperPod implements tiered KV cache with Curvine for efficient large LLM inference",
+      "summary": "AWS introduces a tiered KV cache solution on SageMaker HyperPod that extends beyond GPU memory into a shared, distributed NVMe storage pool using Curvine. This reduces reliance on oversized GPU instances and improves time-to-first-token for large language model inference at scale.",
+      "sources": [
+        {
+          "url": "https://aws.amazon.com/blogs/machine-learning/tiered-kv-cache-for-large-llms-on-amazon-sagemaker-hyperpod-with-curvine/"
+        }
+      ],
+      "tags": [
+        "major",
+        "inference-optimization",
+        "distributed-storage"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-xai-launches-grok-bot-in-early-beta-for-desktop-and-ios",
+      "announced_at": "2026-08-12",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok-bot"
+      ],
+      "headline": "xAI launches Grok Bot in early beta for desktop and iOS",
+      "summary": "xAI introduces Grok Bot, an AI assistant powered by the Grok model, now available in early beta on desktop and iOS platforms. This expansion increases accessibility and signals a strategic push into consumer-facing AI applications.",
+      "sources": [
+        {
+          "url": "https://www.thetechoutlook.com/new-release/software-apps/xai-introduces-grok-bot-available-in-early-beta-on-desktop-and-ios/"
+        }
+      ],
+      "tags": [
+        "beta",
+        "consumer",
+        "mobile",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-anthropic-samsung-partners-with-anthropic-to-integrate-claude-ai-into-",
+      "announced_at": "2026-08-12",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Samsung partners with Anthropic to integrate Claude AI into semiconductor design workflows",
+      "summary": "Samsung is adopting Anthropic's Claude AI to enhance its chip design processes, leveraging AI for improved efficiency and innovation in semiconductor development. This collaboration marks a significant step in applying large language models to complex hardware engineering tasks.",
+      "sources": [
+        {
+          "url": "https://www.investing.com/news/stock-market-news/samsung-adopts-anthropics-claude-ai-for-chip-design-report-93CH-4853701"
+        }
+      ],
+      "tags": [
+        "semiconductor",
+        "design-automation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-spacex-spacexai-and-cursor-launch-grok-bot-for-iphone-and-mac",
+      "announced_at": "2026-08-12",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "spacex",
+        "other"
+      ],
+      "models": [
+        "spacex/grok"
+      ],
+      "headline": "SpaceXAI and Cursor launch Grok Bot for iPhone and Mac",
+      "summary": "SpaceXAI, in collaboration with Cursor, has released a new Grok Bot application for Apple's iPhone and Mac platforms, expanding the accessibility and distribution of the Grok model to a broader consumer base.",
+      "sources": [
+        {
+          "url": "https://www.macobserver.com/news/spacexai-and-cursor-launch-grok-bot-for-iphone-and-mac/"
+        }
+      ],
+      "tags": [
+        "major",
+        "consumer-access"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-openai-s-daybreak-red-and-daybreak-blue-cyber-defense-models",
+      "announced_at": "2026-08-11",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai",
+        "amazon"
+      ],
+      "models": [
+        "openai/daybreak-red",
+        "openai/daybreak-blue"
+      ],
+      "headline": "OpenAI's Daybreak Red and Daybreak Blue cyber defense models launch on Amazon Bedrock",
+      "summary": "OpenAI has released specialized cyber defense models, Daybreak Red and Daybreak Blue, on Amazon Bedrock for eligible customers. These models enforce zero-operator access at the chip level, ensuring enhanced security for code and vulnerability data during inference.",
+      "sources": [
+        {
+          "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/"
+        }
+      ],
+      "tags": [
+        "cybersecurity",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-anthropic-implements-ai-generated-text-watermarking-to-compl",
+      "announced_at": "2026-08-11",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic implements AI-generated text watermarking to comply with EU AI Act Article 50(2)",
+      "summary": "Anthropic has begun watermarking text outputs from its Claude models to adhere to Article 50(2) of the EU AI Act, which mandates transparency in AI-generated content. This move ensures compliance for operations within the European Union and may influence deployment practices across other regulated markets.",
+      "sources": [
+        {
+          "url": "https://newscord.org/article/anthropic-starts-watermarking-claude-ai-text-to-comply-with-eu-ai-act-article-50--Story_20260811_Anthropicsaysitwillw352adc34"
+        }
+      ],
+      "tags": [
+        "compliance",
+        "eu",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-other-river-ai-founded-by-xai-co-founder-igor-babuschkin-raises-1-",
+      "announced_at": "2026-08-11",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "River AI, founded by xAI co-founder Igor Babuschkin, raises $1.1B in Series A led by General Catalyst",
+      "summary": "River AI, a two-month-old startup founded by former xAI co-founder Igor Babuschkin, has secured $1.1 billion in a Series A round led by General Catalyst. The funding reflects strong investor interest in next-generation personal AI agents and establishes River AI as an instant major player in the AI startup ecosystem.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/08/11/general-catalyst-leads-1-1b-round-into-2-month-old-river-ai/"
+        }
+      ],
+      "tags": [
+        "major",
+        "personal-agents",
+        "startup"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-openai-daybreak-models-become-available-on-amazon-bedrock",
+      "announced_at": "2026-08-11",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai",
+        "amazon"
+      ],
+      "models": [
+        "openai/daybreak"
+      ],
+      "headline": "Daybreak models become available on Amazon Bedrock",
+      "summary": "OpenAI and AWS have partnered to make Daybreak cybersecurity models available through Amazon Bedrock, enabling enterprises to integrate these capabilities into their security workflows.",
+      "sources": [
+        {
+          "url": "https://openai.com/index/daybreak-models-are-now-available-on-aws"
+        }
+      ],
+      "tags": [
+        "cybersecurity",
+        "enterprise",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
+    },
+    {
+      "id": "2026-08-deepseek-announces-significant-price-increase-for-its-ai-ser",
+      "announced_at": "2026-08-06",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek announces significant price increase for its AI services",
+      "summary": "DeepSeek has announced plans for a significant price hike across its AI services, impacting access costs for developers and enterprises relying on its models. The increase signals potential shifts in pricing strategy amid rising compute demands and market positioning.",
+      "sources": [
+        {
+          "url": "https://theedgemalaysia.com/node/813543"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-12",
+      "updated_at": "2026-08-12"
     }
   ]
 }
