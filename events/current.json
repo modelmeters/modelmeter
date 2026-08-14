@@ -28033,7 +28033,7 @@
       "id": "2026-08-deepseek-raises-prices-for-v4-models-by-over-10x-due-to-ai-d",
       "announced_at": "2026-08-14",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "deepseek"
@@ -28127,7 +28127,7 @@
       "id": "2026-08-deepseek-introduces-peak-hour-pricing-that-quadruples-standa",
       "announced_at": "2026-08-13",
       "type": "pricing_change",
-      "severity": "action_required",
+      "severity": "informational",
       "status": "unverified",
       "providers": [
         "deepseek"
