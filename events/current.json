@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-14",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,118 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-openai-ultrafast-mode-announced-for-gpt-5-6-sol-with-up-to-14x-fast",
+      "announced_at": "2026-08-13",
+      "detected_at": "2026-08-14T17:30:59.077Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/GPT-5.6 Sol"
+      ],
+      "headline": "Ultrafast mode announced for GPT-5.6 Sol with up to 14x faster processing",
+      "summary": "OpenAI announced Ultrafast mode, a new API service tier for GPT-5.6 Sol that offers up to 14x faster processing compared to Standard mode. Currently available in limited preview to select customers.",
+      "sources": [
+        {
+          "url": "https://platform.openai.com/docs/changelog",
+          "quote": "Announced Ultrafast mode, a new API service tier for GPT-5.6 Sol that runs up to 14x faster than Standard processing. Available in limited preview to select customers. Sign up to receive updates on Ultrafast mode here ."
+        }
+      ],
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-xai-launch-of-grok-imagine-image-2-0-and-grok-imagine-video-1-5-",
+      "announced_at": "2026-08-14",
+      "detected_at": "2026-08-14T17:30:59.077Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/Grok Imagine Image 2.0",
+        "xai/Grok Imagine Video 1.5"
+      ],
+      "headline": "Launch of Grok Imagine Image 2.0 and Grok Imagine Video 1.5 models",
+      "summary": "xAI has introduced two new models: Grok Imagine Image 2.0 and Grok Imagine Video 1.5, expanding their generative capabilities in image and video domains.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/docs/models",
+          "quote": "Grok Imagine Image 2.0\nGrok Imagine Video 1.5"
+        }
+      ],
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-xai-grok-imagine-api-is-no-longer-available",
+      "announced_at": "2026-08-14",
+      "detected_at": "2026-08-14T17:30:59.077Z",
+      "type": "model_unavailable",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/Grok Imagine API"
+      ],
+      "headline": "Grok Imagine API is no longer available",
+      "summary": "The Grok Imagine API has been removed from the model list, indicating it is no longer accessible.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/docs/models",
+          "quote": "Grok Imagine API"
+        }
+      ],
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-google-vertex-ai-partner-models-renamed-removing-gemini-pref",
+      "announced_at": "2026-08-14",
+      "detected_at": "2026-08-14T17:30:59.077Z",
+      "type": "id_rename",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/Gemini 3.1 Pro",
+        "google/Gemini 3 Pro Image",
+        "google/Gemini 2.5 Pro",
+        "google/Gemini 3.7 Flash",
+        "google/Gemini 3.6 Flash",
+        "google/Gemini 3.5 Flash",
+        "google/Gemini 3.1 Flash Image",
+        "google/Gemini 3 Flash",
+        "google/Gemini 2.5 Flash",
+        "google/Gemini 2.5 Flash Image",
+        "google/Gemini 2.5 Flash Live API",
+        "google/Gemini 3.5 Flash-Lite",
+        "google/Gemini 3.1 Flash-Lite Image",
+        "google/Gemini 3.1 Flash-Lite",
+        "google/Gemini 2.5 Flash-Lite"
+      ],
+      "migration_target": "google/3.1 Pro,3 Pro Image,2.5 Pro,3.7 Flash,3.6 Flash,3.5 Flash,3.1 Flash Image,3 Flash,2.5 Flash,2.5 Flash Image,2.5 Flash Live API,3.5 Flash-Lite,3.1 Flash-Lite Image,3.1 Flash-Lite,2.5 Flash-Lite",
+      "headline": "Google Vertex AI partner models renamed, removing 'Gemini' prefix",
+      "summary": "Google has renamed its Vertex AI partner models by removing the 'Gemini' prefix from the model IDs.",
+      "sources": [
+        {
+          "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+          "quote": "3.1 Pro\n3 Pro Image\n2.5 Pro\n3.7 Flash\n3.6 Flash\n3.5 Flash\n3.1 Flash Image\n3 Flash\n2.5 Flash\n2.5 Flash Image\n2.5 Flash Live API\n3.5 Flash-Lite\n3.1 Flash-Lite Image\n3.1 Flash-Lite\n2.5 Flash-Lite"
+        }
+      ],
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
     }
   ]
 }
