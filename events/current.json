@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-14",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,441 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-anthropic-reportedly-plans-6b-acquisition-to-accelerate-clau",
+      "announced_at": "2026-08-14",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic reportedly plans $6B acquisition to accelerate Claude inference performance",
+      "summary": "Anthropic is reportedly pursuing a $6 billion acquisition aimed at significantly improving the speed and efficiency of its Claude models. This move signals a major investment in inference infrastructure and performance optimization.",
+      "sources": [
+        {
+          "url": "https://www.inc.com/georgia-fearn/anthropic-biggest-acquisition-six-billion-bet-making-claude-run-faster/91390617"
+        }
+      ],
+      "tags": [
+        "major",
+        "inference",
+        "performance"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-openai-and-anthropic-initiate-price-reductions-in-response-t",
+      "announced_at": "2026-08-14",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "openai",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "OpenAI and Anthropic initiate price reductions in response to competitive pressure from Chinese AI models",
+      "summary": "Facing growing competition from high-performance Chinese AI models, OpenAI and Anthropic have lowered prices on key offerings to maintain market share. This marks a strategic shift as Western leaders confront the erosion of their technological and economic advantage.",
+      "sources": [
+        {
+          "url": "https://arstechnica.com/ai/2026/08/openai-and-anthropic-in-price-war-as-chinese-ai-rivals-gain-ground/"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "competition",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-meta-releases-glimmer-an-open-weight-ai-model-available-for-",
+      "announced_at": "2026-08-14",
+      "type": "open_source_release",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "meta"
+      ],
+      "models": [
+        "meta/glimmer"
+      ],
+      "headline": "Meta releases Glimmer, an open-weight AI model available for local deployment",
+      "summary": "Meta launched Glimmer, an open-weight AI model that can be downloaded and run on local hardware, contrasting with their more powerful Muse Spark model which remains API-locked. This move expands access to Meta's AI technology while maintaining a tiered model strategy.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/podcast/metas-open-ai-and-a-250m-deal-gone-very-wrong/"
+        }
+      ],
+      "tags": [
+        "open-weight",
+        "decentralization",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-spacex-spacexai-acquires-cursor-following-release-of-grok-bot-and-g",
+      "announced_at": "2026-08-14",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "spacex"
+      ],
+      "models": [],
+      "headline": "SpaceXAI acquires Cursor following release of Grok Bot and Grok 4.6",
+      "summary": "SpaceXAI has completed its acquisition of Cursor, a developer-focused AI code editor, shortly after launching Grok Bot and Grok 4.6. This move signals a strategic expansion into integrated AI development environments, enhancing its ecosystem for AI-powered software creation.",
+      "sources": [
+        {
+          "url": "https://9to5mac.com/2026/08/14/spacex-lands-deal-to-likely-purchase-claude-code-and-openai-codex-competitor/"
+        }
+      ],
+      "tags": [
+        "major",
+        "developer-tools"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-deepseek-increases-prices-for-v4-models-introduces-new-cache",
+      "announced_at": "2026-08-14",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek increases prices for V4 models, introduces new cache economics",
+      "summary": "DeepSeek has implemented a price increase for its V4 model tier, adjusting rate structures and introducing changes to cache utilization economics. The update prompts users to reevaluate cost efficiency and consider alternative providers.",
+      "sources": [
+        {
+          "url": "https://www.intelligentliving.co/deepseek-price-increase-alternatives/"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "major",
+        "cache"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-alibaba-apple-and-alibaba-partner-to-develop-custom-ai-model-for-chi",
+      "announced_at": "2026-08-14",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "alibaba"
+      ],
+      "models": [],
+      "headline": "Apple and Alibaba partner to develop custom AI model for China market",
+      "summary": "Apple has collaborated with Alibaba to train a custom large language model tailored for the Chinese market. This partnership enables Apple to comply with local regulations and improve AI performance in China while leveraging Alibaba's domestic expertise and infrastructure.",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/980160/apple-intelligence-china-custom-ai-model-alibaba"
+        }
+      ],
+      "tags": [
+        "major",
+        "china",
+        "regional-deployment"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-deepseek-introduces-peak-and-off-peak-pricing-for-its-api",
+      "announced_at": "2026-08-14",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek introduces peak and off-peak pricing for its API",
+      "summary": "DeepSeek has implemented a dynamic pricing model for its API, introducing differentiated rates for peak and off-peak usage periods. This change aims to optimize resource allocation and incentivize off-peak consumption, reflecting growing pressure to manage inference costs amid rising demand.",
+      "sources": [
+        {
+          "url": "https://technode.com/2026/08/14/deepseek-to-introduce-peak-and-off-peak-pricing-for-its-api/"
+        }
+      ],
+      "tags": [
+        "major",
+        "pricing",
+        "dynamic-pricing"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-deepseek-raises-prices-for-v4-models-by-over-10x-due-to-ai-d",
+      "announced_at": "2026-08-14",
+      "type": "pricing_change",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek raises prices for V4 models by over 10x due to AI demand straining capacity",
+      "summary": "DeepSeek has significantly increased prices for its V4 models, with some rate hikes exceeding 10x, citing strained capacity from surging AI demand. This reflects growing pressure on inference infrastructure and a shift toward higher-cost access for advanced models.",
+      "sources": [
+        {
+          "url": "https://www.infoworld.com/article/4209439/deepseek-raises-some-v4-prices-by-more-than-10x-as-ai-demand-strains-capacity.html"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "capacity",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-openrouter-upstage-launches-solar-pro-4-available-on-openrouter-and-oth",
+      "announced_at": "2026-08-13",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openrouter"
+      ],
+      "models": [
+        "upstage/solar-pro-4"
+      ],
+      "headline": "Upstage launches Solar Pro 4, available on OpenRouter and other platforms",
+      "summary": "Upstage has released Solar Pro 4, a new iteration of its language model series, expanding its presence in the open inference market. The model is now accessible via OpenRouter and other distribution channels, increasing competitive options for developers and enterprises.",
+      "sources": [
+        {
+          "url": "https://www.digitaltoday.co.kr/en/view/93216/upstage-unveils-solar-pro-4-available-on-openrouter-and-others"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-xai-new-federal-lawsuit-alleges-xai-s-grok-enabled-generation-of",
+      "announced_at": "2026-08-13",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "New federal lawsuit alleges xAI's Grok enabled generation of sexualized images of a minor",
+      "summary": "A federal lawsuit filed in August 2026 accuses xAI's Grok AI of being used to generate sexualized images of a 16-year-old, raising significant legal and ethical concerns. The case expands on prior allegations from July and may prompt increased regulatory oversight of AI-generated content and safety guardrails.",
+      "sources": [
+        {
+          "url": "https://www.nwaonline.com/news/2026/aug/13/new-federal-lawsuit-alleges-grok-ai-tool-used-to/"
+        }
+      ],
+      "tags": [
+        "legal",
+        "major",
+        "content-policy"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-deepseek-introduces-peak-hour-pricing-that-quadruples-standa",
+      "announced_at": "2026-08-13",
+      "type": "pricing_change",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek introduces peak-hour pricing that quadruples standard rates during high-demand periods",
+      "summary": "DeepSeek has implemented a dynamic pricing model introducing peak-hour surcharges that can reach up to four times the standard rate. This change affects cost predictability and usage patterns for customers relying on DeepSeek's inference services.",
+      "sources": [
+        {
+          "url": "https://www.pymnts.com/news/artificial-intelligence/2026/deepseek-introduces-peak-hour-pricing-that-quadruples-current-levels/"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "dynamic-pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-anthropic-cfo-krishna-rao-leads-early-ipo-meetings-with-inve",
+      "announced_at": "2026-08-13",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic CFO Krishna Rao leads early IPO meetings with investors",
+      "summary": "Anthropic's CFO, Krishna Rao, is conducting initial discussions with investors regarding a potential IPO. While no valuation has been discussed yet, this marks a significant step toward a public listing.",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/08/13/anthropic-cfo-early-ipo-meetings-valuation.html"
+        }
+      ],
+      "tags": [
+        "major",
+        "ipo"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-anthropic-enters-negotiations-to-acquire-israeli-ai-startup-",
+      "announced_at": "2026-08-13",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [],
+      "headline": "Anthropic enters negotiations to acquire Israeli AI startup Decart AI for $6 billion",
+      "summary": "Anthropic is reportedly in advanced talks to acquire Decart AI, an Israeli AI startup, in a deal valued at $6 billion. This acquisition, if finalized, would represent a significant expansion of Anthropic's capabilities and talent base.",
+      "sources": [
+        {
+          "url": "https://www.i24news.tv/en/news/innov-nation/artc-anthropic-in-negotiations-to-acquire-israeli-decart-ai-for-6-billion-report"
+        }
+      ],
+      "tags": [
+        "major",
+        "acquisition"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "structural",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
+    },
+    {
+      "id": "2026-08-anthropic-eu-ai-act-mandates-all-chatbots-to-disclose-non-human-identi",
+      "announced_at": "2026-08-13",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "openai",
+        "google",
+        "meta",
+        "cohere",
+        "amazon",
+        "microsoft",
+        "other"
+      ],
+      "models": [],
+      "headline": "EU AI Act mandates all chatbots to disclose non-human identity",
+      "summary": "As of August 2026, the EU AI Act enforcement requires all AI chatbots operating in the European Union to clearly disclose that they are not human. This regulatory requirement impacts model providers and service operators across the region, necessitating changes in user interface design and interaction protocols.",
+      "sources": [
+        {
+          "url": "https://startupfortune.com/the-eu-ai-act-now-forces-every-chatbot-to-admit-it-is-not-human/"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "compliance",
+        "eu",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-14",
+      "updated_at": "2026-08-14"
     }
   ]
 }
