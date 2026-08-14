@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "snapshot_date": "2026-07-08",
+  "snapshot_date": "2026-08-14",
   "models": [
     {
       "id": "anthropic/claude-fable-5",
@@ -2356,15 +2356,15 @@
       "provider": "venice",
       "model": "xiaomi-mimo-v2-5",
       "display_name": "Venice: MiMo V2.5",
-      "input_cost_per_mtok": 0.17,
-      "output_cost_per_mtok": 0.35,
+      "input_cost_per_mtok": 0.4,
+      "output_cost_per_mtok": 2,
       "cache_write_cost_per_mtok": null,
       "cache_read_cost_per_mtok": 0.06,
       "context_window": 1000000,
       "max_output_tokens": null,
       "source_url": "https://docs.venice.ai/overview/pricing",
-      "last_verified": "2026-06-25",
-      "verification_required": false,
+      "last_verified": "2026-08-14",
+      "verification_required": true,
       "availability": "available",
       "tags": [],
       "upstream_model_id": null,
