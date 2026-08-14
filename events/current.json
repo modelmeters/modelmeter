@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-14",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,255 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-other-reflection-ai-secures-1b-in-compute-capacity-from-nebius",
+      "announced_at": "2026-07-14",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Reflection AI secures $1B in compute capacity from Nebius",
+      "summary": "Reflection AI has signed a $1 billion deal with Nebius to access compute resources. This major investment supports Reflection's development of open-source AI technology and expands Nebius' role as a key AI infrastructure provider.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/14/reflection-inks-1b-compute-deal-with-nebius/"
+        }
+      ],
+      "tags": [
+        "major",
+        "compute"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-14",
+      "updated_at": "2026-07-14"
+    },
+    {
+      "id": "2026-07-deepseek-considers-new-fundraising-one-month-after-closing-p",
+      "announced_at": "2026-07-14",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek considers new fundraising one month after closing prior round",
+      "summary": "DeepSeek is evaluating a new funding round just one month after finalizing its previous round, signaling aggressive growth plans and continued investor interest in its AI development roadmap.",
+      "sources": [
+        {
+          "url": "https://www.ft.com/content/6deb470e-d152-43a2-be0d-cc1fde4f3db8?syn-25a6b1a6"
+        }
+      ],
+      "tags": [
+        "funding",
+        "growth"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-14",
+      "updated_at": "2026-07-14"
+    },
+    {
+      "id": "2026-07-anthropic-launches-india-specific-pricing-for-claude-ai-pro-",
+      "announced_at": "2026-07-14",
+      "type": "pricing_change",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic launches India-specific pricing for Claude AI, Pro plan at ₹2,000/month",
+      "summary": "Anthropic has introduced localized pricing for the Indian market, offering its Pro plan at ₹2,000 per month. This move expands access to Claude AI in a high-growth region and signals a strategic push to increase market penetration among Indian users and businesses.",
+      "sources": [
+        {
+          "url": "https://www.ndtv.com/artificial-intelligence/anthropic-starts-india-pricing-for-claude-ai-pro-plan-at-rs-2-000-11768444"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "international",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-14",
+      "updated_at": "2026-07-14"
+    },
+    {
+      "id": "2026-07-anthropic-introduces-rupee-denominated-pricing-for-claude-in",
+      "announced_at": "2026-07-14",
+      "type": "pricing_change",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/Claude"
+      ],
+      "headline": "Anthropic introduces rupee-denominated pricing for Claude in India",
+      "summary": "Anthropic has launched localized pricing in Indian rupees for its Claude models, making access more transparent and affordable for Indian users. This move aligns with regional market strategies and supports broader adoption in South Asia.",
+      "sources": [
+        {
+          "url": "https://bestmediainfo.com/mediainfo/mediainfo-digital/anthropic-starts-rolling-out-rupee-pricing-for-claude-in-india-plans-prices-and-other-details-12161703"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "india",
+        "localization",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-14",
+      "updated_at": "2026-07-14"
+    },
+    {
+      "id": "2026-07-anthropic-releases-detailed-benchmark-and-pricing-comparison",
+      "announced_at": "2026-07-14",
+      "type": "informational",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-sonnet-5",
+        "anthropic/claude-sonnet-4.6",
+        "anthropic/claude-opus-4.8"
+      ],
+      "headline": "Anthropic releases detailed benchmark and pricing comparison for Claude Sonnet 5, Sonnet 4.6, and Opus 4.8.",
+      "summary": "Anthropic publishes agentic coding benchmarks and cost-performance analysis across its latest model versions, highlighting improvements in efficiency and capability. The data enables developers to make informed tradeoffs between cost and performance when selecting models via API.",
+      "sources": [
+        {
+          "url": "https://www.marktechpost.com/2026/07/13/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/"
+        }
+      ],
+      "tags": [
+        "benchmark",
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-14",
+      "updated_at": "2026-07-14"
+    },
+    {
+      "id": "2026-07-deepseek-targets-71b-valuation-and-prepares-for-ipo",
+      "announced_at": "2026-07-13",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek targets $71B valuation and prepares for IPO",
+      "summary": "DeepSeek is positioning itself for an initial public offering with an anticipated valuation of $71 billion, signaling strong market confidence and potential expansion of its AI infrastructure and model offerings.",
+      "sources": [
+        {
+          "url": "https://finimize.com/content/deepseek-eyes-a-71-billion-valuation-and-an-ipo"
+        }
+      ],
+      "tags": [
+        "major",
+        "ipo"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-14",
+      "updated_at": "2026-07-14"
+    },
+    {
+      "id": "2026-07-openai-gpt-5-6-sol-terra-and-luna-become-generally-available-on-ama",
+      "announced_at": "2026-07-13",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai",
+        "amazon"
+      ],
+      "models": [
+        "openai/gpt-5.6-sol",
+        "openai/gpt-5.6-terra",
+        "openai/gpt-5.6-luna"
+      ],
+      "headline": "GPT-5.6 Sol, Terra, and Luna become generally available on Amazon Bedrock",
+      "summary": "OpenAI's GPT-5.6 Sol, Terra, and Luna models are now generally available on Amazon Bedrock, integrating OpenAI's most advanced models into AWS's secure, high-performance inference platform. This expands enterprise access to state-of-the-art AI capabilities with enhanced reliability and scalability.",
+      "sources": [
+        {
+          "url": "https://aws.amazon.com/blogs/machine-learning/openai-gpt-5-6-sol-terra-and-luna-are-now-generally-available-on-amazon-bedrock/"
+        }
+      ],
+      "tags": [
+        "major",
+        "gpt-5-6",
+        "enterprise-ai"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-14",
+      "updated_at": "2026-07-14"
+    },
+    {
+      "id": "2026-07-openai-apple-files-lawsuit-against-openai-alleging-corporate-espion",
+      "announced_at": "2026-07-13",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [],
+      "headline": "Apple files lawsuit against OpenAI alleging corporate espionage and trade secret theft",
+      "summary": "Apple has filed a lawsuit accusing OpenAI of attempting to poach employees and obtain unreleased product components and trade secrets. The allegations include OpenAI's hardware lead requesting Apple job candidates to bring confidential materials to interviews.",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/tech/964843/apple-openai-lawsuit-wildest-claims"
+        }
+      ],
+      "tags": [
+        "major",
+        "trade-secrets",
+        "corporate-espionage"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-14",
+      "updated_at": "2026-07-14"
     }
   ]
 }
