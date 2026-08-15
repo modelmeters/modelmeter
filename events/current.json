@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-05",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,254 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-anthropic-establishes-in-house-chip-design-team-to-develop-c",
+      "announced_at": "2026-08-05",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic establishes in-house chip design team to develop custom silicon for Claude",
+      "summary": "Anthropic is forming its own chip design team and hiring engineers to build custom AI chips optimized for the Claude model family. This vertical integration effort aims to improve performance, reduce inference costs, and secure long-term hardware scalability.",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/business/anthropic-build-in-house-chip-design-team-claude-hire-engineers-2026-08-05/"
+        }
+      ],
+      "tags": [
+        "major",
+        "custom-silicon",
+        "infrastructure"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "id": "2026-08-other-trump-administration-s-ai-cybersecurity-framework-excludes-o",
+      "announced_at": "2026-08-05",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [],
+      "headline": "Trump administration's AI cybersecurity framework excludes open models from testing requirements",
+      "summary": "The Trump administration has released voluntary guidelines for assessing cybersecurity risks in advanced AI systems that explicitly exclude open-weight models from evaluation. This decision means widely accessible models can be deployed without undergoing the same scrutiny as closed, proprietary systems, potentially creating security and compliance gaps.",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/975509/white-house-ai-framework-open-models-excluded"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "cybersecurity",
+        "open-source",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "id": "2026-08-openrouter-tencent-launches-hy3-model-globally-via-openrouter-cloud-and",
+      "announced_at": "2026-08-05",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openrouter"
+      ],
+      "models": [
+        "tencent/hy3"
+      ],
+      "headline": "Tencent launches Hy3 model globally via OpenRouter, cloud, and developer platforms",
+      "summary": "Tencent has made its AI model Hy3 available worldwide through OpenRouter, WorkBuddy, and its cloud and developer platforms, significantly expanding access to its technology beyond China.",
+      "sources": [
+        {
+          "url": "https://technode.global/2026/08/05/chinas-tencent-makes-ai-model-hy3-available-globally-through-workbuddy-cloud-developer-platforms/"
+        }
+      ],
+      "tags": [
+        "global-launch",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "id": "2026-08-deepseek-reopens-talks-on-rmb50-billion-second-funding-round",
+      "announced_at": "2026-08-05",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek reopens talks on RMB50 billion second funding round",
+      "summary": "DeepSeek is reportedly advancing discussions for a second funding round valued at RMB50 billion (~$7B), signaling aggressive expansion plans and increased investment in AI model development and infrastructure. This round would further solidify its position as a leading independent AI lab with substantial financial backing.",
+      "sources": [
+        {
+          "url": "https://technode.com/2026/08/05/deepseek-reportedly-reopens-talks-on-a-rmb50-billion-second-funding-round/"
+        }
+      ],
+      "tags": [
+        "major",
+        "funding"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "id": "2026-08-other-tencent-expands-globally-with-wider-rollout-of-flagship-hy3-",
+      "announced_at": "2026-08-05",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [
+        "tencent/hy3"
+      ],
+      "headline": "Tencent expands globally with wider rollout of flagship Hy3 model",
+      "summary": "Tencent is accelerating its international AI ambitions by broadly deploying its flagship Hy3 model outside China. This marks a strategic push to compete with Western AI providers and increase access to its large-scale models in overseas markets.",
+      "sources": [
+        {
+          "url": "https://amp.scmp.com/tech/tech-war/article/3362991/tencent-ramps-overseas-ai-push-wider-rollout-flagship-hy3-model"
+        }
+      ],
+      "tags": [
+        "international",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "id": "2026-08-xai-first-benton-county-lawsuit-filed-against-xai-over-alleged-u",
+      "announced_at": "2026-08-04",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "First Benton County lawsuit filed against xAI over alleged use of Grok to generate child sexual abuse material",
+      "summary": "A new lawsuit has been filed in Benton County alleging that xAI's Grok model was used by a photographer to create synthetic child sexual abuse images. This legal action follows prior allegations and expands the geographic and judicial scope of accountability for AI-generated harmful content.",
+      "sources": [
+        {
+          "url": "https://www.nwaonline.com/news/2026/aug/04/first-benton-county-lawsuit-filed-concerning/"
+        }
+      ],
+      "tags": [
+        "legal",
+        "content-moderation",
+        "major",
+        "regulatory-risk"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "id": "2026-08-anthropic-signs-10b-cloud-infrastructure-partnership-with-ai",
+      "announced_at": "2026-08-04",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic",
+        "other"
+      ],
+      "models": [],
+      "headline": "Anthropic signs $10B cloud infrastructure partnership with AI startup Volta",
+      "summary": "Anthropic has entered a reported $10 billion agreement with AI cloud startup Volta to secure large-scale compute resources. This deal marks a major expansion of Anthropic's infrastructure strategy and positions Volta as a significant new player in the AI cloud space.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/08/04/anthropic-signs-10-billion-deal-with-ai-cloud-startup-volta/"
+        }
+      ],
+      "tags": [
+        "major",
+        "infrastructure",
+        "compute"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
+    },
+    {
+      "id": "2026-08-deepseek-reduces-pricing-for-deepseek-v4-flash-amid-competit",
+      "announced_at": "2026-08-04",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-flash"
+      ],
+      "headline": "DeepSeek reduces pricing for DeepSeek-V4-Flash amid competitive pressure in China",
+      "summary": "DeepSeek has lowered the cost of its DeepSeek-V4-Flash model as part of an intensifying price war among Chinese AI providers. The move pressures competitors to adjust pricing and increases accessibility to high-performance inference.",
+      "sources": [
+        {
+          "url": "https://www.turkiyetoday.com/business/deepseek-cuts-v4-flash-pricing-amid-china-ai-price-war-3225358"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "competition",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-08-05",
+      "updated_at": "2026-08-05"
     }
   ]
 }
