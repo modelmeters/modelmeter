@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-08",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,149 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-anthropic-support-for-setting-session-budgets-in-claude-managed-agents",
+      "announced_at": "2026-08-07",
+      "detected_at": "2026-08-08T17:30:14.649Z",
+      "type": "capability_change",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Support for setting session budgets in Claude Managed Agents",
+      "summary": "Users can now set a budget on a Claude Managed Agents session, acting as a hard cap on spend. When the budget is reached, the session pauses with a 'budget_reached' stop reason. The budget can be changed or removed to resume the session. Deployments apply the same budget to each session they start.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "You can now set a budget on a Claude Managed Agents session: a hard cap on the session's spend, priced at public list rates. A session that reaches its budget pauses with the budget_reached stop reason instead of starting new model requests; changing or removing the budget resumes it. Deployments accept the same budget and apply it to each session they start. See Session budgets ."
+        }
+      ],
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-08-anthropic-control-over-inference-location-for-claude-managed-agents",
+      "announced_at": "2026-08-07",
+      "detected_at": "2026-08-08T17:30:14.649Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Control over inference location for Claude Managed Agents",
+      "summary": "Users can now specify where model inference runs for a Claude Managed Agents agent by setting 'inference_geo' in the model object when creating the agent, or by overriding it for a single session. Available regions and pricing are documented under Data residency.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "You can now control where model inference runs for a Claude Managed Agents agent. Set inference_geo inside the model object when you create the agent , or override it for a single session. See Data residency for the available geos and pricing."
+        }
+      ],
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-07-deepseek-v4-flash-enters-public-beta",
+      "announced_at": "2026-07-31",
+      "detected_at": "2026-08-08T17:30:14.649Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-flash"
+      ],
+      "headline": "DeepSeek-V4-Flash enters public beta",
+      "summary": "The DeepSeek-V4-Flash API is now in public beta with enhanced agent capabilities and updated benchmarks. The model can be accessed by setting model='deepseek-v4-flash'.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/updates",
+          "quote": "The official release of the DeepSeek-V4-Flash API is now in public beta. The API calling method remains unchanged — simply set the model name to deepseek-v4-flash to use the latest version."
+        }
+      ],
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-07-deepseek-v4-flash-natively-supports-responses-api-format-and",
+      "announced_at": "2026-07-31",
+      "detected_at": "2026-08-08T17:30:14.649Z",
+      "type": "infrastructure",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-flash"
+      ],
+      "headline": "DeepSeek-V4-Flash natively supports Responses API format and Codex adaptation",
+      "summary": "The official DeepSeek-V4-Flash model now natively supports the Responses API format and is specifically adapted for Codex, with configuration details available in the documentation.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/updates",
+          "quote": "The official V4-Flash natively supports the Responses API format and is specifically adapted for Codex. For the specific configuration, please refer to the documentation ."
+        }
+      ],
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-07-deepseek-v4-flash-0731-re-post-trained-but-maintains-same-ar",
+      "announced_at": "2026-07-31",
+      "detected_at": "2026-08-08T17:30:14.649Z",
+      "type": "model_update",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-flash"
+      ],
+      "headline": "DeepSeek-V4-Flash-0731 re-post-trained but maintains same architecture and size",
+      "summary": "The DeepSeek-V4-Flash-0731 update retains the same model architecture and size as the preview version but has undergone re-post-training.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/updates",
+          "quote": "DeepSeek-V4-Flash-0731 keeps the same model architecture and size as DeepSeek-V4-Flash-Preview, and was only re-post-trained."
+        }
+      ],
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
+    },
+    {
+      "id": "2026-04-deepseek-legacy-model-names-deepseek-chat-and-deepseek-reasoner-to-be",
+      "announced_at": "2026-04-24",
+      "effective_at": "2026-07-24",
+      "detected_at": "2026-08-08T17:30:14.649Z",
+      "type": "model_deprecation",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-chat",
+        "deepseek/deepseek-reasoner"
+      ],
+      "migration_target": "deepseek/deepseek-v4-flash",
+      "headline": "Legacy model names deepseek-chat and deepseek-reasoner to be discontinued",
+      "summary": "The legacy API model names deepseek-chat and deepseek-reasoner will be discontinued on 2026-07-24. They currently point to non-thinking and thinking modes of deepseek-v4-flash, respectively.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/updates",
+          "quote": "The two legacy API model names, deepseek-chat and deepseek-reasoner , will be discontinued in three months (2026-07-24). During the current period, these two model names point to the non-thinking mode and thinking mode of deepseek-v4-flash , respectively."
+        }
+      ],
+      "created_at": "2026-08-08",
+      "updated_at": "2026-08-08"
     }
   ]
 }
