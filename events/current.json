@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-15",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,370 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-openai-launches-codex-micro-a-hardware-device-for-developer-",
+      "announced_at": "2026-07-15",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/codex"
+      ],
+      "headline": "OpenAI launches Codex Micro, a hardware device for developer AI integration",
+      "summary": "OpenAI has released Codex Micro, a dedicated hardware device designed to interface with its Codex platform, enabling offline and low-latency code generation and completion. This marks OpenAI's first foray into consumer hardware, positioning Codex as a fully integrated development tool.",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/965901/openai-hardware-codex-micro-launch"
+        }
+      ],
+      "tags": [
+        "hardware",
+        "developer-tools",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-alibaba-apple-partners-with-alibaba-to-launch-apple-intelligence-in-",
+      "announced_at": "2026-07-15",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "alibaba"
+      ],
+      "models": [
+        "alibaba/qwen"
+      ],
+      "headline": "Apple partners with Alibaba to launch Apple Intelligence in China using Qwen AI models",
+      "summary": "Regulatory approval has been granted for Apple Intelligence to operate in China through a partnership with Alibaba, leveraging Qwen AI models. This enables Apple to deploy its generative AI features on iOS and macOS within China while complying with local data and AI regulations.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/15/apple-intelligence-approved-for-launch-in-china-with-alibabas-qwen-ai/"
+        }
+      ],
+      "tags": [
+        "major",
+        "regional-launch",
+        "compliance"
+      ],
+      "impact": {
+        "magnitude": "structural",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-xai-spacexai-leases-unused-grok-capacity-to-anthropic",
+      "announced_at": "2026-07-15",
+      "type": "partnership",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "SpaceXAI leases unused Grok capacity to Anthropic",
+      "summary": "In a novel capacity-sharing arrangement, SpaceXAI (formerly xAI) is leasing its unused Grok compute resources to Anthropic. This partnership, revealed by Cerebras CEO Andrew Feldman, reflects a strategic optimization of AI infrastructure and could set a precedent for cross-company compute utilization in the industry.",
+      "sources": [
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/cerebras-ceo-andrew-feldman-says-110107347.html"
+        }
+      ],
+      "tags": [
+        "capacity-sharing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-deepseek-raises-capital-at-74b-valuation-ahead-of-onshore-ip",
+      "announced_at": "2026-07-15",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek raises capital at $74B valuation ahead of onshore IPO",
+      "summary": "DeepSeek is securing new investment at a $74 billion valuation in preparation for an onshore initial public offering. This positions DeepSeek as one of the most highly valued private AI companies globally and underscores the growing strength of China's domestic AI sector.",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/legal/transactional/chinas-deepseek-raise-fresh-capital-74-billion-valuation-ahead-onshore-ipo-2026-07-15/"
+        }
+      ],
+      "tags": [
+        "major",
+        "ipo",
+        "valuation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-anthropic-introduces-new-pricing-model-for-claude",
+      "announced_at": "2026-07-15",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Anthropic introduces new pricing model for Claude",
+      "summary": "On 2026-07-15, Anthropic launched a revised pricing structure for its Claude model suite, potentially reshaping how users are billed for AI inference. This change may reflect a strategic shift toward usage-based or tiered access models.",
+      "sources": [
+        {
+          "url": "https://www.standard.net/lifestyle/home_and_family/2026/jul/14/tech-matters-claudes-new-pricing-could-change-how-we-pay-for-ai/"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-deepseek-reportedly-developing-custom-inference-chip-to-redu",
+      "announced_at": "2026-07-15",
+      "type": "infrastructure",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek reportedly developing custom inference chip to reduce reliance on NVIDIA and Huawei",
+      "summary": "DeepSeek is advancing its AI infrastructure independence by developing its own inference chip, aiming to reduce dependency on foreign hardware suppliers like NVIDIA and domestic competitors like Huawei. This move could enhance control over performance, cost, and scalability for its models.",
+      "sources": [
+        {
+          "url": "https://www.igorslab.de/en/deepseek-inference-chip-china-ai-less-dependent-nvidia-huawei/"
+        }
+      ],
+      "tags": [
+        "infrastructure",
+        "china",
+        "semiconductor",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-google-major-publishers-sue-google-for-alleged-unauthorized-use-of-",
+      "announced_at": "2026-07-14",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "google"
+      ],
+      "models": [],
+      "headline": "Major publishers sue Google for alleged unauthorized use of copyrighted works in AI training.",
+      "summary": "Hachette, Cengage, Elsevier, and other publishers have filed a lawsuit against Google, alleging the company trained its AI models on copyrighted materials without proper authorization. This follows a growing trend of legal challenges against AI firms over intellectual property rights.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/"
+        }
+      ],
+      "tags": [
+        "copyright",
+        "lawsuit",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-anthropic-launches-claude-opus-5-in-direct-competition-with-",
+      "announced_at": "2026-07-14",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-5"
+      ],
+      "headline": "Anthropic launches Claude Opus 5 in direct competition with OpenAI's GPT-5.6",
+      "summary": "Anthropic has launched Claude Opus 5, its next-generation flagship model, positioning it as a direct competitor to OpenAI's recently released GPT-5.6. The launch marks a significant advancement in the high-end AI model market and intensifies competition between leading providers.",
+      "sources": [
+        {
+          "url": "https://cryptobriefing.com/anthropic-claude-opus-5-compete-gpt-56/"
+        }
+      ],
+      "tags": [
+        "major",
+        "competition"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-google-deepmind-ceo-proposes-independent-standards-body-to-regulate",
+      "announced_at": "2026-07-14",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "google"
+      ],
+      "models": [],
+      "headline": "DeepMind CEO proposes independent standards body to regulate frontier AI models",
+      "summary": "Demis Hassabis, CEO of DeepMind, has called for the creation of an independent AI standards body modeled after FINRA to oversee the testing and release of frontier models. The proposal aims to establish best practices and safety benchmarks for advanced AI systems.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/14/deepmind-ceo-calls-for-an-independent-standards-body-to-regulate-frontier-ai/"
+        }
+      ],
+      "tags": [
+        "governance",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-deepseek-considers-new-fundraising-round-one-month-after-clo",
+      "announced_at": "2026-07-14",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek considers new fundraising round one month after closing previous round",
+      "summary": "DeepSeek is evaluating a new fundraising initiative just one month after finalizing its prior capital raise, indicating rapid momentum and potential expansion plans. This move could accelerate model development, infrastructure scaling, or market positioning efforts.",
+      "sources": [
+        {
+          "url": "https://www.ft.com/content/6deb470e-d152-43a2-be0d-cc1fde4f3db8"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-anthropic-s-new-tokenizer-increases-token-count-by-30-affect",
+      "announced_at": "2026-07-14",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-sonnet-5"
+      ],
+      "headline": "Anthropic's new tokenizer increases token count by ~30%, affecting pricing calculations",
+      "summary": "Claude Sonnet 5 introduced a new tokenizer that generates approximately 30% more tokens than previous versions for the same content, complicating pricing comparisons and increasing effective costs for users despite unchanged per-token rates. This change requires customers to recalculate cost projections and usage metrics.",
+      "sources": [
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/07/14/anthropics-extravagant-tokenizer-complicates-ai-pricing/5270792"
+        }
+      ],
+      "tags": [
+        "tokenizer",
+        "pricing",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
+    },
+    {
+      "id": "2026-07-spacex-spacexai-launches-grok-4-5-with-aggressive-pricing-for-codin",
+      "announced_at": "2026-07-08",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "spacex"
+      ],
+      "models": [
+        "spacexai/grok-4.5"
+      ],
+      "headline": "SpaceXAI launches Grok 4.5 with aggressive pricing for coding tasks",
+      "summary": "SpaceXAI (formerly xAI) has publicly released Grok 4.5, emphasizing its performance on coding tasks and introducing competitively low pricing to capture developer market share. This launch marks a strategic push into the programming assistance domain.",
+      "sources": [
+        {
+          "url": "https://www.msn.com/en-us/news/insight/spacexai-launches-grok-4-5-with-aggressive-pricing-for-coding-tasks/gm-GMFE52FDEF?gemSnapshotKey"
+        }
+      ],
+      "tags": [
+        "major",
+        "coding"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-15",
+      "updated_at": "2026-07-15"
     }
   ]
 }
