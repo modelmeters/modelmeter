@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-19",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,97 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-deepseek-v4-full-power-version-released",
+      "announced_at": "2026-07-19",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek V4 full-power version released",
+      "summary": "DeepSeek launches the full-power version of DeepSeek V4, significantly enhancing model performance and capabilities. The release marks a major advancement in DeepSeek's model lineup and positions it competitively against other leading large language models.",
+      "sources": [
+        {
+          "url": "https://eu.36kr.com/en/p/3902097586800259"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-19",
+      "updated_at": "2026-07-19"
+    },
+    {
+      "id": "2026-07-alibaba-chinese-companies-launch-cheaper-open-weight-ai-models-chall",
+      "announced_at": "2026-07-19",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "alibaba",
+        "zhipu",
+        "moonshot",
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Chinese companies launch cheaper open-weight AI models challenging OpenAI and Anthropic",
+      "summary": "Multiple Chinese AI firms have introduced competitively priced open-weight models, increasing pressure on Western providers. These launches expand accessible AI capabilities and may accelerate price-performance improvements across the industry.",
+      "sources": [
+        {
+          "url": "https://www.newsbytesapp.com/news/science/chinese-companies-launch-cheaper-open-weight-ai-models-challenging-openai-anthropic/tldr"
+        }
+      ],
+      "tags": [
+        "open-weight",
+        "pricing-pressure",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-19",
+      "updated_at": "2026-07-19"
+    },
+    {
+      "id": "2026-07-openrouter-receives-billion-dollar-acquisition-offers",
+      "announced_at": "2026-07-18",
+      "type": "acquisition",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openrouter"
+      ],
+      "models": [],
+      "headline": "OpenRouter receives billion-dollar acquisition offers",
+      "summary": "Multiple parties have submitted acquisition offers valued at over a billion dollars for OpenRouter, signaling strong interest in model aggregation and routing infrastructure within the AI ecosystem.",
+      "sources": [
+        {
+          "url": "https://jawlah.co/en/60463"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-19",
+      "updated_at": "2026-07-19"
     }
   ]
 }
