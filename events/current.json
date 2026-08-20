@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-08-13",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,193 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-08-anthropic-compliance-api-expands-to-return-transcripts-of-cowork-and-c",
+      "announced_at": "2026-08-13",
+      "detected_at": "2026-08-13T17:30:01.918Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Compliance API expands to return transcripts of Cowork and Claude Code sessions on users' machines and in the cloud",
+      "summary": "The Compliance API now includes beta support for retrieving transcripts from both local (on users' machines) and remote (on claude.ai web or mobile) Cowork and Claude Code sessions for Claude Enterprise organizations, via new endpoints and using existing credentials and scopes.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "The Compliance API now returns transcripts of Cowork and Claude Code sessions that run on your users' machines, in beta for Claude Enterprise organizations. GET /v1/compliance/apps/sessions/local lists sessions across your organization, GET /v1/compliance/apps/sessions/local/{session_id} retrieves one session's metadata, and GET /v1/compliance/apps/sessions/local/{session_id}/messages returns its transcript, all with your existing Compliance Access Key and the read:compliance_user_data scope. See Sessions on users' machines ."
+        }
+      ],
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-anthropic-claude-api-now-includes-anthropic-workspace-id-response-head",
+      "announced_at": "2026-08-13",
+      "detected_at": "2026-08-13T17:30:01.918Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "Claude API now includes anthropic-workspace-id response header",
+      "summary": "The anthropic-workspace-id response header has been added to the Claude API to identify the workspace associated with each request, including the Default Workspace, enabling better traceability and management of API activity.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/release-notes/api",
+          "quote": "We've added the anthropic-workspace-id response header to the Claude API. It carries the wrkspc_ -prefixed ID of the workspace that the request's API key or access token resolved to, including your organization's Default Workspace. See Identify the workspace behind an API response ."
+        }
+      ],
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-google-gemini-3-7-flash-generally-available",
+      "announced_at": "2026-08-13",
+      "detected_at": "2026-08-13T17:30:01.918Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "google"
+      ],
+      "models": [
+        "google/gemini-3.7-flash"
+      ],
+      "headline": "Gemini 3.7 Flash generally available",
+      "summary": "Gemini 3.7 Flash is now generally available as a highly capable model optimized for coding and agentic workflows, featuring substantial improvements in software engineering and web development.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog?hl=en",
+          "quote": "Gemini 3.7 Flash generally available (GA) : Released our most intelligent workhorse model yet for coding and agents: Gemini 3.7 Flash ( gemini-3.7-flash ): Substantial improvements across software engineering, web development, and agentic workflows, available at an introductory price through December 31, 2026."
+        }
+      ],
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-deepseek-v4-pro-ga-release-rolled-out",
+      "announced_at": "2026-08-13",
+      "detected_at": "2026-08-13T17:30:01.918Z",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-pro"
+      ],
+      "headline": "DeepSeek-V4-Pro GA release rolled out",
+      "summary": "DeepSeek-V4-Pro is now generally available via APP, Web, and API with unchanged calling method by setting model name to deepseek-v4-pro.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/updates",
+          "quote": "The GA release of DeepSeek-V4-Pro has been rolled out on the APP, Web, and API. The API calling method remains unchanged — simply set the model name to deepseek-v4-pro to use the latest version."
+        }
+      ],
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-deepseek-v4-pro-enhances-agent-capabilities",
+      "announced_at": "2026-08-13",
+      "detected_at": "2026-08-13T17:30:01.918Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-pro"
+      ],
+      "headline": "DeepSeek V4 Pro enhances agent capabilities",
+      "summary": "The GA version of DeepSeek V4 Pro significantly improves agent performance in production environments, with benchmark scores provided across multiple agent evaluation frameworks.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/updates",
+          "quote": "Significantly enhanced Agent capabilities\nThe GA version of DeepSeek V4 Pro greatly enhances agent capabilities, with particularly significant performance improvements in production environments."
+        }
+      ],
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-deepseek-native-support-for-openai-responses-api",
+      "announced_at": "2026-08-13",
+      "detected_at": "2026-08-13T17:30:01.918Z",
+      "type": "capability_change",
+      "severity": "breaking",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "Native support for OpenAI Responses API",
+      "summary": "The DeepSeek API now natively supports the OpenAI Responses API format and includes one-click configuration for Codex.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/updates",
+          "quote": "Native support for the Responses API\nThe DeepSeek API now natively supports the OpenAI Responses API format and is specifically adapted for Codex. Users can refer to the official documentation and complete the Codex configuration with a one-click configuration script."
+        }
+      ],
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-deepseek-new-thinking-effort-control-levels",
+      "announced_at": "2026-08-13",
+      "detected_at": "2026-08-13T17:30:01.918Z",
+      "type": "capability_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-pro",
+        "deepseek/deepseek-v4-flash"
+      ],
+      "headline": "New thinking effort control levels",
+      "summary": "V4-Pro and V4-Flash now support three thinking effort levels: low, high, and max, allowing users to choose based on task complexity.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/updates",
+          "quote": "More flexible thinking effort control\nThe thinking modes of V4-Pro and V4-Flash now support three thinking effort levels: low / high / max. In real-world usage, users can flexibly choose based on task complexity: use low for simple tasks, high for daily Agent tasks, and max for more complex scenarios. For setup instructions, please refer to the official API documentation: Thinking Mode ."
+        }
+      ],
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
+    },
+    {
+      "id": "2026-08-deepseek-api-pricing-adjusted-with-peak-off-peak-structure",
+      "announced_at": "2026-08-13",
+      "detected_at": "2026-08-13T17:30:01.918Z",
+      "type": "pricing_change",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "API pricing adjusted with peak/off-peak structure",
+      "summary": "New pricing for the DeepSeek V4 model family introduces peak and off-peak rates, with off-peak prices at half of peak-hour prices, effective August 16, 2026 at 16:00 UTC.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/updates",
+          "quote": "API Pricing Adjustment\nWith the official release of the DeepSeek V4 model family, we will update and adjust API pricing . To allocate resources more reasonably, we will adopt peak/off-peak pricing, with off-peak prices set at half of the peak-hour prices, encouraging users to schedule their tasks based on actual usage. The new prices will take effect at 16:00 (UTC Time) on August 16, 2026."
+        }
+      ],
+      "created_at": "2026-08-13",
+      "updated_at": "2026-08-13"
     }
   ]
 }
