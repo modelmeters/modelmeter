@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-23",
   "events": [
     {
       "id": "2025-08-openai-gpt-oss-120b-release",
@@ -27814,6 +27814,347 @@
       },
       "created_at": "2026-07-11",
       "updated_at": "2026-07-11"
+    },
+    {
+      "id": "2026-07-openai-launches-chatgpt-health-with-personal-health-data-int",
+      "announced_at": "2026-07-23",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "openai/chatgpt-health"
+      ],
+      "headline": "OpenAI launches ChatGPT Health with personal health data integrations for all U.S. users",
+      "summary": "OpenAI has made ChatGPT Health available to all U.S. users, enabling integration with personal health data from Apple Health, Function, and MyFitnessPal. This expansion marks a major entry into the healthcare domain with enhanced personalization capabilities.",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/23/openai-makes-chatgpt-health-available-to-all-u-s-users/"
+        }
+      ],
+      "tags": [
+        "healthcare",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-anthropic-judge-approves-1-5b-settlement-in-copyright-lawsuit-against-",
+      "announced_at": "2026-07-23",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude"
+      ],
+      "headline": "Judge approves $1.5B settlement in copyright lawsuit against Anthropic over use of books to train Claude models",
+      "summary": "A federal judge has approved a $1.5 billion settlement in a class-action lawsuit alleging that Anthropic used copyrighted books to train its Claude AI models without authorization. The settlement resolves claims from authors and publishers over unlicensed data usage.",
+      "sources": [
+        {
+          "url": "https://www.3newsnow.com/videos/video/judge-approves-a-1-5b-anthropic-settlement-over-books-used-to-train-claude"
+        }
+      ],
+      "tags": [
+        "copyright",
+        "major",
+        "litigation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "up"
+      },
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-anthropic-prepares-for-potential-claude-opus-5-rollout",
+      "announced_at": "2026-07-23",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [
+        "anthropic/claude-opus-5"
+      ],
+      "headline": "Anthropic prepares for potential Claude Opus 5 rollout",
+      "summary": "Anthropic is preparing for the possible release of Claude Opus 5, indicating development progress on its next-generation flagship model. This suggests upcoming advancements in reasoning, context handling, or efficiency beyond current offerings.",
+      "sources": [
+        {
+          "url": "https://www.testingcatalog.com/anthropic-preparing-for-potential-claude-opus-5-rollout/"
+        }
+      ],
+      "tags": [
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "mixed"
+      },
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-other-upstage-launches-solar-open-2-an-open-weight-model-for-auton",
+      "announced_at": "2026-07-23",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "other"
+      ],
+      "models": [
+        "upstage/solar-open-2"
+      ],
+      "headline": "Upstage launches Solar Open 2, an open-weight model for autonomous tasks",
+      "summary": "Upstage has released Solar Open 2, an open-weight AI model specifically designed to support autonomous task execution. This release expands accessible tooling for developers building agentic workflows and contributes to the growing trend of transparent, customizable models.",
+      "sources": [
+        {
+          "url": "https://www.koreatimes.co.kr/amp/business/companies/20260723/upstage-unveils-solar-open-2-open-weight-ai-model-built-for-autonomous-tasks"
+        }
+      ],
+      "tags": [
+        "open-weight",
+        "autonomous-agents",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-deepseek-outlines-pricing-strategy-focused-on-reasonable-pro",
+      "announced_at": "2026-07-23",
+      "type": "informational",
+      "severity": "action_required",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek outlines pricing strategy focused on reasonable profits, citing past 75% price reduction",
+      "summary": "DeepSeek founder Liang Wenfeng discusses the company's pricing philosophy, emphasizing non-commercialization as a primary goal and highlighting a previous 75% price reduction. The strategy prioritizes accessibility and reasonable profitability over market dominance through aggressive monetization.",
+      "sources": [
+        {
+          "url": "https://news.aibase.com/news/29813"
+        }
+      ],
+      "tags": [
+        "pricing",
+        "strategy",
+        "accessibility"
+      ],
+      "impact": {
+        "magnitude": "moderate",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-openai-and-anthropic-support-ai-regulation-in-australia-sign",
+      "announced_at": "2026-07-23",
+      "type": "regulatory_action",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "openai",
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "OpenAI and Anthropic support AI regulation in Australia, signaling global policy alignment",
+      "summary": "OpenAI and Anthropic are backing regulatory initiatives in Australia, viewing the country as a potential model for balanced AI governance. Their support suggests a strategic effort to shape global regulatory norms that favor responsible deployment while maintaining competitive advantage.",
+      "sources": [
+        {
+          "url": "https://www.theguardian.com/technology/2026/jul/23/openai-anthropic-australia-ai-regulation"
+        }
+      ],
+      "tags": [
+        "regulation",
+        "global",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-anthropic-amd-invests-5b-in-anthropic-and-secures-major-chip-supply-ag",
+      "announced_at": "2026-07-22",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "anthropic"
+      ],
+      "models": [],
+      "headline": "AMD invests $5B in Anthropic and secures major chip supply agreement",
+      "summary": "Advanced Micro Devices (AMD) has invested $5 billion in Anthropic, establishing a strategic partnership that includes a major chip supply deal. This investment will accelerate Anthropic's model development roadmap and expand its compute capacity through AMD's AI accelerators.",
+      "sources": [
+        {
+          "url": "https://www.fierce-network.com/broadband/amd-invests-5b-anthropic-bags-major-gpu-deal"
+        }
+      ],
+      "tags": [
+        "major",
+        "strategic-partnership",
+        "compute-access"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-deepseek-v4-official-version-launches-with-potential-for-sig",
+      "announced_at": "2026-07-20",
+      "type": "model_launch",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4"
+      ],
+      "headline": "DeepSeek V4 official version launches with potential for significant pricing disruption",
+      "summary": "DeepSeek is set to release the official version of DeepSeek V4, a model anticipated to deliver high performance at aggressively low prices, continuing its 'price butcher' strategy. The launch could pressure competitors to adjust pricing or accelerate model releases.",
+      "sources": [
+        {
+          "url": "https://finance.biggo.com/news/5a2591f1-4427-45a5-992d-12588970fd90"
+        }
+      ],
+      "tags": [
+        "major",
+        "inference",
+        "pricing"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-deepseek-launches-v4-full-blooded-edition-with-peak-off-peak",
+      "announced_at": "2026-07-19",
+      "type": "pricing_change",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek/deepseek-v4-full-blooded"
+      ],
+      "headline": "DeepSeek launches V4 'Full-Blooded Edition' with peak/off-peak pricing model",
+      "summary": "DeepSeek introduces its V4 'Full-Blooded Edition', featuring a novel peak and off-peak pricing structure that dynamically adjusts costs based on usage demand. This innovation positions DeepSeek as a disruptive 'price butcher' in the AI inference market, potentially reshaping cost efficiency expectations.",
+      "sources": [
+        {
+          "url": "https://finance.biggo.com/news/3f50edd8-9ed5-4164-9a73-3d6cbc74077e"
+        }
+      ],
+      "tags": [
+        "major",
+        "pricing-innovation"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "down"
+      },
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-xai-files-lawsuit-in-response-to-allegations-over-grok-gener",
+      "announced_at": "2026-07-17",
+      "type": "legal_outcome",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "xai"
+      ],
+      "models": [
+        "xai/grok"
+      ],
+      "headline": "xAI files lawsuit in response to allegations over Grok-generated abuse material",
+      "summary": "Following expanded allegations that its Grok model enabled the generation of illegal deepfake content, xAI has initiated legal action. The move signals a strategic response to mounting legal and regulatory scrutiny over AI-generated abuse material.",
+      "sources": [
+        {
+          "url": "https://www.newsofbahrain.com/world/137596.html"
+        }
+      ],
+      "tags": [
+        "legal",
+        "content-moderation",
+        "major"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
+    },
+    {
+      "id": "2026-07-deepseek-achieves-nearly-52b-valuation-according-to-chinese-",
+      "announced_at": "2026-07-16",
+      "type": "funding",
+      "severity": "informational",
+      "status": "unverified",
+      "providers": [
+        "deepseek"
+      ],
+      "models": [],
+      "headline": "DeepSeek achieves nearly $52B valuation according to Chinese regulatory filing",
+      "summary": "A recent Chinese regulatory filing implies DeepSeek's valuation has reached nearly $52 billion, marking one of the highest valuations for an AI startup and reflecting strong market confidence in its technology and business trajectory.",
+      "sources": [
+        {
+          "url": "https://www.msn.com/en-us/money/economy/deepseek-s-valuation-nearly-52b-chinese-filing-implies-report/ar-AA283DqD"
+        }
+      ],
+      "tags": [
+        "major",
+        "valuation",
+        "funding"
+      ],
+      "impact": {
+        "magnitude": "major",
+        "duration": "ongoing",
+        "price_direction": "none"
+      },
+      "created_at": "2026-07-23",
+      "updated_at": "2026-07-23"
     }
   ]
 }
